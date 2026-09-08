@@ -27,31 +27,21 @@
 </script>
 <style>
   :root{
-    --ground:#F5F5F1; --surface:#FFFFFF; --raised:#FFFFFF;
-    --ink:#131315; --muted:#5A5A60; --faint:#8C8C92;
-    --rule:#E1E0DA; --plaque:#3358E0; --plaque-soft:#E4E9FB;
-    --verdigris:#15855A; --brass:#A8730A;
-    --tomato:#E1481C; --violet:#8636CC; --bubblegum:#E85C97; --marigold:#F2A400;
-    --shadow:0 1px 2px rgba(20,27,34,.05), 0 8px 24px -14px rgba(20,27,34,.22);
-    color-scheme:light;
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --ground:#0A0A0B; --surface:#161618; --raised:#1F1F22;
-      --ink:#F4F3EF; --muted:#A6A6AB; --faint:#6E6E74;
-      --rule:#2B2B2F; --plaque-soft:#1C2748;
-      --brass:#EFA935;
-      --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -16px rgba(0,0,0,.9);
-      color-scheme:dark;
-    }
-  }
-  :root[data-theme="dark"]{
     --ground:#0A0A0B; --surface:#161618; --raised:#1F1F22;
     --ink:#F4F3EF; --muted:#A6A6AB; --faint:#6E6E74;
-    --rule:#2B2B2F; --plaque-soft:#1C2748;
-    --brass:#EFA935;
+    --rule:#2B2B2F; --plaque:#3358E0; --plaque-soft:#1C2748;
+    --verdigris:#15855A; --brass:#EFA935;
+    --tomato:#E1481C; --violet:#8636CC; --bubblegum:#E85C97; --marigold:#F2A400;
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -16px rgba(0,0,0,.9);
     color-scheme:dark;
+  }
+  :root[data-theme="light"]{
+    --ground:#F5F5F1; --surface:#FFFFFF; --raised:#FFFFFF;
+    --ink:#131315; --muted:#5A5A60; --faint:#8C8C92;
+    --rule:#E1E0DA; --plaque-soft:#E4E9FB;
+    --brass:#A8730A;
+    --shadow:0 1px 2px rgba(20,27,34,.05), 0 8px 24px -14px rgba(20,27,34,.22);
+    color-scheme:light;
   }
 
   body{ background:var(--ground); color:var(--ink); font-family:Archivo, Helvetica Neue, Arial, sans-serif; -webkit-font-smoothing:antialiased; }
@@ -1710,11 +1700,13 @@
   document.getElementById('scrim').addEventListener('click', function () { openSheet(false); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') openSheet(false); });
 
-  // Theme
+  // Theme — black by default; the toggle switches to light and back
   document.getElementById('themeToggle').addEventListener('click', function () {
-    var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    var cur = root.getAttribute('data-theme') || (dark ? 'dark' : 'light');
-    root.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
+    if (root.getAttribute('data-theme') === 'light') {
+      root.removeAttribute('data-theme');
+    } else {
+      root.setAttribute('data-theme', 'light');
+    }
   });
 
   // GPX export, when the viewer can save files
