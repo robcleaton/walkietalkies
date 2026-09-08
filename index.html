@@ -1291,16 +1291,6 @@
     return total;
   }
 
-  function dms(lon) {
-    var hemi = lon < 0 ? 'W' : 'E';
-    var v = Math.abs(lon);
-    var d = Math.floor(v);
-    var m = Math.floor((v - d) * 60);
-    var s = Math.round((((v - d) * 60) - m) * 60);
-    if (s === 60) { s = 0; m += 1; }
-    if (m === 60) { m = 0; d += 1; }
-    return d + '°' + pad(m) + '′' + pad(s) + '″ ' + hemi;
-  }
   function pad(n) { return n < 10 ? '0' + n : '' + n; }
 
   /* ---------------------------------------------------------------
@@ -1450,7 +1440,7 @@
         '<div class="flex items-start justify-between gap-4">' +
           '<div class="min-w-0">' +
             '<h3 class="font-display text-[23px] leading-[1.1] mb-1">' + s.name + '</h3>' +
-            '<p class="font-mono text-[11px] text-muted num">' + s.area + ' &middot; ' + s.pc + ' &middot; ' + dms(s.lon) + '</p>' +
+            '<p class="font-mono text-[11px] text-muted num">' + s.area + ' &middot; ' + s.pc + '</p>' +
           '</div>' +
           '<button data-toggle="' + s.id + '" class="shrink-0 text-[12px] font-semibold px-3 py-2 rounded-[6px] border transition-colors ' +
             (on ? 'bg-verdigris text-white border-verdigris' : 'border-rule text-ink hover:border-ink') + '">' +
