@@ -13,7 +13,8 @@
           ground: 'var(--ground)', surface: 'var(--surface)', raised: 'var(--raised)',
           ink: 'var(--ink)', muted: 'var(--muted)', faint: 'var(--faint)',
           rule: 'var(--rule)', plaque: 'var(--plaque)', verdigris: 'var(--verdigris)',
-          brass: 'var(--brass)', plaquesoft: 'var(--plaque-soft)'
+          brass: 'var(--brass)', plaquesoft: 'var(--plaque-soft)',
+          tomato: 'var(--tomato)', violet: 'var(--violet)', bubblegum: 'var(--bubblegum)', marigold: 'var(--marigold)'
         },
         fontFamily: {
           display: ['"Instrument Serif"', 'Georgia', 'serif'],
@@ -26,29 +27,30 @@
 </script>
 <style>
   :root{
-    --ground:#EEEDE7; --surface:#F8F7F3; --raised:#FFFFFF;
-    --ink:#141B22; --muted:#5C6772; --faint:#8B949D;
-    --rule:#D6D3C9; --plaque:#1A4E8A; --plaque-soft:#DEE6F0;
-    --verdigris:#3F7C6B; --brass:#9C7228;
+    --ground:#F5F5F1; --surface:#FFFFFF; --raised:#FFFFFF;
+    --ink:#131315; --muted:#5A5A60; --faint:#8C8C92;
+    --rule:#E1E0DA; --plaque:#3358E0; --plaque-soft:#E4E9FB;
+    --verdigris:#15855A; --brass:#A8730A;
+    --tomato:#E1481C; --violet:#8636CC; --bubblegum:#E85C97; --marigold:#F2A400;
     --shadow:0 1px 2px rgba(20,27,34,.05), 0 8px 24px -14px rgba(20,27,34,.22);
     color-scheme:light;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --ground:#0F1418; --surface:#161D23; --raised:#1C242B;
-      --ink:#E9EAE4; --muted:#93A0AA; --faint:#6C7A85;
-      --rule:#28323A; --plaque:#7FB0E6; --plaque-soft:#1B2C3F;
-      --verdigris:#6CBBA3; --brass:#D6A751;
-      --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -16px rgba(0,0,0,.8);
+      --ground:#0A0A0B; --surface:#161618; --raised:#1F1F22;
+      --ink:#F4F3EF; --muted:#A6A6AB; --faint:#6E6E74;
+      --rule:#2B2B2F; --plaque-soft:#1C2748;
+      --brass:#EFA935;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -16px rgba(0,0,0,.9);
       color-scheme:dark;
     }
   }
   :root[data-theme="dark"]{
-    --ground:#0F1418; --surface:#161D23; --raised:#1C242B;
-    --ink:#E9EAE4; --muted:#93A0AA; --faint:#6C7A85;
-    --rule:#28323A; --plaque:#7FB0E6; --plaque-soft:#1B2C3F;
-    --verdigris:#6CBBA3; --brass:#D6A751;
-    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -16px rgba(0,0,0,.8);
+    --ground:#0A0A0B; --surface:#161618; --raised:#1F1F22;
+    --ink:#F4F3EF; --muted:#A6A6AB; --faint:#6E6E74;
+    --rule:#2B2B2F; --plaque-soft:#1C2748;
+    --brass:#EFA935;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -16px rgba(0,0,0,.9);
     color-scheme:dark;
   }
 
@@ -76,7 +78,7 @@
     #routePanel{
       position:fixed; left:0; right:0; bottom:0; z-index:60;
       max-height:84vh; transform:translateY(103%);
-      border-radius:16px 16px 0 0; border-bottom:0;
+      border-radius:22px 22px 0 0; border-bottom:0;
       box-shadow:0 -20px 50px -12px rgba(0,0,0,.35);
     }
     html.route-open #routePanel{ transform:translateY(0); }
@@ -99,10 +101,12 @@
   <!-- Masthead -->
   <header class="border-b border-rule">
     <div class="mx-auto max-w-[1280px] px-5 sm:px-8 py-5 flex flex-wrap items-end gap-x-8 gap-y-3">
-      <div class="flex items-center gap-2.5 flex-1 min-w-[240px]">
-        <svg viewBox="0 0 256 256" fill="none" aria-hidden="true" class="w-8 h-8 sm:w-9 sm:h-9 shrink-0">
-          <path d="M 256 256 L 178 256 C 150.386 256 128 233.614 128 206 L 128 256 L 0 256 L 0 192 C 0 156.654 28.654 128 64 128 C 99.346 128 128 156.654 128 192 L 128 128 L 256 128 Z M 78 0 C 105.614 0 128 22.386 128 50 L 128 0 L 256 0 L 256 64 C 256 99.346 227.346 128 192 128 C 156.654 128 128 99.346 128 64 L 128 128 L 0 128 L 0 0 Z" fill="currentColor"></path>
-        </svg>
+      <div class="flex items-center gap-3 flex-1 min-w-[240px]">
+        <span class="inline-flex items-center justify-center shrink-0 rounded-[11px] w-10 h-10 sm:w-11 sm:h-11" style="background:var(--marigold)">
+          <svg viewBox="0 0 256 256" fill="none" aria-hidden="true" class="w-6 h-6 sm:w-[26px] sm:h-[26px]">
+            <path d="M 256 256 L 178 256 C 150.386 256 128 233.614 128 206 L 128 256 L 0 256 L 0 192 C 0 156.654 28.654 128 64 128 C 99.346 128 128 156.654 128 192 L 128 128 L 256 128 Z M 78 0 C 105.614 0 128 22.386 128 50 L 128 0 L 256 0 L 256 64 C 256 99.346 227.346 128 192 128 C 156.654 128 128 99.346 128 64 L 128 128 L 0 128 L 0 0 Z" fill="#171717"></path>
+          </svg>
+        </span>
         <h1 class="font-display text-[38px] sm:text-[46px] leading-[0.95] tracking-[-0.01em]">WalkieTalkies</h1>
       </div>
       <p class="text-[14px] leading-[1.55] text-muted max-w-[42ch]">
@@ -164,16 +168,16 @@
       <div class="lg:col-span-8">
         <p class="eyebrow text-faint mb-4" id="resultCount">40 stops</p>
 
-        <div class="bg-surface border border-rule rounded-[10px] p-4 mb-5">
+        <div class="bg-surface border border-rule rounded-[18px] p-4 mb-5">
           <div class="flex flex-col sm:flex-row gap-3 mb-3">
             <label class="flex-1 relative">
               <span class="sr-only">Search stops</span>
               <input id="search" type="search" placeholder="Search a person, place or street&hellip;"
-                class="w-full bg-raised border border-rule rounded-[6px] px-3 py-2.5 text-[14px] placeholder:text-faint text-ink">
+                class="w-full bg-raised border border-rule rounded-full px-4 py-2.5 text-[14px] placeholder:text-faint text-ink">
             </label>
             <label class="sm:w-[210px]">
               <span class="sr-only">Order</span>
-              <select id="sort" class="w-full bg-raised border border-rule rounded-[6px] px-3 py-2.5 text-[14px] text-ink">
+              <select id="sort" class="w-full bg-raised border border-rule rounded-full px-4 py-2.5 text-[14px] text-ink">
                 <option value="district">Group by postcode</option>
                 <option value="west">Order west to east</option>
                 <option value="year">Order by date</option>
@@ -184,11 +188,11 @@
           <div id="chips" class="flex flex-wrap gap-1.5"></div>
         </div>
 
-        <div id="list" class="bg-surface border border-rule rounded-[10px] overflow-hidden"></div>
+        <div id="list" class="bg-surface border border-rule rounded-[18px] overflow-hidden"></div>
       </div>
 
       <!-- Route -->
-      <aside id="routePanel" class="lg:col-span-4 bg-raised border border-rule rounded-[10px] lg:sticky lg:top-5 flex flex-col overflow-hidden">
+      <aside id="routePanel" class="lg:col-span-4 bg-raised border border-rule rounded-[18px] lg:sticky lg:top-5 flex flex-col overflow-hidden">
         <div class="px-5 pt-5 pb-4 border-b border-rule">
           <div class="flex items-start justify-between gap-3">
             <div>
@@ -197,7 +201,7 @@
             </div>
             <button id="sheetClose" class="eyebrow text-muted px-2 py-1 border border-rule rounded-full" aria-label="Close route panel">Close</button>
           </div>
-          <div class="grid grid-cols-2 gap-px bg-rule border border-rule rounded-[8px] overflow-hidden mt-4">
+          <div class="grid grid-cols-2 gap-px bg-rule border border-rule rounded-[14px] overflow-hidden mt-4">
             <div class="bg-surface px-3 py-2.5">
               <p class="font-mono num text-[19px] leading-none" id="routeDist">0.0 km</p>
               <p class="eyebrow text-faint mt-1.5">Point to point</p>
@@ -213,10 +217,10 @@
 
         <div class="px-5 py-4 border-t border-rule flex flex-col gap-2">
           <a id="mapsLink" href="#" target="_blank" rel="noopener"
-             class="text-center text-[13px] font-semibold py-2.5 rounded-[6px] bg-plaque text-white hover:opacity-90 transition-opacity">Open the walk in Maps</a>
+             class="text-center text-[13px] font-semibold py-2.5 rounded-full bg-plaque text-white hover:opacity-90 transition-opacity">Open the walk in Maps</a>
           <div class="flex gap-2">
-            <button id="gpxBtn" class="hidden flex-1 text-[13px] font-semibold py-2.5 rounded-[6px] border border-rule text-ink hover:border-ink transition-colors">Save as GPX</button>
-            <button id="clearBtn" class="flex-1 text-[13px] font-semibold py-2.5 rounded-[6px] border border-rule text-muted hover:text-ink hover:border-ink transition-colors">Clear route</button>
+            <button id="gpxBtn" class="hidden flex-1 text-[13px] font-semibold py-2.5 rounded-full border border-rule text-ink hover:border-ink transition-colors">Save as GPX</button>
+            <button id="clearBtn" class="flex-1 text-[13px] font-semibold py-2.5 rounded-full border border-rule text-muted hover:text-ink hover:border-ink transition-colors">Clear route</button>
           </div>
           <p class="eyebrow text-faint text-center pt-1" id="syncNote">Saving locally</p>
         </div>
@@ -258,6 +262,26 @@
     pub:      'Historic pub',
     art:      'Art & artists'
   };
+
+  var CATMARK = {
+    plaque:   { color:'var(--plaque)',    icon:'<line x1="12" y1="4" x2="12" y2="20"/><line x1="4" y1="8" x2="20" y2="16"/><line x1="20" y1="8" x2="4" y2="16"/>' },
+    grand:    { color:'var(--marigold)',  icon:'<line x1="12" y1="2" x2="12" y2="7"/><line x1="12" y1="17" x2="12" y2="22"/><line x1="2" y1="12" x2="7" y2="12"/><line x1="17" y1="12" x2="22" y2="12"/><line x1="5.5" y1="5.5" x2="9" y2="9"/><line x1="15" y1="15" x2="18.5" y2="18.5"/><line x1="5.5" y1="18.5" x2="9" y2="15"/><line x1="15" y1="9" x2="18.5" y2="5.5"/>' },
+    maritime: { color:'var(--verdigris)', icon:'<path d="M3,9 Q7,6 11,9 T19,9" fill="none"/><path d="M3,15 Q7,12 11,15 T19,15" fill="none"/>' },
+    works:    { color:'var(--tomato)',    icon:'<line x1="4" y1="20" x2="12" y2="4"/><line x1="10" y1="20" x2="18" y2="4"/><line x1="16" y1="20" x2="24" y2="4"/>' },
+    culture:  { color:'var(--violet)',    icon:'<line x1="7" y1="4" x2="7" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/><line x1="17" y1="4" x2="17" y2="20"/>' },
+    memory:   { color:'var(--violet)',    icon:'<rect x="3" y="17" width="18" height="4" stroke="none"/><rect x="6" y="12" width="12" height="5" stroke="none"/><rect x="9" y="7" width="6" height="5" stroke="none"/>' },
+    green:    { color:'var(--verdigris)', icon:'<circle cx="9" cy="12" r="6" stroke="none"/><circle cx="15" cy="12" r="6" stroke="none"/>' },
+    pub:      { color:'var(--tomato)',    icon:'<rect x="3" y="7" width="18" height="4" rx="2" stroke="none"/><rect x="3" y="15" width="12" height="4" rx="2" stroke="none"/>' },
+    art:      { color:'var(--bubblegum)', icon:'<circle cx="12" cy="12" r="8" fill="none"/><circle cx="12" cy="12" r="3" stroke="none"/>' }
+  };
+
+  function catTile(cat, size) {
+    var m = CATMARK[cat];
+    var s = size || 18;
+    return '<span class="inline-flex items-center justify-center shrink-0 rounded-[7px]" style="width:' + s + 'px;height:' + s + 'px;background:' + m.color + '">' +
+      '<svg viewBox="0 0 24 24" width="' + Math.round(s * 0.68) + '" height="' + Math.round(s * 0.68) + '" fill="#171717" stroke="#171717" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + m.icon + '</svg>' +
+    '</span>';
+  }
 
   var STOPS = [
     { id:'royal-observatory', name:'Royal Observatory', area:'Greenwich Park', pc:'SE10', cat:'works', year:1675, era:'Founded 1675',
@@ -1528,8 +1552,8 @@
     var pos = route.indexOf(s.id) + 1;
     return '' +
       '<article id="stop-' + s.id + '" class="stop px-5 py-5">' +
-        '<div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">' +
-          '<span class="eyebrow px-1.5 py-0.5 rounded-sm ' + (s.cat === 'plaque' ? 'bg-plaquesoft text-plaque' : 'text-faint border border-rule') + '">' + CATS[s.cat] + '</span>' +
+        '<div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 mb-2">' +
+          '<span class="inline-flex items-center gap-1.5">' + catTile(s.cat, 16) + '<span class="eyebrow text-faint">' + CATS[s.cat] + '</span></span>' +
           '<span class="eyebrow text-faint">' + s.era + '</span>' +
         '</div>' +
         '<div class="flex items-start justify-between gap-4">' +
@@ -1537,7 +1561,7 @@
             '<h3 class="font-display text-[23px] leading-[1.1] mb-1">' + s.name + '</h3>' +
             '<p class="font-mono text-[11px] text-muted num">' + s.area + ' &middot; ' + s.pc + '</p>' +
           '</div>' +
-          '<button data-toggle="' + s.id + '" class="shrink-0 text-[12px] font-semibold px-3 py-2 rounded-[6px] border transition-colors ' +
+          '<button data-toggle="' + s.id + '" class="shrink-0 text-[12px] font-semibold px-3 py-2 rounded-full border transition-colors ' +
             (on ? 'bg-verdigris text-white border-verdigris' : 'border-rule text-ink hover:border-ink') + '">' +
             (on ? 'Stop ' + pos + ' ✓' : 'Add to route') +
           '</button>' +
@@ -1599,7 +1623,7 @@
       html += '' +
         (i > 0 ? '<p class="pl-[52px] pr-5 py-1 font-mono text-[11px] text-faint num">&darr; ' + leg.toFixed(2) + ' km</p>' : '') +
         '<div class="flex gap-3 px-5 py-2.5 ' + (i > 0 ? '' : 'pt-4') + '">' +
-          '<span class="shrink-0 w-6 h-6 mt-0.5 rounded-full bg-plaquesoft text-plaque font-mono num text-[11px] font-semibold grid place-items-center">' + (i + 1) + '</span>' +
+          '<span class="shrink-0 w-6 h-6 mt-0.5 rounded-full bg-verdigris text-white font-mono num text-[11px] font-semibold grid place-items-center">' + (i + 1) + '</span>' +
           '<div class="min-w-0 flex-1">' +
             '<p class="text-[14px] font-semibold leading-tight">' + s.name + '</p>' +
             '<p class="font-mono text-[11px] text-faint mt-0.5">' + s.pc + ' &middot; ' + s.area + '</p>' +
@@ -1630,8 +1654,8 @@
     var html = '';
     Object.keys(CATS).forEach(function (key) {
       var n = STOPS.filter(function (s) { return s.cat === key; }).length;
-      html += '<button class="chip eyebrow px-2.5 py-1.5 rounded-full text-muted transition-colors" ' +
-              'data-cat="' + key + '" aria-pressed="false">' + CATS[key] + ' <span class="num opacity-55">' + n + '</span></button>';
+      html += '<button class="chip eyebrow pl-1.5 pr-2.5 py-1.5 rounded-full text-muted transition-colors inline-flex items-center gap-1.5" ' +
+              'data-cat="' + key + '" aria-pressed="false">' + catTile(key, 18) + '<span>' + CATS[key] + ' <span class="num opacity-55">' + n + '</span></span></button>';
     });
     wrap.innerHTML = html;
   })();
