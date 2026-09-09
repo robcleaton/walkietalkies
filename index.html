@@ -5,7 +5,7 @@
 <meta name="description" content="A walking guide to the historic sites and blue plaques of South East London.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Azeret+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Azeret+Mono:wght@400;500;600&family=Gasoek+One&display=swap">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
@@ -19,7 +19,8 @@
           tomato: 'var(--tomato)', violet: 'var(--violet)', bubblegum: 'var(--bubblegum)', marigold: 'var(--marigold)'
         },
         fontFamily: {
-          display: ['"Instrument Serif"', 'Georgia', 'serif'],
+          display: ['"Gasoek One"', 'Archivo', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          logo: ['"Kura Rounded"', 'Archivo', 'Helvetica Neue', 'Arial', 'sans-serif'],
           sans: ['Archivo', 'Helvetica Neue', 'Arial', 'sans-serif'],
           mono: ['"Azeret Mono"', 'ui-monospace', 'Menlo', 'monospace']
         }
@@ -28,6 +29,12 @@
   }
 </script>
 <style>
+  @font-face{
+    font-family:'Kura Rounded';
+    src:url('assets/fonts/kura-rounded.otf') format('opentype');
+    font-weight:400;
+    font-display:swap;
+  }
   :root{
     --ground:#0A0A0B; --surface:#161618; --raised:#1F1F22;
     --ink:#F4F3EF; --muted:#A6A6AB; --faint:#6E6E74;
@@ -56,10 +63,9 @@
   }
 
   /* Gazetteer entries: hairline separated, not stamped cards */
-  .stop{ border-top:1px solid var(--rule); }
-  .stop:first-child{ border-top:0; }
+  .stop{ background:var(--surface); border:1px solid var(--rule); border-radius:16px; box-shadow:var(--shadow); }
   .stop.flash{ animation:flash 1.6s ease-out; }
-  @keyframes flash{ 0%{ background:var(--plaque-soft);} 100%{ background:transparent; } }
+  @keyframes flash{ 0%{ background:var(--plaque-soft);} 100%{ background:var(--surface); } }
 
   .chip{ border:1px solid var(--rule); }
   .chip[aria-pressed="true"]{ background:var(--ink); color:var(--ground); border-color:var(--ink); }
@@ -95,6 +101,7 @@
     border-radius:999px;
     transition:transform .15s ease, filter .15s ease;
   }
+  .area-chip.area-chip--on-match{ box-shadow:0 0 0 1.25px #fff; }
   .area-chip:hover{ transform:translateY(-2px); filter:brightness(1.08); }
   .area-chip:active{ transform:translateY(0); filter:brightness(.94); }
   @media (prefers-reduced-motion: reduce){
@@ -105,8 +112,6 @@
   /* Area hero: shown when an area page is active */
   #areaHero{ color:var(--area-ink, var(--ink)); }
   #areaHero #areaHeroTitle{ font-size:clamp(52px, 11vw, 140px); }
-  #areaHeroClear{ border-color:currentColor; color:inherit; opacity:.8; }
-  #areaHeroClear:hover{ opacity:1; }
 
   /* Route sheet on small screens */
   #routePanel{ transition:transform .34s cubic-bezier(.32,.72,0,1); }
@@ -137,46 +142,47 @@
   <!-- Masthead -->
   <header class="border-b border-rule">
     <div class="mx-auto max-w-[1280px] px-5 sm:px-8 py-5 flex flex-wrap items-end gap-x-8 gap-y-3">
-      <div class="flex items-center gap-3 flex-1 min-w-[240px]">
+      <a href="./" class="flex items-center gap-3 min-w-[240px] hover:opacity-85 transition-opacity" aria-label="WalkieTalkies home">
         <span class="inline-flex items-center justify-center shrink-0 rounded-[11px] w-10 h-10 sm:w-11 sm:h-11" style="background:var(--marigold)">
           <svg viewBox="0 0 256 256" fill="none" aria-hidden="true" class="w-6 h-6 sm:w-[26px] sm:h-[26px]">
             <path d="M 256 256 L 178 256 C 150.386 256 128 233.614 128 206 L 128 256 L 0 256 L 0 192 C 0 156.654 28.654 128 64 128 C 99.346 128 128 156.654 128 192 L 128 128 L 256 128 Z M 78 0 C 105.614 0 128 22.386 128 50 L 128 0 L 256 0 L 256 64 C 256 99.346 227.346 128 192 128 C 156.654 128 128 99.346 128 64 L 128 128 L 0 128 L 0 0 Z" fill="#171717"></path>
           </svg>
         </span>
-        <h1 class="font-display text-[38px] sm:text-[46px] leading-[0.95] tracking-[-0.01em]">WalkieTalkies</h1>
-      </div>
+        <h1 class="font-logo uppercase text-[32px] sm:text-[38px] leading-[0.95] tracking-[-0.01em]">WalkieTalkies</h1>
+      </a>
       <p class="text-[14px] leading-[1.55] text-muted max-w-[42ch]">
         Over a hundred historic sites, blue plaques, war memorials, old pubs and public artworks across South East London.
         Build one route, in the order you&rsquo;ll walk it.
       </p>
-      <button id="themeToggle" class="ml-auto shrink-0 eyebrow px-3 py-2 rounded-full border border-rule text-muted hover:text-ink hover:border-ink transition-colors" aria-label="Switch colour theme">Theme</button>
+      <button id="themeToggle" class="ml-auto shrink-0 inline-flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-rule text-muted hover:text-ink hover:border-ink transition-colors" aria-label="Switch colour theme">
+        <svg class="lucide lucide-sun w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2" />
+          <path d="M12 20v2" />
+          <path d="m4.93 4.93 1.41 1.41" />
+          <path d="m17.66 17.66 1.41 1.41" />
+          <path d="M2 12h2" />
+          <path d="M20 12h2" />
+          <path d="m6.34 17.66-1.41 1.41" />
+          <path d="m19.07 4.93-1.41 1.41" />
+        </svg>
+      </button>
     </div>
   </header>
 
   <!-- Area hero: shown only when an area page is active -->
   <section id="areaHero" class="hidden mx-auto max-w-[1280px] px-5 sm:px-8 pt-8">
-    <div class="flex flex-wrap items-end justify-between gap-4">
-      <div class="min-w-0">
-        <p class="eyebrow mb-2 opacity-80">Area guide</p>
-        <h2 id="areaHeroTitle" class="font-display leading-[0.85] tracking-[-0.02em]">Forest Hill</h2>
-        <p id="areaHeroCount" class="text-[14px] mt-3 opacity-80">&nbsp;</p>
-      </div>
-      <button id="areaHeroClear" class="eyebrow px-4 py-2 rounded-full border transition-opacity shrink-0 mb-2">&larr; All areas</button>
+    <div class="min-w-0">
+      <p class="eyebrow mb-2 opacity-80">Area guide</p>
+      <h2 id="areaHeroTitle" class="font-display leading-[0.85] tracking-[-0.02em]">Forest Hill</h2>
+      <p id="areaHeroDesc" class="text-[15px] sm:text-[16px] leading-[1.55] mt-3 max-w-[62ch] opacity-90"></p>
+      <p id="areaHeroCount" class="text-[14px] mt-3 opacity-80">&nbsp;</p>
     </div>
   </section>
 
   <!-- Intro -->
   <section class="mx-auto max-w-[1280px] px-5 sm:px-8 pt-6">
-    <div class="max-w-[62ch]">
-      <h2 class="font-display text-[28px] sm:text-[32px] leading-tight mb-2">Everything here is south of the river and east of nowhere in particular.</h2>
-      <p class="text-[15px] leading-[1.65] text-muted">
-        South East London keeps its history at street level &mdash; a ceramic roundel above a chip shop, a dockyard wall
-        holding back a housing estate, a pub that has poured since before the coach roads closed. This is a
-        gazetteer of two hundred and thirteen of them, from Southwark Cathedral to Bexley, with a route you can assemble and carry.
-      </p>
-    </div>
-
-    <div class="-mx-5 sm:mx-0 mt-6">
+    <div class="-mx-5 sm:mx-0">
       <div id="areaChips" class="sm:px-0">
         <div class="area-rows">
 
@@ -275,26 +281,17 @@
         <p class="eyebrow text-faint mb-4" id="resultCount">40 stops</p>
 
         <div class="bg-surface border border-rule rounded-[18px] p-4 mb-5">
-          <div class="flex flex-col sm:flex-row gap-3 mb-3">
-            <label class="flex-1 relative">
+          <div class="mb-3">
+            <label class="relative block">
               <span class="sr-only">Search stops</span>
               <input id="search" type="search" placeholder="Search a person, place or street&hellip;"
                 class="w-full bg-raised border border-rule rounded-full px-4 py-2.5 text-[14px] placeholder:text-faint text-ink">
-            </label>
-            <label class="sm:w-[210px]">
-              <span class="sr-only">Order</span>
-              <select id="sort" class="w-full bg-raised border border-rule rounded-full px-4 py-2.5 text-[14px] text-ink">
-                <option value="district">Group by postcode</option>
-                <option value="west">Order west to east</option>
-                <option value="year">Order by date</option>
-                <option value="az">Order A to Z</option>
-              </select>
             </label>
           </div>
           <div id="chips" class="flex flex-wrap gap-1.5"></div>
         </div>
 
-        <div id="list" class="bg-surface border border-rule rounded-[18px] overflow-hidden"></div>
+        <div id="list" class="flex flex-col gap-3"></div>
       </div>
 
       <!-- Route -->
@@ -305,7 +302,12 @@
               <h2 class="font-display text-[24px] leading-none">Your route</h2>
               <p class="eyebrow text-faint mt-2" id="routeMeta">No stops yet</p>
             </div>
-            <button id="sheetClose" class="eyebrow text-muted px-2 py-1 border border-rule rounded-full" aria-label="Close route panel">Close</button>
+            <button id="sheetClose" class="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full border border-rule text-muted hover:text-ink hover:border-ink transition-colors" aria-label="Close route panel">
+              <svg class="lucide lucide-circle-chevron-down w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" />
+                <path d="m16 10-4 4-4-4" />
+              </svg>
+            </button>
           </div>
           <div class="grid grid-cols-2 gap-px bg-rule border border-rule rounded-[14px] overflow-hidden mt-4">
             <div class="bg-surface px-3 py-2.5">
@@ -335,19 +337,21 @@
 
     <footer class="mt-10 pt-5 border-t border-rule flex flex-wrap gap-x-6 gap-y-2 items-baseline">
       <p class="eyebrow text-faint">WalkieTalkies &middot; a South East London gazetteer</p>
-      <p class="text-[12px] text-faint">Distances are straight-line between stops &mdash; the pavement will be longer.</p>
     </footer>
   </main>
 </div>
 
 <div id="scrim" class="fixed inset-0 bg-black/40 z-50" hidden></div>
 
-<button id="routeBar" class="fixed bottom-0 inset-x-0 z-40 lg:hidden bg-ink text-ground px-5 py-3.5 flex items-center justify-between gap-4 text-left">
+<button id="routeBar" class="fixed bottom-0 inset-x-0 z-40 lg:hidden bg-ink text-ground px-5 py-3.5 flex items-center justify-between gap-4 text-left" aria-label="Open route panel">
   <span>
     <span class="eyebrow opacity-60 block">Your route</span>
     <span class="text-[15px] font-semibold" id="barLabel">5 stops &middot; 2.1 km</span>
   </span>
-  <span class="eyebrow border border-current rounded-full px-3 py-1.5">Open</span>
+  <svg class="lucide lucide-circle-chevron-up w-7 h-7 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="12" cy="12" r="10" />
+    <path d="m8 14 4-4 4 4" />
+  </svg>
 </button>
 
 <script>
@@ -1360,6 +1364,11 @@
       text:'Paul grew up in Honor Oak and co-founded the Woodcraft Folk here in 1925 &mdash; a still-active youth movement built around outdoor education and folk tradition &mdash; serving as its head until 1934.',
       note:'No precise street survives in the record for this one, so the marker sits on the general Honor Oak locator rather than a guessed address.' },
 
+    { id:'walters-way', name:'Walter&rsquo;s Way', area:'Honor Oak', pc:'SE23', cat:'grand', year:1985, era:'Self-built 1978&ndash;1985',
+      lat:51.4478, lon:-0.0398, addr:'Walter&rsquo;s Way, Honor Oak Park, SE23 3LH',
+      text:'Thirteen timber-frame houses on a hillside plot too awkward for conventional builders, put up by the families who would live in them using architect Walter Segal&rsquo;s post-and-beam method &mdash; no bricklaying or plastering skills required, just Segal on hand to advise.',
+      note:'Segal&rsquo;s frames rest on paving-slab pad foundations rather than dug trenches, so the mature trees already on site never had to come down &mdash; several houses still grow up around them. Segal Close, the scheme&rsquo;s second phase, sits just round the corner.' },
+
     { id:'wg-grace-plaque', name:'W.G. Grace', area:'Mottingham', pc:'SE9', cat:'plaque', year:1899, era:'Blue plaque, lived here from 1899',
       lat:51.4270, lon:0.0430, addr:'Fairmount, Mottingham Lane, SE9',
       text:'Grace moved his family here in 1899 to manage and captain the newly formed London County Cricket Club, based a short walk away at Crystal Palace Park &mdash; already in this gazetteer &mdash; and kept playing club cricket into his sixties.',
@@ -1620,7 +1629,7 @@
 
     if (!items.length) {
       listEl.innerHTML =
-        '<div class="px-5 py-12 text-center">' +
+        '<div class="bg-surface border border-rule rounded-[16px] px-5 py-12 text-center">' +
           '<p class="font-display text-[22px] mb-1">Nothing matches</p>' +
           '<p class="text-[13px] text-muted">Try a shorter search, or clear the category filters.</p>' +
         '</div>';
@@ -1631,7 +1640,7 @@
     items.forEach(function (s) {
       if (filters.sort === 'district' && s.pc !== lastGroup) {
         lastGroup = s.pc;
-        html += '<div class="bg-ground px-5 py-2 border-y border-rule flex items-baseline gap-3">' +
+        html += '<div class="px-1 pt-2 flex items-baseline gap-3">' +
                   '<span class="font-mono text-[12px] font-semibold tracking-wider">' + s.pc + '</span>' +
                   '<span class="eyebrow text-faint">' + districtName(s.pc) + '</span>' +
                 '</div>';
@@ -1786,10 +1795,10 @@
       document.documentElement.style.removeProperty('--area-bg');
       document.documentElement.style.removeProperty('--area-ink');
       areaHeroEl.classList.add('hidden');
+      Array.prototype.forEach.call(document.querySelectorAll('.area-chip--on-match'), function (chip) {
+        chip.classList.remove('area-chip--on-match');
+      });
     }
-  });
-  document.getElementById('sort').addEventListener('change', function (e) {
-    filters.sort = e.target.value; renderList();
   });
 
   document.addEventListener('click', function (e) {
@@ -1803,9 +1812,53 @@
 
   function escapeRegExp(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
 
-  function areaSlug(area) { return area.toLowerCase().trim().replace(/\s+/g, '-'); }
-  function areaFromSlug(slug) { return slug.toLowerCase().trim().replace(/-+/g, ' '); }
-  function areaTitle(area) { return area.replace(/\b\w/g, function (c) { return c.toUpperCase(); }); }
+  var AREA_DESCRIPTIONS = {
+    'bankside': 'The stretch of Thames path between Southwark Cathedral and the old power station, still trading on eight centuries of theatres, taverns and reformers.',
+    'bermondsey': 'Warehouses and wharves turned over from the spice docks to design studios, with the river never far from view.',
+    'bexley': 'Where the suburbs give way to the Cray valley, a Tudor manor house included.',
+    'bexleyheath': 'A Victorian railway suburb that grew up around the Arts and Crafts movement’s founding project, the Red House.',
+    'blackheath': 'An open heath with a history of gathering crowds for rebellion and plague burials, and fireworks these days.',
+    'brockley': 'Terraced Victorian streets around a cemetery that quietly holds more history than its size suggests.',
+    'camberwell': 'Art-school grit meets Georgian squares, a few minutes from Peckham and a world from the postcard version of London.',
+    'catford': 'Best known for a fibreglass cat the size of a bus, perched over a 1970s shopping centre.',
+    'charlton': 'A riverside village swallowed by the docks, still centred on one of London’s oldest Jacobean houses.',
+    'crystal palace': 'Named for a glass palace that burned down in 1936, leaving concrete dinosaurs and a view across half the city.',
+    'deptford': 'Henry VIII’s royal dockyard, now flea markets and studios built into the same old wharves.',
+    'dulwich': 'A private estate that kept its village feel and its picture gallery &mdash; Britain’s oldest public one &mdash; running since 1817.',
+    'east dulwich': 'Dulwich’s less formal neighbour, all Victorian terraces and a high street that never settled on one identity.',
+    'elephant': 'A roundabout that gave its name to a whole quarter, rebuilt more times than almost anywhere else in London.',
+    'eltham': 'A medieval royal palace and an Art Deco mansion sit streets apart, both stranger than the suburb around them.',
+    'forest hill': 'Steep streets above the Honor Oak ridge, anchored by a museum built on the tea trade and its odd collections.',
+    'greenwich': 'The Old Royal Naval College, the meridian line and a tea clipper in dry dock &mdash; UNESCO’s stretch of the river.',
+    'honor oak': 'A hilltop park with a history of mass trespass, ringed by streets that grew up around the railway.',
+    'lee': 'A quiet suburb between Lewisham and Eltham, mostly known for who used to live there rather than what still stands.',
+    'lewisham': 'The borough’s own high street and transport hub, rebuilt hard after the Blitz and again more recently.',
+    'new cross': 'Goldsmiths’ postcode &mdash; squat culture, music history and a fire that changed British race relations.',
+    'nunhead': 'One of London’s Magnificent Seven cemeteries, wild enough in places to forget it’s inside the M25.',
+    'peckham': 'A market street and a multi-storey car park turned rooftop bar &mdash; Camberwell’s louder, younger neighbour.',
+    'rotherhithe': 'Where Brunel dug the first tunnel under a navigable river, and the Mayflower is said to have set sail.',
+    'sydenham': 'The hill above Crystal Palace Park, still trading on the shadow of the palace that once stood there.',
+    'walworth': 'Dense Victorian streets off the Old Kent Road &mdash; working-class London the guidebooks tend to skip.',
+    'woolwich': 'The Royal Arsenal turned riverside flats, with a free ferry that’s been crossing the Thames since 1889.'
+  };
+  var AREA_TITLES = { elephant: 'Elephant & Castle' };
+  var AREA_SLUGS = { elephant: 'elephant-and-castle' };
+  var AREA_SLUGS_REVERSE = {};
+  Object.keys(AREA_SLUGS).forEach(function (k) { AREA_SLUGS_REVERSE[AREA_SLUGS[k]] = k; });
+
+  function areaSlug(area) {
+    var key = area.toLowerCase().trim();
+    return AREA_SLUGS[key] || key.replace(/\s+/g, '-');
+  }
+  function areaFromSlug(slug) {
+    var key = slug.toLowerCase().trim();
+    return AREA_SLUGS_REVERSE[key] || key.replace(/-+/g, ' ');
+  }
+  function areaTitle(area) {
+    var key = area.toLowerCase().trim();
+    if (AREA_TITLES[key]) return AREA_TITLES[key];
+    return area.replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+  }
 
   var AREA_COLORS = {};
   Array.prototype.forEach.call(document.querySelectorAll('.area-chip[data-area]'), function (btn) {
@@ -1814,6 +1867,17 @@
     var cs = getComputedStyle(btn);
     AREA_COLORS[area] = { bg: cs.backgroundColor, fg: cs.color };
   });
+
+  function parseRGB(str) {
+    var m = /rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)/.exec(str || '');
+    return m ? [+m[1], +m[2], +m[3]] : null;
+  }
+  function colorsAreClose(a, b) {
+    var ca = parseRGB(a), cb = parseRGB(b);
+    if (!ca || !cb) return a === b;
+    var dr = ca[0] - cb[0], dg = ca[1] - cb[1], db = ca[2] - cb[2];
+    return Math.sqrt(dr * dr + dg * dg + db * db) <= 70;
+  }
 
   var areaHeroEl = document.getElementById('areaHero');
 
@@ -1833,7 +1897,13 @@
       document.documentElement.style.setProperty('--area-bg', c.bg);
       document.documentElement.style.setProperty('--area-ink', c.fg);
     }
+    Array.prototype.forEach.call(document.querySelectorAll('.area-chip[data-area]'), function (chip) {
+      var key = chip.getAttribute('data-area');
+      var matches = !!(c && AREA_COLORS[key] && colorsAreClose(AREA_COLORS[key].bg, c.bg));
+      chip.classList.toggle('area-chip--on-match', matches);
+    });
     document.getElementById('areaHeroTitle').textContent = areaTitle(area);
+    document.getElementById('areaHeroDesc').innerHTML = AREA_DESCRIPTIONS[area.toLowerCase()] || '';
     document.getElementById('areaHeroCount').textContent = document.getElementById('resultCount').textContent;
     areaHeroEl.classList.remove('hidden');
 
@@ -1851,6 +1921,9 @@
     document.documentElement.style.removeProperty('--area-bg');
     document.documentElement.style.removeProperty('--area-ink');
     areaHeroEl.classList.add('hidden');
+    Array.prototype.forEach.call(document.querySelectorAll('.area-chip--on-match'), function (chip) {
+      chip.classList.remove('area-chip--on-match');
+    });
   }
 
   function jumpToArea(area) {
@@ -1859,15 +1932,6 @@
     url.searchParams.set('area', areaSlug(area));
     history.pushState({ area: area }, '', url);
   }
-
-  function exitAreaMode() {
-    clearAreaFilter();
-    var url = new URL(location.href);
-    url.searchParams.delete('area');
-    history.pushState({}, '', url);
-  }
-
-  document.getElementById('areaHeroClear').addEventListener('click', exitAreaMode);
 
   window.addEventListener('popstate', function () {
     var slug = new URLSearchParams(location.search).get('area');
