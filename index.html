@@ -46,7 +46,7 @@
     color-scheme:light;
   }
 
-  body{ background:var(--ground); color:var(--ink); font-family:Archivo, Helvetica Neue, Arial, sans-serif; -webkit-font-smoothing:antialiased; }
+  body{ background:var(--area-bg, var(--ground)); color:var(--ink); font-family:Archivo, Helvetica Neue, Arial, sans-serif; -webkit-font-smoothing:antialiased; transition:background-color .45s ease; }
   h1,h2,h3{ text-wrap:balance; }
   .num{ font-variant-numeric:tabular-nums; }
   .eyebrow{ font-family:"Azeret Mono", ui-monospace, monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; }
@@ -63,6 +63,50 @@
 
   .chip{ border:1px solid var(--rule); }
   .chip[aria-pressed="true"]{ background:var(--ink); color:var(--ground); border-color:var(--ink); }
+
+  /* Area chips: bold, oversized, 3 independently drifting rows on small screens */
+  .area-rows{ display:flex; flex-direction:column; gap:12px; }
+  .area-row-wrap{ width:100%; overflow:hidden; padding:6px 0; }
+  .area-row-track{ display:flex; flex-wrap:nowrap; width:max-content; }
+  .area-row{ display:flex; flex-wrap:nowrap; gap:12px; margin-right:12px; flex:0 0 auto; }
+  @keyframes areaMarqueeLeft{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  @keyframes areaMarqueeRight{ from{ transform:translateX(-50%); } to{ transform:translateX(0); } }
+  .area-row-track.marquee-left{ animation:areaMarqueeLeft 55s linear infinite; }
+  .area-row-track.marquee-right{ animation:areaMarqueeRight 55s linear infinite; }
+  .area-row-wrap:hover .area-row-track,
+  .area-row-wrap:active .area-row-track{ animation-play-state:paused; }
+  @media (min-width:640px){
+    .area-rows{ flex-direction:row; flex-wrap:wrap; }
+    .area-row-wrap{ width:auto; overflow:visible; display:contents; }
+    .area-row-track{ width:auto; display:contents; animation:none !important; }
+    .area-row{ display:contents; margin-right:0; }
+    .area-row-dup{ display:none !important; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .area-row-track{ animation:none !important; }
+  }
+  .area-chip{
+    font-family:Archivo, Helvetica Neue, Arial, sans-serif;
+    font-weight:700;
+    font-size:18px;
+    line-height:1;
+    white-space:nowrap;
+    padding:20px 30px;
+    border-radius:999px;
+    transition:transform .15s ease, filter .15s ease;
+  }
+  .area-chip:hover{ transform:translateY(-2px); filter:brightness(1.08); }
+  .area-chip:active{ transform:translateY(0); filter:brightness(.94); }
+  @media (prefers-reduced-motion: reduce){
+    .area-chip{ transition:none; }
+    .area-chip:hover{ transform:none; }
+  }
+
+  /* Area hero: shown when an area page is active */
+  #areaHero{ color:var(--area-ink, var(--ink)); }
+  #areaHero #areaHeroTitle{ font-size:clamp(52px, 11vw, 140px); }
+  #areaHeroClear{ border-color:currentColor; color:inherit; opacity:.8; }
+  #areaHeroClear:hover{ opacity:1; }
 
   /* Route sheet on small screens */
   #routePanel{ transition:transform .34s cubic-bezier(.32,.72,0,1); }
@@ -109,6 +153,18 @@
     </div>
   </header>
 
+  <!-- Area hero: shown only when an area page is active -->
+  <section id="areaHero" class="hidden mx-auto max-w-[1280px] px-5 sm:px-8 pt-8">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div class="min-w-0">
+        <p class="eyebrow mb-2 opacity-80">Area guide</p>
+        <h2 id="areaHeroTitle" class="font-display leading-[0.85] tracking-[-0.02em]">Forest Hill</h2>
+        <p id="areaHeroCount" class="text-[14px] mt-3 opacity-80">&nbsp;</p>
+      </div>
+      <button id="areaHeroClear" class="eyebrow px-4 py-2 rounded-full border transition-opacity shrink-0 mb-2">&larr; All areas</button>
+    </div>
+  </section>
+
   <!-- Intro -->
   <section class="mx-auto max-w-[1280px] px-5 sm:px-8 pt-6">
     <div class="max-w-[62ch]">
@@ -120,35 +176,93 @@
       </p>
     </div>
 
-    <div class="flex flex-wrap items-center gap-2 mt-5">
-      <span class="eyebrow text-faint">Jump to</span>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="elephant">Elephant &amp; Castle</button>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="forest hill">Forest Hill</button>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="brockley">Brockley</button>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="honor oak">Honor Oak</button>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="crystal palace">Crystal Palace</button>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="bankside">Bankside</button>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="blackheath">Blackheath</button>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="camberwell">Camberwell</button>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="catford">Catford</button>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="charlton">Charlton</button>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="deptford">Deptford</button>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="eltham">Eltham</button>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="greenwich">Greenwich</button>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="lee">Lee</button>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="lewisham">Lewisham</button>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="new cross">New Cross</button>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="peckham">Peckham</button>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="nunhead">Nunhead</button>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="rotherhithe">Rotherhithe</button>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="bermondsey">Bermondsey</button>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="walworth">Walworth</button>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="woolwich">Woolwich</button>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="dulwich">Dulwich</button>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="east dulwich">East Dulwich</button>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="sydenham">Sydenham</button>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="bexley">Bexley</button>
-      <button class="chip eyebrow px-3 py-1.5 rounded-full text-muted hover:text-ink hover:border-ink transition-colors" data-area="bexleyheath">Bexleyheath</button>
+    <div class="-mx-5 sm:mx-0 mt-6">
+      <div id="areaChips" class="sm:px-0">
+        <div class="area-rows">
+
+          <div class="area-row-wrap">
+            <div class="area-row-track marquee-left">
+              <div class="area-row">
+                <button class="area-chip" style="background:var(--tomato);color:#fff" data-area="elephant">Elephant &amp; Castle</button>
+                <button class="area-chip" style="background:var(--marigold);color:#171717" data-area="honor oak">Honor Oak</button>
+                <button class="area-chip" style="background:var(--brass);color:#171717" data-area="blackheath">Blackheath</button>
+                <button class="area-chip" style="background:var(--bubblegum);color:#fff" data-area="charlton">Charlton</button>
+                <button class="area-chip" style="background:var(--verdigris);color:#fff" data-area="greenwich">Greenwich</button>
+                <button class="area-chip" style="background:var(--violet);color:#fff" data-area="new cross">New Cross</button>
+                <button class="area-chip" style="background:var(--plaque);color:#fff" data-area="rotherhithe">Rotherhithe</button>
+                <button class="area-chip" style="background:var(--tomato);color:#fff" data-area="woolwich">Woolwich</button>
+                <button class="area-chip" style="background:var(--marigold);color:#171717" data-area="sydenham">Sydenham</button>
+              </div>
+              <div class="area-row area-row-dup" aria-hidden="true">
+                <button class="area-chip" tabindex="-1" style="background:var(--tomato);color:#fff" data-area="elephant">Elephant &amp; Castle</button>
+                <button class="area-chip" tabindex="-1" style="background:var(--marigold);color:#171717" data-area="honor oak">Honor Oak</button>
+                <button class="area-chip" tabindex="-1" style="background:var(--brass);color:#171717" data-area="blackheath">Blackheath</button>
+                <button class="area-chip" tabindex="-1" style="background:var(--bubblegum);color:#fff" data-area="charlton">Charlton</button>
+                <button class="area-chip" tabindex="-1" style="background:var(--verdigris);color:#fff" data-area="greenwich">Greenwich</button>
+                <button class="area-chip" tabindex="-1" style="background:var(--violet);color:#fff" data-area="new cross">New Cross</button>
+                <button class="area-chip" tabindex="-1" style="background:var(--plaque);color:#fff" data-area="rotherhithe">Rotherhithe</button>
+                <button class="area-chip" tabindex="-1" style="background:var(--tomato);color:#fff" data-area="woolwich">Woolwich</button>
+                <button class="area-chip" tabindex="-1" style="background:var(--marigold);color:#171717" data-area="sydenham">Sydenham</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="area-row-wrap">
+            <div class="area-row-track marquee-right">
+              <div class="area-row">
+                <button class="area-chip" style="background:var(--violet);color:#fff" data-area="forest hill">Forest Hill</button>
+                <button class="area-chip" style="background:var(--plaque);color:#fff" data-area="crystal palace">Crystal Palace</button>
+                <button class="area-chip" style="background:var(--tomato);color:#fff" data-area="camberwell">Camberwell</button>
+                <button class="area-chip" style="background:var(--marigold);color:#171717" data-area="deptford">Deptford</button>
+                <button class="area-chip" style="background:var(--brass);color:#171717" data-area="lee">Lee</button>
+                <button class="area-chip" style="background:var(--bubblegum);color:#fff" data-area="peckham">Peckham</button>
+                <button class="area-chip" style="background:var(--verdigris);color:#fff" data-area="bermondsey">Bermondsey</button>
+                <button class="area-chip" style="background:var(--violet);color:#fff" data-area="dulwich">Dulwich</button>
+                <button class="area-chip" style="background:var(--plaque);color:#fff" data-area="bexley">Bexley</button>
+              </div>
+              <div class="area-row area-row-dup" aria-hidden="true">
+                <button class="area-chip" tabindex="-1" style="background:var(--violet);color:#fff" data-area="forest hill">Forest Hill</button>
+                <button class="area-chip" tabindex="-1" style="background:var(--plaque);color:#fff" data-area="crystal palace">Crystal Palace</button>
+                <button class="area-chip" tabindex="-1" style="background:var(--tomato);color:#fff" data-area="camberwell">Camberwell</button>
+                <button class="area-chip" tabindex="-1" style="background:var(--marigold);color:#171717" data-area="deptford">Deptford</button>
+                <button class="area-chip" tabindex="-1" style="background:var(--brass);color:#171717" data-area="lee">Lee</button>
+                <button class="area-chip" tabindex="-1" style="background:var(--bubblegum);color:#fff" data-area="peckham">Peckham</button>
+                <button class="area-chip" tabindex="-1" style="background:var(--verdigris);color:#fff" data-area="bermondsey">Bermondsey</button>
+                <button class="area-chip" tabindex="-1" style="background:var(--violet);color:#fff" data-area="dulwich">Dulwich</button>
+                <button class="area-chip" tabindex="-1" style="background:var(--plaque);color:#fff" data-area="bexley">Bexley</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="area-row-wrap">
+            <div class="area-row-track marquee-left">
+              <div class="area-row">
+                <button class="area-chip" style="background:var(--bubblegum);color:#fff" data-area="brockley">Brockley</button>
+                <button class="area-chip" style="background:var(--verdigris);color:#fff" data-area="bankside">Bankside</button>
+                <button class="area-chip" style="background:var(--violet);color:#fff" data-area="catford">Catford</button>
+                <button class="area-chip" style="background:var(--plaque);color:#fff" data-area="eltham">Eltham</button>
+                <button class="area-chip" style="background:var(--tomato);color:#fff" data-area="lewisham">Lewisham</button>
+                <button class="area-chip" style="background:var(--marigold);color:#171717" data-area="nunhead">Nunhead</button>
+                <button class="area-chip" style="background:var(--brass);color:#171717" data-area="walworth">Walworth</button>
+                <button class="area-chip" style="background:var(--bubblegum);color:#fff" data-area="east dulwich">East Dulwich</button>
+                <button class="area-chip" style="background:var(--verdigris);color:#fff" data-area="bexleyheath">Bexleyheath</button>
+              </div>
+              <div class="area-row area-row-dup" aria-hidden="true">
+                <button class="area-chip" tabindex="-1" style="background:var(--bubblegum);color:#fff" data-area="brockley">Brockley</button>
+                <button class="area-chip" tabindex="-1" style="background:var(--verdigris);color:#fff" data-area="bankside">Bankside</button>
+                <button class="area-chip" tabindex="-1" style="background:var(--violet);color:#fff" data-area="catford">Catford</button>
+                <button class="area-chip" tabindex="-1" style="background:var(--plaque);color:#fff" data-area="eltham">Eltham</button>
+                <button class="area-chip" tabindex="-1" style="background:var(--tomato);color:#fff" data-area="lewisham">Lewisham</button>
+                <button class="area-chip" tabindex="-1" style="background:var(--marigold);color:#171717" data-area="nunhead">Nunhead</button>
+                <button class="area-chip" tabindex="-1" style="background:var(--brass);color:#171717" data-area="walworth">Walworth</button>
+                <button class="area-chip" tabindex="-1" style="background:var(--bubblegum);color:#fff" data-area="east dulwich">East Dulwich</button>
+                <button class="area-chip" tabindex="-1" style="background:var(--verdigris);color:#fff" data-area="bexleyheath">Bexleyheath</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1664,6 +1778,15 @@
 
   document.getElementById('search').addEventListener('input', function (e) {
     filters.q = e.target.value; filters.areaRe = null; renderList();
+    if (new URLSearchParams(location.search).has('area')) {
+      var url = new URL(location.href);
+      url.searchParams.delete('area');
+      history.replaceState({}, '', url);
+      document.title = 'WalkieTalkies';
+      document.documentElement.style.removeProperty('--area-bg');
+      document.documentElement.style.removeProperty('--area-ink');
+      areaHeroEl.classList.add('hidden');
+    }
   });
   document.getElementById('sort').addEventListener('change', function (e) {
     filters.sort = e.target.value; renderList();
@@ -1680,7 +1803,21 @@
 
   function escapeRegExp(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
 
-  function jumpToArea(area) {
+  function areaSlug(area) { return area.toLowerCase().trim().replace(/\s+/g, '-'); }
+  function areaFromSlug(slug) { return slug.toLowerCase().trim().replace(/-+/g, ' '); }
+  function areaTitle(area) { return area.replace(/\b\w/g, function (c) { return c.toUpperCase(); }); }
+
+  var AREA_COLORS = {};
+  Array.prototype.forEach.call(document.querySelectorAll('.area-chip[data-area]'), function (btn) {
+    var area = btn.getAttribute('data-area');
+    if (AREA_COLORS[area]) return;
+    var cs = getComputedStyle(btn);
+    AREA_COLORS[area] = { bg: cs.backgroundColor, fg: cs.color };
+  });
+
+  var areaHeroEl = document.getElementById('areaHero');
+
+  function applyAreaFilter(area, scrollBehavior) {
     filters.q = '';
     filters.areaRe = new RegExp('\\b' + escapeRegExp(area.toLowerCase()) + '\\b');
     filters.cats = [];
@@ -1689,8 +1826,54 @@
       b.setAttribute('aria-pressed', 'false');
     });
     renderList();
-    document.getElementById('list').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.title = areaTitle(area) + ' — WalkieTalkies';
+
+    var c = AREA_COLORS[area.toLowerCase()];
+    if (c) {
+      document.documentElement.style.setProperty('--area-bg', c.bg);
+      document.documentElement.style.setProperty('--area-ink', c.fg);
+    }
+    document.getElementById('areaHeroTitle').textContent = areaTitle(area);
+    document.getElementById('areaHeroCount').textContent = document.getElementById('resultCount').textContent;
+    areaHeroEl.classList.remove('hidden');
+
+    if (scrollBehavior) {
+      document.getElementById('list').scrollIntoView({ behavior: scrollBehavior, block: 'start' });
+    }
   }
+
+  function clearAreaFilter() {
+    filters.q = '';
+    filters.areaRe = null;
+    document.getElementById('search').value = '';
+    renderList();
+    document.title = 'WalkieTalkies';
+    document.documentElement.style.removeProperty('--area-bg');
+    document.documentElement.style.removeProperty('--area-ink');
+    areaHeroEl.classList.add('hidden');
+  }
+
+  function jumpToArea(area) {
+    applyAreaFilter(area, 'smooth');
+    var url = new URL(location.href);
+    url.searchParams.set('area', areaSlug(area));
+    history.pushState({ area: area }, '', url);
+  }
+
+  function exitAreaMode() {
+    clearAreaFilter();
+    var url = new URL(location.href);
+    url.searchParams.delete('area');
+    history.pushState({}, '', url);
+  }
+
+  document.getElementById('areaHeroClear').addEventListener('click', exitAreaMode);
+
+  window.addEventListener('popstate', function () {
+    var slug = new URLSearchParams(location.search).get('area');
+    if (slug) applyAreaFilter(areaFromSlug(slug), false);
+    else clearAreaFilter();
+  });
 
   document.getElementById('clearBtn').addEventListener('click', clearRoute);
 
@@ -1753,5 +1936,10 @@
   --------------------------------------------------------------- */
   renderList();
   renderRoute();
+
+  (function initFromURL() {
+    var slug = new URLSearchParams(location.search).get('area');
+    if (slug) applyAreaFilter(areaFromSlug(slug), 'auto');
+  })();
 })();
 </script>
