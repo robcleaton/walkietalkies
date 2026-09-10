@@ -62,13 +62,38 @@
     outline:2px solid var(--plaque); outline-offset:2px; border-radius:3px;
   }
 
+  /* Masthead: stays put on scroll, content scrolls underneath it */
+  header{ position:sticky; top:0; z-index:30; background:var(--area-bg, var(--ground)); transition:background-color .45s ease; }
+
   /* Gazetteer entries: hairline separated, not stamped cards */
   .stop{ background:var(--surface); border:1px solid var(--rule); border-radius:16px; box-shadow:var(--shadow); }
   .stop.flash{ animation:flash 1.6s ease-out; }
   @keyframes flash{ 0%{ background:var(--plaque-soft);} 100%{ background:var(--surface); } }
 
-  .chip{ border:1px solid var(--rule); }
-  .chip[aria-pressed="true"]{ background:var(--ink); color:var(--ground); border-color:var(--ink); }
+  /* Category filter cards: colour, icon and name, like a small topic tile.
+     Sized and spaced to sit full-width alongside the area chips, not boxed. */
+  .cat-card{
+    display:flex; flex-direction:column; justify-content:space-between; gap:12px;
+    flex:0 0 auto; width:142px;
+    padding:13px 14px 14px; border-radius:18px; text-align:left;
+    transition:transform .15s ease, filter .15s ease, box-shadow .15s ease;
+  }
+  .cat-card__row{ display:flex; align-items:center; justify-content:space-between; gap:6px; }
+  .cat-card__icon{
+    width:32px; height:32px; border-radius:10px; background:rgba(255,255,255,.82);
+    display:inline-flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .cat-card__count{ font-family:"Azeret Mono", ui-monospace, monospace; font-size:12px; opacity:.7; }
+  .cat-card__name{ font-weight:700; font-size:14px; line-height:1.2; letter-spacing:normal; text-transform:none; }
+  .cat-card:hover{ transform:translateY(-2px); filter:brightness(1.06); }
+  .cat-card:active{ transform:translateY(0); filter:brightness(.95); }
+  .cat-card[aria-pressed="true"]{ box-shadow:0 0 0 2px var(--ground), 0 0 0 4px currentColor; transform:translateY(-2px); }
+  #chips{ -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none; }
+  #chips::-webkit-scrollbar{ display:none; }
+  @media (prefers-reduced-motion: reduce){
+    .cat-card{ transition:none; }
+    .cat-card:hover, .cat-card[aria-pressed="true"]{ transform:none; }
+  }
 
   /* Area chips: bold, oversized, 3 independently drifting rows on small screens */
   .area-rows{ display:flex; flex-direction:column; gap:12px; }
@@ -128,6 +153,8 @@
   }
   @media (min-width:1024px){
     #scrim, #routeBar, #sheetClose{ display:none !important; }
+    /* Sit just below the fixed header, not underneath it */
+    #routePanel{ top:calc(var(--header-h, 84px) + 20px); }
   }
   @media (prefers-reduced-motion: reduce){
     #routePanel{ transition:none; }
@@ -141,7 +168,7 @@
 
   <!-- Masthead -->
   <header class="border-b border-rule">
-    <div class="mx-auto max-w-[1280px] px-5 sm:px-8 py-5 flex flex-wrap items-end gap-x-8 gap-y-3">
+    <div class="mx-auto max-w-[1280px] px-5 sm:px-8 py-5 flex flex-wrap items-center gap-x-8 gap-y-3">
       <a href="./" class="flex items-center gap-3 min-w-[240px] hover:opacity-85 transition-opacity" aria-label="WalkieTalkies home">
         <span class="inline-flex items-center justify-center shrink-0 rounded-[11px] w-10 h-10 sm:w-11 sm:h-11" style="background:var(--marigold)">
           <svg viewBox="0 0 256 256" fill="none" aria-hidden="true" class="w-6 h-6 sm:w-[26px] sm:h-[26px]">
@@ -150,23 +177,26 @@
         </span>
         <h1 class="font-logo uppercase text-[32px] sm:text-[38px] leading-[0.95] tracking-[-0.01em]">WalkieTalkies</h1>
       </a>
-      <p class="text-[14px] leading-[1.55] text-muted max-w-[42ch]">
-        Over a hundred historic sites, blue plaques, war memorials, old pubs and public artworks across South East London.
-        Build one route, in the order you&rsquo;ll walk it.
-      </p>
-      <button id="themeToggle" class="ml-auto shrink-0 inline-flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-rule text-muted hover:text-ink hover:border-ink transition-colors" aria-label="Switch colour theme">
-        <svg class="lucide lucide-sun w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="4" />
-          <path d="M12 2v2" />
-          <path d="M12 20v2" />
-          <path d="m4.93 4.93 1.41 1.41" />
-          <path d="m17.66 17.66 1.41 1.41" />
-          <path d="M2 12h2" />
-          <path d="M20 12h2" />
-          <path d="m6.34 17.66-1.41 1.41" />
-          <path d="m19.07 4.93-1.41 1.41" />
-        </svg>
-      </button>
+      <div class="ml-auto flex items-center gap-3">
+        <label class="relative block">
+          <span class="sr-only">Search stops</span>
+          <input id="search" type="search" placeholder="Search a person, place or street&hellip;"
+            class="w-[200px] sm:w-[260px] bg-raised border border-rule rounded-full px-4 py-2.5 text-[14px] placeholder:text-faint text-ink">
+        </label>
+        <button id="themeToggle" class="shrink-0 inline-flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-rule text-muted hover:text-ink hover:border-ink transition-colors" aria-label="Switch colour theme">
+          <svg class="lucide lucide-sun w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2" />
+            <path d="M12 20v2" />
+            <path d="m4.93 4.93 1.41 1.41" />
+            <path d="m17.66 17.66 1.41 1.41" />
+            <path d="M2 12h2" />
+            <path d="M20 12h2" />
+            <path d="m6.34 17.66-1.41 1.41" />
+            <path d="m19.07 4.93-1.41 1.41" />
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -176,13 +206,16 @@
       <p class="eyebrow mb-2 opacity-80">Area guide</p>
       <h2 id="areaHeroTitle" class="font-display leading-[0.85] tracking-[-0.02em]">Forest Hill</h2>
       <p id="areaHeroDesc" class="text-[15px] sm:text-[16px] leading-[1.55] mt-3 max-w-[62ch] opacity-90"></p>
-      <p id="areaHeroPostcodes" class="text-[13px] font-mono uppercase tracking-[0.04em] mt-2 opacity-70"></p>
-      <p id="areaHeroCount" class="text-[14px] mt-3 opacity-80">&nbsp;</p>
+      <div id="areaHeroPostcodes" class="flex flex-wrap items-center gap-1.5 mt-3"></div>
     </div>
   </section>
 
   <!-- Intro -->
   <section class="mx-auto max-w-[1280px] px-5 sm:px-8 pt-6">
+    <p id="homeIntro" class="text-[15px] sm:text-[16px] leading-[1.55] text-muted max-w-[62ch] mb-4">
+      Over a hundred historic sites, blue plaques, war memorials, old pubs and public artworks across South East London.
+      Build one route, in the order you&rsquo;ll walk it.
+    </p>
     <div class="-mx-5 sm:mx-0">
       <div id="areaChips" class="sm:px-0">
         <div class="area-rows">
@@ -273,6 +306,11 @@
     </div>
   </section>
 
+  <!-- Category chips -->
+  <section class="mx-auto max-w-[1280px] pt-6">
+    <div id="chips" class="flex flex-nowrap sm:flex-wrap overflow-x-auto sm:overflow-visible gap-2.5 px-5 sm:px-8 py-2 sm:py-0"></div>
+  </section>
+
   <!-- Gazetteer + route -->
   <main class="mx-auto max-w-[1280px] px-5 sm:px-8 pt-8">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
@@ -281,22 +319,11 @@
       <div class="lg:col-span-8">
         <p class="eyebrow text-faint mb-4" id="resultCount">40 stops</p>
 
-        <div class="bg-surface border border-rule rounded-[18px] p-4 mb-5">
-          <div class="mb-3">
-            <label class="relative block">
-              <span class="sr-only">Search stops</span>
-              <input id="search" type="search" placeholder="Search a person, place or street&hellip;"
-                class="w-full bg-raised border border-rule rounded-full px-4 py-2.5 text-[14px] placeholder:text-faint text-ink">
-            </label>
-          </div>
-          <div id="chips" class="flex flex-wrap gap-1.5"></div>
-        </div>
-
         <div id="list" class="flex flex-col gap-3"></div>
       </div>
 
       <!-- Route -->
-      <aside id="routePanel" class="lg:col-span-4 bg-raised border border-rule rounded-[18px] lg:sticky lg:top-5 flex flex-col overflow-hidden">
+      <aside id="routePanel" class="lg:col-span-4 bg-raised border border-rule rounded-[18px] lg:sticky flex flex-col overflow-hidden">
         <div class="px-5 pt-5 pb-4 border-b border-rule">
           <div class="flex items-start justify-between gap-3">
             <div>
@@ -322,7 +349,7 @@
           </div>
         </div>
 
-        <div id="routeList" class="overflow-y-auto flex-1 min-h-0 max-h-[46vh] lg:max-h-[calc(100vh-360px)]"></div>
+        <div id="routeList" class="overflow-y-auto flex-1 min-h-0 max-h-[46vh] lg:max-h-[calc(100vh-var(--header-h,84px)-360px)]"></div>
 
         <div class="px-5 py-4 border-t border-rule flex flex-col gap-2">
           <a id="mapsLink" href="#" target="_blank" rel="noopener"
@@ -338,6 +365,7 @@
 
     <footer class="mt-10 pt-5 border-t border-rule flex flex-wrap gap-x-6 gap-y-2 items-baseline">
       <p class="eyebrow text-faint">WalkieTalkies &middot; a South East London gazetteer</p>
+      <a href="https://warface.co.uk/" target="_blank" rel="noopener noreferrer" class="eyebrow text-faint hover:text-ink transition-colors">Warface</a>
     </footer>
   </main>
 </div>
@@ -375,15 +403,15 @@
   };
 
   var CATMARK = {
-    plaque:   { color:'var(--plaque)',    icon:'<line x1="12" y1="4" x2="12" y2="20"/><line x1="4" y1="8" x2="20" y2="16"/><line x1="20" y1="8" x2="4" y2="16"/>' },
-    grand:    { color:'var(--marigold)',  icon:'<line x1="12" y1="2" x2="12" y2="7"/><line x1="12" y1="17" x2="12" y2="22"/><line x1="2" y1="12" x2="7" y2="12"/><line x1="17" y1="12" x2="22" y2="12"/><line x1="5.5" y1="5.5" x2="9" y2="9"/><line x1="15" y1="15" x2="18.5" y2="18.5"/><line x1="5.5" y1="18.5" x2="9" y2="15"/><line x1="15" y1="9" x2="18.5" y2="5.5"/>' },
-    maritime: { color:'var(--verdigris)', icon:'<path d="M3,9 Q7,6 11,9 T19,9" fill="none"/><path d="M3,15 Q7,12 11,15 T19,15" fill="none"/>' },
-    works:    { color:'var(--tomato)',    icon:'<line x1="4" y1="20" x2="12" y2="4"/><line x1="10" y1="20" x2="18" y2="4"/><line x1="16" y1="20" x2="24" y2="4"/>' },
-    culture:  { color:'var(--violet)',    icon:'<line x1="7" y1="4" x2="7" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/><line x1="17" y1="4" x2="17" y2="20"/>' },
-    memory:   { color:'var(--violet)',    icon:'<rect x="3" y="17" width="18" height="4" stroke="none"/><rect x="6" y="12" width="12" height="5" stroke="none"/><rect x="9" y="7" width="6" height="5" stroke="none"/>' },
-    green:    { color:'var(--verdigris)', icon:'<circle cx="9" cy="12" r="6" stroke="none"/><circle cx="15" cy="12" r="6" stroke="none"/>' },
-    pub:      { color:'var(--tomato)',    icon:'<rect x="3" y="7" width="18" height="4" rx="2" stroke="none"/><rect x="3" y="15" width="12" height="4" rx="2" stroke="none"/>' },
-    art:      { color:'var(--bubblegum)', icon:'<circle cx="12" cy="12" r="8" fill="none"/><circle cx="12" cy="12" r="3" stroke="none"/>' }
+    plaque:   { color:'var(--plaque)',    fg:'#fff',    icon:'<line x1="12" y1="4" x2="12" y2="20"/><line x1="4" y1="8" x2="20" y2="16"/><line x1="20" y1="8" x2="4" y2="16"/>' },
+    grand:    { color:'var(--marigold)',  fg:'#171717', icon:'<line x1="12" y1="2" x2="12" y2="7"/><line x1="12" y1="17" x2="12" y2="22"/><line x1="2" y1="12" x2="7" y2="12"/><line x1="17" y1="12" x2="22" y2="12"/><line x1="5.5" y1="5.5" x2="9" y2="9"/><line x1="15" y1="15" x2="18.5" y2="18.5"/><line x1="5.5" y1="18.5" x2="9" y2="15"/><line x1="15" y1="9" x2="18.5" y2="5.5"/>' },
+    maritime: { color:'var(--verdigris)', fg:'#fff',    icon:'<path d="M3,9 Q7,6 11,9 T19,9" fill="none"/><path d="M3,15 Q7,12 11,15 T19,15" fill="none"/>' },
+    works:    { color:'var(--tomato)',    fg:'#fff',    icon:'<line x1="4" y1="20" x2="12" y2="4"/><line x1="10" y1="20" x2="18" y2="4"/><line x1="16" y1="20" x2="24" y2="4"/>' },
+    culture:  { color:'var(--violet)',    fg:'#fff',    icon:'<line x1="7" y1="4" x2="7" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/><line x1="17" y1="4" x2="17" y2="20"/>' },
+    memory:   { color:'var(--violet)',    fg:'#fff',    icon:'<rect x="3" y="17" width="18" height="4" stroke="none"/><rect x="6" y="12" width="12" height="5" stroke="none"/><rect x="9" y="7" width="6" height="5" stroke="none"/>' },
+    green:    { color:'var(--verdigris)', fg:'#fff',    icon:'<circle cx="9" cy="12" r="6" stroke="none"/><circle cx="15" cy="12" r="6" stroke="none"/>' },
+    pub:      { color:'var(--tomato)',    fg:'#fff',    icon:'<rect x="3" y="7" width="18" height="4" rx="2" stroke="none"/><rect x="3" y="15" width="12" height="4" rx="2" stroke="none"/>' },
+    art:      { color:'var(--bubblegum)', fg:'#fff',    icon:'<circle cx="12" cy="12" r="8" fill="none"/><circle cx="12" cy="12" r="3" stroke="none"/>' }
   };
 
   function catTile(cat, size) {
@@ -392,6 +420,19 @@
     return '<span class="inline-flex items-center justify-center shrink-0 rounded-[7px]" style="width:' + s + 'px;height:' + s + 'px;background:' + m.color + '">' +
       '<svg viewBox="0 0 24 24" width="' + Math.round(s * 0.68) + '" height="' + Math.round(s * 0.68) + '" fill="#171717" stroke="#171717" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + m.icon + '</svg>' +
     '</span>';
+  }
+
+  function catCard(cat, count) {
+    var m = CATMARK[cat];
+    return '<button class="cat-card" data-cat="' + cat + '" aria-pressed="false" style="background:' + m.color + ';color:' + m.fg + '">' +
+      '<span class="cat-card__row">' +
+        '<span class="cat-card__icon">' +
+          '<svg viewBox="0 0 24 24" width="19" height="19" fill="#171717" stroke="#171717" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + m.icon + '</svg>' +
+        '</span>' +
+        '<span class="cat-card__count">' + count + '</span>' +
+      '</span>' +
+      '<span class="cat-card__name">' + CATS[cat] + '</span>' +
+    '</button>';
   }
 
   var STOPS = [
@@ -480,6 +521,86 @@
       text:'A plaque set flat into the pavement marks the spot where Stephen Lawrence, eighteen years old, was murdered on 22 April 1993 while waiting for a bus home.',
       note:'The Macpherson report of 1999 followed from his family&rsquo;s campaign. It named institutional racism in the Metropolitan Police and led to the end of the double jeopardy rule.' },
 
+    { id:'barlow-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/7/74/John_Collier_-_William_Henry_Barlow.jpg', name:'William Henry Barlow', area:'Charlton', pc:'SE7', cat:'plaque', year:1812, era:'Blue plaque',
+      lat:51.4799, lon:0.0274, addr:'145 Charlton Road, SE7 7EZ',
+      text:'Barlow engineered the Midland Railway&rsquo;s London extension and designed its cathedral-like terminus at St Pancras, its single span then the widest roof in the world.',
+      note:'He also completed Brunel&rsquo;s unfinished Clifton Suspension Bridge after Brunel&rsquo;s death in 1859, working alongside fellow engineer John Hawkshaw.' },
+
+    { id:'day-lewis-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/1968_press_photo_of_Cecil_Day-Lewis.jpg/330px-1968_press_photo_of_Cecil_Day-Lewis.jpg', name:'Cecil Day-Lewis', area:'Greenwich', pc:'SE10', cat:'plaque', year:1904, era:'Blue plaque',
+      lat:51.4775, lon:-0.0075, addr:'6 Croom&rsquo;s Hill, SE10 8HL',
+      text:'Day-Lewis was Poet Laureate from 1968 until his death in 1972, and lived on Croom&rsquo;s Hill for the last years of his life.',
+      note:'He moonlighted for decades as crime writer Nicholas Blake, publishing detective novels under the pseudonym while keeping his poetry and his thrillers carefully separate.' },
+
+    { id:'dyson-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Frank_Watson_Dyson.jpg/330px-Frank_Watson_Dyson.jpg', name:'Sir Frank Dyson', area:'Blackheath', pc:'SE3', cat:'plaque', year:1868, era:'Blue plaque',
+      lat:51.4808, lon:0.0086, addr:'6 Vanbrugh Hill, SE3 7UF',
+      text:'As Astronomer Royal, Dyson introduced the Greenwich time signal &mdash; the BBC&rsquo;s &ldquo;six pips&rdquo; &mdash; to national radio in 1924.',
+      note:'He also organised the 1919 eclipse expeditions that measured starlight bending around the sun, the observation that first confirmed Einstein&rsquo;s general relativity.' },
+
+    { id:'eddington-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Arthur_Stanley_Eddington.jpg/330px-Arthur_Stanley_Eddington.jpg', name:'Sir Arthur Eddington', area:'Blackheath', pc:'SE3', cat:'plaque', year:1882, era:'Blue plaque',
+      lat:51.4653, lon:0.0099, addr:'4 Bennett Park, SE3 9RB',
+      text:'Eddington led one of the 1919 eclipse expeditions &mdash; the one that made him famous overnight for confirming Einstein &mdash; and later foreshadowed the discovery of nuclear fusion in stars.',
+      note:'Asked if he was one of only three people in the world who understood general relativity, he reportedly paused for a long moment and said he was trying to think who the third person was.' },
+
+    { id:'gpo-film-unit-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/GPO_Film_Unit_-_47_Bennett_Park_Blackheath_SE3_-_2.jpg/330px-GPO_Film_Unit_-_47_Bennett_Park_Blackheath_SE3_-_2.jpg', name:'GPO Film Unit', area:'Blackheath', pc:'SE3', cat:'plaque', year:1933, era:'Blue plaque',
+      lat:51.4657, lon:0.0125, addr:'47 Bennett Park, SE3 9RA',
+      text:'The GPO Film Unit, based partly at this address under John Grierson, turned sponsored documentaries about the Post Office into a training ground for British cinema.',
+      note:'Its 1936 short Night Mail set verse by W. H. Auden to a score by Benjamin Britten &mdash; unlikely treatment for a film about a mail train.' },
+
+    { id:'gounod-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Charles_Gounod_-_photogr._Bayard_%26_Bertall_-_btv1b84542916.jpg/330px-Charles_Gounod_-_photogr._Bayard_%26_Bertall_-_btv1b84542916.jpg', name:'Charles Gounod', area:'Blackheath', pc:'SE3', cat:'plaque', year:1870, era:'Blue plaque',
+      lat:51.4677, lon:0.0191, addr:'15 Morden Road, SE3 0AA',
+      text:'Gounod, composer of Faust, fled to London in 1870 when the Franco-Prussian War reached Paris, and stayed in Blackheath for several years.',
+      note:'He conducted his own choral society from here, writing religious music in England before eventually returning to France.' },
+
+    { id:'hawthorne-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Nathaniel_Hawthorne_by_Brady%2C_1860-64.jpg/330px-Nathaniel_Hawthorne_by_Brady%2C_1860-64.jpg', name:'Nathaniel Hawthorne', area:'Blackheath', pc:'SE3', cat:'plaque', year:1804, era:'Blue plaque',
+      lat:51.4656, lon:0.0138, addr:'4 Pond Road, SE3 9JL',
+      text:'The Scarlet Letter&rsquo;s author stayed on Pond Road in 1856 while serving as US consul in Liverpool, using visits to London to escape the port city.',
+      note:'His notebooks from these years were later published as Our Old Home &mdash; a mixed, sometimes prickly account of England from a writer better known for praising it in public than in private.' },
+
+    { id:'lindley-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/William_Lindley.jpg/330px-William_Lindley.jpg', name:'William Lindley &amp; Sir William Heerlein Lindley', area:'Blackheath', pc:'SE3', cat:'plaque', year:1808, era:'Blue plaque',
+      lat:51.4744, lon:0.0235, addr:'74 Shooters Hill, SE3 7BG',
+      text:'Father and son engineered water and sewerage systems for more than thirty cities across Europe, from Hamburg to Warsaw to St Petersburg &mdash; work mostly never seen in Britain at all.',
+      note:'William senior&rsquo;s Hamburg waterworks were credited with helping the city dodge cholera outbreaks that repeatedly devastated less well-drained European ports.' },
+
+    { id:'morrison-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Herbert_Morrison_1947_%28cropped%29.jpg/330px-Herbert_Morrison_1947_%28cropped%29.jpg', name:'Herbert Morrison', area:'Eltham', pc:'SE9', cat:'plaque', year:1888, era:'Blue plaque',
+      lat:51.4541, lon:0.0551, addr:'55 Archery Road, SE9 1HF',
+      text:'Morrison led the London County Council through the 1930s and went on to serve as Home Secretary and Foreign Secretary in successive Labour governments.',
+      note:'His grandson, Peter Mandelson, became a Cabinet minister and EU Commissioner two generations later &mdash; front-bench politics running in the family on an unusual scale.' },
+
+    { id:'chesterfield-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Philip_Dormer_Stanhope%2C_4th_Earl_of_Chesterfield_by_Allan_Ramsay.jpg/330px-Philip_Dormer_Stanhope%2C_4th_Earl_of_Chesterfield_by_Allan_Ramsay.jpg', name:'Philip Stanhope, 4th Earl of Chesterfield', area:'Ranger&rsquo;s House, Chesterfield Walk', pc:'SE10', cat:'plaque', year:1694, era:'Blue plaque, 1937',
+      lat:51.4734, lon:-0.0016, addr:'Ranger&rsquo;s House, Chesterfield Walk, SE10 8QX',
+      text:'Chesterfield, the statesman and letter-writing wit, lived in what is now Ranger&rsquo;s House from 1748 &mdash; over a century before the Georgian villa took the job title it&rsquo;s known by today.',
+      note:'The London County Council put up two separate plaques on this one building in 1937, his and Field Marshal Wolseley&rsquo;s, for two residents a hundred and forty years apart.' },
+
+    { id:'wolseley-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Garnet_Joseph_Wolseley%2C_1st_Viscount_Wolseley_by_William_Lawrence.jpg/330px-Garnet_Joseph_Wolseley%2C_1st_Viscount_Wolseley_by_William_Lawrence.jpg', name:'Garnet Wolseley, 1st Viscount Wolseley', area:'Ranger&rsquo;s House, Chesterfield Walk', pc:'SE10', cat:'plaque', year:1833, era:'Blue plaque, 1937',
+      lat:51.4734, lon:-0.0016, addr:'Ranger&rsquo;s House, Chesterfield Walk, SE10 8QX',
+      text:'Wolseley moved into Ranger&rsquo;s House in 1888 at Queen Victoria&rsquo;s invitation, by then the most decorated general in the British Army after campaigns in Canada, West Africa and Egypt.',
+      note:'His reputation for brisk efficiency made him the model for Gilbert and Sullivan&rsquo;s &ldquo;modern Major-General&rdquo; in The Pirates of Penzance, a joke he reportedly rather enjoyed.' },
+
+    { id:'svevo-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/ItaloSvevo.jpg/330px-ItaloSvevo.jpg', name:'Italo Svevo', area:'Charlton', pc:'SE7', cat:'plaque', year:1861, era:'Blue plaque, lived 1903&ndash;1913',
+      lat:51.4855, lon:0.0330, addr:'67 Charlton Church Lane, SE7 7AB',
+      text:'The Triestine novelist stayed here on business trips for his father-in-law&rsquo;s marine paint company, which ran a factory near Charlton, between 1903 and 1913.',
+      note:'It was in Trieste, around these same years, that Svevo took English lessons from a struggling young writer named James Joyce &mdash; a friendship that later helped get Svevo&rsquo;s novels noticed at all.' },
+
+    { id:'waugh-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/b/b0/BenjaminWaugh2.jpg', name:'Benjamin Waugh', area:'Greenwich', pc:'SE10', cat:'plaque', year:1839, era:'Blue plaque',
+      lat:51.4778, lon:-0.0072, addr:'26 Croom&rsquo;s Hill, SE10 8ER',
+      text:'Waugh founded what became the NSPCC in 1884 and spent the following decades campaigning for Britain&rsquo;s first legislation on children&rsquo;s rights.',
+      note:'He lived to see the 1889 Prevention of Cruelty to Children Act passed &mdash; the law that, for the first time, let the state intervene inside a family home.' },
+
+    { id:'glaisher-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/James_Glaisher.jpg/330px-James_Glaisher.jpg', name:'James Glaisher', area:'Blackheath', pc:'SE10', cat:'plaque', year:1809, era:'Blue plaque',
+      lat:51.4718, lon:-0.0079, addr:'20 Dartmouth Hill, SE10 8AJ',
+      text:'Glaisher made dozens of scientific balloon ascents to measure temperature and humidity at altitude, work that helped found British meteorology.',
+      note:'On an 1862 ascent with Henry Coxwell he passed out above 29,000 feet as the balloon kept climbing; Coxwell, his own hands frozen, pulled the valve cord with his teeth to bring them back down alive.' },
+
+    { id:'ross-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/James_Clark_Ross.jpg/330px-James_Clark_Ross.jpg', name:'Sir James Clark Ross', area:'Blackheath', pc:'SE3', cat:'plaque', year:1800, era:'Blue plaque',
+      lat:51.4676, lon:0.0007, addr:'2 Eliot Place, SE3 0QL',
+      text:'Ross explored both polar regions, locating the North Magnetic Pole in 1831 before leading his own Antarctic expedition from 1839 to 1843.',
+      note:'The Ross Sea, Ross Ice Shelf and Ross Island all take his name from that one voyage &mdash; three separate features on the map from a single expedition.' },
+
+    { id:'mass-observation-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/The_founding_headquarters_of_MASS-OBSERVATION_a_pioneering_social_survey_1937_%E2%80%93_1939.jpg/330px-The_founding_headquarters_of_MASS-OBSERVATION_a_pioneering_social_survey_1937_%E2%80%93_1939.jpg', name:'Mass-Observation', area:'Blackheath', pc:'SE3', cat:'plaque', year:1937, era:'Blue plaque',
+      lat:51.4675, lon:0.0043, addr:'6 Grote&rsquo;s Buildings, SE3 0QG',
+      text:'Mass-Observation recruited around 500 volunteer diarists across Britain from 1937 to record ordinary daily life in unprecedented, unfiltered detail.',
+      note:'Many of those diaries survive in the University of Sussex archive and are still mined by historians for how wartime Britain actually felt from the inside, rather than how it was reported.' },
+
     { id:'blackheath', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Blackheath_village.jpg/330px-Blackheath_village.jpg', name:'Blackheath', area:'Blackheath', pc:'SE3', cat:'memory', year:1381, era:'1381, 1450, 1497',
       lat:51.4676, lon:0.0086, addr:'Blackheath, SE3 0TY',
       text:'Open ground on the road from Kent, and so the natural mustering place for anyone marching on London. Wat Tyler&rsquo;s rebels camped here in June 1381; Jack Cade&rsquo;s men in 1450; Cornish rebels in 1497.',
@@ -490,7 +611,7 @@
       text:'Michael Searles&rsquo;s crescent of seven pairs of houses linked by single-storey Doric colonnades &mdash; a piece of Bath set down on the edge of the heath.',
       note:'Gutted by a flying bomb in 1944 and rebuilt from its own ruins in the 1950s by Charles Bernard Brown, who reused what he could find in the rubble.' },
 
-    { id:'mcgill', name:'Donald McGill', area:'Bennett Park', pc:'SE3', cat:'plaque', year:1875, era:'Blue plaque',
+    { id:'mcgill', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Donald_McGill_-_5_Bennett_Park%2C_Blackheath%2C_SE3.JPG/330px-Donald_McGill_-_5_Bennett_Park%2C_Blackheath%2C_SE3.JPG', name:'Donald McGill', area:'Bennett Park', pc:'SE3', cat:'plaque', year:1875, era:'Blue plaque',
       lat:51.4652, lon:0.0072, addr:'5 Bennett Park, SE3 9RA',
       text:'The saucy seaside postcard was more or less invented at this address. McGill drew around 12,000 designs; they sold by the hundred million.',
       note:'He was prosecuted under the Obscene Publications Act in 1954, aged seventy-nine, and fined £50. George Orwell had already written an essay in his defence.' },
@@ -505,6 +626,16 @@
       text:'The Shackleton family moved to 12 Westwood Hill in 1885. Ernest walked from here to Dulwich College, hated it, and went to sea at sixteen.',
       note:'The famous &ldquo;Men wanted for hazardous journey&rdquo; advertisement is almost certainly apocryphal. The Endurance did sail with a stowaway, Perce Blackborow, who was kept on as steward.' },
 
+    { id:'baird-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/John_Logie_Baird_in_1917.jpg/330px-John_Logie_Baird_in_1917.jpg', name:'John Logie Baird', area:'Sydenham', pc:'SE26', cat:'plaque', year:1888, era:'Blue plaque',
+      lat:51.4333, lon:-0.0734, addr:'3 Crescent Wood Road, SE26 6RT',
+      text:'Baird lived here while developing the mechanical television system he first demonstrated publicly in a Soho attic in January 1926.',
+      note:'His early receivers used a spinning cardboard disc and a knitting needle; within two years he had also demonstrated colour television and an early videodisc recording.' },
+
+    { id:'pettit-smith-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Francis_Pettit_Smith.jpg/330px-Francis_Pettit_Smith.jpg', name:'Sir Francis Pettit Smith', area:'Sydenham', pc:'SE26', cat:'plaque', year:1808, era:'Blue plaque',
+      lat:51.4284, lon:-0.0754, addr:'Fountain House, 17 Sydenham Hill, SE26 6SH',
+      text:'Smith patented the screw propeller in 1836 and drove the construction of the SS Archimedes, the first ship built specifically to prove it worked.',
+      note:'The Archimedes toured British ports as a demonstration and reportedly persuaded Brunel to abandon paddle wheels and refit the SS Great Britain with a screw propeller instead.' },
+
     { id:'dinosaurs', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Mantellodon_in_Crystal_Palace_Park.jpg/330px-Mantellodon_in_Crystal_Palace_Park.jpg', name:'Crystal Palace Dinosaurs', area:'Crystal Palace Park', pc:'SE19', cat:'works', year:1854, era:'Unveiled 1854',
       lat:51.4184, lon:-0.0654, addr:'Crystal Palace Park, SE19 2GA',
       text:'The first attempt anywhere to reconstruct extinct animals at full size &mdash; thirty concrete beasts by Benjamin Waterhouse Hawkins, advised by Richard Owen, who had coined the word dinosaur.',
@@ -514,6 +645,21 @@
       lat:51.4222, lon:-0.0723, addr:'Crystal Palace Parade, SE19 2GA',
       text:'Paxton&rsquo;s Great Exhibition building was taken down in Hyde Park, enlarged, and re-erected on this ridge. It burned down in a single night in November 1936.',
       note:'What is left is the earthwork: Italianate terraces, broken flights of steps, and a row of sphinxes. The glow of the fire was visible from Brighton.' },
+
+    { id:'besant-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Annie_Besant_-_portrait.jpg/330px-Annie_Besant_-_portrait.jpg', name:'Annie Besant', area:'Gipsy Hill', pc:'SE19', cat:'plaque', year:1847, era:'Blue plaque',
+      lat:51.4241, lon:-0.0814, addr:'39 Colby Road, SE19 1HA',
+      text:'Besant lived here in 1874, early in a career that ran from socialist campaigning to theosophy to the presidency of the Indian National Congress in 1917.',
+      note:'She was the first woman to hold that Congress presidency, and spent her final decades in India campaigning for home rule alongside the causes she&rsquo;d taken up in London.' },
+
+    { id:'leslie-howard-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Leslie_Howard_GWTW.jpg/330px-Leslie_Howard_GWTW.jpg', name:'Leslie Howard', area:'Upper Norwood', pc:'SE19', cat:'plaque', year:1893, era:'Blue plaque',
+      lat:51.4221, lon:-0.0789, addr:'45 Farquhar Road, SE19 1SS',
+      text:'Howard played Ashley Wilkes in Gone with the Wind and was one of the most bankable British actors of the 1930s, working across both London and Hollywood.',
+      note:'He was killed in 1943 when a civilian airliner he was travelling on was shot down over the Bay of Biscay &mdash; a loss some historians still attribute to the Luftwaffe mistaking his flight for Churchill&rsquo;s.' },
+
+    { id:'lockwood-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Margaret_Lockwood_1940_U.S._press_photo.jpg/330px-Margaret_Lockwood_1940_U.S._press_photo.jpg', name:'Margaret Lockwood', area:'Upper Norwood', pc:'SE19', cat:'plaque', year:1916, era:'Blue plaque',
+      lat:51.4214, lon:-0.0856, addr:'14 Highland Road, SE19 1DP',
+      text:'Lockwood was one of Britain&rsquo;s most popular film stars of the 1930s and 40s, starring in The Lady Vanishes and The Wicked Lady.',
+      note:'At her commercial peak during the war, she was reportedly Britain&rsquo;s highest-paid film actress, more bankable at the domestic box office than any Hollywood import.' },
 
     { id:'dulwich-gallery', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Dulwich_Picture_Gallery%2C_main_entrance.JPG/330px-Dulwich_Picture_Gallery%2C_main_entrance.JPG', name:'Dulwich Picture Gallery', area:'Dulwich Village', pc:'SE21', cat:'culture', year:1817, era:'Opened 1817',
       lat:51.4459, lon:-0.0872, addr:'Gallery Road, SE21 7AD',
@@ -525,10 +671,30 @@
       text:'Edward Alleyn, the great actor of Marlowe&rsquo;s leading roles and part-owner of the Rose, spent his theatrical fortune on a school and almshouse here in 1619.',
       note:'The college archive holds Philip Henslowe&rsquo;s papers &mdash; including the 1598 property list for the Rose, which itemises &ldquo;j Hell mought&rdquo;: one mouth of Hell.' },
 
+    { id:'joan-clarke-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/JOAN_CLARKE_-_193_Rosendale_Road_West_Dulwich_London_SE21_8LW.jpg/330px-JOAN_CLARKE_-_193_Rosendale_Road_West_Dulwich_London_SE21_8LW.jpg', name:'Joan Clarke', area:'West Dulwich', pc:'SE21', cat:'plaque', year:1917, era:'Blue plaque',
+      lat:51.4436, lon:-0.0979, addr:'193 Rosendale Road, SE21 8LW',
+      text:'Clarke worked as a senior cryptanalyst in Hut 8 at Bletchley Park, one of very few women given that rank, helping break the German naval Enigma cipher.',
+      note:'She was briefly engaged to Alan Turing in 1941; both later described it, without acrimony, as a mismatch neither had really been suited to.' },
+
+    { id:'durrell-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/9/9d/Gerald_Durrell%2C_Askania_Nova_%28cropped%29.jpg', name:'Gerald Durrell', area:'Dulwich', pc:'SE21', cat:'plaque', year:1925, era:'Blue plaque',
+      lat:51.4346, lon:-0.0865, addr:'43 Alleyn Park, SE21 8AT',
+      text:'Durrell lived here as a young child before his family&rsquo;s move to Corfu in 1935 &mdash; the years he later mythologised in My Family and Other Animals.',
+      note:'He went on to found Jersey Zoo specifically to breed endangered species for reintroduction, at a time when most zoos still existed mainly to display animals rather than save them.' },
+
     { id:'blyton', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Enid_Blyton_c._1923.jpg/330px-Enid_Blyton_c._1923.jpg', name:'Enid Blyton', area:'East Dulwich', pc:'SE22', cat:'plaque', year:1897, era:'Blue plaque',
       lat:51.4471, lon:-0.0710, addr:'354 Lordship Lane, SE22 8LZ',
       text:'Blyton was born in a flat above a shop on Lordship Lane in August 1897 &mdash; a plainer beginning than the sunlit countryside of the books suggests.',
       note:'She published around 700 titles. At her peak she wrote 10,000 words a day, typewriter balanced on her knee, a shawl over the keys.' },
+
+    { id:'forester-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/C._S._Forester_in_1939.jpg/330px-C._S._Forester_in_1939.jpg', name:'C. S. Forester', area:'East Dulwich', pc:'SE22', cat:'plaque', year:1899, era:'Blue plaque',
+      lat:51.4455, lon:-0.0652, addr:'58 Underhill Road, SE22 0QT',
+      text:'Forester, born Cecil Louis Troughton Smith, wrote the twelve-volume Hornblower series charting one fictional Royal Navy officer&rsquo;s career through the Napoleonic Wars.',
+      note:'Two of the novels, A Ship of the Line and Flying Colours, jointly won the James Tait Black Memorial Prize in 1938 &mdash; a rare case of genre adventure fiction taking a serious literary award.' },
+
+    { id:'cotton-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Henry_Cotton_golf_1931b.jpg/330px-Henry_Cotton_golf_1931b.jpg', name:'Henry Cotton', area:'East Dulwich', pc:'SE22', cat:'plaque', year:1907, era:'Blue plaque',
+      lat:51.4592, lon:-0.0710, addr:'47 Crystal Palace Road, SE22 9EX',
+      text:'Cotton won the Open Championship three times, in 1934, 1937 and 1948, and was the dominant British golfer of his generation.',
+      note:'His 1934 win ended a run of American victories in the Championship stretching back a decade.' },
 
     { id:'karloff', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Frankenstein%27s_monster_%28Boris_Karloff%29.jpg/330px-Frankenstein%27s_monster_%28Boris_Karloff%29.jpg', name:'Boris Karloff', area:'East Dulwich', pc:'SE22', cat:'plaque', year:1887, era:'Blue plaque',
       lat:51.4553, lon:-0.0672, addr:'36 Forest Hill Road, SE22 0RR',
@@ -570,6 +736,11 @@
       text:'The Mayflower left Rotherhithe in July 1620 to collect her passengers downriver. Her master, Christopher Jones, came home, died within two years and is buried in this churchyard.',
       note:'The ship was broken up here in 1624. The church&rsquo;s communion table is said to be made from her timbers.' },
 
+    { id:'ada-salter-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Ada_Salter.jpg/330px-Ada_Salter.jpg', name:'Ada Salter', area:'Rotherhithe', pc:'SE16', cat:'plaque', year:1866, era:'Blue plaque',
+      lat:51.4944, lon:-0.0498, addr:'149 Lower Road, SE16 2XL',
+      text:'Salter became the first woman mayor of a London borough, and the first Labour woman mayor anywhere in Britain, when Bermondsey elected her in 1922.',
+      note:'Her husband Alfred Salter, already remembered elsewhere in this gazetteer for the statues outside Bermondsey&rsquo;s riverside church, shared her Quaker politics and her long campaign to green and rehouse the borough.' },
+
     { id:'salter', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Facade_of_St_Mary_Magdalen%27s_church%2C_Bermondsey_-_London_-_England_2024.jpg/330px-Facade_of_St_Mary_Magdalen%27s_church%2C_Bermondsey_-_London_-_England_2024.jpg', name:'Dr Salter&rsquo;s Daydream', area:'Bermondsey Wall East', pc:'SE16', cat:'memory', year:1922, era:'Statues, riverside',
       lat:51.5015, lon:-0.0645, addr:'Bermondsey Wall East, SE16 4TX',
       text:'Alfred and Ada Salter rebuilt Bermondsey between the wars with clean water, solaria, health visitors and 9,000 street trees. Ada was the first woman mayor of a London borough.',
@@ -589,6 +760,11 @@
       lat:51.4576, lon:0.1259, addr:'Red House Lane, DA6 8JF',
       text:'Philip Webb built it for William Morris and his new wife: red brick left bare, a well in the yard, nothing pretending to be anything else. The Arts and Crafts movement effectively begins in this house.',
       note:'Morris founded his decorating firm in 1861 largely because he could not buy furnishings good enough to put in it.' },
+
+    { id:'morris-webb-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/2/27/Philip_Speakman_Webb.jpg', name:'William Morris &amp; Philip Webb', area:'Bexleyheath', pc:'DA6', cat:'plaque', year:1859, era:'Blue plaque',
+      lat:51.4576, lon:0.1259, addr:'Red House Lane, DA6 8JF',
+      text:'A blue plaque on Red House itself, already in this gazetteer for the building, separately commemorates the two men who made it: Morris, who commissioned it as a home, and Webb, the architect who designed it.',
+      note:'Webb went on to be called the father of Arts and Crafts architecture; this was his first major commission, built for a friend rather than a client.' },
 
     { id:'hall-place', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/HallPlace.jpg/330px-HallPlace.jpg', name:'Hall Place', area:'Bexley', pc:'DA5', cat:'grand', year:1537, era:'1537 &amp; 1650s',
       lat:51.4471, lon:0.1475, addr:'Bourne Road, DA5 1PQ',
@@ -620,7 +796,7 @@
       text:'Built as the tap room for the Anchor Brewery, on the site where Shakespeare&rsquo;s first Globe stood before it burned down in 1613. Samuel Pepys is thought to have watched the Great Fire of London from a Bankside alehouse nearby in 1666.',
       note:'Early nineteenth-century repairs uncovered hidden cavities behind an oak beam, probably used by river smugglers to stash contraband landed here at low tide.' },
 
-    { id:'old-thameside-inn', name:'The Old Thameside Inn', area:'Clink Street', pc:'SE1', cat:'pub', year:1980, era:'Warehouse to pub, 1980s',
+    { id:'old-thameside-inn', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Old_Thameside_Inn%2C_Bankside%2C_SE1.jpg/330px-Old_Thameside_Inn%2C_Bankside%2C_SE1.jpg', name:'The Old Thameside Inn', area:'Clink Street', pc:'SE1', cat:'pub', year:1980, era:'Warehouse to pub, 1980s',
       lat:51.5069, lon:-0.0913, addr:'Pickfords Wharf, Clink Street, SE1 9DG',
       text:'A former spice warehouse on Pickfords Wharf, converted into a pub within sight of wharves that have worked this stretch of river since the sixteenth century.',
       note:'It stands beside the Clink, the Bishop of Winchester&rsquo;s private prison &mdash; a site that has held a jail, on and off, since the ninth century, and given the language its word for a lock-up.' },
@@ -645,12 +821,12 @@
       text:'Unwin bought a controlling interest in the publisher George Allen &amp; Sons in 1914 and renamed it George Allen &amp; Unwin. In 1936 he had his ten-year-old son read a manuscript by an Oxford don and paid him a shilling for a verdict on it.',
       note:'The manuscript was The Hobbit. The boy liked it, and Unwin published J.R.R. Tolkien largely on the strength of that shilling report.' },
 
-    { id:'dowson-greening', name:'Ernest Dowson &amp; Edward Owen Greening', area:'Belmont Grove, Lewisham', pc:'SE13', cat:'plaque', year:1867, era:'Shared plaque',
+    { id:'dowson-greening', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Dowson_Court_Belmont_Grove_Blackheath_London_SE13_5DT.jpg/330px-Dowson_Court_Belmont_Grove_Blackheath_London_SE13_5DT.jpg', name:'Ernest Dowson &amp; Edward Owen Greening', area:'Belmont Grove, Lewisham', pc:'SE13', cat:'plaque', year:1867, era:'Shared plaque',
       lat:51.4643, lon:-0.0084, addr:'Dowson Court, Belmont Grove, SE13 5AU',
       text:'A single plaque for two very different Lewisham men: Dowson, the decadent poet who gave English the phrases &ldquo;days of wine and roses&rdquo; and &ldquo;gone with the wind&rdquo; before dying at thirty-two, and Greening, a lifelong evangelist for the co-operative movement.',
       note:'Dowson&rsquo;s most quoted line &mdash; &ldquo;I have been faithful to thee, Cynara, in my fashion&rdquo; &mdash; supplied both a Cole Porter lyric and the title of Gone with the Wind.' },
 
-    { id:'leland-duncan', name:'Leland Lewis Duncan', area:'Lewisham', pc:'SE13', cat:'plaque', year:1862, era:'Blue plaque',
+    { id:'leland-duncan', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Leland_Lewis_Duncan_house_-_8_Lingards_Road_Lewisham_London_SE13_6DH.jpg/330px-Leland_Lewis_Duncan_house_-_8_Lingards_Road_Lewisham_London_SE13_6DH.jpg', name:'Leland Lewis Duncan', area:'Lewisham', pc:'SE13', cat:'plaque', year:1862, era:'Blue plaque',
       lat:51.4600, lon:-0.0138, addr:'8 Lingards Road, SE13 6QG',
       text:'A civil servant by day, Duncan spent his evenings indexing wills at Somerset House and researching the borough he lived in. His History of Lewisham Parish, published in 1908, remains a primary source for local historians.',
       note:'He also transcribed monumental inscriptions in dozens of Kent churchyards before their headstones weathered past reading &mdash; unpaid, exhaustive work that still underpins the borough archive today.' },
@@ -675,7 +851,7 @@
       text:'Karl Marx&rsquo;s youngest daughter bought this house with money left to her by Friedrich Engels and spent her last years here organising for the dockers&rsquo; and gasworkers&rsquo; unions and for women&rsquo;s suffrage.',
       note:'She wrote to her sister that she was &ldquo;Jewishly proud&rdquo; of the address. She died at the house in 1898, poisoned by prussic acid, in circumstances biographers still argue over.' },
 
-    { id:'greyhound-sydenham', name:'The Greyhound', area:'Sydenham', pc:'SE26', cat:'pub', year:1720, era:'Trading since c.1720',
+    { id:'greyhound-sydenham', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/The_Greyhound%2C_Sydenham.jpg/330px-The_Greyhound%2C_Sydenham.jpg', name:'The Greyhound', area:'Sydenham', pc:'SE26', cat:'pub', year:1720, era:'Trading since c.1720',
       lat:51.4247, lon:-0.0538, addr:'2 Sydenham Road, SE26 5SE',
       text:'An inn has stood here since at least 1713; Joseph Hyde, the first landlord on record, is named in 1726, the year before the name Greyhound is first used for it.',
       note:'It traded for two centuries as a coaching stop on the road up from Sydenham Wells, a once-fashionable spa whose spring water was said to cure everything from gout to melancholy.' },
@@ -700,7 +876,7 @@
       text:'Southwark&rsquo;s own plaque scheme marks the house where Mary Wollstonecraft lived in 1788, having crossed the river to be near her publisher after losing work as a governess in Ireland.',
       note:'It was unveiled in 2004 by her biographer Claire Tomalin &mdash; sixteen years before a bronze likeness in Newington Green stirred national argument over how to depict her at all.' },
 
-    { id:'rose-theatre', name:'The Rose Theatre', area:'Park Street, Bankside', pc:'SE1', cat:'culture', year:1587, era:'Built 1587',
+    { id:'rose-theatre', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Site_of_The_Rose_Theatre_-_56_Park_Street_Southwark_London_SE1.jpg/330px-Site_of_The_Rose_Theatre_-_56_Park_Street_Southwark_London_SE1.jpg', name:'The Rose Theatre', area:'Park Street, Bankside', pc:'SE1', cat:'culture', year:1587, era:'Built 1587',
       lat:51.5075, lon:-0.0965, addr:'56 Park Street, SE1 9AR',
       text:'The first Elizabethan playhouse on Bankside, raised five years before the Globe and staging early work by Marlowe and Shakespeare. Its foundations turned up in 1989, during an office redevelopment that nearly built straight over them.',
       note:'Public pressure over the discovery held the builders up for months. The waterlogged remains are still there, lit red, in the basement of the office block that finally went up on top.' },
@@ -740,6 +916,11 @@
       text:'A Southwark Council plaque on the market gate marks the street where Charlie Chaplin was born in 1889 and spent his first years, son of music-hall performers Charles Chaplin Sr and Hannah Hill.',
       note:'No birth certificate has ever turned up. The plaque marks a long local tradition rather than a verified address &mdash; Southwark backed the tradition anyway.' },
 
+    { id:'drysdale-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Margaret_Sanger_and_Charles_V._Drysdale_cph.3b18067.jpg/330px-Margaret_Sanger_and_Charles_V._Drysdale_cph.3b18067.jpg', name:'Dr Charles Vickery Drysdale', area:'Walworth', pc:'SE17', cat:'plaque', year:1874, era:'Blue plaque',
+      lat:51.4895, lon:-0.0879, addr:'153a East Street, SE17 2SD',
+      text:'Drysdale opened Britain&rsquo;s second birth control clinic at this address in 1921, and went on to co-found the Family Planning Association in 1930.',
+      note:'He was also a working electrical engineer who invented the phase-shifting transformer and served as vice-president of the Institute of Physics &mdash; a scientific career running in parallel with the reform campaigning.' },
+
     { id:'phyllis-pearsall', img:'https://upload.wikimedia.org/wikipedia/commons/7/7f/London_A_-_Z_-_street_atlas_book_cover.png', name:'Phyllis Pearsall', area:'Court Lane Gardens, East Dulwich', pc:'SE22', cat:'plaque', year:1906, era:'Blue plaque, unveiled 2005',
       lat:51.4515, lon:-0.0800, addr:'Court Lane Gardens, SE22',
       text:'Marks the birthplace, in 1906, of the woman who said she walked 3,000 miles of London streets to hand-draw the first A&ndash;Z after getting lost on the way to a party.',
@@ -755,7 +936,7 @@
       text:'Founded by the philanthropist William Rossiter to &ldquo;bring art to the people of south London,&rdquo; it grew out of a free library and art gallery he ran from a Blackfriars Road working men&rsquo;s college.',
       note:'It now runs across three borrowed sites &mdash; the original 1891 building, a converted 1867 fire station next door, and a garden space on the Sceaux Gardens estate.' },
 
-    { id:'bold-tendencies', name:'Bold Tendencies', area:'Rye Lane, Peckham', pc:'SE15', cat:'art', year:2007, era:'Founded 2007',
+    { id:'bold-tendencies', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Frank%27s_Caf%C3%A9%2C_Peckham_-_geograph.org.uk_-_6238619.jpg/330px-Frank%27s_Caf%C3%A9%2C_Peckham_-_geograph.org.uk_-_6238619.jpg', name:'Bold Tendencies', area:'Rye Lane, Peckham', pc:'SE15', cat:'art', year:2007, era:'Founded 2007',
       lat:51.4706, lon:-0.0693, addr:'Multi-storey car park, 95a Rye Lane, SE15 4ST',
       text:'A twenty-three-year-old art history graduate, Hannah Barry, talked her way onto the roof of a derelict 1982 Sainsbury&rsquo;s car park and started staging sculpture and performance there with no funding and no permission to stay.',
       note:'A five-thousand-name community petition in 2017 persuaded the council to drop the car park from its redevelopment plans entirely &mdash; the temporary use won outright over demolition.' },
@@ -765,12 +946,12 @@
       text:'Jay Jopling, who founded White Cube in 1993, converted a 1970s warehouse into Europe&rsquo;s biggest commercial gallery &mdash; over 5,000 square metres, including a naturally lit double-height room nicknamed the &ldquo;9x9x9.&rdquo;',
       note:'It opened by pairing Damien Hirst with the photographer Andreas Gursky &mdash; fitting, since Hirst is the artist most responsible for Bermondsey&rsquo;s gallery boom in the first place.' },
 
-    { id:'blake-peckham-rye', name:'William Blake&rsquo;s vision', area:'Peckham Rye Common', pc:'SE15', cat:'art', year:1765, era:'Vision recorded 1765',
+    { id:'blake-peckham-rye', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Peckham_Rye_Common_-_geograph.org.uk_-_5584059.jpg/330px-Peckham_Rye_Common_-_geograph.org.uk_-_5584059.jpg', name:'William Blake&rsquo;s vision', area:'Peckham Rye Common', pc:'SE15', cat:'art', year:1765, era:'Vision recorded 1765',
       lat:51.4559, lon:-0.0634, addr:'Peckham Rye Common, near Colyton Road, SE15',
       text:'Blake&rsquo;s first biographer records that the poet, aged eight, saw &ldquo;a tree filled with angels, bright angelic wings bespangling every bough like stars&rdquo; on his favourite walk out to Peckham Rye &mdash; the first of the childhood visions that shaped his art.',
       note:'The actual oak Blake may have seen is long gone. The tree marking the spot today was replanted in 2011, specifically to give the story a living marker again.' },
 
-    { id:'dilston-grove', name:'Dilston Grove', area:'Southwark Park, Rotherhithe', pc:'SE16', cat:'art', year:1911, era:'Rebuilt 1911, gallery since 1999',
+    { id:'dilston-grove', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Dilston_Grove_%28former_church%29_-_geograph.org.uk_-_4487372.jpg/330px-Dilston_Grove_%28former_church%29_-_geograph.org.uk_-_4487372.jpg', name:'Dilston Grove', area:'Southwark Park, Rotherhithe', pc:'SE16', cat:'art', year:1911, era:'Rebuilt 1911, gallery since 1999',
       lat:51.4939, lon:-0.0508, addr:'Southwark Park, SE16 2UA',
       text:'Built for a Cambridge college mission in one of the poorest parishes in London, this is thought to be the first poured-concrete building in England &mdash; called &ldquo;the finest modern church in South London&rdquo; when it opened.',
       note:'It stood derelict from the 1950s, used informally as sculpture studios by Royal College of Art students, before being converted into a public gallery in 1999.' },
@@ -780,7 +961,7 @@
       text:'A group of artists converted a Deptford Creek warehouse into forty-two studios and a public gallery, keeping the working sculpture yard and a stretch of the creek&rsquo;s edge as part of the site.',
       note:'Its open-submission Creekside Open, running since 2005, is one of the most competitive annual shows for London artists &mdash; and the neighbourhood also hosts Deptford X, London&rsquo;s longest-running artist-led festival, founded in 1998.' },
 
-    { id:'freeze-exhibition', name:'Site of &ldquo;Freeze&rdquo;', area:'Surrey Docks', pc:'SE16', cat:'art', year:1988, era:'Held summer 1988',
+    { id:'freeze-exhibition', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Surrey_Quays_Road_by_former_dock_offices_-_geograph.org.uk_-_6112428.jpg/330px-Surrey_Quays_Road_by_former_dock_offices_-_geograph.org.uk_-_6112428.jpg', name:'Site of &ldquo;Freeze&rdquo;', area:'Surrey Docks', pc:'SE16', cat:'art', year:1988, era:'Held summer 1988',
       lat:51.4930, lon:-0.0483, addr:'Surrey Docks Road, SE16 &mdash; the dockside building itself no longer stands',
       text:'Damien Hirst, then a second-year Goldsmiths student, borrowed an empty Port of London Authority building here for a self-curated show of his own generation: Sarah Lucas, Gary Hume, Michael Landy, Angus Fairhurst and Fiona Rae among them, several taught by Michael Craig-Martin at the college up the road in New Cross.',
       note:'&ldquo;Freeze&rdquo; is now treated as the founding moment of the Young British Artists. The building is gone, so the story now lives only in the docklands street it once stood on.' },
@@ -820,22 +1001,22 @@
       text:'Serge Attukwei Clottey&rsquo;s five-and-a-half-metre totem is built from cubes of reclaimed timber, including planks from Ghanaian fishing boats &mdash; a material history of trade routes running down the same meridian this trail follows.',
       note:'Clottey is best known for stitching sculptures from cut-up yellow plastic jerry cans; this piece swapped plastic for salvaged wood, the first time he had built at this scale in timber.' },
 
-    { id:'assembly-woolwich', name:'Assembly', area:'Royal Arsenal Riverside', pc:'SE18', cat:'art', year:2001, era:'Cast 2001, installed 2009',
+    { id:'assembly-woolwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/%22Assembly%22%2C_by_Peter_Burke%2C_Woolwich_Arsenal_%28geograph_2293655%29.jpg/330px-%22Assembly%22%2C_by_Peter_Burke%2C_Woolwich_Arsenal_%28geograph_2293655%29.jpg', name:'Assembly', area:'Royal Arsenal Riverside', pc:'SE18', cat:'art', year:2001, era:'Cast 2001, installed 2009',
       lat:51.4913, lon:0.0685, addr:'Beside Woolwich Arsenal Pier, SE18 6ND',
       text:'Peter Burke&rsquo;s sixteen larger-than-life cast-iron figures, deliberately repeated and industrially finished, stand as a tribute to the munitions workers once employed a few yards from here.',
       note:'The figures were cast in 2001 but sat in storage for eight years before the council finally erected them on this spot in 2009.' },
 
-    { id:'portage-charlton', name:'Portage', area:'Charlton House Peace Garden', pc:'SE7', cat:'art', year:2006, era:'Unveiled 2006',
+    { id:'portage-charlton', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Charlton_House%2C_Peace_Garden%2C_Portage%27_sculpture.jpg/330px-Charlton_House%2C_Peace_Garden%2C_Portage%27_sculpture.jpg', name:'Portage', area:'Charlton House Peace Garden', pc:'SE7', cat:'art', year:2006, era:'Unveiled 2006',
       lat:51.4818, lon:0.0338, addr:'Peace Garden, Charlton House grounds, SE7 8RE',
       text:'Margaret Higginson&rsquo;s bronze, inspired by Amnesty International&rsquo;s campaign against violence towards women, stands in the walled garden of the Jacobean house next door.',
       note:'It shares grounds with a mulberry tree planted around 1608 for James I&rsquo;s failed silk-industry scheme &mdash; the newest and oldest things on the site are metres apart.' },
 
-    { id:'the-picnic-lewisham', name:'The Picnic', area:'Conington Road, Lewisham', pc:'SE13', cat:'art', year:1988, era:'Installed 1988',
+    { id:'the-picnic-lewisham', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Gerda_Rubinstein_1993.jpg/330px-Gerda_Rubinstein_1993.jpg', name:'The Picnic', area:'Conington Road, Lewisham', pc:'SE13', cat:'art', year:1988, era:'Installed 1988',
       lat:51.4640, lon:-0.0140, addr:'Conington Road, SE13 7LG',
       text:'Gerda Rubinstein &mdash; a Dutch-Jewish sculptor who survived the Holocaust as a child before settling in London &mdash; cast this bronze group of ordinary Lewisham figures sharing a meal, part of a wave of 1980s public-realm commissions.',
       note:'Rubinstein said she sculpted ordinary domestic life partly because she had seen so little of it as a child.' },
 
-    { id:'pensive-girl-catford', name:'Pensive Girl', area:'Outside the Old Town Hall, Catford', pc:'SE6', cat:'art', year:1992, era:'Installed 1992',
+    { id:'pensive-girl-catford', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Pensive_Girl%2C_by_Gerda_Rubinstein.jpg/330px-Pensive_Girl%2C_by_Gerda_Rubinstein.jpg', name:'Pensive Girl', area:'Outside the Old Town Hall, Catford', pc:'SE6', cat:'art', year:1992, era:'Installed 1992',
       lat:51.4453, lon:-0.0213, addr:'Rushey Green, outside the Old Town Hall, SE6 4RU',
       text:'Also by Gerda Rubinstein: a seated bronze woman, life-sized, looking down in thought on the lawn outside Lewisham&rsquo;s Edwardian Old Town Hall.',
       note:'It is one of two Rubinstein bronzes in the borough &mdash; a rare case of one sculptor given two separate public commissions streets apart.' },
@@ -845,7 +1026,7 @@
       text:'Founded by the London County Council in 1898, the school became, under principal William Johnstone from 1938, the base for the &ldquo;Camberwell School&rdquo; &mdash; Victor Pasmore, William Coldstream and Claude Rogers regrouping here, and training Terry Frost, Euan Uglow and Gillian Ayres.',
       note:'It is now part of University of the Arts London, but its postwar reputation was built almost entirely inside this one Peckham Road building.' },
 
-    { id:'albert-mckenzie-vc', name:'Albert McKenzie VC', area:'Tower Bridge Road, Bermondsey', pc:'SE1', cat:'memory', year:1918, era:'Unveiled 2015',
+    { id:'albert-mckenzie-vc', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Albert_Edward_Mckenzie_statue.jpg/330px-Albert_Edward_Mckenzie_statue.jpg', name:'Albert McKenzie VC', area:'Tower Bridge Road, Bermondsey', pc:'SE1', cat:'memory', year:1918, era:'Unveiled 2015',
       lat:51.4970, lon:-0.0805, addr:'Tower Bridge Road at Grange Road, SE1 4TU',
       text:'A bronze statue on a plinth shaped to evoke the Zeebrugge harbour wall commemorates Albert McKenzie, an eighteen-year-old Bermondsey sailor awarded the Victoria Cross for a 1918 raid on the Belgian coast &mdash; voted for by his own crewmates, under a since-discontinued rule allowing sailors to nominate one of their own. He died of influenza the following year, aged nineteen.',
       note:'It was unveiled on what would have been his 117th birthday, with a twenty-one-gun salute fired from HMS Belfast, moored nearby on the Thames.' },
@@ -870,7 +1051,7 @@
       text:'Ingrid Beazley of Dulwich Picture Gallery invited the street artist Stik to repaint an Old Master from the gallery&rsquo;s collection onto a garage door nearby; a dozen more international artists have since reimagined Baroque paintings as murals across the village.',
       note:'One mural is built deliberately around a gas meter box. It turns the whole village into a free, outdoor annexe of the gallery a few streets away, repainted whenever an artist proposes something new.' },
 
-    { id:'sands-films-studio', name:'Sands Films Studio', area:'St Marychurch Street, Rotherhithe', pc:'SE16', cat:'art', year:1976, era:'Studio since 1976',
+    { id:'sands-films-studio', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Grices_Granary_Film_Studios%2C_Rotherhithe_%28Northeast_Corner_-_01%29.jpg/330px-Grices_Granary_Film_Studios%2C_Rotherhithe_%28Northeast_Corner_-_01%29.jpg', name:'Sands Films Studio', area:'St Marychurch Street, Rotherhithe', pc:'SE16', cat:'art', year:1976, era:'Studio since 1976',
       lat:51.5004, lon:-0.0525, addr:'Grice&rsquo;s Granary, 82 St Marychurch Street, SE16 4HZ',
       text:'A Georgian riverside granary, its beams reused from old ship timbers, became a working film studio in 1976, founded by producer Richard Goodwin and director Christine Edzard. It has built costumes for Les Mis&eacute;rables, Wolf Hall and Bright Star, and holds a private research library of visual reference used across the industry.',
       note:'Edzard filmed her own 1987 adaptation of Dickens&rsquo;s Little Dorrit inside the building &mdash; a novel largely set in a debtors&rsquo; prison a few miles upriver in Southwark.' },
@@ -880,7 +1061,7 @@
       text:'A sculptural group recalls the deal porters &mdash; dockers who once carried sawn Baltic softwood (&ldquo;deal&rdquo;) across these docks strapped to leather-padded shoulder hooks, a trade that gave Rotherhithe&rsquo;s timber wharves their name and vanished when the docks closed in the 1970s.',
       note:'The sculpture stands within sight of the water it replaced: Canada Water itself is one of the old Surrey Commercial Docks basins, kept as a lake once the trade that dug it disappeared.' },
 
-    { id:'norwegian-seamens-memorial', name:'Norwegian Seamen&rsquo;s War Memorial', area:'St Olav&rsquo;s Square, Rotherhithe', pc:'SE16', cat:'memory', year:1927, era:'Unveiled 1927',
+    { id:'norwegian-seamens-memorial', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Norwegian_Church_%28St_Olavs%29_-_Albion_Street%2C_Rotherhithe%2C_SE16_-_geograph.org.uk_-_1482595.jpg/330px-Norwegian_Church_%28St_Olavs%29_-_Albion_Street%2C_Rotherhithe%2C_SE16_-_geograph.org.uk_-_1482595.jpg', name:'Norwegian Seamen&rsquo;s War Memorial', area:'St Olav&rsquo;s Square, Rotherhithe', pc:'SE16', cat:'memory', year:1927, era:'Unveiled 1927',
       lat:51.4986, lon:-0.0526, addr:'St Olav&rsquo;s Church, St Olav&rsquo;s Square, SE16 2XB',
       text:'Built for London&rsquo;s Norwegian community, St Olav&rsquo;s became the church of King Haakon VII and his government-in-exile through the Second World War; its memorial, unveiled in 1927 by the future King Olav V, honours the roughly 2,100 Norwegian merchant seamen killed in the First World War alone.',
       note:'The churchyard was rebuilt in 2017 and reopened by Princess Astrid of Norway &mdash; one of the few places in London where a foreign head of state&rsquo;s wartime exile is marked at street level.' },
@@ -890,7 +1071,7 @@
       text:'A drinking fountain paid for by public subscription honours Dr George Webster, the village GP for thirty years until his death in 1876 &mdash; a small, unshowy memorial from neighbours rather than any institution.',
       note:'It was restored in 1977 for the Queen&rsquo;s Silver Jubilee, a century after it first went up, by the same kind of local, voluntary effort that built it.' },
 
-    { id:'jabez-west-fountain', name:'Jabez West Fountain', area:'Southwark Park', pc:'SE16', cat:'memory', year:1885, era:'Unveiled 3 April 1885',
+    { id:'jabez-west-fountain', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Jabez_West_Drinking_Fountain%2C_Southwark_Park_%2801%29.jpg/330px-Jabez_West_Drinking_Fountain%2C_Southwark_Park_%2801%29.jpg', name:'Jabez West Fountain', area:'Southwark Park', pc:'SE16', cat:'memory', year:1885, era:'Unveiled 3 April 1885',
       lat:51.4939, lon:-0.0517, addr:'Southwark Park, SE16 2UA',
       text:'A drinking fountain commemorates Jabez West, a Bermondsey tanner and temperance campaigner, placed in the park specifically to offer thirsty visitors water instead of the pub.',
       note:'It sits a short walk from Dilston Grove, a former mission church in the same park now serving as a public art gallery.' },
@@ -900,7 +1081,7 @@
       text:'Grade II-listed bronzes of the founders of the Salvation Army stand outside the William Booth Memorial Training College, itself designed by Giles Gilbert Scott &mdash; the same architect later responsible for converting Bankside Power Station into Tate Modern.',
       note:'Booth wrote much of his manifesto, In Darkest England, after working the streets of this same stretch of South London.' },
 
-    { id:'damilola-taylor-memorial', name:'Damilola Taylor memorial', area:'Oliver Goldsmith School, Peckham', pc:'SE5', cat:'memory', year:2002, era:'Unveiled 2002',
+    { id:'damilola-taylor-memorial', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Damilola_Taylor_memorial.jpg/330px-Damilola_Taylor_memorial.jpg', name:'Damilola Taylor memorial', area:'Oliver Goldsmith School, Peckham', pc:'SE5', cat:'memory', year:2002, era:'Unveiled 2002',
       lat:51.4746, lon:-0.0866, addr:'Oliver Goldsmith Primary School, 83 Peckham Road, SE5 8UH',
       text:'A small sculpture of a phoenix taking flight was unveiled at his former primary school in memory of Damilola Taylor, a ten-year-old who died in 2000 after being attacked on a stairwell on the nearby North Peckham estate, days after arriving in London from Nigeria.',
       note:'A second, larger memorial garden is now planned for a rebuilt Peckham Square nearby, expected to open in 2027 &mdash; this quiet school sculpture may end up the earlier of two.' },
@@ -910,7 +1091,7 @@
       text:'A large Doulton faience tile mural of the Camberwell Beauty &mdash; a butterfly first recorded in Britain in this parish in 1748, and the source of Camberwell&rsquo;s own civic emblem &mdash; decorates a wall on Wells Way.',
       note:'The butterfly itself hasn&rsquo;t bred in Britain for decades. It survives here only as decoration, on a building that has outlasted the insect it&rsquo;s named after.' },
 
-    { id:'bluecoat-boy-girl', name:'The Bluecoat Boy &amp; Girl', area:'St Marychurch Street, Rotherhithe', pc:'SE16', cat:'culture', year:1613, era:'School founded 1613',
+    { id:'bluecoat-boy-girl', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/St._Mary_Rotherhithe_%28former%29_charity_school_-_Bluecoat_boy_statue_-_geograph.org.uk_-_2694749.jpg/330px-St._Mary_Rotherhithe_%28former%29_charity_school_-_Bluecoat_boy_statue_-_geograph.org.uk_-_2694749.jpg', name:'The Bluecoat Boy &amp; Girl', area:'St Marychurch Street, Rotherhithe', pc:'SE16', cat:'culture', year:1613, era:'School founded 1613',
       lat:51.5008, lon:-0.0522, addr:'St Marychurch Street, SE16 4JE',
       text:'Two painted figures of a charity-school boy and girl in blue-coat uniform look down from a wall beside St Mary&rsquo;s Church &mdash; survivors of the free school founded here in 1613 to educate the children of Rotherhithe watermen and sailors.',
       note:'They stand almost exactly where the Mayflower left the Thames in 1620, a reminder that this stretch of river was a working parish long before it became a heritage postcard.' },
@@ -925,7 +1106,7 @@
       text:'Samuel Nixon&rsquo;s statue originally stood at the north end of London Bridge, then outside the Royal Exchange, before Greenwich took it in 1935 after the church earmarked for the site was demolished.',
       note:'It is one of the few London statues to have had three different addresses before finding a permanent home.' },
 
-    { id:'nelson-statue-greenwich', name:'Lord Nelson statue', area:'Trafalgar Tavern, Greenwich', pc:'SE10', cat:'maritime', year:2005, era:'Unveiled 2005',
+    { id:'nelson-statue-greenwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Statue_of_Nelson%2C_Trafalgar_Tavern%2C_Greenwich_-_geograph.org.uk_-_1701462.jpg/330px-Statue_of_Nelson%2C_Trafalgar_Tavern%2C_Greenwich_-_geograph.org.uk_-_1701462.jpg', name:'Lord Nelson statue', area:'Trafalgar Tavern, Greenwich', pc:'SE10', cat:'maritime', year:2005, era:'Unveiled 2005',
       lat:51.4850, lon:-0.0068, addr:'Park Row, SE10 9NW',
       text:'Sculptor Lesley Pover spent two years working from Nelson&rsquo;s life mask and Maritime Museum archives; the tavern&rsquo;s owner commissioned it for the battle&rsquo;s two-hundredth anniversary, and it was unveiled in 2005.',
       note:'It was removed for a year after a 2012 vandalism incident left it tilted, apparently from a bungled theft attempt, and had to be repaired before its return.' },
@@ -965,7 +1146,7 @@
       text:'Beneath the Borough of Greenwich&rsquo;s coat of arms, it names more than 1,600 men of the borough killed in the Great War, with a later inscription added for the dead of 1939&ndash;45.',
       note:'It stands on the same open heath where, this gazetteer&rsquo;s Blackheath entry already notes, medieval rebels once mustered to march on London.' },
 
-    { id:'charlton-war-memorial', name:'Charlton war memorial', area:'St Luke&rsquo;s Church, Charlton', pc:'SE7', cat:'memory', year:1921, era:'Unveiled 1921',
+    { id:'charlton-war-memorial', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Charlton_war_memorial_-_geograph.org.uk_-_971762.jpg/330px-Charlton_war_memorial_-_geograph.org.uk_-_971762.jpg', name:'Charlton war memorial', area:'St Luke&rsquo;s Church, Charlton', pc:'SE7', cat:'memory', year:1921, era:'Unveiled 1921',
       lat:51.4845, lon:0.0365, addr:'Charlton Village, SE7 8QT',
       text:'Its panels list 248 names from both world wars; a separate memorial at Charlton Athletic&rsquo;s Valley ground names the club&rsquo;s own players, officials and supporters killed in service.',
       note:'A local football club keeping its own war memorial, distinct from the parish one a few streets away, is a rarer thing than it sounds.' },
@@ -1010,7 +1191,7 @@
       text:'Two adjoining Victorian cemeteries opened almost simultaneously in 1858, the first replacing an overflowing parish burial ground at St Paul&rsquo;s Deptford &mdash; a common pattern as inner London&rsquo;s churchyards filled up faster than its population could be buried.',
       note:'Together they now form one continuous green corridor, headstones and mature trees standing where two separate parishes once kept their dead strictly apart.' },
 
-    { id:'maunders-plaque', name:'Walter &amp; Annie Maunder', area:'Tyrwhitt Road, Brockley', pc:'SE4', cat:'plaque', year:1907, era:'Blue plaque, unveiled 2022',
+    { id:'maunders-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/WALTER_MAUNDER_1851%E2%80%931928_ANNIE_MAUNDER_1868%E2%80%931947_Astronomers_lived_here_1907%E2%80%931911.jpg/330px-WALTER_MAUNDER_1851%E2%80%931928_ANNIE_MAUNDER_1868%E2%80%931947_Astronomers_lived_here_1907%E2%80%931911.jpg', name:'Walter &amp; Annie Maunder', area:'Tyrwhitt Road, Brockley', pc:'SE4', cat:'plaque', year:1907, era:'Blue plaque, unveiled 2022',
       lat:51.4655, lon:-0.0295, addr:'69 Tyrwhitt Road, SE4 1QE',
       text:'English Heritage&rsquo;s plaque marks the house where the astronomer couple lived from 1907 to 1911, working on solar eclipses and sunspot cycles and writing popular guides that helped debunk the era&rsquo;s fashionable myth of canals on Mars.',
       note:'Annie, a mathematician barred from a formal Royal Observatory post because she was a woman, worked there anyway as a low-paid &ldquo;lady computer&rdquo; &mdash; the plaque was part of a deliberate 2022 push by English Heritage to mark more women&rsquo;s and working-class history.' },
@@ -1060,7 +1241,7 @@
       text:'Southwark&rsquo;s civic seat for seventy-five years until the council moved out in 2009; sold in 2014 and converted into Goldsmiths student accommodation, keeping its original council chamber and heritage features inside a new build.',
       note:'Camberwell&rsquo;s grandest civic building is now full of undergraduates rather than councillors.' },
 
-    { id:'st-barnabas-eltham', name:'St Barnabas Church', area:'Rochester Way, Eltham', pc:'SE9', cat:'grand', year:1859, era:'Built 1859, moved 1933',
+    { id:'st-barnabas-eltham', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/St_Barnabas%2C_Rochester_Way_-_geograph.org.uk_-_2801704.jpg/330px-St_Barnabas%2C_Rochester_Way_-_geograph.org.uk_-_2801704.jpg', name:'St Barnabas Church', area:'Rochester Way, Eltham', pc:'SE9', cat:'grand', year:1859, era:'Built 1859, moved 1933',
       lat:51.4548, lon:0.0505, addr:'Rochester Way, SE9 6DP',
       text:'Built by George Gilbert Scott as the chapel for Woolwich&rsquo;s Royal Dockyard in 1859; when the dockyard closed and the chapel became redundant, the entire building was dismantled and moved to this Eltham site in 1933.',
       note:'A building can outlive the industry it was built to serve &mdash; this one simply relocated when its own congregation&rsquo;s jobs disappeared.' },
@@ -1095,12 +1276,62 @@
       text:'George Gibson Bussey built this factory in 1887 to make cricket bats from his own Suffolk willow farm, having started out in 1864 making firearms and shooting tackle a few doors down Rye Lane.',
       note:'Slated for demolition, it was saved by the community group Peckham Vision and is now the CLF Art Caf&eacute; &mdash; music venue, rooftop cinema, and the anchor of Peckham&rsquo;s Copeland Park arts quarter.' },
 
-    { id:'bussey-alley-murals', name:'Bussey Alley murals', area:'Copeland Park, Peckham', pc:'SE15', cat:'art', year:2020, era:'Painted and repainted since the 2010s',
+    { id:'cobham-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Alan_Cobham_%28Bain_Collection%29.jpg/330px-Alan_Cobham_%28Bain_Collection%29.jpg', name:'Sir Alan Cobham', area:'Peckham', pc:'SE15', cat:'plaque', year:1894, era:'Blue plaque',
+      lat:51.4723, lon:-0.0761, addr:'78 Denman Road, SE15 5NR',
+      text:'Cobham was born on Denman Road and went on to become one of Britain&rsquo;s most celebrated aviation pioneers, flying long-distance survey routes to Australia and South Africa in the 1920s.',
+      note:'He later pioneered air-to-air refuelling, developing in the early 1930s a technique still used by military aircraft today.' },
+
+    { id:'peckham-experiment-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Dr._INNES_PEARSE_and_Dr._GEORGE_SCOTT_WILLIAMSON_-_142_Queen%27s_Road_Peckham_London_SE15_2HP.jpg/330px-Dr._INNES_PEARSE_and_Dr._GEORGE_SCOTT_WILLIAMSON_-_142_Queen%27s_Road_Peckham_London_SE15_2HP.jpg', name:'Dr Innes Pearse &amp; Dr George Scott Williamson', area:'Peckham', pc:'SE15', cat:'plaque', year:1926, era:'Blue plaque',
+      lat:51.4732, lon:-0.0567, addr:'142 Queen&rsquo;s Road, SE15 2HP',
+      text:'A blue plaque marks this address as where Pearse and Williamson opened their first Pioneer Health Centre in 1926, four years before the larger, purpose-built centre already in this gazetteer.',
+      note:'The two doctors who ran the study later married each other.' },
+
+    { id:'blanch-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/229_of_%27Ye_Parish_of_Cam%CC%83erwell._A_brief_account_of_the_parish_of_Camberwell%2C_its_history_and_antiquities._%28With_plates_and_maps.%29%27_%2811109177033%29.jpg/330px-229_of_%27Ye_Parish_of_Cam%CC%83erwell._A_brief_account_of_the_parish_of_Camberwell%2C_its_history_and_antiquities._%28With_plates_and_maps.%29%27_%2811109177033%29.jpg', name:'William Harnett Blanch', area:'Peckham', pc:'SE15', cat:'plaque', year:1836, era:'Blue plaque',
+      lat:51.4718, lon:-0.0763, addr:'55 Denman Road, SE15',
+      text:'Blanch spent years researching and writing Ye Parish of Camerwell (1875), a 500-page history of Peckham, Nunhead, Dulwich and Camberwell that local historians still cite today.',
+      note:'He is also remembered, slightly improbably, as founder of the London Thirteen Club &mdash; a dining society formed specifically to test and defy superstitions about the number thirteen.' },
+
+    { id:'griggs-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Aubrey_Beardsley_%28British%2C_1872-1898%29%2C_Printed_by_William_Griggs_%28British%2C_1832-1911%29%2C_inventor_of_photo-chromo-lithography_-_Isolde_-_2010.651_-_Cleveland_Museum_of_Art.jpg/330px-Aubrey_Beardsley_%28British%2C_1872-1898%29%2C_Printed_by_William_Griggs_%28British%2C_1832-1911%29%2C_inventor_of_photo-chromo-lithography_-_Isolde_-_2010.651_-_Cleveland_Museum_of_Art.jpg', name:'William Griggs', area:'Peckham', pc:'SE15', cat:'plaque', year:1832, era:'Blue plaque',
+      lat:51.4713, lon:-0.0724, addr:'Elm House, 64 Elm Grove, SE15 5DE',
+      text:'Griggs developed an early photo-chromo-lithography process, producing detailed colour illustrations for India Office publications throughout the Victorian period.',
+      note:'His process let colour images of Indian art, textiles and architecture circulate in Britain decades before colour photography itself became practical.' },
+
+    { id:'sheppard-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Detail_from_the_statue_of_David_Sheppard%2C_the_cricketer_and_former_Anglican_Bishop_of_Liverpool_-_geograph.org.uk_-_974986.jpg/330px-Detail_from_the_statue_of_David_Sheppard%2C_the_cricketer_and_former_Anglican_Bishop_of_Liverpool_-_geograph.org.uk_-_974986.jpg', name:'Lord David Sheppard', area:'Peckham', pc:'SE15', cat:'plaque', year:1929, era:'Blue plaque',
+      lat:51.4786, lon:-0.0596, addr:'Asylum House, 12 Asylum Road, SE15 2RL',
+      text:'Sheppard played cricket for Sussex and England before ordination, then served as Bishop of Woolwich and later Bishop of Liverpool.',
+      note:'He remains the only ordained minister ever to have played Test cricket for England.' },
+
+    { id:'friends-meeting-house-peckham', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Former_Friends_Meeting_House_%288667814307%29.jpg/330px-Former_Friends_Meeting_House_%288667814307%29.jpg', name:'Friends Meeting House', area:'Peckham', pc:'SE15', cat:'plaque', year:1826, era:'Blue plaque',
+      lat:51.4715, lon:-0.0714, addr:'2 Highshore Road, SE15 5AA',
+      text:'Peckham&rsquo;s Quaker meeting house has counted the chocolate manufacturer and philanthropist Elizabeth Cadbury among its historic congregation.',
+      note:'Astrophysicist Arthur Eddington, already in this gazetteer for his Blackheath plaque, was a lifelong Quaker who worshipped at meeting houses like this one throughout his life.' },
+
+    { id:'hanover-chapel-peckham', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/William_Bengo_Collyer.jpg/330px-William_Bengo_Collyer.jpg', name:'Hanover Chapel', area:'Peckham', pc:'SE15', cat:'plaque', year:1657, era:'Founded 1657, demolished early 20th century',
+      lat:51.4732, lon:-0.0699, addr:'1&ndash;2 Central Buildings, Rye Lane, SE15 5DW',
+      text:'A Congregational meeting house has stood on this corner of Rye Lane since 1657; it was rebuilt in 1817 under the popular minister William Bengo Collyer and renamed Hanover Chapel after its royal patrons.',
+      note:'The building itself was demolished in the early twentieth century to make way for tram tracks &mdash; the plaque here marks a site, not a survivor.' },
+
+    { id:'frank-bates-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/B207_Southern_Syncopated_Orchestra_on_tour.jpg/330px-B207_Southern_Syncopated_Orchestra_on_tour.jpg', name:'Frank Bates', area:'Nunhead', pc:'SE15', cat:'plaque', year:1889, era:'Nubian Jak plaque, unveiled 2013',
+      lat:51.4574, lon:-0.0510, addr:'19 Hichisson Road, SE15 3AN',
+      text:'Bates, a Barbadian singer, lodged here in 1918 and 1919 while lead vocalist with the Southern Syncopated Orchestra, the touring ensemble that helped introduce jazz to Britain.',
+      note:'He died in 1921, aged thirty-two, in the sinking of the SS Rowan off the Scottish coast &mdash; one of eight members of the orchestra lost in the same disaster.' },
+
+    { id:'bridgetower-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/George_Bridgetower_by_Henry_Edridge%2C_1790.JPG/330px-George_Bridgetower_by_Henry_Edridge%2C_1790.JPG', name:'George Bridgetower', area:'Peckham', pc:'SE15', cat:'plaque', year:1778, era:'Nubian Jak plaque',
+      lat:51.4665, lon:-0.0712, addr:'Jack Jones House, 12 Reedham Street, SE15 4PH',
+      text:'Bridgetower, a virtuoso violinist of African and Polish descent, premiered Beethoven&rsquo;s Sonata No. 9 in Vienna in 1803 with the composer himself at the piano.',
+      note:'Beethoven originally dedicated the piece to Bridgetower, but the two fell out over a woman at the after-party; the published score instead credits Rodolphe Kreutzer, who by most accounts never even played it.' },
+
+    { id:'walter-rodney-memorial', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Peckham_library_exterior_1.jpg/330px-Peckham_library_exterior_1.jpg', name:'Dr Walter Rodney', area:'Peckham', pc:'SE15', cat:'memory', year:1942, era:'Memorial tree, planted',
+      lat:51.4743, lon:-0.0693, addr:'Peckham Library Square, 122 Peckham Hill Street, SE15 5JR',
+      text:'A memorial tree in Peckham Library Square honours Walter Rodney, the Guyanese historian and activist whose How Europe Underdeveloped Africa (1972) became a foundational text of Pan-Africanist scholarship.',
+      note:'Rodney was assassinated by a car bomb in Georgetown, Guyana, in 1980, an act widely attributed at the time to the government he had spent years openly organising against.' },
+
+    { id:'bussey-alley-murals', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Bussey_Building%2C_Peckham_-_geograph.org.uk_-_5086244.jpg/330px-Bussey_Building%2C_Peckham_-_geograph.org.uk_-_5086244.jpg', name:'Bussey Alley murals', area:'Copeland Park, Peckham', pc:'SE15', cat:'art', year:2020, era:'Painted and repainted since the 2010s',
       lat:51.4700, lon:-0.0675, addr:'Copeland Park, off Copeland Road, SE15 4ST',
       text:'Thierry Noir &mdash; the first artist ever to legally paint the Berlin Wall &mdash; covered this alley in his trademark cartoon heads; INSA wrapped a gym next door in his signature rainbow pattern, and Japanese graffiti collective THA repainted the building&rsquo;s flank during the 2020 London Mural Festival.',
       note:'The walls turn over every few years as new artists are invited in &mdash; what you see photographed here today may already be painted over by the time you visit.' },
 
-    { id:'edward-turner-plaque', name:'Edward Turner', area:'Philip Walk, Peckham Rye', pc:'SE15', cat:'plaque', year:1901, era:'Blue plaque',
+    { id:'edward-turner-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Edward_Turner_Blue_Plaque_Unveiling1.jpg/330px-Edward_Turner_Blue_Plaque_Unveiling1.jpg', name:'Edward Turner', area:'Philip Walk, Peckham Rye', pc:'SE15', cat:'plaque', year:1901, era:'Blue plaque',
       lat:51.4640, lon:-0.0665, addr:'8 Philip Walk, SE15 3NH',
       text:'A plaque marks the home of Edward Turner, the engineer who designed the Triumph Speed Twin and Bonneville motorcycles, the Ariel Square Four, and the V8 engine used in the Daimler SP250.',
       note:'One engineer working from a Peckham Rye terrace ended up on both two wheels and four &mdash; his name still stamped on Triumph fuel tanks, his V8 quietly idling under Daimler bonnets.' },
@@ -1175,6 +1406,16 @@
       text:'Thomas Guy, a bookseller who made a fortune printing Bibles and then a far larger one selling South Sea Company stock just before the bubble burst in 1720, endowed a hospital for patients turned away as &ldquo;incurable&rdquo; by the older St Thomas&rsquo; next door.',
       note:'Guy never married and had no heirs; his hospital opened in January 1726, a year after his death, funded almost entirely by the &pound;219,499 he left it &mdash; a fortune built on exactly the kind of speculative bubble it&rsquo;s risky to walk away from in time. He did.' },
 
+    { id:'eyre-massey-shaw-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/d/d3/Masseyshaw.gif', name:'Sir Eyre Massey Shaw', area:'Southwark', pc:'SE1', cat:'plaque', year:1830, era:'Blue plaque',
+      lat:51.5021, lon:-0.0979, addr:'Winchester House, 94 Southwark Bridge Road, SE1 0EG',
+      text:'Shaw became the first Chief Officer of the Metropolitan Fire Brigade in 1861 and spent thirty years modernising London&rsquo;s firefighting from the ground up.',
+      note:'He was famous enough in his day to appear, thinly disguised, as &ldquo;Captain Shaw&rdquo; in a Gilbert and Sullivan lyric in Iolanthe &mdash; a comic-opera nod to a real fire chief that would be strange in any other era.' },
+
+    { id:'george-myers-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/6/64/George_Myers_Builder_1860s.jpg', name:'George Myers', area:'Southwark', pc:'SE1', cat:'plaque', year:1803, era:'Blue plaque',
+      lat:51.4978, lon:-0.1090, addr:'131 St George&rsquo;s Road, SE1 6HY',
+      text:'Myers was the master builder behind most of Augustus Pugin&rsquo;s great Gothic Revival commissions, including large parts of the Palace of Westminster.',
+      note:'Pugin trusted him enough to hand over designs as rough sketches, relying on Myers to work out the practical detail &mdash; a method that let Pugin design far more buildings than he could ever have detailed himself.' },
+
     { id:'greenwich-market', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/312SFEC_LONDON-20070917.JPG/330px-312SFEC_LONDON-20070917.JPG', name:'Greenwich Market', area:'Greenwich', pc:'SE10', cat:'works', year:1700, era:'Chartered 1700, opened 1737',
       lat:51.4816, lon:-0.0097, addr:'Greenwich Market, SE10 9HZ',
       text:'A Royal Charter of 1700 granted the Commissioners of Greenwich Hospital the right to hold a market here for a thousand years; the market itself opened for trade in 1737, originally selling meat, fish, fruit and vegetables to a naval town.',
@@ -1204,6 +1445,11 @@
       lat:51.4757, lon:-0.0350, addr:'New Cross Road, SE14',
       text:'A German V-2 rocket fell without warning on a packed Woolworths on New Cross Road, at the exact moment a queue had formed for a rare wartime delivery of saucepans. A hundred and sixty-eight people were killed, thirty-three of them children.',
       note:'It remains one of the deadliest single V-weapon strikes of the war on Britain &mdash; a direct hit on ordinary Saturday shopping, not a military target. Twenty-four of the dead were never identified, and the rocket gave no siren warning at all, since it fell faster than sound.' },
+
+    { id:'tallis-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Photograph_of_cartographic_publisher_John_Tallis%2C_ca.1858.png/330px-Photograph_of_cartographic_publisher_John_Tallis%2C_ca.1858.png', name:'John Tallis', area:'New Cross', pc:'SE14', cat:'plaque', year:1817, era:'Blue plaque, 1978',
+      lat:51.4746, lon:-0.0436, addr:'233 New Cross Road, SE14 5UH',
+      text:'Tallis published London Street Views between 1838 and 1840 &mdash; 88 illustrated pamphlets recording, shopfront by shopfront, what stood along the capital&rsquo;s major streets.',
+      note:'The plaque on his house gives his birth year as 1816; most biographical sources say 1817 &mdash; a small discrepancy nobody has ever bothered to correct.' },
 
     { id:'bermondsey-horror', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Marie_Manning_portrait.jpg/330px-Marie_Manning_portrait.jpg', name:'The Bermondsey Horror', area:'Horsemonger Lane Gaol site, Borough', pc:'SE1', cat:'memory', year:1849, era:'Public execution, 13 November 1849',
       lat:51.4970, lon:-0.0965, addr:'Newington Gardens, Harper Road/Newington Causeway, SE1 6BX',
@@ -1235,22 +1481,22 @@
       text:'A Grade II-listed pub that has stood at the centre of Greenwich Market since 1780 &mdash; older than the naval buildings around it in their current form.',
       note:'It sits a few doors from Cutty Sark, the Naval College and the Observatory, all already in this gazetteer &mdash; the one place on this list where you could reasonably visit five stops without walking further than the length of a cricket pitch.' },
 
-    { id:'phoenix-camberwell', name:'The Phoenix', area:'Windsor Walk, Camberwell', pc:'SE5', cat:'pub', year:1866, era:'Built 1866 as a station ticket hall, pub since 1984',
+    { id:'phoenix-camberwell', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Phoenix%2C_Denmark_Hill%2C_SE5_%282429314820%29.jpg/330px-Phoenix%2C_Denmark_Hill%2C_SE5_%282429314820%29.jpg', name:'The Phoenix', area:'Windsor Walk, Camberwell', pc:'SE5', cat:'pub', year:1866, era:'Built 1866 as a station ticket hall, pub since 1984',
       lat:51.4680, lon:-0.0925, addr:'Windsor Walk, SE5 8BB',
       text:'Built in 1866 as the ticket hall for Denmark Hill station, the Grade II-listed building burned down in 1980 &mdash; and when it reopened as a pub in 1984, it was named the Phoenix for exactly that reason.',
       note:'The bar is made from a single mahogany tree, and a station clock salvaged from Llandudno Junction still hangs over the room.' },
 
-    { id:'crown-greyhound-dulwich', name:'Crown &amp; Greyhound', area:'Dulwich Village', pc:'SE21', cat:'pub', year:1900, era:'Built c.1900, replacing two rival inns',
+    { id:'crown-greyhound-dulwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/The_Crown_and_Greyhound_Dulwich_Village_-_geograph.org.uk_-_1270849.jpg/330px-The_Crown_and_Greyhound_Dulwich_Village_-_geograph.org.uk_-_1270849.jpg', name:'Crown &amp; Greyhound', area:'Dulwich Village', pc:'SE21', cat:'pub', year:1900, era:'Built c.1900, replacing two rival inns',
       lat:51.4455, lon:-0.0865, addr:'73 Dulwich Village, SE21 7BJ',
       text:'Named for two separate, older pubs &mdash; the Crown and the Greyhound &mdash; that stood facing each other until they were demolished and merged into this one building around 1900.',
       note:'The Greyhound drew Dulwich&rsquo;s middle-class club crowd, the Crown its farm labourers; the merger is a small monument to Dulwich itself urbanising.' },
 
-    { id:'angel-rotherhithe', name:'The Angel', area:'Bermondsey Wall East, Rotherhithe', pc:'SE16', cat:'pub', year:1450, era:'15th-century origin, current building 1850s',
+    { id:'angel-rotherhithe', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/The_Angel%2C_Bermondsey_Wall_East_-_geograph.org.uk_-_3495710.jpg/330px-The_Angel%2C_Bermondsey_Wall_East_-_geograph.org.uk_-_3495710.jpg', name:'The Angel', area:'Bermondsey Wall East, Rotherhithe', pc:'SE16', cat:'pub', year:1450, era:'15th-century origin, current building 1850s',
       lat:51.5013, lon:-0.0525, addr:'101 Bermondsey Wall East, SE16 4NB',
       text:'Built by monks from Bermondsey Priory as a guesthouse called the Salutation; renamed the Angel after the Reformation, in honour of the local lord of the manor.',
       note:'It stands right in front of the ruins of Edward III&rsquo;s riverside manor house &mdash; a seven-hundred-year-old site carrying a five-hundred-year-old pub name.' },
 
-    { id:'the-capitol-forest-hill', name:'The Capitol', area:'London Road, Forest Hill', pc:'SE23', cat:'pub', year:1929, era:'Opened as a cinema 1929, pub 2001&ndash;2023',
+    { id:'the-capitol-forest-hill', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/The_Capitol%2C_Forest_Hill_-_geograph.org.uk_-_437086.jpg/330px-The_Capitol%2C_Forest_Hill_-_geograph.org.uk_-_437086.jpg', name:'The Capitol', area:'London Road, Forest Hill', pc:'SE23', cat:'pub', year:1929, era:'Opened as a cinema 1929, pub 2001&ndash;2023',
       lat:51.4395, lon:-0.0525, addr:'11&ndash;21 London Road, SE23 3HF',
       text:'Opened in 1929 as a 1,700-seat Neo-Classical cinema with its own theatre organ, it became a bingo hall in 1978, sat empty from 1996, then reopened as a pub under its original name in 2001, keeping the auditorium&rsquo;s scale and much of its decorative plasterwork intact.',
       note:'It closed for good on 15 October 2023. This entry marks a building worth knowing, not somewhere you can still get a pint &mdash; the Neo-Classical facade is still there to look at from the street.' },
@@ -1260,12 +1506,12 @@
       text:'Opened by the pub group Antic in 2014 inside a genuine former DHSS job centre, keeping the name as a deliberately blunt joke that split Deptford between finding it funny and finding it tone-deaf.',
       note:'It was rebranded as Jam Circus in 2023, then closed for good in January 2026 &mdash; a short life for a very short-lived idea of a joke.' },
 
-    { id:'london-and-rye-catford', name:'London &amp; Rye', area:'Catford town centre', pc:'SE6', cat:'pub', year:1890, era:'Late-Victorian building, pub 2000s&ndash;2024',
+    { id:'london-and-rye-catford', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/London_and_Rye%2C_Catford%2C_SE6_%282663879410%29.jpg/330px-London_and_Rye%2C_Catford%2C_SE6_%282663879410%29.jpg', name:'London &amp; Rye', area:'Catford town centre', pc:'SE6', cat:'pub', year:1890, era:'Late-Victorian building, pub 2000s&ndash;2024',
       lat:51.4453, lon:-0.0210, addr:'Catford town centre, SE6',
       text:'Named after the old coaching road running south from Catford to Rye in Sussex, the late-Victorian building had been retail space of one kind or another before becoming, for the first time, a pub.',
       note:'It closed in August 2024, and a redevelopment application for the site was filed in 2025 &mdash; check before you make a special trip.' },
 
-    { id:'white-swan-charlton', name:'White Swan', area:'Charlton Village', pc:'SE7', cat:'pub', year:1840, era:'Charlton&rsquo;s village pub since the 1840s, currently closed',
+    { id:'white-swan-charlton', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/The_White_Swan%2C_Charlton_-_geograph.org.uk_-_1541798.jpg/330px-The_White_Swan%2C_Charlton_-_geograph.org.uk_-_1541798.jpg', name:'White Swan', area:'Charlton Village', pc:'SE7', cat:'pub', year:1840, era:'Charlton&rsquo;s village pub since the 1840s, currently closed',
       lat:51.4845, lon:0.0365, addr:'22 The Village, SE7 8UD',
       text:'Charlton&rsquo;s Victorian village pub, licensed since at least 1840 and the social centre for the streets around Charlton House ever since &mdash; until it closed.',
       note:'A community group launched a crowdfunder in December 2025 to buy and reopen it, following the same rescue playbook as Nunhead&rsquo;s Ivy House &mdash; a story still mid-way through, not yet resolved either way.' },
@@ -1275,7 +1521,7 @@
       text:'Christopher Wren&rsquo;s spire topped a City church on Budge Row until an 1829 storm damaged it; Robert Harrild, a printing pioneer and the church&rsquo;s own warden, bought the wrecked upper section for &pound;5 and re-erected it as a garden folly at his house here.',
       note:'Harrild&rsquo;s mansion became a social club, then was demolished for 1960s housing &mdash; but the council kept the spire standing among the new blocks, so a fragment of Wren&rsquo;s London now rises out of an ordinary South London estate.' },
 
-    { id:'louise-house', name:'Louise House', area:'Dartmouth Road, Forest Hill', pc:'SE23', cat:'memory', year:1891, era:'Opened 1891, Korczak&rsquo;s visit 1911',
+    { id:'louise-house', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Janusz_Korczak_%28cropped%29.jpg/330px-Janusz_Korczak_%28cropped%29.jpg', name:'Louise House', area:'Dartmouth Road, Forest Hill', pc:'SE23', cat:'memory', year:1891, era:'Opened 1891, Korczak&rsquo;s visit 1911',
       lat:51.4385, lon:-0.0535, addr:'Dartmouth Road, SE23',
       text:'Built in 1891 as a Girls&rsquo; Industrial Home &mdash; part boarding school, part trade training for children with nowhere else to go &mdash; it was visited in 1911 by Janusz Korczak, a Polish-Jewish paediatrician touring London&rsquo;s children&rsquo;s institutions.',
       note:'Korczak went home to Warsaw and opened an orphanage run on what he&rsquo;d seen here, developing ideas about children&rsquo;s rights that fed directly into the UN&rsquo;s later Declaration of the Rights of the Child. He died at Treblinka in 1942, having refused offers to save himself alone and gone to the camp with his orphans instead.' },
@@ -1290,7 +1536,7 @@
       text:'Alexander Robert Hennell&rsquo;s Arts and Crafts library was one of over six hundred built across Britain and Ireland with money from the Scottish-American steel magnate Andrew Carnegie, who funded free public libraries on the condition that the local council agreed to run and stock them.',
       note:'A deep terracotta frieze of kneeling cherubs and floral swags runs the full width of the front &mdash; an ornamental flourish that&rsquo;s survived over a century of being walked past by people just there to return a book.' },
 
-    { id:'havelock-walk', name:'Havelock Walk', area:'Forest Hill', pc:'SE23', cat:'art', year:1988, era:'Artists&rsquo; studios since the late 1980s',
+    { id:'havelock-walk', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Havelock_Walk%2C_Forest_Hill.jpg/330px-Havelock_Walk%2C_Forest_Hill.jpg', name:'Havelock Walk', area:'Forest Hill', pc:'SE23', cat:'art', year:1988, era:'Artists&rsquo; studios since the late 1980s',
       lat:51.4370, lon:-0.0505, addr:'Havelock Walk, SE23',
       text:'A cobbled mews first laid out as a field path in the 1850s, badly bombed in the Second World War, and left mostly as derelict industrial storage until the artist Jeff Lowe started buying up the cheap warehouse space in the late 1980s and converting it into live-work studios.',
       note:'Sixteen working studios now line the mews, among them the illustrator Rob Lowe &mdash; who works under the name Supermundane, all bold colour and repeating pattern &mdash; and Ian Wright, whose scratchy black-and-white portraits ran weekly in the NME and monthly in The Face through the 1980s. The Canvas &amp; Cream gallery anchors the far end, and the whole street throws its doors open for a public Open Studios weekend at least twice a year, spring and winter, with live music, printmaking demonstrations, a small artisan market and a kids&rsquo; craft table set up between the workshops.' },
@@ -1340,6 +1586,11 @@
       text:'Born here in 1895, Jones served longer at the front than almost any other Great War poet, was wounded at Mametz Wood, and later wrote In Parenthesis (1937) &mdash; a war memoir T. S. Eliot called &ldquo;a work of genius.&rdquo;',
       note:'He is buried in Brockley &amp; Ladywell Cemeteries, already in this gazetteer; the Friends of that cemetery led the campaign and crowdfunding for his plaque.' },
 
+    { id:'edgar-wallace-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Bundesarchiv_Bild_102-13109%2C_Edgar_Wallace.jpg/330px-Bundesarchiv_Bild_102-13109%2C_Edgar_Wallace.jpg', name:'Edgar Wallace', area:'Lewisham', pc:'SE4', cat:'plaque', year:1875, era:'Blue plaque',
+      lat:51.4638, lon:-0.0267, addr:'6 Tressillian Crescent, SE4 1QJ',
+      text:'Wallace, illegitimate and largely self-educated, became one of the most prolific thriller writers of his era, producing well over a hundred novels.',
+      note:'Shortly before he died in 1932 he wrote the original story treatment for King Kong &mdash; work that still earns him a co-writing credit on the film today.' },
+
     { id:'dietrich-bonhoeffer-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Bundesarchiv_Bild_146-1987-074-16%2C_Dietrich_Bonhoeffer.jpg/330px-Bundesarchiv_Bild_146-1987-074-16%2C_Dietrich_Bonhoeffer.jpg', name:'Dietrich Bonhoeffer', area:'Sydenham', pc:'SE26', cat:'plaque', year:1933, era:'Pastor here 1933&ndash;1935',
       lat:51.4280, lon:-0.0555, addr:'German Lutheran Church, Dacres Road, SE26',
       text:'The German theologian and later anti-Nazi resistance figure served as pastor of this German-speaking congregation for two years before returning to Germany. He was executed by the Nazis in 1945, weeks before the war ended.',
@@ -1355,7 +1606,7 @@
       text:'Britain&rsquo;s best-loved heavyweight boxer, who twice fought Muhammad Ali and famously floored him in 1963, grew up in a council house on the Bellingham Estate.',
       note:'The plaque marks the actual family home he grew up in &mdash; not a gym, not a stadium, just the house.' },
 
-    { id:'roy-porter-plaque', name:'Roy Porter', area:'New Cross Gate', pc:'SE14', cat:'plaque', year:2008, era:'Plaque unveiled 5 June 2008',
+    { id:'roy-porter-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Roy_Porter_house_13_Camplin_Street_New_Cross_Gate_London_SE14_5QX.jpg/330px-Roy_Porter_house_13_Camplin_Street_New_Cross_Gate_London_SE14_5QX.jpg', name:'Roy Porter', area:'New Cross Gate', pc:'SE14', cat:'plaque', year:2008, era:'Plaque unveiled 5 June 2008',
       lat:51.4700, lon:-0.0400, addr:'13 Camplin Street, SE14',
       text:'The medical historian, who grew up in South London before becoming one of Britain&rsquo;s most prolific historians of the Enlightenment and of medicine, is commemorated at this address by a plaque unveiled by the Mayor of Lewisham.',
       note:'The record is clear that he&rsquo;s commemorated here rather than definitively confirmed to have lived here &mdash; a small distinction, honestly kept.' },
@@ -1385,12 +1636,12 @@
       text:'Born in Camberwell in 1967 to parents from Antigua and St Lucia and raised in Peckham, Jean-Baptiste became the first Black British actress ever nominated for an Academy Award, for Mike Leigh&rsquo;s Secrets &amp; Lies in 1996.',
       note:'Nearly three decades later she reunited with Leigh for Hard Truths (2024) and swept the year&rsquo;s critics&rsquo; awards &mdash; New York, LA and the National Society of Film Critics all named her Best Actress, a first for a Black actress. A commemorative plaque exists for her, but no confirmed public street address has surfaced yet &mdash; treat this as marking the neighbourhood, not a specific doorway.' },
 
-    { id:'mitre-pub-greenwich', name:'The Mitre', area:'Greenwich High Road', pc:'SE10', cat:'pub', year:1830, era:'Coffee house 1700s, rebuilt 1830&ndash;31',
+    { id:'mitre-pub-greenwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/The_Mitre_Hotel%2C_Greenwich_High_Road.jpg/330px-The_Mitre_Hotel%2C_Greenwich_High_Road.jpg', name:'The Mitre', area:'Greenwich High Road', pc:'SE10', cat:'pub', year:1830, era:'Coffee house 1700s, rebuilt 1830&ndash;31',
       lat:51.4785, lon:-0.0135, addr:'291 Greenwich High Road, SE10',
       text:'Started life as an eighteenth-century coffee shop before burning down in 1829 and being rebuilt as a pub in 1830&ndash;31, then further damaged during the Second World War.',
       note:'A plaque on the building sets out this whole sequence of fire, rebuild and bomb damage in one short read &mdash; a pub that has effectively been rebuilt twice and is still pouring.' },
 
-    { id:'dulwich-library-blitz-memorial', name:'1940 Blitz memorial', area:'Dulwich Library', pc:'SE22', cat:'memory', year:1940, era:'24 September 1940, plaque placed 2013',
+    { id:'dulwich-library-blitz-memorial', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Dulwichlibraryfront.jpg/330px-Dulwichlibraryfront.jpg', name:'1940 Blitz memorial', area:'Dulwich Library', pc:'SE22', cat:'memory', year:1940, era:'24 September 1940, plaque placed 2013',
       lat:51.4520, lon:-0.0730, addr:'Dulwich Library, Eynella Road, SE22',
       text:'A plaque outside Dulwich Library names three civilians &mdash; Walter Stacey, Ruth Stacey and Rosie Crawford &mdash; killed nearby in a German air raid on 24 September 1940.',
       note:'The Dulwich Society placed it in 2013, seventy-three years after the raid &mdash; three ordinary names kept legible on a library wall that any of the thousands of daily borrowers might otherwise never learn.' },
@@ -1430,7 +1681,7 @@
       text:'A coaching inn on the Watling Street route to Dover, through the era when Blackheath was notorious for highwaymen; a 1780 Thomas Luny painting shows the building much as it still stands, overlooking Greenwich Park.',
       note:'Still trading today &mdash; one of the more straightforward pubs in this gazetteer to simply walk into.' },
 
-    { id:'spanish-galleon', name:'Spanish Galleon', area:'Greenwich', pc:'SE10', cat:'pub', year:1836, era:'Built 1836, listed',
+    { id:'spanish-galleon', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/The_Spanish_Galleon_Tavern_-_geograph.org.uk_-_1292987.jpg/330px-The_Spanish_Galleon_Tavern_-_geograph.org.uk_-_1292987.jpg', name:'Spanish Galleon', area:'Greenwich', pc:'SE10', cat:'pub', year:1836, era:'Built 1836, listed',
       lat:51.4816, lon:-0.0093, addr:'1 College Approach, SE10 9HW',
       text:'Built as part of Joseph Kay&rsquo;s 1830s redevelopment of central Greenwich, on a site with a Galleon inn recorded two hundred years earlier; named for paintings of British naval victories over Spain once hung nearby in Greenwich Hospital.',
       note:'A full sailor&rsquo;s uniform turned up in the cellar during 1985 renovations and now hangs behind the bar.' },
@@ -1463,7 +1714,52 @@
     { id:'woolwich-pub-bombing', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Kings_Arms%2C_Woolwich.jpg/330px-Kings_Arms%2C_Woolwich.jpg', name:'The Woolwich pub bombing', area:'Frances Street, Woolwich', pc:'SE18', cat:'memory', year:1974, era:'7 November 1974',
       lat:51.4905, lon:0.0645, addr:'Site of the King&rsquo;s Arms, 1 Frances Street, SE18',
       text:'An IRA bomb at the King&rsquo;s Arms killed two people &mdash; Gunner Richard Dunne and sales clerk Alan Horsley &mdash; and injured thirty-five more.',
-      note:'Two of the Guildford Four were wrongly convicted of this attack in 1975 and served fifteen years before their convictions were quashed in 1989, after the actual Balcombe Street bombers confessed in 1977 &mdash; one of Britain&rsquo;s clearest miscarriages of justice, rooted at this address.' }
+      note:'Two of the Guildford Four were wrongly convicted of this attack in 1975 and served fifteen years before their convictions were quashed in 1989, after the actual Balcombe Street bombers confessed in 1977 &mdash; one of Britain&rsquo;s clearest miscarriages of justice, rooted at this address.' },
+
+    { id:'stanhope-herne-hill-mural', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Herne_Hill_Station_Main_2012.jpg/330px-Herne_Hill_Station_Main_2012.jpg', name:'Herne Hill railway mural', area:'Railton Road, Herne Hill', pc:'SE24', cat:'art', year:2013, era:'Painted 2013, the first of the series',
+      lat:51.4530, lon:-0.1030, addr:'Railway bridge, Railton Road, near Herne Hill station, SE24',
+      text:'After a burst water main flooded the area in 2013, Herne Hill traders crowdfunded a vintage-style painted sign for the dingy railway bridge on Railton Road, commissioning the sign writer and film-set painter Lionel Stanhope to brighten it up.',
+      note:'Network Rail liked the results enough to start funding further Stanhope bridges itself &mdash; a single flood-recovery sign that grew into a whole genre of South East London street art, eventually reaching Brockley, Forest Hill, Lee, Catford, Nunhead and beyond. It sits just outside this gazetteer&rsquo;s usual postcode range, on the Herne Hill/Dulwich border &mdash; included as a deliberate, small stretch.' },
+
+    { id:'stanhope-brockley-mural', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Brockley_railway_station_MMB_03.jpg/330px-Brockley_railway_station_MMB_03.jpg', name:'Brockley Cross mural', area:'Brockley Cross, Brockley', pc:'SE4', cat:'art', year:2016, era:'Painted c.2016, among the first wave of bridges',
+      lat:51.4690, lon:-0.0370, addr:'Railway bridge, Brockley Cross, SE4',
+      text:'Lionel Stanhope painted this vintage-lettered &ldquo;Brockley&rdquo; sign onto the railway bridge at Brockley Cross for his own neighbourhood &mdash; he has lived here since long before Network Rail started funding his work nationally.',
+      note:'It was one of the first seven Stanhope bridge signs, back when local crowdfunding rather than Network Rail money still paid for them.' },
+
+    { id:'stanhope-forest-hill-walrus', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Forest_Hill_stn_main_building_June_2010.JPG/330px-Forest_Hill_stn_main_building_June_2010.JPG', name:'Forest Hill walrus mural', area:'Waldram Crescent, Forest Hill', pc:'SE23', cat:'art', year:2018, era:'Painted March 2018',
+      lat:51.4408, lon:-0.0546, addr:'Railway bridge, Waldram Crescent, SE23',
+      text:'A fifty-foot vintage-lettered sign under the railway bridge on Waldram Crescent works a walrus into its design &mdash; a nod to the stuffed Victorian walrus that has anchored the Horniman Museum&rsquo;s taxidermy collection for over a century.',
+      note:'Local group SE23.life ran the design and colour choice as an online poll before Lionel Stanhope, assisted by Owain Nicholls, painted it &mdash; part of a run of bridge murals he brought to South East London stop by stop.' },
+
+    { id:'stanhope-lee-heron-mural', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Lee_station_building.JPG/330px-Lee_station_building.JPG', name:'Lee railway bridge heron mural', area:'Burnt Ash Hill, Lee', pc:'SE12', cat:'art', year:2018, era:'Painted 2018',
+      lat:51.4462, lon:0.0128, addr:'Railway bridge, Burnt Ash Hill, SE12',
+      text:'Lionel Stanhope&rsquo;s vintage-style sign on the brick railway abutment beside Lee station works a heron into its lettering, in honour of the birds that nest along the River Quaggy as it runs through nearby Manor House Gardens.',
+      note:'It was commissioned by the Hither Green Murals community group, who had already brought Stanhope&rsquo;s bridge signs to their own neighbourhood next door.' },
+
+    { id:'stanhope-catford-mural', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Catford_Bridge_stn_building.JPG/330px-Catford_Bridge_stn_building.JPG', name:'Catford Bridge greyhound mural', area:'Catford Bridge', pc:'SE6', cat:'art', year:2018, era:'Painted 2018',
+      lat:51.4436, lon:-0.0207, addr:'Railway bridge opposite Catford Bridge station, SE6',
+      text:'One of two Lionel Stanhope signs in Catford, this one under the bridge opposite Catford Bridge station runs a pack of yellow greyhounds through its lettering &mdash; a nod to Catford Stadium, the dog track that ran nearby until its last meeting in November 2003.',
+      note:'Paired with the borough&rsquo;s giant fibreglass cat a short walk away on Winslade Way, it means Catford now has street art referencing both halves of its own name.' },
+
+    { id:'stanhope-nunhead-mural', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Nunhead_station_entrance.JPG/330px-Nunhead_station_entrance.JPG', name:'Nunhead railway bridge mural', area:'Consort Road, Nunhead', pc:'SE15', cat:'art', year:2018, era:'Painted 2018',
+      lat:51.4650, lon:-0.0554, addr:'Railway bridge near Nunhead station, SE15',
+      text:'Lionel Stanhope&rsquo;s bold vintage lettering greets travellers near Nunhead station, its design worked carefully around a lamp post bolted to the bridge rather than simply painted over it.',
+      note:'It stands a short walk from Consort Road&rsquo;s other mural, Faith47&rsquo;s reworking of Guido Reni&rsquo;s Europa and the Bull &mdash; two very different kinds of borrowed image within a few minutes of each other.' },
+
+    { id:'stanhope-burbage-road-mural', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Autumn_on_Burbage_Road%2C_Dulwich_-_geograph.org.uk_-_3229401.jpg/330px-Autumn_on_Burbage_Road%2C_Dulwich_-_geograph.org.uk_-_3229401.jpg', name:'Richard Burbage mural', area:'Burbage Road, Dulwich', pc:'SE24', cat:'art', year:2019, era:'Unveiled 13 May 2019',
+      lat:51.4515, lon:-0.0908, addr:'Railway bridge, Burbage Road, SE24',
+      text:'Marking four hundred years since the death of Richard Burbage &mdash; the Shakespearean actor the road is named after &mdash; Lionel Stanhope and Owain Nicholls covered the railway bridge in Shakespeare quotations and a portrait of the man himself, Network Rail&rsquo;s fiftieth bridge mural nationally.',
+      note:'A second Stanhope mural went up on the same bridge in 2020, celebrating the cricket, tennis, hockey, squash and croquet played at Dulwich Sports Club next door, and nodding to Sam Mussabini, the Olympic athletics coach who lived on the same road and trained Harold Abrahams of Chariots of Fire.' },
+
+    { id:'stanhope-millwall-mural', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/South_bermondsey_station.JPG/330px-South_bermondsey_station.JPG', name:'Millwall FC mural', area:'Zampa Road, South Bermondsey', pc:'SE16', cat:'art', year:2020, era:'Painted 2020',
+      lat:51.4859, lon:-0.0478, addr:'Railway bridge, Zampa Road, SE16',
+      text:'Near the approach to The Den, Lionel Stanhope painted Millwall Football Club&rsquo;s leaping-lion crest onto a railway bridge on Zampa Road &mdash; the current badge, reintroduced in 2007 after a spell out of use from 1999.',
+      note:'By the time he painted it, Stanhope&rsquo;s day job had already taken him from South London brickwork to film and TV sets, including Black Mirror, Humans, The Good Liar and The Courier.' },
+
+    { id:'stanhope-charlton-valley-mural', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Charlton_Station_-_geograph.org.uk_-_234017.jpg/330px-Charlton_Station_-_geograph.org.uk_-_234017.jpg', name:'Charlton Athletic centenary mural', area:'Charlton Church Lane, Charlton', pc:'SE7', cat:'art', year:2020, era:'Painted March 2020',
+      lat:51.4870, lon:0.0335, addr:'Railway bridge, Charlton Church Lane, SE7',
+      text:'Lionel Stanhope and sculptor Zara Gaze marked one hundred years of Charlton Athletic at The Valley with a mural on the bridge outside Charlton station, funded by the Charlton Athletic Museum and painted in graffiti-resistant materials over two days.',
+      note:'It includes a small tribute reading &ldquo;Seb 1076&rdquo;, for supporter Seb Lewis and the 1,076 consecutive matches he attended before his death.' }
   ];
 
   var SEED = ['cutty-sark', 'painted-hall', 'queens-house', 'royal-observatory', 'wolfe-macartney'];
@@ -1472,6 +1768,15 @@
 
   var byId = {};
   STOPS.forEach(function (s) { byId[s.id] = s; });
+
+  var REQUIRED_STOP_FIELDS = ['id', 'img', 'name', 'area', 'pc', 'cat', 'year', 'era', 'lat', 'lon', 'addr', 'text', 'note'];
+  STOPS.forEach(function (s) {
+    REQUIRED_STOP_FIELDS.forEach(function (f) {
+      if (s[f] === undefined || s[f] === null || s[f] === '') {
+        console.warn('Gazetteer entry "' + (s.id || '?') + '" is missing required field "' + f + '"');
+      }
+    });
+  });
 
   /* ---------------------------------------------------------------
      State
@@ -1628,7 +1933,13 @@
       seen[s.pc] = true;
       pcs.push(s.pc);
     });
-    return pcs.sort(function (a, b) { return pcRank(a) - pcRank(b); }).join(', ');
+    return pcs.sort(function (a, b) { return pcRank(a) - pcRank(b); });
+  }
+
+  function postcodeBadgesHTML(pcs) {
+    return pcs.map(function (pc) {
+      return '<span class="inline-flex items-center rounded-md border border-black/10 bg-white px-2 py-0.5 text-[12px] font-mono font-semibold uppercase tracking-[0.04em] text-black/80 whitespace-nowrap">' + pc + '</span>';
+    }).join('');
   }
 
   /* ---------------------------------------------------------------
@@ -1679,11 +1990,15 @@
   function stopHTML(s) {
     var on = inRoute(s.id);
     var pos = route.indexOf(s.id) + 1;
+    var catLabel = CATS[s.cat];
+    var eraText = s.era || '';
+    if (eraText === catLabel) eraText = '';
+    else if (eraText.indexOf(catLabel + ', ') === 0) eraText = eraText.slice(catLabel.length + 2);
     return '' +
       '<article id="stop-' + s.id + '" class="stop px-5 py-5">' +
         '<div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 mb-2">' +
-          '<span class="inline-flex items-center gap-1.5">' + catTile(s.cat, 16) + '<span class="eyebrow text-faint">' + CATS[s.cat] + '</span></span>' +
-          '<span class="eyebrow text-faint">' + s.era + '</span>' +
+          '<span class="inline-flex items-center gap-1.5">' + catTile(s.cat, 16) + '<span class="eyebrow text-faint">' + catLabel + '</span></span>' +
+          (eraText ? '<span class="eyebrow text-faint">' + eraText + '</span>' : '') +
         '</div>' +
         '<div class="flex items-start justify-between gap-4">' +
           '<div class="flex items-start gap-3 min-w-0">' +
@@ -1711,13 +2026,110 @@
   --------------------------------------------------------------- */
   var routeListEl = document.getElementById('routeList');
 
+  /* ---------------------------------------------------------------
+     Listen (proof of concept): read a stop's text aloud in the
+     Your Route panel, in place of a written description, with a
+     play/pause button. Uses the browser's built-in speech synthesis
+     rather than a hosted audio file — no asset, no network request.
+  --------------------------------------------------------------- */
+  var SPEAK_ICON_PLAY = '<svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+  var SPEAK_ICON_PAUSE = '<svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>';
+  var speakingBtn = null;
+  var currentUtterance = null; // must stay referenced, or Chrome silently drops it mid-speech
+  var cachedVoices = [];
+
+  // Prefer nicer-sounding *local* voices (Apple's/Microsoft's named ones)
+  // over the flattest default. Deliberately local-only: Chrome's "Google …"
+  // voices are cloud-synthesised, and silently produce no audio at all if
+  // that network request can't complete — worse than just using whatever
+  // voice already works offline.
+  var VOICE_PREFERENCE = ['Samantha', 'Daniel', 'Karen', 'Moira', 'Tessa', 'Serena', 'Ava', 'Nicky'];
+
+  function firstMatch(list, test) {
+    for (var i = 0; i < list.length; i++) { if (test(list[i])) return list[i]; }
+    return null;
+  }
+
+  function refreshVoices() { cachedVoices = window.speechSynthesis.getVoices(); }
+
+  function pickNaturalVoice() {
+    var local = [];
+    for (var i = 0; i < cachedVoices.length; i++) { if (cachedVoices[i].localService) local.push(cachedVoices[i]); }
+    if (!local.length) return null; // nothing safe to pick — leave utter.voice unset
+
+    var byName = null;
+    for (var j = 0; j < VOICE_PREFERENCE.length && !byName; j++) {
+      byName = firstMatch(local, function (v) { return v.name === VOICE_PREFERENCE[j]; });
+    }
+    return byName || firstMatch(local, function (v) { return /^en/i.test(v.lang); }) || local[0];
+  }
+
+  function speakableText(s) {
+    return (s.name + '. ' + s.text + ' ' + s.note)
+      .replace(/&rsquo;/g, '’').replace(/&lsquo;/g, '‘')
+      .replace(/&rdquo;/g, '”').replace(/&ldquo;/g, '“')
+      .replace(/&mdash;/g, '—').replace(/&ndash;/g, '–')
+      .replace(/&amp;/g, '&')
+      .replace(/&[a-z#0-9]+;/gi, '');
+  }
+
+  function setListenBtnState(btn, playing) {
+    btn.setAttribute('aria-pressed', playing ? 'true' : 'false');
+    btn.querySelector('.listen-btn__icon').innerHTML = playing ? SPEAK_ICON_PAUSE : SPEAK_ICON_PLAY;
+    btn.querySelector('.listen-btn__label').textContent = playing ? 'Pause' : 'Listen';
+  }
+
+  if (window.speechSynthesis) {
+    refreshVoices();
+    window.speechSynthesis.onvoiceschanged = refreshVoices;
+
+    routeListEl.addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-speak]');
+      if (!btn) return;
+      var s = byId[btn.getAttribute('data-speak')];
+      var synth = window.speechSynthesis;
+
+      if (speakingBtn === btn && synth.speaking && !synth.paused) {
+        synth.pause();
+        setListenBtnState(btn, false);
+        return;
+      }
+      if (speakingBtn === btn && synth.paused) {
+        synth.resume();
+        setListenBtnState(btn, true);
+        return;
+      }
+      if (synth.speaking || synth.pending) synth.cancel();
+      if (speakingBtn) setListenBtnState(speakingBtn, false);
+
+      var utter = new SpeechSynthesisUtterance(speakableText(s));
+      var voice = pickNaturalVoice();
+      if (voice) utter.voice = voice;
+      utter.rate = 0.95;
+      utter.pitch = 1;
+      utter.onend = utter.onerror = function () {
+        setListenBtnState(btn, false);
+        if (speakingBtn === btn) { speakingBtn = null; currentUtterance = null; }
+      };
+      speakingBtn = btn;
+      currentUtterance = utter; // keep a strong reference — see note above
+      setListenBtnState(btn, true);
+      // Call speak() synchronously, in the same tick as the click: Safari
+      // silently refuses it once it's no longer inside the user gesture.
+      synth.speak(utter);
+    });
+  }
+
   function renderRoute() {
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+    speakingBtn = null;
+    currentUtterance = null;
     var n = route.length;
     var km = routeKm();
     var mins = Math.round((km / 4.8) * 60);
 
     document.getElementById('routeMeta').textContent =
-      n === 0 ? 'No stops yet' : n + (n === 1 ? ' stop' : ' stops') + ' across ' + countDistricts() + ' postcodes';
+      n === 0 ? 'No stops yet' : n + (n === 1 ? ' stop' : ' stops');
     document.getElementById('routeDist').textContent = km.toFixed(1) + ' km';
     document.getElementById('routeTime').textContent = n < 2 ? '—' : (mins >= 60 ? Math.floor(mins / 60) + 'h ' + pad(mins % 60) : mins + ' min');
     document.getElementById('barLabel').textContent =
@@ -1756,9 +2168,16 @@
         (i > 0 ? '<p class="pl-[52px] pr-5 py-1 font-mono text-[11px] text-faint num">&darr; ' + leg.toFixed(2) + ' km</p>' : '') +
         '<div class="flex gap-3 px-5 py-2.5 ' + (i > 0 ? '' : 'pt-4') + '">' +
           '<span class="shrink-0 w-6 h-6 mt-0.5 rounded-full bg-verdigris text-white font-mono num text-[11px] font-semibold grid place-items-center">' + (i + 1) + '</span>' +
+          (s.img ? '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.remove()" class="w-10 h-10 shrink-0 rounded-lg object-cover border border-rule">' : '') +
           '<div class="min-w-0 flex-1">' +
             '<p class="text-[14px] font-semibold leading-tight">' + s.name + '</p>' +
             '<p class="font-mono text-[11px] text-faint mt-0.5">' + s.pc + ' &middot; ' + s.area + '</p>' +
+            (s.id === 'horniman' && window.speechSynthesis ?
+              '<button data-speak="' + id + '" aria-pressed="false" class="listen-btn mt-1.5 inline-flex items-center gap-1.5 text-[11px] font-semibold text-verdigris border border-verdigris/40 rounded-full pl-1.5 pr-2.5 py-1 hover:bg-verdigris/10 transition-colors" aria-label="Listen to a description of ' + plain(s.name) + '">' +
+                '<span class="listen-btn__icon inline-flex items-center justify-center w-4 h-4">' + SPEAK_ICON_PLAY + '</span>' +
+                '<span class="listen-btn__label">Listen</span>' +
+              '</button>'
+            : '') +
           '</div>' +
           '<div class="shrink-0 flex items-start gap-1">' +
             '<button data-move="' + id + '" data-dir="-1" class="w-6 h-6 rounded border border-rule text-muted hover:text-ink hover:border-ink text-[11px] leading-none disabled:opacity-25" ' + (i === 0 ? 'disabled' : '') + ' aria-label="Move ' + plain(s.name) + ' earlier">&uarr;</button>' +
@@ -1772,12 +2191,6 @@
 
   function plain(s) { return s.replace(/&[a-z]+;/g, ''); }
 
-  function countDistricts() {
-    var seen = {}, n = 0;
-    route.forEach(function (id) { if (!seen[byId[id].pc]) { seen[byId[id].pc] = 1; n++; } });
-    return n;
-  }
-
   /* ---------------------------------------------------------------
      Chips, events
   --------------------------------------------------------------- */
@@ -1786,8 +2199,7 @@
     var html = '';
     Object.keys(CATS).forEach(function (key) {
       var n = STOPS.filter(function (s) { return s.cat === key; }).length;
-      html += '<button class="chip eyebrow pl-1.5 pr-2.5 py-1.5 rounded-full text-muted transition-colors inline-flex items-center gap-1.5" ' +
-              'data-cat="' + key + '" aria-pressed="false">' + catTile(key, 18) + '<span>' + CATS[key] + ' <span class="num opacity-55">' + n + '</span></span></button>';
+      html += catCard(key, n);
     });
     wrap.innerHTML = html;
   })();
@@ -1812,6 +2224,7 @@
       document.documentElement.style.removeProperty('--area-bg');
       document.documentElement.style.removeProperty('--area-ink');
       areaHeroEl.classList.add('hidden');
+      homeIntroEl.classList.remove('hidden');
       Array.prototype.forEach.call(document.querySelectorAll('.area-chip--on-match'), function (chip) {
         chip.classList.remove('area-chip--on-match');
       });
@@ -1897,6 +2310,7 @@
   }
 
   var areaHeroEl = document.getElementById('areaHero');
+  var homeIntroEl = document.getElementById('homeIntro');
 
   function applyAreaFilter(area, scrollBehavior) {
     filters.q = '';
@@ -1921,9 +2335,9 @@
     });
     document.getElementById('areaHeroTitle').textContent = areaTitle(area);
     document.getElementById('areaHeroDesc').innerHTML = AREA_DESCRIPTIONS[area.toLowerCase()] || '';
-    document.getElementById('areaHeroPostcodes').textContent = areaPostcodes(area);
-    document.getElementById('areaHeroCount').textContent = document.getElementById('resultCount').textContent;
+    document.getElementById('areaHeroPostcodes').innerHTML = postcodeBadgesHTML(areaPostcodes(area));
     areaHeroEl.classList.remove('hidden');
+    homeIntroEl.classList.add('hidden');
 
     if (scrollBehavior) {
       document.getElementById('list').scrollIntoView({ behavior: scrollBehavior, block: 'start' });
@@ -1939,6 +2353,7 @@
     document.documentElement.style.removeProperty('--area-bg');
     document.documentElement.style.removeProperty('--area-ink');
     areaHeroEl.classList.add('hidden');
+    homeIntroEl.classList.remove('hidden');
     Array.prototype.forEach.call(document.querySelectorAll('.area-chip--on-match'), function (chip) {
       chip.classList.remove('area-chip--on-match');
     });
@@ -1975,6 +2390,24 @@
       root.setAttribute('data-theme', 'light');
     }
   });
+
+  // Keep the sticky route panel clear of the fixed header's actual height
+  (function trackHeaderHeight() {
+    var headerEl = document.querySelector('header');
+    if (!headerEl) return;
+    var raf = null;
+    function measure() {
+      raf = null;
+      root.style.setProperty('--header-h', headerEl.offsetHeight + 'px');
+    }
+    function schedule() {
+      if (raf) return;
+      raf = requestAnimationFrame(measure);
+    }
+    schedule();
+    window.addEventListener('resize', schedule);
+    if (window.ResizeObserver) new ResizeObserver(schedule).observe(headerEl);
+  })();
 
   // GPX export, when the viewer can save files
   if (window.claude && typeof window.claude.use === 'function') {
