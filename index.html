@@ -54,6 +54,9 @@
   }
 
   body{ background:var(--area-bg, var(--ground)); color:var(--ink); font-family:Archivo, Helvetica Neue, Arial, sans-serif; -webkit-font-smoothing:antialiased; transition:background-color .45s ease; }
+  /* Strip native control chrome so solid-colour buttons (route bar, cat
+     cards, route-toggle) render as a flat fill, not a native gradient */
+  button{ appearance:none !important; -webkit-appearance:none !important; background-image:none !important; }
   h1,h2,h3{ text-wrap:balance; }
   .num{ font-variant-numeric:tabular-nums; }
   .eyebrow{ font-family:"Azeret Mono", ui-monospace, monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; }
@@ -137,6 +140,14 @@
   /* Area hero: shown when an area page is active */
   #areaHero{ color:var(--area-ink, var(--ink)); }
   #areaHero #areaHeroTitle{ font-size:clamp(52px, 11vw, 140px); }
+
+  /* Your route: branded orange background, with the panel's own text,
+     rules and tiles re-tuned to read against it rather than the theme */
+  #routePanel{
+    background:var(--marigold); border-color:var(--marigold); color:#171717;
+    --ink:#171717; --muted:rgba(23,23,23,.7); --faint:rgba(23,23,23,.5);
+    --rule:rgba(23,23,23,.2); --surface:rgba(255,255,255,.4);
+  }
 
   /* Route sheet on small screens */
   #routePanel{ transition:transform .34s cubic-bezier(.32,.72,0,1); }
@@ -331,7 +342,7 @@
       </div>
 
       <!-- Route -->
-      <aside id="routePanel" class="lg:col-span-4 bg-raised border border-rule rounded-[18px] lg:sticky flex flex-col overflow-hidden">
+      <aside id="routePanel" class="lg:col-span-4 border border-rule rounded-[18px] lg:sticky flex flex-col overflow-hidden">
         <div class="px-5 pt-5 pb-4 border-b border-rule">
           <div class="flex items-start justify-between gap-3">
             <div>
@@ -381,7 +392,7 @@
 
 <div id="scrim" class="fixed inset-0 bg-black/40 z-50" hidden></div>
 
-<button id="routeBar" class="fixed bottom-0 inset-x-0 z-40 lg:hidden bg-ink text-ground px-5 py-3.5 flex items-center justify-between gap-4 text-left" aria-label="Open route panel">
+<button id="routeBar" class="fixed bottom-0 inset-x-0 z-40 lg:hidden bg-marigold text-[#171717] px-5 py-3.5 flex items-center justify-between gap-4 text-left" aria-label="Open route panel">
   <span>
     <span class="eyebrow opacity-60 block">Your route</span>
     <span class="text-[15px] font-semibold" id="barLabel">5 stops &middot; 2.1 km</span>
@@ -2194,7 +2205,9 @@
             '<button data-move="' + id + '" data-dir="1" class="w-6 h-6 rounded border border-rule text-muted hover:text-ink hover:border-ink inline-flex items-center justify-center disabled:opacity-25" ' + (i === route.length - 1 ? 'disabled' : '') + ' aria-label="Move ' + plain(s.name) + ' later">' +
               '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 18L12 22L16 18" /><path d="M12 2V22" /></svg>' +
             '</button>' +
-            '<button data-toggle="' + id + '" class="w-6 h-6 rounded border border-rule text-muted hover:text-ink hover:border-ink text-[13px] leading-none" aria-label="Remove ' + plain(s.name) + ' from route">&times;</button>' +
+            '<button data-toggle="' + id + '" class="w-6 h-6 rounded border border-rule text-muted hover:text-ink hover:border-ink inline-flex items-center justify-center" aria-label="Remove ' + plain(s.name) + ' from route">' +
+              '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>' +
+            '</button>' +
           '</div>' +
         '</div>';
     });
