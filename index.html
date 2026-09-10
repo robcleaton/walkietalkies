@@ -87,7 +87,7 @@
   .cat-card__name{ font-weight:700; font-size:14px; line-height:1.2; letter-spacing:normal; text-transform:none; }
   .cat-card:hover{ transform:translateY(-2px); filter:brightness(1.06); }
   .cat-card:active{ transform:translateY(0); filter:brightness(.95); }
-  .cat-card[aria-pressed="true"]{ box-shadow:0 0 0 2px var(--ground), 0 0 0 4px currentColor; transform:translateY(-2px); }
+  .cat-card[aria-pressed="true"]{ box-shadow:0 0 0 2px var(--ground), 0 0 0 4px #fff; transform:translateY(-2px); }
   #chips{ -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none; }
   #chips::-webkit-scrollbar{ display:none; }
   @media (prefers-reduced-motion: reduce){
@@ -169,20 +169,28 @@
   <!-- Masthead -->
   <header class="border-b border-rule">
     <div class="mx-auto max-w-[1280px] px-5 sm:px-8 py-5 flex flex-wrap items-center gap-x-8 gap-y-3">
-      <a href="./" class="flex items-center gap-3 min-w-[240px] hover:opacity-85 transition-opacity" aria-label="WalkieTalkies home">
+      <a id="logoLink" href="./" class="flex items-center gap-3 min-w-[240px] hover:opacity-85 transition-opacity" aria-label="WalkieTalkies home">
         <span class="inline-flex items-center justify-center shrink-0 rounded-[11px] w-10 h-10 sm:w-11 sm:h-11" style="background:var(--marigold)">
           <svg viewBox="0 0 256 256" fill="none" aria-hidden="true" class="w-6 h-6 sm:w-[26px] sm:h-[26px]">
             <path d="M 256 256 L 178 256 C 150.386 256 128 233.614 128 206 L 128 256 L 0 256 L 0 192 C 0 156.654 28.654 128 64 128 C 99.346 128 128 156.654 128 192 L 128 128 L 256 128 Z M 78 0 C 105.614 0 128 22.386 128 50 L 128 0 L 256 0 L 256 64 C 256 99.346 227.346 128 192 128 C 156.654 128 128 99.346 128 64 L 128 128 L 0 128 L 0 0 Z" fill="#171717"></path>
           </svg>
         </span>
-        <h1 class="font-logo uppercase text-[32px] sm:text-[38px] leading-[0.95] tracking-[-0.01em]">WalkieTalkies</h1>
+        <h1 id="logoText" class="font-logo uppercase text-[32px] sm:text-[38px] leading-[0.95] tracking-[-0.01em]">WalkieTalkies</h1>
       </a>
-      <div class="ml-auto flex items-center gap-3">
-        <label class="relative block">
+      <div class="flex-1 flex items-center justify-end gap-3 min-w-0">
+        <label id="searchLabel" class="hidden sm:flex flex-1 sm:flex-initial min-w-0 relative">
           <span class="sr-only">Search stops</span>
           <input id="search" type="search" placeholder="Search a person, place or street&hellip;"
-            class="w-[200px] sm:w-[260px] bg-raised border border-rule rounded-full px-4 py-2.5 text-[14px] placeholder:text-faint text-ink">
+            class="w-full sm:w-[260px] bg-raised border border-rule rounded-full px-4 py-2.5 text-[14px] placeholder:text-faint text-ink">
         </label>
+        <button id="searchToggle" class="sm:hidden shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full border border-rule text-muted hover:text-ink hover:border-ink transition-colors" aria-label="Search" aria-expanded="false">
+          <span id="searchToggleIcon" class="inline-flex items-center justify-center w-5 h-5">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+          </span>
+        </button>
         <button id="themeToggle" class="shrink-0 inline-flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-rule text-muted hover:text-ink hover:border-ink transition-colors" aria-label="Switch colour theme">
           <svg class="lucide lucide-sun w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="12" cy="12" r="4" />
@@ -359,13 +367,14 @@
             <button id="clearBtn" class="flex-1 text-[13px] font-semibold py-2.5 rounded-full border border-rule text-muted hover:text-ink hover:border-ink transition-colors">Clear route</button>
           </div>
           <p class="eyebrow text-faint text-center pt-1" id="syncNote">Saving locally</p>
+          <a href="https://warface.co.uk/" target="_blank" rel="noopener noreferrer" class="eyebrow text-faint hover:text-ink transition-colors text-center">Made by Warface</a>
         </div>
       </aside>
     </div>
 
     <footer class="mt-10 pt-5 border-t border-rule flex flex-wrap gap-x-6 gap-y-2 items-baseline">
       <p class="eyebrow text-faint">WalkieTalkies &middot; a South East London gazetteer</p>
-      <a href="https://warface.co.uk/" target="_blank" rel="noopener noreferrer" class="eyebrow text-faint hover:text-ink transition-colors">Warface</a>
+      <a href="https://warface.co.uk/" target="_blank" rel="noopener noreferrer" class="eyebrow text-faint hover:text-ink transition-colors">Made by Warface</a>
     </footer>
   </main>
 </div>
@@ -1991,15 +2000,12 @@
     var on = inRoute(s.id);
     var pos = route.indexOf(s.id) + 1;
     var catLabel = CATS[s.cat];
-    var eraText = s.era || '';
-    if (eraText === catLabel) eraText = '';
-    else if (eraText.indexOf(catLabel + ', ') === 0) eraText = eraText.slice(catLabel.length + 2);
+    var eraLead = s.era || '';
+    if (eraLead === catLabel) eraLead = '';
+    else if (eraLead.indexOf(catLabel + ', ') === 0) eraLead = eraLead.slice(catLabel.length + 2);
     return '' +
       '<article id="stop-' + s.id + '" class="stop px-5 py-5">' +
-        '<div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 mb-2">' +
-          '<span class="inline-flex items-center gap-1.5">' + catTile(s.cat, 16) + '<span class="eyebrow text-faint">' + catLabel + '</span></span>' +
-          (eraText ? '<span class="eyebrow text-faint">' + eraText + '</span>' : '') +
-        '</div>' +
+        '<div class="flex items-center gap-1.5 mb-2">' + catTile(s.cat, 16) + '<span class="eyebrow text-faint">' + catLabel + '</span></div>' +
         '<div class="flex items-start justify-between gap-4">' +
           '<div class="flex items-start gap-3 min-w-0">' +
             (s.img ? '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.remove()" class="w-14 h-14 shrink-0 rounded-lg object-cover border border-rule">' : '') +
@@ -2013,7 +2019,9 @@
             (on ? 'Stop ' + pos + ' ✓' : 'Add to route') +
           '</button>' +
         '</div>' +
-        '<p class="text-[14px] leading-[1.6] text-ink mt-3 max-w-[62ch]">' + s.text + '</p>' +
+        '<p class="text-[14px] leading-[1.6] text-ink mt-3 max-w-[62ch]">' +
+          (eraLead ? '<span class="font-semibold">' + eraLead + '.</span> ' : '') + s.text +
+        '</p>' +
         '<p class="text-[13px] leading-[1.6] text-muted mt-2.5 pl-3 border-l-2 border-brass max-w-[62ch]">' +
           '<span class="eyebrow text-brass block mb-1">Field note</span>' + s.note +
         '</p>' +
@@ -2180,8 +2188,12 @@
             : '') +
           '</div>' +
           '<div class="shrink-0 flex items-start gap-1">' +
-            '<button data-move="' + id + '" data-dir="-1" class="w-6 h-6 rounded border border-rule text-muted hover:text-ink hover:border-ink text-[11px] leading-none disabled:opacity-25" ' + (i === 0 ? 'disabled' : '') + ' aria-label="Move ' + plain(s.name) + ' earlier">&uarr;</button>' +
-            '<button data-move="' + id + '" data-dir="1" class="w-6 h-6 rounded border border-rule text-muted hover:text-ink hover:border-ink text-[11px] leading-none disabled:opacity-25" ' + (i === route.length - 1 ? 'disabled' : '') + ' aria-label="Move ' + plain(s.name) + ' later">&darr;</button>' +
+            '<button data-move="' + id + '" data-dir="-1" class="w-6 h-6 rounded border border-rule text-muted hover:text-ink hover:border-ink inline-flex items-center justify-center disabled:opacity-25" ' + (i === 0 ? 'disabled' : '') + ' aria-label="Move ' + plain(s.name) + ' earlier">' +
+              '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6L12 2L16 6" /><path d="M12 2V22" /></svg>' +
+            '</button>' +
+            '<button data-move="' + id + '" data-dir="1" class="w-6 h-6 rounded border border-rule text-muted hover:text-ink hover:border-ink inline-flex items-center justify-center disabled:opacity-25" ' + (i === route.length - 1 ? 'disabled' : '') + ' aria-label="Move ' + plain(s.name) + ' later">' +
+              '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 18L12 22L16 18" /><path d="M12 2V22" /></svg>' +
+            '</button>' +
             '<button data-toggle="' + id + '" class="w-6 h-6 rounded border border-rule text-muted hover:text-ink hover:border-ink text-[13px] leading-none" aria-label="Remove ' + plain(s.name) + ' from route">&times;</button>' +
           '</div>' +
         '</div>';
@@ -2194,15 +2206,27 @@
   /* ---------------------------------------------------------------
      Chips, events
   --------------------------------------------------------------- */
-  (function buildChips() {
+  function stopsInAreaScope() {
+    if (!filters.areaRe) return STOPS;
+    return STOPS.filter(function (s) {
+      var hay = (s.name + ' ' + s.area + ' ' + s.pc + ' ' + s.addr + ' ' + s.text + ' ' + s.note + ' ' + CATS[s.cat])
+        .replace(/&[a-z]+;/g, ' ').toLowerCase();
+      return filters.areaRe.test(hay);
+    });
+  }
+
+  function renderChips() {
     var wrap = document.getElementById('chips');
+    var scopeStops = stopsInAreaScope();
     var html = '';
     Object.keys(CATS).forEach(function (key) {
-      var n = STOPS.filter(function (s) { return s.cat === key; }).length;
+      var n = scopeStops.filter(function (s) { return s.cat === key; }).length;
+      if (n === 0) return;
       html += catCard(key, n);
     });
     wrap.innerHTML = html;
-  })();
+  }
+  renderChips();
 
   document.getElementById('chips').addEventListener('click', function (e) {
     var b = e.target.closest('[data-cat]');
@@ -2228,6 +2252,8 @@
       Array.prototype.forEach.call(document.querySelectorAll('.area-chip--on-match'), function (chip) {
         chip.classList.remove('area-chip--on-match');
       });
+      filters.cats = [];
+      renderChips();
     }
   });
 
@@ -2317,9 +2343,7 @@
     filters.areaRe = new RegExp('\\b' + escapeRegExp(area.toLowerCase()) + '\\b');
     filters.cats = [];
     document.getElementById('search').value = area;
-    Array.prototype.forEach.call(document.querySelectorAll('[data-cat]'), function (b) {
-      b.setAttribute('aria-pressed', 'false');
-    });
+    renderChips();
     renderList();
     document.title = areaTitle(area) + ' — WalkieTalkies';
 
@@ -2347,7 +2371,9 @@
   function clearAreaFilter() {
     filters.q = '';
     filters.areaRe = null;
+    filters.cats = [];
     document.getElementById('search').value = '';
+    renderChips();
     renderList();
     document.title = 'WalkieTalkies';
     document.documentElement.style.removeProperty('--area-bg');
@@ -2360,7 +2386,7 @@
   }
 
   function jumpToArea(area) {
-    applyAreaFilter(area, 'smooth');
+    applyAreaFilter(area);
     var url = new URL(location.href);
     url.searchParams.set('area', areaSlug(area));
     history.pushState({ area: area }, '', url);
@@ -2381,6 +2407,56 @@
   document.getElementById('sheetClose').addEventListener('click', function () { openSheet(false); });
   document.getElementById('scrim').addEventListener('click', function () { openSheet(false); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') openSheet(false); });
+
+  // Search — collapses to an icon button on small screens, expanding
+  // into the input on tap and collapsing back once it's empty and blurred
+  (function () {
+    var toggleBtn = document.getElementById('searchToggle');
+    var toggleIcon = document.getElementById('searchToggleIcon');
+    var label = document.getElementById('searchLabel');
+    var input = document.getElementById('search');
+    var logoLink = document.getElementById('logoLink');
+    var logoText = document.getElementById('logoText');
+    var mobile = window.matchMedia('(max-width: 639px)');
+    var isOpen = false;
+
+    // Same button throughout: a magnifier before the (collapsed) input,
+    // which becomes a close icon sitting right after it once open — the
+    // input's own flex-1 growth is what pushes it there, not positioning.
+    var ICON_SEARCH = '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+      '<circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg>';
+    var ICON_CLOSE = '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+      '<path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>';
+
+    function setOpen(open) {
+      isOpen = open;
+      label.classList.toggle('hidden', !open);
+      label.classList.toggle('flex', open);
+      toggleIcon.innerHTML = open ? ICON_CLOSE : ICON_SEARCH;
+      toggleBtn.setAttribute('aria-label', open ? 'Close search' : 'Search');
+      toggleBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      // Make room for a full-width bar on small screens: drop the
+      // wordmark and the logo's reserved width, keep the square icon.
+      logoText.classList.toggle('hidden', open && mobile.matches);
+      logoLink.style.minWidth = open && mobile.matches ? '0' : '';
+      if (open) input.focus();
+    }
+
+    toggleBtn.addEventListener('click', function () {
+      if (isOpen && input.value) {
+        input.value = '';
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+      setOpen(!isOpen);
+    });
+    input.addEventListener('blur', function () {
+      if (mobile.matches && !input.value) setOpen(false);
+    });
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') input.blur();
+    });
+    mobile.addEventListener('change', function (e) { if (!e.matches) setOpen(false); });
+  })();
 
   // Theme — black by default; the toggle switches to light and back
   document.getElementById('themeToggle').addEventListener('click', function () {
