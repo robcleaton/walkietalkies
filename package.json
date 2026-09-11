@@ -1,0 +1,10 @@
+{
+  "name": "walkietalkies",
+  "private": true,
+  "scripts": {
+    "export": "node scripts/export-from-notion.js"
+  },
+  "dependencies": {
+    "@notionhq/client": "^5.26.0"
+  }
+}
