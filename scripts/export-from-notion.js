@@ -111,6 +111,7 @@ function encodeField(value) {
     .replace(/é/g, '&eacute;')
     .replace(/à/g, '&agrave;')
     .replace(/\\/g, '\\\\')
+    .replace(/\r?\n/g, '\\n')
     .replace(/'/g, "\\'");
 }
 
@@ -172,8 +173,7 @@ function pageToStop(page, usedSlugs) {
     lat: getNumber(page, 'Latitude'),
     lon: getNumber(page, 'Longitude'),
     addr: getRichText(page, 'Address'),
-    text: getRichText(page, 'Description'),
-    note: getRichText(page, 'Field Note')
+    text: getRichText(page, 'Description')
   };
 }
 
@@ -197,8 +197,7 @@ function formatStop(stop) {
   return (
     `    { id:'${stop.id}', img:'${encodeField(stop.img)}', name:'${encodeField(stop.name)}', area:'${encodeField(stop.area)}', pc:'${encodeField(stop.pc)}', cat:'${stop.cat}', year:${year}, era:'${encodeField(stop.era)}',\n` +
     `      lat:${lat}, lon:${lon}, addr:'${encodeField(stop.addr)}',\n` +
-    `      text:'${encodeField(stop.text)}',\n` +
-    `      note:'${encodeField(stop.note)}' }`
+    `      text:'${encodeField(stop.text)}' }`
   );
 }
 
