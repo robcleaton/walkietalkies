@@ -110,6 +110,23 @@
     .area-chip:hover{ transform:none; }
   }
 
+  /* Sticky area nav: appears docked under the header once the big area
+     chips above have scrolled out of view; one user-scrollable row */
+  #areaStickyBar{
+    position:sticky; top:var(--header-h, 84px); z-index:20;
+    background:var(--area-bg, var(--ground)); border-bottom:1px solid var(--rule);
+    transition:background-color .45s ease;
+  }
+  #areaStickyRow{
+    -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none;
+    padding-left:max(20px, calc((100vw - 1280px) / 2 + 20px)); padding-right:20px;
+  }
+  #areaStickyRow::-webkit-scrollbar{ display:none; }
+  @media (min-width:640px){
+    #areaStickyRow{ padding-left:max(32px, calc((100vw - 1280px) / 2 + 32px)); padding-right:32px; }
+  }
+  .area-chip--compact{ padding:9px 18px; font-size:14px; flex:0 0 auto; }
+
   /* Area hero: shown when an area page is active */
   #areaHero{ color:var(--area-ink, var(--ink)); }
   #areaHero #areaHeroTitle{ font-size:clamp(52px, 11vw, 140px); }

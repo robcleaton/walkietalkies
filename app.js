@@ -765,6 +765,20 @@
     if (window.ResizeObserver) new ResizeObserver(schedule).observe(headerEl);
   })();
 
+  // Reveal the compact sticky area nav once the big area chips scroll past the header
+  (function stickyAreaBar() {
+    var target = document.getElementById('areaChips');
+    var bar = document.getElementById('areaStickyBar');
+    if (!target || !bar || !window.IntersectionObserver) return;
+    var headerH = parseFloat(getComputedStyle(root).getPropertyValue('--header-h')) || 84;
+    var io = new IntersectionObserver(function (entries) {
+      var e = entries[0];
+      var pastIt = !e.isIntersecting && e.boundingClientRect.top < 0;
+      bar.classList.toggle('hidden', !pastIt);
+    }, { rootMargin: '-' + headerH + 'px 0px 0px 0px', threshold: 0 });
+    io.observe(target);
+  })();
+
   // GPX export, when the viewer can save files
   if (window.claude && typeof window.claude.use === 'function') {
     window.claude.use('downloads').then(function (dl) {
