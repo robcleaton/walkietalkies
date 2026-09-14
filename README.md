@@ -38,9 +38,8 @@ export script matches Notion rows against — don't edit it on an existing
 row. Leave it blank on a new row and the export script will generate one
 from the row's Name.
 
-The **Category** select options must match the categories in `index.html`'s
-`CATS` map (`index.html:414`) exactly — adding a new category means updating
-both places.
+The **Category** select options must match the categories in `app.js`'s
+`CATS` map exactly — adding a new category means updating both places.
 
 ## Local preview
 

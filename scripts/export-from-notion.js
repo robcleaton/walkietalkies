@@ -38,7 +38,7 @@ if (!NOTION_TOKEN || !NOTION_DATABASE_ID) {
 
 const notion = new Client({ auth: NOTION_TOKEN });
 
-// Must match the CATS map in index.html exactly — this is the round-trip
+// Must match the CATS map in app.js exactly — this is the round-trip
 // between the site's internal category keys and Notion's human-readable labels.
 const CATS = {
   plaque: 'Blue plaque',
@@ -49,7 +49,8 @@ const CATS = {
   memory: 'Memorial & protest',
   green: 'Park & burial ground',
   pub: 'Historic pub',
-  art: 'Art & artists'
+  art: 'Art & artists',
+  brewery: 'Brewery'
 };
 
 const CAT_KEY_BY_LABEL = Object.fromEntries(Object.entries(CATS).map(([key, label]) => [label, key]));
