@@ -43,7 +43,7 @@
     return '<button class="cat-card" data-cat="' + cat + '" aria-pressed="false" style="background:' + m.color + ';color:' + m.fg + '">' +
       '<span class="cat-card__row">' +
         '<span class="cat-card__icon">' +
-          '<svg viewBox="0 0 256 256" width="18" height="18" fill="#171717" aria-hidden="true">' + m.icon + '</svg>' +
+          '<svg viewBox="0 0 256 256" width="28" height="28" fill="' + m.fg + '" aria-hidden="true">' + m.icon + '</svg>' +
         '</span>' +
         '<span class="cat-card__count">' + count + '</span>' +
       '</span>' +
@@ -133,7 +133,7 @@
     }
   }
 
-  function setSync(text) { document.getElementById('syncNote').textContent = text; }
+  function setSync(text) { var el = document.getElementById('syncNote'); if (el) el.textContent = text; }
 
   (function connect() {
     if (!window.claude || typeof window.claude.use !== 'function') return;
@@ -271,7 +271,8 @@
       SE16:'Rotherhithe &amp; Bermondsey', SE18:'Woolwich &amp; Shooter&rsquo;s Hill',
       SE19:'Crystal Palace', SE21:'Dulwich', SE22:'East Dulwich', SE23:'Forest Hill',
       SE26:'Sydenham', DA5:'Bexley', DA6:'Bexleyheath', SE6:'Catford',
-      SE12:'Lee', SE13:'Lewisham', SE5:'Camberwell', SE17:'Walworth', SE4:'Brockley', SE24:'Herne Hill'
+      SE12:'Lee', SE13:'Lewisham', SE5:'Camberwell', SE17:'Walworth', SE4:'Brockley', SE24:'Herne Hill',
+      SE20:'Penge', SE27:'Gipsy Hill'
     };
     return map[pc] || '';
   }

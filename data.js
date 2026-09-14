@@ -747,7 +747,7 @@
       lat:51.4839, lon:-0.0097, addr:'Cutty Sark Gardens, SE10 9HT',
       text:'Dug by hand through the chalk and opened in 1902, it let south London dockers reach work on the Isle of Dogs without depending on the ferries. Its walls still carry 200,000 original glazed tiles.\n\nBombed at the northern end in the Blitz, it reopened within months behind an emergency steel-and-concrete lining that still narrows the tunnel at that point today.' },
 
-    { id:'st-pauls-deptford', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Deptford_High_Street%2C_SE8_-_geograph.org.uk_-_1490848.jpg/330px-Deptford_High_Street%2C_SE8_-_geograph.org.uk_-_1490848.jpg', name:'St Paul&rsquo;s Church', area:'Deptford High Street', pc:'SE8', cat:'grand', year:1730, era:'Built 1712&ndash;1730',
+    { id:'st-pauls-deptford', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Deptford_High_Street%2C_SE8_-_geograph.org.uk_-_1490848.jpg/330px-Deptford_High_Street%2C_SE8_-_geograph.org.uk_-_1490848.jpg', name:'St Paul\'s Church', area:'Deptford High Street', pc:'SE8', cat:'grand', year:1730, era:'Built 1712&ndash;1730',
       lat:51.4780, lon:-0.0263, addr:'Deptford High Street, SE8 4RT',
       text:'Thomas Archer&rsquo;s Baroque parish church, one of the Commissioners&rsquo; &ldquo;Queen Anne&rdquo; churches funded after 1711, is closer to Roman Baroque than any other English church of its date &mdash; Archer drew directly on Borromini&rsquo;s Sant&rsquo;Agnese and Pietro da Cortona&rsquo;s Santa Maria della Pace.\n\nIts main body is raised bodily over a crypt, reached by dramatic curved flanking stairs &mdash; an unusually theatrical solution built to dignify the parish&rsquo;s own burial vaults.' },
 
@@ -771,7 +771,7 @@
       lat:51.5045, lon:-0.0865, addr:'32 London Bridge Street, SE1 9SG',
       text:'Renzo Piano&rsquo;s glass-clad pyramid rises 309.6 metres over seventy-two habitable floors, its irregular, tapering shards of glass deliberately left unfinished at the top to dissolve into the sky rather than end in a flat roof.\n\nIt topped out in March 2012 as the tallest building in western Europe, and remains so today &mdash; the UK&rsquo;s highest viewing gallery sits on the seventy-second floor, 245 metres up.' },
 
-    { id:'guys-hospital', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Guy%27s_Hospital_-_geograph.org.uk_-_6551871.jpg/330px-Guy%27s_Hospital_-_geograph.org.uk_-_6551871.jpg', name:'Guy&rsquo;s Hospital', area:'Great Maze Pond, Southwark', pc:'SE1', cat:'grand', year:1721, era:'Founded 1721, opened 1726',
+    { id:'guys-hospital', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Guy%27s_Hospital_-_geograph.org.uk_-_6551871.jpg/330px-Guy%27s_Hospital_-_geograph.org.uk_-_6551871.jpg', name:'Guy\'s Hospital', area:'Great Maze Pond, Southwark', pc:'SE1', cat:'grand', year:1721, era:'Founded 1721, opened 1726',
       lat:51.5031, lon:-0.0881, addr:'Great Maze Pond, SE1 9RT',
       text:'Thomas Guy, a bookseller who made a fortune printing Bibles and then a far larger one selling South Sea Company stock just before the bubble burst in 1720, endowed a hospital for patients turned away as &ldquo;incurable&rdquo; by the older St Thomas&rsquo; next door.\n\nGuy never married and had no heirs; his hospital opened in January 1726, a year after his death, funded almost entirely by the &pound;219,499 he left it &mdash; a fortune built on exactly the kind of speculative bubble it&rsquo;s risky to walk away from in time. He did.' },
 
@@ -780,7 +780,7 @@
       text:'Shaw became the first Chief Officer of the Metropolitan Fire Brigade in 1861 and spent thirty years modernising London&rsquo;s firefighting from the ground up.\n\nHe was famous enough in his day to appear, thinly disguised, as &ldquo;Captain Shaw&rdquo; in a Gilbert and Sullivan lyric in Iolanthe &mdash; a comic-opera nod to a real fire chief that would be strange in any other era.' },
 
     { id:'george-myers-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/6/64/George_Myers_Builder_1860s.jpg', name:'George Myers', area:'Southwark', pc:'SE1', cat:'plaque', year:1803, era:'Blue plaque',
-      lat:51.4978, lon:-0.1090, addr:'131 St George&rsquo;s Road, SE1 6HY',
+      lat:51.4978, lon:-0.1090, addr:'131 St George\'s Road, SE1 6HY',
       text:'Myers was the master builder behind most of Augustus Pugin&rsquo;s great Gothic Revival commissions, including large parts of the Palace of Westminster.\n\nPugin trusted him enough to hand over designs as rough sketches, relying on Myers to work out the practical detail &mdash; a method that let Pugin design far more buildings than he could ever have detailed himself.' },
 
     { id:'greenwich-market', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/312SFEC_LONDON-20070917.JPG/330px-312SFEC_LONDON-20070917.JPG', name:'Greenwich Market', area:'Greenwich', pc:'SE10', cat:'works', year:1700, era:'Chartered 1700, opened 1737',
@@ -823,7 +823,7 @@
       lat:51.4615, lon:-0.0155, addr:'Lewisham High Street, by the Clock Tower, SE13',
       text:'A flying bomb exploded in front of Lewisham&rsquo;s clock tower &mdash; already in this gazetteer &mdash; in the middle of a Friday morning market. Around fifty-one people were killed and over three hundred injured; a hundred shops were wrecked and that stretch of high street was rebuilt from scratch after the war.\n\nIt struck the same spot the 1897 Jubilee clock tower still stands on today &mdash; the tower survived; the market crowd in front of it did not.' },
 
-    { id:'great-harry-woolwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/2016_Woolwich%2C_Beresford_Square_market.jpg/330px-2016_Woolwich%2C_Beresford_Square_market.jpg', name:'The Great Harry', area:'Wellington Street, Woolwich', pc:'SE18', cat:'pub', year:1512, era:'Named after Henry VIII&rsquo;s flagship',
+    { id:'great-harry-woolwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/2016_Woolwich%2C_Beresford_Square_market.jpg/330px-2016_Woolwich%2C_Beresford_Square_market.jpg', name:'The Great Harry', area:'Wellington Street, Woolwich', pc:'SE18', cat:'pub', year:1512, era:'Named after Henry VIII\'s flagship',
       lat:51.4900, lon:0.0645, addr:'Wellington Street, SE18 6PW',
       text:'Named for the Henry Grace &agrave; Dieu &mdash; the &ldquo;Great Harry&rdquo; &mdash; Henry VIII&rsquo;s flagship, built at the Woolwich dockyard he founded. Woolwich&rsquo;s entire naval history compressed into one pub sign.\n\nIt burned to the ground in the August 2011 riots. Locals turned the hoardings into a &ldquo;wall of peace&rdquo; while it was rebuilt, and it reopened in July 2012, days before Woolwich hosted Olympic shooting events.' },
 
@@ -859,15 +859,15 @@
       lat:51.4453, lon:-0.0210, addr:'Catford town centre, SE6',
       text:'Named after the old coaching road running south from Catford to Rye in Sussex, the late-Victorian building had been retail space of one kind or another before becoming, for the first time, a pub.\n\nIt closed in August 2024, and a redevelopment application for the site was filed in 2025 &mdash; check before you make a special trip.' },
 
-    { id:'white-swan-charlton', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/The_White_Swan%2C_Charlton_-_geograph.org.uk_-_1541798.jpg/330px-The_White_Swan%2C_Charlton_-_geograph.org.uk_-_1541798.jpg', name:'White Swan', area:'Charlton Village', pc:'SE7', cat:'pub', year:1840, era:'Charlton&rsquo;s village pub since the 1840s, currently closed',
+    { id:'white-swan-charlton', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/The_White_Swan%2C_Charlton_-_geograph.org.uk_-_1541798.jpg/330px-The_White_Swan%2C_Charlton_-_geograph.org.uk_-_1541798.jpg', name:'White Swan', area:'Charlton Village', pc:'SE7', cat:'pub', year:1840, era:'Charlton\'s village pub since the 1840s, currently closed',
       lat:51.4845, lon:0.0365, addr:'22 The Village, SE7 8UD',
       text:'Charlton&rsquo;s Victorian village pub, licensed since at least 1840 and the social centre for the streets around Charlton House ever since &mdash; until it closed.\n\nA community group launched a crowdfunder in December 2025 to buy and reopen it, following the same rescue playbook as Nunhead&rsquo;s Ivy House &mdash; a story still mid-way through, not yet resolved either way.' },
 
-    { id:'st-antholins-spire', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/St_Antholin_Cruse.jpg/330px-St_Antholin_Cruse.jpg', name:'St Antholin&rsquo;s Spire', area:'Round Hill, Sydenham', pc:'SE23', cat:'grand', year:1682, era:'Built 1682, moved here 1829',
+    { id:'st-antholins-spire', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/St_Antholin_Cruse.jpg/330px-St_Antholin_Cruse.jpg', name:'St Antholin\'s Spire', area:'Round Hill, Sydenham', pc:'SE23', cat:'grand', year:1682, era:'Built 1682, moved here 1829',
       lat:51.4325, lon:-0.0530, addr:'Round Hill, SE23',
       text:'Christopher Wren&rsquo;s spire topped a City church on Budge Row until an 1829 storm damaged it; Robert Harrild, a printing pioneer and the church&rsquo;s own warden, bought the wrecked upper section for &pound;5 and re-erected it as a garden folly at his house here.\n\nHarrild&rsquo;s mansion became a social club, then was demolished for 1960s housing &mdash; but the council kept the spire standing among the new blocks, so a fragment of Wren&rsquo;s London now rises out of an ordinary South London estate.' },
 
-    { id:'louise-house', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Janusz_Korczak_%28cropped%29.jpg/330px-Janusz_Korczak_%28cropped%29.jpg', name:'Louise House', area:'Dartmouth Road, Forest Hill', pc:'SE23', cat:'memory', year:1891, era:'Opened 1891, Korczak&rsquo;s visit 1911',
+    { id:'louise-house', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Janusz_Korczak_%28cropped%29.jpg/330px-Janusz_Korczak_%28cropped%29.jpg', name:'Louise House', area:'Dartmouth Road, Forest Hill', pc:'SE23', cat:'memory', year:1891, era:'Opened 1891, Korczak\'s visit 1911',
       lat:51.4385, lon:-0.0535, addr:'Dartmouth Road, SE23',
       text:'Built in 1891 as a Girls&rsquo; Industrial Home &mdash; part boarding school, part trade training for children with nowhere else to go &mdash; it was visited in 1911 by Janusz Korczak, a Polish-Jewish paediatrician touring London&rsquo;s children&rsquo;s institutions.\n\nKorczak went home to Warsaw and opened an orphanage run on what he&rsquo;d seen here, developing ideas about children&rsquo;s rights that fed directly into the UN&rsquo;s later Declaration of the Rights of the Child. He died at Treblinka in 1942, having refused offers to save himself alone and gone to the camp with his orphans instead.' },
 
@@ -879,7 +879,7 @@
       lat:51.4388, lon:-0.0538, addr:'Dartmouth Road, SE23',
       text:'Alexander Robert Hennell&rsquo;s Arts and Crafts library was one of over six hundred built across Britain and Ireland with money from the Scottish-American steel magnate Andrew Carnegie, who funded free public libraries on the condition that the local council agreed to run and stock them.\n\nA deep terracotta frieze of kneeling cherubs and floral swags runs the full width of the front &mdash; an ornamental flourish that&rsquo;s survived over a century of being walked past by people just there to return a book.' },
 
-    { id:'havelock-walk', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Havelock_Walk%2C_Forest_Hill.jpg/330px-Havelock_Walk%2C_Forest_Hill.jpg', name:'Havelock Walk', area:'Forest Hill', pc:'SE23', cat:'art', year:1988, era:'Artists&rsquo; studios since the late 1980s',
+    { id:'havelock-walk', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Havelock_Walk%2C_Forest_Hill.jpg/330px-Havelock_Walk%2C_Forest_Hill.jpg', name:'Havelock Walk', area:'Forest Hill', pc:'SE23', cat:'art', year:1988, era:'Artists\' studios since the late 1980s',
       lat:51.4370, lon:-0.0505, addr:'Havelock Walk, SE23',
       text:'A cobbled mews first laid out as a field path in the 1850s, badly bombed in the Second World War, and left mostly as derelict industrial storage until the artist Jeff Lowe started buying up the cheap warehouse space in the late 1980s and converting it into live-work studios.\n\nSixteen working studios now line the mews, among them the illustrator Rob Lowe &mdash; who works under the name Supermundane, all bold colour and repeating pattern &mdash; and Ian Wright, whose scratchy black-and-white portraits ran weekly in the NME and monthly in The Face through the 1980s. The Canvas &amp; Cream gallery anchors the far end, and the whole street throws its doors open for a public Open Studios weekend at least twice a year, spring and winter, with live music, printmaking demonstrations, a small artisan market and a kids&rsquo; craft table set up between the workshops.' },
 
@@ -887,7 +887,7 @@
       lat:51.4482, lon:-0.0430, addr:'One Tree Hill, Honor Oak Park, SE23',
       text:'An octagonal concrete platform, built in 1916 to mount a Royal Naval anti-aircraft gun against Zeppelin and Gotha bomber raids, still sits on the hill&rsquo;s summit &mdash; two watches of ten naval ratings were stationed here to crew it.\n\nBy most accounts it never brought down a single German aircraft in the whole war, though it did reportedly manage to damage some tram equipment down in Peckham Rye. The mounting-ring bolts and a groove for the lightning conductor are still visible in the concrete.' },
 
-    { id:'oxleas-wood', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Trees_in_Jack_Wood%2C_Shooter%27s_Hill.jpg/330px-Trees_in_Jack_Wood%2C_Shooter%27s_Hill.jpg', name:'Oxleas Wood', area:'Eltham / Shooter&rsquo;s Hill', pc:'SE18', cat:'green', year:1993, era:'Ancient woodland, saved from a road scheme in 1993',
+    { id:'oxleas-wood', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Trees_in_Jack_Wood%2C_Shooter%27s_Hill.jpg/330px-Trees_in_Jack_Wood%2C_Shooter%27s_Hill.jpg', name:'Oxleas Wood', area:'Eltham / Shooter\'s Hill', pc:'SE18', cat:'green', year:1993, era:'Ancient woodland, saved from a road scheme in 1993',
       lat:51.4670, lon:0.0660, addr:'Oxleas Wood, SE18 3JA',
       text:'Parts of this wood have stood continuously since the end of the last Ice Age, more than eight thousand years ago &mdash; a royal manor from 1311 until 1679, and public parkland since 1934.\n\nIn 1993 a grassroots campaign called PARC (People Against the River Crossing) beat back a government motorway scheme that would have driven straight through it &mdash; over 3,000 people pledged civil disobedience to stop the bulldozers, and the road was withdrawn.' },
 
@@ -899,7 +899,7 @@
       lat:51.4581, lon:-0.0552, addr:'Ends at Nunhead Cemetery, SE15 3LP',
       text:'Four boroughs created the Green Chain Walk in 1977 to link some 300 open spaces between the Thames and Crystal Palace Park into one protected 82-kilometre network, in eleven official waymarked sections. Its final stage runs from Crystal Palace Park to Nunhead Cemetery, tying together two green spaces already in this gazetteer.\n\nThe whole network runs south from three separate Thames starting points &mdash; the Thames Barrier, Thamesmead and Erith &mdash; and doesn&rsquo;t fully converge until Oxleas Wood.' },
 
-    { id:'capital-ring-woolwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Capital_Ring_waymarker_post.jpg/330px-Capital_Ring_waymarker_post.jpg', name:'The Capital Ring', area:'Woolwich to Falconwood', pc:'SE18', cat:'green', year:2005, era:'First stage of London&rsquo;s orbital walking route',
+    { id:'capital-ring-woolwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Capital_Ring_waymarker_post.jpg/330px-Capital_Ring_waymarker_post.jpg', name:'The Capital Ring', area:'Woolwich to Falconwood', pc:'SE18', cat:'green', year:2005, era:'First stage of London\'s orbital walking route',
       lat:51.4913, lon:0.0688, addr:'Starts at the Woolwich Foot Tunnel, SE18 6DX',
       text:'The Capital Ring, London&rsquo;s 126-kilometre orbital walking route, officially begins at the Woolwich foot tunnel &mdash; already in this gazetteer &mdash; and its first stretch to Falconwood runs through Charlton and past Eltham, overlapping with the Green Chain network for its whole South East London run.\n\nIts opening section starts at the same 1902 tunnel entrance dockers once used to get to work &mdash; a Victorian engineering project now doubling as the start line for a twenty-first-century walking route.' },
 
@@ -927,7 +927,7 @@
       lat:51.4280, lon:-0.0555, addr:'German Lutheran Church, Dacres Road, SE26',
       text:'The German theologian and later anti-Nazi resistance figure served as pastor of this German-speaking congregation for two years before returning to Germany. He was executed by the Nazis in 1945, weeks before the war ended.\n\nThe church itself was destroyed by bombing in 1944 &mdash; Bonhoeffer&rsquo;s own building didn&rsquo;t outlive him by more than a year.' },
 
-    { id:'jim-connell-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Honor_Oak_Parks_shops_-_geograph.org.uk_-_731971.jpg/330px-Honor_Oak_Parks_shops_-_geograph.org.uk_-_731971.jpg', name:'Jim Connell', area:'Honor Oak', pc:'SE23', cat:'plaque', year:1889, era:'Wrote &ldquo;The Red Flag&rdquo; here, December 1889',
+    { id:'jim-connell-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Honor_Oak_Parks_shops_-_geograph.org.uk_-_731971.jpg/330px-Honor_Oak_Parks_shops_-_geograph.org.uk_-_731971.jpg', name:'Jim Connell', area:'Honor Oak', pc:'SE23', cat:'plaque', year:1889, era:'Wrote "The Red Flag" here, December 1889',
       lat:51.4470, lon:-0.0455, addr:'22a Stondon Park, SE23',
       text:'Connell wrote the lyrics to &ldquo;The Red Flag&rdquo; &mdash; still the Labour Party&rsquo;s anthem today &mdash; on a train home from Charing Cross, then finished the song at this address.\n\nSome sources describe his plaque as &ldquo;red&rdquo; rather than maroon; almost certainly just loose colour terminology for the same dark-red Lewisham scheme, not a separate one.' },
 
@@ -943,8 +943,8 @@
       lat:51.4470, lon:-0.0455, addr:'Honor Oak, SE23',
       text:'Paul grew up in Honor Oak and co-founded the Woodcraft Folk here in 1925 &mdash; a still-active youth movement built around outdoor education and folk tradition &mdash; serving as its head until 1934.\n\nNo precise street survives in the record for this one, so the marker sits on the general Honor Oak locator rather than a guessed address.' },
 
-    { id:'walters-way', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Honor_Oak_Parks_shops_-_geograph.org.uk_-_731971.jpg/330px-Honor_Oak_Parks_shops_-_geograph.org.uk_-_731971.jpg', name:'Walter&rsquo;s Way', area:'Honor Oak', pc:'SE23', cat:'grand', year:1985, era:'Self-built 1978&ndash;1985',
-      lat:51.4478, lon:-0.0398, addr:'Walter&rsquo;s Way, Honor Oak Park, SE23 3LH',
+    { id:'walters-way', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Honor_Oak_Parks_shops_-_geograph.org.uk_-_731971.jpg/330px-Honor_Oak_Parks_shops_-_geograph.org.uk_-_731971.jpg', name:'Walter\'s Way', area:'Honor Oak', pc:'SE23', cat:'grand', year:1985, era:'Self-built 1978&ndash;1985',
+      lat:51.4478, lon:-0.0398, addr:'Walter\'s Way, Honor Oak Park, SE23 3LH',
       text:'Thirteen timber-frame houses on a hillside plot too awkward for conventional builders, put up by the families who would live in them using architect Walter Segal&rsquo;s post-and-beam method &mdash; no bricklaying or plastering skills required, just Segal on hand to advise.\n\nSegal&rsquo;s frames rest on paving-slab pad foundations rather than dug trenches, so the mature trees already on site never had to come down &mdash; several houses still grow up around them. Segal Close, the scheme&rsquo;s second phase, sits just round the corner.' },
 
     { id:'wg-grace-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/WG_Grace_c1902.jpg/330px-WG_Grace_c1902.jpg', name:'W.G. Grace', area:'Mottingham', pc:'SE9', cat:'plaque', year:1899, era:'Blue plaque, lived here from 1899',
@@ -983,7 +983,7 @@
       lat:51.4526, lon:-0.1006, addr:'10 Half Moon Lane, SE24 9HU',
       text:'An inn has stood on this site since the mid-seventeenth century; the current Jacobethan Revival building dates from 1894&ndash;96. It ran as a live-music venue for nearly fifty years &mdash; U2 played three gigs here in 1980, where Island Records&rsquo; Chris Blackwell first saw them, and Dylan Thomas was a regular.\n\nFlooded and closed in August 2013, it reopened under Fuller&rsquo;s in 2017; the old venue stage is gone, but it still hosts an annual Dylan Day. It sits just outside this gazetteer&rsquo;s usual postcode range, on the Herne Hill/Dulwich border &mdash; included as a deliberate, small stretch.' },
 
-    { id:'dog-and-duck-st-georges', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dog_and_Duck%2C_Soho%2C_W1_%282534053077%29.jpg/330px-Dog_and_Duck%2C_Soho%2C_W1_%282534053077%29.jpg', name:'Site of the Dog and Duck', area:'St George&rsquo;s Fields', pc:'SE1', cat:'memory', year:1642, era:'Tavern 1642, spa by 1695, closed 1799',
+    { id:'dog-and-duck-st-georges', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dog_and_Duck%2C_Soho%2C_W1_%282534053077%29.jpg/330px-Dog_and_Duck%2C_Soho%2C_W1_%282534053077%29.jpg', name:'Site of the Dog and Duck', area:'St George\'s Fields', pc:'SE1', cat:'memory', year:1642, era:'Tavern 1642, spa by 1695, closed 1799',
       lat:51.4956, lon:-0.1031, addr:'Now under the Imperial War Museum, Geraldine Mary Harmsworth Park, SE1 6HZ',
       text:'Named for duck-baiting sport once staged on its ponds, it ran through three lives &mdash; popular tavern, then a fashionable mineral-water spa by 1695, then a rowdy concert venue notorious for highwaymen by the 1770s.\n\nSurrey magistrates refused to renew its licence in 1787 after a royal proclamation against drunkenness, and it closed for good in 1799. Its 1716 inn sign, showing a dog gripping a duck, survives in the Cuming Museum collection &mdash; the pub itself outlived by its own signboard.' },
 
@@ -999,7 +999,7 @@
       lat:51.4816, lon:-0.0093, addr:'1 College Approach, SE10 9HW',
       text:'Built as part of Joseph Kay&rsquo;s 1830s redevelopment of central Greenwich, on a site with a Galleon inn recorded two hundred years earlier; named for paintings of British naval victories over Spain once hung nearby in Greenwich Hospital.\n\nA full sailor&rsquo;s uniform turned up in the cellar during 1985 renovations and now hangs behind the bar.' },
 
-    { id:'sun-in-the-sands', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Sun_in_the_Sands_inn_-_geograph.org.uk_-_634795.jpg/330px-Sun_in_the_Sands_inn_-_geograph.org.uk_-_634795.jpg', name:'Sun in the Sands', area:'Blackheath / Shooter&rsquo;s Hill border', pc:'SE3', cat:'pub', year:1745, era:'Inn since c.1745',
+    { id:'sun-in-the-sands', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Sun_in_the_Sands_inn_-_geograph.org.uk_-_634795.jpg/330px-Sun_in_the_Sands_inn_-_geograph.org.uk_-_634795.jpg', name:'Sun in the Sands', area:'Blackheath / Shooter\'s Hill border', pc:'SE3', cat:'pub', year:1745, era:'Inn since c.1745',
       lat:51.4750, lon:0.0250, addr:'Sun in the Sands, SE3 8SR',
       text:'An isolated highwayman&rsquo;s inn on the old drovers&rsquo; road, its name taken from the setting sun catching the dust kicked up by sheep being driven to London markets; local tradition has Henry VIII stopping here with Catherine of Aragon.\n\nIt gave its name to the major road junction that replaced it &mdash; the Sun in the Sands roundabout, where the A2 meets the Blackwall Tunnel approach, is now better known than the pub that named it.' },
 
@@ -1020,7 +1020,7 @@
       text:'First recorded in an 1858 Freemasons&rsquo; magazine, it later ran 2000s indie nights that gave early stage time to Bloc Party and Art Brut, drawing on the Goldsmiths crowd down the road.\n\nNow run by Portobello Brewing, it still hosts live jazz, including sets from Nubya Garcia.' },
 
     { id:'woolwich-pub-bombing', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Kings_Arms%2C_Woolwich.jpg/330px-Kings_Arms%2C_Woolwich.jpg', name:'The Woolwich pub bombing', area:'Frances Street, Woolwich', pc:'SE18', cat:'memory', year:1974, era:'7 November 1974',
-      lat:51.4905, lon:0.0645, addr:'Site of the King&rsquo;s Arms, 1 Frances Street, SE18',
+      lat:51.4905, lon:0.0645, addr:'Site of the King\'s Arms, 1 Frances Street, SE18',
       text:'An IRA bomb at the King&rsquo;s Arms killed two people &mdash; Gunner Richard Dunne and sales clerk Alan Horsley &mdash; and injured thirty-five more.\n\nTwo of the Guildford Four were wrongly convicted of this attack in 1975 and served fifteen years before their convictions were quashed in 1989, after the actual Balcombe Street bombers confessed in 1977 &mdash; one of Britain&rsquo;s clearest miscarriages of justice, rooted at this address.' },
 
     { id:'stanhope-herne-hill-mural', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Herne_Hill_Station_Main_2012.jpg/330px-Herne_Hill_Station_Main_2012.jpg', name:'Herne Hill railway mural', area:'Railton Road, Herne Hill', pc:'SE24', cat:'art', year:2013, era:'Painted 2013, the first of the series',
@@ -1057,5 +1057,97 @@
 
     { id:'stanhope-charlton-valley-mural', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Charlton_Station_-_geograph.org.uk_-_234017.jpg/330px-Charlton_Station_-_geograph.org.uk_-_234017.jpg', name:'Charlton Athletic centenary mural', area:'Charlton Church Lane, Charlton', pc:'SE7', cat:'art', year:2020, era:'Painted March 2020',
       lat:51.4870, lon:0.0335, addr:'Railway bridge, Charlton Church Lane, SE7',
-      text:'Lionel Stanhope and sculptor Zara Gaze marked one hundred years of Charlton Athletic at The Valley with a mural on the bridge outside Charlton station, funded by the Charlton Athletic Museum and painted in graffiti-resistant materials over two days.\n\nIt includes a small tribute reading &ldquo;Seb 1076&rdquo;, for supporter Seb Lewis and the 1,076 consecutive matches he attended before his death.' }
+      text:'Lionel Stanhope and sculptor Zara Gaze marked one hundred years of Charlton Athletic at The Valley with a mural on the bridge outside Charlton station, funded by the Charlton Athletic Museum and painted in graffiti-resistant materials over two days.\n\nIt includes a small tribute reading &ldquo;Seb 1076&rdquo;, for supporter Seb Lewis and the 1,076 consecutive matches he attended before his death.' },
+
+    { id:'affinity-brewing-bermondsey', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Affinity_Brew_Co._Tasting_Room%2C_Bermondsey%2C_SE16.jpg/330px-Affinity_Brew_Co._Tasting_Room%2C_Bermondsey%2C_SE16.jpg', name:'Affinity Brewing Co.', area:'Brixton (formerly Bermondsey)', pc:'SE16', cat:'brewery', year:2017, era:'On the Beer Mile 2017&ndash;2020',
+      lat:51.4918, lon:-0.0596, addr:'7 Almond Road, South Bermondsey, SE16 3LR',
+      text:'A small-batch brewer &mdash; Social Seduction IPA its standout &mdash; that started in a shipping container in Tottenham Hale in 2016 before taking this Almond Road arch at the quiet, southern end of the Beer Mile in 2017. It moved out to a Brixton brewpub in 2020.' },
+
+    { id:'anspach-and-hobday', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Anspach_%26_Hobday%2C_Bermondsey_2026-05-09.jpg/330px-Anspach_%26_Hobday%2C_Bermondsey_2026-05-09.jpg', name:'Anspach &amp; Hobday', area:'Bermondsey', pc:'SE1', cat:'brewery', year:2014, era:'Beer Mile stalwart since 2014',
+      lat:51.4986, lon:-0.0734, addr:'118 Druid Street, SE1 2HH (the Arch House Taproom)',
+      text:'Known for porters and table beer, this Arch House taproom has been a Beer Mile fixture since 2014 &mdash; even as most of the brewing itself has since moved out to Croydon.' },
+
+    { id:'bianca-road-brewery', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Bianca_Road_Brew_Co._Taproom%2C_Bermondsey%2C_SE16.jpg/330px-Bianca_Road_Brew_Co._Taproom%2C_Bermondsey%2C_SE16.jpg', name:'Bianca Road Bakery &amp; Brewery', area:'Bermondsey', pc:'SE16', cat:'brewery', year:2019, era:'On Enid Street since 2019',
+      lat:51.4972, lon:-0.0717, addr:'82-84 Enid Street, SE16 3RA',
+      text:'West Coast US-inspired beers, including the TropiCali IPA, from a brewery that started in Peckham in 2016 before settling into this two-arch Enid Street site in 2019.' },
+
+    { id:'brew-by-numbers-bermondsey', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Brew_by_Numbers%2C_Bermondsey%2C_SE16.jpg/330px-Brew_by_Numbers%2C_Bermondsey%2C_SE16.jpg', name:'Brew By Numbers (Bermondsey)', area:'Bermondsey', pc:'SE16', cat:'brewery', year:2012, era:'Founded 2012, taproom closed 2023',
+      lat:51.4975, lon:-0.072, addr:'Arch 79, Enid Street, SE16 3QA',
+      text:'Dave Seymour and Tom Hutchings&rsquo; numbered recipe system ran from farmhouse ales to double dry-hopped IPAs out of this Enid Street arch from 2012. The taproom closed in May 2023 when the company went into administration; brewing was later consolidated up in Yorkshire.' },
+
+    { id:'bbno-morden-wharf', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Morden_Wharf_-_geograph.org.uk_-_6996220.jpg/330px-Morden_Wharf_-_geograph.org.uk_-_6996220.jpg', name:'Brew By Numbers Morden Wharf (Greenwich)', area:'Greenwich', pc:'SE10', cat:'brewery', year:2021, era:'Opened 2021, closed 2024',
+      lat:51.4938, lon:0.0044, addr:'Southern Warehouse, Morden Wharf Road, SE10 0NU',
+      text:'A larger riverside Brew By Numbers site with a beer garden and Canary Wharf views, opened in 2021 when the brewery expanded out from its original Bermondsey arch. It closed in 2024 when the company went into administration and production moved to Yorkshire.' },
+
+    { id:'brick-brewery', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Brick_Brewery_Taproom%2C_Peckham%2C_SE15.jpg/330px-Brick_Brewery_Taproom%2C_Peckham%2C_SE15.jpg', name:'Brick Brewery', area:'Peckham / Deptford', pc:'SE15', cat:'brewery', year:2013, era:'Taproom under the arches since 2013',
+      lat:51.4697, lon:-0.0696, addr:'209 Blenheim Grove, SE15 4QL',
+      text:'A Peckham Rye taproom institution under the station arches since 2013, known for Peckham Session IPA and Tamarind &amp; Lime Leaf sours &mdash; even as the actual brewing has moved on, first to Deptford, then to Yorkshire.' },
+
+    { id:'brockley-brewery', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/The_Brockley_Brewing_Company_Ltd_-_geograph.org.uk_-_5994993.jpg/330px-The_Brockley_Brewing_Company_Ltd_-_geograph.org.uk_-_5994993.jpg', name:'Brockley Brewery', area:'Brockley', pc:'SE4', cat:'brewery', year:2013, era:'Founded 2013 by seven partners',
+      lat:51.4623, lon:-0.0362, addr:'31 Harcourt Road, SE4 2AJ',
+      text:'A well-regarded local brewery going beyond standard IPAs and lagers into cask ales and bottled beers, founded by seven partners in 2013.' },
+
+    { id:'cloudwater-bermondsey', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Cloudwater_Tap_Room%2C_Bermondsey_2025-08-30.jpg/330px-Cloudwater_Tap_Room%2C_Bermondsey_2025-08-30.jpg', name:'Cloudwater', area:'Bermondsey', pc:'SE16', cat:'brewery', year:2018, era:'London taproom since 2018',
+      lat:51.4977, lon:-0.0726, addr:'73 Enid Street, SE16 3RA',
+      text:'A Manchester brewery&rsquo;s London taproom on the Beer Mile, trading from this Enid Street arch since 2018.' },
+
+    { id:'fourpure-brewing', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Fourpure_Brewing_Co._Bermondsey_Trading_Estate%2C_Bermondsey%2C_London.jpg/330px-Fourpure_Brewing_Co._Bermondsey_Trading_Estate%2C_Bermondsey%2C_London.jpg', name:'Fourpure Brewing', area:'Bermondsey', pc:'SE16', cat:'brewery', year:2013, era:'Founded 2013, closed 2024',
+      lat:51.4891, lon:-0.0563, addr:'25 Bermondsey Trading Estate, Rotherhithe New Road, SE16 3LL',
+      text:'Brothers Dan and Tom Lowe founded one of the original Bermondsey Beer Mile breweries here in 2013, known for its core lagers and IPAs. It ceased brewing and closed in September 2024.' },
+
+    { id:'gipsy-hill-brewing', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Hamilton_Road%2C_West_Norwood_-_geograph.org.uk_-_4607302.jpg/330px-Hamilton_Road%2C_West_Norwood_-_geograph.org.uk_-_4607302.jpg', name:'Gipsy Hill Brewing Co.', area:'Gipsy Hill / Crystal Palace', pc:'SE27', cat:'brewery', year:2014, era:'Founded 2014',
+      lat:51.4287, lon:-0.0896, addr:'Unit 11, 160 Hamilton Road, SE27 9SF',
+      text:'Founded in 2014 and employee-owned since 2021, one of London&rsquo;s largest independent breweries runs an on-site taproom here plus a smaller micro-bar, the Douglas Fir, nearer Crystal Palace itself.' },
+
+    { id:'gosnells-bermondsey', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Gosnells%2C_Bermondsey_2025-08-30.jpg/330px-Gosnells%2C_Bermondsey_2025-08-30.jpg', name:'Gosnells', area:'Bermondsey', pc:'SE16', cat:'brewery', year:2022, era:'Taproom here 2022&ndash;2026',
+      lat:51.4978, lon:-0.0727, addr:'72 Enid Street, SE16 3RD',
+      text:'The UK&rsquo;s only dedicated mead bar and brewery opened this Enid Street taproom in September 2022. It closed its Peckham brewery and moved out of this site around May 2026, when Big Hug Brewing took over the arch.' },
+
+    { id:'hiver-beers', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Hiver_Beers_Taproom%2C_Bermondsey%2C_SE16.jpg/330px-Hiver_Beers_Taproom%2C_Bermondsey%2C_SE16.jpg', name:'Hiver Beers', area:'Bermondsey', pc:'SE1', cat:'brewery', year:2013, era:'Founded 2013',
+      lat:51.4988, lon:-0.0747, addr:'Arch 56, Stanworth Street, SE1 3NY',
+      text:'Honey beers made with British beekeepers &mdash; Blonde, Amber and a Session IPA &mdash; from a brewery that started life as a stall on Maltby Street before taking this Stanworth Street arch.' },
+
+    { id:'hop-stuff-woolwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/London-Woolwich%2C_Royal_Arsenal%2C_Hopstuff_brewery.jpg/330px-London-Woolwich%2C_Royal_Arsenal%2C_Hopstuff_brewery.jpg', name:'Hop Stuff Brewery', area:'Woolwich', pc:'SE18', cat:'brewery', year:2013, era:'Crowdfunded 2013, closed 2019',
+      lat:51.4931, lon:0.0757, addr:'Unit 7 Gunnery Terrace, Cornwallis Road, SE18 6SW',
+      text:'James and Emma Yeomans crowdfunded this original Hop Stuff taproom and brewery in the Royal Arsenal in 2013. It went into administration in 2019, with the Hop Stuff name and assets later bought by Molson Coors.' },
+
+    { id:'kanpai-london', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Kanpai_London_Sake%2C_Bermondsey_2025-08-30.jpg/330px-Kanpai_London_Sake%2C_Bermondsey_2025-08-30.jpg', name:'Kanpai London', area:'Bermondsey', pc:'SE1', cat:'brewery', year:2016, era:'Founded 2016, moved to the Beer Mile 2023',
+      lat:51.5005, lon:-0.077, addr:'48 Druid Street, SE1 2EZ',
+      text:'The UK&rsquo;s first sake brewery, founded in Peckham in 2016 and relocated to this Druid Street arch in 2023.' },
+
+    { id:'meantime-brewing', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Meantime_Brewing%2C_Greenwich%2C_SE10.jpg/330px-Meantime_Brewing%2C_Greenwich%2C_SE10.jpg', name:'Meantime Brewing Co.', area:'Greenwich', pc:'SE10', cat:'brewery', year:1999, era:'Founded 1999, closed 2024',
+      lat:51.489, lon:0.0086, addr:'Lawrence Trading Estate, Blackwall Lane, SE10 0AR',
+      text:'Alastair Hook founded this state-of-the-art brewery in 1999, with tours, tasting rooms and a brewery shop drawing visitors to the Greenwich site for a quarter of a century. It closed in 2024 when owner Asahi moved production to Fuller&rsquo;s Chiswick brewery.' },
+
+    { id:'moor-beer-bermondsey', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Moor_Vaults_and_Tap_Room%2C_Bermondsey_2025-08-30.jpg/330px-Moor_Vaults_and_Tap_Room%2C_Bermondsey_2025-08-30.jpg', name:'Moor Beer', area:'Bermondsey', pc:'SE16', cat:'brewery', year:2017, era:'Taproom here 2017&ndash;2026',
+      lat:51.4978, lon:-0.0727, addr:'71 Enid Street, SE16 3RA',
+      text:'A Bristol-rooted brewery known for natural, live-yeast, vegan-friendly beers, trading from this Enid Street arch from Christmas 2017 until early 2026, when the site was sold and reopened as a live-music bar, the Blue Monk.' },
+
+    { id:'southey-brewing', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Penge_High_Street_-_geograph.org.uk_-_4712820.jpg/330px-Penge_High_Street_-_geograph.org.uk_-_4712820.jpg', name:'Southey Brewing', area:'Penge', pc:'SE20', cat:'brewery', year:2016, era:'Reopened 2016 in a former brewery\'s warehouse',
+      lat:51.4153, lon:-0.0523, addr:'21 Southey Street, SE20 7JD',
+      text:'A small-batch brewery in a Victorian warehouse that was once an abattoir and a candle factory before another brewery, Late Knights, set up here in 2013. Late Knights folded in 2016 and Southey restarted brewing on the same site that December, with its taproom opening in 2018.' },
+
+    { id:'southwark-brewing', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Southwark_Brewing_Co._Tap_Room%2C_Bermondsey%2C_SE1.jpg/330px-Southwark_Brewing_Co._Tap_Room%2C_Bermondsey%2C_SE1.jpg', name:'Southwark Brewing Co.', area:'Bermondsey', pc:'SE1', cat:'brewery', year:2014, era:'Founded 2014, the Beer Mile\'s first cask specialist',
+      lat:51.5006, lon:-0.0771, addr:'46 Druid Street, SE1 2EZ',
+      text:'Peter Jackson and Andy Nichol founded the Beer Mile&rsquo;s first cask-focused brewery in this railway arch in 2014, with Sean Franklin as master brewer &mdash; a common starting point for organised tasting tours ever since.' },
+
+    { id:'taproom-se8', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Taproom_SE8%2C_Deptford%2C_SE8.jpg/330px-Taproom_SE8%2C_Deptford%2C_SE8.jpg', name:'Taproom SE8 (Hop Stuff)', area:'Deptford', pc:'SE8', cat:'brewery', year:2017, era:'Opened 2017, rebranded Salt Deptford 2021',
+      lat:51.4785, lon:-0.0269, addr:'Unit 2, St Paul\'s House, 3 Market Yard, SE8 4BX',
+      text:'Hop Stuff Brewery&rsquo;s second taproom opened in Deptford Market Yard in December 2017. Salt of Yorkshire acquired it in 2021 and rebranded the site Salt Deptford, though the arch itself is the same one that opened as Taproom SE8.' },
+
+    { id:'kernel-brewery', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Kernel_Brewery_Arch_7_Taproom%2C_Bermondsey%2C_SE16.jpg/330px-Kernel_Brewery_Arch_7_Taproom%2C_Bermondsey%2C_SE16.jpg', name:'The Kernel Brewery', area:'Bermondsey', pc:'SE16', cat:'brewery', year:2010, era:'Founded 2010, moved here 2012',
+      lat:51.4957, lon:-0.0685, addr:'Arch 11, Dockley Road Industrial Estate, SE16 3SF',
+      text:'One of the breweries that kick-started the Bermondsey Beer Mile &mdash; understated labels, celebrated table beer, porters and IPAs. Started on Druid Street in 2010 before moving to this Dockley Road arch in 2012.' },
+
+    { id:'up-the-creek-microbrewery', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Up_the_Creek_comedy_club%2C_London_SE10.jpg/330px-Up_the_Creek_comedy_club%2C_London_SE10.jpg', name:'Up the Creek microbrewery', area:'Greenwich', pc:'SE10', cat:'brewery', year:2018, era:'Brewing since 2018',
+      lat:51.4813, lon:-0.0116, addr:'302 Creek Road, SE10 9SW',
+      text:'A small cask microbrewery built into the Up the Creek comedy club, which opened in 1991. Brewing began on a three-barrel plant in 2018 &mdash; Greenwich Blonde, Gravedigger stout.' },
+
+    { id:'villages-brewery', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Villages_Brewery_Tap_Room%2C_Deptford%2C_SE8.jpg/330px-Villages_Brewery_Tap_Room%2C_Deptford%2C_SE8.jpg', name:'Villages Brewery', area:'Deptford', pc:'SE8', cat:'brewery', year:2016, era:'Founded 2016 by brothers Archie and Louis Village',
+      lat:51.4785, lon:-0.0245, addr:'21-22 Resolution Way, SE8 4NT',
+      text:'An under-the-arches taproom brewing unfiltered lager, pale ale, fruited sours and porters, founded by brothers Archie and Louis Village.' },
+
+    { id:'zerodegrees-blackheath', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Zerodegrees%2C_Blackheath%2C_SE3.jpg/330px-Zerodegrees%2C_Blackheath%2C_SE3.jpg', name:'Zerodegrees', area:'Blackheath', pc:'SE3', cat:'brewery', year:2000, era:'Brewing since 2000',
+      lat:51.4676, lon:0.0083, addr:'29-31 Montpelier Vale, SE3 0TJ',
+      text:'A microbrewery built into a pizza restaurant on Blackheath Village&rsquo;s high street, brewing wheat beer, pilsner, pale ale and a mango beer since 2000 &mdash; a brewpub that predates the whole &ldquo;craft beer&rdquo; wave by well over a decade.' }
   ];

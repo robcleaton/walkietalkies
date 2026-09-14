@@ -224,7 +224,10 @@
           <div class="flex items-start justify-between gap-3">
             <div>
               <h2 class="font-display text-[24px] leading-none">Your route</h2>
-              <p class="eyebrow text-faint mt-2" id="routeMeta">No stops yet</p>
+              <div class="flex items-center gap-3 mt-2">
+                <p class="eyebrow text-faint" id="routeMeta">No stops yet</p>
+                <button id="clearBtn" class="eyebrow text-faint underline underline-offset-2 hover:text-ink transition-colors">Clear route</button>
+              </div>
             </div>
             <button id="sheetClose" class="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full border border-rule text-muted hover:text-ink hover:border-ink transition-colors" aria-label="Close route panel">
               <svg class="lucide lucide-circle-chevron-down w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -250,19 +253,21 @@
         <div class="px-5 py-4 border-t border-rule flex flex-col gap-2">
           <a id="mapsLink" href="#" target="_blank" rel="noopener"
              class="text-center text-[13px] font-semibold py-2.5 rounded-full bg-plaque text-white hover:opacity-90 transition-opacity">Open the walk in Maps</a>
-          <div class="flex gap-2">
-            <button id="gpxBtn" class="hidden flex-1 text-[13px] font-semibold py-2.5 rounded-full border border-rule text-ink hover:border-ink transition-colors">Save as GPX</button>
-            <button id="clearBtn" class="flex-1 text-[13px] font-semibold py-2.5 rounded-full border border-rule text-muted hover:text-ink hover:border-ink transition-colors">Clear route</button>
-          </div>
-          <p class="eyebrow text-faint text-center pt-1" id="syncNote">Saving locally</p>
-          <a href="https://warface.co.uk/" target="_blank" rel="noopener noreferrer" class="eyebrow text-faint hover:text-ink transition-colors text-center">Made by Warface</a>
+          <button id="gpxBtn" class="hidden w-full text-[13px] font-semibold py-2.5 rounded-full border border-rule text-ink hover:border-ink transition-colors">Save as GPX</button>
+          <a href="https://warface.co.uk/" target="_blank" rel="noopener noreferrer" class="lg:hidden flex justify-center hover:opacity-60 transition-opacity">
+            <img src="assets/warface/warface-logo-white.svg" alt="Warface" class="warface-logo-dark h-[24px]">
+            <img src="assets/warface/warface-logo-black.svg" alt="Warface" class="warface-logo-light h-[24px]">
+          </a>
         </div>
       </aside>
     </div>
 
-    <footer class="mt-10 pt-5 border-t border-rule flex flex-wrap gap-x-6 gap-y-2 items-baseline">
+    <footer class="mt-10 pt-5 border-t border-rule flex flex-wrap gap-x-6 gap-y-2 items-center">
       <p class="eyebrow text-faint">WalkieTalkies &middot; a South East London gazetteer</p>
-      <a href="https://warface.co.uk/" target="_blank" rel="noopener noreferrer" class="eyebrow text-faint hover:text-ink transition-colors">Made by Warface</a>
+      <a href="https://warface.co.uk/" target="_blank" rel="noopener noreferrer" class="w-full flex justify-center hover:opacity-60 transition-opacity">
+        <img src="assets/warface/warface-logo-white.svg" alt="Warface" class="warface-logo-dark h-[24px]">
+        <img src="assets/warface/warface-logo-black.svg" alt="Warface" class="warface-logo-light h-[24px]">
+      </a>
     </footer>
   </main>
 </div>
