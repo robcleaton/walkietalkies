@@ -30,11 +30,11 @@
     brewery:  { color:'var(--brass)',     fg:'#171717', icon:'<path d="M 0 128.007 C 0.004 198.696 57.31 256 128 256 L 0 256 Z M 256 256 L 128 256 C 198.69 256 255.996 198.696 256 128.007 Z M 192 128 C 192 163.346 163.346 192 128 192 C 92.654 192 64 163.346 64 128 Z M 128 0 C 198.692 0 256 57.308 256 128 L 192 128 C 192 92.654 163.346 64 128 64 C 92.654 64 64 92.654 64 128 L 0 128 C 0 57.308 57.308 0 128 0 Z"/>' }
   };
 
-  function catTile(cat, size) {
+  function catChip(cat) {
     var m = CATMARK[cat];
-    var s = size || 18;
-    return '<span class="inline-flex items-center justify-center shrink-0 rounded-[7px]" style="width:' + s + 'px;height:' + s + 'px;background:' + m.color + '">' +
-      '<svg viewBox="0 0 256 256" width="' + Math.round(s * 0.6) + '" height="' + Math.round(s * 0.6) + '" fill="#171717" aria-hidden="true">' + m.icon + '</svg>' +
+    return '<span class="inline-flex items-center gap-1.5 shrink-0 rounded-full pl-1.5 pr-3 py-1" style="background:' + m.color + ';color:' + m.fg + '">' +
+      '<svg viewBox="0 0 256 256" width="14" height="14" fill="' + m.fg + '" aria-hidden="true">' + m.icon + '</svg>' +
+      '<span class="eyebrow">' + CATS[cat] + '</span>' +
     '</span>';
   }
 
@@ -128,12 +128,9 @@
   function persist() {
     saveLocal();
     if (docRef) {
-      docRef.set({ stops: route, updatedAt: new Date().toISOString() })
-        .catch(function () { setSync('Saved in this browser'); });
+      docRef.set({ stops: route, updatedAt: new Date().toISOString() }).catch(function () {});
     }
   }
-
-  function setSync(text) { var el = document.getElementById('syncNote'); if (el) el.textContent = text; }
 
   (function connect() {
     if (!window.claude || typeof window.claude.use !== 'function') return;
@@ -141,7 +138,6 @@
       if (!ns) return;
       db = ns;
       docRef = db.doc(DOC_PATH);
-      setSync('Saved to this page');
       docRef.onSnapshot(function (snap) {
         var data = snap.exists ? snap.data() : null;
         if (data && Array.isArray(data.stops)) {
@@ -154,7 +150,7 @@
         } else if (!adopted) {
           adopted = true; // nothing stored yet: keep the local/starter route, write on first edit
         }
-      }, function () { setSync('Saved in this browser'); });
+      }, function () {});
     }).catch(function () {});
   })();
 
@@ -286,7 +282,7 @@
     else if (eraLead.indexOf(catLabel + ', ') === 0) eraLead = eraLead.slice(catLabel.length + 2);
     return '' +
       '<article id="stop-' + s.id + '" class="stop px-5 py-5">' +
-        '<div class="flex items-center gap-1.5 mb-2">' + catTile(s.cat, 16) + '<span class="eyebrow text-faint">' + catLabel + '</span></div>' +
+        '<div class="mb-2">' + catChip(s.cat) + '</div>' +
         '<div class="flex items-start justify-between gap-4">' +
           '<div class="flex items-start gap-3 min-w-0">' +
             (s.img ? '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.remove()" class="w-14 h-14 shrink-0 rounded-lg object-cover border border-rule">' : '') +
@@ -642,6 +638,8 @@
     document.getElementById('areaHeroPostcodes').innerHTML = postcodeBadgesHTML(areaPostcodes(area));
     areaHeroEl.classList.remove('hidden');
     homeIntroEl.classList.add('hidden');
+    document.getElementById('areaChips').classList.add('hidden');
+    document.getElementById('areaChipsBottom').classList.remove('hidden');
 
     if (scrollBehavior) {
       document.getElementById('list').scrollIntoView({ behavior: scrollBehavior, block: 'start' });
@@ -660,6 +658,8 @@
     document.documentElement.style.removeProperty('--area-ink');
     areaHeroEl.classList.add('hidden');
     homeIntroEl.classList.remove('hidden');
+    document.getElementById('areaChips').classList.remove('hidden');
+    document.getElementById('areaChipsBottom').classList.add('hidden');
     Array.prototype.forEach.call(document.querySelectorAll('.area-chip--on-match'), function (chip) {
       chip.classList.remove('area-chip--on-match');
     });
@@ -670,6 +670,7 @@
     var url = new URL(location.href);
     url.searchParams.set('area', areaSlug(area));
     history.pushState({ area: area }, '', url);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   window.addEventListener('popstate', function () {
@@ -765,18 +766,47 @@
     if (window.ResizeObserver) new ResizeObserver(schedule).observe(headerEl);
   })();
 
+  // Populate a row (the sticky nav, the bottom-of-area-page row) by cloning the
+  // real (non-marquee-duplicate) #areaChips buttons, so the area/colour list
+  // stays defined in a single place.
+  function buildAreaRow(rowId, compact) {
+    var row = document.getElementById(rowId);
+    if (!row) return;
+    var seen = {};
+    Array.prototype.forEach.call(document.querySelectorAll('#areaChips .area-row:not(.area-row-dup) .area-chip[data-area]'), function (btn) {
+      var area = btn.getAttribute('data-area');
+      if (seen[area]) return;
+      seen[area] = true;
+      var clone = btn.cloneNode(true);
+      if (compact) clone.classList.add('area-chip--compact');
+      row.appendChild(clone);
+    });
+  }
+  buildAreaRow('areaStickyRow', true);
+  buildAreaRow('areaChipsBottomRow', false);
+
   // Reveal the compact sticky area nav once the big area chips scroll past the header
   (function stickyAreaBar() {
     var target = document.getElementById('areaChips');
     var bar = document.getElementById('areaStickyBar');
-    if (!target || !bar || !window.IntersectionObserver) return;
-    var headerH = parseFloat(getComputedStyle(root).getPropertyValue('--header-h')) || 84;
-    var io = new IntersectionObserver(function (entries) {
-      var e = entries[0];
-      var pastIt = !e.isIntersecting && e.boundingClientRect.top < 0;
-      bar.classList.toggle('hidden', !pastIt);
-    }, { rootMargin: '-' + headerH + 'px 0px 0px 0px', threshold: 0 });
-    io.observe(target);
+    var headerEl = document.querySelector('header');
+    if (!target || !bar || !headerEl || !window.IntersectionObserver) return;
+    var io = null;
+    function connect() {
+      if (io) io.disconnect();
+      io = new IntersectionObserver(function (entries) {
+        var e = entries[0];
+        var pastIt = !e.isIntersecting && e.boundingClientRect.top < 0;
+        bar.classList.toggle('hidden', !pastIt);
+      }, { rootMargin: '-' + headerEl.offsetHeight + 'px 0px 0px 0px', threshold: 0 });
+      io.observe(target);
+    }
+    connect();
+    var raf = null;
+    window.addEventListener('resize', function () {
+      if (raf) return;
+      raf = requestAnimationFrame(function () { raf = null; connect(); });
+    });
   })();
 
   // GPX export, when the viewer can save files

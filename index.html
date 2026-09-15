@@ -96,43 +96,15 @@
     </div>
   </header>
 
-  <!-- Sticky area nav: single scrollable row, shown once the big area chips below scroll out of view -->
+  <!-- Sticky area nav: single scrollable row, shown once the big area chips below scroll out of view.
+       Populated by JS from the #areaChips buttons below, so the area/colour list stays defined once. -->
   <div id="areaStickyBar" class="hidden">
-    <div id="areaStickyRow" class="flex flex-nowrap gap-2 overflow-x-auto py-3">
-        <button class="area-chip area-chip--compact" style="background:var(--tomato);color:#fff" data-area="elephant">Elephant &amp; Castle</button>
-        <button class="area-chip area-chip--compact" style="background:var(--marigold);color:#171717" data-area="honor oak">Honor Oak</button>
-        <button class="area-chip area-chip--compact" style="background:var(--brass);color:#171717" data-area="blackheath">Blackheath</button>
-        <button class="area-chip area-chip--compact" style="background:var(--bubblegum);color:#fff" data-area="charlton">Charlton</button>
-        <button class="area-chip area-chip--compact" style="background:var(--verdigris);color:#fff" data-area="greenwich">Greenwich</button>
-        <button class="area-chip area-chip--compact" style="background:var(--violet);color:#fff" data-area="new cross">New Cross</button>
-        <button class="area-chip area-chip--compact" style="background:var(--plaque);color:#fff" data-area="rotherhithe">Rotherhithe</button>
-        <button class="area-chip area-chip--compact" style="background:var(--tomato);color:#fff" data-area="woolwich">Woolwich</button>
-        <button class="area-chip area-chip--compact" style="background:var(--marigold);color:#171717" data-area="sydenham">Sydenham</button>
-        <button class="area-chip area-chip--compact" style="background:var(--violet);color:#fff" data-area="forest hill">Forest Hill</button>
-        <button class="area-chip area-chip--compact" style="background:var(--plaque);color:#fff" data-area="crystal palace">Crystal Palace</button>
-        <button class="area-chip area-chip--compact" style="background:var(--tomato);color:#fff" data-area="camberwell">Camberwell</button>
-        <button class="area-chip area-chip--compact" style="background:var(--marigold);color:#171717" data-area="deptford">Deptford</button>
-        <button class="area-chip area-chip--compact" style="background:var(--brass);color:#171717" data-area="lee">Lee</button>
-        <button class="area-chip area-chip--compact" style="background:var(--bubblegum);color:#fff" data-area="peckham">Peckham</button>
-        <button class="area-chip area-chip--compact" style="background:var(--verdigris);color:#fff" data-area="bermondsey">Bermondsey</button>
-        <button class="area-chip area-chip--compact" style="background:var(--violet);color:#fff" data-area="dulwich">Dulwich</button>
-        <button class="area-chip area-chip--compact" style="background:var(--plaque);color:#fff" data-area="bexley">Bexley</button>
-        <button class="area-chip area-chip--compact" style="background:var(--bubblegum);color:#fff" data-area="brockley">Brockley</button>
-        <button class="area-chip area-chip--compact" style="background:var(--verdigris);color:#fff" data-area="bankside">Bankside</button>
-        <button class="area-chip area-chip--compact" style="background:var(--violet);color:#fff" data-area="catford">Catford</button>
-        <button class="area-chip area-chip--compact" style="background:var(--plaque);color:#fff" data-area="eltham">Eltham</button>
-        <button class="area-chip area-chip--compact" style="background:var(--tomato);color:#fff" data-area="lewisham">Lewisham</button>
-        <button class="area-chip area-chip--compact" style="background:var(--marigold);color:#171717" data-area="nunhead">Nunhead</button>
-        <button class="area-chip area-chip--compact" style="background:var(--brass);color:#171717" data-area="walworth">Walworth</button>
-        <button class="area-chip area-chip--compact" style="background:var(--bubblegum);color:#fff" data-area="east dulwich">East Dulwich</button>
-        <button class="area-chip area-chip--compact" style="background:var(--verdigris);color:#fff" data-area="bexleyheath">Bexleyheath</button>
-    </div>
+    <div id="areaStickyRow" class="scroll-hide flex flex-nowrap gap-2 overflow-x-auto py-3"></div>
   </div>
 
   <!-- Area hero: shown only when an area page is active -->
   <section id="areaHero" class="hidden mx-auto max-w-[1280px] px-5 sm:px-8 pt-8">
     <div class="min-w-0">
-      <p class="eyebrow mb-2 opacity-80">Area guide</p>
       <h2 id="areaHeroTitle" class="font-display leading-[0.85] tracking-[-0.02em]">Forest Hill</h2>
       <p id="areaHeroDesc" class="text-[15px] sm:text-[16px] leading-[1.55] mt-3 max-w-[62ch] opacity-90"></p>
       <div id="areaHeroPostcodes" class="flex flex-wrap items-center gap-1.5 mt-3"></div>
@@ -237,7 +209,7 @@
 
   <!-- Category chips -->
   <section class="mx-auto max-w-[1280px] pt-6">
-    <div id="chips" class="flex flex-nowrap sm:flex-wrap overflow-x-auto sm:overflow-visible gap-2.5 px-5 sm:px-8 py-2 sm:py-0"></div>
+    <div id="chips" class="scroll-hide flex flex-nowrap sm:flex-wrap overflow-x-auto sm:overflow-visible gap-2.5 px-5 sm:px-8 py-2 sm:py-0"></div>
   </section>
 
   <!-- Gazetteer + route -->
@@ -295,7 +267,12 @@
       </aside>
     </div>
 
-    <footer class="mt-10 pt-5 border-t border-rule flex flex-wrap gap-x-6 gap-y-2 items-center">
+    <!-- Area chips, repeated at the bottom of an area page (populated by JS, mirroring #areaChips above) -->
+    <div id="areaChipsBottom" class="hidden mt-10 pt-8 border-t border-rule">
+      <div id="areaChipsBottomRow" class="flex flex-wrap gap-2.5"></div>
+    </div>
+
+    <footer class="mt-10 pt-5 border-t border-rule flex flex-col gap-3">
       <p class="eyebrow text-faint">WalkieTalkies &middot; a South East London gazetteer</p>
       <a href="https://warface.co.uk/" target="_blank" rel="noopener noreferrer" class="w-full flex justify-center hover:opacity-60 transition-opacity">
         <img src="assets/warface/warface-logo-white.svg" alt="Warface" class="warface-logo-dark h-[24px]">

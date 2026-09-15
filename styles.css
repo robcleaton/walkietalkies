@@ -64,8 +64,9 @@
   .cat-card:hover{ transform:translateY(-2px); filter:brightness(1.06); }
   .cat-card:active{ transform:translateY(0); filter:brightness(.95); }
   .cat-card[aria-pressed="true"]{ box-shadow:0 0 0 2px var(--ground), 0 0 0 4px #fff; transform:translateY(-2px); }
-  #chips{ -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none; }
-  #chips::-webkit-scrollbar{ display:none; }
+  /* Hide the scrollbar on horizontally-scrollable chip rows (#chips, #areaStickyRow) */
+  .scroll-hide{ -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none; }
+  .scroll-hide::-webkit-scrollbar{ display:none; }
   @media (prefers-reduced-motion: reduce){
     .cat-card{ transition:none; }
     .cat-card:hover, .cat-card[aria-pressed="true"]{ transform:none; }
@@ -118,10 +119,8 @@
     transition:background-color .45s ease;
   }
   #areaStickyRow{
-    -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none;
     padding-left:max(20px, calc((100vw - 1280px) / 2 + 20px)); padding-right:20px;
   }
-  #areaStickyRow::-webkit-scrollbar{ display:none; }
   @media (min-width:640px){
     #areaStickyRow{ padding-left:max(32px, calc((100vw - 1280px) / 2 + 32px)); padding-right:32px; }
   }
