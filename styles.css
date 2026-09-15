@@ -114,7 +114,7 @@
   /* Sticky area nav: appears docked under the header once the big area
      chips above have scrolled out of view; one user-scrollable row */
   #areaStickyBar{
-    position:sticky; top:var(--header-h, 84px); z-index:20;
+    position:fixed; top:var(--header-h, 84px); left:0; right:0; z-index:20;
     background:var(--area-bg, var(--ground)); border-bottom:1px solid var(--rule);
     transition:background-color .45s ease;
   }
@@ -125,6 +125,23 @@
     #areaStickyRow{ padding-left:max(32px, calc((100vw - 1280px) / 2 + 32px)); padding-right:32px; }
   }
   .area-chip--compact{ padding:9px 18px; font-size:14px; flex:0 0 auto; }
+
+  /* Homepage teaser row: break out of <main>'s max-w-[1280px] cap so the
+     scroll track uses the full window width on wide screens (same technique
+     as #areaStickyRow), while resting-position alignment still matches the
+     rest of the page content via the calculated left padding. */
+  #homeList{
+    margin-left:calc(0px - max(20px, (100vw - 1280px) / 2 + 20px));
+    margin-right:calc(0px - max(20px, (100vw - 1280px) / 2 + 20px));
+    padding-left:max(20px, calc((100vw - 1280px) / 2 + 20px)); padding-right:20px;
+  }
+  @media (min-width:640px){
+    #homeList{
+      margin-left:calc(0px - max(32px, (100vw - 1280px) / 2 + 32px));
+      margin-right:calc(0px - max(32px, (100vw - 1280px) / 2 + 32px));
+      padding-left:max(32px, calc((100vw - 1280px) / 2 + 32px)); padding-right:32px;
+    }
+  }
 
   /* Area hero: shown when an area page is active */
   #areaHero{ color:var(--area-ink, var(--ink)); }
@@ -152,9 +169,25 @@
     html.route-open #scrim{ display:block; }
   }
   @media (min-width:1024px){
-    #scrim, #routeBar, #sheetClose{ display:none !important; }
-    /* Sit just below the fixed header, not underneath it */
-    #routePanel{ top:calc(var(--header-h, 84px) + 20px); }
+    #scrim, #routeBar{ display:none !important; }
+    /* Closed by default: a dropdown menu anchored under #routeHeaderBtn,
+       not a permanent sidebar column. Toggled via html.route-open (see
+       openSheet() in app.js), the same state the mobile sheet uses. */
+    #routePanel{
+      position:fixed; z-index:60;
+      top:calc(var(--header-h, 84px) + 12px);
+      right:max(20px, calc((100vw - 1280px) / 2 + 20px));
+      width:380px; max-width:calc(100vw - 40px);
+      max-height:calc(100vh - var(--header-h, 84px) - 32px);
+      transform-origin:top right;
+      opacity:0; visibility:hidden; transform:translateY(-8px) scale(.98);
+      box-shadow:0 20px 50px -12px rgba(0,0,0,.35);
+      transition:opacity .16s ease, transform .16s ease, visibility 0s linear .16s;
+    }
+    html.route-open #routePanel{
+      opacity:1; visibility:visible; transform:translateY(0) scale(1);
+      transition:opacity .16s ease, transform .16s ease;
+    }
   }
   @media (prefers-reduced-motion: reduce){
     #routePanel{ transition:none; }

@@ -67,6 +67,11 @@
     });
   });
 
+  // A fixed set of 10 random stops for the homepage's horizontal-scroll
+  // teaser row, picked once per page load so it doesn't reshuffle as the
+  // user adds/removes stops from their route.
+  var HOME_RANDOM_STOPS = STOPS.slice().sort(function () { return Math.random() - 0.5; }).slice(0, 10);
+
   /* ---------------------------------------------------------------
      State
   --------------------------------------------------------------- */
@@ -121,6 +126,45 @@
   }
 
   function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+  /* ---------------------------------------------------------------
+     Route map (Leaflet + OpenStreetMap) — a small preview of the
+     current route, numbered pins in stop order plus the walking line
+  --------------------------------------------------------------- */
+  var routeMapEl = document.getElementById('routeMap');
+  var routeMap = null, routeMapLayer = null;
+
+  function renderRouteMap() {
+    var n = route.length;
+    routeMapEl.classList.toggle('hidden', n === 0);
+    if (n === 0 || typeof L === 'undefined') return;
+
+    if (!routeMap) {
+      routeMap = L.map(routeMapEl, { scrollWheelZoom: false });
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
+      }).addTo(routeMap);
+      routeMapLayer = L.layerGroup().addTo(routeMap);
+    }
+    routeMapLayer.clearLayers();
+
+    var latlngs = route.map(function (id) { return [byId[id].lat, byId[id].lon]; });
+    L.polyline(latlngs, { color: '#171717', weight: 3, opacity: .55, dashArray: '1 8', lineCap: 'round' }).addTo(routeMapLayer);
+    route.forEach(function (id, i) {
+      var s = byId[id];
+      var icon = L.divIcon({
+        className: '',
+        html: '<span class="flex items-center justify-center w-[22px] h-[22px] rounded-full text-white font-mono text-[11px] font-semibold" style="background:var(--verdigris);box-shadow:0 1px 3px rgba(0,0,0,.4)">' + (i + 1) + '</span>',
+        iconSize: [22, 22], iconAnchor: [11, 11]
+      });
+      L.marker([s.lat, s.lon], { icon: icon }).addTo(routeMapLayer).bindPopup(plain(s.name));
+    });
+
+    routeMap.invalidateSize();
+    if (latlngs.length === 1) routeMap.setView(latlngs[0], 15);
+    else routeMap.fitBounds(latlngs, { padding: [24, 24] });
+  }
 
   /* ---------------------------------------------------------------
      Persistence
@@ -231,11 +275,22 @@
      Render: gazetteer
   --------------------------------------------------------------- */
   var listEl = document.getElementById('list');
+  var homeListEl = document.getElementById('homeList');
 
   function renderList() {
     var items = visible();
     document.getElementById('resultCount').textContent =
       items.length + (items.length === 1 ? ' stop' : ' stops');
+
+    var isHome = !filters.q && !filters.cats.length && !filters.areaRe;
+    listEl.classList.toggle('hidden', isHome);
+    homeListEl.classList.toggle('hidden', !isHome);
+    if (isHome) {
+      homeListEl.innerHTML = HOME_RANDOM_STOPS.map(function (s) {
+        return '<div class="w-[300px] sm:w-[340px] shrink-0">' + stopHTML(s) + '</div>';
+      }).join('');
+      return;
+    }
 
     if (!items.length) {
       listEl.innerHTML =
@@ -291,9 +346,9 @@
               '<p class="font-mono text-[11px] text-muted num">' + s.area + ' &middot; ' + s.pc + '</p>' +
             '</div>' +
           '</div>' +
-          '<button data-toggle="' + s.id + '" class="shrink-0 text-[12px] font-semibold px-3 py-2 rounded-full border transition-colors ' +
+          '<button data-toggle="' + s.id + '" class="shrink-0 inline-flex items-center gap-1 text-[12px] font-semibold px-3 py-2 rounded-full border transition-colors ' +
             (on ? 'bg-verdigris text-white border-verdigris' : 'border-rule text-ink hover:border-ink') + '">' +
-            (on ? 'Stop ' + pos + ' ✓' : 'Add to route') +
+            (on ? 'Stop ' + pos + ' <svg class="lucide lucide-check w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>' : 'Add to route') +
           '</button>' +
         '</div>' +
         '<p class="text-[14px] leading-[1.6] text-ink mt-3 max-w-[62ch]">' +
@@ -417,6 +472,11 @@
     document.getElementById('barLabel').textContent =
       n === 0 ? 'Empty — add a stop' : n + (n === 1 ? ' stop' : ' stops') + ' · ' + km.toFixed(1) + ' km';
 
+    var headerCount = document.getElementById('routeHeaderCount');
+    headerCount.textContent = n;
+    headerCount.classList.toggle('hidden', n === 0);
+    headerCount.classList.toggle('inline-flex', n > 0);
+
     var maps = document.getElementById('mapsLink');
     if (n === 0) {
       maps.setAttribute('aria-disabled', 'true');
@@ -428,6 +488,8 @@
       maps.href = 'https://www.google.com/maps/dir/' +
         route.slice(0, 10).map(function (id) { return byId[id].lat + ',' + byId[id].lon; }).join('/') + '/data=!4m2!4m1!3e2';
     }
+
+    renderRouteMap();
 
     if (n === 0) {
       routeListEl.innerHTML =
@@ -525,6 +587,7 @@
       document.documentElement.style.removeProperty('--area-ink');
       areaHeroEl.classList.add('hidden');
       homeIntroEl.classList.remove('hidden');
+      document.getElementById('homeHero').classList.remove('hidden');
       Array.prototype.forEach.call(document.querySelectorAll('.area-chip--on-match'), function (chip) {
         chip.classList.remove('area-chip--on-match');
       });
@@ -638,6 +701,7 @@
     document.getElementById('areaHeroPostcodes').innerHTML = postcodeBadgesHTML(areaPostcodes(area));
     areaHeroEl.classList.remove('hidden');
     homeIntroEl.classList.add('hidden');
+    document.getElementById('homeHero').classList.add('hidden');
     document.getElementById('areaChips').classList.add('hidden');
     document.getElementById('areaChipsBottom').classList.remove('hidden');
 
@@ -658,6 +722,7 @@
     document.documentElement.style.removeProperty('--area-ink');
     areaHeroEl.classList.add('hidden');
     homeIntroEl.classList.remove('hidden');
+    document.getElementById('homeHero').classList.remove('hidden');
     document.getElementById('areaChips').classList.remove('hidden');
     document.getElementById('areaChipsBottom').classList.add('hidden');
     Array.prototype.forEach.call(document.querySelectorAll('.area-chip--on-match'), function (chip) {
@@ -681,13 +746,37 @@
 
   document.getElementById('clearBtn').addEventListener('click', clearRoute);
 
-  // Bottom sheet
+  // Route panel: a bottom sheet on small screens, a dropdown menu off the
+  // header button on larger ones — same open/closed state either way.
   var root = document.documentElement;
-  function openSheet(v) { root.classList.toggle('route-open', v); document.getElementById('scrim').hidden = !v; }
-  document.getElementById('routeBar').addEventListener('click', function () { openSheet(true); });
+  var routeHeaderBtn = document.getElementById('routeHeaderBtn');
+  var routeHeaderChevron = document.getElementById('routeHeaderChevron');
+  function openSheet(v) {
+    root.classList.toggle('route-open', v);
+    document.getElementById('scrim').hidden = !v;
+    routeHeaderBtn.setAttribute('aria-expanded', v ? 'true' : 'false');
+    routeHeaderChevron.style.transform = v ? 'rotate(180deg)' : '';
+    // The panel's width can change between renders (dropdown vs. bottom
+    // sheet, or a window resize while closed) — resync the map's canvas
+    // to its container each time it becomes visible.
+    if (v && routeMap) setTimeout(function () { routeMap.invalidateSize(); }, 0);
+  }
+  document.getElementById('routeBar').addEventListener('click', function (e) { e.stopPropagation(); openSheet(true); });
   document.getElementById('sheetClose').addEventListener('click', function () { openSheet(false); });
   document.getElementById('scrim').addEventListener('click', function () { openSheet(false); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') openSheet(false); });
+  routeHeaderBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    openSheet(!root.classList.contains('route-open'));
+  });
+  // Dismiss the dropdown on an outside click (the mobile sheet already has
+  // the scrim for this, but the desktop dropdown has no full-screen scrim)
+  document.addEventListener('click', function (e) {
+    if (!root.classList.contains('route-open')) return;
+    var panel = document.getElementById('routePanel');
+    if (panel.contains(e.target) || routeHeaderBtn.contains(e.target)) return;
+    openSheet(false);
+  });
 
   // Search — collapses to an icon button on small screens, expanding
   // into the input on tap and collapsing back once it's empty and blurred
