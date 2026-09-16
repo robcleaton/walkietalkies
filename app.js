@@ -279,16 +279,26 @@
 
   function renderList() {
     var items = visible();
-    document.getElementById('resultCount').textContent =
+    var isHome = !filters.q && !filters.cats.length && !filters.areaRe;
+    // The count line ("N stops") is only useful once it reflects an actual
+    // search/filter/area — on the plain homepage it's just noise, so leave
+    // it blank there.
+    document.getElementById('resultCount').textContent = isHome ? '' :
       items.length + (items.length === 1 ? ' stop' : ' stops');
 
-    var isHome = !filters.q && !filters.cats.length && !filters.areaRe;
     listEl.classList.toggle('hidden', isHome);
     homeListEl.classList.toggle('hidden', !isHome);
     if (isHome) {
       homeListEl.innerHTML = HOME_RANDOM_STOPS.map(function (s) {
-        return '<div class="w-[300px] sm:w-[340px] shrink-0">' + stopHTML(s) + '</div>';
+        return '<div class="w-[300px] sm:w-[340px] h-[400px] shrink-0">' + stopHTML(s, true) + '</div>';
       }).join('');
+      // A tick out: the Tailwind CDN runtime generates CSS for these
+      // freshly-inserted utility classes asynchronously, so measuring the
+      // cards' real layout has to wait until that's landed, not just until
+      // the innerHTML write itself is done. setTimeout (not
+      // requestAnimationFrame, which browsers pause in a backgrounded tab)
+      // keeps this reliable even if the page loads in a background tab.
+      setTimeout(adjustHomeCardClamps, 0);
       return;
     }
 
@@ -315,6 +325,35 @@
     listEl.innerHTML = html;
   }
 
+  // Each homepage carousel card is a fixed height, and the name above the
+  // description is never truncated — so cards with a short one-line name
+  // have more room left for the description than cards with a wrapped
+  // two- or three-line name. Once the cards are laid out, measure the
+  // actual space left in each card's description slot and clamp its text
+  // to however many lines fit there, so the description always runs right
+  // up to the address instead of leaving a gap.
+  function adjustHomeCardClamps() {
+    Array.prototype.forEach.call(homeListEl.querySelectorAll('[data-desc-wrap]'), function (wrap) {
+      var p = wrap.querySelector('[data-desc-text]');
+      if (!p) return;
+      var lineHeight = parseFloat(getComputedStyle(p).lineHeight);
+      if (!lineHeight || isNaN(lineHeight)) lineHeight = 22.4; // text-[14px] leading-[1.6] fallback
+      var lines = Math.max(1, Math.floor(wrap.clientHeight / lineHeight));
+      p.style.display = '-webkit-box';
+      p.style.webkitBoxOrient = 'vertical';
+      p.style.overflow = 'hidden';
+      p.style.webkitLineClamp = String(lines);
+    });
+  }
+  var homeClampTimer = null;
+  window.addEventListener('resize', function () {
+    if (homeClampTimer) clearTimeout(homeClampTimer);
+    homeClampTimer = setTimeout(function () {
+      homeClampTimer = null;
+      if (!homeListEl.classList.contains('hidden')) adjustHomeCardClamps();
+    }, 100);
+  });
+
   function districtName(pc) {
     var map = {
       SE1:'Bankside &amp; Elephant', SE3:'Blackheath', SE7:'Charlton', SE8:'Deptford',
@@ -328,22 +367,27 @@
     return map[pc] || '';
   }
 
-  function stopHTML(s) {
+  function stopHTML(s, compact) {
     var on = inRoute(s.id);
     var pos = route.indexOf(s.id) + 1;
     var catLabel = CATS[s.cat];
     var eraLead = s.era || '';
     if (eraLead === catLabel) eraLead = '';
     else if (eraLead.indexOf(catLabel + ', ') === 0) eraLead = eraLead.slice(catLabel.length + 2);
+    // compact: used in the fixed-height homepage carousel, where every card
+    // fills the same height. The name is never truncated; the description
+    // is clamped (via adjustHomeCardClamps, after layout) to however many
+    // lines actually fit in the space left once the name has taken what it
+    // needs, so short names don't leave a gap above a pinned address.
     return '' +
-      '<article id="stop-' + s.id + '" class="stop px-5 py-5">' +
-        '<div class="mb-2">' + catChip(s.cat) + '</div>' +
-        '<div class="flex items-start justify-between gap-4">' +
+      '<article id="stop-' + s.id + '" class="stop px-5 py-5' + (compact ? ' h-full flex flex-col' : '') + '">' +
+        '<div class="mb-2' + (compact ? ' shrink-0' : '') + '">' + catChip(s.cat) + '</div>' +
+        '<div class="flex items-start justify-between gap-4' + (compact ? ' shrink-0' : '') + '">' +
           '<div class="flex items-start gap-3 min-w-0">' +
             (s.img ? '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.remove()" class="w-14 h-14 shrink-0 rounded-lg object-cover border border-rule">' : '') +
             '<div class="min-w-0">' +
               '<h3 class="font-display text-[23px] leading-[1.1] mb-1">' + s.name + '</h3>' +
-              '<p class="font-mono text-[11px] text-muted num">' + s.area + ' &middot; ' + s.pc + '</p>' +
+              '<p class="font-mono text-[11px] text-muted num' + (compact ? ' truncate' : '') + '">' + s.area + ' &middot; ' + s.pc + '</p>' +
             '</div>' +
           '</div>' +
           '<button data-toggle="' + s.id + '" class="shrink-0 inline-flex items-center gap-1 text-[12px] font-semibold px-3 py-2 rounded-full border transition-colors ' +
@@ -351,10 +395,17 @@
             (on ? 'Stop ' + pos + ' <svg class="lucide lucide-check w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>' : 'Add to route') +
           '</button>' +
         '</div>' +
-        '<p class="text-[14px] leading-[1.6] text-ink mt-3 max-w-[62ch]">' +
-          (eraLead ? '<span class="font-semibold">' + eraLead + '.</span> ' : '') + s.text.split('\n\n').join('<br><br>') +
+        (compact ? '<div class="flex-1 min-h-0 overflow-hidden mt-3" data-desc-wrap>' : '') +
+        '<p class="text-[14px] leading-[1.6] text-ink max-w-[62ch]' + (compact ? '' : ' mt-3') + '"' + (compact ? ' data-desc-text' : '') + '>' +
+          (eraLead ? '<span class="font-semibold">' + eraLead + '.</span> ' : '') +
+          // Compact cards clamp to a single flowing paragraph — joining every
+          // paragraph with <br><br> first would let the clamp cut land on a
+          // blank line between paragraphs, leaving a stray "…" on a line of
+          // its own instead of trailing the last visible word.
+          (compact ? s.text.split('\n\n')[0] : s.text.split('\n\n').join('<br><br>')) +
         '</p>' +
-        '<p class="text-[12px] text-faint mt-3">' + s.addr + '</p>' +
+        (compact ? '</div>' : '') +
+        '<p class="text-[12px] text-faint mt-3' + (compact ? ' shrink-0 truncate' : '') + '">' + s.addr + '</p>' +
       '</article>';
   }
 
