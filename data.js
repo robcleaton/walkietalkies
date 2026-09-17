@@ -9,10 +9,10 @@
 
     { id:'painted-hall', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Royal_Naval_College_Greenwich_view_from_the_Thames.jpg/330px-Royal_Naval_College_Greenwich_view_from_the_Thames.jpg', name:'The Painted Hall', area:'Old Royal Naval College', pc:'SE10', cat:'culture', year:1707, era:'Painted 1707&ndash;1726',
       lat:51.4834, lon:-0.0075, addr:'Old Royal Naval College, SE10 9NN',
-      text:'James Thornhill spent nineteen years covering the ceiling and walls of what was built as a dining room for naval pensioners. The pensioners were moved out and charged the public to see it instead.\n\nThornhill was paid £3 a square yard for the ceiling and £1 for the walls. He painted himself into the west wall, hand extended for the fee.' },
+      text:'James Thornhill spent nineteen years covering the ceiling and walls of what was built as a dining room for naval pensioners. The pensioners were moved out and charged the public to see it instead.\n\nThornhill was paid &pound;3 a square yard for the ceiling and &pound;1 for the walls. He painted himself into the west wall, hand extended for the fee.' },
 
     { id:'queens-house', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Queens_House.jpg/330px-Queens_House.jpg', name:'Queen&rsquo;s House', area:'Greenwich', pc:'SE10', cat:'grand', year:1616, era:'Built 1616&ndash;1635',
-      lat:51.4810, lon:-0.0059, addr:'Romney Road, SE10 9NF',
+      lat:51.481, lon:-0.0059, addr:'Romney Road, SE10 9NF',
       text:'Inigo Jones began it for Anne of Denmark and finished it for Henrietta Maria &mdash; the first consciously classical building in England, and a genuine shock in a city of gables and jetties.\n\nThe Tulip Stairs are Britain&rsquo;s first geometric self-supporting spiral staircase: no central column, each tread carried by the one below.' },
 
     { id:'rangers-house', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/EH1218679_The_Ranger%27s_House.JPG/330px-EH1218679_The_Ranger%27s_House.JPG', name:'Ranger&rsquo;s House', area:'Blackheath edge', pc:'SE10', cat:'culture', year:1723, era:'Built c.1723',
@@ -36,7 +36,7 @@
       text:'A small municipal park that is all that survives of John Evelyn&rsquo;s garden &mdash; in its day one of the most influential in England, and the seedbed of his forestry treatise Sylva.\n\nEvelyn let the house to Peter the Great in 1698. The Tsar reportedly entertained himself by being pushed through the prized holly hedge in a wheelbarrow.' },
 
     { id:'deptford-dockyard', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Deptford_High_Street%2C_SE8_%282%29_-_geograph.org.uk_-_1498383.jpg/330px-Deptford_High_Street%2C_SE8_%282%29_-_geograph.org.uk_-_1498383.jpg', name:'Deptford Royal Dockyard', area:'Convoys Wharf', pc:'SE8', cat:'maritime', year:1513, era:'Founded 1513',
-      lat:51.4867, lon:-0.0300, addr:'Prince Street, SE8 3JD',
+      lat:51.4867, lon:-0.03, addr:'Prince Street, SE8 3JD',
       text:'Henry VIII&rsquo;s dockyard, where the navy was built, victualled and repaired for three and a half centuries before the river silted and the yards moved downstream.\n\nElizabeth I came here in April 1581 to knight Francis Drake aboard the Golden Hind, newly back from circling the world.' },
 
     { id:'charlton-house', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Charlton_House_01.jpg/330px-Charlton_House_01.jpg', name:'Charlton House', area:'Charlton', pc:'SE7', cat:'grand', year:1607, era:'Built 1607&ndash;1612',
@@ -44,15 +44,15 @@
       text:'Built for Adam Newton, tutor to Prince Henry, and scarcely altered since &mdash; the most complete Jacobean house left in London, down to the plaster ceilings.\n\nThe mulberry in the grounds is said to have been planted in 1608, part of James I&rsquo;s scheme to found an English silk industry. He ordered the wrong species.' },
 
     { id:'severndroog', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/2016_Severndroog_Castle_02.jpg/330px-2016_Severndroog_Castle_02.jpg', name:'Severndroog Castle', area:'Shooter&rsquo;s Hill', pc:'SE18', cat:'grand', year:1784, era:'Built 1784',
-      lat:51.4680, lon:0.0631, addr:'Castle Wood, Shooter&rsquo;s Hill, SE18 3RT',
+      lat:51.468, lon:0.0631, addr:'Castle Wood, Shooter&rsquo;s Hill, SE18 3RT',
       text:'A triangular Gothic folly tower raised by Lady James in memory of her husband, who took the fortress of Suvarnadurg on the Konkan coast in 1755.\n\nFrom the viewing platform, on the right morning, you can see across seven counties &mdash; roughly sixty miles of horizon from one of the highest points in London.' },
 
     { id:'royal-arsenal', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Woolwich_royal_arsenal_gatehouse_1.jpg/330px-Woolwich_royal_arsenal_gatehouse_1.jpg', name:'Royal Arsenal', area:'Woolwich', pc:'SE18', cat:'works', year:1671, era:'From 1671',
-      lat:51.4923, lon:0.0700, addr:'Dial Arch Square, SE18 6GH',
+      lat:51.4923, lon:0.07, addr:'Dial Arch Square, SE18 6GH',
       text:'Gunpowder, shot and shell for the British Army across three centuries. At its Great War peak the site ran three miles along the river and employed close to 80,000 people.\n\nThe works football team, formed by munitions men in 1886 and named Dial Square after their workshop, became Woolwich Arsenal &mdash; then simply Arsenal.' },
 
     { id:'woolwich-ferry', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Woolwich_Ferry_from_the_Southeast_%2801%29.jpg/330px-Woolwich_Ferry_from_the_Southeast_%2801%29.jpg', name:'Woolwich Free Ferry', area:'Woolwich', pc:'SE18', cat:'maritime', year:1889, era:'Opened 1889',
-      lat:51.4970, lon:0.0680, addr:'New Ferry Approach, SE18 6DX',
+      lat:51.497, lon:0.068, addr:'New Ferry Approach, SE18 6DX',
       text:'Free when it opened in 1889 and free now &mdash; the crossing was granted to the people of Woolwich in perpetuity, and no government has yet dared to charge for it.\n\nThe foot tunnel beside it, opened in 1912, is 504 metres of white glazed tile running under the river bed.' },
 
     { id:'eltham-palace', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Eltham_Palace-8242930494.jpg/330px-Eltham_Palace-8242930494.jpg', name:'Eltham Palace', area:'Eltham', pc:'SE9', cat:'grand', year:1470, era:'1470s &amp; 1936',
@@ -60,11 +60,11 @@
       text:'Edward IV&rsquo;s great hall, carrying the third-largest hammerbeam roof in England, bolted onto an Art Deco house built for Stephen and Virginia Courtauld in 1936. It should not work. It does.\n\nThe Courtaulds&rsquo; pet ring-tailed lemur, Mah-Jongg, had his own centrally heated quarters upstairs, reached by a bamboo ladder.' },
 
     { id:'well-hall', img:'https://upload.wikimedia.org/wikipedia/commons/4/4b/Nesbit.jpg', name:'E. Nesbit at Well Hall', area:'Eltham', pc:'SE9', cat:'plaque', year:1899, era:'Lived here 1899&ndash;1922',
-      lat:51.4560, lon:0.0508, addr:'Well Hall Pleasaunce, SE9 6SZ',
+      lat:51.456, lon:0.0508, addr:'Well Hall Pleasaunce, SE9 6SZ',
       text:'Edith Nesbit wrote The Railway Children and Five Children and It while living at Well Hall House. The house is gone; the moated garden survives as a public park.\n\nThe Tudor barn in the grounds is the last building of the estate once held by Margaret Roper &mdash; Thomas More&rsquo;s daughter, who is said to have brought his head here.' },
 
     { id:'stephen-lawrence', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Well_Hall_Road%2C_SE9_-_geograph.org.uk_-_229103.jpg/330px-Well_Hall_Road%2C_SE9_-_geograph.org.uk_-_229103.jpg', name:'Stephen Lawrence memorial', area:'Well Hall Road', pc:'SE9', cat:'memory', year:1993, era:'22 April 1993',
-      lat:51.4552, lon:0.0500, addr:'Well Hall Road, SE9 6SN',
+      lat:51.4552, lon:0.05, addr:'Well Hall Road, SE9 6SN',
       text:'A plaque set flat into the pavement marks the spot where Stephen Lawrence, eighteen years old, was murdered on 22 April 1993 while waiting for a bus home.\n\nThe Macpherson report of 1999 followed from his family&rsquo;s campaign. It named institutional racism in the Metropolitan Police and led to the end of the double jeopardy rule.' },
 
     { id:'barlow-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/7/74/John_Collier_-_William_Henry_Barlow.jpg', name:'William Henry Barlow', area:'Charlton', pc:'SE7', cat:'plaque', year:1812, era:'Blue plaque',
@@ -112,7 +112,7 @@
       text:'Wolseley moved into Ranger&rsquo;s House in 1888 at Queen Victoria&rsquo;s invitation, by then the most decorated general in the British Army after campaigns in Canada, West Africa and Egypt.\n\nHis reputation for brisk efficiency made him the model for Gilbert and Sullivan&rsquo;s &ldquo;modern Major-General&rdquo; in The Pirates of Penzance, a joke he reportedly rather enjoyed.' },
 
     { id:'svevo-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/ItaloSvevo.jpg/330px-ItaloSvevo.jpg', name:'Italo Svevo', area:'Charlton', pc:'SE7', cat:'plaque', year:1861, era:'Blue plaque, lived 1903&ndash;1913',
-      lat:51.4855, lon:0.0330, addr:'67 Charlton Church Lane, SE7 7AB',
+      lat:51.4855, lon:0.033, addr:'67 Charlton Church Lane, SE7 7AB',
       text:'The Triestine novelist stayed here on business trips for his father-in-law&rsquo;s marine paint company, which ran a factory near Charlton, between 1903 and 1913.\n\nIt was in Trieste, around these same years, that Svevo took English lessons from a struggling young writer named James Joyce &mdash; a friendship that later helped get Svevo&rsquo;s novels noticed at all.' },
 
     { id:'waugh-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/b/b0/BenjaminWaugh2.jpg', name:'Benjamin Waugh', area:'Greenwich', pc:'SE10', cat:'plaque', year:1839, era:'Blue plaque',
@@ -141,10 +141,10 @@
 
     { id:'mcgill', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Donald_McGill_-_5_Bennett_Park%2C_Blackheath%2C_SE3.JPG/330px-Donald_McGill_-_5_Bennett_Park%2C_Blackheath%2C_SE3.JPG', name:'Donald McGill', area:'Bennett Park', pc:'SE3', cat:'plaque', year:1875, era:'Blue plaque',
       lat:51.4652, lon:0.0072, addr:'5 Bennett Park, SE3 9RA',
-      text:'The saucy seaside postcard was more or less invented at this address. McGill drew around 12,000 designs; they sold by the hundred million.\n\nHe was prosecuted under the Obscene Publications Act in 1954, aged seventy-nine, and fined £50. George Orwell had already written an essay in his defence.' },
+      text:'The saucy seaside postcard was more or less invented at this address. McGill drew around 12,000 designs; they sold by the hundred million.\n\nHe was prosecuted under the Obscene Publications Act in 1954, aged seventy-nine, and fined &pound;50. George Orwell had already written an essay in his defence.' },
 
     { id:'horniman', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/An_aerial_view_of_the_Horniman_Museum_and_Gardens.png/330px-An_aerial_view_of_the_Horniman_Museum_and_Gardens.png', name:'Horniman Museum', area:'Forest Hill', pc:'SE23', cat:'culture', year:1901, era:'Opened 1901',
-      lat:51.4406, lon:-0.0610, addr:'100 London Road, SE23 3PQ',
+      lat:51.4406, lon:-0.061, addr:'100 London Road, SE23 3PQ',
       text:'Frederick Horniman spent tea-trading money on some 30,000 objects, ran out of house, and gave the lot to the people of London in a building by Charles Harrison Townsend.\n\nThe famous overstuffed walrus was mounted in the 1870s by a taxidermist who had never seen a live one and smoothed out all the folds of skin.' },
 
     { id:'shackleton', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Ernest_Shackleton_before_1909.jpg/330px-Ernest_Shackleton_before_1909.jpg', name:'Ernest Shackleton', area:'Sydenham', pc:'SE26', cat:'plaque', year:1885, era:'Blue plaque',
@@ -196,7 +196,7 @@
       text:'Durrell lived here as a young child before his family&rsquo;s move to Corfu in 1935 &mdash; the years he later mythologised in My Family and Other Animals.\n\nHe went on to found Jersey Zoo specifically to breed endangered species for reintroduction, at a time when most zoos still existed mainly to display animals rather than save them.' },
 
     { id:'blyton', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Enid_Blyton_c._1923.jpg/330px-Enid_Blyton_c._1923.jpg', name:'Enid Blyton', area:'East Dulwich', pc:'SE22', cat:'plaque', year:1897, era:'Blue plaque',
-      lat:51.4471, lon:-0.0710, addr:'354 Lordship Lane, SE22 8LZ',
+      lat:51.4471, lon:-0.071, addr:'354 Lordship Lane, SE22 8LZ',
       text:'Blyton was born in a flat above a shop on Lordship Lane in August 1897 &mdash; a plainer beginning than the sunlit countryside of the books suggests.\n\nShe published around 700 titles. At her peak she wrote 10,000 words a day, typewriter balanced on her knee, a shawl over the keys.' },
 
     { id:'forester-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/C._S._Forester_in_1939.jpg/330px-C._S._Forester_in_1939.jpg', name:'C. S. Forester', area:'East Dulwich', pc:'SE22', cat:'plaque', year:1899, era:'Blue plaque',
@@ -204,7 +204,7 @@
       text:'Forester, born Cecil Louis Troughton Smith, wrote the twelve-volume Hornblower series charting one fictional Royal Navy officer&rsquo;s career through the Napoleonic Wars.\n\nTwo of the novels, A Ship of the Line and Flying Colours, jointly won the James Tait Black Memorial Prize in 1938 &mdash; a rare case of genre adventure fiction taking a serious literary award.' },
 
     { id:'cotton-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Henry_Cotton_golf_1931b.jpg/330px-Henry_Cotton_golf_1931b.jpg', name:'Henry Cotton', area:'East Dulwich', pc:'SE22', cat:'plaque', year:1907, era:'Blue plaque',
-      lat:51.4592, lon:-0.0710, addr:'47 Crystal Palace Road, SE22 9EX',
+      lat:51.4592, lon:-0.071, addr:'47 Crystal Palace Road, SE22 9EX',
       text:'Cotton won the Open Championship three times, in 1934, 1937 and 1948, and was the dominant British golfer of his generation.\n\nHis 1934 win ended a run of American victories in the Championship stretching back a decade.' },
 
     { id:'karloff', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Frankenstein%27s_monster_%28Boris_Karloff%29.jpg/330px-Frankenstein%27s_monster_%28Boris_Karloff%29.jpg', name:'Boris Karloff', area:'East Dulwich', pc:'SE22', cat:'plaque', year:1887, era:'Blue plaque',
@@ -220,7 +220,7 @@
       text:'Moody qualified at the top of his year at King&rsquo;s, was refused hospital posts because he was Black, and opened his own practice at this house in 1913.\n\nHe founded the League of Coloured Peoples here in 1931 &mdash; the campaign that pushed against the colour bar in hospitals, hotels and the armed forces.' },
 
     { id:'pioneer-health', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Dr._INNES_PEARSE_and_Dr._GEORGE_SCOTT_WILLIAMSON_-_142_Queen%27s_Road_Peckham_London_SE15_2HP.jpg/330px-Dr._INNES_PEARSE_and_Dr._GEORGE_SCOTT_WILLIAMSON_-_142_Queen%27s_Road_Peckham_London_SE15_2HP.jpg', name:'The Peckham Experiment', area:'St Mary&rsquo;s Road', pc:'SE15', cat:'works', year:1935, era:'Opened 1935',
-      lat:51.4720, lon:-0.0645, addr:'St Mary&rsquo;s Road, SE15 2DR &mdash; now flats',
+      lat:51.472, lon:-0.0645, addr:'St Mary&rsquo;s Road, SE15 2DR &mdash; now flats',
       text:'The Pioneer Health Centre: 950 local families paid a shilling a week for a swimming pool, a theatre, a workshop and a yearly family health check.\n\nOwen Williams&rsquo;s glass-walled concrete frame was designed so doctors could watch families at play. The point was to study health rather than treat disease.' },
 
     { id:'new-cross-fire', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/New_Cross_Fire_took_place_at_this_site_on_January_18%2C_1981_claiming_the_lives_of_14_young_people.jpg/330px-New_Cross_Fire_took_place_at_this_site_on_January_18%2C_1981_claiming_the_lives_of_14_young_people.jpg', name:'New Cross Fire memorial', area:'New Cross', pc:'SE14', cat:'memory', year:1981, era:'18 January 1981',
@@ -232,11 +232,11 @@
       text:'On 13 August 1977 several thousand people blocked a National Front march at Clifton Rise. The day is widely credited with breaking the NF&rsquo;s ability to march at will.\n\nA commemorative plaque was unveiled nearby in 2017, on the fortieth anniversary &mdash; forty years being roughly how long it took for the counter-demonstrators to be called anything but a mob.' },
 
     { id:'brunel-tunnel', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Thamestunnel.jpg/330px-Thamestunnel.jpg', name:'Brunel Museum &amp; Thames Tunnel', area:'Rotherhithe', pc:'SE16', cat:'works', year:1843, era:'Opened 1843',
-      lat:51.5013, lon:-0.0530, addr:'Railway Avenue, SE16 4LF',
+      lat:51.5013, lon:-0.053, addr:'Railway Avenue, SE16 4LF',
       text:'Marc Brunel&rsquo;s tunnelling shield &mdash; patented after watching a shipworm bore through oak &mdash; made the first tunnel under a navigable river possible. His son Isambard nearly drowned in it twice.\n\nFifty thousand people walked through on opening day at a penny each. The Grand Entrance Hall was then sealed and stood empty for 145 years.' },
 
     { id:'mayflower', img:'https://upload.wikimedia.org/wikipedia/commons/9/98/St_Marys_Church_Rotherhithe.JPG', name:'St Mary&rsquo;s Rotherhithe', area:'Rotherhithe', pc:'SE16', cat:'maritime', year:1620, era:'Sailed 1620',
-      lat:51.5010, lon:-0.0518, addr:'St Marychurch Street, SE16 4JE',
+      lat:51.501, lon:-0.0518, addr:'St Marychurch Street, SE16 4JE',
       text:'The Mayflower left Rotherhithe in July 1620 to collect her passengers downriver. Her master, Christopher Jones, came home, died within two years and is buried in this churchyard.\n\nThe ship was broken up here in 1624. The church&rsquo;s communion table is said to be made from her timbers.' },
 
     { id:'ada-salter-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Ada_Salter.jpg/330px-Ada_Salter.jpg', name:'Ada Salter', area:'Rotherhithe', pc:'SE16', cat:'plaque', year:1866, era:'Blue plaque',
@@ -248,11 +248,11 @@
       text:'Alfred and Ada Salter rebuilt Bermondsey between the wars with clean water, solaria, health visitors and 9,000 street trees. Ada was the first woman mayor of a London borough.\n\nThe riverside group shows Alfred on a bench watching his daughter Joyce, who died of scarlet fever aged eight &mdash; caught in the slums her parents were trying to clear.' },
 
     { id:'faraday', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Faraday_Memorial_SE1_%2849052991483%29.jpg/330px-Faraday_Memorial_SE1_%2849052991483%29.jpg', name:'Faraday Memorial', area:'Elephant &amp; Castle', pc:'SE1', cat:'works', year:1791, era:'Born here 1791',
-      lat:51.4946, lon:-0.1000, addr:'Elephant &amp; Castle roundabout, SE1 6TE',
+      lat:51.4946, lon:-0.1, addr:'Elephant &amp; Castle roundabout, SE1 6TE',
       text:'Michael Faraday was born at Newington Butts in 1791, a blacksmith&rsquo;s son apprenticed to a bookbinder, who read the books he was binding and taught himself his way into the Royal Institution.\n\nRodney Gordon&rsquo;s 1961 stainless-steel box on the roundabout is not a sculpture. It is an electricity substation for the Northern line, wearing his name.' },
 
     { id:'southwark-cathedral', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Northwest_View_of_Southwark_Cathedral_%2801%29.jpg/330px-Northwest_View_of_Southwark_Cathedral_%2801%29.jpg', name:'Southwark Cathedral', area:'Bankside', pc:'SE1', cat:'grand', year:1220, era:'Retrochoir c.1220s',
-      lat:51.5061, lon:-0.0900, addr:'London Bridge, SE1 9DA',
+      lat:51.5061, lon:-0.09, addr:'London Bridge, SE1 9DA',
       text:'The retrochoir of the 1220s is the oldest Gothic church fabric in London. It stood on the bank that held the theatres, the bear pits and the brothels &mdash; outside the City&rsquo;s jurisdiction, by design.\n\nJohn Harvard was baptised here in 1607. Shakespeare&rsquo;s brother Edmund was buried here that same year, the register noting &ldquo;a forenoone knell of the great bell&rdquo;.' },
 
     { id:'red-house', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Philip_Webb%27s_Red_House_in_Upton.jpg/330px-Philip_Webb%27s_Red_House_in_Upton.jpg', name:'Red House', area:'Bexleyheath', pc:'DA6', cat:'grand', year:1859, era:'Built 1859',
@@ -297,10 +297,10 @@
 
     { id:'francis-baring', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/BaringArms.PNG/330px-BaringArms.PNG', name:'Sir Francis Baring', area:'Manor House, Hither Green', pc:'SE13', cat:'plaque', year:1796, era:'Bought manor 1796',
       lat:51.4551, lon:0.0072, addr:'Old Road, Hither Green, SE13 5SY',
-      text:'The founder of Barings Bank bought Lee Manor House in 1796 with a fortune built on trade finance. He died in 1810 worth some £606,000 &mdash; among the largest personal estates in England at the time.\n\nThe Baring family&rsquo;s ownership shaped the roads of Lee and Hither Green for a century afterwards; several streets nearby still trace their names back to the family.' },
+      text:'The founder of Barings Bank bought Lee Manor House in 1796 with a fortune built on trade finance. He died in 1810 worth some &pound;606,000 &mdash; among the largest personal estates in England at the time.\n\nThe Baring family&rsquo;s ownership shaped the roads of Lee and Hither Green for a century afterwards; several streets nearby still trace their names back to the family.' },
 
     { id:'flecker', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/James_Elroy_Flecker_at_Cambridge.jpg/330px-James_Elroy_Flecker_at_Cambridge.jpg', name:'James Elroy Flecker', area:'Lee', pc:'SE13', cat:'plaque', year:1884, era:'Blue plaque',
-      lat:51.4520, lon:0.0102, addr:'9 Gilmore Road, Lee, SE13 5AD',
+      lat:51.452, lon:0.0102, addr:'9 Gilmore Road, Lee, SE13 5AD',
       text:'Flecker was born at this address in 1884. He died of tuberculosis in a Swiss sanatorium in 1915, aged thirty, having written the play Hassan and the verse for which he is still remembered.\n\nHassan reached the stage only after his death, in 1923, with incidental music by Frederick Delius &mdash; a considerable posthumous hit for a poet who never saw it performed.' },
 
     { id:'stanley-unwin', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/St_Margaret%27s_Church%2C_Lee.jpg/330px-St_Margaret%27s_Church%2C_Lee.jpg', name:'Sir Stanley Unwin', area:'Lee', pc:'SE12', cat:'plaque', year:1914, era:'Blue plaque',
@@ -312,7 +312,7 @@
       text:'A single plaque for two very different Lewisham men: Dowson, the decadent poet who gave English the phrases &ldquo;days of wine and roses&rdquo; and &ldquo;gone with the wind&rdquo; before dying at thirty-two, and Greening, a lifelong evangelist for the co-operative movement.\n\nDowson&rsquo;s most quoted line &mdash; &ldquo;I have been faithful to thee, Cynara, in my fashion&rdquo; &mdash; supplied both a Cole Porter lyric and the title of Gone with the Wind.' },
 
     { id:'leland-duncan', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Leland_Lewis_Duncan_house_-_8_Lingards_Road_Lewisham_London_SE13_6DH.jpg/330px-Leland_Lewis_Duncan_house_-_8_Lingards_Road_Lewisham_London_SE13_6DH.jpg', name:'Leland Lewis Duncan', area:'Lewisham', pc:'SE13', cat:'plaque', year:1862, era:'Blue plaque',
-      lat:51.4600, lon:-0.0138, addr:'8 Lingards Road, SE13 6QG',
+      lat:51.46, lon:-0.0138, addr:'8 Lingards Road, SE13 6QG',
       text:'A civil servant by day, Duncan spent his evenings indexing wills at Somerset House and researching the borough he lived in. His History of Lewisham Parish, published in 1908, remains a primary source for local historians.\n\nHe also transcribed monumental inscriptions in dozens of Kent churchyards before their headstones weathered past reading &mdash; unpaid, exhaustive work that still underpins the borough archive today.' },
 
     { id:'cecil-hepworth', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Cecil_M._Hepworth_1915.jpg/330px-Cecil_M._Hepworth_1915.jpg', name:'Cecil M. Hepworth', area:'Lewisham', pc:'SE13', cat:'plaque', year:1874, era:'Blue plaque',
@@ -320,7 +320,7 @@
       text:'A pioneer of British cinema who filmed Queen Victoria&rsquo;s funeral in 1901 and produced the first screen Alice in Wonderland in 1903. His 1905 chase film Rescued by Rover, shot largely around his own house, was an early box-office sensation.\n\nHepworth had to reshoot Rescued by Rover twice because the original negatives wore out from demand &mdash; using the same actors, dog and street each time, years apart.' },
 
     { id:'mcmillan-sisters', img:'https://upload.wikimedia.org/wikipedia/commons/5/51/Rachel_and_Margaret_McMillan_plaque%2C_Bromley.jpg', name:'Margaret &amp; Rachel McMillan', area:'Hither Green', pc:'SE13', cat:'plaque', year:1910, era:'Blue plaque',
-      lat:51.4528, lon:-0.0090, addr:'127 George Lane, SE13 6HB',
+      lat:51.4528, lon:-0.009, addr:'127 George Lane, SE13 6HB',
       text:'The McMillan sisters lived here while campaigning for school meals, medical inspection and open-air nursery education for slum children &mdash; work that fed directly into the Provision of School Meals Act of 1906.\n\nMargaret went on to found the first open-air nursery school in Deptford in 1914; nursery education in Britain still largely follows the outdoor, health-first model the sisters worked out from this house.' },
 
     { id:'george-grove', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/George-grove.jpg/330px-George-grove.jpg', name:'Sir George Grove', area:'Sydenham', pc:'SE26', cat:'plaque', year:1852, era:'Lived here 1852&ndash;1860',
@@ -328,7 +328,7 @@
       text:'Grove was secretary of the Crystal Palace Company when it rebuilt Paxton&rsquo;s glasshouse on Sydenham Hill in 1852, and moved here to be close to the works. He later compiled the Dictionary of Music and Musicians that still carries his name.\n\nGrove had trained as a civil engineer, not a musicologist &mdash; he came to music scholarship in middle age, after a career spent building lighthouses in the Caribbean.' },
 
     { id:'eleanor-marx', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Mrs_Eleanor_Marx_Aveling%2C_daughter_of_Karl_Marx.jpg/330px-Mrs_Eleanor_Marx_Aveling%2C_daughter_of_Karl_Marx.jpg', name:'Eleanor Marx', area:'Sydenham', pc:'SE26', cat:'plaque', year:1895, era:'Lived here 1895&ndash;1898',
-      lat:51.4270, lon:-0.0580, addr:'7 Jews Walk, SE26 6PJ',
+      lat:51.427, lon:-0.058, addr:'7 Jews Walk, SE26 6PJ',
       text:'Karl Marx&rsquo;s youngest daughter bought this house with money left to her by Friedrich Engels and spent her last years here organising for the dockers&rsquo; and gasworkers&rsquo; unions and for women&rsquo;s suffrage.\n\nShe wrote to her sister that she was &ldquo;Jewishly proud&rdquo; of the address. She died at the house in 1898, poisoned by prussic acid, in circumstances biographers still argue over.' },
 
     { id:'greyhound-sydenham', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/The_Greyhound%2C_Sydenham.jpg/330px-The_Greyhound%2C_Sydenham.jpg', name:'The Greyhound', area:'Sydenham', pc:'SE26', cat:'pub', year:1720, era:'Trading since c.1720',
@@ -336,19 +336,19 @@
       text:'An inn has stood here since at least 1713; Joseph Hyde, the first landlord on record, is named in 1726, the year before the name Greyhound is first used for it.\n\nIt traded for two centuries as a coaching stop on the road up from Sydenham Wells, a once-fashionable spa whose spring water was said to cure everything from gout to melancholy.' },
 
     { id:'blythe-hill-tavern', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Blythe_Hill_Tavern%2C_Forest_Hill%2C_SE23_%283756867279%29.jpg/330px-Blythe_Hill_Tavern%2C_Forest_Hill%2C_SE23_%283756867279%29.jpg', name:'Blythe Hill Tavern', area:'Forest Hill border', pc:'SE23', cat:'pub', year:1866, era:'Built c.1866',
-      lat:51.4430, lon:-0.0447, addr:'319 Stanstead Road, SE23 1JB',
+      lat:51.443, lon:-0.0447, addr:'319 Stanstead Road, SE23 1JB',
       text:'A Grade II listed corner pub, built around 1866 and refitted inside in the Brewer&rsquo;s Tudor style of the 1920s and &rsquo;30s &mdash; dark oak, leaded glass, a fire in every room.\n\nIt has been repeatedly named among London&rsquo;s best pubs &mdash; Time Out included it again in 2023 &mdash; on a road that gives no outward hint of what is inside.' },
 
     { id:'catford-house', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Catford_gyratory.jpg/330px-Catford_gyratory.jpg', name:'Catford House', area:'Catford Broadway', pc:'SE6', cat:'pub', year:1736, era:'Built 1736',
       lat:51.4453, lon:-0.0223, addr:'Catford Broadway, SE6 4SP',
-      text:'The oldest building in Catford: a Georgian farmhouse of 1736 with a distinctive M-shaped roof, one of only a handful of its kind left standing in the borough. It served for most of the twentieth century as the Catford Conservative Club.\n\nLeft to decay through the 2000s, it was rescued by a multi-million-pound rebuild that kept the Georgian shell and reconstructed everything behind it, reopening as a pub and community hall in November 2025.' },
+      text:'The oldest building in Catford: a Georgian farmhouse of 1736 with a distinctive M-shaped roof, one of only a handful of its kind left standing in the borough. For most of the twentieth century it served as the Catford Constitutional Club, a popular social club and pub, before closing abruptly in August 2019 due to serious structural and safety issues that left it derelict for years.\n\nA council-backed restoration led by Hayatsu Architects, supported by &pound;1.8m from the Mayor of London\'s Good Growth Fund, repaired and rebuilt the site while preserving the historic Georgian core. It reopened in November 2025 as The Catford House, a community venue run by the Greenwich Co-operative Development Agency (GCDA), combining a pub and garden with a community kitchen and flexible event spaces &mdash; opening the original 1736 Georgian hall to the public for the first time in its history.' },
 
     { id:'black-horse-harrow', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Catford_gyratory.jpg/330px-Catford_gyratory.jpg', name:'Black Horse &amp; Harrow', area:'Rushey Green, Catford', pc:'SE6', cat:'pub', year:1700, era:'Inn since c.1700',
       lat:51.4413, lon:-0.0222, addr:'167 Rushey Green, SE6 4BD',
       text:'Catford&rsquo;s oldest hostelry, with an inn recorded on this site since around 1700, when it stood on the coaching road out to Tonbridge and Hastings, long before the Victorian rebuild you see now.\n\nThat Victorian rebuild turned a coaching inn into a full gin palace, all etched glass and dark mahogany &mdash; the kind of makeover dozens of London road-houses got as railways killed off the coach trade.' },
 
     { id:'wollstonecraft', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Mary_Wollstonecraft_Portrait.jpg/330px-Mary_Wollstonecraft_Portrait.jpg', name:'Mary Wollstonecraft', area:'near Blackfriars Road', pc:'SE1', cat:'plaque', year:1788, era:'Blue plaque, unveiled 2004',
-      lat:51.5040, lon:-0.1030, addr:'45 Dolben Street, SE1 0UQ',
+      lat:51.504, lon:-0.103, addr:'45 Dolben Street, SE1 0UQ',
       text:'Southwark&rsquo;s own plaque scheme marks the house where Mary Wollstonecraft lived in 1788, having crossed the river to be near her publisher after losing work as a governess in Ireland.\n\nIt was unveiled in 2004 by her biographer Claire Tomalin &mdash; sixteen years before a bronze likeness in Newington Green stirred national argument over how to depict her at all.' },
 
     { id:'rose-theatre', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Site_of_The_Rose_Theatre_-_56_Park_Street_Southwark_London_SE1.jpg/330px-Site_of_The_Rose_Theatre_-_56_Park_Street_Southwark_London_SE1.jpg', name:'The Rose Theatre', area:'Park Street, Bankside', pc:'SE1', cat:'culture', year:1587, era:'Built 1587',
@@ -364,7 +364,7 @@
       text:'Marks the council flat the LGBT-rights and human-rights campaigner has lived in since 1978, awarded under Southwark&rsquo;s scheme for commemorating people while they are still living.\n\nIan McKellen unveiled it in 2010, decades into a campaign run largely from this same address &mdash; direct action planned at the kitchen table.' },
 
     { id:'red-cross-garden', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Redcross_Gardens_and_Cottages_%287327429482%29.jpg/330px-Redcross_Gardens_and_Cottages_%287327429482%29.jpg', name:'Red Cross Garden', area:'Redcross Way, Borough', pc:'SE1', cat:'green', year:1887, era:'Opened 1887',
-      lat:51.5023, lon:-0.0940, addr:'Redcross Way, SE1 1HA',
+      lat:51.5023, lon:-0.094, addr:'Redcross Way, SE1 1HA',
       text:'The housing reformer Octavia Hill created this pocket park as &ldquo;an oasis in Southwark&rdquo; for slum-dwelling families, complete with a cottage hall for recreation and evening classes.\n\nIt predates the far larger institution she is now remembered for: Hill co-founded the National Trust a few years later. The garden was restored to her 1887 layout in the 2000s.' },
 
     { id:'una-marson', img:'https://upload.wikimedia.org/wikipedia/commons/8/85/Una_Marson_-_BBC_-_WWII.jpg', name:'Una Marson', area:'Brunswick Park, Camberwell', pc:'SE5', cat:'plaque', year:1939, era:'Blue plaque',
@@ -372,7 +372,7 @@
       text:'A plaque at her Camberwell home marks the Jamaican poet and playwright who became, in 1939, the BBC&rsquo;s first Black woman programme-maker, producing Calling the West Indies for colonial servicemen overseas.\n\nHer wartime series was the direct forerunner of Caribbean Voices, which gave early broadcasts to a young Derek Walcott and V. S. Naipaul.' },
 
     { id:'peek-frean', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Peek-freans-red-logo_%28cropped%29.png/330px-Peek-freans-red-logo_%28cropped%29.png', name:'Peek Frean&rsquo;s Biscuit Factory', area:'Clements Road, Bermondsey', pc:'SE16', cat:'works', year:1866, era:'Factory built 1866',
-      lat:51.4970, lon:-0.0555, addr:'100 Clements Road, SE16 4DG',
+      lat:51.497, lon:-0.0555, addr:'100 Clements Road, SE16 4DG',
       text:'James Peek and George Hender Frean moved their young biscuit firm here in 1866, giving Bermondsey the nickname &ldquo;Biscuit Town&rdquo; and inventing, among others, the Bourbon and the Garibaldi.\n\nThe factory ran until 1989. Peek Frean&rsquo;s also gave Britain, in 1901, its first cream cracker.' },
 
     { id:'manze-pie-shop', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/M.Manze_Bermondsey_-_87_Tower_Bridge_Road_London_SE1_4TW.jpg/330px-M.Manze_Bermondsey_-_87_Tower_Bridge_Road_London_SE1_4TW.jpg', name:'M. Manze', area:'Tower Bridge Road, Bermondsey', pc:'SE1', cat:'works', year:1902, era:'Manze family since 1902',
@@ -388,12 +388,12 @@
       text:'Drysdale opened Britain&rsquo;s second birth control clinic at this address in 1921, and went on to co-found the Family Planning Association in 1930.\n\nHe was also a working electrical engineer who invented the phase-shifting transformer and served as vice-president of the Institute of Physics &mdash; a scientific career running in parallel with the reform campaigning.' },
 
     { id:'phyllis-pearsall', img:'https://upload.wikimedia.org/wikipedia/commons/7/7f/London_A_-_Z_-_street_atlas_book_cover.png', name:'Phyllis Pearsall', area:'Court Lane Gardens, East Dulwich', pc:'SE22', cat:'plaque', year:1906, era:'Blue plaque, unveiled 2005',
-      lat:51.4515, lon:-0.0800, addr:'Court Lane Gardens, SE22',
+      lat:51.4515, lon:-0.08, addr:'Court Lane Gardens, SE22',
       text:'Marks the birthplace, in 1906, of the woman who said she walked 3,000 miles of London streets to hand-draw the first A&ndash;Z after getting lost on the way to a party.\n\nHistorians now doubt the solo-walking story, but the A&ndash;Z she published in 1936 shaped how Londoners have found their way round the city ever since.' },
 
     { id:'tate-modern', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Tate_Modern_-_Bankside_Power_Station.jpg/330px-Tate_Modern_-_Bankside_Power_Station.jpg', name:'Tate Modern', area:'Bankside', pc:'SE1', cat:'art', year:2000, era:'Opened 12 May 2000',
       lat:51.5076, lon:-0.0994, addr:'Bankside, SE1 9TG',
-      text:'Giles Gilbert Scott&rsquo;s oil-fired power station stood empty for two decades until Herzog &amp; de Meuron converted it, keeping the ninety-nine-metre chimney and turning the vast turbine hall itself into part of the collection.\n\nLouise Bourgeois opened the first Turbine Hall commission with three towering steel spider-like sculptures. The £134m conversion kept the building&rsquo;s industrial bones so deliberately that first-time visitors often can&rsquo;t tell where the power station ends and the gallery begins.' },
+      text:'Giles Gilbert Scott&rsquo;s oil-fired power station stood empty for two decades until Herzog &amp; de Meuron converted it, keeping the ninety-nine-metre chimney and turning the vast turbine hall itself into part of the collection.\n\nLouise Bourgeois opened the first Turbine Hall commission with three towering steel spider-like sculptures. The &pound;134m conversion kept the building&rsquo;s industrial bones so deliberately that first-time visitors often can&rsquo;t tell where the power station ends and the gallery begins.' },
 
     { id:'south-london-gallery', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/London_Bridge_and_The_Shard_-_panoramio.jpg/330px-London_Bridge_and_The_Shard_-_panoramio.jpg', name:'South London Gallery', area:'Peckham Road', pc:'SE5', cat:'art', year:1891, era:'Opened 4 May 1891',
       lat:51.4735, lon:-0.0805, addr:'65 Peckham Road, SE5 8UH',
@@ -416,15 +416,15 @@
       text:'Built for a Cambridge college mission in one of the poorest parishes in London, this is thought to be the first poured-concrete building in England &mdash; called &ldquo;the finest modern church in South London&rdquo; when it opened.\n\nIt stood derelict from the 1950s, used informally as sculpture studios by Royal College of Art students, before being converted into a public gallery in 1999.' },
 
     { id:'apt-gallery', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Deptford_High_Street%2C_SE8_%282%29_-_geograph.org.uk_-_1498383.jpg/330px-Deptford_High_Street%2C_SE8_%282%29_-_geograph.org.uk_-_1498383.jpg', name:'APT Gallery', area:'Deptford Creek', pc:'SE8', cat:'art', year:1995, era:'Founded 1995',
-      lat:51.4740, lon:-0.0208, addr:'6 Creekside, Harold Wharf, SE8 4SA',
+      lat:51.474, lon:-0.0208, addr:'6 Creekside, Harold Wharf, SE8 4SA',
       text:'A group of artists converted a Deptford Creek warehouse into forty-two studios and a public gallery, keeping the working sculpture yard and a stretch of the creek&rsquo;s edge as part of the site.\n\nIts open-submission Creekside Open, running since 2005, is one of the most competitive annual shows for London artists &mdash; and the neighbourhood also hosts Deptford X, London&rsquo;s longest-running artist-led festival, founded in 1998.' },
 
     { id:'freeze-exhibition', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Surrey_Quays_Road_by_former_dock_offices_-_geograph.org.uk_-_6112428.jpg/330px-Surrey_Quays_Road_by_former_dock_offices_-_geograph.org.uk_-_6112428.jpg', name:'Site of &ldquo;Freeze&rdquo;', area:'Surrey Docks', pc:'SE16', cat:'art', year:1988, era:'Held summer 1988',
-      lat:51.4930, lon:-0.0483, addr:'Surrey Docks Road, SE16 &mdash; the dockside building itself no longer stands',
+      lat:51.493, lon:-0.0483, addr:'Surrey Docks Road, SE16 &mdash; the dockside building itself no longer stands',
       text:'Damien Hirst, then a second-year Goldsmiths student, borrowed an empty Port of London Authority building here for a self-curated show of his own generation: Sarah Lucas, Gary Hume, Michael Landy, Angus Fairhurst and Fiona Rae among them, several taught by Michael Craig-Martin at the college up the road in New Cross.\n\n&ldquo;Freeze&rdquo; is now treated as the founding moment of the Young British Artists. The building is gone, so the story now lives only in the docklands street it once stood on.' },
 
     { id:'bankside-gallery', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/St_Paul%27s_-_Tate_Modern.JPG/330px-St_Paul%27s_-_Tate_Modern.JPG', name:'Bankside Gallery', area:'Hopton Street', pc:'SE1', cat:'art', year:1980, era:'Opened 1980',
-      lat:51.5070, lon:-0.1015, addr:'48 Hopton Street, SE1 9JH',
+      lat:51.507, lon:-0.1015, addr:'48 Hopton Street, SE1 9JH',
       text:'Home of the Royal Watercolour Society &mdash; founded in 1804 by painters who felt snubbed by the Royal Academy &mdash; the gallery sits a few doors from Tate Modern, on the same stretch of bank its founders never got the chance to show on.\n\nIt is one of the only London galleries built specifically to show work on paper, still run today as an artist-membership charity rather than a commercial space.' },
 
     { id:'peckham-peace-wall', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Rye_Lane_in_Peckham._-_geograph.org.uk_-_8189377.jpg/330px-Rye_Lane_in_Peckham._-_geograph.org.uk_-_8189377.jpg', name:'Rye Lane murals', area:'Choumert Grove, Peckham', pc:'SE15', cat:'art', year:2012, era:'Unveiled 2012, extended 2025',
@@ -440,7 +440,7 @@
       text:'A standard UK road sign reading &ldquo;Here 24,859&rdquo; &mdash; the number is the distance in miles you&rsquo;d travel straight down through the earth and back up the other side to reach this exact point again.\n\nIt sits almost exactly on the Greenwich Meridian itself, making it the one public artwork in London that is genuinely about the number this whole gazetteer is built around.' },
 
     { id:'liberty-grip', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Greenwich_Thames_Path%2C_Liberty_Grip%2C_Gary_Hume_%281%29.jpg/330px-Greenwich_Thames_Path%2C_Liberty_Grip%2C_Gary_Hume_%281%29.jpg', name:'Liberty Grip', area:'Olympian Way, Greenwich Peninsula', pc:'SE10', cat:'art', year:2008, era:'Cast 2008, sited 2015',
-      lat:51.5010, lon:0.0048, addr:'Olympian Way, east side of The O2, SE10',
+      lat:51.501, lon:0.0048, addr:'Olympian Way, east side of The O2, SE10',
       text:'Gary Hume cast this bronze in three sections, each modelled from a mannequin&rsquo;s arm bent at the elbow &mdash; an abstracted gesture that reads differently walking past it from each direction.\n\nIt was first shown at White Cube Bermondsey in 2013 before this permanent riverside casting joined the Greenwich Peninsula trail two years later.' },
 
     { id:'slice-of-reality', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/London_MMB_%C2%BB004_Thames_Path.jpg/330px-London_MMB_%C2%BB004_Thames_Path.jpg', name:'A Slice of Reality', area:'Greenwich Peninsula foreshore', pc:'SE10', cat:'art', year:1999, era:'Installed for the Millennium, 1999',
@@ -460,7 +460,7 @@
       text:'Margaret Higginson&rsquo;s bronze, inspired by Amnesty International&rsquo;s campaign against violence towards women, stands in the walled garden of the Jacobean house next door.\n\nIt shares grounds with a mulberry tree planted around 1608 for James I&rsquo;s failed silk-industry scheme &mdash; the newest and oldest things on the site are metres apart.' },
 
     { id:'the-picnic-lewisham', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Gerda_Rubinstein_1993.jpg/330px-Gerda_Rubinstein_1993.jpg', name:'The Picnic', area:'Conington Road, Lewisham', pc:'SE13', cat:'art', year:1988, era:'Installed 1988',
-      lat:51.4640, lon:-0.0140, addr:'Conington Road, SE13 7LG',
+      lat:51.464, lon:-0.014, addr:'Conington Road, SE13 7LG',
       text:'Gerda Rubinstein &mdash; a Dutch-Jewish sculptor who survived the Holocaust as a child before settling in London &mdash; cast this bronze group of ordinary Lewisham figures sharing a meal, part of a wave of 1980s public-realm commissions.\n\nRubinstein said she sculpted ordinary domestic life partly because she had seen so little of it as a child.' },
 
     { id:'pensive-girl-catford', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Pensive_Girl%2C_by_Gerda_Rubinstein.jpg/330px-Pensive_Girl%2C_by_Gerda_Rubinstein.jpg', name:'Pensive Girl', area:'Outside the Old Town Hall, Catford', pc:'SE6', cat:'art', year:1992, era:'Installed 1992',
@@ -472,15 +472,15 @@
       text:'Founded by the London County Council in 1898, the school became, under principal William Johnstone from 1938, the base for the &ldquo;Camberwell School&rdquo; &mdash; Victor Pasmore, William Coldstream and Claude Rogers regrouping here, and training Terry Frost, Euan Uglow and Gillian Ayres.\n\nIt is now part of University of the Arts London, but its postwar reputation was built almost entirely inside this one Peckham Road building.' },
 
     { id:'albert-mckenzie-vc', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Albert_Edward_Mckenzie_statue.jpg/330px-Albert_Edward_Mckenzie_statue.jpg', name:'Albert McKenzie VC', area:'Tower Bridge Road, Bermondsey', pc:'SE1', cat:'memory', year:1918, era:'Unveiled 2015',
-      lat:51.4970, lon:-0.0805, addr:'Tower Bridge Road at Grange Road, SE1 4TU',
+      lat:51.497, lon:-0.0805, addr:'Tower Bridge Road at Grange Road, SE1 4TU',
       text:'A bronze statue on a plinth shaped to evoke the Zeebrugge harbour wall commemorates Albert McKenzie, an eighteen-year-old Bermondsey sailor awarded the Victoria Cross for a 1918 raid on the Belgian coast &mdash; voted for by his own crewmates, under a since-discontinued rule allowing sailors to nominate one of their own. He died of influenza the following year, aged nineteen.\n\nIt was unveiled on what would have been his 117th birthday, with a twenty-one-gun salute fired from HMS Belfast, moored nearby on the Thames.' },
 
     { id:'st-saviours-war-memorial', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/War_memorial_on_Borough_High_Street%2C_south_London_-_geograph.org.uk_-_1522091.jpg/330px-War_memorial_on_Borough_High_Street%2C_south_London_-_geograph.org.uk_-_1522091.jpg', name:'St Saviour&rsquo;s War Memorial', area:'Borough High Street', pc:'SE1', cat:'memory', year:1922, era:'Unveiled 16 Nov 1922',
-      lat:51.5013, lon:-0.0910, addr:'Borough High Street, near Talbot Yard, SE1 1LB',
+      lat:51.5013, lon:-0.091, addr:'Borough High Street, near Talbot Yard, SE1 1LB',
       text:'A bronze soldier on a Portland stone pedestal, modelled by Philip Lindsey Clark, who served through the war himself and finished it a captain with a DSO. Reliefs on the pedestal show biplanes and battleships on the long sides, Saint George and the Dragon and a mourning woman with a child on the ends.\n\nIt was upgraded from Grade II to Grade II* listed in 2018 &mdash; a rare rating for a parish war memorial.' },
 
     { id:'southwark-gateway-needle', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/John_Keats_at_Guy%27s_Hospital%2C_London_%2812375849294%29.jpg/330px-John_Keats_at_Guy%27s_Hospital%2C_London_%2812375849294%29.jpg', name:'Southwark Gateway Needle', area:'Duke Street Hill, London Bridge', pc:'SE1', cat:'art', year:1999, era:'Installed 1999',
-      lat:51.5065, lon:-0.0880, addr:'Duke Street Hill, SE1 9SA',
+      lat:51.5065, lon:-0.088, addr:'Duke Street Hill, SE1 9SA',
       text:'A tapering stainless-steel spike by Eric Parry Architects marks the south end of London Bridge &mdash; a deliberate, uneasy echo of the iron spikes that once held the severed heads of traitors executed at the Tower and displayed on the old bridge for centuries.\n\nIt was commissioned as part of a Millennium-era gateway project meant to announce Southwark&rsquo;s side of the river without pretending its history was gentler than it was.' },
 
     { id:'mandela-way-tank', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Stompie_Nov_2020_%281%29.jpg/330px-Stompie_Nov_2020_%281%29.jpg', name:'The Mandela Way tank', area:'Bermondsey', pc:'SE1', cat:'memory', year:1995, era:'Parked since 1995',
@@ -488,7 +488,7 @@
       text:'A decommissioned Soviet-era T-34 tank, once used by Czechoslovak forces during the 1968 Prague Spring and later a film prop, has sat on this vacant plot since 1995 &mdash; placed there, gun turret pointed at Southwark Council&rsquo;s planning offices, after the council rejected the owner&rsquo;s redevelopment plans.\n\nLocal legend holds he first told the council he had permission for a &ldquo;tank&rdquo; on the site and officials assumed he meant a septic tank. It was removed for restoration in 2022 and may not return &mdash; check before you go; this may already be history rather than a sight to see.' },
 
     { id:'dulwich-outdoor-gallery', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/%27Fight_Club%27_by_Conor_Harrington_based_on_%27Massacre_of_the_Innocents%27_by_Charles_Le_Brun_in_Dulwich_Picture_Gallery.jpg/330px-%27Fight_Club%27_by_Conor_Harrington_based_on_%27Massacre_of_the_Innocents%27_by_Charles_Le_Brun_in_Dulwich_Picture_Gallery.jpg', name:'Dulwich Outdoor Gallery', area:'Dulwich Village', pc:'SE21', cat:'art', year:2012, era:'Begun 2012',
-      lat:51.4468, lon:-0.0870, addr:'Dulwich Village and surrounding streets, SE21',
+      lat:51.4468, lon:-0.087, addr:'Dulwich Village and surrounding streets, SE21',
       text:'Ingrid Beazley of Dulwich Picture Gallery invited the street artist Stik to repaint an Old Master from the gallery&rsquo;s collection onto a garage door nearby; a dozen more international artists have since reimagined Baroque paintings as murals across the village.\n\nOne mural is built deliberately around a gas meter box. It turns the whole village into a free, outdoor annexe of the gallery a few streets away, repainted whenever an artist proposes something new.' },
 
     { id:'sands-films-studio', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Grices_Granary_Film_Studios%2C_Rotherhithe_%28Northeast_Corner_-_01%29.jpg/330px-Grices_Granary_Film_Studios%2C_Rotherhithe_%28Northeast_Corner_-_01%29.jpg', name:'Sands Films Studio', area:'St Marychurch Street, Rotherhithe', pc:'SE16', cat:'art', year:1976, era:'Studio since 1976',
@@ -512,7 +512,7 @@
       text:'A drinking fountain commemorates Jabez West, a Bermondsey tanner and temperance campaigner, placed in the park specifically to offer thirsty visitors water instead of the pub.\n\nIt sits a short walk from Dilston Grove, a former mission church in the same park now serving as a public art gallery.' },
 
     { id:'booth-statues', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/William_Booth.jpg/330px-William_Booth.jpg', name:'William &amp; Catherine Booth', area:'Champion Park, Denmark Hill', pc:'SE5', cat:'memory', year:1929, era:'Unveiled 1929',
-      lat:51.4700, lon:-0.0908, addr:'Champion Park, Denmark Hill, SE5 8BQ',
+      lat:51.47, lon:-0.0908, addr:'Champion Park, Denmark Hill, SE5 8BQ',
       text:'Grade II-listed bronzes of the founders of the Salvation Army stand outside the William Booth Memorial Training College, itself designed by Giles Gilbert Scott &mdash; the same architect later responsible for converting Bankside Power Station into Tate Modern.\n\nBooth wrote much of his manifesto, In Darkest England, after working the streets of this same stretch of South London.' },
 
     { id:'damilola-taylor-memorial', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Damilola_Taylor_memorial.jpg/330px-Damilola_Taylor_memorial.jpg', name:'Damilola Taylor memorial', area:'Oliver Goldsmith School, Peckham', pc:'SE5', cat:'memory', year:2002, era:'Unveiled 2002',
@@ -520,7 +520,7 @@
       text:'A small sculpture of a phoenix taking flight was unveiled at his former primary school in memory of Damilola Taylor, a ten-year-old who died in 2000 after being attacked on a stairwell on the nearby North Peckham estate, days after arriving in London from Nigeria.\n\nA second, larger memorial garden is now planned for a rebuilt Peckham Square nearby, expected to open in 2027 &mdash; this quiet school sculpture may end up the earlier of two.' },
 
     { id:'camberwell-beauty-mural', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/St_Giles_Church_Camberwell_2000.jpg/330px-St_Giles_Church_Camberwell_2000.jpg', name:'Camberwell Beauty mural', area:'Wells Way, Camberwell', pc:'SE5', cat:'art', year:1920, era:'Installed c.1920',
-      lat:51.4735, lon:-0.0870, addr:'Wells Way, SE5',
+      lat:51.4735, lon:-0.087, addr:'Wells Way, SE5',
       text:'A large Doulton faience tile mural of the Camberwell Beauty &mdash; a butterfly first recorded in Britain in this parish in 1748, and the source of Camberwell&rsquo;s own civic emblem &mdash; decorates a wall on Wells Way.\n\nThe butterfly itself hasn&rsquo;t bred in Britain for decades. It survives here only as decoration, on a building that has outlasted the insect it&rsquo;s named after.' },
 
     { id:'bluecoat-boy-girl', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/St._Mary_Rotherhithe_%28former%29_charity_school_-_Bluecoat_boy_statue_-_geograph.org.uk_-_2694749.jpg/330px-St._Mary_Rotherhithe_%28former%29_charity_school_-_Bluecoat_boy_statue_-_geograph.org.uk_-_2694749.jpg', name:'The Bluecoat Boy &amp; Girl', area:'St Marychurch Street, Rotherhithe', pc:'SE16', cat:'culture', year:1613, era:'School founded 1613',
@@ -528,7 +528,7 @@
       text:'Two painted figures of a charity-school boy and girl in blue-coat uniform look down from a wall beside St Mary&rsquo;s Church &mdash; survivors of the free school founded here in 1613 to educate the children of Rotherhithe watermen and sailors.\n\nThey stand almost exactly where the Mayflower left the Thames in 1620, a reminder that this stretch of river was a working parish long before it became a heritage postcard.' },
 
     { id:'george-ii-statue', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Statue_of_George_III%2C_Pall_Mall_SW1.jpg/330px-Statue_of_George_III%2C_Pall_Mall_SW1.jpg', name:'George II statue', area:'Old Royal Naval College', pc:'SE10', cat:'memory', year:1735, era:'Carved 1735',
-      lat:51.4832, lon:-0.0070, addr:'Grand Square, Old Royal Naval College, SE10 9NN',
+      lat:51.4832, lon:-0.007, addr:'Grand Square, Old Royal Naval College, SE10 9NN',
       text:'Rysbrack carved this from a single eleven-tonne block of Carrara marble, seized from a French ship by Admiral George Rooke and originally destined to become a statue of Louis XIV.\n\nGreenwich Hospital acquired the marble in 1714 and put up George II instead in 1735, likely hoping to flatter the King into becoming the hospital&rsquo;s patron.' },
 
     { id:'william-iv-statue', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/King_William_IV_statue_%288844765795%29.jpg/330px-King_William_IV_statue_%288844765795%29.jpg', name:'William IV statue', area:'Greenwich Park', pc:'SE10', cat:'memory', year:1844, era:'Moved here 1935',
@@ -536,19 +536,19 @@
       text:'Samuel Nixon&rsquo;s statue originally stood at the north end of London Bridge, then outside the Royal Exchange, before Greenwich took it in 1935 after the church earmarked for the site was demolished.\n\nIt is one of the few London statues to have had three different addresses before finding a permanent home.' },
 
     { id:'nelson-statue-greenwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Statue_of_Nelson%2C_Trafalgar_Tavern%2C_Greenwich_-_geograph.org.uk_-_1701462.jpg/330px-Statue_of_Nelson%2C_Trafalgar_Tavern%2C_Greenwich_-_geograph.org.uk_-_1701462.jpg', name:'Lord Nelson statue', area:'Trafalgar Tavern, Greenwich', pc:'SE10', cat:'maritime', year:2005, era:'Unveiled 2005',
-      lat:51.4850, lon:-0.0068, addr:'Park Row, SE10 9NW',
+      lat:51.485, lon:-0.0068, addr:'Park Row, SE10 9NW',
       text:'Sculptor Lesley Pover spent two years working from Nelson&rsquo;s life mask and Maritime Museum archives; the tavern&rsquo;s owner commissioned it for the battle&rsquo;s two-hundredth anniversary, and it was unveiled in 2005.\n\nIt was removed for a year after a 2012 vandalism incident left it tilted, apparently from a bungled theft attempt, and had to be repaired before its return.' },
 
     { id:'peter-the-great-deptford', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Statue_of_Peter_the_Great_on_Glaisher_Street_%28geograph_3480160%29.jpg/330px-Statue_of_Peter_the_Great_on_Glaisher_Street_%28geograph_3480160%29.jpg', name:'Peter the Great statue', area:'Glaisher Street, Deptford', pc:'SE8', cat:'art', year:2001, era:'Unveiled June 2001',
-      lat:51.4855, lon:-0.0230, addr:'Glaisher Street, SE8 3EH',
+      lat:51.4855, lon:-0.023, addr:'Glaisher Street, SE8 3EH',
       text:'Mihail Chemiakin&rsquo;s bronze gift from the Russian people shows an oddly small-headed Tsar with pipe and telescope, flanked by a dwarf, cannon and sea-monster heads &mdash; commemorating Peter&rsquo;s 1698 stay nearby to study shipbuilding at the Deptford dockyards.\n\nIt regularly tops lists of London&rsquo;s strangest public sculpture. The real Peter, six foot eight, reportedly hated his own portraits for making him look ordinary.' },
 
     { id:'wellington-statue-woolwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/London%2C_UK_%28August_2014%29_-_175.JPG/330px-London%2C_UK_%28August_2014%29_-_175.JPG', name:'Duke of Wellington statue', area:'Royal Arsenal riverside', pc:'SE18', cat:'memory', year:1848, era:'Moved here 2005',
-      lat:51.4920, lon:0.0705, addr:'Royal Arsenal riverside, SE18 6ND',
+      lat:51.492, lon:0.0705, addr:'Royal Arsenal riverside, SE18 6ND',
       text:'Erected to honour Wellington&rsquo;s decades as Master-General of the Ordnance, overseeing the Arsenal&rsquo;s guns; it was moved to a lawn above a car park in 2005 as the old munitions site was redeveloped into flats.\n\nThe Iron Duke now watches over exactly the kind of riverside apartments his own ordnance works helped make necessary to clear.' },
 
     { id:'woolwich-town-hall-windows', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Woolwich_town_hall_1.jpg/330px-Woolwich_town_hall_1.jpg', name:'Woolwich Town Hall windows', area:'Wellington Street, Woolwich', pc:'SE18', cat:'grand', year:1906, era:'Built 1903&ndash;1906',
-      lat:51.4900, lon:0.0645, addr:'Wellington Street, SE18 6PW',
+      lat:51.49, lon:0.0645, addr:'Wellington Street, SE18 6PW',
       text:'Geoffrey Webb&rsquo;s stained glass fills the building with scenes from Woolwich, Plumstead and Eltham history &mdash; three foreign kings entertained at Eltham Palace in 1374, and the warship Henry Grace &agrave; Dieu launching from Woolwich Dockyard in 1514.\n\nOne window pictures Thomas More&rsquo;s daughter Margaret Roper &mdash; the same Roper who, this gazetteer&rsquo;s Eltham entry notes, is said to have brought her father&rsquo;s head back to Well Hall after his execution.' },
 
     { id:'lewisham-clock-tower', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Joe_lew_%281%29.jpg/330px-Joe_lew_%281%29.jpg', name:'Lewisham Clock Tower', area:'Lewisham High Street', pc:'SE13', cat:'grand', year:1897, era:'Built 1897',
@@ -556,7 +556,7 @@
       text:'Raised to mark Queen Victoria&rsquo;s Diamond Jubilee, it has stood at this crossroads through the town centre&rsquo;s every rebuilding since.\n\nIt is one of dozens of near-identical jubilee clock towers put up across Britain in 1897 &mdash; Lewisham&rsquo;s has simply outlasted more of its high street than most.' },
 
     { id:'lewisham-war-memorial', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Joe_lew_%281%29.jpg/330px-Joe_lew_%281%29.jpg', name:'Lewisham War Memorial', area:'Lewisham War Memorial Gardens', pc:'SE13', cat:'memory', year:1921, era:'Unveiled 1921',
-      lat:51.4610, lon:-0.0160, addr:'Rennell Street, SE13 5EZ',
+      lat:51.461, lon:-0.016, addr:'Rennell Street, SE13 5EZ',
       text:'Six plaques set into the ground name Lewisham&rsquo;s Victoria Cross holders, among them Major Francis Harvey, mortally wounded at Jutland in 1916, who used his last minutes to order his ship&rsquo;s magazine flooded and save HMS Lion from exploding.\n\nA separate Lewisham VC memorial was added nearby as recently as 2015 &mdash; a century on, the borough was still adding names to its own roll of honour.' },
 
     { id:'deptford-war-memorial', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Deptford_High_Street%2C_SE8_%282%29_-_geograph.org.uk_-_1498383.jpg/330px-Deptford_High_Street%2C_SE8_%282%29_-_geograph.org.uk_-_1498383.jpg', name:'Deptford war memorial', area:'St Paul&rsquo;s Churchyard, Deptford', pc:'SE8', cat:'memory', year:1924, era:'Unveiled 1924',
@@ -564,7 +564,7 @@
       text:'Two bronze figures, a soldier and a sailor with arms reversed and heads bowed, flank a Portland stone shaft reading &ldquo;Deptford&rsquo;s tribute to her gallant sons who were faithful unto death.&rdquo;\n\nDeptford&rsquo;s dockyard past put both services on the same plinth &mdash; an unusually direct memorial to how the borough actually made its living.' },
 
     { id:'blackheath-war-memorial', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Blackheath_village.jpg/330px-Blackheath_village.jpg', name:'Blackheath war memorial', area:'Blackheath', pc:'SE3', cat:'memory', year:1921, era:'Unveiled 1921',
-      lat:51.4700, lon:0.0020, addr:'Maze Hill / Charlton Way, SE3',
+      lat:51.47, lon:0.002, addr:'Maze Hill / Charlton Way, SE3',
       text:'Beneath the Borough of Greenwich&rsquo;s coat of arms, it names more than 1,600 men of the borough killed in the Great War, with a later inscription added for the dead of 1939&ndash;45.\n\nIt stands on the same open heath where, this gazetteer&rsquo;s Blackheath entry already notes, medieval rebels once mustered to march on London.' },
 
     { id:'charlton-war-memorial', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Charlton_war_memorial_-_geograph.org.uk_-_971762.jpg/330px-Charlton_war_memorial_-_geograph.org.uk_-_971762.jpg', name:'Charlton war memorial', area:'St Luke&rsquo;s Church, Charlton', pc:'SE7', cat:'memory', year:1921, era:'Unveiled 1921',
@@ -572,11 +572,11 @@
       text:'Its panels list 248 names from both world wars; a separate memorial at Charlton Athletic&rsquo;s Valley ground names the club&rsquo;s own players, officials and supporters killed in service.\n\nA local football club keeping its own war memorial, distinct from the parish one a few streets away, is a rarer thing than it sounds.' },
 
     { id:'forest-hill-mural', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/London%2C_Forest_Hill_Library.jpg/330px-London%2C_Forest_Hill_Library.jpg', name:'Forest Hill canal mural', area:'Davids Road, Forest Hill', pc:'SE23', cat:'art', year:2003, era:'Painted 2003',
-      lat:51.4390, lon:-0.0530, addr:'Davids Road, SE23 3EP',
+      lat:51.439, lon:-0.053, addr:'Davids Road, SE23 3EP',
       text:'Council-commissioned artwork sits on a wall that is itself a survivor: the raised path beneath it was the towpath of the Croydon Canal, drained in 1836 so the London and Croydon Railway could be laid on top.\n\nThe mural depicts its own site&rsquo;s history in miniature &mdash; a hump-backed canal bridge with a barge passing beneath it, painted directly onto the wall that used to be the towpath.' },
 
     { id:'bexleyheath-clock-tower', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/The_Clocktower_at_Bexleyheath.jpg/330px-The_Clocktower_at_Bexleyheath.jpg', name:'Bexleyheath Clock Tower', area:'The Broadway, Bexleyheath', pc:'DA6', cat:'grand', year:1912, era:'Opened 17 July 1912',
-      lat:51.4630, lon:0.1500, addr:'The Broadway, DA6 7JJ',
+      lat:51.463, lon:0.15, addr:'The Broadway, DA6 7JJ',
       text:'Built for George V&rsquo;s coronation, its niches were meant to hold four busts; the original plaster George V disintegrated during cleaning in 1935 and had to be recast, and a matching bust of William Morris &mdash; who lived up the road at Red House &mdash; was added in 1997.\n\nOne niche has stood empty since 1912. The tower has spent longer waiting to be finished than it took to build.' },
 
     { id:'brockley-jack', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/The_Brockley_Jack_pub%2C_Crofton_Park.jpg/330px-The_Brockley_Jack_pub%2C_Crofton_Park.jpg', name:'The Brockley Jack', area:'Brockley Road', pc:'SE4', cat:'pub', year:1863, era:'Renamed 1863, rebuilt 1898',
@@ -584,7 +584,7 @@
       text:'Renamed in 1863 for the local highwayman &ldquo;Black&rdquo; Jack Law, on the site of an older inn known through the eighteenth century as the Crooked Billet and later the Castle. It was rebuilt in more substantial brick and stone in 1898.\n\nA whale&rsquo;s shoulder bone, once used as the pub sign, still projects near the roofline. It now shares its building with the Brockley Jack Studio Theatre.' },
 
     { id:'sylvan-post', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Sydenham_Avenue_SE26.JPG/330px-Sydenham_Avenue_SE26.JPG', name:'The Sylvan Post', area:'Dartmouth Road, Forest Hill', pc:'SE23', cat:'pub', year:1960, era:'A 1960s post office, now a pub',
-      lat:51.4380, lon:-0.0545, addr:'24&ndash;28 Dartmouth Road, SE23 3XU',
+      lat:51.438, lon:-0.0545, addr:'24&ndash;28 Dartmouth Road, SE23 3XU',
       text:'A working post office until Antic converted it into a pub, keeping the old strong room as a snug and hanging the walls with postal memorabilia &mdash; franked stamps, telegrams, sorting-office ephemera.\n\nPortobello Brewery took it over in late 2020. The counter where locals once queued for stamps and pensions is now where they queue for real ale.' },
 
     { id:'rivoli-ballroom', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Rivoli_Ballroom%2C_Brockley%2C_SE4.jpg/330px-Rivoli_Ballroom%2C_Brockley%2C_SE4.jpg', name:'Rivoli Ballroom', area:'Crofton Park', pc:'SE4', cat:'culture', year:1913, era:'Cinema 1913, ballroom since 1959',
@@ -592,15 +592,15 @@
       text:'Opened in July 1913 as the Crofton Park Picture Palace, Lewisham&rsquo;s eighteenth cinema, with live orchestrion music; it closed as a cinema in 1957 and reopened two years later as a dance hall with a sprung Canadian maple floor.\n\nIt is the only intact 1950s ballroom interior left in London &mdash; red flock wallpaper, chandeliers and all, largely unchanged since Boxing Day 1959.' },
 
     { id:'ivy-house', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Ivy_House%2C_Nunhead%2C_SE15_%285478867910%29.jpg/330px-Ivy_House%2C_Nunhead%2C_SE15_%285478867910%29.jpg', name:'The Ivy House', area:'Stuart Road, Nunhead', pc:'SE15', cat:'pub', year:1930, era:'Rebuilt 1930s, community-owned since 2013',
-      lat:51.4635, lon:-0.0570, addr:'40 Stuart Road, SE15 3BE',
+      lat:51.4635, lon:-0.057, addr:'40 Stuart Road, SE15 3BE',
       text:'Rebuilt by Truman&rsquo;s as a Grade II-listed &ldquo;improved public house&rdquo; on the site of the older Newlands Tavern, it became London&rsquo;s first co-operatively owned pub after Enterprise Inns evicted its tenants in 2012 to sell it for flats.\n\nA Nunhead campaign got it listed as the UK&rsquo;s first Asset of Community Value, then bought the freehold outright within twelve months under the Localism Act &mdash; it reopened, community-run, in summer 2013.' },
 
     { id:'st-peters-brockley', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Brockley_station_eastern_entrance_2012.JPG/330px-Brockley_station_eastern_entrance_2012.JPG', name:'St Peter&rsquo;s Church', area:'Wickham Road, Brockley', pc:'SE4', cat:'grand', year:1870, era:'Built 1866&ndash;1870',
-      lat:51.4645, lon:-0.0290, addr:'Wickham Road, SE4 1QW',
+      lat:51.4645, lon:-0.029, addr:'Wickham Road, SE4 1QW',
       text:'Frederick Marrable&rsquo;s church anchors the east side of Wickham Road, the spine of the Brockley conservation area&rsquo;s run of Gothic Revival villas and terraces built for commuters once the railway reached Brockley in the 1870s.\n\nIt has almost no churchyard and no burials &mdash; unusual for a Victorian parish church, and a sign of how tightly the surrounding streets were already built up when it went up.' },
 
     { id:'brockley-cemeteries', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Ladywell_and_Brockley_cemetery_-_geograph.org.uk_-_1290119.jpg/330px-Ladywell_and_Brockley_cemetery_-_geograph.org.uk_-_1290119.jpg', name:'Brockley &amp; Ladywell Cemeteries', area:'Brockley', pc:'SE4', cat:'green', year:1858, era:'Opened 1858',
-      lat:51.4580, lon:-0.0245, addr:'Brockley Road, SE4 2PU',
+      lat:51.458, lon:-0.0245, addr:'Brockley Road, SE4 2PU',
       text:'Two adjoining Victorian cemeteries opened almost simultaneously in 1858, the first replacing an overflowing parish burial ground at St Paul&rsquo;s Deptford &mdash; a common pattern as inner London&rsquo;s churchyards filled up faster than its population could be buried.\n\nTogether they now form one continuous green corridor, headstones and mature trees standing where two separate parishes once kept their dead strictly apart.' },
 
     { id:'maunders-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/WALTER_MAUNDER_1851%E2%80%931928_ANNIE_MAUNDER_1868%E2%80%931947_Astronomers_lived_here_1907%E2%80%931911.jpg/330px-WALTER_MAUNDER_1851%E2%80%931928_ANNIE_MAUNDER_1868%E2%80%931947_Astronomers_lived_here_1907%E2%80%931911.jpg', name:'Walter &amp; Annie Maunder', area:'Tyrwhitt Road, Brockley', pc:'SE4', cat:'plaque', year:1907, era:'Blue plaque, unveiled 2022',
@@ -612,7 +612,7 @@
       text:'A pub has stood on this stretch of New Cross Road since at least the 1850s, trading for two decades from the 1920s as the Amersham Hotel before reverting to its old name.\n\nA large illuminated &ldquo;Take Courage&rdquo; sign still runs down one wall. It&rsquo;s now one of New Cross&rsquo;s working live-music pubs, a few hundred yards from the Goldsmiths building that trained the students who once drank in it.' },
 
     { id:'tyrwhitt-villas', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Brockley_station_eastern_entrance_2012.JPG/330px-Brockley_station_eastern_entrance_2012.JPG', name:'Tyrwhitt Road villas', area:'Brockley', pc:'SE4', cat:'grand', year:1880, era:'Developed 1870s&ndash;1900',
-      lat:51.4650, lon:-0.0300, addr:'Tyrwhitt Road, SE4 1QE',
+      lat:51.465, lon:-0.03, addr:'Tyrwhitt Road, SE4 1QE',
       text:'The Tyrwhitt-Drake family developed north Brockley&rsquo;s grand villas, terraces and semi-detached houses through the late nineteenth century &mdash; Tyrwhitt Road and neighbouring Drake Road both carry the family name, with Chalsey Road the last to be finished, in 1900.\n\nIt&rsquo;s now one of inner London&rsquo;s most complete Victorian suburbs, protected since 1974 by both a conservation area designation and the volunteer Brockley Society founded that same year.' },
 
     { id:'peckham-library', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/DSCN4087.JPG/330px-DSCN4087.JPG', name:'Peckham Library', area:'Peckham Hill Street', pc:'SE15', cat:'grand', year:2000, era:'Won the Stirling Prize, 2000',
@@ -632,7 +632,7 @@
       text:'Built by public subscription for the Blackheath Conservatoire of Music, founded in 1881, this Grade II-listed hall and its adjoining Conservatoire form London&rsquo;s oldest surviving purpose-built arts complex.\n\nThe 1,200-seat hall still hosts concerts today, over 130 years after local residents first paid for it themselves.' },
 
     { id:'royal-artillery-barracks', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Royal_Artillery_Barracks_Woolwich_MOD_45155221.jpg/330px-Royal_Artillery_Barracks_Woolwich_MOD_45155221.jpg', name:'Royal Artillery Barracks', area:'Grand Depot Road, Woolwich', pc:'SE18', cat:'grand', year:1802, era:'Built 1775&ndash;1802',
-      lat:51.4870, lon:0.0630, addr:'Grand Depot Road, SE18 6ST',
+      lat:51.487, lon:0.063, addr:'Grand Depot Road, SE18 6ST',
       text:'James Wyatt&rsquo;s facade runs over 300 metres &mdash; the longest continuous Georgian building front in the country &mdash; built for the Board of Ordnance and home to the Royal Artillery from 1776 until 2007.\n\nIt once housed up to 4,000 men behind that single unbroken frontage.' },
 
     { id:'st-giles-camberwell', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/South_Face_of_the_Church_of_Saint_Giles%2C_Camberwell_%2805%29.jpg/330px-South_Face_of_the_Church_of_Saint_Giles%2C_Camberwell_%2805%29.jpg', name:'St Giles&rsquo; Church', area:'Camberwell Church Street', pc:'SE5', cat:'grand', year:1844, era:'Built 1842&ndash;44',
@@ -653,7 +653,7 @@
 
     { id:'one-tree-hill', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Oak_of_Honor_at_One_Tree_Hill%2C_Honor_Oak_%2802%29.jpg/330px-Oak_of_Honor_at_One_Tree_Hill%2C_Honor_Oak_%2802%29.jpg', name:'One Tree Hill', area:'Honor Oak', pc:'SE23', cat:'memory', year:1897, era:'Enclosed 1896, retaken 1897',
       lat:51.4485, lon:-0.0435, addr:'One Tree Hill, Honor Oak Park, SE23',
-      text:'A golf club enclosed this hilltop with a six-foot fence in 1896. On 10 October 1897 some 15,000 people tore it down, and the following Sunday 75,000 gathered again and fought running battles with 500 police.\n\nCamberwell council bought the hill outright for £6,100 and opened it as a public park in 1905 &mdash; one of the largest mass trespasses in London history, and the reason the view from the top is still public today.' },
+      text:'A golf club enclosed this hilltop with a six-foot fence in 1896. On 10 October 1897 some 15,000 people tore it down, and the following Sunday 75,000 gathered again and fought running battles with 500 police.\n\nCamberwell council bought the hill outright for &pound;6,100 and opened it as a public park in 1905 &mdash; one of the largest mass trespasses in London history, and the reason the view from the top is still public today.' },
 
     { id:'st-augustine-honor-oak', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Honor_Oak_Parks_shops_-_geograph.org.uk_-_731971.jpg/330px-Honor_Oak_Parks_shops_-_geograph.org.uk_-_731971.jpg', name:'St Augustine&rsquo;s Church', area:'Honor Oak Park', pc:'SE23', cat:'grand', year:1874, era:'Consecrated 1874',
       lat:51.4435, lon:-0.0435, addr:'St Augustine&rsquo;s, Honor Oak Park, SE23 3LE',
@@ -668,7 +668,7 @@
       text:'Opened in March 1965 on a bombed-out Victorian estate, it was the first covered shopping mall in Europe &mdash; 120 shops on three levels above a two-storey car park, painted pink in a failed 1990s attempt to cheer it up.\n\nIt closed for good in September 2020 and was demolished in 2021. This entry marks where it stood rather than somewhere you can still visit.' },
 
     { id:'bussey-building', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Rye_Lane_in_Peckham._-_geograph.org.uk_-_8189377.jpg/330px-Rye_Lane_in_Peckham._-_geograph.org.uk_-_8189377.jpg', name:'The Bussey Building', area:'Rye Lane, Peckham', pc:'SE15', cat:'culture', year:1887, era:'Built 1887, arts venue since the 2000s',
-      lat:51.4703, lon:-0.0680, addr:'133 Rye Lane, SE15 4ST',
+      lat:51.4703, lon:-0.068, addr:'133 Rye Lane, SE15 4ST',
       text:'George Gibson Bussey built this factory in 1887 to make cricket bats from his own Suffolk willow farm, having started out in 1864 making firearms and shooting tackle a few doors down Rye Lane.\n\nSlated for demolition, it was saved by the community group Peckham Vision and is now the CLF Art Caf&eacute; &mdash; music venue, rooftop cinema, and the anchor of Peckham&rsquo;s Copeland Park arts quarter.' },
 
     { id:'cobham-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Alan_Cobham_%28Bain_Collection%29.jpg/330px-Alan_Cobham_%28Bain_Collection%29.jpg', name:'Sir Alan Cobham', area:'Peckham', pc:'SE15', cat:'plaque', year:1894, era:'Blue plaque',
@@ -700,7 +700,7 @@
       text:'A Congregational meeting house has stood on this corner of Rye Lane since 1657; it was rebuilt in 1817 under the popular minister William Bengo Collyer and renamed Hanover Chapel after its royal patrons.\n\nThe building itself was demolished in the early twentieth century to make way for tram tracks &mdash; the plaque here marks a site, not a survivor.' },
 
     { id:'frank-bates-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/B207_Southern_Syncopated_Orchestra_on_tour.jpg/330px-B207_Southern_Syncopated_Orchestra_on_tour.jpg', name:'Frank Bates', area:'Nunhead', pc:'SE15', cat:'plaque', year:1889, era:'Nubian Jak plaque, unveiled 2013',
-      lat:51.4574, lon:-0.0510, addr:'19 Hichisson Road, SE15 3AN',
+      lat:51.4574, lon:-0.051, addr:'19 Hichisson Road, SE15 3AN',
       text:'Bates, a Barbadian singer, lodged here in 1918 and 1919 while lead vocalist with the Southern Syncopated Orchestra, the touring ensemble that helped introduce jazz to Britain.\n\nHe died in 1921, aged thirty-two, in the sinking of the SS Rowan off the Scottish coast &mdash; one of eight members of the orchestra lost in the same disaster.' },
 
     { id:'bridgetower-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/George_Bridgetower_by_Henry_Edridge%2C_1790.JPG/330px-George_Bridgetower_by_Henry_Edridge%2C_1790.JPG', name:'George Bridgetower', area:'Peckham', pc:'SE15', cat:'plaque', year:1778, era:'Nubian Jak plaque',
@@ -712,11 +712,11 @@
       text:'A memorial tree in Peckham Library Square honours Walter Rodney, the Guyanese historian and activist whose How Europe Underdeveloped Africa (1972) became a foundational text of Pan-Africanist scholarship.\n\nRodney was assassinated by a car bomb in Georgetown, Guyana, in 1980, an act widely attributed at the time to the government he had spent years openly organising against.' },
 
     { id:'bussey-alley-murals', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Bussey_Building%2C_Peckham_-_geograph.org.uk_-_5086244.jpg/330px-Bussey_Building%2C_Peckham_-_geograph.org.uk_-_5086244.jpg', name:'Bussey Alley murals', area:'Copeland Park, Peckham', pc:'SE15', cat:'art', year:2020, era:'Painted and repainted since the 2010s',
-      lat:51.4700, lon:-0.0675, addr:'Copeland Park, off Copeland Road, SE15 4ST',
+      lat:51.47, lon:-0.0675, addr:'Copeland Park, off Copeland Road, SE15 4ST',
       text:'Thierry Noir &mdash; the first artist ever to legally paint the Berlin Wall &mdash; covered this alley in his trademark cartoon heads; INSA wrapped a gym next door in his signature rainbow pattern, and Japanese graffiti collective THA repainted the building&rsquo;s flank during the 2020 London Mural Festival.\n\nThe walls turn over every few years as new artists are invited in &mdash; what you see photographed here today may already be painted over by the time you visit.' },
 
     { id:'edward-turner-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Edward_Turner_Blue_Plaque_Unveiling1.jpg/330px-Edward_Turner_Blue_Plaque_Unveiling1.jpg', name:'Edward Turner', area:'Philip Walk, Peckham Rye', pc:'SE15', cat:'plaque', year:1901, era:'Blue plaque',
-      lat:51.4640, lon:-0.0665, addr:'8 Philip Walk, SE15 3NH',
+      lat:51.464, lon:-0.0665, addr:'8 Philip Walk, SE15 3NH',
       text:'A plaque marks the home of Edward Turner, the engineer who designed the Triumph Speed Twin and Bonneville motorcycles, the Ariel Square Four, and the V8 engine used in the Daimler SP250.\n\nOne engineer working from a Peckham Rye terrace ended up on both two wheels and four &mdash; his name still stamped on Triumph fuel tanks, his V8 quietly idling under Daimler bonnets.' },
 
     { id:'george-livesey-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/1/13/George_Livesey.jpg', name:'Sir George Livesey', area:'Old Kent Road', pc:'SE15', cat:'plaque', year:1834, era:'Blue plaque',
@@ -736,7 +736,7 @@
       text:'Charles Barry Jr&rsquo;s ornate brick-vaulted subway let first-class passengers walk directly from the High Level Station platforms to the Palace without touching the street. The station above was demolished in 1961; the subway, buried and largely forgotten, survived underneath.\n\nUsed as an air-raid shelter in the war and left to decay for decades after, it reopened in September 2024 after a &pound;3.5m restoration, just ahead of its 160th anniversary &mdash; a Grade II* structure with no building left to serve.' },
 
     { id:'borough-market', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/London_2018_March_IMG_0663.jpg/330px-London_2018_March_IMG_0663.jpg', name:'Borough Market', area:'Borough High Street', pc:'SE1', cat:'works', year:1756, era:'Chartered 1756, Victorian halls 1851',
-      lat:51.5055, lon:-0.0910, addr:'8 Southwark Street, SE1 1TL',
+      lat:51.5055, lon:-0.091, addr:'8 Southwark Street, SE1 1TL',
       text:'Trading here in some form since at least 1276, it was formally re-founded by local subscription in 1756 after Parliament closed the chaotic street market on London Bridge&rsquo;s approach. Henry Rose&rsquo;s Gothic ironwork halls, built in 1851, still stand under the railway viaduct.\n\nA slice of the old Royal Opera House&rsquo;s Floral Hall, dismantled and rebuilt here in 2004, now roofs part of the market &mdash; a fragment of Covent Garden hiding in Southwark.' },
 
     { id:'national-maritime-museum', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/EH1211481_National_Maritime_Museum_10_%28cropped%29.JPG/330px-EH1211481_National_Maritime_Museum_10_%28cropped%29.JPG', name:'National Maritime Museum', area:'Greenwich', pc:'SE10', cat:'culture', year:1937, era:'Opened 27 April 1937',
@@ -748,7 +748,7 @@
       text:'Dug by hand through the chalk and opened in 1902, it let south London dockers reach work on the Isle of Dogs without depending on the ferries. Its walls still carry 200,000 original glazed tiles.\n\nBombed at the northern end in the Blitz, it reopened within months behind an emergency steel-and-concrete lining that still narrows the tunnel at that point today.' },
 
     { id:'st-pauls-deptford', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Deptford_High_Street%2C_SE8_-_geograph.org.uk_-_1490848.jpg/330px-Deptford_High_Street%2C_SE8_-_geograph.org.uk_-_1490848.jpg', name:'St Paul\'s Church', area:'Deptford High Street', pc:'SE8', cat:'grand', year:1730, era:'Built 1712&ndash;1730',
-      lat:51.4780, lon:-0.0263, addr:'Deptford High Street, SE8 4RT',
+      lat:51.478, lon:-0.0263, addr:'Deptford High Street, SE8 4RT',
       text:'Thomas Archer&rsquo;s Baroque parish church, one of the Commissioners&rsquo; &ldquo;Queen Anne&rdquo; churches funded after 1711, is closer to Roman Baroque than any other English church of its date &mdash; Archer drew directly on Borromini&rsquo;s Sant&rsquo;Agnese and Pietro da Cortona&rsquo;s Santa Maria della Pace.\n\nIts main body is raised bodily over a crypt, reached by dramatic curved flanking stairs &mdash; an unusually theatrical solution built to dignify the parish&rsquo;s own burial vaults.' },
 
     { id:'golden-hinde', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Golden_Hind_replica.jpg/330px-Golden_Hind_replica.jpg', name:'The Golden Hinde', area:'St Mary Overie Dock, Bankside', pc:'SE1', cat:'maritime', year:1973, era:'Built 1973, moored here since 1996',
@@ -756,11 +756,11 @@
       text:'A full-size, seaworthy replica of Francis Drake&rsquo;s galleon, launched in 1973 and sailed as a working museum ship before settling permanently into this dock beside Southwark Cathedral in 1996.\n\nUnlike most replicas, this one actually earned the comparison: she has circumnavigated the globe twice, logging over 140,000 miles under sail.' },
 
     { id:'danson-house', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/North_Face_of_Danson_House_%2801%29.jpg/330px-North_Face_of_Danson_House_%2801%29.jpg', name:'Danson House', area:'Danson Park, Bexleyheath', pc:'DA6', cat:'grand', year:1766, era:'Built 1762&ndash;1766',
-      lat:51.4550, lon:0.1400, addr:'Danson Park, Bexleyheath, DA6 8HL',
+      lat:51.455, lon:0.14, addr:'Danson Park, Bexleyheath, DA6 8HL',
       text:'Robert Taylor &mdash; later architect of the Bank of England &mdash; designed this Palladian villa for Sir John Boyd, a merchant whose fortune came from the West Indian sugar trade, its centrepiece an octagonal salon lined in gilded mirrors.\n\nEnglish Heritage named it London&rsquo;s most at-risk significant building in 1995; a decade of restoration followed, and the Queen herself reopened it in July 2005.' },
 
     { id:'avery-hill-winter-garden', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Avery_Hill_Park_hothouse_%2817767255915%29.jpg/330px-Avery_Hill_Park_hothouse_%2817767255915%29.jpg', name:'Avery Hill Winter Garden', area:'Eltham', pc:'SE9', cat:'green', year:1889, era:'Built 1889',
-      lat:51.4450, lon:0.0700, addr:'Bexley Road, SE9 2PQ',
+      lat:51.445, lon:0.07, addr:'Bexley Road, SE9 2PQ',
       text:'Colonel John North, who made his fortune in Chilean nitrates, commissioned this domed iron-and-glass winter garden in 1889 to house palms and exotics from across the empire, part of a mansion complex that cost some &pound;200,000 to build.\n\nIt is the second-largest Victorian glasshouse in Britain after Kew&rsquo;s Temperate House, and still holds one of the country&rsquo;s largest Canary date palms, planted when the glass went up around it.' },
 
     { id:'old-royal-naval-college-domes', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Royal_Naval_College_Greenwich_view_from_the_Thames.jpg/330px-Royal_Naval_College_Greenwich_view_from_the_Thames.jpg', name:'Old Royal Naval College', area:'King William Walk, Greenwich', pc:'SE10', cat:'grand', year:1712, era:'Designed from the 1690s, largely complete by 1712',
@@ -780,7 +780,7 @@
       text:'Shaw became the first Chief Officer of the Metropolitan Fire Brigade in 1861 and spent thirty years modernising London&rsquo;s firefighting from the ground up.\n\nHe was famous enough in his day to appear, thinly disguised, as &ldquo;Captain Shaw&rdquo; in a Gilbert and Sullivan lyric in Iolanthe &mdash; a comic-opera nod to a real fire chief that would be strange in any other era.' },
 
     { id:'george-myers-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/6/64/George_Myers_Builder_1860s.jpg', name:'George Myers', area:'Southwark', pc:'SE1', cat:'plaque', year:1803, era:'Blue plaque',
-      lat:51.4978, lon:-0.1090, addr:'131 St George\'s Road, SE1 6HY',
+      lat:51.4978, lon:-0.109, addr:'131 St George\'s Road, SE1 6HY',
       text:'Myers was the master builder behind most of Augustus Pugin&rsquo;s great Gothic Revival commissions, including large parts of the Palace of Westminster.\n\nPugin trusted him enough to hand over designs as rough sketches, relying on Myers to work out the practical detail &mdash; a method that let Pugin design far more buildings than he could ever have detailed himself.' },
 
     { id:'greenwich-market', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/312SFEC_LONDON-20070917.JPG/330px-312SFEC_LONDON-20070917.JPG', name:'Greenwich Market', area:'Greenwich', pc:'SE10', cat:'works', year:1700, era:'Chartered 1700, opened 1737',
@@ -788,11 +788,11 @@
       text:'A Royal Charter of 1700 granted the Commissioners of Greenwich Hospital the right to hold a market here for a thousand years; the market itself opened for trade in 1737, originally selling meat, fish, fruit and vegetables to a naval town.\n\nIt is still owned today by Greenwich Hospital, the Royal Navy&rsquo;s oldest charity &mdash; the same institution the Painted Hall a few streets away was originally built to feed.' },
 
     { id:'royal-military-academy-woolwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/2017-Woolwich%2C_RMA_-_3.jpg/330px-2017-Woolwich%2C_RMA_-_3.jpg', name:'The Royal Military Academy', area:'Woolwich Common', pc:'SE18', cat:'grand', year:1741, era:'Founded 1741, this building 1796&ndash;1806',
-      lat:51.4790, lon:0.0605, addr:'Woolwich Common, SE18',
+      lat:51.479, lon:0.0605, addr:'Woolwich Common, SE18',
       text:'Founded in 1741 to train officers of the Royal Artillery and Royal Engineers, the Academy moved into James Wyatt&rsquo;s purpose-built mock-castellated building on Woolwich Common in 1806, training British Army officers here for over two centuries until it closed in 1939.\n\nEveryone still calls it &ldquo;The Shop&rdquo; &mdash; a nickname from its very first home, a converted workshop inside the Royal Arsenal &mdash; which is also where the everyday phrase &ldquo;talking shop&rdquo; is said to come from.' },
 
     { id:'princess-alice-disaster', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Princess_alice_collision_in_thames.jpg/330px-Princess_alice_collision_in_thames.jpg', name:'The Princess Alice disaster', area:'Tripcock Point, Woolwich', pc:'SE18', cat:'memory', year:1878, era:'3 September 1878',
-      lat:51.4970, lon:0.0870, addr:'Tripcock Point, Woolwich Reach, SE18 &mdash; river, no street address',
+      lat:51.497, lon:0.087, addr:'Tripcock Point, Woolwich Reach, SE18 &mdash; river, no street address',
       text:'The pleasure steamer Princess Alice, returning from a day trip to Kent with around 750 people aboard, was struck by the collier Bywell Castle off Tripcock Point and cut clean in two. She sank in under four minutes.\n\nAt least 650 died &mdash; Britain&rsquo;s worst-ever inland-water disaster, war included &mdash; yet no complete passenger list survived to give an exact toll, and many bodies were never recovered from the mud.' },
 
     { id:'palace-of-placentia', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/An_historical_account_of_the_Royal_Hospital_for_Seamen_at_Greenwich_%281789%29_%2814786307743%29.jpg/330px-An_historical_account_of_the_Royal_Hospital_for_Seamen_at_Greenwich_%281789%29_%2814786307743%29.jpg', name:'Palace of Placentia', area:'Old Royal Naval College grounds', pc:'SE10', cat:'memory', year:1491, era:'Tudor royal palace, demolished 1660',
@@ -804,7 +804,7 @@
       text:'A stage cannon fired during a performance of Shakespeare&rsquo;s Henry VIII sent burning wadding into the thatched roof; the whole theatre burned to the ground within an hour.\n\nRemarkably, no one died &mdash; the only recorded casualty was a man whose breeches caught fire and were put out with a bottle of ale. The company rebuilt in thatch-free, tiled form by February 1614, three and a half centuries before Wanamaker&rsquo;s reconstruction a few hundred yards away.' },
 
     { id:'woolworths-v2', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/The_New_Cross_Inn%2C_New_Cross_%2801%29.jpg/330px-The_New_Cross_Inn%2C_New_Cross_%2801%29.jpg', name:'The New Cross Woolworths V-2', area:'New Cross Road', pc:'SE14', cat:'memory', year:1944, era:'25 November 1944, 12:25pm',
-      lat:51.4757, lon:-0.0350, addr:'New Cross Road, SE14',
+      lat:51.4757, lon:-0.035, addr:'New Cross Road, SE14',
       text:'A German V-2 rocket fell without warning on a packed Woolworths on New Cross Road, at the exact moment a queue had formed for a rare wartime delivery of saucepans. A hundred and sixty-eight people were killed, thirty-three of them children.\n\nIt remains one of the deadliest single V-weapon strikes of the war on Britain &mdash; a direct hit on ordinary Saturday shopping, not a military target. Twenty-four of the dead were never identified, and the rocket gave no siren warning at all, since it fell faster than sound.' },
 
     { id:'tallis-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Photograph_of_cartographic_publisher_John_Tallis%2C_ca.1858.png/330px-Photograph_of_cartographic_publisher_John_Tallis%2C_ca.1858.png', name:'John Tallis', area:'New Cross', pc:'SE14', cat:'plaque', year:1817, era:'Blue plaque, 1978',
@@ -812,7 +812,7 @@
       text:'Tallis published London Street Views between 1838 and 1840 &mdash; 88 illustrated pamphlets recording, shopfront by shopfront, what stood along the capital&rsquo;s major streets.\n\nThe plaque on his house gives his birth year as 1816; most biographical sources say 1817 &mdash; a small discrepancy nobody has ever bothered to correct.' },
 
     { id:'bermondsey-horror', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Marie_Manning_portrait.jpg/330px-Marie_Manning_portrait.jpg', name:'The Bermondsey Horror', area:'Horsemonger Lane Gaol site, Borough', pc:'SE1', cat:'memory', year:1849, era:'Public execution, 13 November 1849',
-      lat:51.4970, lon:-0.0965, addr:'Newington Gardens, Harper Road/Newington Causeway, SE1 6BX',
+      lat:51.497, lon:-0.0965, addr:'Newington Gardens, Harper Road/Newington Causeway, SE1 6BX',
       text:'Frederick and Maria Manning murdered Maria&rsquo;s wealthy admirer Patrick O&rsquo;Connor at their Bermondsey house and buried him under the kitchen flagstones; they were the first husband and wife hanged together in England since 1700, on a scaffold here watched by a crowd of up to 50,000.\n\nCharles Dickens stood in that crowd and was so disgusted by its &ldquo;wickedness and levity&rdquo; that his letter to The Times helped end public executions in Britain within twenty years.' },
 
     { id:'peckham-riots-2011', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Carpetright_store_after_Tottenham_riots.jpg/330px-Carpetright_store_after_Tottenham_riots.jpg', name:'The 2011 Peckham riots', area:'Rye Lane, Peckham', pc:'SE15', cat:'memory', year:2011, era:'8 August 2011',
@@ -824,11 +824,11 @@
       text:'A flying bomb exploded in front of Lewisham&rsquo;s clock tower &mdash; already in this gazetteer &mdash; in the middle of a Friday morning market. Around fifty-one people were killed and over three hundred injured; a hundred shops were wrecked and that stretch of high street was rebuilt from scratch after the war.\n\nIt struck the same spot the 1897 Jubilee clock tower still stands on today &mdash; the tower survived; the market crowd in front of it did not.' },
 
     { id:'great-harry-woolwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/2016_Woolwich%2C_Beresford_Square_market.jpg/330px-2016_Woolwich%2C_Beresford_Square_market.jpg', name:'The Great Harry', area:'Wellington Street, Woolwich', pc:'SE18', cat:'pub', year:1512, era:'Named after Henry VIII\'s flagship',
-      lat:51.4900, lon:0.0645, addr:'Wellington Street, SE18 6PW',
+      lat:51.49, lon:0.0645, addr:'Wellington Street, SE18 6PW',
       text:'Named for the Henry Grace &agrave; Dieu &mdash; the &ldquo;Great Harry&rdquo; &mdash; Henry VIII&rsquo;s flagship, built at the Woolwich dockyard he founded. Woolwich&rsquo;s entire naval history compressed into one pub sign.\n\nIt burned to the ground in the August 2011 riots. Locals turned the hoardings into a &ldquo;wall of peace&rdquo; while it was rebuilt, and it reopened in July 2012, days before Woolwich hosted Olympic shooting events.' },
 
     { id:'cutty-sark-tavern', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/The_Cutty_Sark_Tavern%2C_Greenwich_-_geograph.org.uk_-_1469975.jpg/330px-The_Cutty_Sark_Tavern%2C_Greenwich_-_geograph.org.uk_-_1469975.jpg', name:'Cutty Sark Tavern', area:'Ballast Quay, Greenwich', pc:'SE10', cat:'pub', year:1804, era:'Built early 1800s, renamed 1951',
-      lat:51.4870, lon:0.0005, addr:'Ballast Quay, SE10 9PD',
+      lat:51.487, lon:0.0005, addr:'Ballast Quay, SE10 9PD',
       text:'It started life as the Green Man, then became the Union Tavern from around 1810 &mdash; only taking its current name in 1951, the year the actual Cutty Sark arrived to be preserved a short walk downriver.\n\nTwo centuries old under three different names, all on the same stretch of river.' },
 
     { id:'coach-and-horses-greenwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Soho_coach_and_horses_1.jpg/330px-Soho_coach_and_horses_1.jpg', name:'Coach and Horses', area:'Greenwich Market', pc:'SE10', cat:'pub', year:1780, era:'Trading since 1780',
@@ -836,7 +836,7 @@
       text:'A Grade II-listed pub that has stood at the centre of Greenwich Market since 1780 &mdash; older than the naval buildings around it in their current form.\n\nIt sits a few doors from Cutty Sark, the Naval College and the Observatory, all already in this gazetteer &mdash; the one place on this list where you could reasonably visit five stops without walking further than the length of a cricket pitch.' },
 
     { id:'phoenix-camberwell', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Phoenix%2C_Denmark_Hill%2C_SE5_%282429314820%29.jpg/330px-Phoenix%2C_Denmark_Hill%2C_SE5_%282429314820%29.jpg', name:'The Phoenix', area:'Windsor Walk, Camberwell', pc:'SE5', cat:'pub', year:1866, era:'Built 1866 as a station ticket hall, pub since 1984',
-      lat:51.4680, lon:-0.0925, addr:'Windsor Walk, SE5 8BB',
+      lat:51.468, lon:-0.0925, addr:'Windsor Walk, SE5 8BB',
       text:'Built in 1866 as the ticket hall for Denmark Hill station, the Grade II-listed building burned down in 1980 &mdash; and when it reopened as a pub in 1984, it was named the Phoenix for exactly that reason.\n\nThe bar is made from a single mahogany tree, and a station clock salvaged from Llandudno Junction still hangs over the room.' },
 
     { id:'crown-greyhound-dulwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/The_Crown_and_Greyhound_Dulwich_Village_-_geograph.org.uk_-_1270849.jpg/330px-The_Crown_and_Greyhound_Dulwich_Village_-_geograph.org.uk_-_1270849.jpg', name:'Crown &amp; Greyhound', area:'Dulwich Village', pc:'SE21', cat:'pub', year:1900, era:'Built c.1900, replacing two rival inns',
@@ -856,7 +856,7 @@
       text:'Opened by the pub group Antic in 2014 inside a genuine former DHSS job centre, keeping the name as a deliberately blunt joke that split Deptford between finding it funny and finding it tone-deaf.\n\nIt was rebranded as Jam Circus in 2023, then closed for good in January 2026 &mdash; a short life for a very short-lived idea of a joke.' },
 
     { id:'london-and-rye-catford', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/London_and_Rye%2C_Catford%2C_SE6_%282663879410%29.jpg/330px-London_and_Rye%2C_Catford%2C_SE6_%282663879410%29.jpg', name:'London &amp; Rye', area:'Catford town centre', pc:'SE6', cat:'pub', year:1890, era:'Late-Victorian building, pub 2000s&ndash;2024',
-      lat:51.4453, lon:-0.0210, addr:'Catford town centre, SE6',
+      lat:51.4453, lon:-0.021, addr:'Catford town centre, SE6',
       text:'Named after the old coaching road running south from Catford to Rye in Sussex, the late-Victorian building had been retail space of one kind or another before becoming, for the first time, a pub.\n\nIt closed in August 2024, and a redevelopment application for the site was filed in 2025 &mdash; check before you make a special trip.' },
 
     { id:'white-swan-charlton', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/The_White_Swan%2C_Charlton_-_geograph.org.uk_-_1541798.jpg/330px-The_White_Swan%2C_Charlton_-_geograph.org.uk_-_1541798.jpg', name:'White Swan', area:'Charlton Village', pc:'SE7', cat:'pub', year:1840, era:'Charlton\'s village pub since the 1840s, currently closed',
@@ -864,7 +864,7 @@
       text:'Charlton&rsquo;s Victorian village pub, licensed since at least 1840 and the social centre for the streets around Charlton House ever since &mdash; until it closed.\n\nA community group launched a crowdfunder in December 2025 to buy and reopen it, following the same rescue playbook as Nunhead&rsquo;s Ivy House &mdash; a story still mid-way through, not yet resolved either way.' },
 
     { id:'st-antholins-spire', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/St_Antholin_Cruse.jpg/330px-St_Antholin_Cruse.jpg', name:'St Antholin\'s Spire', area:'Round Hill, Sydenham', pc:'SE23', cat:'grand', year:1682, era:'Built 1682, moved here 1829',
-      lat:51.4325, lon:-0.0530, addr:'Round Hill, SE23',
+      lat:51.4325, lon:-0.053, addr:'Round Hill, SE23',
       text:'Christopher Wren&rsquo;s spire topped a City church on Budge Row until an 1829 storm damaged it; Robert Harrild, a printing pioneer and the church&rsquo;s own warden, bought the wrecked upper section for &pound;5 and re-erected it as a garden folly at his house here.\n\nHarrild&rsquo;s mansion became a social club, then was demolished for 1960s housing &mdash; but the council kept the spire standing among the new blocks, so a fragment of Wren&rsquo;s London now rises out of an ordinary South London estate.' },
 
     { id:'louise-house', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Janusz_Korczak_%28cropped%29.jpg/330px-Janusz_Korczak_%28cropped%29.jpg', name:'Louise House', area:'Dartmouth Road, Forest Hill', pc:'SE23', cat:'memory', year:1891, era:'Opened 1891, Korczak\'s visit 1911',
@@ -872,7 +872,7 @@
       text:'Built in 1891 as a Girls&rsquo; Industrial Home &mdash; part boarding school, part trade training for children with nowhere else to go &mdash; it was visited in 1911 by Janusz Korczak, a Polish-Jewish paediatrician touring London&rsquo;s children&rsquo;s institutions.\n\nKorczak went home to Warsaw and opened an orphanage run on what he&rsquo;d seen here, developing ideas about children&rsquo;s rights that fed directly into the UN&rsquo;s later Declaration of the Rights of the Child. He died at Treblinka in 1942, having refused offers to save himself alone and gone to the camp with his orphans instead.' },
 
     { id:'forest-hill-pools', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Forest_Hill_Pools_%287550093884%29.jpg/330px-Forest_Hill_Pools_%287550093884%29.jpg', name:'Forest Hill Pools', area:'Dartmouth Road, Forest Hill', pc:'SE23', cat:'works', year:1884, era:'Built 1884, opened 1885',
-      lat:51.4383, lon:-0.0540, addr:'Dartmouth Road, SE23',
+      lat:51.4383, lon:-0.054, addr:'Dartmouth Road, SE23',
       text:'Thomas Aldwinckle&rsquo;s Victorian baths opened with two separate pools &mdash; one for working people, one for the &ldquo;upper classes&rdquo; &mdash; a segregation built into the architecture as standard practice for the time.\n\nAt the 1884 foundation-stone ceremony, 1,700 local schoolchildren marched down Dartmouth Road to a tent on the site, where each was given a bun and an orange for turning up.' },
 
     { id:'forest-hill-library', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/London%2C_Forest_Hill_Library.jpg/330px-London%2C_Forest_Hill_Library.jpg', name:'Forest Hill Library', area:'Dartmouth Road, Forest Hill', pc:'SE23', cat:'grand', year:1901, era:'Built 1900&ndash;1901',
@@ -880,15 +880,15 @@
       text:'Alexander Robert Hennell&rsquo;s Arts and Crafts library was one of over six hundred built across Britain and Ireland with money from the Scottish-American steel magnate Andrew Carnegie, who funded free public libraries on the condition that the local council agreed to run and stock them.\n\nA deep terracotta frieze of kneeling cherubs and floral swags runs the full width of the front &mdash; an ornamental flourish that&rsquo;s survived over a century of being walked past by people just there to return a book.' },
 
     { id:'havelock-walk', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Havelock_Walk%2C_Forest_Hill.jpg/330px-Havelock_Walk%2C_Forest_Hill.jpg', name:'Havelock Walk', area:'Forest Hill', pc:'SE23', cat:'art', year:1988, era:'Artists\' studios since the late 1980s',
-      lat:51.4370, lon:-0.0505, addr:'Havelock Walk, SE23',
+      lat:51.437, lon:-0.0505, addr:'Havelock Walk, SE23',
       text:'A cobbled mews first laid out as a field path in the 1850s, badly bombed in the Second World War, and left mostly as derelict industrial storage until the artist Jeff Lowe started buying up the cheap warehouse space in the late 1980s and converting it into live-work studios.\n\nSixteen working studios now line the mews, among them the illustrator Rob Lowe &mdash; who works under the name Supermundane, all bold colour and repeating pattern &mdash; and Ian Wright, whose scratchy black-and-white portraits ran weekly in the NME and monthly in The Face through the 1980s. The Canvas &amp; Cream gallery anchors the far end, and the whole street throws its doors open for a public Open Studios weekend at least twice a year, spring and winter, with live music, printmaking demonstrations, a small artisan market and a kids&rsquo; craft table set up between the workshops.' },
 
     { id:'one-tree-hill-gun', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Honor_Oak_Parks_shops_-_geograph.org.uk_-_731971.jpg/330px-Honor_Oak_Parks_shops_-_geograph.org.uk_-_731971.jpg', name:'The One Tree Hill gun emplacement', area:'Honor Oak', pc:'SE23', cat:'memory', year:1916, era:'Built 1916',
-      lat:51.4482, lon:-0.0430, addr:'One Tree Hill, Honor Oak Park, SE23',
+      lat:51.4482, lon:-0.043, addr:'One Tree Hill, Honor Oak Park, SE23',
       text:'An octagonal concrete platform, built in 1916 to mount a Royal Naval anti-aircraft gun against Zeppelin and Gotha bomber raids, still sits on the hill&rsquo;s summit &mdash; two watches of ten naval ratings were stationed here to crew it.\n\nBy most accounts it never brought down a single German aircraft in the whole war, though it did reportedly manage to damage some tram equipment down in Peckham Rye. The mounting-ring bolts and a groove for the lightning conductor are still visible in the concrete.' },
 
     { id:'oxleas-wood', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Trees_in_Jack_Wood%2C_Shooter%27s_Hill.jpg/330px-Trees_in_Jack_Wood%2C_Shooter%27s_Hill.jpg', name:'Oxleas Wood', area:'Eltham / Shooter\'s Hill', pc:'SE18', cat:'green', year:1993, era:'Ancient woodland, saved from a road scheme in 1993',
-      lat:51.4670, lon:0.0660, addr:'Oxleas Wood, SE18 3JA',
+      lat:51.467, lon:0.066, addr:'Oxleas Wood, SE18 3JA',
       text:'Parts of this wood have stood continuously since the end of the last Ice Age, more than eight thousand years ago &mdash; a royal manor from 1311 until 1679, and public parkland since 1934.\n\nIn 1993 a grassroots campaign called PARC (People Against the River Crossing) beat back a government motorway scheme that would have driven straight through it &mdash; over 3,000 people pledged civil disobedience to stop the bulldozers, and the road was withdrawn.' },
 
     { id:'sydenham-hill-wood', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Sydenham_Avenue_SE26.JPG/330px-Sydenham_Avenue_SE26.JPG', name:'Sydenham Hill Wood', area:'Sydenham Hill', pc:'SE26', cat:'green', year:1982, era:'Great North Wood remnant, reserve since 1982',
@@ -908,11 +908,11 @@
       text:'An eight-mile walking and cycling route that follows the Rivers Pool and Ravensbourne from South Norwood down through Ladywell Fields and Brookmill Park to the Cutty Sark in Greenwich, doubling as National Cycle Network Route 21.\n\nIt physically connects to both the Capital Ring and the Green Chain Walk at Cator Park in Beckenham &mdash; three separate walking routes stitched into one network across the borough.' },
 
     { id:'henry-williamson-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Brockley_station_eastern_entrance_2012.JPG/330px-Brockley_station_eastern_entrance_2012.JPG', name:'Henry Williamson', area:'Brockley', pc:'SE4', cat:'plaque', year:1902, era:'Maroon plaque, lived here 1902&ndash;1920',
-      lat:51.4640, lon:-0.0310, addr:'21 Eastern Road, SE4',
+      lat:51.464, lon:-0.031, addr:'21 Eastern Road, SE4',
       text:'Williamson spent his childhood and youth at this address &mdash; the setting for the early volumes of his autobiographical novel sequence A Chronicle of Ancient Sunlight. He won the 1928 Hawthornden Prize for Tarka the Otter.\n\nThe Henry Williamson Society placed the plaque here in 1984, working with Lewisham council.' },
 
     { id:'richard-jefferies-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/0/0b/Richard_jefferies.jpg', name:'Richard Jefferies', area:'Sydenham', pc:'SE26', cat:'plaque', year:1987, era:'Maroon plaque, unveiled 2 May 1987',
-      lat:51.4260, lon:-0.0540, addr:'Sydenham, SE26',
+      lat:51.426, lon:-0.054, addr:'Sydenham, SE26',
       text:'The nature writer and novelist lived here between the ages of four and nine with his aunt and uncle, the Harrilds &mdash; relations of the printing pioneer Robert Harrild, whose relocated church spire already sits nearby in this gazetteer&rsquo;s Forest Hill entries.\n\nA separate English Heritage blue plaque for Jefferies exists at Footscray Road in Eltham &mdash; a different address entirely, so don&rsquo;t confuse the two if you go looking.' },
 
     { id:'david-jones-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/David_Armstrong-Jones_%26_Mike_Tindall_in_2022_%28cropped2%29.jpg/330px-David_Armstrong-Jones_%26_Mike_Tindall_in_2022_%28cropped2%29.jpg', name:'David Jones', area:'Brockley', pc:'SE4', cat:'plaque', year:1895, era:'Maroon plaque, unveiled 2 December 2015',
@@ -924,23 +924,23 @@
       text:'Wallace, illegitimate and largely self-educated, became one of the most prolific thriller writers of his era, producing well over a hundred novels.\n\nShortly before he died in 1932 he wrote the original story treatment for King Kong &mdash; work that still earns him a co-writing credit on the film today.' },
 
     { id:'dietrich-bonhoeffer-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Bundesarchiv_Bild_146-1987-074-16%2C_Dietrich_Bonhoeffer.jpg/330px-Bundesarchiv_Bild_146-1987-074-16%2C_Dietrich_Bonhoeffer.jpg', name:'Dietrich Bonhoeffer', area:'Sydenham', pc:'SE26', cat:'plaque', year:1933, era:'Pastor here 1933&ndash;1935',
-      lat:51.4280, lon:-0.0555, addr:'German Lutheran Church, Dacres Road, SE26',
+      lat:51.428, lon:-0.0555, addr:'German Lutheran Church, Dacres Road, SE26',
       text:'The German theologian and later anti-Nazi resistance figure served as pastor of this German-speaking congregation for two years before returning to Germany. He was executed by the Nazis in 1945, weeks before the war ended.\n\nThe church itself was destroyed by bombing in 1944 &mdash; Bonhoeffer&rsquo;s own building didn&rsquo;t outlive him by more than a year.' },
 
     { id:'jim-connell-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Honor_Oak_Parks_shops_-_geograph.org.uk_-_731971.jpg/330px-Honor_Oak_Parks_shops_-_geograph.org.uk_-_731971.jpg', name:'Jim Connell', area:'Honor Oak', pc:'SE23', cat:'plaque', year:1889, era:'Wrote "The Red Flag" here, December 1889',
-      lat:51.4470, lon:-0.0455, addr:'22a Stondon Park, SE23',
+      lat:51.447, lon:-0.0455, addr:'22a Stondon Park, SE23',
       text:'Connell wrote the lyrics to &ldquo;The Red Flag&rdquo; &mdash; still the Labour Party&rsquo;s anthem today &mdash; on a train home from Charing Cross, then finished the song at this address.\n\nSome sources describe his plaque as &ldquo;red&rdquo; rather than maroon; almost certainly just loose colour terminology for the same dark-red Lewisham scheme, not a separate one.' },
 
     { id:'henry-cooper-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Henry_Cooper_1969.jpg/330px-Henry_Cooper_1969.jpg', name:'Sir Henry Cooper', area:'Bellingham', pc:'SE6', cat:'plaque', year:1934, era:'Grew up here, blue-collar Lewisham boxer',
-      lat:51.4340, lon:-0.0225, addr:'120 Farmstead Road, SE6',
+      lat:51.434, lon:-0.0225, addr:'120 Farmstead Road, SE6',
       text:'Britain&rsquo;s best-loved heavyweight boxer, who twice fought Muhammad Ali and famously floored him in 1963, grew up in a council house on the Bellingham Estate.\n\nThe plaque marks the actual family home he grew up in &mdash; not a gym, not a stadium, just the house.' },
 
     { id:'roy-porter-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Roy_Porter_house_13_Camplin_Street_New_Cross_Gate_London_SE14_5QX.jpg/330px-Roy_Porter_house_13_Camplin_Street_New_Cross_Gate_London_SE14_5QX.jpg', name:'Roy Porter', area:'New Cross Gate', pc:'SE14', cat:'plaque', year:2008, era:'Plaque unveiled 5 June 2008',
-      lat:51.4700, lon:-0.0400, addr:'13 Camplin Street, SE14',
+      lat:51.47, lon:-0.04, addr:'13 Camplin Street, SE14',
       text:'The medical historian, who grew up in South London before becoming one of Britain&rsquo;s most prolific historians of the Enlightenment and of medicine, is commemorated at this address by a plaque unveiled by the Mayor of Lewisham.\n\nThe record is clear that he&rsquo;s commemorated here rather than definitively confirmed to have lived here &mdash; a small distinction, honestly kept.' },
 
     { id:'leslie-paul-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Honor_Oak_Parks_shops_-_geograph.org.uk_-_731971.jpg/330px-Honor_Oak_Parks_shops_-_geograph.org.uk_-_731971.jpg', name:'Leslie Paul', area:'Honor Oak', pc:'SE23', cat:'plaque', year:1925, era:'Woodcraft Folk founded 1925',
-      lat:51.4470, lon:-0.0455, addr:'Honor Oak, SE23',
+      lat:51.447, lon:-0.0455, addr:'Honor Oak, SE23',
       text:'Paul grew up in Honor Oak and co-founded the Woodcraft Folk here in 1925 &mdash; a still-active youth movement built around outdoor education and folk tradition &mdash; serving as its head until 1934.\n\nNo precise street survives in the record for this one, so the marker sits on the general Honor Oak locator rather than a guessed address.' },
 
     { id:'walters-way', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Honor_Oak_Parks_shops_-_geograph.org.uk_-_731971.jpg/330px-Honor_Oak_Parks_shops_-_geograph.org.uk_-_731971.jpg', name:'Walter\'s Way', area:'Honor Oak', pc:'SE23', cat:'grand', year:1985, era:'Self-built 1978&ndash;1985',
@@ -948,11 +948,11 @@
       text:'Thirteen timber-frame houses on a hillside plot too awkward for conventional builders, put up by the families who would live in them using architect Walter Segal&rsquo;s post-and-beam method &mdash; no bricklaying or plastering skills required, just Segal on hand to advise.\n\nSegal&rsquo;s frames rest on paving-slab pad foundations rather than dug trenches, so the mature trees already on site never had to come down &mdash; several houses still grow up around them. Segal Close, the scheme&rsquo;s second phase, sits just round the corner.' },
 
     { id:'wg-grace-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/WG_Grace_c1902.jpg/330px-WG_Grace_c1902.jpg', name:'W.G. Grace', area:'Mottingham', pc:'SE9', cat:'plaque', year:1899, era:'Blue plaque, lived here from 1899',
-      lat:51.4270, lon:0.0430, addr:'Fairmount, Mottingham Lane, SE9',
+      lat:51.427, lon:0.043, addr:'Fairmount, Mottingham Lane, SE9',
       text:'Grace moved his family here in 1899 to manage and captain the newly formed London County Cricket Club, based a short walk away at Crystal Palace Park &mdash; already in this gazetteer &mdash; and kept playing club cricket into his sixties.\n\nThe Mottingham years were shadowed by loss: his daughter Bessie died of typhoid here in 1899, aged twenty, and his eldest son died of appendicitis in 1905. He lived at Fairmount until his own death in 1915.' },
 
     { id:'anne-shelton-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/0/08/St_Mary%27s_Church%2C_Shelton%2C_Norfolk_-_Window_-_geograph.org.uk_-_1029382.jpg', name:'Anne Shelton', area:'Court Lane, Dulwich', pc:'SE21', cat:'plaque', year:1923, era:'Blue plaque, awarded 2007',
-      lat:51.4420, lon:-0.0850, addr:'142 Court Lane, SE21',
+      lat:51.442, lon:-0.085, addr:'142 Court Lane, SE21',
       text:'Shelton was born in Dulwich in 1923 and made her radio debut aged sixteen on the BBC&rsquo;s Monday Night at Eight, going on to sing for British troops on forces radio and at military bases throughout the Second World War.\n\nShe topped the UK singles chart as late as 1956, with &ldquo;Lay Down Your Arms&rdquo; &mdash; a wartime voice that kept having hits well into the rock and roll era. Southwark council awarded her Court Lane plaque in 2007, thirteen years after her death.' },
 
     { id:'marianne-jean-baptiste-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Marianne_Jean-Baptiste_and_Mike_Leigh_at_the_2024_Toronto_International_Film_Festival_%28cropped%29.jpg/330px-Marianne_Jean-Baptiste_and_Mike_Leigh_at_the_2024_Toronto_International_Film_Festival_%28cropped%29.jpg', name:'Marianne Jean-Baptiste', area:'Camberwell', pc:'SE5', cat:'plaque', year:1967, era:'Born here 1967',
@@ -964,7 +964,7 @@
       text:'Started life as an eighteenth-century coffee shop before burning down in 1829 and being rebuilt as a pub in 1830&ndash;31, then further damaged during the Second World War.\n\nA plaque on the building sets out this whole sequence of fire, rebuild and bomb damage in one short read &mdash; a pub that has effectively been rebuilt twice and is still pouring.' },
 
     { id:'dulwich-library-blitz-memorial', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Dulwichlibraryfront.jpg/330px-Dulwichlibraryfront.jpg', name:'1940 Blitz memorial', area:'Dulwich Library', pc:'SE22', cat:'memory', year:1940, era:'24 September 1940, plaque placed 2013',
-      lat:51.4520, lon:-0.0730, addr:'Dulwich Library, Eynella Road, SE22',
+      lat:51.452, lon:-0.073, addr:'Dulwich Library, Eynella Road, SE22',
       text:'A plaque outside Dulwich Library names three civilians &mdash; Walter Stacey, Ruth Stacey and Rosie Crawford &mdash; killed nearby in a German air raid on 24 September 1940.\n\nThe Dulwich Society placed it in 2013, seventy-three years after the raid &mdash; three ordinary names kept legible on a library wall that any of the thousands of daily borrowers might otherwise never learn.' },
 
     { id:'herne-tavern', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Herne_Tavern%2C_Honor_Oak%2C_SE22.jpg/330px-Herne_Tavern%2C_Honor_Oak%2C_SE22.jpg', name:'Herne Tavern', area:'East Dulwich', pc:'SE22', cat:'pub', year:1850, era:'Built mid-19th century, interwar interior preserved',
@@ -972,7 +972,7 @@
       text:'A mid-Victorian pub whose interwar-era redesign has survived almost untouched since, earning it a place on CAMRA&rsquo;s National Inventory of Historic Pub Interiors.\n\nIt&rsquo;s one of a fairly short national list recognised for a genuinely unaltered historic interior, rather than just an old facade wrapped around a modern refit.' },
 
     { id:'white-hart-southwark', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/White_Hart_Badge_of_Richard_II.svg/330px-White_Hart_Badge_of_Richard_II.svg.png', name:'The White Hart', area:'Borough High Street', pc:'SE1', cat:'memory', year:1406, era:'First recorded 1406, demolished 1889',
-      lat:51.5030, lon:-0.0905, addr:'White Hart Yard, off Borough High Street, SE1',
+      lat:51.503, lon:-0.0905, addr:'White Hart Yard, off Borough High Street, SE1',
       text:'A medieval coaching inn, likely older than its first written record, that served as the headquarters of Jack Cade&rsquo;s Rebellion in 1450 &mdash; an episode Shakespeare later dramatised in Henry VI, Part 2. Dickens also sent Mr Pickwick here to hire Sam Weller.\n\nThe original building was demolished in 1889. A separate Victorian pub of the same name had already opened nearby on Great Suffolk Street in 1882 and still carries the name today &mdash; two different buildings sharing one long story, much like this gazetteer&rsquo;s Tabard Inn entry.' },
 
     { id:'lord-nelson-old-kent-road', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/HoratioNelson1.jpg/330px-HoratioNelson1.jpg', name:'The Lord Nelson', area:'Old Kent Road, Bermondsey', pc:'SE1', cat:'pub', year:1800, era:'Built early 19th century, listed 1972',
@@ -988,11 +988,11 @@
       text:'Named for duck-baiting sport once staged on its ponds, it ran through three lives &mdash; popular tavern, then a fashionable mineral-water spa by 1695, then a rowdy concert venue notorious for highwaymen by the 1770s.\n\nSurrey magistrates refused to renew its licence in 1787 after a royal proclamation against drunkenness, and it closed for good in 1799. Its 1716 inn sign, showing a dog gripping a duck, survives in the Cuming Museum collection &mdash; the pub itself outlived by its own signboard.' },
 
     { id:'trafalgar-tavern', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/The_Trafalgar_Tavern_%284703195270%29.jpg/330px-The_Trafalgar_Tavern_%284703195270%29.jpg', name:'Trafalgar Tavern', area:'Greenwich', pc:'SE10', cat:'pub', year:1837, era:'Built 1837, listed 1973',
-      lat:51.4850, lon:-0.0068, addr:'Park Row, SE10 9NW',
+      lat:51.485, lon:-0.0068, addr:'Park Row, SE10 9NW',
       text:'Joseph Kay designed it after reportedly outmanoeuvring the previous tavern owner&rsquo;s expansion plans and taking the riverside site for himself. Dickens set a wedding breakfast here in Our Mutual Friend, and it hosted the Liberal Party&rsquo;s whitebait dinners through Victorian times, the last one in 1885 with Gladstone&rsquo;s outgoing Cabinet.\n\nIt closed in 1915 and spent decades as housing for aged seamen and then a working men&rsquo;s club, not reopening as a pub again until 1965.' },
 
     { id:'hare-and-billet', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/The_Hare_and_Billet_Public_House%2C_Blackheath_Vale_-_geograph.org.uk_-_1600346.jpg/330px-The_Hare_and_Billet_Public_House%2C_Blackheath_Vale_-_geograph.org.uk_-_1600346.jpg', name:'Hare and Billet', area:'Blackheath', pc:'SE3', cat:'pub', year:1600, era:'Trading since the 1600s',
-      lat:51.4680, lon:0.0037, addr:'Hare &amp; Billet Road, SE3 0QJ',
+      lat:51.468, lon:0.0037, addr:'Hare &amp; Billet Road, SE3 0QJ',
       text:'A coaching inn on the Watling Street route to Dover, through the era when Blackheath was notorious for highwaymen; a 1780 Thomas Luny painting shows the building much as it still stands, overlooking Greenwich Park.\n\nStill trading today &mdash; one of the more straightforward pubs in this gazetteer to simply walk into.' },
 
     { id:'spanish-galleon', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/The_Spanish_Galleon_Tavern_-_geograph.org.uk_-_1292987.jpg/330px-The_Spanish_Galleon_Tavern_-_geograph.org.uk_-_1292987.jpg', name:'Spanish Galleon', area:'Greenwich', pc:'SE10', cat:'pub', year:1836, era:'Built 1836, listed',
@@ -1000,7 +1000,7 @@
       text:'Built as part of Joseph Kay&rsquo;s 1830s redevelopment of central Greenwich, on a site with a Galleon inn recorded two hundred years earlier; named for paintings of British naval victories over Spain once hung nearby in Greenwich Hospital.\n\nA full sailor&rsquo;s uniform turned up in the cellar during 1985 renovations and now hangs behind the bar.' },
 
     { id:'sun-in-the-sands', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Sun_in_the_Sands_inn_-_geograph.org.uk_-_634795.jpg/330px-Sun_in_the_Sands_inn_-_geograph.org.uk_-_634795.jpg', name:'Sun in the Sands', area:'Blackheath / Shooter\'s Hill border', pc:'SE3', cat:'pub', year:1745, era:'Inn since c.1745',
-      lat:51.4750, lon:0.0250, addr:'Sun in the Sands, SE3 8SR',
+      lat:51.475, lon:0.025, addr:'Sun in the Sands, SE3 8SR',
       text:'An isolated highwayman&rsquo;s inn on the old drovers&rsquo; road, its name taken from the setting sun catching the dust kicked up by sheep being driven to London markets; local tradition has Henry VIII stopping here with Catherine of Aragon.\n\nIt gave its name to the major road junction that replaced it &mdash; the Sun in the Sands roundabout, where the A2 meets the Blackwall Tunnel approach, is now better known than the pub that named it.' },
 
     { id:'pilot-inn-greenwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Pilot_Inn%2C_Greenwich.jpg/330px-Pilot_Inn%2C_Greenwich.jpg', name:'Pilot Inn', area:'Greenwich Peninsula', pc:'SE10', cat:'pub', year:1801, era:'Built 1801',
@@ -1008,7 +1008,7 @@
       text:'Built by a local landowner as the Pilot Inn and Ferry, its name linked to a contemporary nickname for William Pitt the Younger &mdash; &ldquo;the pilot who weathered the storm.&rdquo; It once served a riverside community of tide-mill and, later, power-station workers.\n\nIt stands next to eight Grade II-listed late-Georgian cottages, a rare surviving pocket of artisan housing on a peninsula otherwise rebuilt from scratch.' },
 
     { id:'fellowship-inn-bellingham', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/The_Fellowship_Inn%2C_Bellingham_%2801%29.jpg/330px-The_Fellowship_Inn%2C_Bellingham_%2801%29.jpg', name:'The Fellowship Inn', area:'Bellingham', pc:'SE6', cat:'pub', year:1924, era:'Built 1923&ndash;24, first pub on a London council estate',
-      lat:51.4300, lon:-0.0210, addr:'Randlesdown Road, SE6 3BT',
+      lat:51.43, lon:-0.021, addr:'Randlesdown Road, SE6 3BT',
       text:'Built to serve the new Bellingham estate as post-WWI London tried to relieve overcrowding &mdash; the first pub ever purpose-built on a London council estate. Fleetwood Mac and John Mayall &amp; the Bluesbreakers both played here, and it&rsquo;s on CAMRA&rsquo;s National Inventory of Historic Pub Interiors.\n\nSir Henry Cooper &mdash; already in this gazetteer via his Bellingham plaque &mdash; used the building as a gym while training here for his 1963 fight against Cassius Clay. It closed briefly during the COVID years and reopened in September 2022.' },
 
     { id:'green-man-blackheath-hill', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Domreiter%2C_Blattmaske.jpg/330px-Domreiter%2C_Blattmaske.jpg', name:'Site of the Green Man', area:'Blackheath Hill', pc:'SE10', cat:'memory', year:1629, era:'Recorded from 1629, demolished 1970',
@@ -1016,7 +1016,7 @@
       text:'A coaching inn with a legend attached &mdash; supposedly named for Herne the Hunter, with tales of worshippers in cellars beneath it &mdash; that hosted the first recorded toast to Nelson&rsquo;s &ldquo;Immortal Memory&rdquo; on Trafalgar Day, 1811.\n\nA 1960s jazz club here, the Jazzhouse, hosted Ronnie Scott, Paul Simon and a teenage David Bowie; the whole building was demolished in 1970. This marks where it stood, not somewhere to visit.' },
 
     { id:'royal-albert-new-cross', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/UEL_Docklands_and_Royal_Albert_Dock.jpg/330px-UEL_Docklands_and_Royal_Albert_Dock.jpg', name:'Royal Albert', area:'New Cross Road', pc:'SE14', cat:'pub', year:1858, era:'Trading by 1858, listed 1973',
-      lat:51.4740, lon:-0.0400, addr:'460 New Cross Road, SE14 6TA',
+      lat:51.474, lon:-0.04, addr:'460 New Cross Road, SE14 6TA',
       text:'First recorded in an 1858 Freemasons&rsquo; magazine, it later ran 2000s indie nights that gave early stage time to Bloc Party and Art Brut, drawing on the Goldsmiths crowd down the road.\n\nNow run by Portobello Brewing, it still hosts live jazz, including sets from Nubya Garcia.' },
 
     { id:'woolwich-pub-bombing', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Kings_Arms%2C_Woolwich.jpg/330px-Kings_Arms%2C_Woolwich.jpg', name:'The Woolwich pub bombing', area:'Frances Street, Woolwich', pc:'SE18', cat:'memory', year:1974, era:'7 November 1974',
@@ -1024,11 +1024,11 @@
       text:'An IRA bomb at the King&rsquo;s Arms killed two people &mdash; Gunner Richard Dunne and sales clerk Alan Horsley &mdash; and injured thirty-five more.\n\nTwo of the Guildford Four were wrongly convicted of this attack in 1975 and served fifteen years before their convictions were quashed in 1989, after the actual Balcombe Street bombers confessed in 1977 &mdash; one of Britain&rsquo;s clearest miscarriages of justice, rooted at this address.' },
 
     { id:'stanhope-herne-hill-mural', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Herne_Hill_Station_Main_2012.jpg/330px-Herne_Hill_Station_Main_2012.jpg', name:'Herne Hill railway mural', area:'Railton Road, Herne Hill', pc:'SE24', cat:'art', year:2013, era:'Painted 2013, the first of the series',
-      lat:51.4530, lon:-0.1030, addr:'Railway bridge, Railton Road, near Herne Hill station, SE24',
+      lat:51.453, lon:-0.103, addr:'Railway bridge, Railton Road, near Herne Hill station, SE24',
       text:'After a burst water main flooded the area in 2013, Herne Hill traders crowdfunded a vintage-style painted sign for the dingy railway bridge on Railton Road, commissioning the sign writer and film-set painter Lionel Stanhope to brighten it up.\n\nNetwork Rail liked the results enough to start funding further Stanhope bridges itself &mdash; a single flood-recovery sign that grew into a whole genre of South East London street art, eventually reaching Brockley, Forest Hill, Lee, Catford, Nunhead and beyond. It sits just outside this gazetteer&rsquo;s usual postcode range, on the Herne Hill/Dulwich border &mdash; included as a deliberate, small stretch.' },
 
     { id:'stanhope-brockley-mural', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Brockley_railway_station_MMB_03.jpg/330px-Brockley_railway_station_MMB_03.jpg', name:'Brockley Cross mural', area:'Brockley Cross, Brockley', pc:'SE4', cat:'art', year:2016, era:'Painted c.2016, among the first wave of bridges',
-      lat:51.4690, lon:-0.0370, addr:'Railway bridge, Brockley Cross, SE4',
+      lat:51.469, lon:-0.037, addr:'Railway bridge, Brockley Cross, SE4',
       text:'Lionel Stanhope painted this vintage-lettered &ldquo;Brockley&rdquo; sign onto the railway bridge at Brockley Cross for his own neighbourhood &mdash; he has lived here since long before Network Rail started funding his work nationally.\n\nIt was one of the first seven Stanhope bridge signs, back when local crowdfunding rather than Network Rail money still paid for them.' },
 
     { id:'stanhope-forest-hill-walrus', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Forest_Hill_stn_main_building_June_2010.JPG/330px-Forest_Hill_stn_main_building_June_2010.JPG', name:'Forest Hill walrus mural', area:'Waldram Crescent, Forest Hill', pc:'SE23', cat:'art', year:2018, era:'Painted March 2018',
@@ -1044,7 +1044,7 @@
       text:'One of two Lionel Stanhope signs in Catford, this one under the bridge opposite Catford Bridge station runs a pack of yellow greyhounds through its lettering &mdash; a nod to Catford Stadium, the dog track that ran nearby until its last meeting in November 2003.\n\nPaired with the borough&rsquo;s giant fibreglass cat a short walk away on Winslade Way, it means Catford now has street art referencing both halves of its own name.' },
 
     { id:'stanhope-nunhead-mural', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Nunhead_station_entrance.JPG/330px-Nunhead_station_entrance.JPG', name:'Nunhead railway bridge mural', area:'Consort Road, Nunhead', pc:'SE15', cat:'art', year:2018, era:'Painted 2018',
-      lat:51.4650, lon:-0.0554, addr:'Railway bridge near Nunhead station, SE15',
+      lat:51.465, lon:-0.0554, addr:'Railway bridge near Nunhead station, SE15',
       text:'Lionel Stanhope&rsquo;s bold vintage lettering greets travellers near Nunhead station, its design worked carefully around a lamp post bolted to the bridge rather than simply painted over it.\n\nIt stands a short walk from Consort Road&rsquo;s other mural, Faith47&rsquo;s reworking of Guido Reni&rsquo;s Europa and the Bull &mdash; two very different kinds of borrowed image within a few minutes of each other.' },
 
     { id:'stanhope-burbage-road-mural', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Autumn_on_Burbage_Road%2C_Dulwich_-_geograph.org.uk_-_3229401.jpg/330px-Autumn_on_Burbage_Road%2C_Dulwich_-_geograph.org.uk_-_3229401.jpg', name:'Richard Burbage mural', area:'Burbage Road, Dulwich', pc:'SE24', cat:'art', year:2019, era:'Unveiled 13 May 2019',
@@ -1056,7 +1056,7 @@
       text:'Near the approach to The Den, Lionel Stanhope painted Millwall Football Club&rsquo;s leaping-lion crest onto a railway bridge on Zampa Road &mdash; the current badge, reintroduced in 2007 after a spell out of use from 1999.\n\nBy the time he painted it, Stanhope&rsquo;s day job had already taken him from South London brickwork to film and TV sets, including Black Mirror, Humans, The Good Liar and The Courier.' },
 
     { id:'stanhope-charlton-valley-mural', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Charlton_Station_-_geograph.org.uk_-_234017.jpg/330px-Charlton_Station_-_geograph.org.uk_-_234017.jpg', name:'Charlton Athletic centenary mural', area:'Charlton Church Lane, Charlton', pc:'SE7', cat:'art', year:2020, era:'Painted March 2020',
-      lat:51.4870, lon:0.0335, addr:'Railway bridge, Charlton Church Lane, SE7',
+      lat:51.487, lon:0.0335, addr:'Railway bridge, Charlton Church Lane, SE7',
       text:'Lionel Stanhope and sculptor Zara Gaze marked one hundred years of Charlton Athletic at The Valley with a mural on the bridge outside Charlton station, funded by the Charlton Athletic Museum and painted in graffiti-resistant materials over two days.\n\nIt includes a small tribute reading &ldquo;Seb 1076&rdquo;, for supporter Seb Lewis and the 1,076 consecutive matches he attended before his death.' },
 
     { id:'affinity-brewing-bermondsey', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Affinity_Brew_Co._Tasting_Room%2C_Bermondsey%2C_SE16.jpg/330px-Affinity_Brew_Co._Tasting_Room%2C_Bermondsey%2C_SE16.jpg', name:'Affinity Brewing Co.', area:'Brixton (formerly Bermondsey)', pc:'SE16', cat:'brewery', year:2017, era:'On the Beer Mile 2017&ndash;2020',

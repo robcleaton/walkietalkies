@@ -50,7 +50,8 @@ const CATS = {
   green: 'Park & burial ground',
   pub: 'Historic pub',
   art: 'Art & artists',
-  brewery: 'Brewery'
+  brewery: 'Brewery',
+  resident: 'Notable residents'
 };
 
 const CAT_KEY_BY_LABEL = Object.fromEntries(Object.entries(CATS).map(([key, label]) => [label, key]));
@@ -217,7 +218,26 @@ async function main() {
   const existingOrder = readExistingOrder();
   const usedSlugs = new Set();
   const stops = pages.map((page) => pageToStop(page, usedSlugs));
-  const ordered = orderStops(stops, existingOrder);
+
+  // Image URL, Latitude and Longitude have no fallback anywhere the site
+  // reads them — app.js's route distance/time maths, the Leaflet map
+  // markers, and the GPX export all use s.lat/s.lon directly with no null
+  // guard, so a stop missing them doesn't just render with a blank photo,
+  // it can corrupt route distances or crash the map for anyone who adds it.
+  // Treat these three as the real "still a draft in Notion" signal and
+  // hold those pages back rather than publish something broken.
+  const complete = [];
+  const incomplete = [];
+  for (const stop of stops) {
+    if (!stop.img || stop.lat === null || stop.lon === null) incomplete.push(stop);
+    else complete.push(stop);
+  }
+  if (incomplete.length) {
+    console.log(`Skipping ${incomplete.length} draft stop(s) missing an image and/or coordinates:`);
+    incomplete.forEach((s) => console.log(`  - ${s.name || s.id}`));
+  }
+
+  const ordered = orderStops(complete, existingOrder);
 
   const body = ordered.map(formatStop).join(',\n\n');
   const output = `  var STOPS = [\n${body}\n  ];\n`;
