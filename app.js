@@ -207,7 +207,17 @@
 
   function toggle(id) {
     var i = route.indexOf(id);
-    if (i === -1) route.push(id); else route.splice(i, 1);
+    if (i === -1) {
+      // Belt-and-braces: the button is already disabled for a stop with
+      // no pinned location (see stopHTML), but never let one into the
+      // route by any path — everything downstream (distance/time maths,
+      // the Leaflet map, GPX export) trusts route stops to have real coords.
+      var s = byId[id];
+      if (!s || s.lat === null || s.lat === undefined || s.lon === null || s.lon === undefined) return;
+      route.push(id);
+    } else {
+      route.splice(i, 1);
+    }
     seeded = false;
     persist(); renderRoute(); renderList();
   }
@@ -372,6 +382,12 @@
   function stopHTML(s, compact) {
     var on = inRoute(s.id);
     var pos = route.indexOf(s.id) + 1;
+    // Stops still missing a pinned location in Notion are published (with
+    // whatever text/photo they do have), but can't go into a route — the
+    // route panel, its distance/time maths, the Leaflet map and the GPX
+    // export all key off real lat/lon. toggle() enforces this too; this
+    // just keeps the button from inviting a click that would do nothing.
+    var hasLoc = s.lat !== null && s.lat !== undefined && s.lon !== null && s.lon !== undefined;
     var catLabel = CATS[s.cat];
     var eraLead = s.era || '';
     if (eraLead === catLabel) eraLead = '';
@@ -392,10 +408,12 @@
               '<p class="font-mono text-[11px] text-muted num' + (compact ? ' truncate' : '') + '">' + s.area + ' &middot; ' + s.pc + '</p>' +
             '</div>' +
           '</div>' +
-          '<button data-toggle="' + s.id + '" class="shrink-0 inline-flex items-center gap-1 text-[12px] font-semibold px-3 py-2 rounded-full border transition-colors ' +
-            (on ? 'bg-verdigris text-white border-verdigris' : 'border-rule text-ink hover:border-ink') + '">' +
-            (on ? 'Stop ' + pos + ' <svg class="lucide lucide-check w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>' : 'Add to route') +
-          '</button>' +
+          (hasLoc ?
+            '<button data-toggle="' + s.id + '" class="shrink-0 inline-flex items-center gap-1 text-[12px] font-semibold px-3 py-2 rounded-full border transition-colors ' +
+              (on ? 'bg-verdigris text-white border-verdigris' : 'border-rule text-ink hover:border-ink') + '">' +
+              (on ? 'Stop ' + pos + ' <svg class="lucide lucide-check w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>' : 'Add to route') +
+            '</button>'
+          : '<button disabled title="This stop doesn&rsquo;t have a location yet, so it can&rsquo;t be added to a route." class="shrink-0 inline-flex items-center text-[12px] font-semibold px-3 py-2 rounded-full border border-rule text-faint opacity-60 cursor-not-allowed">Not mapped yet</button>') +
         '</div>' +
         (compact ? '<div class="flex-1 min-h-0 overflow-hidden mt-3" data-desc-wrap>' : '') +
         '<p class="text-[14px] leading-[1.6] text-ink max-w-[62ch]' + (compact ? '' : ' mt-3') + '"' + (compact ? ' data-desc-text' : '') + '>' +
