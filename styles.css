@@ -149,13 +149,17 @@
      a flat multiplier looks fine at the small end but leaves almost no
      breathing room above the description once the title is near its
      140px ceiling. This clamp holds roughly the same ratio as font-size
-     at phone widths, then opens up faster than font-size grows, reaching
-     ~1.3x by the time font-size hits its own 140px ceiling (~1273px
-     viewport) — comfortably spaced on any laptop-or-wider screen instead
-     of staying visually tight until an ultra-wide monitor. */
+     at phone widths, then opens up faster than font-size grows. The
+     150px ceiling is sized to the font's own worst case — a word with a
+     descender (e.g. "Bexleyheath") still gets clear breathing room below
+     it — rather than to a plain multiple of font-size, which would leave
+     an oversized gap under titles with no descenders at all (e.g. "Honor
+     Oak"). The line-height ceiling is reached around a 1094px viewport,
+     a bit before font-size hits its own 140px ceiling at ~1273px; both
+     stay flat beyond that, on any laptop-or-wider screen. */
   #areaHero #areaHeroTitle{
     font-size:clamp(52px, 11vw, 140px);
-    line-height:clamp(44px, 17vw - 36px, 180px);
+    line-height:clamp(44px, 17vw - 36px, 150px);
   }
 
   /* Your route: branded orange background, with the panel's own text,
