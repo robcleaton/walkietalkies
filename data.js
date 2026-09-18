@@ -919,9 +919,9 @@
       lat:51.426, lon:-0.054, addr:'Sydenham, SE26',
       text:'The nature writer and novelist lived here between the ages of four and nine with his aunt and uncle, the Harrilds &mdash; relations of the printing pioneer Robert Harrild, whose relocated church spire already sits nearby in this gazetteer&rsquo;s Forest Hill entries.\n\nA separate English Heritage blue plaque for Jefferies exists at Footscray Road in Eltham &mdash; a different address entirely, so don&rsquo;t confuse the two if you go looking.' },
 
-    { id:'david-jones-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/David_Armstrong-Jones_%26_Mike_Tindall_in_2022_%28cropped2%29.jpg/330px-David_Armstrong-Jones_%26_Mike_Tindall_in_2022_%28cropped2%29.jpg', name:'David Jones', area:'Brockley', pc:'SE4', cat:'plaque', year:1895, era:'Maroon plaque, unveiled 2 December 2015',
+    { id:'david-jones-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/David_jones.jpg/330px-David_jones.jpg', name:'David Jones', area:'Brockley', pc:'SE4', cat:'plaque', year:1895, era:'Maroon plaque, unveiled 2 December 2015',
       lat:51.4635, lon:-0.0295, addr:'67 Arabin Road, SE4',
-      text:'Born here in 1895, Jones served longer at the front than almost any other Great War poet, was wounded at Mametz Wood, and later wrote In Parenthesis (1937) &mdash; a war memoir T. S. Eliot called &ldquo;a work of genius.&rdquo;\n\nHe is buried in Brockley &amp; Ladywell Cemeteries, already in this gazetteer; the Friends of that cemetery led the campaign and crowdfunding for his plaque.' },
+      text:'Born here in 1895, Jones served longer at the front than almost any other Great War poet, was wounded at Mametz Wood, and later wrote In Parenthesis (1937) &mdash; a war memoir T. S. Eliot called &ldquo;a work of genius.&rdquo;\n\nHe grew up on Howson Road, the son of a printer, and some of his paintings and illustrations depict his family&rsquo;s Brockley house and garden directly.\n\nHe is buried in Brockley &amp; Ladywell Cemeteries, already in this gazetteer; the Friends of that cemetery led the campaign and crowdfunding for his plaque.' },
 
     { id:'edgar-wallace-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Bundesarchiv_Bild_102-13109%2C_Edgar_Wallace.jpg/330px-Bundesarchiv_Bild_102-13109%2C_Edgar_Wallace.jpg', name:'Edgar Wallace', area:'Lewisham', pc:'SE4', cat:'plaque', year:1875, era:'Blue plaque',
       lat:51.4638, lon:-0.0267, addr:'6 Tressillian Crescent, SE4 1QJ',
@@ -1258,10 +1258,6 @@
     { id:'cuckold-s-point', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Cuckold%27s_Point.png/330px-Cuckold%27s_Point.png', name:'Cuckold\'s Point', area:'Rotherhithe', pc:'SE16', cat:'maritime', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'A sharp bend in the Thames on the Rotherhithe peninsula, once marked by a tall pole topped with a pair of horns, from which revellers bound for the raucous Charlton Horn Fair would disembark every 18 October before parading on to Charlton. The name and the horned marker both nod to the fair\'s legendary origin story involving a wronged miller and a king\'s guilty conscience.' },
-
-    { id:'david-jones', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/David_jones.jpg/330px-David_jones.jpg', name:'David Jones', area:'Brockley', pc:'SE4', cat:'resident', year:null, era:'',
-      lat:null, lon:null, addr:'',
-      text:'Poet and artist David Jones grew up on Howson Road in Brockley, the son of a printer, and went on to become a significant modernist figure celebrated for both his visual art and his epic poetry; some of his paintings and illustrations depict his family\'s Brockley house and garden directly.' },
 
     { id:'del-boy-and-rodney-trotter-only-fools-and-horses', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/1971_Reliant_Regal_Supervan_III_-_Trotter%27s_car_%285962573643%29.jpg/330px-1971_Reliant_Regal_Supervan_III_-_Trotter%27s_car_%285962573643%29.jpg', name:'Del Boy and Rodney Trotter (Only Fools and Horses)', area:'Peckham', pc:'SE15', cat:'art', year:null, era:'',
       lat:null, lon:null, addr:'',
