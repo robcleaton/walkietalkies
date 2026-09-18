@@ -413,7 +413,7 @@
 
     { id:'blake-peckham-rye', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Peckham_Rye_Common_-_geograph.org.uk_-_5584059.jpg/330px-Peckham_Rye_Common_-_geograph.org.uk_-_5584059.jpg', name:'William Blake&rsquo;s vision', area:'Peckham Rye Common', pc:'SE15', cat:'art', year:1765, era:'Vision recorded 1765',
       lat:51.4559, lon:-0.0634, addr:'Peckham Rye Common, near Colyton Road, SE15',
-      text:'Blake&rsquo;s first biographer records that the poet, aged eight, saw &ldquo;a tree filled with angels, bright angelic wings bespangling every bough like stars&rdquo; on his favourite walk out to Peckham Rye &mdash; the first of the childhood visions that shaped his art.\n\nThe actual oak Blake may have seen is long gone. The tree marking the spot today was replanted in 2011, specifically to give the story a living marker again.' },
+      text:'Blake\'s first biographer records that the poet, aged eight, saw &ldquo;a tree filled with angels, bright angelic wings bespangling every bough like stars&rdquo; on his favourite walk out to Peckham Rye &mdash; the first of the childhood visions that shaped his art.\n\nThe actual oak Blake may have seen is long gone. The tree marking the spot today was replanted in 2011, specifically to give the story a living marker again. In 1993, the Dulwich Festival separately commissioned artist Stan Peskett to paint a mural of the vision near the Goose Green playground in East Dulwich, giving the story a second, painted life a short walk away.' },
 
     { id:'dilston-grove', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Dilston_Grove_%28former_church%29_-_geograph.org.uk_-_4487372.jpg/330px-Dilston_Grove_%28former_church%29_-_geograph.org.uk_-_4487372.jpg', name:'Dilston Grove', area:'Southwark Park, Rotherhithe', pc:'SE16', cat:'art', year:1911, era:'Rebuilt 1911, gallery since 1999',
       lat:51.4939, lon:-0.0508, addr:'Southwark Park, SE16 2UA',
@@ -721,7 +721,7 @@
 
     { id:'edward-turner-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Edward_Turner_Blue_Plaque_Unveiling1.jpg/330px-Edward_Turner_Blue_Plaque_Unveiling1.jpg', name:'Edward Turner', area:'Philip Walk, Peckham Rye', pc:'SE15', cat:'plaque', year:1901, era:'Blue plaque',
       lat:51.464, lon:-0.0665, addr:'8 Philip Walk, SE15 3NH',
-      text:'A plaque marks the home of Edward Turner, the engineer who designed the Triumph Speed Twin and Bonneville motorcycles, the Ariel Square Four, and the V8 engine used in the Daimler SP250.\n\nOne engineer working from a Peckham Rye terrace ended up on both two wheels and four &mdash; his name still stamped on Triumph fuel tanks, his V8 quietly idling under Daimler bonnets.' },
+      text:'A plaque marks the home of Edward Turner, the engineer who designed the Triumph Speed Twin and Bonneville motorcycles, the Ariel Square Four, and the V8 engine used in the Daimler SP250.\n\nOne engineer working from a Peckham Rye terrace ended up on both two wheels and four &mdash; his name still stamped on Triumph fuel tanks, his V8 quietly idling under Daimler bonnets. Turner also once ran a motorbike shop, Chepstow Motors, on Peckham High Street; the blue plaque at 8 Philip Walk was unveiled by the London Borough of Southwark in 2009.' },
 
     { id:'george-livesey-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/1/13/George_Livesey.jpg', name:'Sir George Livesey', area:'Old Kent Road', pc:'SE15', cat:'plaque', year:1834, era:'Blue plaque',
       lat:51.4795, lon:-0.0575, addr:'Livesey Museum, 682 Old Kent Road, SE15 1JF',
@@ -1611,10 +1611,6 @@
       lat:null, lon:null, addr:'',
       text:'Natural mineral springs discovered in Sydenham in the 17th century drew fashionable visitors throughout the 18th century, with a visit from King George III around 1760 marking the peak of their popularity. Some visitors blamed hangovers on the water itself, though contemporaries suspected the brandy sold alongside it at local inns was the likelier culprit. The wells declined through the 19th century and were eventually filled in, but they gave the area Sydenham Wells Park, still one of the largest green spaces within the postcode.' },
 
-    { id:'the-2011-peckham-riots', img:'', name:'The 2011 Peckham riots', area:'Peckham', pc:'SE15', cat:'memory', year:2011, era:'8 August 2011',
-      lat:null, lon:null, addr:'',
-      text:'In August 2011, Peckham was one of the London districts drawn into the wider wave of England riots that followed the police killing of Mark Duggan in Tottenham. On 8 August, a crowd of three to four hundred people looted shops along Rye Lane and Peckham High Street, a bus was set alight on Southampton Way, and a local restaurant, Regen\'s, was destroyed by fire &mdash; a night that became a defining, painful part of the area\'s recent history and fed into a decade of subsequent debate about policing, race and regeneration in Peckham.' },
-
     { id:'the-bankside-beargarden', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/The_Bear_Garden%2C_Bankside%2C_London.png/330px-The_Bear_Garden%2C_Bankside%2C_London.png', name:'The Bankside Beargarden', area:'Bankside', pc:'SE1', cat:'memory', year:1583, era:'16th&ndash;17th centuries; gallery collapse 1583; baiting banned 1835',
       lat:null, lon:null, addr:'',
       text:'For centuries Bankside sat just outside the City of London\'s legal control, making it the capital\'s chief haunt for entertainments the City banned: bear- and bull-baiting, brothels and unlicensed theatre. The Beargarden, a round structure resembling the nearby playhouses, hosted these blood sports from the Elizabethan era into the Restoration &mdash; Samuel Pepys visited in 1666 and called it "a rude and nasty pleasure" &mdash; and the practice wasn\'t outlawed until 1835. In 1583, the gallery of the baiting arena in Paris Garden collapsed on a Sunday, killing several spectators and injuring many more, an event Puritan commentators seized on as divine judgement for Sabbath-breaking.' },
@@ -1867,9 +1863,9 @@
       lat:51.4933, lon:-0.0638, addr:'Blue Anchor Lane, SE16',
       text:'Bryan Donkin, John Hall and John Gamble set up a canning works on Blue Anchor Lane in 1812, founding what\'s considered the world\'s first commercial food-canning business.' },
 
-    { id:'edward-turner-motorcycle', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Edward_Turner_Blue_Plaque_Unveiling1.jpg/330px-Edward_Turner_Blue_Plaque_Unveiling1.jpg', name:'Edward Turner', area:'Peckham', pc:'SE15', cat:'plaque', year:2009, era:'Blue plaque unveiled 2009',
+    { id:'edward-turner-motorcycle', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Edward_Turner_Blue_Plaque_Unveiling1.jpg/330px-Edward_Turner_Blue_Plaque_Unveiling1.jpg', name:'[DUPLICATE &mdash; SAFE TO DELETE] Edward Turner', area:'Peckham', pc:'SE15', cat:'plaque', year:2009, era:'Blue plaque unveiled 2009',
       lat:51.4656, lon:-0.0653, addr:'8 Philip Walk, SE15',
-      text:'The motorcycle designer Edward Turner, creator of the Triumph Speed Twin, once ran a motorbike shop, Chepstow Motors, on Peckham High Street. A blue plaque was unveiled at his former home, 8 Philip Walk, by the London Borough of Southwark in 2009.' },
+      text:'Duplicate of the original Edward Turner blue plaque entry. Its unique detail (Chepstow Motors, 2009 unveiling) has been merged into the original &mdash; safe to delete this page.' },
 
     { id:'gary-oldman', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Gary_Oldman_%2813925515511%29_%28cropped%29.jpg/330px-Gary_Oldman_%2813925515511%29_%28cropped%29.jpg', name:'Gary Oldman', area:'New Cross', pc:'SE14', cat:'resident', year:1958, era:'Born 1958',
       lat:null, lon:null, addr:'New Cross, SE14',
@@ -1927,9 +1923,9 @@
       lat:null, lon:null, addr:'Rotherhithe, SE16',
       text:'The retired sea captain and philanthropist Thomas Coram settled in Rotherhithe, where he campaigned for years to establish a home for London\'s abandoned children. His efforts led to the Foundling Hospital, chartered in 1739.' },
 
-    { id:'william-blake-peckham-rye', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/William_Blake_by_Thomas_Phillips.jpg/330px-William_Blake_by_Thomas_Phillips.jpg', name:'William Blake\'s vision at Peckham Rye', area:'Peckham', pc:'SE15', cat:'memory', year:1767, era:'Vision in 1767, memorial mural added 1993',
+    { id:'william-blake-peckham-rye', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/William_Blake_by_Thomas_Phillips.jpg/330px-William_Blake_by_Thomas_Phillips.jpg', name:'[DUPLICATE &mdash; SAFE TO DELETE] William Blake\'s vision at Peckham Rye', area:'Peckham', pc:'SE15', cat:'memory', year:1767, era:'Vision in 1767, memorial mural added 1993',
       lat:51.47, lon:-0.0694, addr:'Peckham Rye, SE15',
-      text:'As a boy in 1767, William Blake later recalled wandering across Peckham Rye and seeing a tree filled with angels, "bespangling every bough like stars". In 1993, the Dulwich Festival commissioned artist Stan Peskett to paint a mural of the vision near the Goose Green playground in East Dulwich.' },
+      text:'Duplicate of the original "William Blake&rsquo;s vision" entry. Its unique detail (the 1993 Stan Peskett mural near Goose Green) has been merged into the original &mdash; safe to delete this page.' },
 
     { id:'austin-osman-spare', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Austin_Osman_Spare.jpg/330px-Austin_Osman_Spare.jpg', name:'Austin Osman Spare', area:'Elephant &amp; Castle', pc:'SE17', cat:'resident', year:1904, era:'First public exhibition 1904',
       lat:51.4912, lon:-0.0976, addr:'Walworth Road, SE17',
@@ -2173,5 +2169,93 @@
 
     { id:'trevoh-chalobah', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Trevoh_Chalobah.jpg/330px-Trevoh_Chalobah.jpg', name:'Trevoh Chalobah', area:'Gipsy Hill', pc:'SE19', cat:'resident', year:2001, era:'Moved to Gipsy Hill aged two',
       lat:51.4245, lon:-0.084, addr:'Gipsy Hill, SE19',
-      text:'The Chelsea defender Trevoh Chalobah was born in Freetown, Sierra Leone, in 1999 and moved to England at the age of two, growing up in Gipsy Hill and playing Sunday league football locally before joining Chelsea\'s academy at eight, following his older brother Nathaniel into the professional game.' }
+      text:'The Chelsea defender Trevoh Chalobah was born in Freetown, Sierra Leone, in 1999 and moved to England at the age of two, growing up in Gipsy Hill and playing Sunday league football locally before joining Chelsea\'s academy at eight, following his older brother Nathaniel into the professional game.' },
+
+    { id:'alan-lancaster', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Alan_Lancaster_2013.png/330px-Alan_Lancaster_2013.png', name:'Alan Lancaster', area:'Peckham', pc:'SE15', cat:'resident', year:1949, era:'Born 1949',
+      lat:null, lon:null, addr:'',
+      text:'Founding bassist and vocalist of the rock band Status Quo, associated with Peckham, whose decades-long career helped make Status Quo one of Britain\'s most enduring rock acts.' },
+
+    { id:'ashley-walters', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Ashley_Walters_at_BAFTAs_2026_01.jpg/330px-Ashley_Walters_at_BAFTAs_2026_01.jpg', name:'Ashley Walters', area:'Peckham', pc:'SE15', cat:'resident', year:1982, era:'Born 1982',
+      lat:null, lon:null, addr:'',
+      text:'Actor and rapper associated with Peckham, known for his music career as part of So Solid Crew and for acting roles including the series Top Boy, which itself draws heavily on the atmosphere of areas like Peckham.' },
+
+    { id:'camberwell-old-cemetery', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Camberwell_Old_Cemetery_-_geograph.org.uk_-_6032349.jpg/330px-Camberwell_Old_Cemetery_-_geograph.org.uk_-_6032349.jpg', name:'Camberwell Old Cemetery', area:'Peckham', pc:'SE15', cat:'green', year:1856, era:'Opened 1856',
+      lat:51.4529, lon:-0.061, addr:'Forest Hill Road, SE22',
+      text:'One of the ring of Victorian cemeteries built on the edge of London to relieve overcrowded parish churchyards, located on Forest Hill Road. Its Stone House, at the main entrance, was used as a filming location for the 1970 adaptation of Joe Orton\'s play Entertaining Mr Sloane; the house was later gutted by fire in the mid-1970s and rebuilt some years afterward. Less grand than nearby Nunhead Cemetery, Camberwell Old Cemetery was eventually superseded by Camberwell New Cemetery on Brenchley Gardens once it neared capacity.' },
+
+    { id:'claire-foy', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Claire_Foy_at_83rd_Venice_International_Film_Festival-3_%28cropped%29.jpg/330px-Claire_Foy_at_83rd_Venice_International_Film_Festival-3_%28cropped%29.jpg', name:'Claire Foy', area:'Peckham', pc:'SE15', cat:'resident', year:1984, era:'Born 1984',
+      lat:null, lon:null, addr:'',
+      text:'Award-winning actress who lived in Peckham for several years, known for roles including Queen Elizabeth II in The Crown and a wide range of stage and screen work that established her as one of Britain\'s most acclaimed contemporary performers.' },
+
+    { id:'giggs', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Giggs.jpg/330px-Giggs.jpg', name:'Giggs', area:'Peckham', pc:'SE15', cat:'resident', year:1981, era:'Born 1981',
+      lat:null, lon:null, addr:'',
+      text:'Rapper closely associated with Peckham, credited as one of the pioneering figures of UK road rap and grime\'s overlap with the genre, whose career from the late 2000s onward helped shape the sound of South London hip-hop.' },
+
+    { id:'heinz-s-first-uk-factory', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Railway_Arches%2C_Consort_Road%2C_Peckham.jpg/330px-Railway_Arches%2C_Consort_Road%2C_Peckham.jpg', name:'Heinz\'s first UK factory', area:'Peckham', pc:'SE15', cat:'works', year:1905, era:'Acquired by Heinz 1905',
+      lat:51.4677, lon:-0.062, addr:'Consort Road, SE15',
+      text:'Condiment manufacturer George Batty ran a Peckham works occupying 19 railway arches in the late 19th century. In 1905, the American H. J. Heinz Company acquired the site to serve as its very first manufacturing base in the United Kingdom &mdash; meaning one of the world\'s best-known food brands got its UK start in Peckham.' },
+
+    { id:'king-krule', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/King_Krule_The_George_Tavern_2025_%28cropped%29.jpg/330px-King_Krule_The_George_Tavern_2025_%28cropped%29.jpg', name:'King Krule', area:'Peckham', pc:'SE15', cat:'resident', year:1994, era:'Born 1994',
+      lat:null, lon:null, addr:'',
+      text:'Singer-songwriter and musician, born Archy Marshall, raised between Peckham and neighbouring East Dulwich, known for a distinctive blend of jazz, punk and blues influences that has made him one of the more critically acclaimed British musicians of his generation.' },
+
+    { id:'kye-whyte', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Kye_Whyte_after_the_Tokyo_Olympics.jpg/330px-Kye_Whyte_after_the_Tokyo_Olympics.jpg', name:'Kye Whyte', area:'Peckham', pc:'SE15', cat:'resident', year:2020, era:'Olympic silver medallist, Tokyo 2020',
+      lat:null, lon:null, addr:'',
+      text:'BMX racer from Peckham who won a silver medal at the Tokyo 2020 Olympics, part of a BMX-mad family and one of the area\'s most notable recent sporting exports.' },
+
+    { id:'peckham-arch', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Peckham_Arch_and_Peckham_Library_across_Peckham_High_Street_%28geograph_4040005%29.jpg/330px-Peckham_Arch_and_Peckham_Library_across_Peckham_High_Street_%28geograph_4040005%29.jpg', name:'Peckham Arch', area:'Peckham', pc:'SE15', cat:'grand', year:1994, era:'Built 1994',
+      lat:51.4663, lon:-0.0661, addr:'Rye Lane, SE15',
+      text:'A landmark arch designed by architects Troughton McAslan, completed in 1994 and partly funded by a &pound;1 million Single Regeneration Budget grant as a symbol of Peckham\'s renewal. Despite public protests, Southwark Council approved its demolition in 2016 to make way for new flats &mdash; a piece of 1990s regeneration architecture itself eventually cleared for a newer wave of development.' },
+
+    { id:'peckham-levels', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Peckham_Levels_-_geograph.org.uk_-_8189227.jpg/330px-Peckham_Levels_-_geograph.org.uk_-_8189227.jpg', name:'Peckham Levels', area:'Peckham', pc:'SE15', cat:'grand', year:2017, era:'Built 1982; converted to Peckham Levels 2017',
+      lat:51.4709, lon:-0.0679, addr:'95a Rye Lane, SE15 4ST',
+      text:'A 700-space multi-storey car park commissioned by Sainsbury\'s in 1980 and built in 1982, sitting empty and derelict for decades until artist Hannah Barry began staging shows on its rooftop in 2007 (now Bold Tendencies, already covered separately in this gazetteer). Following a 2015 open competition and a 5,000-strong community petition to save the building from demolition, Southwark Council handed floors 1&ndash;6 to a scheme called Peckham Levels, which opened in 2017 with 85 artist studios, co-working space, a food hall and community event space designed by Turner Works. Together with Bold Tendencies on the roof and the PeckhamPlex cinema at ground level, the building is now a single, layered case study in reusing a piece of unglamorous 1980s infrastructure rather than knocking it down.' },
+
+    { id:'peckham-manor-house', img:'', name:'Peckham Manor House', area:'Peckham', pc:'SE15', cat:'grand', year:1672, era:'Rebuilt 1672; demolished 1797',
+      lat:51.4742, lon:-0.0687, addr:'Peckham Hill Street, SE15',
+      text:'The manor house of Peckham was rebuilt in 1672 by Sir Thomas Bond, with formal gardens grand enough to appear on the 1746 Rocque map of London. It was sacked in 1688 because its then owner, Sir Henry Bond, was a Roman Catholic and staunch supporter of the deposed James II. The house was eventually demolished in 1797 to make way for the newly laid-out Peckham Hill Street; Shard\'s Terrace, which still contains a pie and mash shop today, is part of the Georgian development that replaced it.' },
+
+    { id:'peckham-rye-park-common', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Peckham_Rye_Common_-_geograph.org.uk_-_3186963.jpg/330px-Peckham_Rye_Common_-_geograph.org.uk_-_3186963.jpg', name:'Peckham Rye Park &amp; Common', area:'Peckham', pc:'SE15', cat:'green', year:1894, era:'Common since medieval times; park opened 14 May 1894',
+      lat:51.47, lon:-0.0694, addr:'Peckham Rye, SE15',
+      text:'A large expanse of common land and Victorian park that gives Peckham Rye its name, and the setting for William Blake\'s famous childhood vision of a tree filled with angels (already covered separately in this gazetteer). The common has existed since at least medieval times as open grazing land, while the more formal Peckham Rye Park alongside it was laid out in the 1890s, complete with a Japanese garden, ornamental lake and sports facilities that remain in use today.' },
+
+    { id:'peckhamplex', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Peckhamplex_2025-02-06.jpg/330px-Peckhamplex_2025-02-06.jpg', name:'PeckhamPlex', area:'Peckham', pc:'SE15', cat:'grand', year:1994, era:'Opened 1994',
+      lat:51.4709, lon:-0.0679, addr:'95a Rye Lane, SE15 4ST',
+      text:'An independent cinema occupying the ground floor of the former Sainsbury\'s multi-storey car park on Rye Lane, opened in 1994. Long before the same building\'s upper floors became known for Bold Tendencies\' rooftop art and Peckham Levels\' creative studios, PeckhamPlex was already giving the site a second life as one of London\'s most affordable and best-loved independent cinemas.' },
+
+    { id:'rye-lane-2023-film', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Rye_Lane%2C_outside_Peckham_Rye_station_-_geograph.org.uk_-_1249812.jpg/330px-Rye_Lane%2C_outside_Peckham_Rye_station_-_geograph.org.uk_-_1249812.jpg', name:'Rye Lane (2023 film)', area:'Peckham', pc:'SE15', cat:'art', year:2023, era:'Released 2023',
+      lat:null, lon:null, addr:'',
+      text:'A 2023 romantic comedy largely set in and named for Rye Lane, filmed at real local locations including the restaurants Coal Rooms and Il Giardino, Rye Lane Market, the Rye Lane branch of Morley\'s, and the PeckhamPlex cinema (already covered in this gazetteer) &mdash; giving present-day Peckham a rare starring role as itself rather than a stand-in for somewhere else.' },
+
+    { id:'the-ballad-of-peckham-rye', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Muriel_Spark%2C_Poeta.jpg/330px-Muriel_Spark%2C_Poeta.jpg', name:'The Ballad of Peckham Rye', area:'Peckham', pc:'SE15', cat:'art', year:1960, era:'Published 1960',
+      lat:null, lon:null, addr:'',
+      text:'Muriel Spark\'s 1960 novel The Ballad of Peckham Rye is set in the area, using its ordinary streets as the backdrop for a sly, unsettling tale about a stranger who upends a small community &mdash; one of several works of fiction that have used Peckham\'s particular texture as a setting.' },
+
+    { id:'the-black-lesbian-and-gay-centre-rainbow-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Black_Lesbian_%26_Gay_Centre_1992_1995_plaque_Bridge_Underpass_next_to_83_Bellenden_Road_Peckham_SE15_4QJ.jpg/330px-Black_Lesbian_%26_Gay_Centre_1992_1995_plaque_Bridge_Underpass_next_to_83_Bellenden_Road_Peckham_SE15_4QJ.jpg', name:'The Black Lesbian and Gay Centre (Rainbow Plaque)', area:'Peckham', pc:'SE15', cat:'plaque', year:2024, era:'Centre ran 1992&ndash;1995; plaque unveiled 2024',
+      lat:51.4694, lon:-0.0728, addr:'Bellenden Road, SE15',
+      text:'Peckham was home to the Black Lesbian and Gay Centre from 1992 to 1995, a significant space for Black LGBTQ+ community organising in London at the time. In February 2024, a Rainbow Plaque &mdash; a scheme distinct from the traditional blue plaque, specifically commemorating LGBTQ+ history &mdash; was unveiled on Bellenden Road to mark the centre, giving this short-lived but important institution a permanent physical marker three decades on.' },
+
+    { id:'the-dolehouse-squat', img:'', name:'The Dolehouse squat', area:'Peckham', pc:'SE15', cat:'memory', year:1989, era:'Active 1989&ndash;1990',
+      lat:51.4735, lon:-0.0717, addr:'Peckham High Street, SE15',
+      text:'In the early 1990s, a disused two-floor DHSS building near Peckham High Street became known as the Dolehouse, a large squat that hosted regular underground music gigs and parties from 1989, run by squatters who adopted the name Dole House Crew alongside another local group, the Green Circus. The building already had a place in music history, having featured on the cover of a 1980s pictorial biography of 1960s mods posing on their scooters outside the same site, then the Camberwell Labour Exchange. The squat was evicted in late October 1990, after which its scene dispersed to venues across South East London.' },
+
+    { id:'the-grand-surrey-canal-branch-to-peckham', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Timber_merchant%2C_Peckham_Hill_Street_-_geograph.org.uk_-_4040175.jpg/330px-Timber_merchant%2C_Peckham_Hill_Street_-_geograph.org.uk_-_4040175.jpg', name:'The Grand Surrey Canal branch to Peckham', area:'Peckham', pc:'SE15', cat:'maritime', year:1826, era:'Built to 1826; drained and backfilled 1970',
+      lat:51.4742, lon:-0.0687, addr:'Peckham Hill Street, SE15',
+      text:'A branch of the planned Grand Surrey Canal was built from the Surrey Commercial Docks to Peckham, intended as part of a much larger route from the Thames all the way to Portsmouth, before the builders ran out of funds in 1826. The truncated canal survived long enough to ship softwood for construction; Whitten\'s timber merchants traded on the site, known as Eagle Wharf, until as late as 2019, even though the canal itself had been drained and backfilled in 1970.' },
+
+    { id:'the-north-peckham-estate-rise-decline-and-regeneration', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/North_Peckham_regeneration_-_geograph.org.uk_-_1751472.jpg/330px-North_Peckham_regeneration_-_geograph.org.uk_-_1751472.jpg', name:'The North Peckham Estate: rise, decline and regeneration', area:'Peckham', pc:'SE15', cat:'memory', year:1965, era:'Built 1960s; regeneration 1990s&ndash;2000s',
+      lat:51.4782, lon:-0.0755, addr:'North Peckham, SE15',
+      text:'North Peckham was heavily redeveloped in the 1960s with high-rise flats intended to rehouse residents from dilapidated Victorian housing, and was initially popular for offering a high standard of modern living. Chronic unemployment and a lack of economic opportunity drove rapid decline through the late 1970s, and the North Peckham Estate became one of the most deprived residential areas in Western Europe, associated with vandalism, arson and street crime. A &pound;290 million regeneration programme in the late 1990s and early 2000s aimed to turn the estate around, but became forever linked in the public mind with the murder of ten-year-old Damilola Taylor on the estate in November 2000 (already covered separately in this gazetteer), which occurred shortly after regeneration had begun.' },
+
+    { id:'the-peckham-fair', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/The_Kentish_Drovers%2C_Peckham_High_Street_-_geograph.org.uk_-_3089487.jpg/330px-The_Kentish_Drovers%2C_Peckham_High_Street_-_geograph.org.uk_-_3089487.jpg', name:'The Peckham Fair', area:'Peckham', pc:'SE15', cat:'memory', year:1827, era:'Abolished 1827',
+      lat:51.4735, lon:-0.0866, addr:'Peckham Road, SE5',
+      text:'Local legend holds that King John was granted the right to an annual fair at Peckham to celebrate a particularly good day\'s hunting nearby. Whatever its true origins, the fair grew into a rowdy, major event lasting three weeks, drawing crowds from across London until it was finally abolished in 1827 for its disorderly reputation &mdash; a pattern echoed by the similarly rowdy Charlton Horn Fair elsewhere in this gazetteer.' },
+
+    { id:'the-pioneer-health-centre', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Former_Pioneer_Health_Centre%2C_St_Mary%27s_Road_-_geograph.org.uk_-_4229236.jpg/330px-Former_Pioneer_Health_Centre%2C_St_Mary%27s_Road_-_geograph.org.uk_-_4229236.jpg', name:'The Pioneer Health Centre', area:'Peckham', pc:'SE15', cat:'grand', year:1935, era:'Built 1935; converted to flats 2000',
+      lat:51.472, lon:-0.0547, addr:'St Mary\'s Road, SE15',
+      text:'A Grade II* listed Modernist building designed by engineer Sir Owen Williams, opened in 1935 as the purpose-built home of the Pioneer Health Centre &mdash; the second and much larger site of the "Peckham Experiment" begun in 1926 by doctors George Scott Williamson and Innes Hope Pearse at 142 Queen\'s Road (already covered in this gazetteer as a blue plaque). Williams used the latest structural techniques to create vast open, glazed spaces so the centre\'s doctors could observe up to 950 member families going about organised activities, games and a covered central swimming pool, all for a subscription of one shilling a week. Walter Gropius called it "an oasis of glass in a desert of brick." The centre closed in 1950 as its preventative approach didn\'t fit the newly formed NHS, and the building was converted into private flats in 2000, retaining the original pool.' },
+
+    { id:'thomas-tilling-s-omnibus-service', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Tilling%27s_four-horse_%27Times%27.png/330px-Tilling%27s_four-horse_%27Times%27.png', name:'Thomas Tilling\'s omnibus service', area:'Peckham', pc:'SE15', cat:'works', year:1851, era:'Started 1851',
+      lat:null, lon:null, addr:'',
+      text:'In 1851, Thomas Tilling started an innovative horse-drawn omnibus service running from Peckham into central London. His buses were the first in the capital to use pre-arranged, fixed stops, allowing them to run to a reliable timetable rather than picking up passengers wherever hailed &mdash; a genuine first in London public transport. The Tilling network eventually expanded to cover much of the city, until his horses were requisitioned by the Army during the First World War.' }
   ];
