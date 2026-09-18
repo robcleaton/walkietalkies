@@ -2113,5 +2113,49 @@
 
     { id:'the-bull-shooters-hill', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/The_Bull_public_house%2C_Shooters_Hill_-_geograph.org.uk_-_1133968.jpg/330px-The_Bull_public_house%2C_Shooters_Hill_-_geograph.org.uk_-_1133968.jpg', name:'The Bull', area:'Shooter\'s Hill', pc:'SE18', cat:'pub', year:1741, era:'A pub on this site since the 1740s',
       lat:51.4693, lon:0.0666, addr:'Shrewsbury Lane, SE18',
-      text:'A sign on the wall records a public house standing on this corner since 1741, on what was then a notoriously dangerous stretch of the old Dover Road, a coaching route so plagued by highwaymen that it gave Shooter\'s Hill its name. The present Victorian building stands close to the Bronze Age burial mound known as Shrewsbury Barrow.' }
+      text:'A sign on the wall records a public house standing on this corner since 1741, on what was then a notoriously dangerous stretch of the old Dover Road, a coaching route so plagued by highwaymen that it gave Shooter\'s Hill its name. The present Victorian building stands close to the Bronze Age burial mound known as Shrewsbury Barrow.' },
+
+    { id:'edmond-halley-lee', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/St_Margaret%27s_Church%2C_Lee_-_geograph.org.uk_-_204689.jpg/330px-St_Margaret%27s_Church%2C_Lee_-_geograph.org.uk_-_204689.jpg', name:'Edmond Halley', area:'Lee', pc:'SE13', cat:'memory', year:1742, era:'Buried here, 1742',
+      lat:51.4628, lon:0.0009, addr:'St Margaret\'s Church, SE13',
+      text:'The astronomer Edmond Halley, who calculated the orbit of the comet that bears his name and served as Astronomer Royal from 1720, was buried at St Margaret\'s, Lee, in 1742, close to the Greenwich observatory where he had worked. Two later Astronomers Royal, Nathaniel Bliss and John Pond, are buried in the same churchyard.' },
+
+    { id:'ginger-baker-lewisham', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Ginger_Baker_in_1984.jpg/330px-Ginger_Baker_in_1984.jpg', name:'Ginger Baker', area:'Lewisham', pc:'SE13', cat:'resident', year:1939, era:'Born 19 August 1939',
+      lat:51.4624, lon:-0.0102, addr:'Lewisham, SE13',
+      text:'The drummer Ginger Baker was born in Lewisham on 19 August 1939. He went on to co-found the power trio Cream with Eric Clapton and Jack Bruce, and is regularly ranked among the greatest rock drummers of all time.' },
+
+    { id:'john-logie-baird-sydenham', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/John_Logie_Baird_in_1917.jpg/330px-John_Logie_Baird_in_1917.jpg', name:'John Logie Baird', area:'Sydenham', pc:'SE26', cat:'plaque', year:1933, era:'Lived and worked here 1933&ndash;1945',
+      lat:51.4333, lon:-0.0734, addr:'3 Crescent Wood Road, SE26',
+      text:'John Logie Baird moved to 3 Crescent Wood Road in 1933, after his television company relocated to studios at the nearby Crystal Palace. He built a laboratory beside the house, and it was here during the Second World War that he developed the Telechrome, an early forerunner of colour television.' },
+
+    { id:'lionel-logue-sydenham', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Lionel_Logue_1937.jpg/330px-Lionel_Logue_1937.jpg', name:'Lionel Logue', area:'Sydenham', pc:'SE26', cat:'resident', year:1932, era:'Lived here 1932&ndash;c.1940',
+      lat:51.4314, lon:-0.0735, addr:'111 Sydenham Hill, SE26',
+      text:'The Australian speech therapist Lionel Logue lived at Beechgrove, a large Victorian villa at 111 Sydenham Hill, from 1932 until around 1940. It was during these years that he treated King George VI\'s stammer, a relationship later dramatised in the film The King\'s Speech.' },
+
+    { id:'manor-house-lee', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Lee_Green%2C_Old_Road_entrance_to_Manor_House_Gardens_-_geograph.org.uk_-_1781491.jpg/330px-Lee_Green%2C_Old_Road_entrance_to_Manor_House_Gardens_-_geograph.org.uk_-_1781491.jpg', name:'Manor House, Lee', area:'Lee', pc:'SE13', cat:'grand', year:1796, era:'Built 1796',
+      lat:51.4573, lon:0.0045, addr:'Old Road, SE13',
+      text:'Manor House was built in 1796 for Sir Francis Baring, founder of Barings Bank, on land that had been part of the Manor of Lee. It later passed into public use and today houses Manor House Library and Gardens.' },
+
+    { id:'queen-victoria-memorial-sydenham', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Queen_Victoria_and_Elizabeth_II_memorial_Kirkdale_Sydenham_7_Dec_2021.jpg/330px-Queen_Victoria_and_Elizabeth_II_memorial_Kirkdale_Sydenham_7_Dec_2021.jpg', name:'Queen Victoria Memorial', area:'Sydenham', pc:'SE26', cat:'memory', year:1897, era:'Erected 1897, restored 1977',
+      lat:51.4268, lon:-0.0524, addr:'Sydenham, SE26',
+      text:'This Baroque-style memorial was put up in 1897 to mark Queen Victoria\'s Diamond Jubilee. It fell into disrepair over the following decades before being restored in 1977, the year of a different jubilee, Elizabeth II\'s Silver Jubilee.' },
+
+    { id:'robert-cocking-lee', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Robert_Cocking_%28BM_1862%2C1011.665%29.jpg/330px-Robert_Cocking_%28BM_1862%2C1011.665%29.jpg', name:'Robert Cocking', area:'Lee', pc:'SE12', cat:'memory', year:1837, era:'Died 24 July 1837',
+      lat:51.4566, lon:0.0115, addr:'Lee, SE12',
+      text:'On 24 July 1837, the watercolour artist Robert Cocking ascended from Vauxhall Gardens beneath a balloon to test a parachute of his own design. The parachute collapsed on the descent, and his body was found in a field in Lee, making him the world\'s first recorded parachuting fatality.' },
+
+    { id:'sid-vicious-lewisham', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Sid_Vicious_1978_%28cropped%29.jpg/330px-Sid_Vicious_1978_%28cropped%29.jpg', name:'Sid Vicious', area:'Lewisham', pc:'SE13', cat:'resident', year:1957, era:'Born 10 May 1957',
+      lat:51.4624, lon:-0.0102, addr:'Lewisham, SE13',
+      text:'Sid Vicious, born Simon John Ritchie, was born in Lewisham on 10 May 1957. He went on to join the Sex Pistols as bassist in 1977, becoming one of the most notorious and short-lived figures of the British punk movement.' },
+
+    { id:'doveton-sturdee-charlton', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Frederick_Doveton_Sturdee_1916_HMS_Hercules.jpg/330px-Frederick_Doveton_Sturdee_1916_HMS_Hercules.jpg', name:'Sir Doveton Sturdee', area:'Charlton', pc:'SE7', cat:'resident', year:1859, era:'Born 9 June 1859',
+      lat:51.4826, lon:0.0365, addr:'Charlton, SE7',
+      text:'Admiral of the Fleet Sir Frederick Doveton Sturdee was born in Charlton in 1859. He commanded the British fleet to a decisive victory at the Battle of the Falkland Islands in December 1914, avenging an earlier defeat at Coronel and destroying most of the German East Asia Squadron.' },
+
+    { id:'ernest-shackleton-sydenham', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Ernest_Shackleton_before_1909.jpg/330px-Ernest_Shackleton_before_1909.jpg', name:'Sir Ernest Shackleton', area:'Sydenham', pc:'SE26', cat:'plaque', year:1884, era:'Family home from around 1884',
+      lat:51.428, lon:-0.0587, addr:'12 Westwood Hill, SE26',
+      text:'The Antarctic explorer Ernest Shackleton moved with his family to 12 Westwood Hill around 1884, aged ten, and spent his school years in Sydenham before going on to lead three expeditions to Antarctica. A blue plaque was erected at the house in 1928.' },
+
+    { id:'st-christophers-hospice', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/St._Christopher%27s_Hospice.jpg/330px-St._Christopher%27s_Hospice.jpg', name:'St Christopher\'s Hospice', area:'Sydenham', pc:'SE26', cat:'culture', year:1967, era:'Opened 1967',
+      lat:51.4233, lon:-0.058, addr:'Copeman Close, SE26',
+      text:'Founded by Dame Cicely Saunders, St Christopher\'s Hospice opened in 1967 as the world\'s first purpose-built hospice combining pain and symptom control with teaching and clinical research, launching what became the modern hospice movement worldwide.' }
   ];
