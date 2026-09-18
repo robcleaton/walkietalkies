@@ -1849,5 +1849,85 @@
 
     { id:'trinity-hospital-greenwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Trinity_Hospital%2C_Greenwich_2026-01-24.jpg/330px-Trinity_Hospital%2C_Greenwich_2026-01-24.jpg', name:'Trinity Hospital', area:'Greenwich', pc:'SE10', cat:'grand', year:1613, era:'Founded 1613',
       lat:51.4849, lon:-0.0018, addr:'Greenwich, SE10',
-      text:'Almshouse founded in 1613 by Henry Howard, Earl of Northampton &mdash; the oldest surviving building in Greenwich town centre.' }
+      text:'Almshouse founded in 1613 by Henry Howard, Earl of Northampton &mdash; the oldest surviving building in Greenwich town centre.' },
+
+    { id:'aaron-manby', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Feathered_paddlewheel_of_PS_Aaron_Manby_1822.jpg/330px-Feathered_paddlewheel_of_PS_Aaron_Manby_1822.jpg', name:'Aaron Manby', area:'Rotherhithe', pc:'SE16', cat:'works', year:1822, era:'Iron steamship launched 1822',
+      lat:null, lon:null, addr:'Rotherhithe, SE16',
+      text:'The engineer Aaron Manby assembled and launched the Aaron Manby at Rotherhithe in 1822 &mdash; the world\'s first seagoing iron-hulled steamship, which went on to steam up the Seine to Paris.' },
+
+    { id:'beestons-gift-almshouses', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Beeston%27s_Gift_Almshouses%2C_Consort_Road_-_geograph.org.uk_-_6890344.jpg/330px-Beeston%27s_Gift_Almshouses%2C_Consort_Road_-_geograph.org.uk_-_6890344.jpg', name:'Beeston\'s Gift Almshouses', area:'Nunhead', pc:'SE15', cat:'grand', year:1834, era:'Founded 1834',
+      lat:51.4684, lon:-0.0623, addr:'Consort Road, SE15',
+      text:'Beeston\'s Gift Almshouses on Consort Road were founded in 1834 by the Worshipful Company of Girdlers. The terrace of seven Tudor-style cottages still stands behind its railinged garden.' },
+
+    { id:'bermondsey-abbey', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Abbey_Street%2C_Bermondsey_-_geograph.org.uk_-_4385676.jpg/330px-Abbey_Street%2C_Bermondsey_-_geograph.org.uk_-_4385676.jpg', name:'Bermondsey Abbey', area:'Bermondsey', pc:'SE1', cat:'grand', year:1082, era:'Founded 1082, dissolved 1538',
+      lat:51.5045, lon:-0.0833, addr:'Bermondsey Street, SE1',
+      text:'Bermondsey Abbey was founded in 1082 as a Cluniac priory dedicated to St Saviour. Its monks drained and embanked the surrounding marshland and created St Saviour\'s Dock from a tidal inlet, shaping the area long after the abbey itself was dissolved in 1538.' },
+
+    { id:'donkin-hall-and-gamble', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/BryanDonkin.jpg/330px-BryanDonkin.jpg', name:'Donkin, Hall and Gamble', area:'Bermondsey', pc:'SE16', cat:'works', year:1812, era:'Founded 1812',
+      lat:51.4933, lon:-0.0638, addr:'Blue Anchor Lane, SE16',
+      text:'Bryan Donkin, John Hall and John Gamble set up a canning works on Blue Anchor Lane in 1812, founding what\'s considered the world\'s first commercial food-canning business.' },
+
+    { id:'edward-turner-motorcycle', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Edward_Turner_Blue_Plaque_Unveiling1.jpg/330px-Edward_Turner_Blue_Plaque_Unveiling1.jpg', name:'Edward Turner', area:'Peckham', pc:'SE15', cat:'plaque', year:2009, era:'Blue plaque unveiled 2009',
+      lat:51.4656, lon:-0.0653, addr:'8 Philip Walk, SE15',
+      text:'The motorcycle designer Edward Turner, creator of the Triumph Speed Twin, once ran a motorbike shop, Chepstow Motors, on Peckham High Street. A blue plaque was unveiled at his former home, 8 Philip Walk, by the London Borough of Southwark in 2009.' },
+
+    { id:'gary-oldman', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Gary_Oldman_%2813925515511%29_%28cropped%29.jpg/330px-Gary_Oldman_%2813925515511%29_%28cropped%29.jpg', name:'Gary Oldman', area:'New Cross', pc:'SE14', cat:'resident', year:1958, era:'Born 1958',
+      lat:null, lon:null, addr:'New Cross, SE14',
+      text:'Gary Oldman was born in New Cross in 1958 and attended Monson Primary School in the area. His breakout film as writer and star, Nil by Mouth (1997), is loosely based on his own upbringing in south-east London and was largely filmed around here.' },
+
+    { id:'goldsmiths-royal-naval-school', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Goldsmiths%2C_University_of_London.jpg/330px-Goldsmiths%2C_University_of_London.jpg', name:'Goldsmiths, University of London', area:'New Cross', pc:'SE14', cat:'grand', year:1904, era:'Became part of the University of London in 1904',
+      lat:51.4733, lon:-0.0366, addr:'Lewisham Way, SE14',
+      text:'What became Goldsmiths, University of London began as the Royal Naval School, founded in 1843. The Worshipful Company of Goldsmiths bought the site and opened the Goldsmiths\' Company\'s Technical and Recreative Institute here in 1891, before handing the college over to the University of London in 1904.' },
+
+    { id:'harold-bride', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/BrideTitanic2.jpg/330px-BrideTitanic2.jpg', name:'Harold Bride', area:'Nunhead', pc:'SE15', cat:'resident', year:1890, era:'Born 1890',
+      lat:null, lon:null, addr:'Nunhead, SE15',
+      text:'Harold Bride, born in Nunhead in 1890, was the junior wireless operator aboard RMS Titanic. He worked through the sinking sending distress calls alongside senior operator Jack Phillips and survived by scrambling onto an overturned lifeboat.' },
+
+    { id:'jones-and-higgins', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Jones_and_Higgins_-_geograph.org.uk_-_1741847.jpg/330px-Jones_and_Higgins_-_geograph.org.uk_-_1741847.jpg', name:'Jones &amp; Higgins', area:'Peckham', pc:'SE15', cat:'grand', year:1867, era:'Traded 1867&ndash;1980s',
+      lat:51.4661, lon:-0.0662, addr:'Rye Lane, SE15',
+      text:'Jones &amp; Higgins opened on the corner of Rye Lane and Peckham High Street in 1867 and grew into the best-known department store in south London, trading for over a century before closing in the 1980s.' },
+
+    { id:'king-mutesa-ii', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Sir._Edward_Fredrick_Mutesa%2C_The_President_of_Uganda_%28cropped%29.jpg/330px-Sir._Edward_Fredrick_Mutesa%2C_The_President_of_Uganda_%28cropped%29.jpg', name:'King Mutesa II of Buganda', area:'Rotherhithe', pc:'SE16', cat:'resident', year:1969, era:'Died in exile, 1969',
+      lat:null, lon:null, addr:'Rotherhithe, SE16',
+      text:'Mutesa II, the exiled King (Kabaka) of Buganda, spent his final years living quietly in a flat in Rotherhithe. He died there in 1969, shortly after giving an interview to the journalist John Simpson.' },
+
+    { id:'marie-lloyd', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Marie_Lloyd_by_Langfier_Ltd.jpg/330px-Marie_Lloyd_by_Langfier_Ltd.jpg', name:'Marie Lloyd', area:'New Cross', pc:'SE14', cat:'resident', year:1887, era:'Lived here 1887&ndash;1893',
+      lat:51.4756, lon:-0.0362, addr:'Lewisham Way, SE14',
+      text:'The music hall star Marie Lloyd, celebrated for songs like \'The Boy I Love is Up in the Gallery\', lived on Lewisham Way from 1887 to 1893, early in a career that would make her one of the best-loved performers of her era.' },
+
+    { id:'new-cross-v2-bombing', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Former_Woolworths_store_277-281_New_Cross_Road_London_SE14_6AS.jpg/330px-Former_Woolworths_store_277-281_New_Cross_Road_London_SE14_6AS.jpg', name:'New Cross Woolworths V-2 bombing', area:'New Cross', pc:'SE14', cat:'memory', year:1944, era:'25 November 1944',
+      lat:51.4755, lon:-0.0469, addr:'New Cross Road, SE14',
+      text:'On 25 November 1944, a V-2 rocket struck the Woolworths store on New Cross Road at the height of a Saturday lunchtime crowd. It killed 168 people and seriously injured 121 more &mdash; London\'s single most devastating V-weapon strike of the Second World War.' },
+
+    { id:'peek-freans-biscuit-town', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Former_Peek_Freans_factory_2024-03-23.jpg/330px-Former_Peek_Freans_factory_2024-03-23.jpg', name:'Peek Frean Biscuit Factory', area:'Bermondsey', pc:'SE16', cat:'works', year:1866, era:'Clements Road factory 1866&ndash;1989',
+      lat:51.4951, lon:-0.064, addr:'Clements Road, SE16',
+      text:'Peek Frean began making biscuits at Dockhead in 1857 and moved to a much larger factory on Clements Road in 1866, where it produced the Garibaldi and other well-known biscuits until the plant closed in 1989 &mdash; earning Bermondsey its old nickname, \'Biscuit Town\'.' },
+
+    { id:'samuel-bourne-bevington', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Samuel_Bourne_Bevington_V.D.J.P._1832-1907%2C_Tooley_Street_-_geograph.org.uk_-_2497126.jpg/330px-Samuel_Bourne_Bevington_V.D.J.P._1832-1907%2C_Tooley_Street_-_geograph.org.uk_-_2497126.jpg', name:'Samuel Bourne Bevington', area:'Bermondsey', pc:'SE1', cat:'resident', year:1900, era:'First Mayor of Bermondsey, 1900',
+      lat:51.5052, lon:-0.0846, addr:'Tooley Street, SE1',
+      text:'Samuel Bourne Bevington, a leather producer and one of Bermondsey\'s largest employers, became the first mayor of the newly created Metropolitan Borough of Bermondsey in 1900. A statue commemorating him stands on Tooley Street.' },
+
+    { id:'sir-barnes-wallis', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Barnes_Wallis_%28RNV%29.jpg/330px-Barnes_Wallis_%28RNV%29.jpg', name:'Sir Barnes Wallis', area:'New Cross', pc:'SE14', cat:'plaque', year:1892, era:'Lived here 1892&ndash;1909',
+      lat:51.4745, lon:-0.0433, addr:'241 New Cross Road, SE14',
+      text:'The engineer and inventor Barnes Wallis, later famous for the bouncing bomb used in the 1943 Dambusters raid, lived at 241 New Cross Road, on the corner of Nettleton Road, from 1892 to 1909. A blue plaque now marks the house.' },
+
+    { id:'st-antholins-church-nunhead', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/St_Antholin_%288667807175%29.jpg/330px-St_Antholin_%288667807175%29.jpg', name:'St Antholin\'s Church, Nunhead', area:'Nunhead', pc:'SE15', cat:'grand', year:1877, era:'Built 1877',
+      lat:51.4654, lon:-0.0585, addr:'Nunhead Green, SE15',
+      text:'St Antholin\'s Church on Nunhead Green was built in 1877 in red brick, in a style modelled on 13th-century Gothic, using funds raised from the sale of the demolished City church of St Antholin, Budge Row. It carried over a reredos designed by Christopher Wren from the original building.' },
+
+    { id:'bermondsey-1983-by-election', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Simon_Hughes_MP_%282867656375%29.jpg/330px-Simon_Hughes_MP_%282867656375%29.jpg', name:'The 1983 Bermondsey by-election', area:'Bermondsey', pc:'SE1', cat:'memory', year:1983, era:'24 February 1983',
+      lat:null, lon:null, addr:'Bermondsey, SE1/SE16',
+      text:'The 1983 Bermondsey by-election saw Labour\'s Peter Tatchell lose to the Liberal candidate Simon Hughes on a 44% swing &mdash; still the largest by-election swing in British political history. Hughes went on to represent the constituency until 2015.' },
+
+    { id:'mayflower-departure-1620', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Great_Men_and_Famous_Women_Volume_1_-_DEPARTURE_OF_THE_MAYFLOWER.png/330px-Great_Men_and_Famous_Women_Volume_1_-_DEPARTURE_OF_THE_MAYFLOWER.png', name:'The Mayflower\'s departure', area:'Rotherhithe', pc:'SE16', cat:'maritime', year:1620, era:'July 1620',
+      lat:51.5045, lon:-0.046, addr:'Rotherhithe Street, SE16',
+      text:'In July 1620, the Mayflower set sail from Rotherhithe, picking up passengers before heading to Southampton to take on supplies for the voyage to America. The riverside Mayflower pub trades on that history, though the building itself only dates from the 1950s.' },
+
+    { id:'thomas-coram', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Hogarth_coram.jpg/330px-Hogarth_coram.jpg', name:'Thomas Coram', area:'Rotherhithe', pc:'SE16', cat:'resident', year:1739, era:'Campaigned from Rotherhithe; Foundling Hospital chartered 1739',
+      lat:null, lon:null, addr:'Rotherhithe, SE16',
+      text:'The retired sea captain and philanthropist Thomas Coram settled in Rotherhithe, where he campaigned for years to establish a home for London\'s abandoned children. His efforts led to the Foundling Hospital, chartered in 1739.' },
+
+    { id:'william-blake-peckham-rye', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/William_Blake_by_Thomas_Phillips.jpg/330px-William_Blake_by_Thomas_Phillips.jpg', name:'William Blake\'s vision at Peckham Rye', area:'Peckham', pc:'SE15', cat:'memory', year:1767, era:'Vision in 1767, memorial mural added 1993',
+      lat:51.47, lon:-0.0694, addr:'Peckham Rye, SE15',
+      text:'As a boy in 1767, William Blake later recalled wandering across Peckham Rye and seeing a tree filled with angels, "bespangling every bough like stars". In 1993, the Dulwich Festival commissioned artist Stan Peskett to paint a mural of the vision near the Goose Green playground in East Dulwich.' }
   ];
