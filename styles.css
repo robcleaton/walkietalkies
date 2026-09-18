@@ -169,9 +169,11 @@
      back to the normal theme colours everywhere else. */
   header #searchToggle, header #themeToggle, header #routeHeaderBtn{
     color:var(--area-ink, var(--muted));
+    border-color:var(--area-ink, var(--rule));
   }
   header #searchToggle:hover, header #themeToggle:hover, header #routeHeaderBtn:hover{
     color:var(--area-ink, var(--ink));
+    border-color:var(--area-ink, var(--ink));
   }
 
   /* Your route: branded orange background, with the panel's own text,
