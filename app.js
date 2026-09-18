@@ -29,7 +29,7 @@
     pub:      { color:'var(--tomato)',    fg:'#fff',    icon:'<path d="M 192 0 C 227.346 0 256 28.654 256 64 C 256 99.346 227.346 128 192 128 C 227.346 128 256 156.654 256 192 C 256 227.346 227.346 256 192 256 C 156.654 256 128 227.346 128 192 C 128 227.346 99.346 256 64 256 C 28.654 256 0 227.346 0 192 C 0 156.654 28.654 128 64 128 C 28.654 128 0 99.346 0 64 C 0 28.654 28.654 0 64 0 C 99.346 0 128 28.654 128 64 C 128 28.654 156.654 0 192 0 Z M 64 160 C 46.327 160 32 174.327 32 192 C 32 209.673 46.327 224 64 224 C 81.673 224 96 209.673 96 192 C 96 174.327 81.673 160 64 160 Z M 192 160 C 174.327 160 160 174.327 160 192 C 160 209.673 174.327 224 192 224 C 209.673 224 224 209.673 224 192 C 224 174.327 209.673 160 192 160 Z M 64 32 C 46.327 32 32 46.327 32 64 C 32 81.673 46.327 96 64 96 C 81.673 96 96 81.673 96 64 C 96 46.327 81.673 32 64 32 Z M 192 32 C 174.327 32 160 46.327 160 64 C 160 81.673 174.327 96 192 96 C 209.673 96 224 81.673 224 64 C 224 46.327 209.673 32 192 32 Z"/>' },
     art:      { color:'var(--bubblegum)', fg:'#fff',    icon:'<path d="M 28 0 C 83.228 0 128 44.772 128 100 C 128 44.772 172.772 0 228 0 L 256 0 L 256 156 C 256 211.228 211.228 256 156 256 L 100 256 C 44.772 256 0 211.228 0 156 L 0 0 Z"/>' },
     brewery:  { color:'var(--brass)',     fg:'#171717', icon:'<path d="M 0 128.007 C 0.004 198.696 57.31 256 128 256 L 0 256 Z M 256 256 L 128 256 C 198.69 256 255.996 198.696 256 128.007 Z M 192 128 C 192 163.346 163.346 192 128 192 C 92.654 192 64 163.346 64 128 Z M 128 0 C 198.692 0 256 57.308 256 128 L 192 128 C 192 92.654 163.346 64 128 64 C 92.654 64 64 92.654 64 128 L 0 128 C 0 57.308 57.308 0 128 0 Z"/>' },
-    resident: { color:'var(--marigold)',  fg:'#171717', icon:'<circle cx="128" cy="84" r="68"/><path d="M8 256 C8 173.308 61.308 120 128 120 C194.692 120 248 173.308 248 256 Z"/>' }
+    resident: { color:'var(--marigold)',  fg:'#171717', icon:'<path d="M 228 0 C 172.772 0 128 44.772 128 100 L 128 0 L 0 0 L 0 28 C 0 83.228 44.772 128 100 128 L 0 128 L 0 256 L 28 256 C 83.228 256 128 211.228 128 156 L 128 256 L 256 256 L 256 228 C 256 172.772 211.228 128 156 128 L 256 128 L 256 0 Z"/>' }
   };
 
   function catChip(cat) {
@@ -695,13 +695,16 @@
     'elephant': 'A roundabout that gave its name to a whole quarter, rebuilt more times than almost anywhere else in London.',
     'eltham': 'A medieval royal palace and an Art Deco mansion sit streets apart, both stranger than the suburb around them.',
     'forest hill': 'Steep streets above the Honor Oak ridge, anchored by a museum built on the tea trade and its odd collections.',
+    'gipsy hill': 'A steep, leafy stretch between Dulwich and Crystal Palace, named for the Romani camps once recorded on its common land.',
     'greenwich': 'The Old Royal Naval College, the meridian line and a tea clipper in dry dock &mdash; UNESCO’s stretch of the river.',
+    'herne hill': 'Terraced Victorian streets around Brockwell Park, home to one of the oldest cycling tracks still in use anywhere in the world.',
     'honor oak': 'A hilltop park with a history of mass trespass, ringed by streets that grew up around the railway.',
     'lee': 'A quiet suburb between Lewisham and Eltham, mostly known for who used to live there rather than what still stands.',
     'lewisham': 'The borough’s own high street and transport hub, rebuilt hard after the Blitz and again more recently.',
     'new cross': 'Goldsmiths’ postcode &mdash; squat culture, music history and a fire that changed British race relations.',
     'nunhead': 'One of London’s Magnificent Seven cemeteries, wild enough in places to forget it’s inside the M25.',
     'peckham': 'A market street and a multi-storey car park turned rooftop bar &mdash; Camberwell’s louder, younger neighbour.',
+    'penge': 'A fashionable Victorian suburb in the shadow of the relocated Crystal Palace, briefly notorious for two 19th-century murders.',
     'rotherhithe': 'Where Brunel dug the first tunnel under a navigable river, and the Mayflower is said to have set sail.',
     'sydenham': 'The hill above Crystal Palace Park, still trading on the shadow of the palace that once stood there.',
     'walworth': 'Dense Victorian streets off the Old Kent Road &mdash; working-class London the guidebooks tend to skip.',
@@ -770,6 +773,15 @@
     document.getElementById('areaHeroTitle').textContent = areaTitle(area);
     document.getElementById('areaHeroDesc').innerHTML = AREA_DESCRIPTIONS[area.toLowerCase()] || '';
     document.getElementById('areaHeroPostcodes').innerHTML = postcodeBadgesHTML(areaPostcodes(area));
+    var info = (typeof AREA_INFO !== 'undefined' && AREA_INFO[area.toLowerCase()]) || null;
+    var infoEl = document.getElementById('areaHeroInfo');
+    if (info && (info.overview || info.history)) {
+      document.getElementById('areaHeroOverview').innerHTML = info.overview || '';
+      document.getElementById('areaHeroHistory').innerHTML = info.history || '';
+      infoEl.classList.remove('hidden');
+    } else {
+      infoEl.classList.add('hidden');
+    }
     areaHeroEl.classList.remove('hidden');
     homeIntroEl.classList.add('hidden');
     document.getElementById('homeHero').classList.add('hidden');
