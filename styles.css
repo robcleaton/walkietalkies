@@ -34,8 +34,12 @@
   .num{ font-variant-numeric:tabular-nums; }
   .eyebrow{ font-family:"Azeret Mono", ui-monospace, monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; }
   .card-shadow{ box-shadow:var(--shadow); }
+  /* No border-radius override here — that used to hard-code a 3px radius
+     on every focused control, flattening pill/circle shapes (the search
+     box, icon buttons, chips) into a squared-off corner on focus. The
+     outline now just follows whatever radius the element already has. */
   a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, [tabindex]:focus-visible{
-    outline:2px solid var(--plaque); outline-offset:2px; border-radius:3px;
+    outline:2px solid var(--plaque); outline-offset:2px;
   }
 
   /* Masthead: stays put on scroll, content scrolls underneath it */
