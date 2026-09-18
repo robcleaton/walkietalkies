@@ -1993,5 +1993,77 @@
 
     { id:'william-booth-memorial-college', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/William_Booth_Memorial_Training_College%2C_Champion_Park_SE5_-_geograph.org.uk_-_1312917.jpg/330px-William_Booth_Memorial_Training_College%2C_Champion_Park_SE5_-_geograph.org.uk_-_1312917.jpg', name:'William Booth Memorial Training College', area:'Camberwell', pc:'SE5', cat:'grand', year:1932, era:'Completed 1932',
       lat:51.4675, lon:-0.0878, addr:'Champion Park, SE5',
-      text:'The Salvation Army\'s officer training college was completed in 1932 to a design by Sir Giles Gilbert Scott, the architect also responsible for Battersea Power Station and the red telephone box. Its tall brick tower is a Camberwell landmark.' }
+      text:'The Salvation Army\'s officer training college was completed in 1932 to a design by Sir Giles Gilbert Scott, the architect also responsible for Battersea Power Station and the red telephone box. Its tall brick tower is a Camberwell landmark.' },
+
+    { id:'andrew-bonar-law-penge', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Bonar_Law_1923_portrait_by_Walter_Stoneman_%283x4_cropped%29.jpg/330px-Bonar_Law_1923_portrait_by_Walter_Stoneman_%283x4_cropped%29.jpg', name:'Andrew Bonar Law', area:'Penge', pc:'SE20', cat:'resident', year:1858, era:'Lived on Oakfield Road',
+      lat:51.415, lon:-0.0612, addr:'Oakfield Road, SE20',
+      text:'Andrew Bonar Law, who served as Prime Minister for just over seven months in 1922&ndash;23, the shortest premiership of the 20th century, lived on Oakfield Road in Penge earlier in his career.' },
+
+    { id:'central-hill-estate', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Central_Hill_estate_%E2%80%93_estate_plan_-_geograph.org.uk_-_7224911.jpg/330px-Central_Hill_estate_%E2%80%93_estate_plan_-_geograph.org.uk_-_7224911.jpg', name:'Central Hill Estate', area:'Gipsy Hill', pc:'SE19', cat:'grand', year:1974, era:'Built 1967&ndash;74',
+      lat:51.421, lon:-0.0886, addr:'Central Hill, SE19',
+      text:'Designed by Rosemary Stjernstedt and Roger Westman for the Greater London Council and built between 1967 and 1974, the low-rise, terraced Central Hill Estate follows the steep contours of the hillside and is regarded as one of the finest examples of the era\'s socially-minded council housing.' },
+
+    { id:'christ-church-gipsy-hill', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Christ_Church%2C_Gipsy_Hill_-_geograph.org.uk_-_2248238.jpg/330px-Christ_Church%2C_Gipsy_Hill_-_geograph.org.uk_-_2248238.jpg', name:'Christ Church, Gipsy Hill', area:'Gipsy Hill', pc:'SE19', cat:'grand', year:1867, era:'Consecrated 1867, tower survives from a 1982 fire',
+      lat:51.4223, lon:-0.0835, addr:'Highland Road, SE19',
+      text:'Christ Church was consecrated in 1867, one of the first buildings put up on Gipsy Hill after the Crystal Palace relocated nearby. A fire in 1982 destroyed most of the Victorian building, leaving only its tower standing; the tower was later converted into a private dwelling, and a new church was built alongside it in 1987.' },
+
+    { id:'crystal-palace-transmitter', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/View_of_the_Crystal_Palace_TV_transmitter_from_Crystal_Palace_Park_%5E4_-_geograph.org.uk_-_4491253.jpg/330px-View_of_the_Crystal_Palace_TV_transmitter_from_Crystal_Palace_Park_%5E4_-_geograph.org.uk_-_4491253.jpg', name:'Crystal Palace Transmitter', area:'Crystal Palace', pc:'SE19', cat:'works', year:1956, era:'Completed 1956',
+      lat:51.424, lon:-0.0749, addr:'Crystal Palace Park, SE19',
+      text:'Completed in 1956, the 219-metre Crystal Palace Transmitter became the tallest structure in London on completion and remains the fourth tallest in the city, broadcasting television and radio signals across the capital.' },
+
+    { id:'dadabhai-naoroji-penge', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Dadabhai_Naoroji_1889.jpg/330px-Dadabhai_Naoroji_1889.jpg', name:'Dadabhai Naoroji', area:'Penge', pc:'SE20', cat:'resident', year:1897, era:'Lived here 1897&ndash;1904/5',
+      lat:51.4147, lon:-0.0673, addr:'72 Anerley Park, SE20',
+      text:'Dadabhai Naoroji, the Indian independence campaigner who in 1892 became the first Asian elected to the British Parliament, lived at 72 Anerley Park from 1897 until around 1904/5.' },
+
+    { id:'emile-zola-crystal-palace', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Nadar_%28atelier_de%29_-_Emile_Zola%2C_13-556535.jpg/330px-Nadar_%28atelier_de%29_-_Emile_Zola%2C_13-556535.jpg', name:'Émile Zola', area:'Crystal Palace', pc:'SE19', cat:'resident', year:1898, era:'Exiled here, October 1898 &ndash; June 1899',
+      lat:51.4164, lon:-0.0739, addr:'Church Road, SE19',
+      text:'The French novelist Émile Zola fled to England in 1898 after his open letter \'J\'Accuse...!\' in defence of the wrongly convicted Alfred Dreyfus left him facing prosecution at home. He spent part of his exile at the Queen\'s Hotel on Church Road, from October 1898 until June 1899.' },
+
+    { id:'errol-brown', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Plaque_to_Errol_Brown_lead_singer_of_Hot_Chocolate_-_geograph.org.uk_-_7650697.jpg/330px-Plaque_to_Errol_Brown_lead_singer_of_Hot_Chocolate_-_geograph.org.uk_-_7650697.jpg', name:'Errol Brown', area:'Gipsy Hill', pc:'SE19', cat:'resident', year:1970, era:'Lived on Alexandra Drive',
+      lat:51.4245, lon:-0.084, addr:'Alexandra Drive, SE19',
+      text:'Errol Brown, lead singer and co-founder of Hot Chocolate, lived on Alexandra Drive in Gipsy Hill. The band\'s run of hits through the 1970s and 80s, including \'You Sexy Thing\', made them one of the most consistently successful British acts of the era.' },
+
+    { id:'helena-normanton', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Photograph_of_Helena_Normanton_c._1930_%2822770439042%29.jpg/330px-Photograph_of_Helena_Normanton_c._1930_%2822770439042%29.jpg', name:'Helena Normanton', area:'Penge', pc:'SE20', cat:'resident', year:1922, era:'First woman barrister in the UK, called to the bar 1922',
+      lat:51.4138, lon:-0.0517, addr:'Penge, SE20',
+      text:'Helena Normanton, who in 1922 became the first woman to practise as a barrister in England, and later the first female King\'s Counsel, grew up in Penge.' },
+
+    { id:'ira-aldridge', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Ira_Aldridge_%281807-1867%29%2C_in_the_character_of_Othello%2C_Attributed_to_James_Northcote_%281746-1831%29.jpg/330px-Ira_Aldridge_%281807-1867%29%2C_in_the_character_of_Othello%2C_Attributed_to_James_Northcote_%281746-1831%29.jpg', name:'Ira Aldridge', area:'Crystal Palace', pc:'SE19', cat:'resident', year:1867, era:'Lived on Hamlet Road',
+      lat:51.415, lon:-0.0745, addr:'Hamlet Road, SE19',
+      text:'The African-American Shakespearean actor Ira Aldridge, celebrated across Europe for his Othello and one of the first Black actors to achieve major success on the British stage, lived on Hamlet Road in Upper Norwood.' },
+
+    { id:'lee-rigby-memorial', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Floral_tributes_to_Drummer_Lee_Rigby_near_the_Royal_Artillery_Barracks_-_geograph.org.uk_-_3481432.jpg/330px-Floral_tributes_to_Drummer_Lee_Rigby_near_the_Royal_Artillery_Barracks_-_geograph.org.uk_-_3481432.jpg', name:'Lee Rigby', area:'Woolwich', pc:'SE18', cat:'memory', year:2013, era:'22 May 2013',
+      lat:51.4839, lon:0.0533, addr:'near Royal Artillery Barracks, SE18',
+      text:'On 22 May 2013, off-duty soldier Lee Rigby was murdered near the Royal Artillery Barracks in a terrorist attack that shocked the country. A permanent memorial to him was later installed in Woolwich.' },
+
+    { id:'joseph-paxton-crystal-palace', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Joseph_Paxton_by_Maull_%26_Co%2C_c1860s.jpg/330px-Joseph_Paxton_by_Maull_%26_Co%2C_c1860s.jpg', name:'Sir Joseph Paxton', area:'Crystal Palace', pc:'SE26', cat:'resident', year:1854, era:'Lived here after the Palace moved, from 1854',
+      lat:51.4275, lon:-0.0578, addr:'Westwood Hill, SE26',
+      text:'Sir Joseph Paxton, designer of the Crystal Palace for the 1851 Great Exhibition, lived at Rockhills on Westwood Hill after the building was re-erected on Sydenham Hill in 1854, close to the structure that gave the area its name.' },
+
+    { id:'garrison-church-st-george', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/2018_Woolwich%2C_St_George%27s_Garrison_Church.jpg/330px-2018_Woolwich%2C_St_George%27s_Garrison_Church.jpg', name:'St George\'s Garrison Church', area:'Woolwich', pc:'SE18', cat:'memory', year:1944, era:'Built 1862&ndash;63, bombed 1944',
+      lat:51.4848, lon:0.0625, addr:'Grand Depot Road, SE18',
+      text:'Built in 1862&ndash;63 for the Woolwich Royal Artillery garrison, St George\'s was gutted by a V-1 flying bomb on 13 July 1944. Its roofless brick shell, with surviving mosaics and memorials, has since been restored as a public ruin and memorial garden.' },
+
+    { id:'thames-barrier', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Zephyr%2C_Thames_Barrier%2C_Woolwich_Reach%2C_River_Thames%2C_Tall_Ships_Festivals_2017%2C_London_%2833997901316%29.jpg/330px-Zephyr%2C_Thames_Barrier%2C_Woolwich_Reach%2C_River_Thames%2C_Tall_Ships_Festivals_2017%2C_London_%2833997901316%29.jpg', name:'Thames Barrier', area:'Woolwich', pc:'SE18', cat:'works', year:1984, era:'Officially opened 8 May 1984',
+      lat:51.4969, lon:0.0373, addr:'Woolwich Reach, SE18',
+      text:'The Thames Barrier, spanning 520 metres across the river near Woolwich, was officially opened by the Queen on 8 May 1984 after eight years of construction. It remains one of the largest movable flood barriers in the world, protecting central London from tidal surges.' },
+
+    { id:'crooked-billet-penge', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Crooked_Billet%2C_Penge%2C_SE20.jpg/330px-Crooked_Billet%2C_Penge%2C_SE20.jpg', name:'The Crooked Billet', area:'Penge', pc:'SE20', cat:'pub', year:1601, era:'Documented from 1601',
+      lat:51.416, lon:-0.0532, addr:'99 High Street, SE20',
+      text:'The Crooked Billet is first documented in 1601, making it one of the oldest recorded pubs in the area. It was rebuilt in the 19th century after the 1827 Penge Inclosure Act moved it from its original spot on the green.' },
+
+    { id:'crystal-palace-dinosaurs', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Dinosaurs%2C_Crystal_Palace_Park_-_geograph.org.uk_-_2118137.jpg/330px-Dinosaurs%2C_Crystal_Palace_Park_-_geograph.org.uk_-_2118137.jpg', name:'The Crystal Palace Dinosaurs', area:'Crystal Palace', pc:'SE20', cat:'art', year:1854, era:'Unveiled 1854',
+      lat:51.4214, lon:-0.07, addr:'Crystal Palace Park, SE20',
+      text:'Sculpted by Benjamin Waterhouse Hawkins under the guidance of Sir Richard Owen and unveiled in 1854, the Crystal Palace Dinosaurs were the world\'s first dinosaur sculptures, decades before palaeontology understood what these animals really looked like. Now Grade I listed, they still stand in the park today, endearingly inaccurate.' },
+
+    { id:'rotunda-woolwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Woolwich_Rotunda.jpg/330px-Woolwich_Rotunda.jpg', name:'The Rotunda', area:'Woolwich', pc:'SE18', cat:'grand', year:1820, era:'Rebuilt at Woolwich 1818&ndash;20',
+      lat:51.4805, lon:0.053, addr:'Repository Road, SE18',
+      text:'John Nash\'s Rotunda began life in 1814 as a temporary ballroom in the gardens of Carlton House for the Prince Regent. In 1818 it was dismantled and rebuilt at Woolwich as a permanent structure, reopening in 1820 as a museum of the Royal Artillery, a role it held until the collection moved to Firepower in 2001.' },
+
+    { id:'thomas-crapper-penge', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Thomas_Crapper.jpg/330px-Thomas_Crapper.jpg', name:'Thomas Crapper', area:'Penge', pc:'SE20', cat:'resident', year:1910, era:'Retired here until his death in 1910',
+      lat:null, lon:null, addr:'Penge, SE20',
+      text:'The Victorian sanitary engineer Thomas Crapper, who popularised and improved the flush toilet through his Chelsea showroom, retired to a house in Penge, where he lived out his final years until his death in 1910.' },
+
+    { id:'woolwich-dockyard', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Woolwich_Dockyard%2C_1789.jpg/330px-Woolwich_Dockyard%2C_1789.jpg', name:'Woolwich Dockyard', area:'Woolwich', pc:'SE18', cat:'maritime', year:1512, era:'Operated 1512&ndash;1869',
+      lat:51.4937, lon:0.0533, addr:'Woolwich, SE18',
+      text:'Henry VIII founded Woolwich Dockyard in 1512 to build his flagship, the Henry Grace &agrave; Dieu. It went on to launch warships for the Royal Navy for over three centuries before closing in 1869, one of the oldest and longest-serving of England\'s royal dockyards.' }
   ];
