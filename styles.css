@@ -162,6 +162,18 @@
     line-height:clamp(44px, 17vw - 36px, 150px);
   }
 
+  /* Header icons follow the active area's ink colour, the same colour as
+     the area title, instead of the fixed light/dark theme colours —
+     --area-ink is only set on the root while an area page is open (see
+     applyAreaFilter / clearAreaFilter in app.js), so these rules fall
+     back to the normal theme colours everywhere else. */
+  header #searchToggle, header #themeToggle, header #routeHeaderBtn{
+    color:var(--area-ink, var(--muted));
+  }
+  header #searchToggle:hover, header #themeToggle:hover, header #routeHeaderBtn:hover{
+    color:var(--area-ink, var(--ink));
+  }
+
   /* Your route: branded orange background, with the panel's own text,
      rules and tiles re-tuned to read against it rather than the theme */
   #routePanel{
