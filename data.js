@@ -2065,5 +2065,53 @@
 
     { id:'woolwich-dockyard', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Woolwich_Dockyard%2C_1789.jpg/330px-Woolwich_Dockyard%2C_1789.jpg', name:'Woolwich Dockyard', area:'Woolwich', pc:'SE18', cat:'maritime', year:1512, era:'Operated 1512&ndash;1869',
       lat:51.4937, lon:0.0533, addr:'Woolwich, SE18',
-      text:'Henry VIII founded Woolwich Dockyard in 1512 to build his flagship, the Henry Grace &agrave; Dieu. It went on to launch warships for the Royal Navy for over three centuries before closing in 1869, one of the oldest and longest-serving of England\'s royal dockyards.' }
+      text:'Henry VIII founded Woolwich Dockyard in 1512 to build his flagship, the Henry Grace &agrave; Dieu. It went on to launch warships for the Royal Navy for over three centuries before closing in 1869, one of the oldest and longest-serving of England\'s royal dockyards.' },
+
+    { id:'bon-scott-east-dulwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/67_Overhill_Road_East_Dulwich.JPG/330px-67_Overhill_Road_East_Dulwich.JPG', name:'Bon Scott', area:'East Dulwich', pc:'SE22', cat:'memory', year:1980, era:'Died 19 February 1980',
+      lat:51.4455, lon:-0.0696, addr:'67 Overhill Road, SE22',
+      text:'AC/DC frontman Bon Scott died on 19 February 1980 after a night out, found unresponsive in a car outside 67 Overhill Road in East Dulwich. His death, days before the band began recording what became Back in Black, remains one of rock music\'s most mourned losses.' },
+
+    { id:'brockley-ladywell-cemetery', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Ladywell_and_Brockley_cemetery_-_geograph.org.uk_-_1290119.jpg/330px-Ladywell_and_Brockley_cemetery_-_geograph.org.uk_-_1290119.jpg', name:'Brockley and Ladywell Cemeteries', area:'Brockley', pc:'SE4', cat:'green', year:1858, era:'Opened 1858',
+      lat:51.457, lon:-0.0311, addr:'Ivy Road, SE4',
+      text:'Opened in 1858 as two adjoining Victorian cemeteries, Brockley and Ladywell Cemeteries became the resting place for tens of thousands of south Londoners. Today the site is also managed as a nature reserve, its older, overgrown sections left to grow wild among the gravestones.' },
+
+    { id:'charles-stewart-parnell-brockley', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Charles_Stewart_Parnell_-_Brady-Handy.jpg/330px-Charles_Stewart_Parnell_-_Brady-Handy.jpg', name:'Charles Stewart Parnell', area:'Brockley', pc:'SE4', cat:'resident', year:1880, era:'Lived on Tressillian Road',
+      lat:51.4623, lon:-0.0291, addr:'112 Tressillian Road, SE4',
+      text:'The Irish nationalist leader Charles Stewart Parnell, who dominated Irish politics in the campaign for Home Rule until scandal ended his career in 1891, lived for a time at 112 Tressillian Road in Brockley.' },
+
+    { id:'college-road-tollgate', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/The_College_Road_Tollgate_-_geograph.org.uk_-_5675890.jpg/330px-The_College_Road_Tollgate_-_geograph.org.uk_-_5675890.jpg', name:'College Road Tollgate', area:'Dulwich', pc:'SE21', cat:'grand', year:1789, era:'In operation since 1789',
+      lat:51.4334, lon:-0.0792, addr:'College Road, SE21',
+      text:'Established in 1789 to fund the upkeep of College Road, this tollgate is the last one still in daily operation on a public road anywhere in London, still collecting a toll from drivers who use the private road it guards.' },
+
+    { id:'dulwich-picture-gallery', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Dulwich_Picture_Gallery%2C_Gallery_Road_-_geograph.org.uk_-_4229615.jpg/330px-Dulwich_Picture_Gallery%2C_Gallery_Road_-_geograph.org.uk_-_4229615.jpg', name:'Dulwich Picture Gallery', area:'Dulwich', pc:'SE21', cat:'culture', year:1814, era:'Built 1811&ndash;14',
+      lat:51.446, lon:-0.0863, addr:'Gallery Road, SE21',
+      text:'Designed by Sir John Soane and completed in 1814, Dulwich Picture Gallery is generally recognised as England\'s first purpose-built public art gallery. It was built to house a collection originally assembled for the King of Poland and also contains, at Soane\'s design, a mausoleum for the gallery\'s founders.' },
+
+    { id:'edward-alleyn', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Edward_alleyn.jpg/330px-Edward_alleyn.jpg', name:'Edward Alleyn', area:'Dulwich', pc:'SE21', cat:'resident', year:1619, era:'Founded the College of God\'s Gift, 1619',
+      lat:51.4386, lon:-0.0853, addr:'Dulwich College, SE21',
+      text:'The Elizabethan actor and theatrical entrepreneur Edward Alleyn bought the Manor of Dulwich in 1605 with the fortune he made running the Rose and Fortune playhouses. In 1619 he founded the College of God\'s Gift here, a charitable foundation that grew into Dulwich College and endowed the wider estate that still shapes the area today.' },
+
+    { id:'hilly-fields', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Stone_circle_on_Hilly_Fields_-_geograph.org.uk_-_2456768.jpg/330px-Stone_circle_on_Hilly_Fields_-_geograph.org.uk_-_2456768.jpg', name:'Hilly Fields', area:'Brockley', pc:'SE4', cat:'green', year:1896, era:'Saved from development and opened 1896',
+      lat:51.46, lon:-0.0255, addr:'Hilly Fields, SE4',
+      text:'Hilly Fields was saved from housing development by a local campaign in the 1880s and 90s and opened as a public park in 1896. Its high ground, once used for an anti-aircraft gun emplacement in the Second World War, still gives one of south-east London\'s best skyline views.' },
+
+    { id:'royal-herbert-hospital', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/London%2C_Shooters_Hill%2C_Herbert_Hospital_03.jpg/330px-London%2C_Shooters_Hill%2C_Herbert_Hospital_03.jpg', name:'Royal Herbert Hospital', area:'Shooter\'s Hill', pc:'SE18', cat:'grand', year:1865, era:'Opened 1865',
+      lat:51.4708, lon:0.0528, addr:'Shooter\'s Hill, SE18',
+      text:'Built in the wake of the Crimean War and influenced by Florence Nightingale\'s ideas on hospital design and ventilation, the Royal Herbert Hospital opened in 1865 as a military hospital. Now Grade II listed and converted to housing, it was one of the first hospitals designed on the pavilion principle she championed.' },
+
+    { id:'samuel-matthews-dulwich-hermit', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Samuel_Mathews%2C_a_hermit._Engraving_by_J._Greig%2C_1803%2C_after_Wellcome_V0007193.jpg/330px-Samuel_Mathews%2C_a_hermit._Engraving_by_J._Greig%2C_1803%2C_after_Wellcome_V0007193.jpg', name:'Samuel Matthews, the Dulwich Hermit', area:'Dulwich', pc:'SE21', cat:'memory', year:1803, era:'Murdered 1803',
+      lat:51.4304, lon:-0.0774, addr:'Dulwich Wood, SE21',
+      text:'Samuel Matthews lived alone in a hut in Dulwich Wood, earning a reputation locally as the \'Dulwich Hermit\'. He was murdered there in 1803, and his story survives as one of the area\'s stranger footnotes; he was buried in the Old Burial Ground on Dulwich Village.' },
+
+    { id:'severndroog-castle', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/2016_Severndroog_Castle_02.jpg/330px-2016_Severndroog_Castle_02.jpg', name:'Severndroog Castle', area:'Shooter\'s Hill', pc:'SE18', cat:'grand', year:1784, era:'Built 1784',
+      lat:51.4666, lon:0.06, addr:'Castle Wood, Shooter\'s Hill, SE18',
+      text:'This triangular Gothic folly was built in 1784 by Lady James in memory of her husband, Commodore Sir William James, commemorating his 1755 storming of the pirate fortress of Suvarnadurg off the coast of India. Restored after decades of decay, it now houses a tea room with panoramic views across seven counties.' },
+
+    { id:'john-stainer-brockley', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/SirJohnStainer.JPG/330px-SirJohnStainer.JPG', name:'Sir John Stainer', area:'Brockley', pc:'SE4', cat:'resident', year:1840, era:'Composer, 1840&ndash;1901',
+      lat:51.4578, lon:-0.0361, addr:'Brockley, SE4',
+      text:'The composer and organist Sir John Stainer, best remembered for his oratorio The Crucifixion, a staple of English church choirs ever since, lived in Brockley during part of his career as organist of St Paul\'s Cathedral.' },
+
+    { id:'the-bull-shooters-hill', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/The_Bull_public_house%2C_Shooters_Hill_-_geograph.org.uk_-_1133968.jpg/330px-The_Bull_public_house%2C_Shooters_Hill_-_geograph.org.uk_-_1133968.jpg', name:'The Bull', area:'Shooter\'s Hill', pc:'SE18', cat:'pub', year:1741, era:'A pub on this site since the 1740s',
+      lat:51.4693, lon:0.0666, addr:'Shrewsbury Lane, SE18',
+      text:'A sign on the wall records a public house standing on this corner since 1741, on what was then a notoriously dangerous stretch of the old Dover Road, a coaching route so plagued by highwaymen that it gave Shooter\'s Hill its name. The present Victorian building stands close to the Bronze Age burial mound known as Shrewsbury Barrow.' }
   ];
