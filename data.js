@@ -1863,10 +1863,6 @@
       lat:51.4933, lon:-0.0638, addr:'Blue Anchor Lane, SE16',
       text:'Bryan Donkin, John Hall and John Gamble set up a canning works on Blue Anchor Lane in 1812, founding what\'s considered the world\'s first commercial food-canning business.' },
 
-    { id:'edward-turner-motorcycle', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Edward_Turner_Blue_Plaque_Unveiling1.jpg/330px-Edward_Turner_Blue_Plaque_Unveiling1.jpg', name:'[DUPLICATE &mdash; SAFE TO DELETE] Edward Turner', area:'Peckham', pc:'SE15', cat:'plaque', year:2009, era:'Blue plaque unveiled 2009',
-      lat:51.4656, lon:-0.0653, addr:'8 Philip Walk, SE15',
-      text:'Duplicate of the original Edward Turner blue plaque entry. Its unique detail (Chepstow Motors, 2009 unveiling) has been merged into the original &mdash; safe to delete this page.' },
-
     { id:'gary-oldman', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Gary_Oldman_%2813925515511%29_%28cropped%29.jpg/330px-Gary_Oldman_%2813925515511%29_%28cropped%29.jpg', name:'Gary Oldman', area:'New Cross', pc:'SE14', cat:'resident', year:1958, era:'Born 1958',
       lat:null, lon:null, addr:'New Cross, SE14',
       text:'Gary Oldman was born in New Cross in 1958 and attended Monson Primary School in the area. His breakout film as writer and star, Nil by Mouth (1997), is loosely based on his own upbringing in south-east London and was largely filmed around here.' },
@@ -1922,10 +1918,6 @@
     { id:'thomas-coram', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Hogarth_coram.jpg/330px-Hogarth_coram.jpg', name:'Thomas Coram', area:'Rotherhithe', pc:'SE16', cat:'resident', year:1739, era:'Campaigned from Rotherhithe; Foundling Hospital chartered 1739',
       lat:null, lon:null, addr:'Rotherhithe, SE16',
       text:'The retired sea captain and philanthropist Thomas Coram settled in Rotherhithe, where he campaigned for years to establish a home for London\'s abandoned children. His efforts led to the Foundling Hospital, chartered in 1739.' },
-
-    { id:'william-blake-peckham-rye', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/William_Blake_by_Thomas_Phillips.jpg/330px-William_Blake_by_Thomas_Phillips.jpg', name:'[DUPLICATE &mdash; SAFE TO DELETE] William Blake\'s vision at Peckham Rye', area:'Peckham', pc:'SE15', cat:'memory', year:1767, era:'Vision in 1767, memorial mural added 1993',
-      lat:51.47, lon:-0.0694, addr:'Peckham Rye, SE15',
-      text:'Duplicate of the original "William Blake&rsquo;s vision" entry. Its unique detail (the 1993 Stan Peskett mural near Goose Green) has been merged into the original &mdash; safe to delete this page.' },
 
     { id:'austin-osman-spare', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Austin_Osman_Spare.jpg/330px-Austin_Osman_Spare.jpg', name:'Austin Osman Spare', area:'Elephant &amp; Castle', pc:'SE17', cat:'resident', year:1904, era:'First public exhibition 1904',
       lat:51.4912, lon:-0.0976, addr:'Walworth Road, SE17',
