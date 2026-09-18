@@ -921,7 +921,7 @@
 
     { id:'david-jones-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/David_jones.jpg/330px-David_jones.jpg', name:'David Jones', area:'Brockley', pc:'SE4', cat:'plaque', year:1895, era:'Maroon plaque, unveiled 2 December 2015',
       lat:51.4635, lon:-0.0295, addr:'67 Arabin Road, SE4',
-      text:'Born here in 1895, Jones served longer at the front than almost any other Great War poet, was wounded at Mametz Wood, and later wrote In Parenthesis (1937) &mdash; a war memoir T. S. Eliot called &ldquo;a work of genius.&rdquo;\n\nHe grew up on Howson Road, the son of a printer, and some of his paintings and illustrations depict his family&rsquo;s Brockley house and garden directly.\n\nHe is buried in Brockley &amp; Ladywell Cemeteries, already in this gazetteer; the Friends of that cemetery led the campaign and crowdfunding for his plaque.' },
+      text:'Born here in 1895, Jones served longer at the front than almost any other Great War poet, was wounded at Mametz Wood, and later wrote In Parenthesis (1937) &mdash; a war memoir T. S. Eliot called "a work of genius."\n\nHe grew up on Howson Road, the son of a printer, and some of his paintings and illustrations depict his family\'s Brockley house and garden directly.\n\nHe is buried in Brockley &amp; Ladywell Cemeteries, already in this gazetteer; the Friends of that cemetery led the campaign and crowdfunding for his plaque.' },
 
     { id:'edgar-wallace-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Bundesarchiv_Bild_102-13109%2C_Edgar_Wallace.jpg/330px-Bundesarchiv_Bild_102-13109%2C_Edgar_Wallace.jpg', name:'Edgar Wallace', area:'Lewisham', pc:'SE4', cat:'plaque', year:1875, era:'Blue plaque',
       lat:51.4638, lon:-0.0267, addr:'6 Tressillian Crescent, SE4 1QJ',
@@ -1701,5 +1701,57 @@
 
     { id:'walworth-town-hall', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Walworth_Town_Hall.jpg/330px-Walworth_Town_Hall.jpg', name:'Walworth Town Hall', area:'Walworth', pc:'SE17', cat:'grand', year:2013, era:'Fire 2013; on Heritage at Risk Register',
       lat:null, lon:null, addr:'',
-      text:'Originally the Vestry Hall of St Mary, Newington, it became the headquarters of the Metropolitan Borough of Southwark and was renamed Southwark Town Hall in 1900, reverting to Walworth Town Hall after the enlarged London Borough of Southwark was formed in 1965. From 2006 it housed the Cuming Museum, until a serious fire badly damaged the roof in March 2013, after which the building was added to the Heritage at Risk Register.' }
+      text:'Originally the Vestry Hall of St Mary, Newington, it became the headquarters of the Metropolitan Borough of Southwark and was renamed Southwark Town Hall in 1900, reverting to Walworth Town Hall after the enlarged London Borough of Southwark was formed in 1965. From 2006 it housed the Cuming Museum, until a serious fire badly damaged the roof in March 2013, after which the building was added to the Heritage at Risk Register.' },
+
+    { id:'dacres-wood-nature-reserve', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Dacres_Wood_3.JPG/330px-Dacres_Wood_3.JPG', name:'Dacres Wood Nature Reserve', area:'Forest Hill', pc:'SE23', cat:'green', year:1836, era:'Nature reserve on the former Croydon Canal, drained 1836',
+      lat:51.432, lon:-0.0522, addr:'Dacres Road, SE23',
+      text:'A small nature reserve holding the last visible physical remains of the Croydon Canal &mdash; old ponds and retaining walls &mdash; on the route the canal followed before it was drained in 1836 to make way for the London and Croydon Railway.' },
+
+    { id:'desmond-dekker', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Desmond_Dekker_in_2005.jpg/330px-Desmond_Dekker_in_2005.jpg', name:'Desmond Dekker', area:'Honor Oak', pc:'SE23', cat:'resident', year:1963, era:'Lived here',
+      lat:51.4482, lon:-0.0478, addr:'Devonshire Road, Honor Oak',
+      text:'Ska and reggae musician Desmond Dekker lived on this stretch of Devonshire Road, towards Honor Oak.' },
+
+    { id:'e-w-swanton', img:'', name:'E. W. Swanton', area:'Forest Hill', pc:'SE23', cat:'resident', year:1907, era:'Born here 11 February 1907',
+      lat:null, lon:null, addr:'',
+      text:'Cricket journalist and broadcaster E. W. Swanton was born in Forest Hill on 11 February 1907, going on to become a leading voice in BBC cricket commentary for decades.' },
+
+    { id:'francis-rossi', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Status_Quo_-_2017215182037_2017-08-03_Wacken_-_Sven_-_1D_X_MK_II_-_0687_-_AK8I8353_%28cropped%29.jpg/330px-Status_Quo_-_2017215182037_2017-08-03_Wacken_-_Sven_-_1D_X_MK_II_-_0687_-_AK8I8353_%28cropped%29.jpg', name:'Francis Rossi', area:'Forest Hill', pc:'SE23', cat:'resident', year:1949, era:'Born here 29 May 1949',
+      lat:null, lon:null, addr:'',
+      text:'Francis Rossi, co-founder and lead guitarist of Status Quo, was born in Forest Hill on 29 May 1949.' },
+
+    { id:'hayley-squires', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Hayley_Squires_%28cropped%29.jpg/330px-Hayley_Squires_%28cropped%29.jpg', name:'Hayley Squires', area:'Forest Hill', pc:'SE23', cat:'resident', year:1988, era:'Born here 16 April 1988',
+      lat:null, lon:null, addr:'',
+      text:'Actress Hayley Squires, known for her role in the BBC drama Call the Midwife, was born in Forest Hill on 16 April 1988.' },
+
+    { id:'jon-robyns', img:'', name:'Jon Robyns', area:'Forest Hill', pc:'SE23', cat:'resident', year:2002, era:'Lived here early 2000s',
+      lat:51.4348, lon:-0.0556, addr:'Albion Villas Road, Forest Hill',
+      text:'Musical theatre actor Jon Robyns lived on Albion Villas Road in the early 2000s.' },
+
+    { id:'luke-pritchard', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/The_Kooks_2026.jpg/330px-The_Kooks_2026.jpg', name:'Luke Pritchard', area:'Forest Hill', pc:'SE23', cat:'resident', year:2006, era:'The Kooks&rsquo; breakout album, 2006',
+      lat:null, lon:null, addr:'',
+      text:'Luke Pritchard, lead singer of the band The Kooks, was born in Forest Hill.' },
+
+    { id:'michael-gambon-forest-hill', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Michael_Gambon_cropped.jpg/330px-Michael_Gambon_cropped.jpg', name:'Michael Gambon', area:'Forest Hill', pc:'SE23', cat:'resident', year:1960, era:'Lived here early&ndash;mid 1960s',
+      lat:51.4382, lon:-0.0601, addr:'Forest Croft, Forest Hill',
+      text:'Actor Michael Gambon lived at this art deco mansion block in the early to mid-1960s, decades before he took on the role of Albus Dumbledore in the Harry Potter films.' },
+
+    { id:'millie-my-boy-lollipop', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Millie_Small_%281964%29.jpg/330px-Millie_Small_%281964%29.jpg', name:'Millie', area:'Forest Hill', pc:'SE23', cat:'resident', year:1964, era:'Living here 1964',
+      lat:null, lon:null, addr:'',
+      text:'Jamaican singer Millie Small &mdash; known simply as Millie &mdash; was living in Forest Hill at the time of her 1964 hit &ldquo;My Boy Lollipop,&rdquo; one of the best-selling singles by a Jamaican artist.' },
+
+    { id:'rachael-wooding', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Rachael_Wooding_as_Rose_in_Standing_at_the_Skys_Edge.jpg/330px-Rachael_Wooding_as_Rose_in_Standing_at_the_Skys_Edge.jpg', name:'Rachael Wooding', area:'Forest Hill', pc:'SE23', cat:'resident', year:2002, era:'Lived here early 2000s',
+      lat:51.4348, lon:-0.0556, addr:'Albion Villas Road, Forest Hill',
+      text:'Musical theatre performer Rachael Wooding lived on Albion Villas Road in the early 2000s.' },
+
+    { id:'raymond-chandler', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Raymond_Chandler_%28Lady_in_the_Lake_portrait%2C_1943%29.jpg/330px-Raymond_Chandler_%28Lady_in_the_Lake_portrait%2C_1943%29.jpg', name:'Raymond Chandler', area:'Forest Hill', pc:'SE23', cat:'resident', year:1909, era:'Lived here 1909&ndash;1912',
+      lat:51.4394, lon:-0.0537, addr:'138 Devonshire Road, SE23',
+      text:'Mystery writer Raymond Chandler lived here with his mother from 1909 until 1912, when he returned to America. He would not publish his first novel, The Big Sleep, for another twenty-seven years.' },
+
+    { id:'timothy-spall', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Timothy_Spall_World_Premiere_The_Party_Berlinale_2017_02.jpg/330px-Timothy_Spall_World_Premiere_The_Party_Berlinale_2017_02.jpg', name:'Timothy Spall', area:'Honor Oak', pc:'SE23', cat:'resident', year:1957, era:'Resident of Honor Oak',
+      lat:null, lon:null, addr:'',
+      text:'Actor Timothy Spall was a resident of Honor Oak.' },
+
+    { id:'vince-hilaire', img:'', name:'Vince Hilaire', area:'Forest Hill', pc:'SE23', cat:'resident', year:1959, era:'Born here 10 October 1959',
+      lat:null, lon:null, addr:'',
+      text:'Footballer Vince Hilaire was born in Forest Hill on 10 October 1959, and went on to play for Crystal Palace.' }
   ];
