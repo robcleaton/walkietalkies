@@ -1929,5 +1929,69 @@
 
     { id:'william-blake-peckham-rye', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/William_Blake_by_Thomas_Phillips.jpg/330px-William_Blake_by_Thomas_Phillips.jpg', name:'William Blake\'s vision at Peckham Rye', area:'Peckham', pc:'SE15', cat:'memory', year:1767, era:'Vision in 1767, memorial mural added 1993',
       lat:51.47, lon:-0.0694, addr:'Peckham Rye, SE15',
-      text:'As a boy in 1767, William Blake later recalled wandering across Peckham Rye and seeing a tree filled with angels, "bespangling every bough like stars". In 1993, the Dulwich Festival commissioned artist Stan Peskett to paint a mural of the vision near the Goose Green playground in East Dulwich.' }
+      text:'As a boy in 1767, William Blake later recalled wandering across Peckham Rye and seeing a tree filled with angels, "bespangling every bough like stars". In 1993, the Dulwich Festival commissioned artist Stan Peskett to paint a mural of the vision near the Goose Green playground in East Dulwich.' },
+
+    { id:'austin-osman-spare', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Austin_Osman_Spare.jpg/330px-Austin_Osman_Spare.jpg', name:'Austin Osman Spare', area:'Elephant &amp; Castle', pc:'SE17', cat:'resident', year:1904, era:'First public exhibition 1904',
+      lat:51.4912, lon:-0.0976, addr:'Walworth Road, SE17',
+      text:'The self-taught artist and occultist Austin Osman Spare, later celebrated for his automatic drawing and sigil magic, held his first public exhibition in 1904 at Newington Public Library, not far from the flat above a Walworth Road shop where he later lived.' },
+
+    { id:'brockwell-lido', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Brockwell_Lido_%281%29.jpg/330px-Brockwell_Lido_%281%29.jpg', name:'Brockwell Lido', area:'Herne Hill', pc:'SE24', cat:'green', year:1937, era:'Opened 1937',
+      lat:51.453, lon:-0.1065, addr:'Dulwich Road, SE24',
+      text:'Brockwell Lido opened in 1937 as one of a wave of open-air swimming pools built across London in the interwar years. It survived a threatened closure in the 1990s and remains a popular outdoor pool today, now Grade II listed.' },
+
+    { id:'charles-haddon-spurgeon', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Charles_Haddon_Spurgeon_by_Alexander_Melville.jpg/330px-Charles_Haddon_Spurgeon_by_Alexander_Melville.jpg', name:'Charles Haddon Spurgeon', area:'Elephant &amp; Castle', pc:'SE1', cat:'resident', year:1861, era:'Preached here from 1861',
+      lat:51.4941, lon:-0.1013, addr:'Metropolitan Tabernacle, Elephant &amp; Castle, SE1',
+      text:'The celebrated Baptist preacher Charles Haddon Spurgeon moved his congregation to the newly built Metropolitan Tabernacle at Elephant and Castle in 1861, preaching to packed crowds there until his death in 1892.' },
+
+    { id:'frank-stubbs-vc', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Edward_Frank_Gillett%CB%90_Stubbs_has_his_hand_cut_off_%28Hutchinsons_Story_of_the_British_Nation%2C_1922%29.jpg/330px-Edward_Frank_Gillett%CB%90_Stubbs_has_his_hand_cut_off_%28Hutchinsons_Story_of_the_British_Nation%2C_1922%29.jpg', name:'Frank Stubbs', area:'Walworth', pc:'SE17', cat:'resident', year:1888, era:'Born 1888',
+      lat:51.4901, lon:-0.0907, addr:'Walworth, SE17',
+      text:'Frank Stubbs, born in Walworth in December 1888, was awarded the Victoria Cross for his bravery during the First World War, one of a number of VC recipients this corner of south London produced.' },
+
+    { id:'frankie-fraser', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Mad_Frankie_Fraser_outside_the_Repton_Boxing_club.jpg/330px-Mad_Frankie_Fraser_outside_the_Repton_Boxing_club.jpg', name:'Frankie Fraser', area:'Elephant &amp; Castle', pc:'SE17', cat:'resident', year:1923, era:'Born 1923',
+      lat:51.4903, lon:-0.097, addr:'Walworth Road, SE17',
+      text:'The gangster Frankie \'Mad Frankie\' Fraser, later notorious for his work as an enforcer for the Richardson gang, moved to Walworth Road at the age of five and became one of south London\'s most feared underworld figures.' },
+
+    { id:'herne-hill-velodrome', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Herne_Hill_Velodrome%2C_15_July_2012.jpg/330px-Herne_Hill_Velodrome%2C_15_July_2012.jpg', name:'Herne Hill Velodrome', area:'Herne Hill', pc:'SE24', cat:'grand', year:1891, era:'Built 1891; hosted the 1948 Olympics',
+      lat:51.4507, lon:-0.0918, addr:'Burbage Road, SE24',
+      text:'Herne Hill Velodrome opened in 1891 and went on to host the track cycling events of the 1948 London Olympics, making it one of the oldest cycling tracks in the world still in regular use.' },
+
+    { id:'joseph-chamberlain', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Joseph_Chamberlain_MP.png/330px-Joseph_Chamberlain_MP.png', name:'Joseph Chamberlain', area:'Camberwell', pc:'SE5', cat:'resident', year:1836, era:'Born 1836',
+      lat:51.4746, lon:-0.0925, addr:'Camberwell, SE5',
+      text:'The statesman Joseph Chamberlain, who went on to serve as Mayor of Birmingham and Colonial Secretary, was born in Camberwell in 1836, into a family of shoemakers and businessmen.' },
+
+    { id:'mark-ashton-lgsm', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Mark_Ashton_1986.png/330px-Mark_Ashton_1986.png', name:'Mark Ashton', area:'Elephant &amp; Castle', pc:'SE17', cat:'memory', year:1984, era:'Founded LGSM here, 1984',
+      lat:51.4928, lon:-0.0963, addr:'Heygate Estate, SE17',
+      text:'The activist Mark Ashton, living on the Heygate Estate, co-founded Lesbians and Gays Support the Miners in 1984, forging an alliance between the LGBT and mining communities later dramatised in the film Pride.' },
+
+    { id:'royal-surrey-gardens', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/In_honor_of_her_Majesty%27s_birthday._Under_the_immediate_patronage_of_the_Queen._Royal_zoological_gardens%2C_Surrey._On_Thursday%2C_May_24th.%2C_1838._The_first_ascent_of_the_great_Montgolfier_balloon_will_take_place_at..._-_btv1b8509522d.jpg/330px-In_honor_of_her_Majesty%27s_birthday._Under_the_immediate_patronage_of_the_Queen._Royal_zoological_gardens%2C_Surrey._On_Thursday%2C_May_24th.%2C_1838._The_first_ascent_of_the_great_Montgolfier_balloon_will_take_place_at..._-_btv1b8509522d.jpg', name:'Royal Surrey Zoological Gardens', area:'Walworth', pc:'SE17', cat:'green', year:1831, era:'Zoo and pleasure gardens, 1831&ndash;1856',
+      lat:51.4901, lon:-0.1041, addr:'Penton Place, SE17',
+      text:'The Surrey Zoological Gardens opened in 1831 around a vast conservatory said to be the largest glass building in England at the time. It drew huge crowds as a rival to London Zoo before closing in 1856, its animals sold off; the site later became the smaller public park now known as Pasley Park.' },
+
+    { id:'sam-mussabini', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Willie_Applegarth_and_Sam_Mussabini_1912.jpg/330px-Willie_Applegarth_and_Sam_Mussabini_1912.jpg', name:'Sam Mussabini', area:'Herne Hill', pc:'SE24', cat:'plaque', year:2012, era:'Blue plaque unveiled 2012',
+      lat:51.4519, lon:-0.0962, addr:'84 Burbage Road, SE24',
+      text:'The athletics coach Sam Mussabini trained Harold Abrahams to his 100m gold at the 1924 Paris Olympics, a story told in the film Chariots of Fire. A blue plaque was unveiled at his former home on Burbage Road in 2012 by Lord Terence Higgins and actor Ben Cross, who played Abrahams on screen.' },
+
+    { id:'sax-rohmer', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Sax_Rohmer_c._1929.jpg/330px-Sax_Rohmer_c._1929.jpg', name:'Sax Rohmer', area:'Herne Hill', pc:'SE24', cat:'plaque', year:1912, era:'Fu Manchu debuted 1912&ndash;13',
+      lat:51.4574, lon:-0.0953, addr:'51 Herne Hill, SE24',
+      text:'The writer Sax Rohmer, born Arthur Henry Sarsfield Ward, lived at 51 Herne Hill, now marked with a blue plaque. His serial The Mystery of Dr Fu-Manchu, first published in 1912&ndash;13, made him one of the best-selling thriller writers of the early 20th century.' },
+
+    { id:'syd-barrett-camberwell', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Pink_Floyd_1967_with_Syd_Barrett_%28higher_quality%29_%28headshot%29.jpg/330px-Pink_Floyd_1967_with_Syd_Barrett_%28higher_quality%29_%28headshot%29.jpg', name:'Syd Barrett', area:'Camberwell', pc:'SE5', cat:'resident', year:1964, era:'Studied here from 1964',
+      lat:51.4743, lon:-0.0802, addr:'Camberwell College of Arts, Peckham Road, SE5',
+      text:'Syd Barrett, founding member and guiding creative force of Pink Floyd, enrolled at Camberwell College of Arts in 1964, before the band\'s early success drew him away from painting and into psychedelic pop stardom.' },
+
+    { id:'hope-theatre-bankside', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Hope_playhouse_-_Hollar%27s_View_of_London_%281647%29.png/330px-Hope_playhouse_-_Hollar%27s_View_of_London_%281647%29.png', name:'The Hope Theatre', area:'Bankside', pc:'SE1', cat:'culture', year:1614, era:'Built 1613&ndash;14',
+      lat:51.5082, lon:-0.0991, addr:'Bankside, SE1',
+      text:'Built by the entrepreneur Philip Henslowe in 1613&ndash;14, the Hope was a dual-purpose Bankside venue: a playhouse by day and a bear- and bull-baiting arena by night, with a removable stage that could be cleared away between performances.' },
+
+    { id:'lakanal-house-fire', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Lakanal_House_Aug_2021_photo_1.jpg/330px-Lakanal_House_Aug_2021_photo_1.jpg', name:'The Lakanal House fire', area:'Camberwell', pc:'SE5', cat:'memory', year:2009, era:'3 July 2009',
+      lat:51.475, lon:-0.0809, addr:'Sceaux Gardens, SE5',
+      text:'On 3 July 2009, a fire tore through the 14-storey Lakanal House tower block on the Sceaux Gardens estate, killing six people. The subsequent inquest exposed serious failings in fire safety guidance and refurbishment work, and the tragedy was cited in the years after the Grenfell Tower fire as an earlier, unheeded warning.' },
+
+    { id:'thomas-hood-camberwell', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Thomas_Hood_from_NPG.jpg/330px-Thomas_Hood_from_NPG.jpg', name:'Thomas Hood', area:'Camberwell', pc:'SE5', cat:'resident', year:1840, era:'Lived here 1840&ndash;1841',
+      lat:51.4746, lon:-0.0925, addr:'Camberwell, SE5',
+      text:'The poet and humorist Thomas Hood, best remembered for his protest poem \'The Song of the Shirt\', lived in Camberwell from 1840 to 1841, part of a peripatetic career spent largely one step ahead of his creditors.' },
+
+    { id:'william-booth-memorial-college', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/William_Booth_Memorial_Training_College%2C_Champion_Park_SE5_-_geograph.org.uk_-_1312917.jpg/330px-William_Booth_Memorial_Training_College%2C_Champion_Park_SE5_-_geograph.org.uk_-_1312917.jpg', name:'William Booth Memorial Training College', area:'Camberwell', pc:'SE5', cat:'grand', year:1932, era:'Completed 1932',
+      lat:51.4675, lon:-0.0878, addr:'Champion Park, SE5',
+      text:'The Salvation Army\'s officer training college was completed in 1932 to a design by Sir Giles Gilbert Scott, the architect also responsible for Battersea Power Station and the red telephone box. Its tall brick tower is a Camberwell landmark.' }
   ];
