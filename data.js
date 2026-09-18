@@ -1753,5 +1753,101 @@
 
     { id:'vince-hilaire', img:'', name:'Vince Hilaire', area:'Forest Hill', pc:'SE23', cat:'resident', year:1959, era:'Born here 10 October 1959',
       lat:null, lon:null, addr:'',
-      text:'Footballer Vince Hilaire was born in Forest Hill on 10 October 1959, and went on to play for Crystal Palace.' }
+      text:'Footballer Vince Hilaire was born in Forest Hill on 10 October 1959, and went on to play for Crystal Palace.' },
+
+    { id:'blackheath-rugby-club', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Blackheath_Rugby_Club_pavilion_-_geograph.org.uk_-_6372431.jpg/330px-Blackheath_Rugby_Club_pavilion_-_geograph.org.uk_-_6372431.jpg', name:'Blackheath Rugby Club', area:'Blackheath', pc:'SE3', cat:'memory', year:1858, era:'Founded 1858',
+      lat:51.4676, lon:0.0086, addr:'',
+      text:'Founded in 1858, Blackheath is one of the oldest rugby clubs in the world; its members organised the first-ever rugby international, England against Scotland, played in Edinburgh in 1871.' },
+
+    { id:'bob-hope-eltham', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Bob_Hope_1969_Publicity_Photo.jpg/330px-Bob_Hope_1969_Publicity_Photo.jpg', name:'Bob Hope', area:'Eltham', pc:'SE9', cat:'plaque', year:1903, era:'Born here 29 May 1903',
+      lat:51.4588, lon:0.0531, addr:'44 Craigton Road, SE9',
+      text:'Born at this address on 29 May 1903, the entertainer emigrated to America as a child. Eltham&rsquo;s Little Theatre was renamed the Bob Hope Theatre in his honour in 1982, after his donations to it.' },
+
+    { id:'boy-george', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Boy_George_-_2026220_214024_2026-08-08_Die_80er_live_-_Sven_-_1D_X_MK_II_-_1836_-_AK8I4768_%28cropped%29.jpg/330px-Boy_George_-_2026220_214024_2026-08-08_Die_80er_live_-_Sven_-_1D_X_MK_II_-_1836_-_AK8I4768_%28cropped%29.jpg', name:'Boy George', area:'Eltham', pc:'SE9', cat:'resident', year:1961, era:'Grew up here',
+      lat:null, lon:null, addr:'',
+      text:'Singer Boy George was raised in Middle Park, Eltham, before finding fame as the frontman of Culture Club.' },
+
+    { id:'cornish-rebellion-blackheath', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Statue_of_Michael_Joseph_the_Smith_and_Thomas_Flamank_-_geograph.org.uk_-_1263309.jpg/330px-Statue_of_Michael_Joseph_the_Smith_and_Thomas_Flamank_-_geograph.org.uk_-_1263309.jpg', name:'Cornish Rebellion camp', area:'Blackheath', pc:'SE3', cat:'memory', year:1497, era:'Rebel camp, June 1497',
+      lat:51.4676, lon:0.0086, addr:'Blackheath, SE3',
+      text:'Cornish rebels protesting Henry VII&rsquo;s war taxes camped on Blackheath before their march on London in June 1497, led by Michael An Gof and Thomas Flamank. Defeated at the foot of the heath in the Battle of Deptford Bridge, both leaders were captured and executed.' },
+
+    { id:'deptford-power-station', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Deptford_Power_Station_1970_-_geograph.org.uk_-_1742937.jpg/330px-Deptford_Power_Station_1970_-_geograph.org.uk_-_1742937.jpg', name:'Deptford Power Station', area:'Deptford', pc:'SE8', cat:'works', year:1891, era:'Opened 1891',
+      lat:null, lon:null, addr:'',
+      text:'Opened in 1891 to a design by Sebastian de Ferranti, it was the largest power station in the world when built, though technical problems meant it never fully achieved his ambitions for it.' },
+
+    { id:'edward-drummond', img:'', name:'Edward Drummond', area:'Charlton', pc:'SE7', cat:'memory', year:1843, era:'Died 1843, buried here',
+      lat:51.4828, lon:0.0347, addr:'St Luke\'s Church, Charlton Church Lane, SE7',
+      text:'Prime Minister Robert Peel&rsquo;s private secretary, shot dead in Whitehall in 1843 by a man who had mistaken him for Peel. The case established the M&rsquo;Naghten Rules that still define the insanity defence in English law today. Drummond is buried at St Luke&rsquo;s Church.' },
+
+    { id:'emperor-norton', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Norton-2.jpg/330px-Norton-2.jpg', name:'Emperor Norton', area:'Deptford', pc:'SE8', cat:'resident', year:1818, era:'Born here 1818',
+      lat:null, lon:null, addr:'',
+      text:'Born in Deptford in 1818, Joshua Norton emigrated to San Francisco and in 1859 proclaimed himself &ldquo;Emperor of these United States,&rdquo; becoming a beloved eccentric figure the city humoured for two decades.' },
+
+    { id:'frankie-howerd', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Frankie_Howerd_Allan_Warren.jpg/330px-Frankie_Howerd_Allan_Warren.jpg', name:'Frankie Howerd', area:'Eltham', pc:'SE9', cat:'resident', year:1917, era:'Grew up here',
+      lat:null, lon:null, addr:'',
+      text:'Comedian and actor Frankie Howerd was born in York in 1917 but brought to Eltham as a young child, where he grew up.' },
+
+    { id:'greenwich-power-station', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Greenwich_Power_Station_-_2022-04-24.jpg/330px-Greenwich_Power_Station_-_2022-04-24.jpg', name:'Greenwich Power Station', area:'Greenwich', pc:'SE10', cat:'works', year:1902, era:'Built 1902&ndash;1910',
+      lat:51.4851, lon:-0.0008, addr:'Greenwich, SE10',
+      text:'Built 1902&ndash;10 to supply power to London&rsquo;s tram network and Underground; it still operates today as a standby power source for the Tube.' },
+
+    { id:'j-stone-and-co-foundry', img:'', name:'J. Stone &amp; Co', area:'Charlton', pc:'SE7', cat:'works', year:1917, era:'Moved here 1917',
+      lat:51.4893, lon:0.0305, addr:'Anchor and Hope Lane, SE7',
+      text:'Marine propeller foundry that relocated from Deptford to Charlton in 1917. During the Second World War it produced 22,000 propellers for the Royal Navy, and later made propellers for the liners Queen Mary and Queen Elizabeth.' },
+
+    { id:'joseph-rene-bellot-memorial', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Bellot_memorial_in_Greenwich._View_from_the_Thames.jpg/330px-Bellot_memorial_in_Greenwich._View_from_the_Thames.jpg', name:'Joseph Ren&eacute; Bellot memorial', area:'Greenwich', pc:'SE10', cat:'memory', year:1853, era:'Bellot died 1853; memorial erected soon after',
+      lat:51.4849, lon:-0.0018, addr:'Greenwich riverside, SE10',
+      text:'An obelisk on the riverside commemorates French Arctic explorer Joseph Ren&eacute; Bellot, who died in 1853 while searching for the lost Franklin expedition.' },
+
+    { id:'maryon-park', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Maryon_Park%2C_Charlton%2C_South_East_London.jpg/330px-Maryon_Park%2C_Charlton%2C_South_East_London.jpg', name:'Maryon Park', area:'Charlton', pc:'SE7', cat:'green', year:1966, era:'Blow-Up filmed here, 1966',
+      lat:51.4893, lon:0.0425, addr:'Charlton Riverside, SE7',
+      text:'Public park created after the Maryon-Wilson family estate was broken up in 1925, later used as the filming location for the pivotal murder scene in Michelangelo Antonioni&rsquo;s Blow-Up (1966).' },
+
+    { id:'morden-college', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Blackheath_%2C_The_Lodge%2C_Morden_College_-_geograph.org.uk_-_7389235.jpg/330px-Blackheath_%2C_The_Lodge%2C_Morden_College_-_geograph.org.uk_-_7389235.jpg', name:'Morden College', area:'Blackheath', pc:'SE3', cat:'grand', year:1695, era:'Founded 1695',
+      lat:51.4692, lon:0.0195, addr:'Blackheath, SE3',
+      text:'Almshouse founded in 1695 by Sir John Morden for &ldquo;decayed&rdquo; merchants, still operating on its original Blackheath site.' },
+
+    { id:'richard-jefferies', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Richard_jefferies.jpg/330px-Richard_jefferies.jpg', name:'Richard Jefferies', area:'Eltham', pc:'SE9', cat:'plaque', year:1848, era:'Naturalist and writer (1848&ndash;1887)',
+      lat:51.4484, lon:0.0631, addr:'59 Footscray Road, SE9',
+      text:'Nature writer Richard Jefferies, known for books including The Story of My Heart, is commemorated by a blue plaque at this address.' },
+
+    { id:'royal-blackheath-golf-club', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Royal_Blackheath_Golf_Club-geograph-5795783-by-Robert-Lamb.jpg/330px-Royal_Blackheath_Golf_Club-geograph-5795783-by-Robert-Lamb.jpg', name:'Royal Blackheath Golf Club', area:'Eltham', pc:'SE9', cat:'grand', year:1664, era:'Moved here 1923; clubhouse built 1664',
+      lat:51.4455, lon:0.0554, addr:'Eltham Lodge, Court Road, SE9',
+      text:'One of the oldest golf clubs in the world, with a tradition of play on Blackheath dating to 1608. The club moved to this Grade I-listed Restoration house, built in 1664, in 1923.' },
+
+    { id:'siemens-brothers-telegraph-works', img:'', name:'Siemens Brothers Telegraph Works', area:'Charlton', pc:'SE7', cat:'works', year:1863, era:'Opened 1863',
+      lat:null, lon:null, addr:'',
+      text:'Cable works that manufactured two new transatlantic telegraph cables in the 1880s and later contributed to PLUTO, the undersea fuel pipeline laid for the D-Day landings.' },
+
+    { id:'francis-chichester-gipsy-moth', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Sir_Francis_Chichester_%283985431904%29.jpg/330px-Sir_Francis_Chichester_%283985431904%29.jpg', name:'Sir Francis Chichester', area:'Greenwich', pc:'SE10', cat:'maritime', year:1966, era:'Circumnavigation 1966&ndash;1967',
+      lat:51.4826, lon:-0.0096, addr:'',
+      text:'In 1966&ndash;67 Chichester sailed Gipsy Moth IV single-handed around the world faster than any previous circumnavigator; the yacht was displayed at Greenwich for decades afterward.' },
+
+    { id:'francis-drake-knighted', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/1583_portrait_of_Sir_Francis_Drake.jpg/330px-1583_portrait_of_Sir_Francis_Drake.jpg', name:'Sir Francis Drake knighted', area:'Deptford', pc:'SE8', cat:'maritime', year:1581, era:'Knighted here, 4 April 1581',
+      lat:51.4867, lon:-0.03, addr:'Deptford Docks',
+      text:'Elizabeth I knighted Francis Drake aboard the Golden Hind at Deptford Docks on 4 April 1581, following his circumnavigation of the globe.' },
+
+    { id:'sir-john-vanbrugh', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/John_Vanbrugh.jpg/330px-John_Vanbrugh.jpg', name:'Sir John Vanbrugh', area:'Blackheath', pc:'SE3', cat:'resident', year:1720, era:'Owned an estate here from c.1720',
+      lat:null, lon:null, addr:'',
+      text:'Architect Sir John Vanbrugh, designer of Blenheim Palace and Castle Howard, owned an estate on Blackheath from around 1720. Vanbrugh Park and Vanbrugh Castle still carry his name.' },
+
+    { id:'sir-william-langhorne', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Portrait_of_Coll._Langhorne_%284674502%29.jpg/330px-Portrait_of_Coll._Langhorne_%284674502%29.jpg', name:'Sir William Langhorne', area:'Charlton', pc:'SE7', cat:'resident', year:1715, era:'Died 1715, buried here',
+      lat:51.4828, lon:0.0347, addr:'St Luke\'s Church, Charlton Church Lane, SE7',
+      text:'Colonial administrator and East India Company agent at Madras, Langhorne bought the manor of Charlton and is buried at St Luke&rsquo;s Church.' },
+
+    { id:'st-michael-and-all-angels-blackheath', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/St_Michael_and_All_Angels_Church%2C_Blackheath_Park_-_geograph.org.uk_-_634834.jpg/330px-St_Michael_and_All_Angels_Church%2C_Blackheath_Park_-_geograph.org.uk_-_634834.jpg', name:'St Michael and All Angels Church', area:'Blackheath', pc:'SE3', cat:'grand', year:1828, era:'Built 1828&ndash;1830',
+      lat:51.4647, lon:0.0136, addr:'Blackheath Park, SE3',
+      text:'Built 1828&ndash;30 to a design by George Smith, its tall thin spire earned it the nickname &ldquo;the Needle of Kent.&rdquo;' },
+
+    { id:'steve-harley', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Cockney_Rebel_-_Steve_Harley_5_%2815094806729%29_%28cropped%29.jpg/330px-Cockney_Rebel_-_Steve_Harley_5_%2815094806729%29_%28cropped%29.jpg', name:'Steve Harley', area:'Deptford', pc:'SE8', cat:'resident', year:1951, era:'Born here 1951',
+      lat:null, lon:null, addr:'',
+      text:'Frontman of Cockney Rebel, known for the 1975 number one single &ldquo;Come Up and See Me (Make Me Smile),&rdquo; born in Deptford.' },
+
+    { id:'the-pagoda-blackheath', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/The_Pagoda_%289175938843%29.jpg/330px-The_Pagoda_%289175938843%29.jpg', name:'The Pagoda', area:'Blackheath', pc:'SE3', cat:'grand', year:1760, era:'Built 1760',
+      lat:51.468, lon:-0.0034, addr:'Pagoda Gardens, SE3',
+      text:'Built in 1760 by Sir William Chambers in the Chinese style then fashionable, later leased as a summer home for Caroline of Brunswick, estranged wife of the future George IV.' },
+
+    { id:'trinity-hospital-greenwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Trinity_Hospital%2C_Greenwich_2026-01-24.jpg/330px-Trinity_Hospital%2C_Greenwich_2026-01-24.jpg', name:'Trinity Hospital', area:'Greenwich', pc:'SE10', cat:'grand', year:1613, era:'Founded 1613',
+      lat:51.4849, lon:-0.0018, addr:'Greenwich, SE10',
+      text:'Almshouse founded in 1613 by Henry Howard, Earl of Northampton &mdash; the oldest surviving building in Greenwich town centre.' }
   ];
