@@ -359,7 +359,7 @@
       lat:51.5081, lon:-0.0972, addr:'21 New Globe Walk, SE1 9DT',
       text:'The American actor-director Sam Wanamaker spent over two decades and much of his own money reconstructing Shakespeare&rsquo;s Globe close to its original site. He died four months before it opened in 1997.\n\nHe first came looking for the Globe in 1949 and found nothing but a blackened commemorative plaque bolted to a brewery wall &mdash; the closest London had come to marking it at all.' },
 
-    { id:'peter-tatchell', img:'', name:'Peter Tatchell', area:'Elephant &amp; Castle', pc:'SE1', cat:'resident', year:2010, era:'Blue plaque installed 2010',
+    { id:'peter-tatchell', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Peter_Tatchell_-_Red_Wall_-_8by10_-_2016-10-15.jpg/330px-Peter_Tatchell_-_Red_Wall_-_8by10_-_2016-10-15.jpg', name:'Peter Tatchell', area:'Elephant &amp; Castle', pc:'SE1', cat:'resident', year:2010, era:'Blue plaque installed 2010',
       lat:null, lon:null, addr:'',
       text:'Prominent human rights and gay rights campaigner who has lived for decades on the Rockingham Estate. Southwark Council installed a blue plaque in his name at his home in 2010, recognising his decades of activism.' },
 
@@ -1155,27 +1155,27 @@
       lat:51.4676, lon:0.0083, addr:'29-31 Montpelier Vale, SE3 0TJ',
       text:'A microbrewery built into a pizza restaurant on Blackheath Village&rsquo;s high street, brewing wheat beer, pilsner, pale ale and a mango beer since 2000 &mdash; a brewpub that predates the whole &ldquo;craft beer&rdquo; wave by well over a decade.' },
 
-    { id:'family-outing-statue', img:'', name:'"Family Outing" statue', area:'Bexleyheath', pc:'DA6', cat:'art', year:1985, era:'Unveiled 1985',
+    { id:'family-outing-statue', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/%22Family_Outing%22_Sculpture_in_Bexleyheath.jpg/330px-%22Family_Outing%22_Sculpture_in_Bexleyheath.jpg', name:'"Family Outing" statue', area:'Bexleyheath', pc:'DA6', cat:'art', year:1985, era:'Unveiled 1985',
       lat:null, lon:null, addr:'',
       text:'A bronze statue by local artist John Ravera, commissioned by Norwich Union and unveiled in 1985 outside the Broadway Shopping Centre. It depicts an ordinary family on an outing, a gentle, human counterpoint to the area\'s civic clock tower nearby.' },
 
-    { id:'nothing-without-industry-sign', img:'', name:'"Nothing Without Industry" sign', area:'Catford', pc:'SE6', cat:'art', year:null, era:'',
+    { id:'nothing-without-industry-sign', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/16_Brownhill_Road%2C_Catford%2C_LB_Lewisham_1.11.2021.jpg/330px-16_Brownhill_Road%2C_Catford%2C_LB_Lewisham_1.11.2021.jpg', name:'"Nothing Without Industry" sign', area:'Catford', pc:'SE6', cat:'art', year:null, era:'',
       lat:null, lon:null, addr:'16 Brownhill Road',
       text:'A painted sign bearing Catford\'s old civic motto, "Nothing Without Industry," displayed at 16 Brownhill Road. It is a small surviving piece of the area\'s civic identity from an era when local mottoes and slogans were a common feature of English town and borough branding, tucked away as an easily missed curiosity for anyone who knows to look for it.' },
 
-    { id:'adam-newton', img:'', name:'Adam Newton', area:'Charlton', pc:'SE7', cat:'resident', year:1607, era:'Built Charlton House 1607&ndash;1612',
+    { id:'adam-newton', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Newton%2C_Adam.jpg/330px-Newton%2C_Adam.jpg', name:'Adam Newton', area:'Charlton', pc:'SE7', cat:'resident', year:1607, era:'Built Charlton House 1607&ndash;1612',
       lat:null, lon:null, addr:'',
       text:'Tutor to Prince Henry, son of James I, who built the Jacobean mansion Charlton House between 1607 and 1612 as his own residence in the area. Prince Henry died in 1612 and never lived there himself, but the house Newton built remains Charlton\'s most significant landmark.' },
 
-    { id:'alexander-fleming-house-metro-central-heights', img:'', name:'Alexander Fleming House / Metro Central Heights', area:'Elephant &amp; Castle', pc:'SE1', cat:'grand', year:1959, era:'Built 1959',
+    { id:'alexander-fleming-house-metro-central-heights', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Metro_Central_Heights_Alexander_Fleming_House.jpg/330px-Metro_Central_Heights_Alexander_Fleming_House.jpg', name:'Alexander Fleming House / Metro Central Heights', area:'Elephant &amp; Castle', pc:'SE1', cat:'grand', year:1959, era:'Built 1959',
       lat:null, lon:null, addr:'',
       text:'A Brutalist landmark built in 1959 as a group of government office blocks, designed by the Hungarian modernist architect Ernő Goldfinger &mdash; whose name later inspired the Bond villain of the same surname. It has since been converted into the residential complex known as Metro Central Heights, remaining one of the area\'s most architecturally significant post-war buildings.' },
 
-    { id:'alexander-mcqueen', img:'', name:'Alexander McQueen', area:'Catford / Lewisham', pc:'SE6', cat:'resident', year:null, era:'',
+    { id:'alexander-mcqueen', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Alexander_McQueen_by_FashionWirePress.jpg/330px-Alexander_McQueen_by_FashionWirePress.jpg', name:'Alexander McQueen', area:'Catford / Lewisham', pc:'SE6', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Fashion designer recorded as having been born in Lewisham; some local accounts also place his early life within Catford specifically, though this connection is less firmly documented than for other names on this list. One of Britain\'s most influential and provocative designers before his death in 2010.' },
 
-    { id:'alfred-and-ada-salter', img:'', name:'Alfred and Ada Salter', area:'Bermondsey', pc:'SE16', cat:'resident', year:1922, era:'Active early 20th century; Ada elected Mayor 1922',
+    { id:'alfred-and-ada-salter', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Ada_Salter.jpg/330px-Ada_Salter.jpg', name:'Alfred and Ada Salter', area:'Bermondsey', pc:'SE16', cat:'resident', year:1922, era:'Active early 20th century; Ada elected Mayor 1922',
       lat:null, lon:null, addr:'',
       text:'Dr Alfred Salter and Ada Salter were a husband-and-wife pair of social reformers who dedicated their lives to improving conditions in Bermondsey\'s slums in the early 20th century. Alfred, a doctor and later MP, provided free healthcare to the poor, while Ada became Britain\'s first female mayor of a London borough when elected Mayor of Bermondsey in 1922, pioneering slum clearance, public health reform and the planting of trees and gardens across the borough that earned it the nickname "Bermondsey the Beautiful."' },
 
@@ -1187,39 +1187,39 @@
       lat:null, lon:null, addr:'',
       text:'Art photographer who lives in the Catford area, part of the borough\'s contemporary creative community.' },
 
-    { id:'ben-elton', img:'', name:'Ben Elton', area:'Catford', pc:'SE6', cat:'resident', year:1959, era:'Born 1959',
+    { id:'ben-elton', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/BenElton.jpg/330px-BenElton.jpg', name:'Ben Elton', area:'Catford', pc:'SE6', cat:'resident', year:1959, era:'Born 1959',
       lat:null, lon:null, addr:'',
       text:'Comedian, actor and writer born in Catford in 1959. He became one of the leading figures of the 1980s "alternative comedy" boom, co-writing Blackadder and The Young Ones, before building a prolific second career as a novelist and musical writer, including co-writing the jukebox musical We Will Rock You.' },
 
-    { id:'bernard-sunley', img:'', name:'Bernard Sunley', area:'Catford', pc:'SE6', cat:'resident', year:1910, era:'Born 1910',
+    { id:'bernard-sunley', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Bernard_Sunley_1910-1964_Contractor_and_philanthropist_lived_and_worked_here_1941-1958.jpg/330px-Bernard_Sunley_1910-1964_Contractor_and_philanthropist_lived_and_worked_here_1941-1958.jpg', name:'Bernard Sunley', area:'Catford', pc:'SE6', cat:'resident', year:1910, era:'Born 1910',
       lat:null, lon:null, addr:'',
       text:'Property developer and philanthropist, born in Catford in 1910. He built one of Britain\'s largest post-war construction companies and established the Bernard Sunley Charitable Foundation, which continues to fund charitable causes across the UK today.' },
 
-    { id:'bernie-ecclestone', img:'', name:'Bernie Ecclestone', area:'Bexleyheath', pc:'DA6', cat:'resident', year:null, era:'',
+    { id:'bernie-ecclestone', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Bernie_Ecclestone%2C_S%C3%A3o_Paulo_2022_%2852498924277%29_%28cropped%29.jpg/330px-Bernie_Ecclestone%2C_S%C3%A3o_Paulo_2022_%2852498924277%29_%28cropped%29.jpg', name:'Bernie Ecclestone', area:'Bexleyheath', pc:'DA6', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Formula 1 magnate and billionaire businessman, who grew up on Danson Road in Bexleyheath. Ecclestone went on to control the commercial rights to Formula 1 for decades, transforming it into the global sport it is today, before selling his stake for a reported &pound;6 billion.' },
 
-    { id:'boris-karloff', img:'', name:'Boris Karloff', area:'Camberwell', pc:'SE5', cat:'resident', year:null, era:'',
+    { id:'boris-karloff', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Boris_Karloff.jpg/330px-Boris_Karloff.jpg', name:'Boris Karloff', area:'Camberwell', pc:'SE5', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Actor associated with Camberwell, best known for defining the visual image of Frankenstein\'s monster in the classic 1931 film, going on to become one of the most recognisable horror stars of Hollywood\'s golden age.' },
 
-    { id:'boudica-s-reputed-last-stand-at-one-tree-hill', img:'', name:'Boudica\'s reputed last stand at One Tree Hill', area:'Honor Oak', pc:'SE23', cat:'memory', year:null, era:'Legendary connections, unverified',
+    { id:'boudica-s-reputed-last-stand-at-one-tree-hill', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/The_Honor_Oak%2C_One_Tree_Hill.JPG/330px-The_Honor_Oak%2C_One_Tree_Hill.JPG', name:'Boudica\'s reputed last stand at One Tree Hill', area:'Honor Oak', pc:'SE23', cat:'memory', year:null, era:'Legendary connections, unverified',
       lat:null, lon:null, addr:'',
       text:'One Tree Hill is reputed &mdash; though not proven &mdash; to be the site of Queen Boudica\'s final defeat by the Romans in 61 AD, and separately carries a local legend that the highwayman Dick Turpin used its height as a lookout post. Neither claim is firmly documented, but both have become durably attached to the hill\'s identity alongside its more reliably sourced connection to Elizabeth I, who is reputed to have picnicked under the oak tree that gave the area its name.' },
 
-    { id:'brian-willsher', img:'', name:'Brian Willsher', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
+    { id:'brian-willsher', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sculptural_puzzle_by_Brian_Willsher.jpg/330px-Sculptural_puzzle_by_Brian_Willsher.jpg', name:'Brian Willsher', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Wood and bronze sculptor, born and based in Catford throughout his working life, known for figurative sculptural work across both materials.' },
 
-    { id:'broadway-theatre', img:'', name:'Broadway Theatre', area:'Catford', pc:'SE6', cat:'grand', year:1932, era:'Opened 1932',
+    { id:'broadway-theatre', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Broadway_Theatre_-_Catford.jpg/330px-Broadway_Theatre_-_Catford.jpg', name:'Broadway Theatre', area:'Catford', pc:'SE6', cat:'grand', year:1932, era:'Opened 1932',
       lat:null, lon:null, addr:'Rushey Green / Catford Broadway, adjoining the old Town Hall',
       text:'An Art Deco building adjoining Catford\'s old Town Hall, opened in 1932 as a Concert Hall and now Grade II listed. Its curved stone exterior is decorated with shields and heraldic emblems beneath a distinctive copper dome, while the interior retains its original Art Deco detailing throughout. It continues to operate today as a working theatre, hosting plays, musicals, comedy and community productions for the borough.' },
 
-    { id:'captain-william-colbeck', img:'', name:'Captain William Colbeck', area:'Catford', pc:'SE6', cat:'resident', year:1871, era:'1871&ndash;1930',
+    { id:'captain-william-colbeck', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Will-colbeck.jpg/330px-Will-colbeck.jpg', name:'Captain William Colbeck', area:'Catford', pc:'SE6', cat:'resident', year:1871, era:'1871&ndash;1930',
       lat:null, lon:null, addr:'Inchmery Road',
       text:'Antarctic explorer and Royal Navy captain who lived on Inchmery Road in Catford; his sons attended nearby St Dunstan\'s College. Colbeck served on both the Discovery and Morning relief expeditions during the heroic age of Antarctic exploration in the early 1900s.' },
 
-    { id:'catford-bridge-tavern', img:'', name:'Catford Bridge Tavern', area:'Catford', pc:'SE6', cat:'pub', year:null, era:'Rebuilt and reopened 2017 after a 2015 fire',
+    { id:'catford-bridge-tavern', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Catford_Bridge_Tavern%2C_Catford%2C_SE6_%287017172145%29.jpg/330px-Catford_Bridge_Tavern%2C_Catford%2C_SE6_%287017172145%29.jpg', name:'Catford Bridge Tavern', area:'Catford', pc:'SE6', cat:'pub', year:null, era:'Rebuilt and reopened 2017 after a 2015 fire',
       lat:null, lon:null, addr:'Near Catford Bridge station',
       text:'A mock-Tudor pub standing close to the site of the former Catford Stadium dog track. It was destroyed by a serious fire in March 2015 but was rebuilt and reopened in April 2017, restoring a long-standing local drinking spot that had served the area around Catford Bridge station for decades.' },
 
@@ -1227,115 +1227,115 @@
       lat:null, lon:null, addr:'South of Brownhill Road',
       text:'Catford Cycling Club was founded in 1886, making it one of the older cycling clubs in England, and in 1894 the club built its own banked racing track south of Brownhill Road, complete with a distinctive pagoda-style grandstand. By the 1950s most of the track had been built over by later development, but the club itself survived and continues to operate to this day.' },
 
-    { id:'charles-babbage', img:'', name:'Charles Babbage', area:'Walworth', pc:'SE17', cat:'resident', year:1791, era:'Born 1791',
+    { id:'charles-babbage', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Charles_Babbage_-_1860.jpg/330px-Charles_Babbage_-_1860.jpg', name:'Charles Babbage', area:'Walworth', pc:'SE17', cat:'resident', year:1791, era:'Born 1791',
       lat:null, lon:null, addr:'',
       text:'Mathematician and inventor widely regarded as a father of computing for his designs for the Difference Engine and Analytical Engine, born in Walworth in 1791 and baptised at St Mary\'s, Newington. His family lived at 44 Crosby Row, now Larcom Street, where a blue plaque marks the corner of Larcom Street and Walworth Road.' },
 
-    { id:'charles-dickens-and-ellen-ternan-in-nunhead', img:'', name:'Charles Dickens and Ellen Ternan in Nunhead', area:'Nunhead', pc:'SE15', cat:'resident', year:null, era:'Dickens\'s final years, d. 1870',
+    { id:'charles-dickens-and-ellen-ternan-in-nunhead', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Ellen_Ternan.jpeg/330px-Ellen_Ternan.jpeg', name:'Charles Dickens and Ellen Ternan in Nunhead', area:'Nunhead', pc:'SE15', cat:'resident', year:null, era:'Dickens\'s final years, d. 1870',
       lat:null, lon:null, addr:'',
       text:'Charles Dickens rented Windsor Lodge, at 31 Linden Grove, as a home for his mistress Ellen "Nelly" Ternan during the final years of his life. According to Claire Tomalin\'s biography of Ternan, Dickens was reputedly taken from this house on his final journey to Gad\'s Hill Place, where he died in 1870. The house itself no longer stands, but the connection remains one of Nunhead\'s more unexpected literary footnotes.' },
 
-    { id:'charles-tupper', img:'', name:'Charles Tupper', area:'Bexleyheath', pc:'DA6', cat:'resident', year:1821, era:'1821&ndash;1915',
+    { id:'charles-tupper', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Charles_Tupper_photographic_portrait.jpg/330px-Charles_Tupper_photographic_portrait.jpg', name:'Charles Tupper', area:'Bexleyheath', pc:'DA6', cat:'resident', year:1821, era:'1821&ndash;1915',
       lat:null, lon:null, addr:'',
       text:'Canada\'s sixth Prime Minister, who spent his retirement years living in Bexleyheath. His presence gives this quiet corner of South East London an unlikely direct connection to 19th-century Canadian political history.' },
 
-    { id:'chris-welch', img:'', name:'Chris Welch', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
+    { id:'chris-welch', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Chris_Welch_May_2023.jpg/330px-Chris_Welch_May_2023.jpg', name:'Chris Welch', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Music journalist and author, raised in Catford, who became a prominent voice in the British music press, writing about the rock scene from the 1960s onward for outlets including Melody Maker.' },
 
-    { id:'christ-church-bexleyheath', img:'', name:'Christ Church, Bexleyheath', area:'Bexleyheath', pc:'DA6', cat:'grand', year:1841, era:'Dates from 1841; current building 1877',
+    { id:'christ-church-bexleyheath', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Christ_Church%2C_Bexleyheath_02.jpg/330px-Christ_Church%2C_Bexleyheath_02.jpg', name:'Christ Church, Bexleyheath', area:'Bexleyheath', pc:'DA6', cat:'grand', year:1841, era:'Dates from 1841; current building 1877',
       lat:null, lon:null, addr:'',
       text:'Bexleyheath\'s parish church, dating from 1841 with the current building completed in 1877 once the area became its own ecclesiastical parish in 1866. It stands on Broadway at the heart of the town, one of fifteen churches now serving Bexleyheath but the one most closely tied to the town\'s own founding.' },
 
-    { id:'christopher-marlowe', img:'', name:'Christopher Marlowe', area:'Deptford', pc:'SE8', cat:'resident', year:1593, era:'Killed 1593',
+    { id:'christopher-marlowe', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Christopher_Marlowe.jpg/330px-Christopher_Marlowe.jpg', name:'Christopher Marlowe', area:'Deptford', pc:'SE8', cat:'resident', year:1593, era:'Killed 1593',
       lat:null, lon:null, addr:'',
       text:'Elizabethan playwright and contemporary rival of Shakespeare, author of Doctor Faustus and Tamburlaine, who was stabbed to death during a brawl at a house on Deptford Strand in May 1593. The circumstances of his death remain debated by historians and conspiracy theorists alike; he was buried in an unmarked grave in the churchyard of St Nicholas, Deptford, where a modern memorial now commemorates him.' },
 
-    { id:'claude-rains', img:'', name:'Claude Rains', area:'Camberwell', pc:'SE5', cat:'resident', year:null, era:'',
+    { id:'claude-rains', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Claude_Rains_by_Elmer_Fryer.jpg/330px-Claude_Rains_by_Elmer_Fryer.jpg', name:'Claude Rains', area:'Camberwell', pc:'SE5', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Actor associated with Camberwell, celebrated for his stage and screen career including an Academy Award nomination and a Tony Award, with notable film roles including The Invisible Man and Casablanca.' },
 
-    { id:'cuckold-s-point', img:'', name:'Cuckold\'s Point', area:'Rotherhithe', pc:'SE16', cat:'maritime', year:null, era:'',
+    { id:'cuckold-s-point', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Cuckold%27s_Point.png/330px-Cuckold%27s_Point.png', name:'Cuckold\'s Point', area:'Rotherhithe', pc:'SE16', cat:'maritime', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'A sharp bend in the Thames on the Rotherhithe peninsula, once marked by a tall pole topped with a pair of horns, from which revellers bound for the raucous Charlton Horn Fair would disembark every 18 October before parading on to Charlton. The name and the horned marker both nod to the fair\'s legendary origin story involving a wronged miller and a king\'s guilty conscience.' },
 
-    { id:'david-jones', img:'', name:'David Jones', area:'Brockley', pc:'SE4', cat:'resident', year:null, era:'',
+    { id:'david-jones', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/David_jones.jpg/330px-David_jones.jpg', name:'David Jones', area:'Brockley', pc:'SE4', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Poet and artist David Jones grew up on Howson Road in Brockley, the son of a printer, and went on to become a significant modernist figure celebrated for both his visual art and his epic poetry; some of his paintings and illustrations depict his family\'s Brockley house and garden directly.' },
 
-    { id:'del-boy-and-rodney-trotter-only-fools-and-horses', img:'', name:'Del Boy and Rodney Trotter (Only Fools and Horses)', area:'Peckham', pc:'SE15', cat:'art', year:null, era:'',
+    { id:'del-boy-and-rodney-trotter-only-fools-and-horses', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/1971_Reliant_Regal_Supervan_III_-_Trotter%27s_car_%285962573643%29.jpg/330px-1971_Reliant_Regal_Supervan_III_-_Trotter%27s_car_%285962573643%29.jpg', name:'Del Boy and Rodney Trotter (Only Fools and Horses)', area:'Peckham', pc:'SE15', cat:'art', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Derek "Del Boy" and Rodney Trotter, the fictional market-trader brothers of the BBC sitcom Only Fools and Horses, are among the best-known fictional residents of Peckham, cementing the area\'s identity in British popular culture for decades even though the show\'s exterior filming largely took place elsewhere. The sitcom\'s lasting association with Peckham means the area is still sometimes referenced through the Trotters\' misadventures, in much the same way other South East London areas carry their own fictional or folkloric characters.' },
 
-    { id:'delia-smith', img:'', name:'Delia Smith', area:'Bexleyheath', pc:'DA6', cat:'resident', year:null, era:'',
+    { id:'delia-smith', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Delia_%26_Michael_with_Capital_Canaries_T-Shirts.jpg/330px-Delia_%26_Michael_with_Capital_Canaries_T-Shirts.jpg', name:'Delia Smith', area:'Bexleyheath', pc:'DA6', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Television cook and food writer who grew up in Bexleyheath and attended Bexleyheath School. Smith became one of Britain\'s most influential culinary figures, credited with teaching a generation of home cooks through her books and television series from the 1970s onward.' },
 
-    { id:'dulwich-s-great-plague-burials', img:'', name:'Dulwich\'s Great Plague burials', area:'Dulwich', pc:'SE21', cat:'memory', year:null, era:'Plague years 1625 and 1655',
+    { id:'dulwich-s-great-plague-burials', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Dulwich_Old_Burial_Ground_-_geograph.org.uk_-_1260097.jpg/330px-Dulwich_Old_Burial_Ground_-_geograph.org.uk_-_1260097.jpg', name:'Dulwich\'s Great Plague burials', area:'Dulwich', pc:'SE21', cat:'memory', year:null, era:'Plague years 1625 and 1655',
       lat:null, lon:null, addr:'',
       text:'Dulwich\'s burial ground holds victims of the Great Plague from both 1625 and 1655, with a death rate in the small village matching that of the City of London itself &mdash; roughly one in every six residents. The dead include a number of "nurse children," infants farmed out to wet-nurses in rural Dulwich between 1700 and 1820, a once-common practice for well-off London families.' },
 
-    { id:'edward-iii-s-bermondsey-manor-house', img:'', name:'Edward III\'s Bermondsey manor house', area:'Bermondsey', pc:'SE16', cat:'grand', year:1353, era:'Built 1353',
+    { id:'edward-iii-s-bermondsey-manor-house', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/King_Edward_III_Manor_House%2C_Bermondsey_1.jpg/330px-King_Edward_III_Manor_House%2C_Bermondsey_1.jpg', name:'Edward III\'s Bermondsey manor house', area:'Bermondsey', pc:'SE16', cat:'grand', year:1353, era:'Built 1353',
       lat:null, lon:null, addr:'',
       text:'King Edward III had a riverside manor house built in Bermondsey in 1353; its excavated foundations remain visible today next to Bermondsey Wall East, close to the historic Angel public house, making it one of the oldest traceable structures in the area\'s long history.' },
 
-    { id:'enid-blyton', img:'', name:'Enid Blyton', area:'East Dulwich', pc:'SE22', cat:'resident', year:1897, era:'Born 1897',
+    { id:'enid-blyton', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Enid_Blyton_c._1923.jpg/330px-Enid_Blyton_c._1923.jpg', name:'Enid Blyton', area:'East Dulwich', pc:'SE22', cat:'resident', year:1897, era:'Born 1897',
       lat:null, lon:null, addr:'',
       text:'Children\'s author Enid Blyton was born at 354 Lordship Lane, East Dulwich, on 11 August 1897, shortly before her family moved to Beckenham. Blyton went on to become one of the best-selling and most translated children\'s authors in history, known for the Famous Five, Secret Seven and Noddy series.' },
 
-    { id:'ernest-dowson', img:'', name:'Ernest Dowson', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'1867&ndash;1900',
+    { id:'ernest-dowson', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Ernest_Dowson.jpg/330px-Ernest_Dowson.jpg', name:'Ernest Dowson', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'1867&ndash;1900',
       lat:null, lon:null, addr:'',
       text:'Poet and prominent figure of the 1890s Decadent movement, who lived and died in Catford. Dowson coined two phrases that entered the English language directly from his poetry &mdash; "days of wine and roses" and "gone with the wind" &mdash; the latter later adopted as the title of Margaret Mitchell\'s novel and its famous film adaptation, without most people realising its Catford origins.' },
 
-    { id:'eros-house', img:'', name:'Eros House', area:'Catford', pc:'SE6', cat:'grand', year:1962, era:'Built 1962',
+    { id:'eros-house', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Eros_House_%289175916827%29.jpg/330px-Eros_House_%289175916827%29.jpg', name:'Eros House', area:'Catford', pc:'SE6', cat:'grand', year:1962, era:'Built 1962',
       lat:null, lon:null, addr:'Brownhill Road',
       text:'A Brutalist office block built in 1962 by architect Owen Luder on the site of the demolished Hippodrome cinema. Critic Ian Nairn praised it in his day as "a monster sat down in Catford and just what the place needed," admiring its raw concrete forms, projecting frames and boxed-out bow windows, and noting a staircase tower that seems to lean. It remains one of the borough\'s most distinctive &mdash; and divisive &mdash; pieces of post-war architecture, and its 1960s ambition set the tone for the Catford Cat and Milford Towers that followed.' },
 
-    { id:'ethel-le-neve', img:'', name:'Ethel Le Neve', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'Trial and acquittal, 1910',
+    { id:'ethel-le-neve', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Hawley_Harvey_Crippen_and_Ethel_Le_Neve._Photograph_by_Arthu_Wellcome_V0026226.jpg/330px-Hawley_Harvey_Crippen_and_Ethel_Le_Neve._Photograph_by_Arthu_Wellcome_V0026226.jpg', name:'Ethel Le Neve', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'Trial and acquittal, 1910',
       lat:null, lon:null, addr:'',
       text:'The mistress of Dr Hawley Harvey Crippen, who was hanged in 1910 for the murder of his wife, Cora Crippen, in one of the most notorious criminal cases of Edwardian Britain. Le Neve herself was tried as an accessory but was acquitted, and later lived under a changed identity; her connection to Catford comes from residing in the area in the years that followed the case.' },
 
-    { id:'excalibur-estate', img:'', name:'Excalibur Estate', area:'Bellingham (south of Catford)', pc:'SE6', cat:'grand', year:1945, era:'Built at the end of WWII, c.1945',
+    { id:'excalibur-estate', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Excalibur-estate-catford.jpg/330px-Excalibur-estate-catford.jpg', name:'Excalibur Estate', area:'Bellingham (south of Catford)', pc:'SE6', cat:'grand', year:1945, era:'Built at the end of WWII, c.1945',
       lat:null, lon:null, addr:'Bellingham',
       text:'A 186-bungalow prefabricated housing estate laid out at the end of the Second World War to provide fast, low-cost homes for a population left homeless by the Blitz. By 2011 it had become the largest surviving prefab estate in Britain, a rare intact example of a once-common form of emergency post-war housing. Six of its bungalows were given Grade II listing in recognition of their historical importance, though most of the rest of the estate was subsequently demolished as part of a redevelopment and rebuilding scheme.' },
 
-    { id:'frank-pullen', img:'', name:'Frank Pullen', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
+    { id:'frank-pullen', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Frank_Henry_Pullen.jpg/330px-Frank_Henry_Pullen.jpg', name:'Frank Pullen', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Property developer and racehorse owner, born in Catford, who opened the first of his retail shops on Catford Broadway before building it into a much wider business empire.' },
 
-    { id:'frederick-john-horniman', img:'', name:'Frederick John Horniman', area:'Forest Hill', pc:'SE23', cat:'resident', year:1901, era:'Museum gifted to the public 1901',
+    { id:'frederick-john-horniman', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Frederick_John_Horniman_0001.jpg/330px-Frederick_John_Horniman_0001.jpg', name:'Frederick John Horniman', area:'Forest Hill', pc:'SE23', cat:'resident', year:1901, era:'Museum gifted to the public 1901',
       lat:null, lon:null, addr:'',
       text:'Tea trader and collector whose personal collection of natural history specimens, cultural artefacts and musical instruments formed the basis of the Horniman Museum, which he had purpose-built and gifted to the public in 1901. Horniman lived in Forest Hill, giving the area one of London\'s most distinctive free museums.' },
 
-    { id:'george-arthur-knowland-vc', img:'', name:'George Arthur Knowland VC', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
+    { id:'george-arthur-knowland-vc', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/George_Knowland_VC.jpg/330px-George_Knowland_VC.jpg', name:'George Arthur Knowland VC', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Recipient of the Victoria Cross, the British and Commonwealth armed forces\' highest award for gallantry, awarded posthumously for actions during the Second World War in the Burma campaign.' },
 
-    { id:'george-arthur-roberts', img:'', name:'George Arthur Roberts', area:'New Cross', pc:'SE14', cat:'resident', year:null, era:'',
+    { id:'george-arthur-roberts', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/George_Arthur_Roberts.jpg/330px-George_Arthur_Roberts.jpg', name:'George Arthur Roberts', area:'New Cross', pc:'SE14', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Pioneering Black firefighter stationed at New Cross Fire Station during the Second World War, credited as the founder of the fire service\'s discussion and education groups &mdash; an early and influential push for structured internal debate and training within the wartime fire brigade.' },
 
-    { id:'henry-cooper', img:'', name:'Henry Cooper', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
+    { id:'henry-cooper', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Henry_Cooper_1969.jpg/330px-Henry_Cooper_1969.jpg', name:'Henry Cooper', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'British heavyweight boxer who came from the Catford area, best known for twice fighting Muhammad Ali (then Cassius Clay) and for the left hook, nicknamed "\'Enry\'s \'Ammer," that famously floored Ali during their 1963 bout at Wembley. He went on to become one of British boxing\'s most beloved figures and a popular TV and advertising personality in later life.' },
 
-    { id:'henry-forster-1st-baron-forster', img:'', name:'Henry Forster, 1st Baron Forster', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
+    { id:'henry-forster-1st-baron-forster', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Henry_Forster%2C_1st_Baron_Forster_circa_1925.jpg/330px-Henry_Forster%2C_1st_Baron_Forster_circa_1925.jpg', name:'Henry Forster, 1st Baron Forster', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Politician after whom Forster Park in Catford is named, reflecting his connection to the local area alongside a wider career in British and Australian politics (he served as Governor-General of Australia).' },
 
-    { id:'henry-kelsey', img:'', name:'Henry Kelsey', area:'Greenwich', pc:'SE10', cat:'resident', year:1667, era:'c.1667&ndash;1724',
+    { id:'henry-kelsey', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Henry_Kelsey_sees_the_buffalo_on_the_western_plains.jpg/330px-Henry_Kelsey_sees_the_buffalo_on_the_western_plains.jpg', name:'Henry Kelsey', area:'Greenwich', pc:'SE10', cat:'resident', year:1667, era:'c.1667&ndash;1724',
       lat:null, lon:null, addr:'',
       text:'Early English explorer of Canada, born and married in East Greenwich around 1667. Kelsey travelled deep into the Canadian interior for the Hudson\'s Bay Company, becoming one of the first Europeans to see the northern Great Plains, and is buried at St Alfege\'s Church, Greenwich.' },
 
-    { id:'henry-oldenburg', img:'', name:'Henry Oldenburg', area:'Bexley', pc:'DA5', cat:'resident', year:1677, era:'Died 1677',
+    { id:'henry-oldenburg', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Jan_van_Cleve_%28III%29_-_Portrait_of_Henry_Oldenburg.jpg/330px-Jan_van_Cleve_%28III%29_-_Portrait_of_Henry_Oldenburg.jpg', name:'Henry Oldenburg', area:'Bexley', pc:'DA5', cat:'resident', year:1677, era:'Died 1677',
       lat:null, lon:null, addr:'',
       text:'German-born natural philosopher and the first Secretary of the Royal Society, a role in which he corresponded with most of the leading scientific figures of his era, including Isaac Newton and Robert Boyle. He died in 1677 and was buried in the churchyard of St Mary the Virgin, Bexley.' },
 
-    { id:'horatio-henry-couldery', img:'', name:'Horatio Henry Couldery', area:'Lewisham', pc:'SE13', cat:'resident', year:1832, era:'1832&ndash;1893',
+    { id:'horatio-henry-couldery', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Horatio_Henry_Couldery_-_The_Unexpected_Guest.jpg/330px-Horatio_Henry_Couldery_-_The_Unexpected_Guest.jpg', name:'Horatio Henry Couldery', area:'Lewisham', pc:'SE13', cat:'resident', year:1832, era:'1832&ndash;1893',
       lat:null, lon:null, addr:'',
       text:'Animal artist born in Lewisham in 1832, noted particularly for his paintings of cats, kittens and dogs, which found a wide popular audience in Victorian Britain.' },
 
-    { id:'hubert-bland-and-edith-nesbit', img:'', name:'Hubert Bland and Edith Nesbit', area:'Eltham', pc:'SE9', cat:'resident', year:1899, era:'Lived at Well Hall House 1899&ndash;1922',
+    { id:'hubert-bland-and-edith-nesbit', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Hubert_Bland.PNG/330px-Hubert_Bland.PNG', name:'Hubert Bland and Edith Nesbit', area:'Eltham', pc:'SE9', cat:'resident', year:1899, era:'Lived at Well Hall House 1899&ndash;1922',
       lat:null, lon:null, addr:'',
       text:'Socialist writer Hubert Bland, a co-founder of the Fabian Society, lived at Well Hall House in Eltham from 1899 to 1922 with his wife, the author Edith Nesbit, best known for The Railway Children and Five Children and It. Their Eltham home became a gathering point for early Fabian intellectuals during a formative period for British socialist thought.' },
 
@@ -1343,15 +1343,15 @@
       lat:null, lon:null, addr:'',
       text:'Boxer who became British Heavyweight Champion in 1985&ndash;86, having lived in Catford, Brockley and briefly Bromley over the course of his career.' },
 
-    { id:'italo-svevo', img:'', name:'Italo Svevo', area:'Charlton', pc:'SE7', cat:'resident', year:1903, era:'Lived in Charlton 1903&ndash;1913',
+    { id:'italo-svevo', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/ItaloSvevo.jpg/330px-ItaloSvevo.jpg', name:'Italo Svevo', area:'Charlton', pc:'SE7', cat:'resident', year:1903, era:'Lived in Charlton 1903&ndash;1913',
       lat:null, lon:null, addr:'',
       text:'Italian modernist writer, author of "Zeno\'s Conscience" and a close friend of James Joyce, who made his home in Charlton Village from 1903 to 1913. During this period his family\'s business sold underwater paint to the Royal Navy, used extensively on ships including through both World Wars &mdash; an unlikely commercial footnote to one of European literature\'s more significant novelists.' },
 
-    { id:'jacqui-mcshee', img:'', name:'Jacqui McShee', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
+    { id:'jacqui-mcshee', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Pentangle2007_%28cropped%29.jpg/330px-Pentangle2007_%28cropped%29.jpg', name:'Jacqui McShee', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Folk singer and co-founder of the influential 1960s folk-jazz group Pentangle, known for her distinctive vocal style across the band\'s genre-blending catalogue of British folk, jazz and blues influences.' },
 
-    { id:'jade-goody', img:'', name:'Jade Goody', area:'Bermondsey', pc:'SE16', cat:'resident', year:1981, era:'1981&ndash;2009',
+    { id:'jade-goody', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Goody.jpg/330px-Goody.jpg', name:'Jade Goody', area:'Bermondsey', pc:'SE16', cat:'resident', year:1981, era:'1981&ndash;2009',
       lat:null, lon:null, addr:'',
       text:'Reality television personality born in Bermondsey in 1981, who rose to fame on Big Brother in 2002 and became one of the most talked-about figures in British tabloid culture, including through her widely covered cancer diagnosis and death in 2009, which prompted a significant national rise in cervical screening uptake.' },
 
@@ -1359,15 +1359,15 @@
       lat:null, lon:null, addr:'',
       text:'Guitarist for the punk band X-Ray Spex and later the new wave band Classix Nouveaux, born and raised in Catford.' },
 
-    { id:'japan-band', img:'', name:'Japan (band)', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
+    { id:'japan-band', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/David_Sylvian_1978.jpg/330px-David_Sylvian_1978.jpg', name:'Japan (band)', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'The 1980s new wave band Japan &mdash; vocalist David Sylvian, bassist Mick Karn, drummer Steve Jansen and keyboardist Richard Barbieri &mdash; all grew up in Catford and attended Catford Boys\' School together before forming one of the more art-school-inflected acts of the British new wave scene, known for albums such as Tin Drum.' },
 
-    { id:'jem-karacan', img:'', name:'Jem Karacan', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
+    { id:'jem-karacan', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Jem_Karacan_cropped.jpg/330px-Jem_Karacan_cropped.jpg', name:'Jem Karacan', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'International footballer born in Catford, who has represented Turkey at senior level after coming up through English football, including a spell at Reading F.C.' },
 
-    { id:'jim-connell', img:'', name:'Jim Connell', area:'Honor Oak', pc:'SE23', cat:'resident', year:1889, era:'Wrote "The Red Flag" 1889',
+    { id:'jim-connell', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Jim_Connell_1852-1929_Irish%2C_Socialist_and_Author_of_%27The_Red_Flag%27_lived_here_1915-1929.jpg/330px-Jim_Connell_1852-1929_Irish%2C_Socialist_and_Author_of_%27The_Red_Flag%27_lived_here_1915-1929.jpg', name:'Jim Connell', area:'Honor Oak', pc:'SE23', cat:'resident', year:1889, era:'Wrote "The Red Flag" 1889',
       lat:null, lon:null, addr:'',
       text:'Irish socialist Jim Connell composed "The Red Flag," one of the most famous socialist anthems in history, on a train journey from Charing Cross to Honor Oak in 1889, reportedly inspired by watching a railway guard raise and lower a red signal flag while thinking about that year\'s London Dock Strike. Connell had been born in County Meath, moved to London after losing his job for trying to unionise Dublin dockworkers, and lived in the Honor Oak and Crofton Park area for much of his later life.' },
 
@@ -1375,51 +1375,51 @@
       lat:null, lon:null, addr:'',
       text:'Rapper, singer and record producer associated with Catford, part of a newer generation of South East London musicians blending UK rap, R&amp;B and alternative influences.' },
 
-    { id:'joe-gomez', img:'', name:'Joe Gomez', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
+    { id:'joe-gomez', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Joe_Gomez_04012026_%281%29.jpg/330px-Joe_Gomez_04012026_%281%29.jpg', name:'Joe Gomez', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Footballer born in Catford, who came through Charlton Athletic\'s youth system before establishing himself as a first-team defender for Liverpool F.C. and earning international caps for England.' },
 
-    { id:'john-boyega', img:'', name:'John Boyega', area:'Peckham', pc:'SE15', cat:'resident', year:null, era:'',
+    { id:'john-boyega', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/John_Boyega_%2854716098702%29.jpg/330px-John_Boyega_%2854716098702%29.jpg', name:'John Boyega', area:'Peckham', pc:'SE15', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Actor best known for playing Finn in the Star Wars sequel trilogy, who grew up in Peckham before training at the South London Theatre and rising to international fame.' },
 
-    { id:'john-evelyn', img:'', name:'John Evelyn', area:'Deptford', pc:'SE8', cat:'resident', year:1698, era:'Hosted Peter the Great 1698',
+    { id:'john-evelyn', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/JohnEvelyn1687.jpg/330px-JohnEvelyn1687.jpg', name:'John Evelyn', area:'Deptford', pc:'SE8', cat:'resident', year:1698, era:'Hosted Peter the Great 1698',
       lat:null, lon:null, addr:'',
       text:'Diarist and writer who lived at Sayes Court in Deptford, famous for hosting Tsar Peter the Great of Russia as a guest for about three months in 1698, while the Tsar studied shipbuilding techniques at the Royal Dockyard &mdash; reportedly to the considerable detriment of Evelyn\'s prized gardens.' },
 
-    { id:'john-fletcher', img:'', name:'John Fletcher', area:'Bankside', pc:'SE1', cat:'resident', year:null, era:'',
+    { id:'john-fletcher', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/John_Fletcher_from_NPG.jpg/330px-John_Fletcher_from_NPG.jpg', name:'John Fletcher', area:'Bankside', pc:'SE1', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Jacobean playwright John Fletcher lived and wrote on Bankside, close to the Globe, in a celebrated writing partnership with Francis Beaumont. Fletcher later succeeded Shakespeare as the King\'s Men\'s principal playwright, and is buried in Southwark Cathedral.' },
 
-    { id:'john-gower', img:'', name:'John Gower', area:'Bankside', pc:'SE1', cat:'resident', year:null, era:'',
+    { id:'john-gower', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/John_Gower_world_Vox_Clamantis.jpg/330px-John_Gower_world_Vox_Clamantis.jpg', name:'John Gower', area:'Bankside', pc:'SE1', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Medieval poet and contemporary of Chaucer, John Gower is buried in Southwark Cathedral on Bankside, his elaborately painted tomb one of the finest surviving medieval monuments in London. Gower was a major figure of Middle English poetry, close enough to Chaucer that Chaucer dedicated Troilus and Criseyde to him.' },
 
-    { id:'john-newlands', img:'', name:'John Newlands', area:'Elephant &amp; Castle', pc:'SE1', cat:'resident', year:1837, era:'Born 1837',
+    { id:'john-newlands', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/John_Alexander_Reina_Newlands.jpg/330px-John_Alexander_Reina_Newlands.jpg', name:'John Newlands', area:'Elephant &amp; Castle', pc:'SE1', cat:'resident', year:1837, era:'Born 1837',
       lat:null, lon:null, addr:'',
       text:'Chemist born in 1837 in West Square, just behind what is now the Imperial War Museum, who devised an early precursor to the periodic table known as the "Law of Octaves" &mdash; arranging known elements by atomic weight and noting recurring patterns every eighth element. His contribution was under-recognised in his own lifetime but is now seen as an important step towards Dmitri Mendeleev\'s periodic table.' },
 
-    { id:'john-ruskin', img:'', name:'John Ruskin', area:'Dulwich', pc:'SE21', cat:'resident', year:null, era:'',
+    { id:'john-ruskin', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/John_Ruskin_1863.jpg/330px-John_Ruskin_1863.jpg', name:'John Ruskin', area:'Dulwich', pc:'SE21', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Victorian writer, art critic and social thinker John Ruskin was a notable resident of Dulwich, one of the most influential cultural figures of his era, whose writing on art, architecture and society shaped Victorian taste and left a lasting mark on later social reform movements.' },
 
-    { id:'john-shaw-sr', img:'', name:'John Shaw Sr.', area:'Bexley', pc:'DA5', cat:'resident', year:1776, era:'1776&ndash;1832',
+    { id:'john-shaw-sr', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/John_Shaw%2C_President_of_the_Sheffield_Association.jpg/330px-John_Shaw%2C_President_of_the_Sheffield_Association.jpg', name:'John Shaw Sr.', area:'Bexley', pc:'DA5', cat:'resident', year:1776, era:'1776&ndash;1832',
       lat:null, lon:null, addr:'',
       text:'Celebrated 19th-century architect from the Shaw family of Bexley, who worked on Lamorbey Park and became a well-known figure in Kent and Middlesex architecture, notable as one of the first designers of semi-detached housing in London. He is buried at St Mary the Virgin, Bexley. His son, John Shaw Jr, lived nearby in Crayford for a time.' },
 
-    { id:'john-stuart-mill', img:'', name:'John Stuart Mill', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'',
+    { id:'john-stuart-mill', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/John_Stuart_Mill_by_London_Stereoscopic_Company%2C_c1870.jpg/330px-John_Stuart_Mill_by_London_Stereoscopic_Company%2C_c1870.jpg', name:'John Stuart Mill', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Influential 19th-century philosopher and political economist associated with Blackheath, whose writings on liberty, utilitarianism and the subjection of women remain foundational texts in Western political philosophy.' },
 
-    { id:'k2-telephone-kiosk', img:'', name:'K2 telephone kiosk', area:'Elephant &amp; Castle', pc:'SE1', cat:'grand', year:1927, era:'Installed 1927; relocated 2021',
+    { id:'k2-telephone-kiosk', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/K2_telephone_kiosk_on_Great_George_Street%2C_London.jpg/330px-K2_telephone_kiosk_on_Great_George_Street%2C_London.jpg', name:'K2 telephone kiosk', area:'Elephant &amp; Castle', pc:'SE1', cat:'grand', year:1927, era:'Installed 1927; relocated 2021',
       lat:null, lon:null, addr:'',
       text:'A Grade II listed K2 model telephone box from 1927, designed by Sir Giles Gilbert Scott &mdash; the architect also responsible for Battersea Power Station and the classic red phone box design more broadly. Originally sited on the southern side of New Kent Road, it was carefully moved a few metres and reinstalled at the entrance of Ash Avenue in 2021 as part of the area\'s ongoing redevelopment.' },
 
-    { id:'karl-marx', img:'', name:'Karl Marx', area:'Camberwell', pc:'SE5', cat:'resident', year:1849, era:'Settled in Camberwell 1849',
+    { id:'karl-marx', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Karl_Marx_by_John_Jabez_Edwin_Mayall_1875_-_Restored.png/330px-Karl_Marx_by_John_Jabez_Edwin_Mayall_1875_-_Restored.png', name:'Karl Marx', area:'Camberwell', pc:'SE5', cat:'resident', year:1849, era:'Settled in Camberwell 1849',
       lat:null, lon:null, addr:'',
       text:'Karl Marx settled with his family in Camberwell when they first moved to London in 1849, in the early years of an exile that would eventually produce Das Kapital &mdash; a formative, little-known London chapter for one of history\'s most consequential political thinkers.' },
 
-    { id:'kate-bush', img:'', name:'Kate Bush', area:'Bexleyheath', pc:'DA6', cat:'resident', year:1958, era:'Born 1958',
+    { id:'kate-bush', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Kate_Bush_Hounds_of_Love_%281985_EMI_publicity_photo%29_02_%28cropped%29.jpg/330px-Kate_Bush_Hounds_of_Love_%281985_EMI_publicity_photo%29_02_%28cropped%29.jpg', name:'Kate Bush', area:'Bexleyheath', pc:'DA6', cat:'resident', year:1958, era:'Born 1958',
       lat:null, lon:null, addr:'',
       text:'World-renowned singer-songwriter, born in Bexleyheath in 1958. Bush went on to become one of Britain\'s most distinctive and influential musical artists, achieving global recognition for hits including "Wuthering Heights" and, decades later, a career-defining resurgence with "Running Up That Hill."' },
 
@@ -1427,15 +1427,15 @@
       lat:null, lon:null, addr:'',
       text:'Actor born in Catford, who built a long career across British film and television through the mid-20th century.' },
 
-    { id:'leslie-howard', img:'', name:'Leslie Howard', area:'Forest Hill', pc:'SE23', cat:'resident', year:1943, era:'Died 1943',
+    { id:'leslie-howard', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Leslie_Howard_GWTW.jpg/330px-Leslie_Howard_GWTW.jpg', name:'Leslie Howard', area:'Forest Hill', pc:'SE23', cat:'resident', year:1943, era:'Died 1943',
       lat:null, lon:null, addr:'',
       text:'British actor best remembered internationally for playing Ashley Wilkes in Gone with the Wind, who lived in Forest Hill before his acting career took him to Hollywood. Howard was killed in 1943 when the civilian aircraft he was travelling on was shot down during the Second World War.' },
 
-    { id:'lillie-langtry', img:'', name:'Lillie Langtry', area:'Brockley', pc:'SE4', cat:'resident', year:null, era:'',
+    { id:'lillie-langtry', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Lillie_Langtry_by_Sarony_cph.3b10327.jpg/330px-Lillie_Langtry_by_Sarony_cph.3b10327.jpg', name:'Lillie Langtry', area:'Brockley', pc:'SE4', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Victorian actress and socialite Lillie Langtry, famed for her beauty and her relationship with the future King Edward VII, was a notable resident of Brockley during its heyday as a wealthy Victorian suburb, when Wickham Road and Breakspears Road were home to the owners and managers of nearby Deptford and Bermondsey factories.' },
 
-    { id:'louis-theroux', img:'', name:'Louis Theroux', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
+    { id:'louis-theroux', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Louis_Theroux_crop.jpg/330px-Louis_Theroux_crop.jpg', name:'Louis Theroux', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'British-American journalist, documentary-maker and broadcaster, known for his immersive interview-led documentaries such as Weird Weekends and When Louis Met.... One of the more prominent contemporary media figures associated with Catford.' },
 
@@ -1443,19 +1443,19 @@
       lat:null, lon:null, addr:'',
       text:'Columnist for The Guardian, who lived in Catford for more than thirty years and has written affectionately &mdash; if not uncritically &mdash; about the area, including a well-known 2008 piece for the paper titled "Catford: a tribute (yes, really)."' },
 
-    { id:'manor-house-gardens', img:'', name:'Manor House Gardens', area:'Lee', pc:'SE12', cat:'green', year:1773, era:'Laid out 1773; restored 2000',
+    { id:'manor-house-gardens', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Manor_House_Gardens%2C_Lee_%28geograph_2358229%29.jpg/330px-Manor_House_Gardens%2C_Lee_%28geograph_2358229%29.jpg', name:'Manor House Gardens', area:'Lee', pc:'SE12', cat:'green', year:1773, era:'Laid out 1773; restored 2000',
       lat:null, lon:null, addr:'',
       text:'A public park and gardens originally laid out in 1773 as the private grounds of the Manor House, purchased by Sir Francis Baring, founder of Barings Bank, in 1792. The gardens suffered significant damage in the Great Storm of 1987, prompting local campaigns for funding that saw the house and gardens fully restored by 2000; it now hosts a monthly farmers\' market alongside its ornamental pond and walled flower garden.' },
 
-    { id:'manor-place-baths', img:'', name:'Manor Place Baths', area:'Walworth', pc:'SE17', cat:'grand', year:null, era:'Grade II listed; reopened as Buddhist centre 2007',
+    { id:'manor-place-baths', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Manor_place_baths.jpg/330px-Manor_place_baths.jpg', name:'Manor Place Baths', area:'Walworth', pc:'SE17', cat:'grand', year:null, era:'Grade II listed; reopened as Buddhist centre 2007',
       lat:null, lon:null, addr:'',
       text:'A former Victorian wash house on Manor Place, now Grade II listed. It was renovated and reopened in 2007 as a Tibetan Buddhist centre by Kagyu Samye Dzong, before later becoming home to an indoor skatepark run by Nike in collaboration with Palace Skateboards &mdash; an unusual double life for one small building.' },
 
-    { id:'margaret-thatcher', img:'', name:'Margaret Thatcher', area:'Dulwich', pc:'SE21', cat:'resident', year:1979, era:'PM 1979&ndash;1990',
+    { id:'margaret-thatcher', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Margaret_Thatcher_stock_portrait_%28cropped%29.jpg/330px-Margaret_Thatcher_stock_portrait_%28cropped%29.jpg', name:'Margaret Thatcher', area:'Dulwich', pc:'SE21', cat:'resident', year:1979, era:'PM 1979&ndash;1990',
       lat:null, lon:null, addr:'',
       text:'Margaret Thatcher, Prime Minister of the United Kingdom from 1979 to 1990 and the first woman to hold the office, was a notable resident of Dulwich, giving this quiet, leafy corner of South East London an unexpected link to one of the most consequential political careers in modern British history.' },
 
-    { id:'mary-kingsley', img:'', name:'Mary Kingsley', area:'Bexleyheath', pc:'DA6', cat:'resident', year:1862, era:'1862&ndash;1900',
+    { id:'mary-kingsley', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Mary_Kingsley_-_Project_Gutenberg_eText_13103.jpg/330px-Mary_Kingsley_-_Project_Gutenberg_eText_13103.jpg', name:'Mary Kingsley', area:'Bexleyheath', pc:'DA6', cat:'resident', year:1862, era:'1862&ndash;1900',
       lat:null, lon:null, addr:'',
       text:'Pioneering explorer, ethnographer and scientific writer, who as a young woman lived with her mother and brother at a house on Main Road, Bexleyheath (sources differ on whether it was called Southwood House or Southwark House). Kingsley went on to travel extensively in West Africa in the 1890s, publishing accounts that challenged contemporary European attitudes towards African societies and culture.' },
 
@@ -1463,11 +1463,11 @@
       lat:null, lon:null, addr:'',
       text:'A seemingly ordinary Bexleyheath resident who was in fact a Soviet intelligence agent for decades during the Cold War, passing British nuclear secrets to Moscow while working as a clerical assistant. Her identity as a spy was only publicly exposed in 1999, when she was in her mid-eighties, making headlines as one of the most unlikely-looking Cold War spies ever unmasked.' },
 
-    { id:'michael-caine', img:'', name:'Michael Caine', area:'Elephant &amp; Castle', pc:'SE1', cat:'resident', year:null, era:'',
+    { id:'michael-caine', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Michael_Caine_-_Viennale_2012_g_%28cropped%29.jpg/330px-Michael_Caine_-_Viennale_2012_g_%28cropped%29.jpg', name:'Michael Caine', area:'Elephant &amp; Castle', pc:'SE1', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Acclaimed British actor, born and raised locally in difficult circumstances before going on to an Oscar-winning career spanning more than six decades. He later titled his 2010 autobiography "The Elephant to Hollywood" in direct reference to his roots in the area.' },
 
-    { id:'michael-faraday', img:'', name:'Michael Faraday', area:'Elephant &amp; Castle', pc:'SE1', cat:'resident', year:1791, era:'Born 1791',
+    { id:'michael-faraday', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Michael_Faraday_sitting_crop.jpg/330px-Michael_Faraday_sitting_crop.jpg', name:'Michael Faraday', area:'Elephant &amp; Castle', pc:'SE1', cat:'resident', year:1791, era:'Born 1791',
       lat:null, lon:null, addr:'',
       text:'Pioneering scientist born nearby in 1791, whose work on electromagnetism and electrochemistry underpins much of modern physics and engineering. He is honoured locally by the Michael Faraday Memorial, a stainless steel box in Elephant Square that also houses an electrical substation for the Northern line.' },
 
@@ -1475,11 +1475,11 @@
       lat:null, lon:null, addr:'Near Thomas Lane',
       text:'A Brutalist housing estate developed in the early 1970s by Owen Luder, sometimes nicknamed the "Barbican of the South" for its raw concrete ambition. Lewisham Council proposed demolishing it in 2015 due to disrepair, but it was refurbished in 2018 instead, buying it more time. Long-term redevelopment of the estate, alongside the wider Catford Shopping Centre, remains part of the council\'s ongoing Catford regeneration plans.' },
 
-    { id:'mountsfield-park', img:'', name:'Mountsfield Park', area:'Catford', pc:'SE6', cat:'green', year:null, era:'Charlton Athletic played here in the 1920s',
+    { id:'mountsfield-park', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Mountsfield_Park_1914.png/330px-Mountsfield_Park_1914.png', name:'Mountsfield Park', area:'Catford', pc:'SE6', cat:'green', year:null, era:'Charlton Athletic played here in the 1920s',
       lat:null, lon:null, addr:'Off Stainton Road',
       text:'A large public park with sports facilities and open green space, hosting Lewisham Council\'s annual People\'s Day event every July. In the 1920s, Charlton Athletic F.C. played their home matches here at The Mount stadium before moving on to become one of South London\'s best-known football clubs &mdash; a little-known chapter in the club\'s early history that most fans today wouldn\'t associate with Catford.' },
 
-    { id:'new-cross-fire-station', img:'', name:'New Cross Fire Station', area:'New Cross', pc:'SE14', cat:'grand', year:1893, era:'Built 1893&ndash;94',
+    { id:'new-cross-fire-station', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/New_Cross_Fire_Station_-_geograph.org.uk_-_314484.jpg/330px-New_Cross_Fire_Station_-_geograph.org.uk_-_314484.jpg', name:'New Cross Fire Station', area:'New Cross', pc:'SE14', cat:'grand', year:1893, era:'Built 1893&ndash;94',
       lat:null, lon:null, addr:'',
       text:'A Grade II listed fire station built in 1893&ndash;94 to designs by architect Robert Pearsall. George Arthur Roberts, a pioneering Black firefighter and founder of the fire service\'s wartime discussion and education groups, was stationed here during the Second World War.' },
 
@@ -1487,47 +1487,47 @@
       lat:null, lon:null, addr:'',
       text:'A non-league football club that played from 1888 to 1949, enjoying its most successful period in the 1920s and 30s with a London Senior Cup win in 1923 and back-to-back Isthmian League titles in 1928&ndash;29 and 1929&ndash;30. In the 1926&ndash;27 FA Cup, the club set a record for the highest-margin win by a non-league side in the competition\'s history, beating Kingstonian 9&ndash;0 &mdash; a record it then lost on the receiving end five years later. Future England and Arsenal cricketer-footballer Denis Compton played for the club in the mid-1930s before its wartime closure.' },
 
-    { id:'olaudah-equiano', img:'', name:'Olaudah Equiano', area:'Deptford', pc:'SE8', cat:'resident', year:1760, era:'Sold in Deptford c.1760',
+    { id:'olaudah-equiano', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Olaudah_Equiano_-_Project_Gutenberg_eText_15399_%28cropped%29.png/330px-Olaudah_Equiano_-_Project_Gutenberg_eText_15399_%28cropped%29.png', name:'Olaudah Equiano', area:'Deptford', pc:'SE8', cat:'resident', year:1760, era:'Sold in Deptford c.1760',
       lat:null, lon:null, addr:'',
       text:'Enslaved as a child and later sold between ship captains in Deptford around 1760, Equiano went on to buy his own freedom and become one of the most influential Black abolitionist voices in Britain, whose 1789 autobiography helped galvanise the movement that eventually ended the British slave trade.' },
 
-    { id:'old-lewisham-town-hall', img:'', name:'Old Lewisham Town Hall', area:'Catford', pc:'SE6', cat:'grand', year:null, era:'Built 1875; Goldsmiths campus from 2027',
+    { id:'old-lewisham-town-hall', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Lewisham_Town_Hall.JPG/330px-Lewisham_Town_Hall.JPG', name:'Old Lewisham Town Hall', area:'Catford', pc:'SE6', cat:'grand', year:null, era:'Built 1875; Goldsmiths campus from 2027',
       lat:null, lon:null, addr:'Catford, adjoining Broadway Theatre',
       text:'The Victorian Town Hall of 1875 was replaced by a new Civic Suite in 1968, shortly after the merger of the metropolitan boroughs of Lewisham and Deptford. The older building has stood largely disused in recent years while the council\'s functions moved to Laurence House nearby. In January 2026 it was announced that Goldsmiths, University of London would relocate its Fine Art and Design department into the old Town Hall, with a new campus due to open from 2027 &mdash; a striking new chapter for one of Catford\'s oldest civic buildings.' },
 
-    { id:'prince-lee-boo', img:'', name:'Prince Lee Boo', area:'Rotherhithe', pc:'SE16', cat:'resident', year:1784, era:'Died in London 1784',
+    { id:'prince-lee-boo', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Prince_Lee_Boo.jpg/330px-Prince_Lee_Boo.jpg', name:'Prince Lee Boo', area:'Rotherhithe', pc:'SE16', cat:'resident', year:1784, era:'Died in London 1784',
       lat:null, lon:null, addr:'',
       text:'A prince of the Pelew (Palau) Islands in the Pacific, Lee Boo travelled to London in 1784 with Captain Henry Wilson of the East Indiaman Antelope, whose shipwrecked crew Lee Boo\'s father had sheltered. He died of smallpox soon after arriving and was buried at St Mary\'s Church, Rotherhithe, where the East India Company erected a monument still standing today, inscribed: "Stop, reader, stop, let Nature shed a tear / A prince of mine, Lee Boo, lies buried here."' },
 
-    { id:'ray-blk', img:'', name:'Ray BLK', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
+    { id:'ray-blk', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Ray_BLK_2_%E2%80%93_splash%21_Festival_20_%282017%29.jpg/330px-Ray_BLK_2_%E2%80%93_splash%21_Festival_20_%282017%29.jpg', name:'Ray BLK', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'British singer and songwriter associated with Catford, known for blending R&amp;B, soul and UK rap influences; winner of the BBC Sound of 2017 poll, recognising her as one of the year\'s most promising new artists.' },
 
-    { id:'rio-ferdinand', img:'', name:'Rio Ferdinand', area:'Peckham', pc:'SE15', cat:'resident', year:1978, era:'Born 1978',
+    { id:'rio-ferdinand', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Rio_Ferdinand%2C_2004.jpg/330px-Rio_Ferdinand%2C_2004.jpg', name:'Rio Ferdinand', area:'Peckham', pc:'SE15', cat:'resident', year:1978, era:'Born 1978',
       lat:null, lon:null, addr:'',
       text:'Former England international footballer and one of the country\'s most decorated defenders, born in Peckham in 1978. Ferdinand went on to a long career with West Ham, Leeds United and Manchester United before becoming a prominent television pundit.' },
 
-    { id:'river-cray', img:'', name:'River Cray', area:'Bexley', pc:'DA5', cat:'maritime', year:null, era:'',
+    { id:'river-cray', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/The_River_Cray_at_Bexley_-_geograph.org.uk_-_1409947.jpg/330px-The_River_Cray_at_Bexley_-_geograph.org.uk_-_1409947.jpg', name:'River Cray', area:'Bexley', pc:'DA5', cat:'maritime', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'The river running past Hall Place on its way through Bexley towards Crayford, historically central to the development of the village. The council-sponsored Cray River Way walking route follows the river\'s course from Crayford towards Foots Cray, and the river also forms part of the Mayor of London\'s London LOOP walk shortly after it begins at Erith.' },
 
-    { id:'river-ravensbourne-at-catford-bridge', img:'', name:'River Ravensbourne at Catford Bridge', area:'Catford', pc:'SE6', cat:'maritime', year:null, era:'Crossing named in Anglo-Saxon times; bridge and station added 1850s',
+    { id:'river-ravensbourne-at-catford-bridge', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/The_River_Ravensbourne_south_of_Catford_Road%2C_SE6_%282%29_-_geograph.org.uk_-_2253243.jpg/330px-The_River_Ravensbourne_south_of_Catford_Road%2C_SE6_%282%29_-_geograph.org.uk_-_2253243.jpg', name:'River Ravensbourne at Catford Bridge', area:'Catford', pc:'SE6', cat:'maritime', year:null, era:'Crossing named in Anglo-Saxon times; bridge and station added 1850s',
       lat:null, lon:null, addr:'Catford Bridge',
       text:'The likely origin of the name "Catford" itself: speculation holds that this was where cattle once forded the River Ravensbourne in Anglo-Saxon times, or alternatively where wild cats used the crossing &mdash; the true origin was lost to history long ago. A bridge was later built over the crossing, and in the 1850s a railway station named Catford Bridge opened alongside it, sparking development that spread the name "Catford" out over what had previously been the separate village of Rushey (or Rush) Green.' },
 
-    { id:'robert-browning', img:'', name:'Robert Browning', area:'Walworth', pc:'SE17', cat:'resident', year:null, era:'',
+    { id:'robert-browning', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Robert_Browning_by_Herbert_Rose_Barraud%2C_circa_1888.jpg/330px-Robert_Browning_by_Herbert_Rose_Barraud%2C_circa_1888.jpg', name:'Robert Browning', area:'Walworth', pc:'SE17', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Victorian poet and playwright associated with Walworth, one of several literary and artistic figures with roots in the area alongside painter Samuel Palmer.' },
 
-    { id:'robert-stanford-tuck', img:'', name:'Robert Stanford Tuck', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
+    { id:'robert-stanford-tuck', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Robert_Stanford_Tuck%2C_Royal_Air_Force_%28RAF%29_fighter_pilot_in_a_Hawker_Hurricane_of_No._257_Squadron_RAF%2C_circa_1941.jpg/330px-Robert_Stanford_Tuck%2C_Royal_Air_Force_%28RAF%29_fighter_pilot_in_a_Hawker_Hurricane_of_No._257_Squadron_RAF%2C_circa_1941.jpg', name:'Robert Stanford Tuck', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Second World War RAF fighter ace credited with 27 confirmed victories during the Battle of Britain and subsequent campaigns. He survived being shot down and captured by the Germans, later escaping from custody near the end of the war &mdash; one of the best-known fighter pilots to come from South East London.' },
 
-    { id:'robin-trower', img:'', name:'Robin Trower', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
+    { id:'robin-trower', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/RobinTrower.jpg/330px-RobinTrower.jpg', name:'Robin Trower', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Guitarist best known for his work with Procol Harum in the late 1960s and early 1970s, before building an extensive solo career as a blues-rock guitarist with a string of well-regarded albums from the mid-1970s onward.' },
 
-    { id:'rosa-may-billinghurst', img:'', name:'Rosa May Billinghurst', area:'Lewisham', pc:'SE13', cat:'resident', year:null, era:'',
+    { id:'rosa-may-billinghurst', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Rosa_May_Billinghurst_%2839633766971%29_%28cropped%29.jpg/330px-Rosa_May_Billinghurst_%2839633766971%29_%28cropped%29.jpg', name:'Rosa May Billinghurst', area:'Lewisham', pc:'SE13', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Suffragette and disability rights campaigner associated with Lewisham, notable both for her militant activism in the fight for women\'s votes and for being one of the few prominent disabled suffragettes of the movement, campaigning from a wheelchair-adapted tricycle.' },
 
@@ -1535,83 +1535,83 @@
       lat:null, lon:null, addr:'Rushey Green',
       text:'A surviving hand-operated water pump dating from the 1850s, once used by the original village of Rushey Green (also spelled Rush Green) before the area grew and took on the name "Catford" following the opening of Catford Bridge railway station nearby. It stands today as one of the very few physical traces left of the pre-Victorian settlement that predates the town centre now built around it.' },
 
-    { id:'samuel-coleridge-taylor', img:'', name:'Samuel Coleridge-Taylor', area:'Crystal Palace', pc:'SE19', cat:'resident', year:1912, era:'Died 1912',
+    { id:'samuel-coleridge-taylor', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Samuel_Coleridge-Taylor.jpg/330px-Samuel_Coleridge-Taylor.jpg', name:'Samuel Coleridge-Taylor', area:'Crystal Palace', pc:'SE19', cat:'resident', year:1912, era:'Died 1912',
       lat:null, lon:null, addr:'',
       text:'Composer Samuel Coleridge-Taylor, celebrated for blending African and European classical musical traditions, lived in the South Norwood area near Crystal Palace. He became one of the most acclaimed British composers of his generation before his early death in 1912, and is commemorated locally with a road named in his honour.' },
 
-    { id:'samuel-johnson', img:'', name:'Samuel Johnson', area:'Greenwich', pc:'SE10', cat:'resident', year:1736, era:'Lived in Greenwich from 1736',
+    { id:'samuel-johnson', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Samuel_Johnson_by_Joshua_Reynolds.jpg/330px-Samuel_Johnson_by_Joshua_Reynolds.jpg', name:'Samuel Johnson', area:'Greenwich', pc:'SE10', cat:'resident', year:1736, era:'Lived in Greenwich from 1736',
       lat:null, lon:null, addr:'',
       text:'Compiler of the first great English dictionary, who lived on Greenwich Church Street when he first arrived in London in 1736, long before he began the eighteen-year project that produced his landmark Dictionary of the English Language in 1755.' },
 
-    { id:'samuel-palmer', img:'', name:'Samuel Palmer', area:'Walworth', pc:'SE17', cat:'resident', year:null, era:'',
+    { id:'samuel-palmer', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Samuel_Palmer_-_Self-Portrait_-_WGA16951.jpg/330px-Samuel_Palmer_-_Self-Portrait_-_WGA16951.jpg', name:'Samuel Palmer', area:'Walworth', pc:'SE17', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Romantic-era landscape painter and printmaker, born in Walworth, known for visionary pastoral works produced later in his career alongside his time among the "Ancients" group of artists influenced by William Blake.' },
 
-    { id:'sandhurst-road-school-wwii-bombing', img:'', name:'Sandhurst Road School (WWII bombing)', area:'Catford', pc:'SE6', cat:'memory', year:1943, era:'20 January 1943',
+    { id:'sandhurst-road-school-wwii-bombing', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Sandhurst_Road_School_%2823935092374%29.jpg/330px-Sandhurst_Road_School_%2823935092374%29.jpg', name:'Sandhurst Road School (WWII bombing)', area:'Catford', pc:'SE6', cat:'memory', year:1943, era:'20 January 1943',
       lat:null, lon:null, addr:'Minard Road',
       text:'On 20 January 1943, a German Focke-Wulf fighter-bomber dropped a single 500kg bomb on Sandhurst Road School at lunchtime, destroying much of the building and killing 38 children and 6 teachers &mdash; one of the deadliest single attacks on a British school during the Second World War. Some accounts report the pilot looped low over the playground and waved at children moments before releasing the bomb, which struck directly over the school dining room. Many victims were buried for hours under the rubble; 31 children and one teacher are buried together in a civilian war dead plot at Hither Green Cemetery, following a funeral conducted by the Bishop of Southwark and attended by over 7,000 mourners. The school, now Sandhurst Primary School, still holds a stained-glass memorial window and a small memorial garden marking the date.' },
 
-    { id:'sheila-hancock', img:'', name:'Sheila Hancock', area:'Bexleyheath', pc:'DA6', cat:'resident', year:null, era:'',
+    { id:'sheila-hancock', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Sheila_Hancock_-_GylesDamesPalladium050323_%2874_of_74%29_%2852728634758%29.jpg/330px-Sheila_Hancock_-_GylesDamesPalladium050323_%2874_of_74%29_%2852728634758%29.jpg', name:'Sheila Hancock', area:'Bexleyheath', pc:'DA6', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Acclaimed stage and screen actress who lived on Latham Road in Bexleyheath. Hancock built a long and celebrated career across British theatre, film and television spanning more than six decades.' },
 
-    { id:'sir-arthur-conan-doyle', img:'', name:'Sir Arthur Conan Doyle', area:'Crystal Palace', pc:'SE19', cat:'resident', year:null, era:'',
+    { id:'sir-arthur-conan-doyle', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Arthur_Conan_Doyle_by_Walter_Benington%2C_1914.png/330px-Arthur_Conan_Doyle_by_Walter_Benington%2C_1914.png', name:'Sir Arthur Conan Doyle', area:'Crystal Palace', pc:'SE19', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Creator of Sherlock Holmes, Sir Arthur Conan Doyle lived in the South Norwood area on the edge of Crystal Palace, a period during which he continued writing the detective stories that would make him one of the most widely read authors in the English language.' },
 
-    { id:'sir-arthur-eddington', img:'', name:'Sir Arthur Eddington', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'',
+    { id:'sir-arthur-eddington', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Arthur_Stanley_Eddington.jpg/330px-Arthur_Stanley_Eddington.jpg', name:'Sir Arthur Eddington', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Mathematician and astrophysicist who lived in Blackheath in the early 20th century. Eddington\'s 1919 expedition to observe a solar eclipse provided some of the first experimental confirmation of Einstein\'s general theory of relativity, making him one of the most significant scientific figures of his generation.' },
 
-    { id:'sir-francis-baring', img:'', name:'Sir Francis Baring', area:'Lee', pc:'SE12', cat:'resident', year:1792, era:'Purchased Manor House 1792',
+    { id:'sir-francis-baring', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Sir_Francis_Baring%2C_1st_Baronet.jpg/330px-Sir_Francis_Baring%2C_1st_Baronet.jpg', name:'Sir Francis Baring', area:'Lee', pc:'SE12', cat:'resident', year:1792, era:'Purchased Manor House 1792',
       lat:null, lon:null, addr:'',
       text:'Founder of Barings Bank, one of Britain\'s most significant merchant banks. Baring purchased Lee\'s Manor House in 1792 and developed the surrounding area, shaping much of what became the Lee and Lee Green of today.' },
 
-    { id:'sir-george-airy', img:'', name:'Sir George Airy', area:'Greenwich', pc:'SE10', cat:'resident', year:1801, era:'1801&ndash;1892',
+    { id:'sir-george-airy', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/George_Biddell_Airy_1891.jpg/330px-George_Biddell_Airy_1891.jpg', name:'Sir George Airy', area:'Greenwich', pc:'SE10', cat:'resident', year:1801, era:'1801&ndash;1892',
       lat:null, lon:null, addr:'',
       text:'Astronomer Royal from 1835 to 1881, who lived at the White House on Crooms Hill. Airy modernised the Royal Observatory\'s operations and is credited with helping establish the Greenwich meridian as the world standard for longitude and timekeeping.' },
 
-    { id:'sir-george-grove', img:'', name:'Sir George Grove', area:'Sydenham', pc:'SE26', cat:'resident', year:1900, era:'Lived in Sydenham 1852&ndash;1860; died 1900',
+    { id:'sir-george-grove', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/George-grove.jpg/330px-George-grove.jpg', name:'Sir George Grove', area:'Sydenham', pc:'SE26', cat:'resident', year:1900, era:'Lived in Sydenham 1852&ndash;1860; died 1900',
       lat:null, lon:null, addr:'',
       text:'Engineer and musicologist Sir George Grove lived in Sydenham between 1852 and 1860, during which time he worked as secretary of the Society of Arts helping organise the Great Exhibition. He is much better remembered today as the founding editor of Grove\'s Dictionary of Music and Musicians, still a standard musical reference work, and as the first director of the Royal College of Music. He died at his cottage in Lower Sydenham in 1900 and is buried in Brockley and Ladywell Cemetery.' },
 
-    { id:'sir-james-clark-ross', img:'', name:'Sir James Clark Ross', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'',
+    { id:'sir-james-clark-ross', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/James_Clark_Ross.jpg/330px-James_Clark_Ross.jpg', name:'Sir James Clark Ross', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Polar explorer who lived in Blackheath, best known for discovering the Ross Sea and the Ross Ice Shelf in Antarctica during his 1839&ndash;1843 expedition, and for locating the North Magnetic Pole in the Canadian Arctic in 1831. One of the most celebrated explorers of his era.' },
 
-    { id:'sir-james-thornhill', img:'', name:'Sir James Thornhill', area:'Greenwich', pc:'SE10', cat:'resident', year:null, era:'',
+    { id:'sir-james-thornhill', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/James_Thornhill_self_portrait.jpg/330px-James_Thornhill_self_portrait.jpg', name:'Sir James Thornhill', area:'Greenwich', pc:'SE10', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Baroque painter renowned for his ceiling and wall paintings, including the Painted Hall at the Old Royal Naval College. He was said to have lived at Park Hall on Crooms Hill, a house originally designed for the architect John James, who never actually occupied it himself.' },
 
-    { id:'site-of-catford-stadium', img:'', name:'Site of Catford Stadium', area:'Catford', pc:'SE6', cat:'memory', year:1932, era:'Operated 1932&ndash;2003; demolished after 2005 fire',
+    { id:'site-of-catford-stadium', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Current_site_of_The_Mount_stadium_in_Mountsfield_Park%2C_Catford%2C_2022.jpg/330px-Current_site_of_The_Mount_stadium_in_Mountsfield_Park%2C_Catford%2C_2022.jpg', name:'Site of Catford Stadium', area:'Catford', pc:'SE6', cat:'memory', year:1932, era:'Operated 1932&ndash;2003; demolished after 2005 fire',
       lat:null, lon:null, addr:'Adenmore Road',
       text:'Home to greyhound racing from 1932 until its closure in 2003, hosting competitions including the Gold Collar and Greenwich Cup for over 70 years, as well as boxing and other sporting events, between the southern railway bridges near Catford Bridge station. The abandoned stadium was destroyed by fire in 2005 and later demolished to make way for new housing, ending one of South East London\'s longest-running sporting venues and a once-central part of Catford\'s social life.' },
 
-    { id:'spencer-perceval', img:'', name:'Spencer Perceval', area:'Charlton', pc:'SE7', cat:'resident', year:1812, era:'Assassinated 1812',
+    { id:'spencer-perceval', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Spencer_Perceval_by_George_Francis_Joseph.jpg/330px-Spencer_Perceval_by_George_Francis_Joseph.jpg', name:'Spencer Perceval', area:'Charlton', pc:'SE7', cat:'resident', year:1812, era:'Assassinated 1812',
       lat:null, lon:null, addr:'',
       text:'The only British Prime Minister ever to be assassinated, shot in the lobby of the House of Commons in 1812. Perceval is buried at St Luke\'s Church, Charlton, alongside civil servant Edward Drummond, giving this small parish church an unusually direct link to a defining moment in British political history.' },
 
-    { id:'spike-milligan', img:'', name:'Spike Milligan', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'1918&ndash;2002',
+    { id:'spike-milligan', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Spike_Milligan_in_the_snow_-_geograph.org.uk_-_3305243.jpg/330px-Spike_Milligan_in_the_snow_-_geograph.org.uk_-_3305243.jpg', name:'Spike Milligan', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'1918&ndash;2002',
       lat:null, lon:null, addr:'',
       text:'Comedian and writer, co-creator of The Goon Show, who attended Catford\'s Brownhill Boys\' School and wrote about the area in his books and sketches, helping cement Catford\'s slightly surreal reputation in British comedy. Despite the strong local association, Milligan is actually recorded as having lived in neighbouring Honor Oak rather than Catford itself &mdash; a distinction local folklore tends to blur.' },
 
-    { id:'st-laurence-s-church', img:'', name:'St Laurence\'s Church', area:'Catford', pc:'SE6', cat:'grand', year:1968, era:'Built 1968, replacing an 1887 church',
+    { id:'st-laurence-s-church', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/St_Laurence_Church%2C_Bromley_Road%2C_Catford_%E2%80%93_detail_%28geograph_3941134%29.jpg/330px-St_Laurence_Church%2C_Bromley_Road%2C_Catford_%E2%80%93_detail_%28geograph_3941134%29.jpg', name:'St Laurence\'s Church', area:'Catford', pc:'SE6', cat:'grand', year:1968, era:'Built 1968, replacing an 1887 church',
       lat:null, lon:null, addr:'Bromley Road',
       text:'A Brutalist parish church built in 1968 by architect Ralph Covell, now Grade II listed. It replaced the original St Laurence\'s Church of 1887, designed by architect Hugh Roumieu Gough, which stood roughly 200 metres away and was demolished in 1969 to make way for Laurence House &mdash; the council building that now houses the offices of the Mayor of Lewisham and the borough\'s Young Mayors.' },
 
-    { id:'st-margaret-s-church-lee', img:'', name:'St Margaret\'s Church, Lee', area:'Lee', pc:'SE12', cat:'grand', year:1839, era:'Rebuilt 1839&ndash;1841',
+    { id:'st-margaret-s-church-lee', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/St_Margaret%27s_Church%2C_Lee_-_geograph.org.uk_-_204689.jpg/330px-St_Margaret%27s_Church%2C_Lee_-_geograph.org.uk_-_204689.jpg', name:'St Margaret\'s Church, Lee', area:'Lee', pc:'SE12', cat:'grand', year:1839, era:'Rebuilt 1839&ndash;1841',
       lat:null, lon:null, addr:'',
       text:'The parish church of Lee, rebuilt between 1839 and 1841 to a design by architect John Brown. Its churchyard is the burial place of three Astronomers Royal &mdash; Edmond Halley (of Halley\'s Comet fame), Nathaniel Bliss and John Pond &mdash; an unusually concentrated cluster of scientific history for one small South East London churchyard.' },
 
-    { id:'st-mary-the-virgin-church-bexley', img:'', name:'St Mary the Virgin Church, Bexley', area:'Bexley', pc:'DA5', cat:'grand', year:null, era:'Medieval origins; Victorian refurbishment',
+    { id:'st-mary-the-virgin-church-bexley', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/St_Mary_the_Virgin_Church_Bexley_-_geograph.org.uk_-_2027777.jpg/330px-St_Mary_the_Virgin_Church_Bexley_-_geograph.org.uk_-_2027777.jpg', name:'St Mary the Virgin Church, Bexley', area:'Bexley', pc:'DA5', cat:'grand', year:null, era:'Medieval origins; Victorian refurbishment',
       lat:null, lon:null, addr:'',
       text:'Bexley\'s principal landmark, an ancient parish church whose most distinctive feature is an unusual spire resembling an octagonal cone balanced on a truncated pyramid. Originally built in the Middle Ages, its monastic-style interior survived largely unaltered from the Reformation until the 18th century, before a Victorian-era refurbishment. The churchyard is the burial place of the German-born scientist Henry Oldenburg, first Secretary of the Royal Society, who died in 1677.' },
 
-    { id:'st-peter-s-church-walworth', img:'', name:'St Peter\'s Church, Walworth', area:'Walworth', pc:'SE17', cat:'grand', year:1825, era:'Built c.1825',
+    { id:'st-peter-s-church-walworth', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/St._Peter%27s_Church%2C_Walworth_-_geograph.org.uk_-_5141454.jpg/330px-St._Peter%27s_Church%2C_Walworth_-_geograph.org.uk_-_5141454.jpg', name:'St Peter\'s Church, Walworth', area:'Walworth', pc:'SE17', cat:'grand', year:1825, era:'Built c.1825',
       lat:null, lon:null, addr:'',
       text:'A neo-classical church built around 1825 to a design by the eminent architect Sir John Soane, reflecting the wealth of the middle-class merchants living in the area at the time who could afford an architect of such prominence. It remains one of Walworth\'s most architecturally significant buildings.' },
 
-    { id:'sydenham-wells', img:'', name:'Sydenham Wells', area:'Sydenham', pc:'SE26', cat:'maritime', year:1760, era:'Discovered 17th century; peak popularity c.1760',
+    { id:'sydenham-wells', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Sydenham_Wells_Park.jpg/330px-Sydenham_Wells_Park.jpg', name:'Sydenham Wells', area:'Sydenham', pc:'SE26', cat:'maritime', year:1760, era:'Discovered 17th century; peak popularity c.1760',
       lat:null, lon:null, addr:'',
       text:'Natural mineral springs discovered in Sydenham in the 17th century drew fashionable visitors throughout the 18th century, with a visit from King George III around 1760 marking the peak of their popularity. Some visitors blamed hangovers on the water itself, though contemporaries suspected the brandy sold alongside it at local inns was the likelier culprit. The wells declined through the 19th century and were eventually filled in, but they gave the area Sydenham Wells Park, still one of the largest green spaces within the postcode.' },
 
@@ -1619,19 +1619,19 @@
       lat:null, lon:null, addr:'',
       text:'In August 2011, Peckham was one of the London districts drawn into the wider wave of England riots that followed the police killing of Mark Duggan in Tottenham. On 8 August, a crowd of three to four hundred people looted shops along Rye Lane and Peckham High Street, a bus was set alight on Southampton Way, and a local restaurant, Regen\'s, was destroyed by fire &mdash; a night that became a defining, painful part of the area\'s recent history and fed into a decade of subsequent debate about policing, race and regeneration in Peckham.' },
 
-    { id:'the-bankside-beargarden', img:'', name:'The Bankside Beargarden', area:'Bankside', pc:'SE1', cat:'memory', year:1583, era:'16th&ndash;17th centuries; gallery collapse 1583; baiting banned 1835',
+    { id:'the-bankside-beargarden', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/The_Bear_Garden%2C_Bankside%2C_London.png/330px-The_Bear_Garden%2C_Bankside%2C_London.png', name:'The Bankside Beargarden', area:'Bankside', pc:'SE1', cat:'memory', year:1583, era:'16th&ndash;17th centuries; gallery collapse 1583; baiting banned 1835',
       lat:null, lon:null, addr:'',
       text:'For centuries Bankside sat just outside the City of London\'s legal control, making it the capital\'s chief haunt for entertainments the City banned: bear- and bull-baiting, brothels and unlicensed theatre. The Beargarden, a round structure resembling the nearby playhouses, hosted these blood sports from the Elizabethan era into the Restoration &mdash; Samuel Pepys visited in 1666 and called it "a rude and nasty pleasure" &mdash; and the practice wasn\'t outlawed until 1835. In 1583, the gallery of the baiting arena in Paris Garden collapsed on a Sunday, killing several spectators and injuring many more, an event Puritan commentators seized on as divine judgement for Sabbath-breaking.' },
 
-    { id:'the-catford-cat', img:'', name:'The Catford Cat', area:'Catford', pc:'SE6', cat:'art', year:1974, era:'Erected 1974',
+    { id:'the-catford-cat', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Catford_Centre%2C_SE6_-_geograph.org.uk_-_2430147.jpg/330px-Catford_Centre%2C_SE6_-_geograph.org.uk_-_2430147.jpg', name:'The Catford Cat', area:'Catford', pc:'SE6', cat:'art', year:1974, era:'Erected 1974',
       lat:null, lon:null, addr:'Catford Centre, Rushey Green',
       text:'A giant fibreglass sculpture of a black cat perched above the entrance to the Catford Centre shopping mall, one paw resting on the "F" of "Catford" as if beckoning shoppers inside. Designed by Brutalist architects Owen Luder and Rodney Gordon &mdash; the same pair behind Eros House and Milford Towers nearby &mdash; as part of the Centre\'s 1974 development. It has become Catford\'s single most recognisable landmark, surviving a serious threat of removal during a 2017 redevelopment scheme after a strong local campaign to save it. A separate housing project nearby, The Queen of Catford, riffs on the cat theme with over 27,000 small cat faces of its own.' },
 
-    { id:'the-charlton-horn-fair', img:'', name:'The Charlton Horn Fair', area:'Charlton', pc:'SE7', cat:'memory', year:null, era:'Held annually from at least the 17th century; discontinued 1872, revived 1973',
+    { id:'the-charlton-horn-fair', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Skimmington-Triumph%2C_Or_the_Humours_of_Horn_Fair_%28BM_Y%2C1.90%29.jpg/330px-Skimmington-Triumph%2C_Or_the_Humours_of_Horn_Fair_%28BM_Y%2C1.90%29.jpg', name:'The Charlton Horn Fair', area:'Charlton', pc:'SE7', cat:'memory', year:null, era:'Held annually from at least the 17th century; discontinued 1872, revived 1973',
       lat:null, lon:null, addr:'',
       text:'An unruly annual fair held every 18 October at Charlton from at least the 17th century, supposedly founded after a legend involving King John, a miller\'s wife, and an enraged husband who was granted land on condition he process annually to its boundary wearing a pair of buck\'s horns. Revellers travelling from Rotherhithe would disembark at Cuckold\'s Point before parading to Charlton; by the 19th century the fair had a reputation for such debauchery and lawlessness that an 1872 newspaper blamed it for "a week of burglary in the parish" and it was shut down. A tamer, revived version has been held in the grounds of Charlton House since 1973.' },
 
-    { id:'the-crystal-palace-fire', img:'', name:'The Crystal Palace fire', area:'Crystal Palace', pc:'SE19', cat:'memory', year:1936, era:'30 November 1936',
+    { id:'the-crystal-palace-fire', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Crystal_Palace_fire_1936.jpg/330px-Crystal_Palace_fire_1936.jpg', name:'The Crystal Palace fire', area:'Crystal Palace', pc:'SE19', cat:'memory', year:1936, era:'30 November 1936',
       lat:null, lon:null, addr:'',
       text:'On the night of 30 November 1936, the Crystal Palace &mdash; the vast glass-and-iron exhibition hall relocated to Sydenham after London\'s 1851 Great Exhibition &mdash; burned to the ground in a fire so large it was reportedly visible from ten counties away and spotted by airline pilots crossing the English Channel. General manager Sir Henry Buckland was walking the grounds with his young daughter, Crystal, when he spotted the blaze; within half an hour the entire 25-acre structure had caught fire. The disaster effectively ended the building\'s century-defining role, leaving only fragments &mdash; sphinxes, steps and terraces &mdash; in the park that still carries its name.' },
 
@@ -1643,7 +1643,7 @@
       lat:null, lon:null, addr:'',
       text:'An all-female shoplifting gang, also known as the Forty Thieves, active from the 18th through the 20th centuries and operating out of the Elephant and Castle, allied with the local Elephant and Castle Mob led by the McDonald brothers. Notable members included Alice Diamond, one of the gang\'s leaders in the first half of the 20th century, and Shirley Pitts, who was "educated" into shoplifting by the group &mdash; a striking piece of the area\'s criminal history distinct from its better-known male gangs.' },
 
-    { id:'the-lewisham-rail-crash', img:'', name:'The Lewisham rail crash', area:'Lewisham', pc:'SE13', cat:'memory', year:1957, era:'4 December 1957',
+    { id:'the-lewisham-rail-crash', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/St_Johns_Lewisham_Rail_Crash_-_Geograph-2042851.jpg/330px-St_Johns_Lewisham_Rail_Crash_-_Geograph-2042851.jpg', name:'The Lewisham rail crash', area:'Lewisham', pc:'SE13', cat:'memory', year:1957, era:'4 December 1957',
       lat:null, lon:null, addr:'',
       text:'On the evening of 4 December 1957, a steam train travelling to Ramsgate crashed in dense fog into an electric train that had stopped at a signal beneath a railway bridge near Lewisham. The impact destroyed a carriage and brought the bridge down onto the wreckage, killing 90 people and injuring 173 &mdash; one of the deadliest rail disasters in British history. The line was closed for over a week and the bridge itself took a further month to rebuild.' },
 
@@ -1651,7 +1651,7 @@
       lat:null, lon:null, addr:'Doggett Road area',
       text:'The 1972 killing of Maxwell Confait in Catford led to the wrongful conviction of three local teenagers &mdash; Colin Lattimore, Ronald Leighton and Ahmet Salih &mdash; based on confessions later shown to be unreliable, obtained under questionable police interview conditions. Their convictions were quashed in 1975 after a public outcry, and the resulting inquiry became one of the most influential miscarriage-of-justice cases in English legal history. Its findings fed directly into the safeguards on police interviews, evidence handling and the right to legal advice later enshrined in the Police and Criminal Evidence Act 1984 (PACE), a law that still governs UK policing today.' },
 
-    { id:'the-murder-of-stephen-lawrence', img:'', name:'The murder of Stephen Lawrence', area:'Eltham', pc:'SE9', cat:'memory', year:1993, era:'22 April 1993; convictions 2012',
+    { id:'the-murder-of-stephen-lawrence', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Floral_Tributes_to_Stephen_Lawrence_in_Eltham_in_2023_%2805%29.jpg/330px-Floral_Tributes_to_Stephen_Lawrence_in_Eltham_in_2023_%2805%29.jpg', name:'The murder of Stephen Lawrence', area:'Eltham', pc:'SE9', cat:'memory', year:1993, era:'22 April 1993; convictions 2012',
       lat:null, lon:null, addr:'',
       text:'On the evening of 22 April 1993, 18-year-old Stephen Lawrence was fatally stabbed in an unprovoked, racially motivated attack while waiting for a bus with his friend Duwayne Brooks on Well Hall Road. The Metropolitan Police\'s badly mishandled investigation, and the collapse of an early prosecution, led Stephen\'s parents to fund a private case that also failed in 1996. A 1998 public inquiry led by Sir William Macpherson concluded the police force had been institutionally racist, a finding that reshaped British policing, race relations law and the rules on double jeopardy; two of Lawrence\'s killers were finally convicted of murder in January 2012, almost nineteen years after his death.' },
 
@@ -1659,19 +1659,19 @@
       lat:null, lon:null, addr:'',
       text:'In the early hours of 18 January 1981, a fire broke out during a birthday party at a house on New Cross Road, killing 13 young Black people aged between 14 and 22; a fourteenth victim took his own life two years later. No one was ever charged, and both a 1981 and a 2004 inquest returned open verdicts. The tragedy, and the perceived indifference of the police and press response, led directly to the Black People\'s Day of Action on 2 March 1981, when around 20,000 people marched from Fordham Park to Hyde Park behind placards reading "13 Dead, Nothing Said" &mdash; a pivotal moment in the history of Black British political organising.' },
 
-    { id:'the-old-new-tiger-s-head', img:'', name:'The Old &amp; New Tiger\'s Head', area:'Lee', pc:'SE12', cat:'pub', year:1815, era:'History dating to 1815',
+    { id:'the-old-new-tiger-s-head', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Lee%2C_Old_Tiger%27s_Head_and_old_New_Tiger%27s_Head_-_geograph.org.uk_-_491150.jpg/330px-Lee%2C_Old_Tiger%27s_Head_and_old_New_Tiger%27s_Head_-_geograph.org.uk_-_491150.jpg', name:'The Old &amp; New Tiger\'s Head', area:'Lee', pc:'SE12', cat:'pub', year:1815, era:'History dating to 1815',
       lat:null, lon:null, addr:'',
       text:'A pair of pubs at the Lee Green crossroads, with a history dating back to at least 1815, when troops moving between Dover and the Battle of Waterloo used the original Tiger\'s Head as a resting place to watch boxing matches and horse and foot races. The original pub stood on the Greenwich side of the road before being rebuilt across the street in the Lewisham borough, leaving both an "Old" and "New" Tiger\'s Head as local landmarks.' },
 
-    { id:'the-old-nun-s-head', img:'', name:'The Old Nun\'s Head', area:'Nunhead', pc:'SE15', cat:'pub', year:1905, era:'First recorded 1583; rebuilt 1905',
+    { id:'the-old-nun-s-head', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/The_Old_Nun%27s_Head%2C_Nunhead_Green%2C_SE15_-_geograph.org.uk_-_6110680.jpg/330px-The_Old_Nun%27s_Head%2C_Nunhead_Green%2C_SE15_-_geograph.org.uk_-_6110680.jpg', name:'The Old Nun\'s Head', area:'Nunhead', pc:'SE15', cat:'pub', year:1905, era:'First recorded 1583; rebuilt 1905',
       lat:null, lon:null, addr:'',
       text:'A pub on Nunhead Green whose name may be the origin of the area\'s own name &mdash; first recorded as "Nunn-Head" in 1583. Local legend holds that it commemorates a nun beheaded here during the Dissolution of the Monasteries under Henry VIII, a story the pub itself commemorates with a sign, though it may equally derive simply from an old inn called the Nun\'s Head. The current building dates from a 1905 rebuild.' },
 
-    { id:'the-one-tree-hill-enclosure-protest', img:'', name:'The One Tree Hill enclosure protest', area:'Honor Oak', pc:'SE23', cat:'memory', year:1897, era:'Protest 1897; land secured for public use 1905',
+    { id:'the-one-tree-hill-enclosure-protest', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Oak_of_Honor_at_One_Tree_Hill%2C_Honor_Oak_%2802%29.jpg/330px-Oak_of_Honor_at_One_Tree_Hill%2C_Honor_Oak_%2802%29.jpg', name:'The One Tree Hill enclosure protest', area:'Honor Oak', pc:'SE23', cat:'memory', year:1897, era:'Protest 1897; land secured for public use 1905',
       lat:null, lon:null, addr:'',
       text:'In 1897, the owner of One Tree Hill &mdash; long used informally as common land by local people to gather firewood, walk and graze animals &mdash; attempted to sell it to a golf club and fence it off from public access. The move provoked a mass local outcry: the Enclosure of Honor Hill Protest Committee formed within days and grew to around 150 members, and the resulting pressure halted the enclosure. The hill was formally acquired by Camberwell Borough Council as public open space in 1905 and remains so today, making it a small but genuine local victory in the wider English history of resistance to the enclosure of common land.' },
 
-    { id:'the-pyrotechnists-arms', img:'', name:'The Pyrotechnists Arms', area:'Nunhead', pc:'SE15', cat:'pub', year:1868, era:'Named for factory built 1868',
+    { id:'the-pyrotechnists-arms', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Pyrotechnists_Arms%2C_Nunhead%2C_SE15_%286295068995%29.jpg/330px-Pyrotechnists_Arms%2C_Nunhead%2C_SE15_%286295068995%29.jpg', name:'The Pyrotechnists Arms', area:'Nunhead', pc:'SE15', cat:'pub', year:1868, era:'Named for factory built 1868',
       lat:null, lon:null, addr:'',
       text:'A pub named for Brock\'s fireworks factory, built nearby in 1868 on a large field between the railway embankment and Nunhead Green. The factory has long since gone, but the pub keeps its memory alive through its name &mdash; a nice example of an area\'s industrial history surviving only in a pub sign.' },
 
@@ -1679,11 +1679,11 @@
       lat:null, lon:null, addr:'Near the Catford Centre',
       text:'A residential building by Tsuruta Architects decorated with over 27,000 individual cat faces, inside and out. As part of the design, the architects invented a fictional backstory for two former residents &mdash; "Ford" and "Bjorn" &mdash; supposedly linked to the real Windsor Film Studios that operated in Catford during the silent-film era (1914&ndash;1921), and commissioned two official-looking blue plaques mimicking English Heritage\'s style to commemorate the invented pair. It sits in playful architectural conversation with the real Catford Cat nearby &mdash; one an unexplained icon, the other an invented history hiding in plain sight.' },
 
-    { id:'the-southwark-martyrs', img:'', name:'The Southwark Martyrs', area:'Elephant &amp; Castle', pc:'SE1', cat:'memory', year:1557, era:'Executed May 1557',
+    { id:'the-southwark-martyrs', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Church_of_the_English_Martyrs%2C_Southwark_-_geograph.org.uk_-_5291053.jpg/330px-Church_of_the_English_Martyrs%2C_Southwark_-_geograph.org.uk_-_5291053.jpg', name:'The Southwark Martyrs', area:'Elephant &amp; Castle', pc:'SE1', cat:'memory', year:1557, era:'Executed May 1557',
       lat:null, lon:null, addr:'',
       text:'In May 1557, three Protestants &mdash; William Morant, Stephen Gratwick and a man recorded only as King &mdash; were burnt at the stake in St George\'s Field during the Marian Persecutions under Queen Mary I, on the site where the Metropolitan Tabernacle now stands. Known as the Southwark Martyrs, their deaths were part of a wider wave of religious executions carried out across England during Mary\'s attempt to reverse the Reformation, and the site\'s later choice for a great Protestant preaching house was no coincidence.' },
 
-    { id:'the-tooley-street-fire', img:'', name:'The Tooley Street fire', area:'Bermondsey', pc:'SE16', cat:'memory', year:1861, era:'1861',
+    { id:'the-tooley-street-fire', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Fire_Station%2C_Tooley_Street_%28II%29.jpg/330px-Fire_Station%2C_Tooley_Street_%28II%29.jpg', name:'The Tooley Street fire', area:'Bermondsey', pc:'SE16', cat:'memory', year:1861, era:'1861',
       lat:null, lon:null, addr:'',
       text:'A major fire broke out among the riverside warehouses of Tooley Street in 1861, engulfing the densely packed wharves that had earned the area the nickname "London\'s Larder" for its role storing and processing food for the capital. The blaze was one of the largest and most destructive fires in London between the Great Fire of 1666 and the Blitz, reshaping the riverside for decades afterward.' },
 
@@ -1691,19 +1691,19 @@
       lat:null, lon:null, addr:'',
       text:'On 7 November 1974, the Provisional IRA threw a gelignite bomb through the window of the Kings Arms pub on Frances Street, close to the Royal Artillery Barracks, killing two people &mdash; off-duty soldier Gunner Richard Dunne and sales clerk Alan Horsley &mdash; and injuring 35 others including the landlady. The attack came a month after similar bombings in Guildford, part of the same mainland bombing campaign during the Troubles, and remains one of Woolwich\'s most significant and painful pieces of 20th-century history.' },
 
-    { id:'thomas-middleton', img:'', name:'Thomas Middleton', area:'Elephant &amp; Castle', pc:'SE1', cat:'resident', year:1627, era:'Died 1627',
+    { id:'thomas-middleton', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Thomas_Middleton.jpg/330px-Thomas_Middleton.jpg', name:'Thomas Middleton', area:'Elephant &amp; Castle', pc:'SE1', cat:'resident', year:1627, era:'Died 1627',
       lat:null, lon:null, addr:'',
       text:'Jacobean playwright and contemporary of Shakespeare, known for works including "The Revenger\'s Tragedy" and "Women Beware Women." He lived in the area in later life and was buried in St Mary\'s Churchyard, Newington, when he died in 1627.' },
 
-    { id:'tom-cribb', img:'', name:'Tom Cribb', area:'Woolwich', pc:'SE18', cat:'resident', year:1848, era:'Died in Woolwich 1848',
+    { id:'tom-cribb', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Tom_Cribb_etching.jpg/330px-Tom_Cribb_etching.jpg', name:'Tom Cribb', area:'Woolwich', pc:'SE18', cat:'resident', year:1848, era:'Died in Woolwich 1848',
       lat:null, lon:null, addr:'',
       text:'Bare-knuckle boxing champion of England, born in Bristol but resident in Woolwich until his death there in 1848 aged 66. Cribb was buried at St Mary Magdalene, Woolwich, where his memorial &mdash; a lioness resting a paw on an urn &mdash; still stands in what is now St Mary\'s Gardens.' },
 
-    { id:'w-g-grace', img:'', name:'W. G. Grace', area:'Sydenham', pc:'SE26', cat:'resident', year:null, era:'',
+    { id:'w-g-grace', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/WG_Grace_c1902.jpg/330px-WG_Grace_c1902.jpg', name:'W. G. Grace', area:'Sydenham', pc:'SE26', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Widely regarded as one of the greatest cricketers in the sport\'s history, W. G. Grace lived in Sydenham during part of his playing career, a period in which he dominated English cricket for decades and helped shape the modern game.' },
 
-    { id:'walworth-town-hall', img:'', name:'Walworth Town Hall', area:'Walworth', pc:'SE17', cat:'grand', year:2013, era:'Fire 2013; on Heritage at Risk Register',
+    { id:'walworth-town-hall', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Walworth_Town_Hall.jpg/330px-Walworth_Town_Hall.jpg', name:'Walworth Town Hall', area:'Walworth', pc:'SE17', cat:'grand', year:2013, era:'Fire 2013; on Heritage at Risk Register',
       lat:null, lon:null, addr:'',
       text:'Originally the Vestry Hall of St Mary, Newington, it became the headquarters of the Metropolitan Borough of Southwark and was renamed Southwark Town Hall in 1900, reverting to Walworth Town Hall after the enlarged London Borough of Southwark was formed in 1965. From 2006 it housed the Cuming Museum, until a serious fire badly damaged the roof in March 2013, after which the building was added to the Heritage at Risk Register.' }
   ];
