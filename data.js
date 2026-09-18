@@ -2157,5 +2157,21 @@
 
     { id:'st-christophers-hospice', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/St._Christopher%27s_Hospice.jpg/330px-St._Christopher%27s_Hospice.jpg', name:'St Christopher\'s Hospice', area:'Sydenham', pc:'SE26', cat:'culture', year:1967, era:'Opened 1967',
       lat:51.4233, lon:-0.058, addr:'Copeman Close, SE26',
-      text:'Founded by Dame Cicely Saunders, St Christopher\'s Hospice opened in 1967 as the world\'s first purpose-built hospice combining pain and symptom control with teaching and clinical research, launching what became the modern hospice movement worldwide.' }
+      text:'Founded by Dame Cicely Saunders, St Christopher\'s Hospice opened in 1967 as the world\'s first purpose-built hospice combining pain and symptom control with teaching and clinical research, launching what became the modern hospice movement worldwide.' },
+
+    { id:'daniel-kitson-gipsy-hill', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Daniel_Kitson.jpg/330px-Daniel_Kitson.jpg', name:'Daniel Kitson', area:'Gipsy Hill', pc:'SE19', cat:'resident', year:2001, era:'Phoenix Nights, 2001&ndash;02',
+      lat:51.4245, lon:-0.084, addr:'Gipsy Hill, SE19',
+      text:'The comedian and storyteller Daniel Kitson, known to television audiences for playing Spencer in Peter Kay\'s Phoenix Nights (2001&ndash;02) and to live audiences for his acclaimed one-man shows, is a Gipsy Hill resident.' },
+
+    { id:'kate-thornton-gipsy-hill', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Presenter_Kate_Thornton_Image1_%281%29.jpg/330px-Presenter_Kate_Thornton_Image1_%281%29.jpg', name:'Kate Thornton', area:'Gipsy Hill', pc:'SE19', cat:'resident', year:2004, era:'Presented The X Factor, 2004&ndash;07',
+      lat:51.4245, lon:-0.084, addr:'Gipsy Hill, SE19',
+      text:'The broadcaster Kate Thornton, who presented The X Factor from its first series in 2004 until 2007 and later fronted the National Television Awards, is a Gipsy Hill resident.' },
+
+    { id:'krept-and-konan', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Skengdo%2C_AM%2C_Krept%2C_Konan.jpg/330px-Skengdo%2C_AM%2C_Krept%2C_Konan.jpg', name:'Krept &amp; Konan', area:'Gipsy Hill', pc:'SE19', cat:'resident', year:1990, era:'Krept born here, 1990',
+      lat:51.4245, lon:-0.084, addr:'Gipsy Hill, SE19',
+      text:'Casyo &lsquo;Krept&rsquo; Johnson was born in Gipsy Hill in 1990 and grew up in the area before forming Krept &amp; Konan with childhood friend Konan. The duo went on to become one of the most successful acts in modern British rap, and Krept has given interviews walking journalists and visiting film stars around the streets where he grew up.' },
+
+    { id:'trevoh-chalobah', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Trevoh_Chalobah.jpg/330px-Trevoh_Chalobah.jpg', name:'Trevoh Chalobah', area:'Gipsy Hill', pc:'SE19', cat:'resident', year:2001, era:'Moved to Gipsy Hill aged two',
+      lat:51.4245, lon:-0.084, addr:'Gipsy Hill, SE19',
+      text:'The Chelsea defender Trevoh Chalobah was born in Freetown, Sierra Leone, in 1999 and moved to England at the age of two, growing up in Gipsy Hill and playing Sunday league football locally before joining Chelsea\'s academy at eight, following his older brother Nathaniel into the professional game.' }
   ];
