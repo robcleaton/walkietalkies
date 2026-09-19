@@ -40,12 +40,29 @@
     '</span>';
   }
 
+  // Small horizontal pill — used on the search results screen only, where
+  // space is at a premium and the results themselves are the point.
   function catFilterChip(cat, count) {
     var m = CATMARK[cat];
     return '<button class="cat-chip" data-cat="' + cat + '" aria-pressed="false" style="background:' + m.color + ';color:' + m.fg + '">' +
       '<svg viewBox="0 0 256 256" width="14" height="14" fill="' + m.fg + '" aria-hidden="true">' + m.icon + '</svg>' +
       '<span class="cat-chip__name">' + CATS[cat] + '</span>' +
       '<span class="cat-chip__count">' + count + '</span>' +
+    '</button>';
+  }
+
+  // Bigger stacked card — used everywhere else (home, area pages),
+  // regardless of screen size.
+  function catCard(cat, count) {
+    var m = CATMARK[cat];
+    return '<button class="cat-card" data-cat="' + cat + '" aria-pressed="false" style="background:' + m.color + ';color:' + m.fg + '">' +
+      '<span class="cat-card__row">' +
+        '<span class="cat-card__icon">' +
+          '<svg viewBox="0 0 256 256" width="28" height="28" fill="' + m.fg + '" aria-hidden="true">' + m.icon + '</svg>' +
+        '</span>' +
+        '<span class="cat-card__count">' + count + '</span>' +
+      '</span>' +
+      '<span class="cat-card__name">' + CATS[cat] + '</span>' +
     '</button>';
   }
 
@@ -651,11 +668,15 @@
   function renderChips() {
     var wrap = document.getElementById('chips');
     var scopeStops = stopsInFilterScope();
+    // Small pills only on the search results screen (filters.q set); the
+    // bigger cards everywhere else — home and area pages both leave q
+    // empty — regardless of screen size.
+    var isSearch = !!filters.q;
     var html = '';
     Object.keys(CATS).forEach(function (key) {
       var n = scopeStops.filter(function (s) { return s.cat === key; }).length;
       if (n === 0) return;
-      html += catFilterChip(key, n);
+      html += isSearch ? catFilterChip(key, n) : catCard(key, n);
     });
     wrap.innerHTML = html;
   }
