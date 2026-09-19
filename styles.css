@@ -129,6 +129,11 @@
     #areaStickyRow{ padding-left:max(32px, calc((100vw - 1280px) / 2 + 32px)); padding-right:32px; }
   }
   .area-chip--compact{ padding:9px 18px; font-size:14px; flex:0 0 auto; }
+  /* Room for the sticky header, plus the sticky area nav bar it reveals
+     once scrolled past #areaChips, so a scrollIntoView() (e.g. jumping to
+     search results or an area) doesn't land with the first result tucked
+     behind them. */
+  #list{ scroll-margin-top:calc(var(--header-h, 84px) + 60px); }
 
   /* Homepage teaser row: break out of <main>'s max-w-[1280px] cap so the
      scroll track uses the full window width on wide screens (same technique

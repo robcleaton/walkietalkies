@@ -648,7 +648,15 @@
   });
 
   document.getElementById('search').addEventListener('input', function (e) {
+    // Scroll the results into view the moment a query first turns up
+    // something — otherwise the homepage hero, area marquee and category
+    // chips above them can push results below the fold with nothing on
+    // screen to show a search actually happened.
+    var wasHome = !filters.q && !filters.cats.length && !filters.areaRe;
     filters.q = e.target.value; filters.areaRe = null; renderList();
+    if (wasHome && filters.q) {
+      document.getElementById('list').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
     if (new URLSearchParams(location.search).has('area')) {
       var url = new URL(location.href);
       url.searchParams.delete('area');
