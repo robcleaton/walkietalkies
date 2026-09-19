@@ -47,7 +47,7 @@
     'crystal palace': { name:'Crystal Palace', postcodes:'SE19, SE20',
       overview:'Crystal Palace takes its name from the vast glass exhibition hall that stood here from 1854 until a fire destroyed it in 1936, and though the building is long gone, the park, the concrete dinosaurs and the district\'s slightly bohemian character all still trade on its memory.',
       history:'Before the Palace arrived, the high ridge here was known as Sydenham Hill, part of the ancient Great North Wood. Joseph Paxton\'s glass-and-iron exhibition hall, built for the 1851 Great Exhibition in Hyde Park, was dismantled and re-erected here in enlarged form in 1854, complete with fountains, a concert hall and the newly commissioned Crystal Palace Dinosaurs. Two railway stations grew up to serve the crowds it drew. The Palace burned down on 30 November 1936, a fire visible across much of London, and the site became a public park; its high-level station closed in 1954 and was demolished in 1961. In 2022 the Sunday Times named the district London\'s best place to live.',
-      image:'' },
+      image:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Mantellodon_in_Crystal_Palace_Park.jpg/500px-Mantellodon_in_Crystal_Palace_Park.jpg' },
 
     'deptford': { name:'Deptford', postcodes:'SE8',
       overview:'Deptford grew up around England\'s first royal dockyard, founded by Henry VIII in 1513, and though the dockyard itself closed in 1869, the area has kept its working-river character through markets, studios and a long list of maritime firsts.',
