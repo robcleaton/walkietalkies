@@ -207,6 +207,7 @@
   #resultCount, #areaHeroInfo .eyebrow, footer .eyebrow{
     color:var(--area-ink, var(--faint));
   }
+  #resultCount{ font-size:13px; }
   /* Postcode group dividers in the list ("SE15  Peckham & Nunhead") sit on
      the same area-tinted background — the bold postcode span had no colour
      class (inheriting the fixed --ink), and its district-name span is the
