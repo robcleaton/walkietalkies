@@ -7,7 +7,7 @@
     'bermondsey': { name:'Bermondsey', postcodes:'SE1, SE16',
       overview:'Bermondsey sits on the south bank between Rotherhithe and Southwark, a district that spent the 19th and early 20th centuries as one of London\'s great manufacturing quarters &mdash; leather especially, but also biscuits, jam and canned food &mdash; before its wharves and warehouses were converted into flats and studios from the 1980s onward.',
       history:'An abbey founded here in 1082 shaped the area for centuries, its monks draining the marsh and cutting St Saviour\'s Dock. By the 19th century Bermondsey had become a byword for heavy industry: the Leather Market opened in 1833, Peek Frean began baking biscuits at Dockhead in 1857, and the world\'s first commercial food-canning business, Donkin, Hall and Gamble, had already started up on Blue Anchor Lane in 1812. The overcrowded slum of Jacob\'s Island, made famous by Dickens in Oliver Twist, stood alongside this industry. Bombing and the decline of river trade emptied the warehouses by the 1960s; their conversion into housing from the 1980s, and the opening of Bermondsey Underground station in 2000, remade the area into one of London\'s more fashionable postcodes.',
-      image:'' },
+      image:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Bermondsey%2C_July_2023_07.jpg/500px-Bermondsey%2C_July_2023_07.jpg' },
 
     'bexley': { name:'Bexley', postcodes:'DA5',
       overview:'Bexley, sometimes called Bexley Village or Old Bexley to separate it from the wider borough that takes its name, is a small former Kentish market settlement in the Cray valley that stayed largely rural until well into the 20th century.',
