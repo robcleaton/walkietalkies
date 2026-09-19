@@ -669,7 +669,11 @@
     var wasHome = !filters.q && !filters.cats.length && !filters.areaRe;
     filters.q = e.target.value; filters.areaRe = null; renderList();
     if (wasHome && filters.q) {
-      document.getElementById('list').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // #resultCount, not #list — it's the first element of the results
+      // section (the "N stops" count, then any matching-area chip), so
+      // scrolling straight to #list cropped that context off above the
+      // fold and landed mid-way into the results instead of at their top.
+      document.getElementById('resultCount').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
     if (new URLSearchParams(location.search).has('area')) {
       var url = new URL(location.href);
