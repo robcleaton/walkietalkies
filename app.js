@@ -662,35 +662,27 @@
   });
 
   document.getElementById('search').addEventListener('input', function (e) {
-    // Scroll the results into view the moment a query first turns up
-    // something — otherwise the homepage hero, area marquee and category
-    // chips above them can push results below the fold with nothing on
-    // screen to show a search actually happened.
     var wasHome = !filters.q && !filters.cats.length && !filters.areaRe;
-    filters.q = e.target.value; filters.areaRe = null; renderList();
-    if (wasHome && filters.q) {
+    var wasArea = !!filters.areaRe;
+    var q = e.target.value;
+
+    applySearchState(q, wasArea);
+
+    // Keep the URL in sync (?q=…) so search results are their own
+    // shareable/back-button-able page, the same way ?area= already works
+    // for areas — replaceState, not pushState, so every keystroke doesn't
+    // spam browser history.
+    var url = new URL(location.href);
+    url.searchParams.delete('area');
+    if (q) url.searchParams.set('q', q); else url.searchParams.delete('q');
+    history.replaceState({}, '', url);
+
+    if (wasHome && q) {
       // #resultCount, not #list — it's the first element of the results
       // section (the "N stops" count, then any matching-area chip), so
       // scrolling straight to #list cropped that context off above the
       // fold and landed mid-way into the results instead of at their top.
       document.getElementById('resultCount').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-    if (new URLSearchParams(location.search).has('area')) {
-      var url = new URL(location.href);
-      url.searchParams.delete('area');
-      history.replaceState({}, '', url);
-      document.title = 'WalkieTalkies';
-      document.documentElement.style.removeProperty('--area-bg');
-      document.documentElement.style.removeProperty('--area-ink');
-      document.documentElement.classList.remove('area-active');
-      areaHeroEl.classList.add('hidden');
-      homeIntroEl.classList.remove('hidden');
-      document.getElementById('homeHero').classList.remove('hidden');
-      Array.prototype.forEach.call(document.querySelectorAll('.area-chip--on-match'), function (chip) {
-        chip.classList.remove('area-chip--on-match');
-      });
-      filters.cats = [];
-      renderChips();
     }
   });
 
@@ -807,6 +799,45 @@
   var areaHeroEl = document.getElementById('areaHero');
   var homeIntroEl = document.getElementById('homeIntro');
 
+  // Hides the homepage furniture (hero placeholder, intro copy, area-chip
+  // marquee) — used both by area pages and by an active search, so results
+  // read as their own page instead of loading in underneath all of it.
+  function setHomeFurnitureHidden(hidden) {
+    homeIntroEl.classList.toggle('hidden', hidden);
+    document.getElementById('homeHero').classList.toggle('hidden', hidden);
+    document.getElementById('areaChips').classList.toggle('hidden', hidden);
+  }
+
+  // Applies a search query as its own page-like state: filters to it,
+  // hides the homepage furniture, and titles the tab — everything the
+  // input handler and a direct/back-button ?q= load both need, minus the
+  // URL write (callers that already have the right URL skip that part).
+  function applySearchState(q, resetCats) {
+    document.getElementById('search').value = q;
+    filters.q = q;
+    filters.areaRe = null;
+    // Only reset category filters when actually leaving an area (they're
+    // meant to combine with an ordinary text search, so typing further
+    // into an existing search shouldn't silently drop them) — but always
+    // reset for a fresh load (popstate/initFromURL), since cats aren't
+    // serialized into the URL and so can't be restored anyway.
+    if (resetCats) { filters.cats = []; renderChips(); }
+    renderList();
+    setHomeFurnitureHidden(!!q);
+    document.title = q ? ('“' + q + '” — WalkieTalkies') : 'WalkieTalkies';
+    // Always reset area-page state, not just when we know we're leaving
+    // one — this also runs from popstate/initFromURL, where the previous
+    // state (an area page) isn't tracked, so clearing unconditionally is
+    // the only way to avoid the area hero/theming leaking into a search.
+    document.documentElement.style.removeProperty('--area-bg');
+    document.documentElement.style.removeProperty('--area-ink');
+    document.documentElement.classList.remove('area-active');
+    areaHeroEl.classList.add('hidden');
+    Array.prototype.forEach.call(document.querySelectorAll('.area-chip--on-match'), function (chip) {
+      chip.classList.remove('area-chip--on-match');
+    });
+  }
+
   function applyAreaFilter(area, scrollBehavior) {
     filters.q = '';
     filters.areaRe = new RegExp('\\b' + escapeRegExp(area.toLowerCase()) + '\\b');
@@ -883,14 +914,18 @@
   function jumpToArea(area) {
     applyAreaFilter(area);
     var url = new URL(location.href);
+    url.searchParams.delete('q');
     url.searchParams.set('area', areaSlug(area));
     history.pushState({ area: area }, '', url);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   window.addEventListener('popstate', function () {
-    var slug = new URLSearchParams(location.search).get('area');
+    var params = new URLSearchParams(location.search);
+    var slug = params.get('area');
+    var q = params.get('q');
     if (slug) applyAreaFilter(areaFromSlug(slug), false);
+    else if (q) applySearchState(q, true);
     else clearAreaFilter();
   });
 
@@ -1120,7 +1155,10 @@
   renderRoute();
 
   (function initFromURL() {
-    var slug = new URLSearchParams(location.search).get('area');
+    var params = new URLSearchParams(location.search);
+    var slug = params.get('area');
+    var q = params.get('q');
     if (slug) applyAreaFilter(areaFromSlug(slug), 'auto');
+    else if (q) applySearchState(q, true);
   })();
 })();
