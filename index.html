@@ -61,6 +61,8 @@
 </head>
 <body>
 
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-ink focus:text-ground focus:px-4 focus:py-2 focus:rounded-full focus:font-semibold">Skip to content</a>
+
 <div class="min-h-screen pb-24 lg:pb-10">
 
   <!-- Masthead -->
@@ -266,12 +268,13 @@
   </section>
 
   <!-- Gazetteer + route -->
-  <main class="mx-auto max-w-[1280px] px-5 sm:px-8 pt-8">
+  <main id="main" class="mx-auto max-w-[1280px] px-5 sm:px-8 pt-8">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
 
       <!-- Gazetteer -->
       <div id="gazetteerCol" class="lg:col-span-12">
-        <p class="eyebrow text-faint mb-4" id="resultCount"></p>
+        <h2 class="sr-only">Gazetteer</h2>
+        <p class="eyebrow text-faint mb-4" id="resultCount" aria-live="polite" aria-atomic="true"></p>
 
         <!-- Homepage teaser: 10 random stops, horizontally scrollable.
              min-w-0 stops the flex row's intrinsic (unscrolled) width from
@@ -289,7 +292,7 @@
               <h2 id="routePanelTitle" class="font-display text-[24px] leading-none">Your route</h2>
               <div class="flex items-center gap-3 mt-2">
                 <p class="eyebrow text-faint" id="routeMeta">No stops yet</p>
-                <button id="clearBtn" class="eyebrow text-faint underline underline-offset-2 hover:text-ink transition-colors">Clear route</button>
+                <button id="clearBtn" class="eyebrow text-faint underline underline-offset-2 hover:text-ink transition-colors py-1.5 -my-1.5 px-1 -mx-1">Clear route</button>
               </div>
             </div>
             <button id="sheetClose" class="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full border border-rule text-muted hover:text-ink hover:border-ink transition-colors" aria-label="Close route panel">
