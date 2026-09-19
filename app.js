@@ -243,13 +243,17 @@
     return 1000 + pc.charCodeAt(0) + parseInt(pc.slice(2), 10);
   }
 
+  function stopHay(s) {
+    return (s.name + ' ' + s.area + ' ' + s.pc + ' ' + s.addr + ' ' + s.text + ' ' + CATS[s.cat])
+      .replace(/&[a-z]+;/g, ' ').toLowerCase();
+  }
+
   function visible() {
     var q = filters.q.trim().toLowerCase();
     var out = STOPS.filter(function (s) {
       if (filters.cats.length && filters.cats.indexOf(s.cat) === -1) return false;
       if (!q && !filters.areaRe) return true;
-      var hay = (s.name + ' ' + s.area + ' ' + s.pc + ' ' + s.addr + ' ' + s.text + ' ' + CATS[s.cat])
-        .replace(/&[a-z]+;/g, ' ').toLowerCase();
+      var hay = stopHay(s);
       if (filters.areaRe) return filters.areaRe.test(hay);
       return hay.indexOf(q) !== -1;
     });
@@ -288,6 +292,7 @@
   --------------------------------------------------------------- */
   var listEl = document.getElementById('list');
   var homeListEl = document.getElementById('homeList');
+  var areaMatchesEl = document.getElementById('areaMatches');
 
   function renderList() {
     var items = visible();
@@ -297,6 +302,19 @@
     // it blank there.
     document.getElementById('resultCount').textContent = isHome ? '' :
       items.length + (items.length === 1 ? ' stop' : ' stops');
+
+    // Typing a search that matches an area's name surfaces that area as
+    // its own chip above the stop results — e.g. "forest" turns up a
+    // "Forest Hill 32" chip, a shortcut to the area page itself rather
+    // than only the individual stops whose text happens to match.
+    var areaMatches = filters.q ? matchingAreas(filters.q) : [];
+    if (areaMatches.length) {
+      areaMatchesEl.innerHTML = areaMatches.map(areaMatchChipHTML).join('');
+      areaMatchesEl.classList.remove('hidden');
+    } else {
+      areaMatchesEl.classList.add('hidden');
+      areaMatchesEl.innerHTML = '';
+    }
 
     listEl.classList.toggle('hidden', isHome);
     homeListEl.classList.toggle('hidden', !isHome);
@@ -617,11 +635,7 @@
   --------------------------------------------------------------- */
   function stopsInAreaScope() {
     if (!filters.areaRe) return STOPS;
-    return STOPS.filter(function (s) {
-      var hay = (s.name + ' ' + s.area + ' ' + s.pc + ' ' + s.addr + ' ' + s.text + ' ' + CATS[s.cat])
-        .replace(/&[a-z]+;/g, ' ').toLowerCase();
-      return filters.areaRe.test(hay);
-    });
+    return STOPS.filter(function (s) { return filters.areaRe.test(stopHay(s)); });
   }
 
   function renderChips() {
@@ -745,6 +759,35 @@
     var cs = getComputedStyle(btn);
     AREA_COLORS[area] = { bg: cs.backgroundColor, fg: cs.color };
   });
+
+  // How many stops belong to an area, using the same whole-word match
+  // against every stop's full text as an actual area page filter does —
+  // so the count matches what you'd see if you jumped there.
+  function areaStopCount(area) {
+    var re = new RegExp('\\b' + escapeRegExp(area.toLowerCase()) + '\\b');
+    var n = 0;
+    for (var i = 0; i < STOPS.length; i++) { if (re.test(stopHay(STOPS[i]))) n++; }
+    return n;
+  }
+
+  // Areas whose name contains the current search text, for the area-chip
+  // suggestions shown above search results (e.g. typing "forest" surfaces
+  // a "Forest Hill" chip alongside the matching stops).
+  function matchingAreas(query) {
+    var q = query.trim().toLowerCase();
+    if (!q) return [];
+    return Object.keys(AREA_COLORS).filter(function (key) {
+      return key.indexOf(q) !== -1 || areaTitle(key).toLowerCase().indexOf(q) !== -1;
+    });
+  }
+
+  function areaMatchChipHTML(area) {
+    var c = AREA_COLORS[area];
+    return '<button class="area-chip inline-flex items-baseline gap-2" data-area="' + area + '" style="background:' + c.bg + ';color:' + c.fg + '">' +
+      '<span>' + areaTitle(area) + '</span>' +
+      '<span class="font-mono num opacity-70">' + areaStopCount(area) + '</span>' +
+    '</button>';
+  }
 
   function parseRGB(str) {
     var m = /rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)/.exec(str || '');

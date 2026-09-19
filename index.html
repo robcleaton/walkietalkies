@@ -277,6 +277,10 @@
         <h2 class="sr-only">Gazetteer</h2>
         <p class="eyebrow text-faint mb-4" id="resultCount" aria-live="polite" aria-atomic="true"></p>
 
+        <!-- Areas whose name matches the current search, shown as chips
+             above the stop results (populated in renderList in app.js). -->
+        <div id="areaMatches" class="hidden flex flex-wrap gap-2.5 mb-5"></div>
+
         <!-- Homepage teaser: 10 random stops, horizontally scrollable.
              min-w-0 stops the flex row's intrinsic (unscrolled) width from
              blowing out the grid track it sits in. -->
