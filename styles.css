@@ -189,15 +189,19 @@
   }
 
   /* Route sheet on small screens */
-  #routePanel{ transition:transform .34s cubic-bezier(.32,.72,0,1); }
+  #routePanel{ transition:transform .34s cubic-bezier(.32,.72,0,1), visibility 0s linear .34s; }
   @media (max-width:1023px){
     #routePanel{
       position:fixed; left:0; right:0; bottom:0; z-index:60;
-      max-height:84vh; transform:translateY(103%);
+      max-height:84vh; transform:translateY(103%); visibility:hidden;
       border-radius:22px 22px 0 0; border-bottom:0;
       box-shadow:0 -20px 50px -12px rgba(0,0,0,.35);
     }
-    html.route-open #routePanel{ transform:translateY(0); }
+    /* Closed panel is translated off-screen but stays in the DOM — without
+       visibility:hidden its buttons/links stayed in the tab order and
+       screen-reader tree while invisible. visibility:visible has no delay
+       so it appears the instant the sheet starts opening. */
+    html.route-open #routePanel{ transform:translateY(0); visibility:visible; transition:transform .34s cubic-bezier(.32,.72,0,1); }
     #scrim{ display:none; }
     html.route-open #scrim{ display:block; }
   }

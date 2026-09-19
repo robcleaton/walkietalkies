@@ -1,5 +1,8 @@
-<title>WalkieTalkies</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
+<title>WalkieTalkies</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSR87JZ2LK"></script>
@@ -55,6 +58,8 @@
   integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
   integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+<body>
 
 <div class="min-h-screen pb-24 lg:pb-10">
 
@@ -277,11 +282,11 @@
       </div>
 
       <!-- Route -->
-      <aside id="routePanel" class="border border-rule rounded-[18px] flex flex-col overflow-hidden">
+      <aside id="routePanel" class="border border-rule rounded-[18px] flex flex-col overflow-hidden" role="dialog" aria-modal="true" aria-labelledby="routePanelTitle">
         <div class="px-5 pt-5 pb-4 border-b border-rule">
           <div class="flex items-start justify-between gap-3">
             <div>
-              <h2 class="font-display text-[24px] leading-none">Your route</h2>
+              <h2 id="routePanelTitle" class="font-display text-[24px] leading-none">Your route</h2>
               <div class="flex items-center gap-3 mt-2">
                 <p class="eyebrow text-faint" id="routeMeta">No stops yet</p>
                 <button id="clearBtn" class="eyebrow text-faint underline underline-offset-2 hover:text-ink transition-colors">Clear route</button>
@@ -352,3 +357,5 @@
 <script src="data.js"></script>
 <script src="areas.js"></script>
 <script src="app.js"></script>
+</body>
+</html>

@@ -834,7 +834,16 @@
   var root = document.documentElement;
   var routeHeaderBtn = document.getElementById('routeHeaderBtn');
   var routeHeaderChevron = document.getElementById('routeHeaderChevron');
+  var routePanelEl = document.getElementById('routePanel');
+  var routeOpenTrigger = null; // element to refocus when the panel closes
+  function focusableIn(container) {
+    return Array.prototype.filter.call(
+      container.querySelectorAll('a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])'),
+      function (el) { return el.offsetParent !== null; }
+    );
+  }
   function openSheet(v) {
+    var wasOpen = root.classList.contains('route-open');
     root.classList.toggle('route-open', v);
     document.getElementById('scrim').hidden = !v;
     routeHeaderBtn.setAttribute('aria-expanded', v ? 'true' : 'false');
@@ -843,21 +852,39 @@
     // sheet, or a window resize while closed) — resync the map's canvas
     // to its container each time it becomes visible.
     if (v && routeMap) setTimeout(function () { routeMap.invalidateSize(); }, 0);
+    if (v && !wasOpen) {
+      var focusables = focusableIn(routePanelEl);
+      if (focusables.length) focusables[0].focus();
+    } else if (!v && wasOpen && routeOpenTrigger) {
+      routeOpenTrigger.focus();
+      routeOpenTrigger = null;
+    }
   }
-  document.getElementById('routeBar').addEventListener('click', function (e) { e.stopPropagation(); openSheet(true); });
+  document.getElementById('routeBar').addEventListener('click', function (e) { e.stopPropagation(); routeOpenTrigger = document.getElementById('routeBar'); openSheet(true); });
   document.getElementById('sheetClose').addEventListener('click', function () { openSheet(false); });
   document.getElementById('scrim').addEventListener('click', function () { openSheet(false); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') openSheet(false); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape' && e.key !== 'Tab') return;
+    if (!root.classList.contains('route-open')) return;
+    if (e.key === 'Escape') { openSheet(false); return; }
+    // Basic focus trap: keep Tab/Shift+Tab cycling inside the open panel.
+    var focusables = focusableIn(routePanelEl);
+    if (!focusables.length) return;
+    var first = focusables[0], last = focusables[focusables.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
   routeHeaderBtn.addEventListener('click', function (e) {
     e.stopPropagation();
-    openSheet(!root.classList.contains('route-open'));
+    var willOpen = !root.classList.contains('route-open');
+    if (willOpen) routeOpenTrigger = routeHeaderBtn;
+    openSheet(willOpen);
   });
   // Dismiss the dropdown on an outside click (the mobile sheet already has
   // the scrim for this, but the desktop dropdown has no full-screen scrim)
   document.addEventListener('click', function (e) {
     if (!root.classList.contains('route-open')) return;
-    var panel = document.getElementById('routePanel');
-    if (panel.contains(e.target) || routeHeaderBtn.contains(e.target)) return;
+    if (routePanelEl.contains(e.target) || routeHeaderBtn.contains(e.target)) return;
     openSheet(false);
   });
 
