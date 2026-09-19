@@ -180,6 +180,17 @@
     border-color:var(--area-ink, var(--ink));
   }
 
+  /* Same fix as the header icons above, for the other faint/muted text
+     that sits directly on the page background rather than on a card's own
+     --surface: the result count ("31 stops"), the area hero's "History"
+     label, and the footer credit line. Left on the fixed --faint token,
+     these read at ~2.5:1 against a light area colour like brass or
+     marigold — nearly invisible. Falls back to the normal theme colour
+     everywhere an area isn't active, same as above. */
+  #resultCount, #areaHeroInfo .eyebrow, footer .eyebrow{
+    color:var(--area-ink, var(--faint));
+  }
+
   /* Your route: branded orange background, with the panel's own text,
      rules and tiles re-tuned to read against it rather than the theme */
   #routePanel{
