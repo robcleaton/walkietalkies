@@ -656,6 +656,8 @@
       document.title = 'WalkieTalkies';
       document.documentElement.style.removeProperty('--area-bg');
       document.documentElement.style.removeProperty('--area-ink');
+      document.documentElement.style.removeProperty('--area-ink-opposite');
+      document.documentElement.classList.remove('area-active');
       areaHeroEl.classList.add('hidden');
       homeIntroEl.classList.remove('hidden');
       document.getElementById('homeHero').classList.remove('hidden');
@@ -764,7 +766,16 @@
     if (c) {
       document.documentElement.style.setProperty('--area-bg', c.bg);
       document.documentElement.style.setProperty('--area-ink', c.fg);
+      // Every area's ink is either near-white or near-black, so a light-
+      // channel check is enough to pick the opposite — used to tint the
+      // search box toward a safe dark/light shade of the area colour
+      // (see html.area-active header #search in styles.css) rather than
+      // toward the ink itself, which would wash out its own contrast.
+      var inkRgb = parseRGB(c.fg);
+      var inkIsLight = inkRgb ? (inkRgb[0] + inkRgb[1] + inkRgb[2]) / 3 > 128 : true;
+      document.documentElement.style.setProperty('--area-ink-opposite', inkIsLight ? '#171717' : '#F4F3EF');
     }
+    document.documentElement.classList.add('area-active');
     Array.prototype.forEach.call(document.querySelectorAll('.area-chip[data-area]'), function (chip) {
       var key = chip.getAttribute('data-area');
       var matches = !!(c && AREA_COLORS[key] && colorsAreClose(AREA_COLORS[key].bg, c.bg));
@@ -803,6 +814,8 @@
     document.title = 'WalkieTalkies';
     document.documentElement.style.removeProperty('--area-bg');
     document.documentElement.style.removeProperty('--area-ink');
+    document.documentElement.style.removeProperty('--area-ink-opposite');
+    document.documentElement.classList.remove('area-active');
     areaHeroEl.classList.add('hidden');
     homeIntroEl.classList.remove('hidden');
     document.getElementById('homeHero').classList.remove('hidden');

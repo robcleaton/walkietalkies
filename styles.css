@@ -179,6 +179,23 @@
     color:var(--area-ink, var(--ink));
     border-color:var(--area-ink, var(--ink));
   }
+  /* Search input on an area page: tint it toward a dark/light shade of the
+     area colour instead of the fixed --raised fill, so it reads as cut
+     into the coloured header rather than a stark black box. Mixed toward
+     --area-ink-opposite (not --area-ink itself) — tinting a box toward its
+     own text colour would wash out the very contrast it needs; mixing
+     toward the opposite keeps a wide margin instead (checked at ~10:1+
+     across every area colour). Scoped to html.area-active (set/cleared in
+     applyAreaFilter/clearAreaFilter) rather than a var() fallback, so the
+     homepage search box is untouched. */
+  html.area-active header #search{
+    background:color-mix(in srgb, var(--area-ink-opposite) 60%, var(--area-bg) 40%);
+    border-color:color-mix(in srgb, var(--area-ink-opposite) 45%, var(--area-bg) 55%);
+    color:var(--area-ink);
+  }
+  html.area-active header #search::placeholder{
+    color:color-mix(in srgb, var(--area-ink) 65%, transparent);
+  }
 
   /* Same fix as the header icons above, for the other faint/muted text
      that sits directly on the page background rather than on a card's own
