@@ -806,6 +806,10 @@
     homeIntroEl.classList.toggle('hidden', hidden);
     document.getElementById('homeHero').classList.toggle('hidden', hidden);
     document.getElementById('areaChips').classList.toggle('hidden', hidden);
+    // The section wrapping #homeIntro/#areaChips keeps its own top padding
+    // even once both children are hidden, so it has to be hidden itself
+    // too — otherwise that padding renders as dead space above the chips.
+    document.getElementById('introSection').classList.toggle('hidden', hidden);
   }
 
   // Applies a search query as its own page-like state: filters to it,
@@ -880,9 +884,7 @@
       infoEl.classList.add('hidden');
     }
     areaHeroEl.classList.remove('hidden');
-    homeIntroEl.classList.add('hidden');
-    document.getElementById('homeHero').classList.add('hidden');
-    document.getElementById('areaChips').classList.add('hidden');
+    setHomeFurnitureHidden(true);
     document.getElementById('areaChipsBottom').classList.remove('hidden');
 
     if (scrollBehavior) {
@@ -902,9 +904,7 @@
     document.documentElement.style.removeProperty('--area-ink');
     document.documentElement.classList.remove('area-active');
     areaHeroEl.classList.add('hidden');
-    homeIntroEl.classList.remove('hidden');
-    document.getElementById('homeHero').classList.remove('hidden');
-    document.getElementById('areaChips').classList.remove('hidden');
+    setHomeFurnitureHidden(false);
     document.getElementById('areaChipsBottom').classList.add('hidden');
     Array.prototype.forEach.call(document.querySelectorAll('.area-chip--on-match'), function (chip) {
       chip.classList.remove('area-chip--on-match');

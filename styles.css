@@ -129,10 +129,13 @@
     #areaStickyRow{ padding-left:max(32px, calc((100vw - 1280px) / 2 + 32px)); padding-right:32px; }
   }
   .area-chip--compact{ padding:9px 18px; font-size:14px; flex:0 0 auto; }
-  /* Room for the sticky header, plus the sticky area nav bar it reveals
-     once scrolled past #areaChips, so scrolling search results into view
-     doesn't land with the count/area-chip context tucked behind them. */
-  #resultCount{ scroll-margin-top:calc(var(--header-h, 84px) + 60px); }
+  /* Room for the sticky header so scrolling search results into view
+     doesn't land with the count/area-chip context tucked behind it. Just
+     the header, not the sticky area nav bar too — #areaChips is hidden
+     during a search (see setHomeFurnitureHidden), so that bar never
+     triggers here; the extra allowance for it was overshooting past the
+     category chips on small screens. */
+  #resultCount{ scroll-margin-top:calc(var(--header-h, 84px) + 12px); }
 
   /* Homepage teaser row: break out of <main>'s max-w-[1280px] cap so the
      scroll track uses the full window width on wide screens (same technique
