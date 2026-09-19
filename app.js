@@ -327,7 +327,7 @@
     items.forEach(function (s) {
       if (filters.sort === 'district' && s.pc !== lastGroup) {
         lastGroup = s.pc;
-        html += '<div class="px-1 pt-2 flex items-baseline gap-3">' +
+        html += '<div class="pc-group-divider px-1 pt-2 flex items-baseline gap-3">' +
                   '<span class="font-mono text-[12px] font-semibold tracking-wider">' + s.pc + '</span>' +
                   '<span class="eyebrow text-faint">' + districtName(s.pc) + '</span>' +
                 '</div>';

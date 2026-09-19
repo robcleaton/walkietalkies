@@ -190,6 +190,12 @@
   #resultCount, #areaHeroInfo .eyebrow, footer .eyebrow{
     color:var(--area-ink, var(--faint));
   }
+  /* Postcode group dividers in the list ("SE15  Peckham & Nunhead") sit on
+     the same area-tinted background — the bold postcode span had no colour
+     class (inheriting the fixed --ink), and its district-name span is the
+     same .eyebrow.text-faint pattern as above. */
+  #list .pc-group-divider{ color:var(--area-ink, var(--ink)); }
+  #list .pc-group-divider .eyebrow{ color:var(--area-ink, var(--faint)); }
 
   /* Your route: branded orange background, with the panel's own text,
      rules and tiles re-tuned to read against it rather than the theme */
