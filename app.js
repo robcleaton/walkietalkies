@@ -289,6 +289,7 @@
   var listEl = document.getElementById('list');
   var homeListEl = document.getElementById('homeList');
   var areaMatchesEl = document.getElementById('areaMatches');
+  var resultCountEl = document.getElementById('resultCount');
 
   function renderList() {
     var items = visible();
@@ -296,20 +297,24 @@
     // The count line ("N stops") is only useful once it reflects an actual
     // search/filter/area — on the plain homepage it's just noise, so leave
     // it blank there.
-    document.getElementById('resultCount').textContent = isHome ? '' :
+    resultCountEl.textContent = isHome ? '' :
       items.length + (items.length === 1 ? ' stop' : ' stops');
 
     // Typing a search that matches an area's name surfaces that area as
-    // its own chip above the stop results — e.g. "forest" turns up a
-    // "Forest Hill 32" chip, a shortcut to the area page itself rather
-    // than only the individual stops whose text happens to match.
+    // its own chip — e.g. "forest" turns up a "Forest Hill 32" chip, a
+    // shortcut to the area page itself rather than only the individual
+    // stops whose text happens to match. Whenever one's showing, it goes
+    // above the "N stops" line (a whole matching area is the more useful
+    // thing to lead with); otherwise "N stops" is back on top as usual.
     var areaMatches = filters.q ? matchingAreas(filters.q) : [];
     if (areaMatches.length) {
       areaMatchesEl.innerHTML = areaMatches.map(areaMatchChipHTML).join('');
       areaMatchesEl.classList.remove('hidden');
+      areaMatchesEl.parentNode.insertBefore(areaMatchesEl, resultCountEl);
     } else {
       areaMatchesEl.classList.add('hidden');
       areaMatchesEl.innerHTML = '';
+      resultCountEl.parentNode.insertBefore(resultCountEl, areaMatchesEl);
     }
 
     listEl.classList.toggle('hidden', isHome);
