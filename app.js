@@ -40,16 +40,12 @@
     '</span>';
   }
 
-  function catCard(cat, count) {
+  function catFilterChip(cat, count) {
     var m = CATMARK[cat];
-    return '<button class="cat-card" data-cat="' + cat + '" aria-pressed="false" style="background:' + m.color + ';color:' + m.fg + '">' +
-      '<span class="cat-card__row">' +
-        '<span class="cat-card__icon">' +
-          '<svg viewBox="0 0 256 256" width="28" height="28" fill="' + m.fg + '" aria-hidden="true">' + m.icon + '</svg>' +
-        '</span>' +
-        '<span class="cat-card__count">' + count + '</span>' +
-      '</span>' +
-      '<span class="cat-card__name">' + CATS[cat] + '</span>' +
+    return '<button class="cat-chip" data-cat="' + cat + '" aria-pressed="false" style="background:' + m.color + ';color:' + m.fg + '">' +
+      '<svg viewBox="0 0 256 256" width="14" height="14" fill="' + m.fg + '" aria-hidden="true">' + m.icon + '</svg>' +
+      '<span class="cat-chip__name">' + CATS[cat] + '</span>' +
+      '<span class="cat-chip__count">' + count + '</span>' +
     '</button>';
   }
 
@@ -633,19 +629,28 @@
   /* ---------------------------------------------------------------
      Chips, events
   --------------------------------------------------------------- */
-  function stopsInAreaScope() {
-    if (!filters.areaRe) return STOPS;
-    return STOPS.filter(function (s) { return filters.areaRe.test(stopHay(s)); });
+  // Stops matching the current text search/area — but never the category
+  // filter itself, so each category chip's count answers "how many would
+  // match if this category were added", independent of any other category
+  // already toggled on. Used only to build the chips, not the list.
+  function stopsInFilterScope() {
+    var q = filters.q.trim().toLowerCase();
+    if (!q && !filters.areaRe) return STOPS;
+    return STOPS.filter(function (s) {
+      var hay = stopHay(s);
+      if (filters.areaRe) return filters.areaRe.test(hay);
+      return hay.indexOf(q) !== -1;
+    });
   }
 
   function renderChips() {
     var wrap = document.getElementById('chips');
-    var scopeStops = stopsInAreaScope();
+    var scopeStops = stopsInFilterScope();
     var html = '';
     Object.keys(CATS).forEach(function (key) {
       var n = scopeStops.filter(function (s) { return s.cat === key; }).length;
       if (n === 0) return;
-      html += catCard(key, n);
+      html += catFilterChip(key, n);
     });
     wrap.innerHTML = html;
   }
@@ -821,12 +826,16 @@
     document.getElementById('search').value = q;
     filters.q = q;
     filters.areaRe = null;
-    // Only reset category filters when actually leaving an area (they're
-    // meant to combine with an ordinary text search, so typing further
-    // into an existing search shouldn't silently drop them) — but always
-    // reset for a fresh load (popstate/initFromURL), since cats aren't
-    // serialized into the URL and so can't be restored anyway.
-    if (resetCats) { filters.cats = []; renderChips(); }
+    // Only reset the category *selection* when actually leaving an area
+    // (it's meant to combine with an ordinary text search, so typing
+    // further into an existing search shouldn't silently drop it) — but
+    // always reset for a fresh load (popstate/initFromURL), since cats
+    // aren't serialized into the URL and so can't be restored anyway.
+    // renderChips() itself always reruns regardless, since the available
+    // categories and their counts are scoped to the search text and need
+    // to stay current on every keystroke, not just when cats are cleared.
+    if (resetCats) { filters.cats = []; }
+    renderChips();
     renderList();
     setHomeFurnitureHidden(!!q);
     document.title = q ? ('“' + q + '” — WalkieTalkies') : 'WalkieTalkies';
