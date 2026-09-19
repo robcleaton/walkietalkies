@@ -182,14 +182,15 @@
   /* Search input on an area page: a flat black overlay on top of the
      header's own opaque --area-bg, so the box reads as a darker shade of
      the area colour rather than a stark, disconnected black fill (or, for
-     a light-ink area, a jarring lighter one). Checked at 20% alpha, every
-     area colour still holds at least 4.5:1 for its ink colour (bubblegum,
-     the tightest case, is 4.83:1). Scoped to html.area-active (set/cleared
-     in applyAreaFilter/clearAreaFilter) rather than a var() fallback, so
-     the homepage search box is untouched. */
+     a light-ink area, a jarring lighter one) — no border, just the fill.
+     At 30% alpha, marigold/brass (Honor Oak, Blackheath and the other
+     light-ink areas) land just under 4.5:1 at ~4.4-4.5:1; every other
+     area colour clears it comfortably. Scoped to html.area-active
+     (set/cleared in applyAreaFilter/clearAreaFilter) rather than a
+     var() fallback, so the homepage search box is untouched. */
   html.area-active header #search{
-    background:rgba(0,0,0,.2);
-    border-color:rgba(0,0,0,.35);
+    background:rgba(0,0,0,.3);
+    border-color:transparent;
     color:var(--area-ink);
   }
   html.area-active header #search::placeholder{
