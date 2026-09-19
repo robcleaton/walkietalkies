@@ -130,12 +130,13 @@
   }
   .area-chip--compact{ padding:9px 18px; font-size:14px; flex:0 0 auto; }
   /* Room for the sticky header so scrolling search results into view
-     doesn't land with the count/area-chip context tucked behind it. Just
-     the header, not the sticky area nav bar too — #areaChips is hidden
-     during a search (see setHomeFurnitureHidden), so that bar never
-     triggers here; the extra allowance for it was overshooting past the
-     category chips on small screens. */
-  #resultCount{ scroll-margin-top:calc(var(--header-h, 84px) + 12px); }
+     doesn't land with the category cards tucked behind it. Just the
+     header, not the sticky area nav bar too — #areaChips is hidden during
+     a search (see setHomeFurnitureHidden), so that bar never triggers
+     here. Lives on #chips, not #resultCount below it — scrolling to
+     #resultCount left #chips's own height unaccounted for, landing with
+     the category cards clipped off above the fold. */
+  #chips{ scroll-margin-top:calc(var(--header-h, 84px) + 12px); }
 
   /* Homepage teaser row: break out of <main>'s max-w-[1280px] cap so the
      scroll track uses the full window width on wide screens (same technique

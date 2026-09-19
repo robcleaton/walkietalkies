@@ -678,11 +678,12 @@
     history.replaceState({}, '', url);
 
     if (wasHome && q) {
-      // #resultCount, not #list — it's the first element of the results
-      // section (the "N stops" count, then any matching-area chip), so
-      // scrolling straight to #list cropped that context off above the
-      // fold and landed mid-way into the results instead of at their top.
-      document.getElementById('resultCount').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // #chips, not #resultCount or #list — it's the first thing in the
+      // results view (category cards, then the "N stops" count and any
+      // area-chip match, then results). Scrolling to #resultCount instead
+      // left #chips's own height unaccounted for, so it landed with the
+      // category cards clipped off above the fold rather than in view.
+      document.getElementById('chips').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
 
