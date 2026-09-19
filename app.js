@@ -1060,6 +1060,7 @@
   /* ---------------------------------------------------------------
      Boot
   --------------------------------------------------------------- */
+  document.getElementById('footerYear').textContent = new Date().getFullYear();
   renderList();
   renderRoute();
 
