@@ -50,6 +50,12 @@ function getRichText(page, propName) {
   return prop.rich_text.map((t) => t.plain_text).join('');
 }
 
+function getUrl(page, propName) {
+  const prop = page.properties[propName];
+  if (!prop) return '';
+  return prop.url || '';
+}
+
 // Reverses the HTML-entity decoding done at import time, so the regenerated
 // areas.js matches data.js's existing embedding convention. Plain quotes and
 // backslashes are also escaped so every value stays a safe single-quoted JS
@@ -95,7 +101,8 @@ function pageToArea(page) {
     name,
     postcodes: getRichText(page, 'Postcodes'),
     overview: getRichText(page, 'Overview'),
-    history: getRichText(page, 'History')
+    history: getRichText(page, 'History'),
+    image: getUrl(page, 'Image URL')
   };
 }
 
@@ -103,7 +110,8 @@ function formatArea(area) {
   return (
     `    '${area.slug}': { name:'${encodeField(area.name)}', postcodes:'${encodeField(area.postcodes)}',\n` +
     `      overview:'${encodeField(area.overview)}',\n` +
-    `      history:'${encodeField(area.history)}' }`
+    `      history:'${encodeField(area.history)}',\n` +
+    `      image:'${encodeField(area.image)}' }`
   );
 }
 

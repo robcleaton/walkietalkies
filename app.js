@@ -776,6 +776,15 @@
     document.getElementById('areaHeroDesc').innerHTML = AREA_DESCRIPTIONS[area.toLowerCase()] || '';
     document.getElementById('areaHeroPostcodes').innerHTML = postcodeBadgesHTML(areaPostcodes(area));
     var info = (typeof AREA_INFO !== 'undefined' && AREA_INFO[area.toLowerCase()]) || null;
+    var imageEl = document.getElementById('areaHeroImage');
+    if (info && info.image) {
+      imageEl.src = info.image;
+      imageEl.alt = areaTitle(area);
+      imageEl.classList.remove('hidden');
+    } else {
+      imageEl.classList.add('hidden');
+      imageEl.removeAttribute('src');
+    }
     var infoEl = document.getElementById('areaHeroInfo');
     if (info && (info.overview || info.history)) {
       document.getElementById('areaHeroOverview').innerHTML = info.overview || '';
