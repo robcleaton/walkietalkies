@@ -179,18 +179,17 @@
     color:var(--area-ink, var(--ink));
     border-color:var(--area-ink, var(--ink));
   }
-  /* Search input on an area page: tint it toward a dark/light shade of the
-     area colour instead of the fixed --raised fill, so it reads as cut
-     into the coloured header rather than a stark black box. Mixed toward
-     --area-ink-opposite (not --area-ink itself) — tinting a box toward its
-     own text colour would wash out the very contrast it needs; mixing
-     toward the opposite keeps a wide margin instead (checked at ~10:1+
-     across every area colour). Scoped to html.area-active (set/cleared in
-     applyAreaFilter/clearAreaFilter) rather than a var() fallback, so the
-     homepage search box is untouched. */
+  /* Search input on an area page: a flat black overlay on top of the
+     header's own opaque --area-bg, so the box reads as a darker shade of
+     the area colour rather than a stark, disconnected black fill (or, for
+     a light-ink area, a jarring lighter one). Checked at 20% alpha, every
+     area colour still holds at least 4.5:1 for its ink colour (bubblegum,
+     the tightest case, is 4.83:1). Scoped to html.area-active (set/cleared
+     in applyAreaFilter/clearAreaFilter) rather than a var() fallback, so
+     the homepage search box is untouched. */
   html.area-active header #search{
-    background:color-mix(in srgb, var(--area-ink-opposite) 60%, var(--area-bg) 40%);
-    border-color:color-mix(in srgb, var(--area-ink-opposite) 45%, var(--area-bg) 55%);
+    background:rgba(0,0,0,.2);
+    border-color:rgba(0,0,0,.35);
     color:var(--area-ink);
   }
   html.area-active header #search::placeholder{
