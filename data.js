@@ -1519,7 +1519,7 @@
       lat:null, lon:null, addr:'',
       text:'Suffragette and disability rights campaigner associated with Lewisham, notable both for her militant activism in the fight for women\'s votes and for being one of the few prominent disabled suffragettes of the movement, campaigning from a wheelchair-adapted tricycle.' },
 
-    { id:'rushey-green-village-water-pump', img:'', name:'Rushey Green village water pump', area:'Catford', pc:'SE6', cat:'grand', year:null, era:'1850s',
+    { id:'rushey-green-village-water-pump', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Rushey_Green%2C_Catford_-_geograph.org.uk_-_3850906.jpg/330px-Rushey_Green%2C_Catford_-_geograph.org.uk_-_3850906.jpg', name:'Rushey Green village water pump', area:'Catford', pc:'SE6', cat:'grand', year:null, era:'1850s',
       lat:null, lon:null, addr:'Rushey Green',
       text:'A surviving hand-operated water pump dating from the 1850s, once used by the original village of Rushey Green (also spelled Rush Green) before the area grew and took on the name "Catford" following the opening of Catford Bridge railway station nearby. It stands today as one of the very few physical traces left of the pre-Victorian settlement that predates the town centre now built around it.' },
 
@@ -1631,7 +1631,7 @@
       lat:null, lon:null, addr:'',
       text:'On the evening of 4 December 1957, a steam train travelling to Ramsgate crashed in dense fog into an electric train that had stopped at a signal beneath a railway bridge near Lewisham. The impact destroyed a carriage and brought the bridge down onto the wreckage, killing 90 people and injuring 173 &mdash; one of the deadliest rail disasters in British history. The line was closed for over a week and the bridge itself took a further month to rebuild.' },
 
-    { id:'the-murder-of-maxwell-confait', img:'', name:'The Murder of Maxwell Confait', area:'Catford', pc:'SE6', cat:'memory', year:1972, era:'1972 killing; convictions quashed 1975; led to PACE 1984',
+    { id:'the-murder-of-maxwell-confait', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Doggett_Road%2C_Catford_-_geograph.org.uk_-_4610186.jpg/330px-Doggett_Road%2C_Catford_-_geograph.org.uk_-_4610186.jpg', name:'The Murder of Maxwell Confait', area:'Catford', pc:'SE6', cat:'memory', year:1972, era:'1972 killing; convictions quashed 1975; led to PACE 1984',
       lat:null, lon:null, addr:'Doggett Road area',
       text:'The 1972 killing of Maxwell Confait in Catford led to the wrongful conviction of three local teenagers &mdash; Colin Lattimore, Ronald Leighton and Ahmet Salih &mdash; based on confessions later shown to be unreliable, obtained under questionable police interview conditions. Their convictions were quashed in 1975 after a public outcry, and the resulting inquiry became one of the most influential miscarriage-of-justice cases in English legal history. Its findings fed directly into the safeguards on police interviews, evidence handling and the right to legal advice later enshrined in the Police and Criminal Evidence Act 1984 (PACE), a law that still governs UK policing today.' },
 
@@ -1659,7 +1659,7 @@
       lat:null, lon:null, addr:'',
       text:'A pub named for Brock\'s fireworks factory, built nearby in 1868 on a large field between the railway embankment and Nunhead Green. The factory has long since gone, but the pub keeps its memory alive through its name &mdash; a nice example of an area\'s industrial history surviving only in a pub sign.' },
 
-    { id:'the-queen-of-catford', img:'', name:'The Queen of Catford', area:'Catford', pc:'SE6', cat:'art', year:null, era:'Completed 2021',
+    { id:'the-queen-of-catford', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Catford_Centre%2C_SE6_-_geograph.org.uk_-_2430147.jpg/330px-Catford_Centre%2C_SE6_-_geograph.org.uk_-_2430147.jpg', name:'The Queen of Catford', area:'Catford', pc:'SE6', cat:'art', year:null, era:'Completed 2021',
       lat:null, lon:null, addr:'Near the Catford Centre',
       text:'A residential building by Tsuruta Architects decorated with over 27,000 individual cat faces, inside and out. As part of the design, the architects invented a fictional backstory for two former residents &mdash; "Ford" and "Bjorn" &mdash; supposedly linked to the real Windsor Film Studios that operated in Catford during the silent-film era (1914&ndash;1921), and commissioned two official-looking blue plaques mimicking English Heritage\'s style to commemorate the invented pair. It sits in playful architectural conversation with the real Catford Cat nearby &mdash; one an unexplained icon, the other an invented history hiding in plain sight.' },
 
@@ -1779,7 +1779,7 @@
       lat:51.4851, lon:-0.0008, addr:'Greenwich, SE10',
       text:'Built 1902&ndash;10 to supply power to London&rsquo;s tram network and Underground; it still operates today as a standby power source for the Tube.' },
 
-    { id:'j-stone-and-co-foundry', img:'', name:'J. Stone &amp; Co', area:'Charlton', pc:'SE7', cat:'works', year:1917, era:'Moved here 1917',
+    { id:'j-stone-and-co-foundry', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Houses_on_Anchor_and_Hope_Lane%2C_Charlton_-_geograph.org.uk_-_3802000.jpg/330px-Houses_on_Anchor_and_Hope_Lane%2C_Charlton_-_geograph.org.uk_-_3802000.jpg', name:'J. Stone &amp; Co', area:'Charlton', pc:'SE7', cat:'works', year:1917, era:'Moved here 1917',
       lat:51.4893, lon:0.0305, addr:'Anchor and Hope Lane, SE7',
       text:'Marine propeller foundry that relocated from Deptford to Charlton in 1917. During the Second World War it produced 22,000 propellers for the Royal Navy, and later made propellers for the liners Queen Mary and Queen Elizabeth.' },
 
@@ -1803,7 +1803,7 @@
       lat:51.4455, lon:0.0554, addr:'Eltham Lodge, Court Road, SE9',
       text:'One of the oldest golf clubs in the world, with a tradition of play on Blackheath dating to 1608. The club moved to this Grade I-listed Restoration house, built in 1664, in 1923.' },
 
-    { id:'siemens-brothers-telegraph-works', img:'', name:'Siemens Brothers Telegraph Works', area:'Charlton', pc:'SE7', cat:'works', year:1863, era:'Opened 1863',
+    { id:'siemens-brothers-telegraph-works', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Woolwich%2C_former_Siemens_Brothers_site_03.jpg/330px-Woolwich%2C_former_Siemens_Brothers_site_03.jpg', name:'Siemens Brothers Telegraph Works', area:'Charlton', pc:'SE7', cat:'works', year:1863, era:'Opened 1863',
       lat:null, lon:null, addr:'',
       text:'Cable works that manufactured two new transatlantic telegraph cables in the 1880s and later contributed to PLUTO, the undersea fuel pipeline laid for the D-Day landings.' },
 
@@ -2215,7 +2215,7 @@
       lat:51.4694, lon:-0.0728, addr:'Bellenden Road, SE15',
       text:'Peckham was home to the Black Lesbian and Gay Centre from 1992 to 1995, a significant space for Black LGBTQ+ community organising in London at the time. In February 2024, a Rainbow Plaque &mdash; a scheme distinct from the traditional blue plaque, specifically commemorating LGBTQ+ history &mdash; was unveiled on Bellenden Road to mark the centre, giving this short-lived but important institution a permanent physical marker three decades on.' },
 
-    { id:'the-dolehouse-squat', img:'', name:'The Dolehouse squat', area:'Peckham', pc:'SE15', cat:'memory', year:1989, era:'Active 1989&ndash;1990',
+    { id:'the-dolehouse-squat', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Peckham_High_Street_-_geograph.org.uk_-_58042.jpg/330px-Peckham_High_Street_-_geograph.org.uk_-_58042.jpg', name:'The Dolehouse squat', area:'Peckham', pc:'SE15', cat:'memory', year:1989, era:'Active 1989&ndash;1990',
       lat:51.4735, lon:-0.0717, addr:'Peckham High Street, SE15',
       text:'In the early 1990s, a disused two-floor DHSS building near Peckham High Street became known as the Dolehouse, a large squat that hosted regular underground music gigs and parties from 1989, run by squatters who adopted the name Dole House Crew alongside another local group, the Green Circus. The building already had a place in music history, having featured on the cover of a 1980s pictorial biography of 1960s mods posing on their scooters outside the same site, then the Camberwell Labour Exchange. The squat was evicted in late October 1990, after which its scene dispersed to venues across South East London.' },
 
@@ -2587,7 +2587,7 @@
       lat:null, lon:null, addr:'',
       text:'Academy Award-winning actor and director born in Camberwell, celebrated for his Shakespearean film adaptations (Henry V, Hamlet) as well as a long career across stage, film and television.' },
 
-    { id:'sir-nicholas-serota', img:'', name:'Sir Nicholas Serota', area:'Camberwell', pc:'SE5', cat:'resident', year:null, era:'',
+    { id:'sir-nicholas-serota', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/2006%2C_Stuckist_Turner_Prize_demo_2006_%281%29_crop.jpg/330px-2006%2C_Stuckist_Turner_Prize_demo_2006_%281%29_crop.jpg', name:'Sir Nicholas Serota', area:'Camberwell', pc:'SE5', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Art curator associated with Camberwell, who served as director of the Tate Gallery (later Tate) from 1988 to 2017, overseeing its transformation into one of the world\'s most significant contemporary art institutions, including the creation of Tate Modern.' },
 
@@ -2595,7 +2595,7 @@
       lat:null, lon:null, addr:'',
       text:'Entrepreneur and founder of the Virgin Group, born in Blackheath. He went on to build one of Britain\'s most recognisable business empires, spanning music, airlines, and space travel.' },
 
-    { id:'stone-house', img:'', name:'Stone House', area:'Brockley', pc:'SE4', cat:'grand', year:1773, era:'Built 1773',
+    { id:'stone-house', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/The_Stone_House_%289178185830%29.jpg/330px-The_Stone_House_%289178185830%29.jpg', name:'Stone House', area:'Brockley', pc:'SE4', cat:'grand', year:1773, era:'Built 1773',
       lat:null, lon:null, addr:'Lewisham Way',
       text:'The oldest surviving house in what is now considered the northern extent of Brockley, built in 1773 by architect George Gibson the Younger. Now Grade II* listed, it was historically considered part of Deptford before Brockley\'s boundaries shifted around it.' },
 
@@ -2607,7 +2607,7 @@
       lat:null, lon:null, addr:'',
       text:'Comedian, actor and filmmaker born in Camberwell, best known as a founding member of Monty Python, one of the most influential comedy troupes in British history.' },
 
-    { id:'the-cator-estate', img:'', name:'The Cator Estate', area:'Blackheath', pc:'SE3', cat:'grand', year:null, era:'Developed from the 18th century',
+    { id:'the-cator-estate', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Former_lodge_to_the_Cator_Estate%2C_Manor_Way%2C_SE3_-_geograph.org.uk_-_2406048.jpg/330px-Former_lodge_to_the_Cator_Estate%2C_Manor_Way%2C_SE3_-_geograph.org.uk_-_2406048.jpg', name:'The Cator Estate', area:'Blackheath', pc:'SE3', cat:'grand', year:null, era:'Developed from the 18th century',
       lat:null, lon:null, addr:'',
       text:'Much of Blackheath\'s elegant Georgian street layout owes its shape to developer John Cator, who acquired land in the area in the 18th century and laid out the planned estate that still bears his name. In much the same way Ted Christmas would later stamp his own family\'s names onto Forest Hill\'s Perry Vale over a century afterward, Cator\'s development gave a single individual\'s decisions a lasting, recognisable shape across an entire neighbourhood &mdash; just on a far grander, more aristocratic scale.' },
 
@@ -2635,7 +2635,7 @@
       lat:null, lon:null, addr:'',
       text:'Built in 1708 as the official residence of the Master Shipwright of the Royal Naval Dockyard at Deptford, on the site of an earlier building serving the same purpose. The house is one of the few substantial survivals of Deptford\'s centuries as a major Royal Navy shipbuilding centre.' },
 
-    { id:'the-roman-riverboat', img:'', name:'The Roman riverboat', area:'Bankside', pc:'SE1', cat:'maritime', year:null, era:'',
+    { id:'the-roman-riverboat', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Blackfriars_I_ship_model.jpg/330px-Blackfriars_I_ship_model.jpg', name:'The Roman riverboat', area:'Bankside', pc:'SE1', cat:'maritime', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'A rare, well-preserved Roman-era riverboat found near Greenwood Theatre, offering a direct physical glimpse of river transport and commerce on the Thames during the Roman occupation of Londinium &mdash; a find that sits alongside the Romano-Celtic temple in Greenwich Park (covered separately in this gazetteer) as one of the oldest confirmed traces of activity anywhere in this collection.' },
 
@@ -2669,109 +2669,5 @@
 
     { id:'woolwich-town-hall', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Town_Hall%2C_Wellington_Street_-_geograph.org.uk_-_3652117.jpg/330px-Town_Hall%2C_Wellington_Street_-_geograph.org.uk_-_3652117.jpg', name:'Woolwich Town Hall', area:'Woolwich', pc:'SE18', cat:'grand', year:1906, era:'Built 1903&ndash;1906',
       lat:null, lon:null, addr:'Wellington Street, Bathway Quarter',
-      text:'A grand Edwardian Baroque town hall by architect Alfred Brumwell Thomas, built 1903&ndash;1906 after the old 1842 town hall (covered separately in this gazetteer) proved too small for the newly created Metropolitan Borough of Woolwich. Its ornate Victoria Hall, where mayors still greet guests at ceremonial functions today, holds fine stained glass windows by Geoffrey Webb depicting notable local events &mdash; including Charles I\'s 1637 visit to Woolwich to inspect his great warship The Sovereign of the Seas &mdash; alongside memorials to Civil Defence volunteers and council staff killed in the Second World War. It remains the ceremonial heart of the borough, now Grade II* listed and anchoring the historic Bathway Quarter conservation area.' },
-
-    { id:'duplicate-safe-to-delete-avery-hill-winter-garden', img:'', name:'[DUPLICATE &mdash; SAFE TO DELETE] Avery Hill Winter Garden', area:'Eltham', pc:'SE9', cat:'grand', year:1889, era:'Built 1889',
-      lat:null, lon:null, addr:'',
-      text:'A large domed glass conservatory built in 1889 for the Avery Hill estate, then a private house, now part of the University of Greenwich\'s Avery Hill campus. Its scale and ambition reflect the wealth of Victorian private estates in the area before they were absorbed into public and educational use in the 20th century.' },
-
-    { id:'duplicate-safe-to-delete-boris-karloff', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Boris_Karloff.jpg/330px-Boris_Karloff.jpg', name:'[DUPLICATE &mdash; SAFE TO DELETE] Boris Karloff', area:'Camberwell', pc:'SE5', cat:'resident', year:null, era:'',
-      lat:null, lon:null, addr:'',
-      text:'Duplicate/weaker version of Boris Karloff\'s entry. The authoritative entry (with full birth name and date) is filed under East Dulwich &mdash; "William Henry Pratt was born here in November 1887." Wikipedia\'s Forest Hill page separately notes his family later lived on Forest Hill Road, Honor Oak. Safe to delete this Camberwell entry to avoid duplication.' },
-
-    { id:'duplicate-safe-to-delete-boy-george', img:'', name:'[DUPLICATE &mdash; SAFE TO DELETE] Boy George', area:'Eltham', pc:'SE9', cat:'resident', year:null, era:'',
-      lat:null, lon:null, addr:'',
-      text:'Lead singer of Culture Club, born in Eltham, who became one of the defining pop icons of the 1980s with hits including "Karma Chameleon," and one of the most recognisable openly gay public figures in British pop culture history.' },
-
-    { id:'duplicate-safe-to-delete-deptford-dockyard', img:'', name:'[DUPLICATE &mdash; SAFE TO DELETE] Deptford Dockyard', area:'Deptford', pc:'SE8', cat:'works', year:1513, era:'Founded 1513; closed 1869',
-      lat:null, lon:null, addr:'',
-      text:'Founded by Henry VIII in 1513, Deptford Dockyard became one of the Royal Navy\'s most important shipbuilding and repair yards for over three centuries, launching warships and hosting royal visits including Elizabeth I\'s knighting of Francis Drake aboard the Golden Hind here in 1581. The dockyard closed in 1869; the site later became a cattle market and is now being redeveloped, but it remains the foundational reason Deptford exists as a place at all &mdash; the institution behind much of the area\'s maritime history, including John Evelyn\'s hosting of Peter the Great nearby (already covered in this gazetteer).' },
-
-    { id:'duplicate-safe-to-delete-desmond-dekker', img:'', name:'[DUPLICATE &mdash; SAFE TO DELETE] Desmond Dekker', area:'Forest Hill', pc:'SE23', cat:'resident', year:null, era:'',
-      lat:null, lon:null, addr:'',
-      text:'Jamaican singer-songwriter, a pioneering figure of ska and reggae, best known internationally for "Israelites," one of the first reggae songs to top the UK charts. Dekker lived on Devonshire Road, towards neighbouring Honor Oak.' },
-
-    { id:'duplicate-safe-to-delete-e-w-swanton', img:'', name:'[DUPLICATE &mdash; SAFE TO DELETE] E. W. Swanton', area:'Forest Hill', pc:'SE23', cat:'resident', year:1907, era:'Born 1907',
-      lat:null, lon:null, addr:'',
-      text:'Cricket commentator, journalist and writer, born in Forest Hill on 11 February 1907. Swanton became one of the most authoritative and recognisable voices in English cricket broadcasting and journalism across the 20th century.' },
-
-    { id:'duplicate-safe-to-delete-edward-alleyn', img:'', name:'[DUPLICATE &mdash; SAFE TO DELETE] Edward Alleyn', area:'Dulwich', pc:'SE21', cat:'resident', year:null, era:'',
-      lat:null, lon:null, addr:'',
-      text:'Celebrated actor of the Elizabethan stage and a business rival of Shakespeare\'s company, who used his considerable wealth to found both Dulwich College and Alleyn\'s School, shaping the area\'s identity for centuries afterward.' },
-
-    { id:'duplicate-safe-to-delete-eleanor-marx', img:'', name:'[DUPLICATE &mdash; SAFE TO DELETE] Eleanor Marx', area:'Sydenham', pc:'SE26', cat:'resident', year:null, era:'',
-      lat:null, lon:null, addr:'',
-      text:'Political activist and the youngest daughter of Karl Marx, who lived in Sydenham. She translated Marx\'s work into English and became a significant socialist organiser and campaigner for women\'s rights in her own right.' },
-
-    { id:'duplicate-safe-to-delete-francis-rossi', img:'', name:'[DUPLICATE &mdash; SAFE TO DELETE] Francis Rossi', area:'Forest Hill', pc:'SE23', cat:'resident', year:1949, era:'Born 1949',
-      lat:null, lon:null, addr:'',
-      text:'Lead singer and guitarist of Status Quo, born in Forest Hill on 29 May 1949. Rossi went on to front one of Britain\'s most enduring rock bands across a career spanning more than five decades.' },
-
-    { id:'duplicate-safe-to-delete-gary-oldman', img:'', name:'[DUPLICATE &mdash; SAFE TO DELETE] Gary Oldman', area:'New Cross', pc:'SE14', cat:'resident', year:null, era:'',
-      lat:null, lon:null, addr:'',
-      text:'Academy Award-winning actor, born in New Cross and raised nearby in Deptford, who went on to become one of the most acclaimed British actors of his generation, with roles ranging from Sid Vicious in Sid and Nancy to Commissioner Gordon in The Dark Knight trilogy.' },
-
-    { id:'duplicate-safe-to-delete-joseph-chamberlain', img:'', name:'[DUPLICATE &mdash; SAFE TO DELETE] Joseph Chamberlain', area:'Camberwell', pc:'SE5', cat:'resident', year:null, era:'',
-      lat:null, lon:null, addr:'',
-      text:'Liberal and Liberal Unionist statesman born in Camberwell, a hugely influential late-Victorian and Edwardian politician and businessman who shaped British domestic and imperial policy.' },
-
-    { id:'duplicate-safe-to-delete-luke-pritchard', img:'', name:'[DUPLICATE &mdash; SAFE TO DELETE] Luke Pritchard', area:'Forest Hill', pc:'SE23', cat:'resident', year:null, era:'',
-      lat:null, lon:null, addr:'',
-      text:'Lead singer of indie rock band The Kooks, born in Forest Hill. The band\'s 2006 debut album Inside In/Inside Out was one of the defining British indie records of its era.' },
-
-    { id:'duplicate-safe-to-delete-marie-lloyd', img:'', name:'[DUPLICATE &mdash; SAFE TO DELETE] Marie Lloyd', area:'New Cross', pc:'SE14', cat:'resident', year:null, era:'Lived here 1887&ndash;1893',
-      lat:null, lon:null, addr:'',
-      text:'Legendary music hall star, one of the biggest stage performers of her era, who lived in the New Cross/Lewisham Way area between 1887 and 1893, during the early rise of her career.' },
-
-    { id:'duplicate-safe-to-delete-michael-gambon', img:'', name:'[DUPLICATE &mdash; SAFE TO DELETE] Michael Gambon', area:'Forest Hill', pc:'SE23', cat:'resident', year:null, era:'Lived at Forest Croft, early-mid 1960s',
-      lat:null, lon:null, addr:'',
-      text:'Irish-born actor who lived at Forest Croft in Forest Hill in the early to mid-1960s, long before becoming world-famous for his portrayal of Albus Dumbledore in the Harry Potter film franchise. He was one of the most acclaimed British stage and screen actors of his generation.' },
-
-    { id:'duplicate-safe-to-delete-millie', img:'', name:'[DUPLICATE &mdash; SAFE TO DELETE] Millie', area:'Forest Hill', pc:'SE23', cat:'resident', year:1964, era:'Hit single 1964',
-      lat:null, lon:null, addr:'',
-      text:'Jamaican-British singer who lived in Forest Hill at the time of her major international hit "My Boy Lollipop" in 1964, one of the first ska records to become a global pop hit and a landmark moment for Jamaican music reaching British and American audiences.' },
-
-    { id:'duplicate-safe-to-delete-morden-college', img:'', name:'[DUPLICATE &mdash; SAFE TO DELETE] Morden College', area:'Blackheath', pc:'SE3', cat:'grand', year:null, era:'Founded 17th century',
-      lat:null, lon:null, addr:'',
-      text:'A set of almshouses founded in the 17th century, traditionally associated with the circle of Christopher Wren, and still functioning as almshouses today &mdash; centuries after their foundation, housing older residents in need much as originally intended. Morden College remains one of Blackheath\'s oldest and most continuously used charitable institutions.' },
-
-    { id:'duplicate-safe-to-delete-nathaniel-hawthorne', img:'', name:'[DUPLICATE &mdash; SAFE TO DELETE] Nathaniel Hawthorne', area:'Blackheath', pc:'SE3', cat:'resident', year:1856, era:'Lived here 1856',
-      lat:null, lon:null, addr:'4 Pond Road',
-      text:'American author of The Scarlet Letter, who lived at 4 Pond Road in 1856, marked with a blue plaque &mdash; a brief but notable London chapter for one of America\'s foundational novelists.' },
-
-    { id:'duplicate-safe-to-delete-peter-tatchell', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Peter_Tatchell_-_Red_Wall_-_8by10_-_2016-10-15.jpg/330px-Peter_Tatchell_-_Red_Wall_-_8by10_-_2016-10-15.jpg', name:'[DUPLICATE &mdash; SAFE TO DELETE] Peter Tatchell', area:'Elephant &amp; Castle', pc:'SE1', cat:'resident', year:2010, era:'Blue plaque installed 2010',
-      lat:null, lon:null, addr:'',
-      text:'Prominent human rights and gay rights campaigner who has lived for decades on the Rockingham Estate. Southwark Council installed a blue plaque in his name at his home in 2010, recognising his decades of activism.' },
-
-    { id:'duplicate-safe-to-delete-raymond-chandler', img:'', name:'[DUPLICATE &mdash; SAFE TO DELETE] Raymond Chandler', area:'Forest Hill', pc:'SE23', cat:'resident', year:null, era:'Lived in Forest Hill 1909&ndash;1912',
-      lat:null, lon:null, addr:'148 (now 138) Devonshire Road',
-      text:'American mystery and thriller writer, author of The Big Sleep and The Long Goodbye and creator of detective Philip Marlowe. Though born in the US, Chandler was educated at Dulwich College and probably lived with his mother at 148 (now 138) Devonshire Road, Forest Hill, from 1909 until he returned to America in 1912 &mdash; a formative London chapter for one of crime fiction\'s most influential voices.' },
-
-    { id:'duplicate-safe-to-delete-rivoli-ballroom', img:'', name:'[DUPLICATE &mdash; SAFE TO DELETE] Rivoli Ballroom', area:'Brockley', pc:'SE4', cat:'grand', year:1913, era:'Built 1913; remodelled as ballroom 1951',
-      lat:null, lon:null, addr:'346&ndash;350 Brockley Road',
-      text:'A Grade II listed building dating from 1913, originally built as a cinema before being remodelled as a dance hall in 1951. Its unique and outstanding original interior has made it a favourite filming location for movies, music videos and fashion shoots, and has hosted secret gigs and album launches including a 2007 secret show by The White Stripes and the launch of Florence and the Machine\'s debut album.' },
-
-    { id:'duplicate-safe-to-delete-sands-films-studio', img:'', name:'[DUPLICATE &mdash; SAFE TO DELETE] Sands Films Studio', area:'Rotherhithe', pc:'SE16', cat:'grand', year:null, era:'',
-      lat:null, lon:null, addr:'',
-      text:'A historic film costume and production studio operating out of a converted 18th-century granary and warehouse on the Rotherhithe riverside. Far less well known than the area\'s more famous maritime landmarks, Sands Films has quietly supplied costumes and production work for film and television for decades, run from a genuinely atmospheric old industrial building rather than a purpose-built studio.' },
-
-    { id:'severndroog-castle', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/2016_Severndroog_Castle_02.jpg/330px-2016_Severndroog_Castle_02.jpg', name:'[DUPLICATE &mdash; SAFE TO DELETE] Severndroog Castle', area:'Shooter\'s Hill', pc:'SE18', cat:'grand', year:1784, era:'Built 1784',
-      lat:51.4666, lon:0.06, addr:'Castle Wood, Shooter\'s Hill, SE18',
-      text:'Duplicate of the original Severndroog Castle entry (same building, differing only by apostrophe style in "Shooter\'s Hill"). Its unique detail (build year, husband\'s full name/rank, restoration and tea room) has been merged into the original &mdash; safe to delete this page.' },
-
-    { id:'duplicate-safe-to-delete-sir-barnes-wallis', img:'', name:'[DUPLICATE &mdash; SAFE TO DELETE] Sir Barnes Wallis', area:'New Cross', pc:'SE14', cat:'resident', year:null, era:'Lived in New Cross 1892&ndash;1909',
-      lat:null, lon:null, addr:'Plaque at 241 New Cross Road',
-      text:'Engineer and inventor Sir Barnes Wallis lived in New Cross from 1892 to 1909, long before he became famous as the designer of the "bouncing bomb" used in the RAF\'s 1943 Dambusters raid on German dams. According to local legend, his resolve to develop the weapon was sharpened after German bombing raids destroyed his beloved Millwall football ground during the Battle of Britain. A plaque marks his former home at 241 New Cross Road.' },
-
-    { id:'duplicate-safe-to-delete-sir-john-vanbrugh', img:'', name:'[DUPLICATE &mdash; SAFE TO DELETE] Sir John Vanbrugh', area:'Greenwich', pc:'SE10', cat:'resident', year:null, era:'',
-      lat:null, lon:null, addr:'121 Maze Hill (Vanbrugh Castle)',
-      text:'Architect of Blenheim Palace and Castle Howard, who lived at 121 Maze Hill in a house of his own design overlooking Greenwich Park, today known as Vanbrugh Castle &mdash; the same architect whose name is carried by Blackheath\'s Vanbrugh Park and Vanbrugh Pits, already covered in this gazetteer.' },
-
-    { id:'duplicate-safe-to-delete-the-pagoda-blackheath', img:'', name:'[DUPLICATE &mdash; SAFE TO DELETE] The Pagoda, Blackheath', area:'Blackheath', pc:'SE3', cat:'grand', year:null, era:'18th century',
-      lat:null, lon:null, addr:'',
-      text:'An 18th-century chinoiserie garden folly on Blackheath, built as an ornamental summerhouse in the fashionable Chinese-influenced style of the period. It stands alongside All Saints\' Church, Morden College and the Cator Estate as one of the heath\'s defining landmarks &mdash; a small, decorative eccentricity amid the area\'s grander Georgian architecture.' },
-
-    { id:'duplicate-safe-to-delete-timothy-spall', img:'', name:'[DUPLICATE &mdash; SAFE TO DELETE] Timothy Spall', area:'Honor Oak', pc:'SE23', cat:'resident', year:null, era:'',
-      lat:null, lon:null, addr:'',
-      text:'Acclaimed character actor associated with Honor Oak, known for a long and versatile career spanning film and television, including roles in Secrets &amp; Lies, Mr Turner and the Harry Potter franchise.' }
+      text:'A grand Edwardian Baroque town hall by architect Alfred Brumwell Thomas, built 1903&ndash;1906 after the old 1842 town hall (covered separately in this gazetteer) proved too small for the newly created Metropolitan Borough of Woolwich. Its ornate Victoria Hall, where mayors still greet guests at ceremonial functions today, holds fine stained glass windows by Geoffrey Webb depicting notable local events &mdash; including Charles I\'s 1637 visit to Woolwich to inspect his great warship The Sovereign of the Seas &mdash; alongside memorials to Civil Defence volunteers and council staff killed in the Second World War. It remains the ceremonial heart of the borough, now Grade II* listed and anchoring the historic Bathway Quarter conservation area.' }
   ];
