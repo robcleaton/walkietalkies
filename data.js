@@ -1459,7 +1459,7 @@
       lat:null, lon:null, addr:'',
       text:'Pioneering scientist born nearby in 1791, whose work on electromagnetism and electrochemistry underpins much of modern physics and engineering. He is honoured locally by the Michael Faraday Memorial, a stainless steel box in Elephant Square that also houses an electrical substation for the Northern line.' },
 
-    { id:'milford-towers', img:'', name:'Milford Towers', area:'Catford', pc:'SE6', cat:'grand', year:1972, era:'Developed early 1970s',
+    { id:'milford-towers', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Milford_Tower%2C_Catford_-_geograph.org.uk_-_315854.jpg/330px-Milford_Tower%2C_Catford_-_geograph.org.uk_-_315854.jpg', name:'Milford Towers', area:'Catford', pc:'SE6', cat:'grand', year:1972, era:'Developed early 1970s',
       lat:null, lon:null, addr:'Near Thomas Lane',
       text:'A Brutalist housing estate developed in the early 1970s by Owen Luder, sometimes nicknamed the "Barbican of the South" for its raw concrete ambition. Lewisham Council proposed demolishing it in 2015 due to disrepair, but it was refurbished in 2018 instead, buying it more time. Long-term redevelopment of the estate, alongside the wider Catford Shopping Centre, remains part of the council\'s ongoing Catford regeneration plans.' },
 
@@ -1619,7 +1619,7 @@
       lat:null, lon:null, addr:'',
       text:'On the night of 30 November 1936, the Crystal Palace &mdash; the vast glass-and-iron exhibition hall relocated to Sydenham after London\'s 1851 Great Exhibition &mdash; burned to the ground in a fire so large it was reportedly visible from ten counties away and spotted by airline pilots crossing the English Channel. General manager Sir Henry Buckland was walking the grounds with his young daughter, Crystal, when he spotted the blaze; within half an hour the entire 25-acre structure had caught fire. The disaster effectively ended the building\'s century-defining role, leaving only fragments &mdash; sphinxes, steps and terraces &mdash; in the park that still carries its name.' },
 
-    { id:'the-eltham-well-hall-rail-crash', img:'', name:'The Eltham Well Hall rail crash', area:'Eltham', pc:'SE9', cat:'memory', year:1972, era:'11 June 1972',
+    { id:'the-eltham-well-hall-rail-crash', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Eltham_Well_Hall_station_-_geograph.org.uk_-_3302722.jpg/330px-Eltham_Well_Hall_station_-_geograph.org.uk_-_3302722.jpg', name:'The Eltham Well Hall rail crash', area:'Eltham', pc:'SE9', cat:'memory', year:1972, era:'11 June 1972',
       lat:null, lon:null, addr:'',
       text:'On 11 June 1972, a passenger train derailed at speed on a sharp curve near Eltham Well Hall station after its driver, who was found to be drunk, failed to slow down in time. The driver and five passengers were killed and 126 people were injured. The abandoned Eltham Well Hall station site, now beneath the Rochester Way Relief Road, retains no visible trace of the crash, but the current Eltham station\'s railway code (ELW) still nods to the old station\'s name.' },
 
@@ -1639,7 +1639,7 @@
       lat:null, lon:null, addr:'',
       text:'On the evening of 22 April 1993, 18-year-old Stephen Lawrence was fatally stabbed in an unprovoked, racially motivated attack while waiting for a bus with his friend Duwayne Brooks on Well Hall Road. The Metropolitan Police\'s badly mishandled investigation, and the collapse of an early prosecution, led Stephen\'s parents to fund a private case that also failed in 1996. A 1998 public inquiry led by Sir William Macpherson concluded the police force had been institutionally racist, a finding that reshaped British policing, race relations law and the rules on double jeopardy; two of Lawrence\'s killers were finally convicted of murder in January 2012, almost nineteen years after his death.' },
 
-    { id:'the-new-cross-house-fire', img:'', name:'The New Cross house fire', area:'New Cross', pc:'SE14', cat:'memory', year:1981, era:'18 January 1981',
+    { id:'the-new-cross-house-fire', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/New_Cross_Fire_took_place_at_this_site_on_January_18%2C_1981_claiming_the_lives_of_14_young_people.jpg/330px-New_Cross_Fire_took_place_at_this_site_on_January_18%2C_1981_claiming_the_lives_of_14_young_people.jpg', name:'The New Cross house fire', area:'New Cross', pc:'SE14', cat:'memory', year:1981, era:'18 January 1981',
       lat:null, lon:null, addr:'',
       text:'In the early hours of 18 January 1981, a fire broke out during a birthday party at a house on New Cross Road, killing 13 young Black people aged between 14 and 22; a fourteenth victim took his own life two years later. No one was ever charged, and both a 1981 and a 2004 inquest returned open verdicts. The tragedy, and the perceived indifference of the police and press response, led directly to the Black People\'s Day of Action on 2 March 1981, when around 20,000 people marched from Fordham Park to Hyde Park behind placards reading "13 Dead, Nothing Said" &mdash; a pivotal moment in the history of Black British political organising.' },
 
@@ -1671,7 +1671,7 @@
       lat:null, lon:null, addr:'',
       text:'A major fire broke out among the riverside warehouses of Tooley Street in 1861, engulfing the densely packed wharves that had earned the area the nickname "London\'s Larder" for its role storing and processing food for the capital. The blaze was one of the largest and most destructive fires in London between the Great Fire of 1666 and the Blitz, reshaping the riverside for decades afterward.' },
 
-    { id:'the-woolwich-pub-bombing', img:'', name:'The Woolwich pub bombing', area:'Woolwich', pc:'SE18', cat:'memory', year:1974, era:'7 November 1974',
+    { id:'the-woolwich-pub-bombing', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Woolwich%2C_Royal_Artillery_Barracks_-_geograph.org.uk_-_4406494.jpg/330px-Woolwich%2C_Royal_Artillery_Barracks_-_geograph.org.uk_-_4406494.jpg', name:'The Woolwich pub bombing', area:'Woolwich', pc:'SE18', cat:'memory', year:1974, era:'7 November 1974',
       lat:null, lon:null, addr:'',
       text:'On 7 November 1974, the Provisional IRA threw a gelignite bomb through the window of the Kings Arms pub on Frances Street, close to the Royal Artillery Barracks, killing two people &mdash; off-duty soldier Gunner Richard Dunne and sales clerk Alan Horsley &mdash; and injuring 35 others including the landlady. The attack came a month after similar bombings in Guildford, part of the same mainland bombing campaign during the Troubles, and remains one of Woolwich\'s most significant and painful pieces of 20th-century history.' },
 
@@ -1763,7 +1763,7 @@
       lat:null, lon:null, addr:'',
       text:'Opened in 1891 to a design by Sebastian de Ferranti, it was the largest power station in the world when built, though technical problems meant it never fully achieved his ambitions for it.' },
 
-    { id:'edward-drummond', img:'', name:'Edward Drummond', area:'Charlton', pc:'SE7', cat:'memory', year:1843, era:'Died 1843, buried here',
+    { id:'edward-drummond', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/St_Luke%2C_Charlton_-_geograph.org.uk_-_4190458.jpg/330px-St_Luke%2C_Charlton_-_geograph.org.uk_-_4190458.jpg', name:'Edward Drummond', area:'Charlton', pc:'SE7', cat:'memory', year:1843, era:'Died 1843, buried here',
       lat:51.4828, lon:0.0347, addr:'St Luke\'s Church, Charlton Church Lane, SE7',
       text:'Prime Minister Robert Peel&rsquo;s private secretary, shot dead in Whitehall in 1843 by a man who had mistaken him for Peel. The case established the M&rsquo;Naghten Rules that still define the insanity defence in English law today. Drummond is buried at St Luke&rsquo;s Church.' },
 
@@ -2191,7 +2191,7 @@
       lat:51.4709, lon:-0.0679, addr:'95a Rye Lane, SE15 4ST',
       text:'A 700-space multi-storey car park commissioned by Sainsbury\'s in 1980 and built in 1982, sitting empty and derelict for decades until artist Hannah Barry began staging shows on its rooftop in 2007 (now Bold Tendencies, already covered separately in this gazetteer). Following a 2015 open competition and a 5,000-strong community petition to save the building from demolition, Southwark Council handed floors 1&ndash;6 to a scheme called Peckham Levels, which opened in 2017 with 85 artist studios, co-working space, a food hall and community event space designed by Turner Works. Together with Bold Tendencies on the roof and the PeckhamPlex cinema at ground level, the building is now a single, layered case study in reusing a piece of unglamorous 1980s infrastructure rather than knocking it down.' },
 
-    { id:'peckham-manor-house', img:'', name:'Peckham Manor House', area:'Peckham', pc:'SE15', cat:'grand', year:1672, era:'Rebuilt 1672; demolished 1797',
+    { id:'peckham-manor-house', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Peckham_Hill_Street%2C_SE15_-_geograph.org.uk_-_223855.jpg/330px-Peckham_Hill_Street%2C_SE15_-_geograph.org.uk_-_223855.jpg', name:'Peckham Manor House', area:'Peckham', pc:'SE15', cat:'grand', year:1672, era:'Rebuilt 1672; demolished 1797',
       lat:51.4742, lon:-0.0687, addr:'Peckham Hill Street, SE15',
       text:'The manor house of Peckham was rebuilt in 1672 by Sir Thomas Bond, with formal gardens grand enough to appear on the 1746 Rocque map of London. It was sacked in 1688 because its then owner, Sir Henry Bond, was a Roman Catholic and staunch supporter of the deposed James II. The house was eventually demolished in 1797 to make way for the newly laid-out Peckham Hill Street; Shard\'s Terrace, which still contains a pie and mash shop today, is part of the Georgian development that replaced it.' },
 
@@ -2255,99 +2255,99 @@
       lat:51.4406, lon:-0.061, addr:'Horniman Gardens, London Road, SE23 3PQ',
       text:'A cast-iron and glass conservatory built in 1894 by the Glasgow ironworks MacFarlane&rsquo;s &mdash; then a world leader in ornamental architectural ironwork &mdash; for Coombe Cliff House in Croydon, the home of Frederick Horniman&rsquo;s parents. Panels, friezes and roof spandrels inside, and fish-scale detailing and cresting outside, show off the full range of MacFarlane&rsquo;s patterns across a structure 56 feet long, 22 feet wide and 20 feet tall.\n\nA fire badly damaged the conservatory in 1977. It was dismantled in 1981 and its components stored at Crystal Palace Park until 1987, when reconstruction began on a new site in the Horniman&rsquo;s own gardens &mdash; a distinct building from Charles Harrison Townsend&rsquo;s museum next door. It reopened to the public in October 1989 and now hosts music, film, dance and poetry performances.' },
 
-    { id:'ted-christmas', img:'', name:'Ted Christmas', area:'Forest Hill', pc:'SE23', cat:'resident', year:1867, era:'1867&ndash;1936',
+    { id:'ted-christmas', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Dartmouth_Road%2C_Forest_Hill_-_geograph.org.uk_-_1253374.jpg/330px-Dartmouth_Road%2C_Forest_Hill_-_geograph.org.uk_-_1253374.jpg', name:'Ted Christmas', area:'Forest Hill', pc:'SE23', cat:'resident', year:1867, era:'1867&ndash;1936',
       lat:null, lon:null, addr:'55 Dartmouth Road (original workshop)',
       text:'Local builder born Edward Charles Christmas in Lewisham in 1867, who set up his own business around 1890 in a converted cottage at 55 Dartmouth Road, having trained as a carpenter\'s apprentice from age 14. Working in an Arts and Crafts-influenced style, he built large detached houses in Forest Hill\'s Edwardian heyday before turning, between the wars, to cheaper houses and flat conversions in the Perry Vale area, where his distinctive style remains easy to spot today. He is best remembered locally for a playful architectural signature: naming groups of his houses so their first letters spelled out words (see the Christmas Houses, covered separately in this gazetteer). He died in 1936 at Bolney Court, Lawrie Park Road, leaving an estate worth &pound;131,632; his firm continued trading as E. C. Christmas estate agents into the early 1970s.' },
 
-    { id:'the-christmas-houses-perry-vale-acrostic-estate', img:'', name:'The Christmas Houses (Perry Vale acrostic estate)', area:'Forest Hill', pc:'SE23', cat:'grand', year:1901, era:'Built from 1901',
+    { id:'the-christmas-houses-perry-vale-acrostic-estate', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Perry_Vale%2C_Forest_Hill_-_geograph.org.uk_-_4629464.jpg/330px-Perry_Vale%2C_Forest_Hill_-_geograph.org.uk_-_4629464.jpg', name:'The Christmas Houses (Perry Vale acrostic estate)', area:'Forest Hill', pc:'SE23', cat:'grand', year:1901, era:'Built from 1901',
       lat:null, lon:null, addr:'Perry Vale, Sunderland Road and Gaynesford Road',
       text:'A cluster of early 20th-century houses built by local builder Ted Christmas (covered separately in this gazetteer), distinctive for a playful bid at immortality: he named each group of houses so their first letters spelled out a word. In 1901 he completed 108&ndash;116 Perry Vale &mdash; Linstead, Ashdale, Ulverston, Rosaville and Aberleigh &mdash; spelling LAURA, after his wife. A little later, 131&ndash;153 Perry Vale spelled out TED CHRISTMAS, and 64&ndash;72 Sunderland Road spelled GRACE, after his daughter. Further Christmas houses can be found on Gaynesford Road and scattered elsewhere nearby, all recognisable by their shared Arts and Crafts detailing. The area has since been informally dubbed Forest Hill\'s "Christmas Conservation Area" following a local campaign by the Forest Hill Society to protect its character.' },
 
-    { id:'172-172a-172b-old-road', img:'', name:'172, 172A &amp; 172B Old Road', area:'Bexley', pc:'DA5', cat:'grand', year:null, era:'17th century',
+    { id:'172-172a-172b-old-road', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/172%2C_172A%2C_and_172B_Old_Road%2C_Crayford_%2801%29.jpg/330px-172%2C_172A%2C_and_172B_Old_Road%2C_Crayford_%2801%29.jpg', name:'172, 172A &amp; 172B Old Road', area:'Bexley', pc:'DA5', cat:'grand', year:null, era:'17th century',
       lat:null, lon:null, addr:'172, 172A &amp; 172B Old Road',
       text:'A group of 17th-century timber-framed buildings on Old Road, later altered with rendered walls but retaining distinctive original features including canted bay windows and a catslide roof &mdash; a roofline that sweeps down in one continuous slope, a hallmark of vernacular buildings of the period.' },
 
-    { id:'albury-street-doorcases', img:'', name:'Albury Street doorcases', area:'Deptford', pc:'SE8', cat:'grand', year:null, era:'Early 18th century',
+    { id:'albury-street-doorcases', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Deptford_Doorcase_-_Albury_Street_2009-03-23.jpg/330px-Deptford_Doorcase_-_Albury_Street_2009-03-23.jpg', name:'Albury Street doorcases', area:'Deptford', pc:'SE8', cat:'grand', year:null, era:'Early 18th century',
       lat:null, lon:null, addr:'Albury Street, SE8',
       text:'A row of fine early Georgian houses on Albury Street, celebrated for their elaborately carved wooden doorcases, several featuring small carved cherubs\' heads &mdash; one of Deptford\'s most visually distinctive surviving streets. No. 35 is separately Grade II* listed in its own right.' },
 
-    { id:'alex-james', img:'', name:'Alex James', area:'New Cross', pc:'SE14', cat:'resident', year:null, era:'',
+    { id:'alex-james', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Alex_James_2014.jpg/330px-Alex_James_2014.jpg', name:'Alex James', area:'New Cross', pc:'SE14', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Bass guitarist of the band Blur, who studied at Goldsmiths, University of London, in New Cross &mdash; the same institution that shaped a wider generation of Britpop and Young British Artists talent.' },
 
-    { id:'alexander-duckham', img:'', name:'Alexander Duckham', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'',
+    { id:'alexander-duckham', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Enamel_advert%2C_Duckham%27s_20-50_motor_oil.JPG/330px-Enamel_advert%2C_Duckham%27s_20-50_motor_oil.JPG', name:'Alexander Duckham', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Engineer who founded the Duckhams motor oil company, born in Blackheath and later living in Dartmouth Grove and Vanbrugh Castle in east Greenwich. His brother Arthur Duckham, founder of the Institution of Chemical Engineers, was also born and raised in Blackheath.' },
 
-    { id:'alfred-marshall', img:'', name:'Alfred Marshall', area:'Bermondsey', pc:'SE1', cat:'resident', year:null, era:'',
+    { id:'alfred-marshall', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Alfred_Marshall_1891.jpg/330px-Alfred_Marshall_1891.jpg', name:'Alfred Marshall', area:'Bermondsey', pc:'SE1', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Influential economist born in Bermondsey, author of the widely used textbook Principles of Economics (1890), which shaped the study of economics for generations of students.' },
 
-    { id:'archbishop-desmond-tutu', img:'', name:'Archbishop Desmond Tutu', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
+    { id:'archbishop-desmond-tutu', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Archbishop-Tutu-medium.jpg/330px-Archbishop-Tutu-medium.jpg', name:'Archbishop Desmond Tutu', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'Brownhill Road',
       text:'Archbishop Desmond Tutu, the South African anti-apartheid leader and Nobel Peace Prize laureate, lived on Brownhill Road in Catford &mdash; a striking, little-known London connection for one of the 20th century\'s most significant global moral voices.' },
 
-    { id:'arthur-rhys-davids', img:'', name:'Arthur Rhys-Davids', area:'Forest Hill', pc:'SE23', cat:'resident', year:1917, era:'Died in combat 1917',
+    { id:'arthur-rhys-davids', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Arthur_Rhys_Davids_by_William_Orpen.jpg/330px-Arthur_Rhys_Davids_by_William_Orpen.jpg', name:'Arthur Rhys-Davids', area:'Forest Hill', pc:'SE23', cat:'resident', year:1917, era:'Died in combat 1917',
       lat:null, lon:null, addr:'',
       text:'First World War flying ace born in Forest Hill, credited with 25 aerial victories before his death in combat in 1917 at the age of just 20 &mdash; one of the RAF\'s most celebrated young pilots of the war.' },
 
-    { id:'axel-scheffler', img:'', name:'Axel Scheffler', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'',
+    { id:'axel-scheffler', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Axel_Scheffler.jpg/330px-Axel_Scheffler.jpg', name:'Axel Scheffler', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Book illustrator best known worldwide for illustrating The Gruffalo and other Julia Donaldson children\'s books, who lives in Blackheath.' },
 
-    { id:'baron-warner-of-brockley', img:'', name:'Baron Warner of Brockley', area:'Brockley', pc:'SE4', cat:'resident', year:null, era:'',
+    { id:'baron-warner-of-brockley', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Official_portrait_of_Lord_Warner%2C_2019.jpg/330px-Official_portrait_of_Lord_Warner%2C_2019.jpg', name:'Baron Warner of Brockley', area:'Brockley', pc:'SE4', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'Drakefell Road',
       text:'Labour politician who grew up on Drakefell Road, Brockley, and took the title Baron Warner of Brockley upon his elevation to the House of Lords &mdash; a rare case of a peer\'s title directly naming the South East London street where he grew up.' },
 
-    { id:'bernardine-evaristo', img:'', name:'Bernardine Evaristo', area:'Eltham', pc:'SE9', cat:'resident', year:2019, era:'Booker Prize 2019',
+    { id:'bernardine-evaristo', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Bernardine_Evaristo_Photo_%28cropped%29.jpg/330px-Bernardine_Evaristo_Photo_%28cropped%29.jpg', name:'Bernardine Evaristo', area:'Eltham', pc:'SE9', cat:'resident', year:2019, era:'Booker Prize 2019',
       lat:null, lon:null, addr:'',
       text:'Novelist and professor of creative writing, born in Eltham and educated at Eltham Hill Grammar School for Girls, who became the first Black woman to win the Booker Prize, for her 2019 novel Girl, Woman, Other.' },
 
-    { id:'bill-wyman', img:'', name:'Bill Wyman', area:'Sydenham', pc:'SE26', cat:'resident', year:null, era:'',
+    { id:'bill-wyman', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Bill_Wyman_2009.jpg/330px-Bill_Wyman_2009.jpg', name:'Bill Wyman', area:'Sydenham', pc:'SE26', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Bass guitarist of the Rolling Stones, who lived in Sydenham. He was a founding member of the band and played with them for three decades before leaving in 1993.' },
 
-    { id:'blackheath-quaker-meeting-house', img:'', name:'Blackheath Quaker Meeting House', area:'Blackheath', pc:'SE3', cat:'grand', year:null, era:'',
+    { id:'blackheath-quaker-meeting-house', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Blackheath_Quaker_Meeting_House%2C_south_aspect.jpg/330px-Blackheath_Quaker_Meeting_House%2C_south_aspect.jpg', name:'Blackheath Quaker Meeting House', area:'Blackheath', pc:'SE3', cat:'grand', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'A Quaker meeting house on Blackheath, built in the simple, functional style typical of early Quaker meeting houses &mdash; designed by local craftsmen to sit modestly within the landscape rather than announce themselves, in deliberate contrast to the grander, more ornamental architecture found elsewhere on the heath. It retains its original cobbled forecourt.' },
 
-    { id:'boone-s-chapel', img:'', name:'Boone\'s Chapel', area:'Lee', pc:'SE12', cat:'grand', year:1682, era:'Built c.1682&ndash;83; restored 2008',
+    { id:'boone-s-chapel', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Boone%27s_Chapel_in_Lee.jpg/330px-Boone%27s_Chapel_in_Lee.jpg', name:'Boone\'s Chapel', area:'Lee', pc:'SE12', cat:'grand', year:1682, era:'Built c.1682&ndash;83; restored 2008',
       lat:null, lon:null, addr:'Lee High Road',
       text:'One of only two Grade I listed buildings in the entire London Borough of Lewisham (the other is St Paul\'s, Deptford), this tiny brick chapel of just 45 square metres was commissioned around 1682&ndash;83 by Christopher Boone, a member of the Merchant Taylors\' Company, to serve almshouses he funded for the elderly of Lee and to educate twelve poor children. Though traditionally attributed to Sir Christopher Wren, it was most likely actually built by Robert Hooke, Wren\'s friend, colleague and fellow Merchant Taylor. Both Christopher Boone (1616&ndash;1686) and his wife Mary are interred within it. The almshouses beside it were demolished in 1877, and the chapel itself fell derelict after the Second World War, landing on English Heritage\'s Buildings at Risk register by the late 1990s. A dedicated charity, the Blackheath Historic Buildings Trust, raised over &pound;500,000 to restore it, completing the work in 2008; it now serves as an architects\' office, open to the public around 30 days a year including Open House weekend.' },
 
-    { id:'brian-molko', img:'', name:'Brian Molko', area:'Brockley', pc:'SE4', cat:'resident', year:null, era:'',
+    { id:'brian-molko', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Brian_Molko_Placebo.jpg/330px-Brian_Molko_Placebo.jpg', name:'Brian Molko', area:'Brockley', pc:'SE4', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Musician and frontman of the band Placebo, who lived in Brockley for a number of years while forming the group, which went on to become one of the defining alternative rock acts of the late 1990s and 2000s.' },
 
-    { id:'burial-mound-winns-common', img:'', name:'Burial mound, Winns Common', area:'Woolwich', pc:'SE18', cat:'green', year:null, era:'',
+    { id:'burial-mound-winns-common', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Tumulus_on_Winn%27s_Common.jpg/330px-Tumulus_on_Winn%27s_Common.jpg', name:'Burial mound, Winns Common', area:'Woolwich', pc:'SE18', cat:'green', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'A Bronze Age burial mound surviving on Winns Common in Plumstead, part of a small scatter of ancient barrows across the high ground of this part of South East London &mdash; physical evidence that people were burying their dead on these hills long before any of the area\'s recorded history began.' },
 
-    { id:'charles-gounod', img:'', name:'Charles Gounod', area:'Blackheath', pc:'SE3', cat:'resident', year:1870, era:'Lived here 1870',
+    { id:'charles-gounod', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Charles_Gounod_%281890%29_by_Nadar.jpg/330px-Charles_Gounod_%281890%29_by_Nadar.jpg', name:'Charles Gounod', area:'Blackheath', pc:'SE3', cat:'resident', year:1870, era:'Lived here 1870',
       lat:null, lon:null, addr:'4 Morden Road',
       text:'French Romantic composer, best known for the opera Faust, who lived at 4 Morden Road in 1870, marked today with a blue plaque &mdash; an unexpected outpost of French classical music history in South East London.' },
 
-    { id:'charles-stewart-parnell', img:'', name:'Charles Stewart Parnell', area:'Brockley', pc:'SE4', cat:'resident', year:1846, era:'1846&ndash;1891',
+    { id:'charles-stewart-parnell', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Charles_Stewart_Parnell_1885.jpg/330px-Charles_Stewart_Parnell_1885.jpg', name:'Charles Stewart Parnell', area:'Brockley', pc:'SE4', cat:'resident', year:1846, era:'1846&ndash;1891',
       lat:null, lon:null, addr:'112 Tressillian Road',
       text:'Irish Nationalist leader and one of the most significant figures in 19th-century British and Irish politics, who lived at 112 Tressillian Road with Katharine O\'Shea, his lover and later wife. Their relationship, exposed in a divorce scandal in 1890, split the Irish Parliamentary Party and destroyed Parnell\'s political career within a year of the affair becoming public &mdash; a genuinely consequential piece of history playing out on an ordinary Brockley street.' },
 
-    { id:'chiwetel-ejiofor', img:'', name:'Chiwetel Ejiofor', area:'Camberwell', pc:'SE5', cat:'resident', year:null, era:'',
+    { id:'chiwetel-ejiofor', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Chiwetel_Ejiofor_by_Gage_Skidmore.jpg/330px-Chiwetel_Ejiofor_by_Gage_Skidmore.jpg', name:'Chiwetel Ejiofor', area:'Camberwell', pc:'SE5', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Acclaimed actor associated with Camberwell, celebrated for his stage work and for his Oscar-nominated role in 12 Years a Slave, among a long list of major film and theatre credits.' },
 
-    { id:'chris-tarrant', img:'', name:'Chris Tarrant', area:'Brockley', pc:'SE4', cat:'resident', year:null, era:'',
+    { id:'chris-tarrant', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Chris_Tarrant_2024_%28cropped%29.png/330px-Chris_Tarrant_2024_%28cropped%29.png', name:'Chris Tarrant', area:'Brockley', pc:'SE4', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'TV presenter, best known for hosting Who Wants to Be a Millionaire? for 15 years, who taught at a Brockley school in the late 1960s and early 1970s, at one point living out of his car near the school.' },
 
-    { id:'crossness-pumping-station', img:'', name:'Crossness Pumping Station', area:'Bexley', pc:'', cat:'grand', year:1862, era:'Built 1862&ndash;1865',
+    { id:'crossness-pumping-station', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Exterior_of_Crossness_Pumping_Station.JPG/330px-Exterior_of_Crossness_Pumping_Station.JPG', name:'Crossness Pumping Station', area:'Bexley', pc:'', cat:'grand', year:1862, era:'Built 1862&ndash;1865',
       lat:null, lon:null, addr:'',
       text:'One of the most spectacular pieces of Victorian industrial engineering in London, built between 1862 and 1865 to designs by Joseph Bazalgette and Charles Driver as part of Bazalgette\'s great sewage system overhaul that finally ended London\'s era of cholera outbreaks and the Great Stink. Behind its plain brick exterior lies an astonishingly ornate cast-iron interior, with elaborate Romanesque-style decorative ironwork surrounding the enormous beam engines that once pumped London\'s sewage &mdash; a working sewage station built with the flourish of a cathedral.' },
 
-    { id:'dame-cicely-saunders', img:'', name:'Dame Cicely Saunders', area:'Sydenham', pc:'SE26', cat:'resident', year:null, era:'',
+    { id:'dame-cicely-saunders', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Cicely_Saunders_%284x5_cropped%29.jpg/330px-Cicely_Saunders_%284x5_cropped%29.jpg', name:'Dame Cicely Saunders', area:'Sydenham', pc:'SE26', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Physician and writer who founded the modern hospice movement, establishing St Christopher\'s Hospice and transforming end-of-life care worldwide. She lived in Sydenham.' },
 
-    { id:'david-haye', img:'', name:'David Haye', area:'Bermondsey', pc:'SE1', cat:'resident', year:null, era:'',
+    { id:'david-haye', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/David_Haye.png/330px-David_Haye.png', name:'David Haye', area:'Bermondsey', pc:'SE1', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Boxer associated with Bermondsey, a former WBA heavyweight champion and unified world cruiserweight champion, one of Britain\'s most successful boxers of the 2000s and 2010s.' },
 
@@ -2359,15 +2359,15 @@
       lat:null, lon:null, addr:'',
       text:'Beloved Arsenal and England midfielder, one of the standout English footballers of the late 1980s, whose death from cancer in 2001 at just 33 prompted an outpouring of grief across English football.' },
 
-    { id:'dietrich-bonhoeffer', img:'', name:'Dietrich Bonhoeffer', area:'Forest Hill', pc:'SE23', cat:'resident', year:1945, era:'Executed 1945',
+    { id:'dietrich-bonhoeffer', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Bundesarchiv_Bild_146-1987-074-16%2C_Dietrich_Bonhoeffer.jpg/330px-Bundesarchiv_Bild_146-1987-074-16%2C_Dietrich_Bonhoeffer.jpg', name:'Dietrich Bonhoeffer', area:'Forest Hill', pc:'SE23', cat:'resident', year:1945, era:'Executed 1945',
       lat:null, lon:null, addr:'',
       text:'German Protestant theologian and anti-Nazi dissident, executed by the Nazi regime in 1945 for his involvement in resistance activities including a plot against Hitler. Bonhoeffer briefly lived and preached in Forest Hill during an earlier period of his life, giving this ordinary South London suburb a direct connection to one of the 20th century\'s most significant Christian martyrs.' },
 
-    { id:'don-letts', img:'', name:'Don Letts', area:'Forest Hill', pc:'SE23', cat:'resident', year:null, era:'',
+    { id:'don-letts', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Bad-don-letts-2-np.jpg/330px-Bad-don-letts-2-np.jpg', name:'Don Letts', area:'Forest Hill', pc:'SE23', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Filmmaker, musician and DJ associated with Forest Hill, a key figure in bridging punk and reggae culture in 1970s Britain through his work with bands like Big Audio Dynamite and his documentary filmmaking on Black British and Jamaican music culture.' },
 
-    { id:'donald-mcgill', img:'', name:'Donald McGill', area:'Blackheath', pc:'SE3', cat:'resident', year:1875, era:'1875&ndash;1962',
+    { id:'donald-mcgill', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Donald_McGill_-_5_Bennett_Park%2C_Blackheath%2C_SE3.JPG/330px-Donald_McGill_-_5_Bennett_Park%2C_Blackheath%2C_SE3.JPG', name:'Donald McGill', area:'Blackheath', pc:'SE3', cat:'resident', year:1875, era:'1875&ndash;1962',
       lat:null, lon:null, addr:'5 Bennett Park',
       text:'Postcard cartoonist famous for saucy seaside postcard designs that became a fixture of British popular culture, commemorated with a blue plaque at his former home, 5 Bennett Park.' },
 
@@ -2375,115 +2375,115 @@
       lat:null, lon:null, addr:'',
       text:'One of Britain\'s best-known mediums and psychics, associated with Forest Hill, who became a fixture of British popular culture through television and radio appearances from the 1970s onward.' },
 
-    { id:'dulwich-library', img:'', name:'Dulwich Library', area:'Dulwich', pc:'SE21', cat:'grand', year:1896, era:'Built 1896&ndash;1897',
+    { id:'dulwich-library', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Dulwich_Library_-_geograph.org.uk_-_3044631.jpg/330px-Dulwich_Library_-_geograph.org.uk_-_3044631.jpg', name:'Dulwich Library', area:'Dulwich', pc:'SE21', cat:'grand', year:1896, era:'Built 1896&ndash;1897',
       lat:null, lon:null, addr:'',
       text:'A Grade II listed library built in 1896&ndash;97 in Elizabethan Revival style by architect Charles Barry Junior &mdash; son of Sir Charles Barry, co-architect of the Houses of Parliament &mdash; as one of the Passmore Edwards libraries funded by philanthropist John Passmore Edwards. It was built specifically as a memorial to Edward Alleyn, the great Elizabethan actor who founded both Dulwich College and Alleyn\'s School, on a site donated by the College itself. The legendary actor Sir Henry Irving laid the foundation stone on 24 September 1896. Bomb-damaged in 1940 or 1941, its west wing was rebuilt around 1950, and the building was further refurbished in 2013.' },
 
-    { id:'edgar-wallace', img:'', name:'Edgar Wallace', area:'Brockley', pc:'SE4', cat:'resident', year:1900, era:'Lived here 1900&ndash;1932',
+    { id:'edgar-wallace', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Bundesarchiv_Bild_102-13109%2C_Edgar_Wallace.jpg/330px-Bundesarchiv_Bild_102-13109%2C_Edgar_Wallace.jpg', name:'Edgar Wallace', area:'Brockley', pc:'SE4', cat:'resident', year:1900, era:'Lived here 1900&ndash;1932',
       lat:null, lon:null, addr:'6 Tressillian Crescent',
       text:'Enormously prolific author and playwright who lived at 6 Tressillian Crescent from 1900 to 1932, during which time he wrote the original screenplay treatment for King Kong (1933), among hundreds of thrillers and detective novels. His fictional detective J. G. Reeder is depicted living on Brockley Road, and his novel The Duke in the Suburbs is also set in Brockley.' },
 
-    { id:'elsa-lanchester', img:'', name:'Elsa Lanchester', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
+    { id:'elsa-lanchester', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Elsa_Lanchester.jpg/330px-Elsa_Lanchester.jpg', name:'Elsa Lanchester', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Anglo-American actress born in Lewisham and raised in Catford, best remembered for her iconic role in Bride of Frankenstein (1935) and for her long-running screen partnership with husband Charles Laughton.' },
 
-    { id:'emily-davison', img:'', name:'Emily Davison', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'',
+    { id:'emily-davison', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Emily_Wilding_Davison_by_Andrew_William_Dron.jpg/330px-Emily_Wilding_Davison_by_Andrew_William_Dron.jpg', name:'Emily Davison', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Militant suffragette, born in Blackheath, who became one of the movement\'s most famous figures after stepping in front of King George V\'s horse at the 1913 Epsom Derby in protest, dying from her injuries four days later.' },
 
-    { id:'emma-thompson', img:'', name:'Emma Thompson', area:'Camberwell', pc:'SE5', cat:'resident', year:null, era:'',
+    { id:'emma-thompson', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Emma_Thompson_at_the_78th_Locarno_Film_Festival_photocall_01_%28cropped%29.jpg/330px-Emma_Thompson_at_the_78th_Locarno_Film_Festival_photocall_01_%28cropped%29.jpg', name:'Emma Thompson', area:'Camberwell', pc:'SE5', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Academy Award-winning actress and screenwriter associated with Camberwell, celebrated for roles in Sense and Sensibility (which she also wrote and won an Oscar for) and Howards End, among many others.' },
 
-    { id:'florence-welch', img:'', name:'Florence Welch', area:'Camberwell', pc:'SE5', cat:'resident', year:null, era:'',
+    { id:'florence-welch', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/FlorenceRAHProms110924_%2868_of_76%29_%2853989416201%29_%28cropped%29.jpg/330px-FlorenceRAHProms110924_%2868_of_76%29_%2853989416201%29_%28cropped%29.jpg', name:'Florence Welch', area:'Camberwell', pc:'SE5', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Singer-songwriter born in Camberwell, frontwoman of Florence and the Machine, known for a distinctive baroque-pop sound and hits including "Dog Days Are Over."' },
 
-    { id:'gabrielle', img:'', name:'Gabrielle', area:'Brockley', pc:'SE4', cat:'resident', year:null, era:'',
+    { id:'gabrielle', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Gabrielle_performing_in_Birmingham_in_April_2025_%285%29.jpg/330px-Gabrielle_performing_in_Birmingham_in_April_2025_%285%29.jpg', name:'Gabrielle', area:'Brockley', pc:'SE4', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'British singer, associated with Brockley and Honor Oak, best known for her 1993 hit "Dreams," which topped the charts and became one of the defining British soul singles of the decade.' },
 
-    { id:'general-james-wolfe', img:'', name:'General James Wolfe', area:'Greenwich', pc:'SE10', cat:'resident', year:1759, era:'Died 1759',
+    { id:'general-james-wolfe', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/James_Wolfe.jpeg/330px-James_Wolfe.jpeg', name:'General James Wolfe', area:'Greenwich', pc:'SE10', cat:'resident', year:1759, era:'Died 1759',
       lat:null, lon:null, addr:'Macartney House, Crooms Hill',
       text:'British Army general famed for his victory at the 1759 Battle of the Plains of Abraham outside Quebec, a decisive moment in the Seven Years\' War that helped secure British control of Canada. Wolfe lived at Macartney House on Crooms Hill and is buried at St Alfege\'s Church, Greenwich.' },
 
-    { id:'ginger-baker', img:'', name:'Ginger Baker', area:'Lewisham', pc:'SE13', cat:'resident', year:null, era:'',
+    { id:'ginger-baker', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Ginger_Baker_in_1984.jpg/330px-Ginger_Baker_in_1984.jpg', name:'Ginger Baker', area:'Lewisham', pc:'SE13', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Drummer of the pioneering rock band Cream, born and brought up in Lewisham, celebrated as one of the most influential rock drummers in music history.' },
 
-    { id:'grange-walk-and-the-bermondsey-abbey-gatehouse', img:'', name:'Grange Walk and the Bermondsey Abbey gatehouse', area:'Bermondsey', pc:'SE1', cat:'grand', year:null, era:'Late 17th century; abbey dissolved mid-16th century',
+    { id:'grange-walk-and-the-bermondsey-abbey-gatehouse', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/5%E2%80%937_Grange_Walk%2C_Bermondsey_%282012%29.jpg/330px-5%E2%80%937_Grange_Walk%2C_Bermondsey_%282012%29.jpg', name:'Grange Walk and the Bermondsey Abbey gatehouse', area:'Bermondsey', pc:'SE1', cat:'grand', year:null, era:'Late 17th century; abbey dissolved mid-16th century',
       lat:null, lon:null, addr:'5, 6 &amp; 7 Grange Walk',
       text:'Late 17th-century Grade II listed houses on Grange Walk, built directly into part of the surviving stone gatehouse of the demolished Bermondsey Abbey. At number 7, the chamfered south jamb of the old gateway is still visible, complete with two wrought-iron gate-hooks and a "Gatehouse" sign. The abbey itself has a remarkable royal footnote: it was the last residence of Elizabeth Woodville, queen consort of Edward IV and mother of both the "Princes in the Tower" and of Elizabeth of York, who became queen to Henry VII &mdash; meaning this quiet residential street sits directly on the site of where a queen once lived out her final days.' },
 
-    { id:'harriet-harman', img:'', name:'Harriet Harman', area:'Dulwich', pc:'SE21', cat:'resident', year:null, era:'',
+    { id:'harriet-harman', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Official_portrait_of_Rt_Hon_Harriet_Harman_QC_MP_crop_2.jpg/330px-Official_portrait_of_Rt_Hon_Harriet_Harman_QC_MP_crop_2.jpg', name:'Harriet Harman', area:'Dulwich', pc:'SE21', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Labour Member of Parliament associated with Dulwich, the longest continuously serving female MP in the House of Commons and a pioneering figure for women\'s rights in British politics, serving as Leader of the House of Commons and Deputy Leader of the Labour Party.' },
 
-    { id:'harry-price', img:'', name:'Harry Price', area:'Brockley', pc:'SE4', cat:'resident', year:null, era:'',
+    { id:'harry-price', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Harry_price_by_william_hope.jpg/330px-Harry_price_by_william_hope.jpg', name:'Harry Price', area:'Brockley', pc:'SE4', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'22 Harefield Road',
       text:'Psychic researcher and paranormal investigator, famed for his high-profile investigation of the Borley Rectory hauntings, once dubbed "the most haunted house in England." Price lodged at 22 Harefield Road and attended school locally at Haberdashers\' Aske\'s Hatcham College.' },
 
-    { id:'henry-williamson', img:'', name:'Henry Williamson', area:'Brockley', pc:'SE4', cat:'resident', year:1895, era:'Born 1895',
+    { id:'henry-williamson', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Blue_plaque_commemorating_Henry_Williamson_-_geograph.org.uk_-_1632757.jpg/330px-Blue_plaque_commemorating_Henry_Williamson_-_geograph.org.uk_-_1632757.jpg', name:'Henry Williamson', area:'Brockley', pc:'SE4', cat:'resident', year:1895, era:'Born 1895',
       lat:null, lon:null, addr:'66 Braxfield Road',
       text:'Author of Tarka the Otter, born in 1895 at 66 Braxfield Road and raised at 21 Eastern Road. His semi-autobiographical novels The Dark Lantern and Donkey Boy describe turn-of-the-century Brockley in vivid detail.' },
 
-    { id:'ian-wright', img:'', name:'Ian Wright', area:'Lewisham', pc:'SE13', cat:'resident', year:null, era:'',
+    { id:'ian-wright', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Ian_Wright_at_SXSW_London_June_2025.jpg/330px-Ian_Wright_at_SXSW_London_June_2025.jpg', name:'Ian Wright', area:'Lewisham', pc:'SE13', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Former England international footballer and prolific Arsenal striker, who lived in Lewisham before becoming one of English football\'s most recognisable television pundits.' },
 
-    { id:'ignatius-sancho', img:'', name:'Ignatius Sancho', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'18th century',
+    { id:'ignatius-sancho', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Ignatius_Sancho%2C_1768.jpg/330px-Ignatius_Sancho%2C_1768.jpg', name:'Ignatius Sancho', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'18th century',
       lat:null, lon:null, addr:'',
       text:'18th-century writer, composer and businessman, born into slavery aboard a slave ship and later freed, who became the first known Black Briton to vote in a general election and a significant figure in the movement against the slave trade, with connections to Blackheath.' },
 
-    { id:'isambard-kingdom-brunel', img:'', name:'Isambard Kingdom Brunel', area:'Rotherhithe', pc:'SE16', cat:'resident', year:null, era:'',
+    { id:'isambard-kingdom-brunel', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Isambard_Kingdom_Brunel_preparing_the_launch_of_%27The_Great_Eastern_by_Robert_Howlett.jpg/330px-Isambard_Kingdom_Brunel_preparing_the_launch_of_%27The_Great_Eastern_by_Robert_Howlett.jpg', name:'Isambard Kingdom Brunel', area:'Rotherhithe', pc:'SE16', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'One of the greatest engineers of the Victorian era, associated with Rotherhithe, where his father Marc Isambard Brunel\'s Thames Tunnel project was based. Isambard Kingdom Brunel went on to design the Great Western Railway, the SS Great Britain, and numerous bridges and tunnels that transformed 19th-century British infrastructure.' },
 
-    { id:'iwan-rheon', img:'', name:'Iwan Rheon', area:'Forest Hill', pc:'SE23', cat:'resident', year:null, era:'',
+    { id:'iwan-rheon', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Iwan_Rheon_by_Gage_Skidmore.jpg/330px-Iwan_Rheon_by_Gage_Skidmore.jpg', name:'Iwan Rheon', area:'Forest Hill', pc:'SE23', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Welsh actor and singer-songwriter, best known for playing Ramsay Bolton in Game of Thrones, formerly of the E4 series Misfits. A contemporary addition to Forest Hill\'s long line of screen actors.' },
 
-    { id:'james-callaghan', img:'', name:'James Callaghan', area:'Blackheath', pc:'SE3', cat:'resident', year:1976, era:'PM 1976&ndash;1979',
+    { id:'james-callaghan', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/James_Callaghan_%281975%29.jpg/330px-James_Callaghan_%281975%29.jpg', name:'James Callaghan', area:'Blackheath', pc:'SE3', cat:'resident', year:1976, era:'PM 1976&ndash;1979',
       lat:null, lon:null, addr:'',
       text:'Labour politician who served as Prime Minister of the United Kingdom from 1976 to 1979 &mdash; the only person to have held all four of the Great Offices of State (Chancellor, Home Secretary, Foreign Secretary and Prime Minister). He lived in Blackheath through the 1950s and 60s, and his daughter Margaret attended Blackheath High School.' },
 
-    { id:'james-glaisher', img:'', name:'James Glaisher', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'',
+    { id:'james-glaisher', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/James_Glaisher.jpg/330px-James_Glaisher.jpg', name:'James Glaisher', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'20 Dartmouth Hill',
       text:'Meteorologist who pioneered modern weather forecasting techniques, commemorated with a blue plaque at his former home, 20 Dartmouth Hill.' },
 
-    { id:'james-robertson-justice', img:'', name:'James Robertson Justice', area:'Lee', pc:'SE12', cat:'resident', year:1907, era:'Born 1907',
+    { id:'james-robertson-justice', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/James_Robertson_Justice_in_The_Lady_Says_No_%281950%29.jpg/330px-James_Robertson_Justice_in_The_Lady_Says_No_%281950%29.jpg', name:'James Robertson Justice', area:'Lee', pc:'SE12', cat:'resident', year:1907, era:'Born 1907',
       lat:null, lon:null, addr:'Baring Road',
       text:'Actor born on Baring Road, Lee, in 1907, best known for playing the gruff Sir Lancelot Spratt in the Doctor in the House film series.' },
 
-    { id:'john-galliano', img:'', name:'John Galliano', area:'Brockley', pc:'SE4', cat:'resident', year:null, era:'',
+    { id:'john-galliano', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/John_Galliano_-_d%C3%A9fil%C3%A9_Christian_Dior_-_25_juin_2010_%283x4_cropped%29.png/330px-John_Galliano_-_d%C3%A9fil%C3%A9_Christian_Dior_-_25_juin_2010_%283x4_cropped%29.png', name:'John Galliano', area:'Brockley', pc:'SE4', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'World-renowned fashion designer who grew up in Brockley and still visits the area with his design team, having gone on to become chief designer at Givenchy, Christian Dior and his own eponymous label.' },
 
-    { id:'john-harvard', img:'', name:'John Harvard', area:'Bankside', pc:'SE1', cat:'resident', year:1638, era:'Died 1638',
+    { id:'john-harvard', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/John_Harvard_Statue.jpg/330px-John_Harvard_Statue.jpg', name:'John Harvard', area:'Bankside', pc:'SE1', cat:'resident', year:1638, era:'Died 1638',
       lat:null, lon:null, addr:'',
       text:'English clergyman with roots in Southwark, who emigrated to Massachusetts and, upon his early death in 1638, left his library and half his estate to a new college &mdash; which was renamed Harvard University in his honour, now one of the most famous universities in the world.' },
 
-    { id:'jools-holland', img:'', name:'Jools Holland', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'',
+    { id:'jools-holland', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Jools_Holland_at_Wickham_Festival%2C_2011.jpg/330px-Jools_Holland_at_Wickham_Festival%2C_2011.jpg', name:'Jools Holland', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Musician, songwriter and broadcaster, a founding member of the band Squeeze and long-running host of Later... with Jools Holland, who lives in Westcombe Park, Blackheath.' },
 
-    { id:'jude-law', img:'', name:'Jude Law', area:'Lewisham', pc:'SE13', cat:'resident', year:null, era:'',
+    { id:'jude-law', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Jude_Law_at_the_2024_Toronto_International_Film_Festival_02.jpg/330px-Jude_Law_at_the_2024_Toronto_International_Film_Festival_02.jpg', name:'Jude Law', area:'Lewisham', pc:'SE13', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Academy Award-nominated actor who lived in Lewisham and attended John Ball Primary School in Blackheath, going on to become one of Britain\'s most recognisable leading men in film.' },
 
-    { id:'kae-tempest', img:'', name:'Kae Tempest', area:'Brockley', pc:'SE4', cat:'resident', year:null, era:'',
+    { id:'kae-tempest', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Kae_Tempest_2024.jpg/330px-Kae_Tempest_2024.jpg', name:'Kae Tempest', area:'Brockley', pc:'SE4', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Poet, playwright, musician and performance artist who grew up in Brockley, celebrated for a body of work that moves fluidly between spoken word, hip-hop and literary fiction, including the Mercury Prize-nominated album Everybody Down.' },
 
-    { id:'king-henry-viii', img:'', name:'King Henry VIII', area:'Greenwich', pc:'SE10', cat:'resident', year:1491, era:'Born 1491',
+    { id:'king-henry-viii', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Portrait_of_Henry_VIII_of_England_%28Holbein%29.jpg/330px-Portrait_of_Henry_VIII_of_England_%28Holbein%29.jpg', name:'King Henry VIII', area:'Greenwich', pc:'SE10', cat:'resident', year:1491, era:'Born 1491',
       lat:null, lon:null, addr:'',
       text:'King Henry VIII was born at the Palace of Placentia (Greenwich Palace) on 28 June 1491, one of the most consequential monarchs in English history, whose break with the Roman Catholic Church reshaped the country\'s religious and political future for centuries.' },
 
-    { id:'laila-morse', img:'', name:'Laila Morse', area:'New Cross', pc:'SE14', cat:'resident', year:null, era:'',
+    { id:'laila-morse', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Laila_Morse.jpg/330px-Laila_Morse.jpg', name:'Laila Morse', area:'New Cross', pc:'SE14', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Actress, sister of Gary Oldman, best known for playing Big Mo in EastEnders, who lives in New Cross.' },
 
-    { id:'lewisham-fire-station', img:'', name:'Lewisham Fire Station', area:'Lewisham', pc:'SE13', cat:'grand', year:1898, era:'Built 1898',
+    { id:'lewisham-fire-station', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Lewisham_Fire_Station_-_geograph.org.uk_-_1633637.jpg/330px-Lewisham_Fire_Station_-_geograph.org.uk_-_1633637.jpg', name:'Lewisham Fire Station', area:'Lewisham', pc:'SE13', cat:'grand', year:1898, era:'Built 1898',
       lat:null, lon:null, addr:'340 Lewisham High Street',
       text:'A Grade II listed fire station built in 1898 for the London County Council in a Queen Anne/Arts and Crafts style, comprising two linked buildings with a 90-foot practice tower, built of red brick with yellow brick bands and stone dressings. Originally incorporating tied housing for firemen and stabling for horses, it has since been converted to a mix of residential and office use, with part of the ground floor now home to a nursery school &mdash; a rare survival of Victorian emergency-service architecture adapted for entirely new purposes.' },
 
@@ -2491,19 +2491,19 @@
       lat:null, lon:null, addr:'',
       text:'Actor and film director born in Forest Hill, known for roles including Chitty Chitty Bang Bang and for directing The Railway Children (1970) &mdash; a nice coincidental echo of Edith Nesbit, the book\'s author, who lived in Eltham (already covered in this gazetteer).' },
 
-    { id:'malcolm-hardee', img:'', name:'Malcolm Hardee', area:'Greenwich', pc:'SE10', cat:'resident', year:null, era:'',
+    { id:'malcolm-hardee', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/MalcolmHardee1995.jpg/330px-MalcolmHardee1995.jpg', name:'Malcolm Hardee', area:'Greenwich', pc:'SE10', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Comedian, author and self-styled "Father of British alternative comedy," who spent most of his life in Greenwich and ran two of the area\'s most famous comedy venues, The Tunnel and Up the Creek (the latter already covered in this gazetteer, still open on Creek Road today).' },
 
-    { id:'marc-isambard-brunel', img:'', name:'Marc Isambard Brunel', area:'Rotherhithe', pc:'SE16', cat:'resident', year:null, era:'',
+    { id:'marc-isambard-brunel', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Sir_Marc_Isambard_Brunel_by_James_Northcote.jpg/330px-Sir_Marc_Isambard_Brunel_by_James_Northcote.jpg', name:'Marc Isambard Brunel', area:'Rotherhithe', pc:'SE16', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'French-born engineer who designed and built the Thames Tunnel at Rotherhithe, the first tunnel successfully constructed under a navigable river anywhere in the world, using his own patented tunnelling shield method &mdash; a project his son Isambard Kingdom Brunel also worked on.' },
 
-    { id:'martin-mcdonagh', img:'', name:'Martin McDonagh', area:'Camberwell', pc:'SE5', cat:'resident', year:null, era:'',
+    { id:'martin-mcdonagh', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Martin_McDonagh_2012.jpg/330px-Martin_McDonagh_2012.jpg', name:'Martin McDonagh', area:'Camberwell', pc:'SE5', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Academy Award-winning playwright and film director born in Camberwell, known for In Bruges, Three Billboards Outside Ebbing, Missouri, and a body of darkly comic, acclaimed work across theatre and film.' },
 
-    { id:'maurice-wilkins', img:'', name:'Maurice Wilkins', area:'Blackheath', pc:'SE3', cat:'resident', year:1962, era:'Nobel Prize 1962',
+    { id:'maurice-wilkins', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Maurice_Wilkins_nobel.jpg/330px-Maurice_Wilkins_nobel.jpg', name:'Maurice Wilkins', area:'Blackheath', pc:'SE3', cat:'resident', year:1962, era:'Nobel Prize 1962',
       lat:null, lon:null, addr:'',
       text:'Physicist who lived on St Johns Park, Blackheath, and was a joint winner of the 1962 Nobel Prize in Physiology or Medicine for his contribution to discovering the structure of DNA, alongside James Watson and Francis Crick.' },
 
@@ -2511,7 +2511,7 @@
       lat:null, lon:null, addr:'',
       text:'Comedian and entertainer known for his eccentric physical comedy and distinctive stage persona, who lived in Lee across a career spanning music hall, film and television from the 1930s onward.' },
 
-    { id:'maxi-priest', img:'', name:'Maxi Priest', area:'Lewisham', pc:'SE13', cat:'resident', year:null, era:'',
+    { id:'maxi-priest', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/MaxiPriestJan2011.jpg/330px-MaxiPriestJan2011.jpg', name:'Maxi Priest', area:'Lewisham', pc:'SE13', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Reggae and R&amp;B singer, born and raised in Lewisham, who became one of Britain\'s most successful reggae artists with international hits including "Close to You."' },
 
@@ -2519,83 +2519,71 @@
       lat:null, lon:null, addr:'',
       text:'British singer and songwriter associated with Forest Hill, known for her powerful soul and R&amp;B vocals across a recording career spanning from the late 1980s onward.' },
 
-    { id:'michael-gambon', img:'', name:'Michael Gambon', area:'Forest Hill', pc:'SE23', cat:'resident', year:null, era:'Lived at Forest Croft, early-mid 1960s',
-      lat:null, lon:null, addr:'',
-      text:'Irish-born actor who lived at Forest Croft in Forest Hill in the early to mid-1960s, long before becoming world-famous for his portrayal of Albus Dumbledore in the Harry Potter film franchise. He was one of the most acclaimed British stage and screen actors of his generation.' },
-
-    { id:'millie', img:'', name:'Millie', area:'Forest Hill', pc:'SE23', cat:'resident', year:1964, era:'Hit single 1964',
-      lat:null, lon:null, addr:'',
-      text:'Jamaican-British singer who lived in Forest Hill at the time of her major international hit "My Boy Lollipop" in 1964, one of the first ska records to become a global pop hit and a landmark moment for Jamaican music reaching British and American audiences.' },
-
-    { id:'mitch-mitchell', img:'', name:'Mitch Mitchell', area:'Greenwich', pc:'SE10', cat:'resident', year:1946, era:'Born 1946',
+    { id:'mitch-mitchell', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Mitch_Mitchell.png/330px-Mitch_Mitchell.png', name:'Mitch Mitchell', area:'Greenwich', pc:'SE10', cat:'resident', year:1946, era:'Born 1946',
       lat:null, lon:null, addr:'',
       text:'Drummer of the Jimi Hendrix Experience, born in Greenwich in 1946, whose inventive, jazz-influenced drumming style helped define the sound of one of rock music\'s most celebrated power trios.' },
 
-    { id:'montague-john-druitt', img:'', name:'Montague John Druitt', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'Lived here 1880s',
+    { id:'montague-john-druitt', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Montague_Druitt_oval.jpg/330px-Montague_Druitt_oval.jpg', name:'Montague John Druitt', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'Lived here 1880s',
       lat:null, lon:null, addr:'9 Eliot Place',
       text:'A barrister who lived at 9 Eliot Place, Blackheath, during the 1880s, and who has long been one of the most popular suspects in the unsolved Jack the Ripper murders of 1888 &mdash; a genuinely eerie true-crime footnote to an otherwise respectable Victorian street.' },
 
-    { id:'mother-mary-potter', img:'', name:'Mother Mary Potter', area:'Bermondsey', pc:'SE1', cat:'resident', year:1877, era:'Founded order 1877',
+    { id:'mother-mary-potter', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Venerable_Mary_Potter.png/330px-Venerable_Mary_Potter.png', name:'Mother Mary Potter', area:'Bermondsey', pc:'SE1', cat:'resident', year:1877, era:'Founded order 1877',
       lat:null, lon:null, addr:'',
       text:'Founder of the Little Company of Mary religious order in 1877, born in Bermondsey. Pope John Paul II proclaimed her Venerable in 1988, a step on the path toward sainthood.' },
 
-    { id:'natasha-and-daniel-bedingfield', img:'', name:'Natasha and Daniel Bedingfield', area:'Lewisham', pc:'SE13', cat:'resident', year:null, era:'',
+    { id:'natasha-and-daniel-bedingfield', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Natasha_Bedingfield_2011.jpg/330px-Natasha_Bedingfield_2011.jpg', name:'Natasha and Daniel Bedingfield', area:'Lewisham', pc:'SE13', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Siblings Natasha and Daniel Bedingfield, both brought up in Lewisham, went on to become major pop stars in their own right during the 2000s, with Natasha\'s "Unwritten" and Daniel\'s "Gotta Get Thru This" both becoming era-defining hits.' },
 
-    { id:'nathaniel-hawthorne', img:'', name:'Nathaniel Hawthorne', area:'Blackheath', pc:'SE3', cat:'resident', year:1856, era:'Lived here 1856',
-      lat:null, lon:null, addr:'4 Pond Road',
-      text:'American author of The Scarlet Letter, who lived at 4 Pond Road in 1856, marked with a blue plaque &mdash; a brief but notable London chapter for one of America\'s foundational novelists.' },
-
-    { id:'novelist', img:'', name:'Novelist', area:'Brockley', pc:'SE4', cat:'resident', year:null, era:'',
+    { id:'novelist', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Field_Day_2016_Saturday_Novelist_2.jpg/330px-Field_Day_2016_Saturday_Novelist_2.jpg', name:'Novelist', area:'Brockley', pc:'SE4', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Grime artist and rapper, born and raised in Brockley, part of a newer generation of South East London musicians building on the area\'s rich musical heritage.' },
 
-    { id:'philip-massinger', img:'', name:'Philip Massinger', area:'Bankside', pc:'SE1', cat:'resident', year:null, era:'',
+    { id:'philip-massinger', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Philip_Massinger.jpg/330px-Philip_Massinger.jpg', name:'Philip Massinger', area:'Bankside', pc:'SE1', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Jacobean playwright who died in Southwark, best known for A New Way to Pay Old Debts and The Roman Actor &mdash; a contemporary of John Fletcher and John Gower, already covered in this gazetteer, in what was clearly a significant literary neighbourhood.' },
 
-    { id:'richard-ayoade', img:'', name:'Richard Ayoade', area:'East Dulwich', pc:'SE22', cat:'resident', year:null, era:'',
+    { id:'richard-ayoade', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Richard_Ayoade_at_Soho_Hotel_%28cropped%29.jpg/330px-Richard_Ayoade_at_Soho_Hotel_%28cropped%29.jpg', name:'Richard Ayoade', area:'East Dulwich', pc:'SE22', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'TV and film actor, director and writer associated with East Dulwich, widely known for his roles in The IT Crowd and as a director, including Submarine and The Double.' },
 
-    { id:'robert-recorde', img:'', name:'Robert Recorde', area:'Bankside', pc:'SE1', cat:'resident', year:1557, era:'Invented "=" in 1557',
+    { id:'robert-recorde', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Robert_Recorde_%28uncropped%29.jpg/330px-Robert_Recorde_%28uncropped%29.jpg', name:'Robert Recorde', area:'Bankside', pc:'SE1', cat:'resident', year:1557, era:'Invented "=" in 1557',
       lat:null, lon:null, addr:'',
       text:'Welsh physician and mathematician who invented the "equals" sign (=) in 1557, reasoning that "no two things can be more equal" than a pair of parallel lines &mdash; one of the most quietly consequential inventions in the history of mathematics, tied to Southwark where he died.' },
 
-    { id:'shaun-wright-phillips', img:'', name:'Shaun Wright-Phillips', area:'Brockley', pc:'SE4', cat:'resident', year:null, era:'',
+    { id:'shaun-wright-phillips', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Shaun_Wright-Phillips.jpg/330px-Shaun_Wright-Phillips.jpg', name:'Shaun Wright-Phillips', area:'Brockley', pc:'SE4', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Former England international footballer, son of Ian Wright, who grew up in Brockley and had a successful career including spells at Manchester City and Chelsea.' },
 
-    { id:'shrewsbury-barrow-shooter-s-hill', img:'', name:'Shrewsbury Barrow, Shooter\'s Hill', area:'Woolwich', pc:'SE18', cat:'green', year:null, era:'',
+    { id:'shrewsbury-barrow-shooter-s-hill', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Shrewsbury_Tumulus_on_Shooter%27s_Hill.jpg/330px-Shrewsbury_Tumulus_on_Shooter%27s_Hill.jpg', name:'Shrewsbury Barrow, Shooter\'s Hill', area:'Woolwich', pc:'SE18', cat:'green', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'A Bronze Age burial mound on Shooter\'s Hill, one of a small number of ancient barrows surviving in this part of South East London, marking the presence of prehistoric communities on this high ground many thousands of years before Severndroog Castle (covered separately in this gazetteer) was built nearby.' },
 
-    { id:'sid-vicious', img:'', name:'Sid Vicious', area:'Lewisham', pc:'SE13', cat:'resident', year:1979, era:'Died 1979',
+    { id:'sid-vicious', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Sid_Vicious_1978_%28cropped%29.jpg/330px-Sid_Vicious_1978_%28cropped%29.jpg', name:'Sid Vicious', area:'Lewisham', pc:'SE13', cat:'resident', year:1979, era:'Died 1979',
       lat:null, lon:null, addr:'',
       text:'Bassist of the Sex Pistols and a defining, chaotic figure of the British punk movement, with connections to Lewisham. He died in 1979 aged just 21.' },
 
-    { id:'siouxsie-sioux', img:'', name:'Siouxsie Sioux', area:'Bankside', pc:'SE1', cat:'resident', year:null, era:'',
+    { id:'siouxsie-sioux', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Siouxsie_sioux.jpg/330px-Siouxsie_sioux.jpg', name:'Siouxsie Sioux', area:'Bankside', pc:'SE1', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Singer-songwriter born in Southwark, frontwoman of Siouxsie and the Banshees, one of the defining and most influential voices to emerge from the British punk and post-punk scene of the late 1970s.' },
 
-    { id:'sir-daniel-day-lewis', img:'', name:'Sir Daniel Day-Lewis', area:'Charlton', pc:'SE7', cat:'resident', year:null, era:'',
+    { id:'sir-daniel-day-lewis', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Daniel_Day-Lewis_cropped.jpg/330px-Daniel_Day-Lewis_cropped.jpg', name:'Sir Daniel Day-Lewis', area:'Charlton', pc:'SE7', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Actor who grew up in Charlton, widely regarded as one of the greatest actors of his generation, with three Academy Awards, two Golden Globes and four BAFTAs to his name across a famously selective and intense body of work.' },
 
-    { id:'sir-ernest-shackleton', img:'', name:'Sir Ernest Shackleton', area:'Sydenham', pc:'SE26', cat:'resident', year:null, era:'',
+    { id:'sir-ernest-shackleton', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Ernest_Shackleton_before_1909.jpg/330px-Ernest_Shackleton_before_1909.jpg', name:'Sir Ernest Shackleton', area:'Sydenham', pc:'SE26', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Legendary Antarctic explorer, who lived in Sydenham. Shackleton led three British expeditions to Antarctica, most famously the Endurance expedition of 1914&ndash;1917, celebrated for his leadership in bringing his entire crew home alive after their ship was crushed by pack ice.' },
 
-    { id:'sir-frank-watson-dyson', img:'', name:'Sir Frank Watson Dyson', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'Lived 1894&ndash;1906',
+    { id:'sir-frank-watson-dyson', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Frank_Watson_Dyson.jpg/330px-Frank_Watson_Dyson.jpg', name:'Sir Frank Watson Dyson', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'Lived 1894&ndash;1906',
       lat:null, lon:null, addr:'',
       text:'Astronomer Royal who lived at 6 Vanbrugh Hill, SE3, between 1894 and 1906, marked today with a blue plaque. Dyson\'s astronomical work later helped provide observational confirmation of Einstein\'s theory of general relativity.' },
 
-    { id:'sir-joseph-paxton', img:'', name:'Sir Joseph Paxton', area:'Crystal Palace', pc:'SE19', cat:'resident', year:null, era:'',
+    { id:'sir-joseph-paxton', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Joseph_Paxton_by_Octavius_Oakley%2C_c1850.jpg/330px-Joseph_Paxton_by_Octavius_Oakley%2C_c1850.jpg', name:'Sir Joseph Paxton', area:'Crystal Palace', pc:'SE19', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'Rockhills, Crystal Palace Parade',
       text:'Gardener, architect and designer of the Crystal Palace itself, who lived at Rockhills on Crystal Palace Parade, close to his greatest creation after it was relocated here from Hyde Park in 1854. Paxton rose from working-class origins to become one of the most celebrated designers of the Victorian era, and giving his name to the entire area that grew up around the building he designed.' },
 
-    { id:'sir-kenneth-branagh', img:'', name:'Sir Kenneth Branagh', area:'Camberwell', pc:'SE5', cat:'resident', year:null, era:'',
+    { id:'sir-kenneth-branagh', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Kenneth_Branagh_2010.jpg/330px-Kenneth_Branagh_2010.jpg', name:'Sir Kenneth Branagh', area:'Camberwell', pc:'SE5', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Academy Award-winning actor and director born in Camberwell, celebrated for his Shakespearean film adaptations (Henry V, Hamlet) as well as a long career across stage, film and television.' },
 
@@ -2603,7 +2591,7 @@
       lat:null, lon:null, addr:'',
       text:'Art curator associated with Camberwell, who served as director of the Tate Gallery (later Tate) from 1988 to 2017, overseeing its transformation into one of the world\'s most significant contemporary art institutions, including the creation of Tate Modern.' },
 
-    { id:'sir-richard-branson', img:'', name:'Sir Richard Branson', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'',
+    { id:'sir-richard-branson', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Richard_Branson_March_2015_%28cropped%29.jpg/330px-Richard_Branson_March_2015_%28cropped%29.jpg', name:'Sir Richard Branson', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Entrepreneur and founder of the Virgin Group, born in Blackheath. He went on to build one of Britain\'s most recognisable business empires, spanning music, airlines, and space travel.' },
 
@@ -2615,7 +2603,7 @@
       lat:null, lon:null, addr:'',
       text:'Former Mayoress of Lewisham and social justice pioneer, the first Black woman to receive an MBE and to become a Freeman of both the City of London and the Borough of Lewisham, a significant figure in local Black British history associated with Brockley.' },
 
-    { id:'terry-jones', img:'', name:'Terry Jones', area:'Camberwell', pc:'SE5', cat:'resident', year:null, era:'',
+    { id:'terry-jones', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Terry_Jones_2014.jpg/330px-Terry_Jones_2014.jpg', name:'Terry Jones', area:'Camberwell', pc:'SE5', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Comedian, actor and filmmaker born in Camberwell, best known as a founding member of Monty Python, one of the most influential comedy troupes in British history.' },
 
@@ -2623,11 +2611,11 @@
       lat:null, lon:null, addr:'',
       text:'Much of Blackheath\'s elegant Georgian street layout owes its shape to developer John Cator, who acquired land in the area in the 18th century and laid out the planned estate that still bears his name. In much the same way Ted Christmas would later stamp his own family\'s names onto Forest Hill\'s Perry Vale over a century afterward, Cator\'s development gave a single individual\'s decisions a lasting, recognisable shape across an entire neighbourhood &mdash; just on a far grander, more aristocratic scale.' },
 
-    { id:'the-fan-museum', img:'', name:'The Fan Museum', area:'Greenwich', pc:'SE10', cat:'culture', year:1991, era:'Founded 1991',
+    { id:'the-fan-museum', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/The_Fan_Museum_%283400819225%29.jpg/330px-The_Fan_Museum_%283400819225%29.jpg', name:'The Fan Museum', area:'Greenwich', pc:'SE10', cat:'culture', year:1991, era:'Founded 1991',
       lat:null, lon:null, addr:'',
       text:'The world\'s only museum dedicated entirely to fans, housed in a pair of Grade II listed Georgian townhouses. It was founded in 1991 by H&eacute;lène Alexander, who built the founding collection from her own personal gathering of fans &mdash; now numbering over 5,000 pieces spanning from the 11th century to the present day, a genuinely singular niche collection built by one person\'s decades of dedicated collecting.' },
 
-    { id:'the-ha-ha-ha-ha-road', img:'', name:'The Ha-Ha, Ha-Ha Road', area:'Woolwich', pc:'SE18', cat:'grand', year:null, era:'Established early 19th century',
+    { id:'the-ha-ha-ha-ha-road', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Street_nameplate%2C_Ha-Ha_Road%2C_Woolwich_-_geograph.org.uk_-_4190951.jpg/330px-Street_nameplate%2C_Ha-Ha_Road%2C_Woolwich_-_geograph.org.uk_-_4190951.jpg', name:'The Ha-Ha, Ha-Ha Road', area:'Woolwich', pc:'SE18', cat:'grand', year:null, era:'Established early 19th century',
       lat:null, lon:null, addr:'Ha-Ha Road, SE18',
       text:'A "ha-ha" is a sunken ditch-and-wall boundary, built so it\'s invisible from a distance &mdash; keeping a view uninterrupted while still fencing off land, a favourite trick of 18th and 19th-century landscape designers. This one, established in the early 19th century on the edge of Woolwich Common as part of the military landscape around the Royal Artillery Barracks, gave its name directly to the road that still runs alongside it today: Ha-Ha Road, one of London\'s more unusual street names hiding a genuine piece of landscape engineering history.' },
 
@@ -2635,15 +2623,15 @@
       lat:null, lon:null, addr:'SE10',
       text:'A row of redbrick almshouses built in 1884 by Ellen Penn in memory of her late husband, John Penn, a marine engine engineer whose firm had built engines for Royal Navy and merchant ships. Grouped around a grass court, the almshouses stand as a quiet, personal act of remembrance built into brick and mortar &mdash; a Victorian counterpart to Ted Christmas\'s later, playful family tributes in Forest Hill.' },
 
-    { id:'the-king-s-head-inn', img:'', name:'The King\'s Head Inn', area:'Bexley', pc:'DA5', cat:'pub', year:null, era:'16th&ndash;17th century',
+    { id:'the-king-s-head-inn', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/The_King%27s_Head%2C_Bexley.jpg/330px-The_King%27s_Head%2C_Bexley.jpg', name:'The King\'s Head Inn', area:'Bexley', pc:'DA5', cat:'pub', year:null, era:'16th&ndash;17th century',
       lat:null, lon:null, addr:'',
       text:'A 16th or early 17th-century timber-framed and weatherboarded pub, with a gabled front, casement windows and a single-flued chimney-stack &mdash; one of Bexley\'s oldest surviving buildings still serving its original purpose centuries on.' },
 
-    { id:'the-lord-nelson', img:'', name:'The Lord Nelson', area:'Bermondsey', pc:'SE1', cat:'pub', year:null, era:'Early 19th century',
+    { id:'the-lord-nelson', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/The_Lord_Nelson%2C_Old_Kent_Road_-_geograph.org.uk_-_2020318.jpg/330px-The_Lord_Nelson%2C_Old_Kent_Road_-_geograph.org.uk_-_2020318.jpg', name:'The Lord Nelson', area:'Bermondsey', pc:'SE1', cat:'pub', year:null, era:'Early 19th century',
       lat:null, lon:null, addr:'386 Old Kent Road',
       text:'A Grade II listed pub built in the early 19th century, included on CAMRA\'s National Inventory of Historic Pub Interiors in recognition of the quality of its surviving original interior.' },
 
-    { id:'the-master-shipwright-s-house', img:'', name:'The Master Shipwright\'s House', area:'Deptford', pc:'SE8', cat:'grand', year:1708, era:'Built 1708',
+    { id:'the-master-shipwright-s-house', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Former_Master_Shipwright%27s_House%2C_Deptford_%28North_Face_-_I%29.jpg/330px-Former_Master_Shipwright%27s_House%2C_Deptford_%28North_Face_-_I%29.jpg', name:'The Master Shipwright\'s House', area:'Deptford', pc:'SE8', cat:'grand', year:1708, era:'Built 1708',
       lat:null, lon:null, addr:'',
       text:'Built in 1708 as the official residence of the Master Shipwright of the Royal Naval Dockyard at Deptford, on the site of an earlier building serving the same purpose. The house is one of the few substantial survivals of Deptford\'s centuries as a major Royal Navy shipbuilding centre.' },
 
@@ -2651,35 +2639,35 @@
       lat:null, lon:null, addr:'',
       text:'A rare, well-preserved Roman-era riverboat found near Greenwood Theatre, offering a direct physical glimpse of river transport and commerce on the Thames during the Roman occupation of Londinium &mdash; a find that sits alongside the Romano-Celtic temple in Greenwich Park (covered separately in this gazetteer) as one of the oldest confirmed traces of activity anywhere in this collection.' },
 
-    { id:'the-romano-celtic-temple-greenwich-park', img:'', name:'The Romano-Celtic temple, Greenwich Park', area:'Greenwich', pc:'SE10', cat:'memory', year:null, era:'',
+    { id:'the-romano-celtic-temple-greenwich-park', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Romano-Celtic_temple_in_Greenwich_Park.jpg/330px-Romano-Celtic_temple_in_Greenwich_Park.jpg', name:'The Romano-Celtic temple, Greenwich Park', area:'Greenwich', pc:'SE10', cat:'memory', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'The excavated foundations of a Romano-Celtic temple lie within Greenwich Park, evidence of Roman-period religious activity on the site centuries before the park took its modern form. It\'s one of the oldest confirmed human structures in the entire gazetteer, predating almost everything else covered here by over a thousand years.' },
 
-    { id:'thomas-tallis', img:'', name:'Thomas Tallis', area:'Greenwich', pc:'SE10', cat:'resident', year:1585, era:'Died 1585',
+    { id:'thomas-tallis', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Thomas_Tallis.jpg/330px-Thomas_Tallis.jpg', name:'Thomas Tallis', area:'Greenwich', pc:'SE10', cat:'resident', year:1585, era:'Died 1585',
       lat:null, lon:null, addr:'',
       text:'Renaissance composer and organist, one of the most significant English composers of the Tudor period, who served as Gentleman of the Chapel Royal under successive monarchs and died in Greenwich on 23 November 1585.' },
 
-    { id:'tim-roth', img:'', name:'Tim Roth', area:'Dulwich', pc:'SE21', cat:'resident', year:null, era:'',
+    { id:'tim-roth', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Tim_Roth_cropped.jpg/330px-Tim_Roth_cropped.jpg', name:'Tim Roth', area:'Dulwich', pc:'SE21', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Acclaimed film actor born in Dulwich, known for roles in Reservoir Dogs, Pulp Fiction and Rob Roy, among a long and distinguished career in British and American cinema.' },
 
-    { id:'tomb-of-jane-mary-clouston', img:'', name:'Tomb of Jane Mary Clouston', area:'Brockley', pc:'SE4', cat:'memory', year:1871, era:'c.1871',
+    { id:'tomb-of-jane-mary-clouston', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Monument_to_Jane_Clouson%2C_Brockley_Cemetery_%2801%29.jpg/330px-Monument_to_Jane_Clouson%2C_Brockley_Cemetery_%2801%29.jpg', name:'Tomb of Jane Mary Clouston', area:'Brockley', pc:'SE4', cat:'memory', year:1871, era:'c.1871',
       lat:null, lon:null, addr:'Brockley Cemetery',
       text:'A striking Victorian memorial in Brockley Cemetery, dating from around 1871 and designed by J. Lord, a mason of Deptford, in the form of a Portland stone figure of a kneeling infant at prayer, looking heavenward. It marks the grave of Jane Mary Clouston, a motherless young girl murdered in Kidbrooke Lane, Eltham, on the night of 25 April 1871; she died at Guy\'s Hospital five days later. The tomb was paid for by public subscription &mdash; an outpouring of collective grief and sentiment characteristic of the Victorian era, still standing as a small, poignant piece of true-crime history.' },
 
-    { id:'tommy-steele', img:'', name:'Tommy Steele', area:'Bermondsey', pc:'SE1', cat:'resident', year:null, era:'',
+    { id:'tommy-steele', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Tommy_Steele_1957_crop.jpg/330px-Tommy_Steele_1957_crop.jpg', name:'Tommy Steele', area:'Bermondsey', pc:'SE1', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Entertainer born in Bermondsey, credited as one of the performers who brought rock and roll music to Britain in the 1950s, going on to a long career as a singer and West End musical star.' },
 
-    { id:'vanessa-redgrave', img:'', name:'Vanessa Redgrave', area:'Greenwich', pc:'SE10', cat:'resident', year:null, era:'',
+    { id:'vanessa-redgrave', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Vanessa_Redgrave_%282011%29_cropped.jpg/330px-Vanessa_Redgrave_%282011%29_cropped.jpg', name:'Vanessa Redgrave', area:'Greenwich', pc:'SE10', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Acclaimed British actress, born in Greenwich, part of the prominent Redgrave acting dynasty and one of the most respected performers of her generation across stage and screen.' },
 
-    { id:'woolwich-old-town-hall', img:'', name:'Woolwich Old Town Hall', area:'Woolwich', pc:'SE18', cat:'grand', year:1842, era:'Built 1842',
+    { id:'woolwich-old-town-hall', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/2018_Woolwich%2C_Old_Town_Hall.jpg/330px-2018_Woolwich%2C_Old_Town_Hall.jpg', name:'Woolwich Old Town Hall', area:'Woolwich', pc:'SE18', cat:'grand', year:1842, era:'Built 1842',
       lat:null, lon:null, addr:'Calderwood Street',
       text:'A Grade II listed Neoclassical municipal building on Calderwood Street, commissioned by the town commissioners in 1842 to replace an earlier town hall that had almost immediately been sold to the Metropolitan Police. Its stone-faced Calderwood Street frontage, topped with a pediment and a panel inscribed "Town Hall," served Woolwich\'s local administration for decades until the much grander Woolwich Town Hall (covered separately in this gazetteer) was built nearby in 1906. Now in commercial and community use.' },
 
-    { id:'woolwich-town-hall', img:'', name:'Woolwich Town Hall', area:'Woolwich', pc:'SE18', cat:'grand', year:1906, era:'Built 1903&ndash;1906',
+    { id:'woolwich-town-hall', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Town_Hall%2C_Wellington_Street_-_geograph.org.uk_-_3652117.jpg/330px-Town_Hall%2C_Wellington_Street_-_geograph.org.uk_-_3652117.jpg', name:'Woolwich Town Hall', area:'Woolwich', pc:'SE18', cat:'grand', year:1906, era:'Built 1903&ndash;1906',
       lat:null, lon:null, addr:'Wellington Street, Bathway Quarter',
       text:'A grand Edwardian Baroque town hall by architect Alfred Brumwell Thomas, built 1903&ndash;1906 after the old 1842 town hall (covered separately in this gazetteer) proved too small for the newly created Metropolitan Borough of Woolwich. Its ornate Victoria Hall, where mayors still greet guests at ceremonial functions today, holds fine stained glass windows by Geoffrey Webb depicting notable local events &mdash; including Charles I\'s 1637 visit to Woolwich to inspect his great warship The Sovereign of the Seas &mdash; alongside memorials to Civil Defence volunteers and council staff killed in the Second World War. It remains the ceremonial heart of the borough, now Grade II* listed and anchoring the historic Bathway Quarter conservation area.' }
   ];
