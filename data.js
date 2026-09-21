@@ -151,10 +151,6 @@
       lat:51.4288, lon:-0.0625, addr:'12 Westwood Hill, SE26 6QQ',
       text:'The Shackleton family moved to 12 Westwood Hill in 1885. Ernest walked from here to Dulwich College, hated it, and went to sea at sixteen.\n\nThe famous &ldquo;Men wanted for hazardous journey&rdquo; advertisement is almost certainly apocryphal. The Endurance did sail with a stowaway, Perce Blackborow, who was kept on as steward.' },
 
-    { id:'baird-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/John_Logie_Baird_in_1917.jpg/330px-John_Logie_Baird_in_1917.jpg', name:'John Logie Baird', area:'Sydenham', pc:'SE26', cat:'plaque', year:1888, era:'Blue plaque',
-      lat:51.4333, lon:-0.0734, addr:'3 Crescent Wood Road, SE26 6RT',
-      text:'Baird lived here while developing the mechanical television system he first demonstrated publicly in a Soho attic in January 1926.\n\nHis early receivers used a spinning cardboard disc and a knitting needle; within two years he had also demonstrated colour television and an early videodisc recording.' },
-
     { id:'pettit-smith-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Francis_Pettit_Smith.jpg/330px-Francis_Pettit_Smith.jpg', name:'Sir Francis Pettit Smith', area:'Sydenham', pc:'SE26', cat:'plaque', year:1808, era:'Blue plaque',
       lat:51.4284, lon:-0.0754, addr:'Fountain House, 17 Sydenham Hill, SE26 6SH',
       text:'Smith patented the screw propeller in 1836 and drove the construction of the SS Archimedes, the first ship built specifically to prove it worked.\n\nThe Archimedes toured British ports as a demonstration and reportedly persuaded Brunel to abandon paddle wheels and refit the SS Great Britain with a screw propeller instead.' },
@@ -2082,10 +2078,6 @@
     { id:'doveton-sturdee-charlton', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Frederick_Doveton_Sturdee_1916_HMS_Hercules.jpg/330px-Frederick_Doveton_Sturdee_1916_HMS_Hercules.jpg', name:'Sir Doveton Sturdee', area:'Charlton', pc:'SE7', cat:'resident', year:1859, era:'Born 9 June 1859',
       lat:51.4826, lon:0.0365, addr:'Charlton, SE7',
       text:'Admiral of the Fleet Sir Frederick Doveton Sturdee was born in Charlton in 1859. He commanded the British fleet to a decisive victory at the Battle of the Falkland Islands in December 1914, avenging an earlier defeat at Coronel and destroying most of the German East Asia Squadron.' },
-
-    { id:'ernest-shackleton-sydenham', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Ernest_Shackleton_before_1909.jpg/330px-Ernest_Shackleton_before_1909.jpg', name:'Sir Ernest Shackleton', area:'Sydenham', pc:'SE26', cat:'plaque', year:1884, era:'Family home from around 1884',
-      lat:51.428, lon:-0.0587, addr:'12 Westwood Hill, SE26',
-      text:'The Antarctic explorer Ernest Shackleton moved with his family to 12 Westwood Hill around 1884, aged ten, and spent his school years in Sydenham before going on to lead three expeditions to Antarctica. A blue plaque was erected at the house in 1928.' },
 
     { id:'st-christophers-hospice', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/St._Christopher%27s_Hospice.jpg/330px-St._Christopher%27s_Hospice.jpg', name:'St Christopher\'s Hospice', area:'Sydenham', pc:'SE26', cat:'culture', year:1967, era:'Opened 1967',
       lat:51.4233, lon:-0.058, addr:'Copeman Close, SE26',
