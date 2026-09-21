@@ -1291,10 +1291,6 @@
       lat:null, lon:null, addr:'',
       text:'Pioneering Black firefighter stationed at New Cross Fire Station during the Second World War, credited as the founder of the fire service\'s discussion and education groups &mdash; an early and influential push for structured internal debate and training within the wartime fire brigade.' },
 
-    { id:'henry-cooper', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Henry_Cooper_1969.jpg/330px-Henry_Cooper_1969.jpg', name:'Henry Cooper', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
-      lat:null, lon:null, addr:'',
-      text:'British heavyweight boxer who came from the Catford area, best known for twice fighting Muhammad Ali (then Cassius Clay) and for the left hook, nicknamed "\'Enry\'s \'Ammer," that famously floored Ali during their 1963 bout at Wembley. He went on to become one of British boxing\'s most beloved figures and a popular TV and advertising personality in later life.' },
-
     { id:'henry-forster-1st-baron-forster', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Henry_Forster%2C_1st_Baron_Forster_circa_1925.jpg/330px-Henry_Forster%2C_1st_Baron_Forster_circa_1925.jpg', name:'Henry Forster, 1st Baron Forster', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Politician after whom Forster Park in Catford is named, reflecting his connection to the local area alongside a wider career in British and Australian politics (he served as Governor-General of Australia).' },
@@ -1626,10 +1622,6 @@
     { id:'the-tooley-street-fire', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Fire_Station%2C_Tooley_Street_%28II%29.jpg/330px-Fire_Station%2C_Tooley_Street_%28II%29.jpg', name:'The Tooley Street fire', area:'Bermondsey', pc:'SE16', cat:'memory', year:1861, era:'1861',
       lat:null, lon:null, addr:'',
       text:'A major fire broke out among the riverside warehouses of Tooley Street in 1861, engulfing the densely packed wharves that had earned the area the nickname "London\'s Larder" for its role storing and processing food for the capital. The blaze was one of the largest and most destructive fires in London between the Great Fire of 1666 and the Blitz, reshaping the riverside for decades afterward.' },
-
-    { id:'the-woolwich-pub-bombing', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Woolwich%2C_Royal_Artillery_Barracks_-_geograph.org.uk_-_4406494.jpg/330px-Woolwich%2C_Royal_Artillery_Barracks_-_geograph.org.uk_-_4406494.jpg', name:'The Woolwich pub bombing', area:'Woolwich', pc:'SE18', cat:'memory', year:1974, era:'7 November 1974',
-      lat:null, lon:null, addr:'',
-      text:'On 7 November 1974, the Provisional IRA threw a gelignite bomb through the window of the Kings Arms pub on Frances Street, close to the Royal Artillery Barracks, killing two people &mdash; off-duty soldier Gunner Richard Dunne and sales clerk Alan Horsley &mdash; and injuring 35 others including the landlady. The attack came a month after similar bombings in Guildford, part of the same mainland bombing campaign during the Troubles, and remains one of Woolwich\'s most significant and painful pieces of 20th-century history.' },
 
     { id:'thomas-middleton', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Thomas_Middleton.jpg/330px-Thomas_Middleton.jpg', name:'Thomas Middleton', area:'Elephant &amp; Castle', pc:'SE1', cat:'resident', year:1627, era:'Died 1627',
       lat:null, lon:null, addr:'',
@@ -1967,9 +1959,9 @@
       lat:51.4839, lon:0.0533, addr:'near Royal Artillery Barracks, SE18',
       text:'On 22 May 2013, off-duty soldier Lee Rigby was murdered near the Royal Artillery Barracks in a terrorist attack that shocked the country. A permanent memorial to him was later installed in Woolwich.' },
 
-    { id:'joseph-paxton-crystal-palace', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Joseph_Paxton_by_Maull_%26_Co%2C_c1860s.jpg/330px-Joseph_Paxton_by_Maull_%26_Co%2C_c1860s.jpg', name:'Sir Joseph Paxton', area:'Crystal Palace', pc:'SE26', cat:'resident', year:1854, era:'Lived here after the Palace moved, from 1854',
+    { id:'joseph-paxton-crystal-palace', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Joseph_Paxton_by_Octavius_Oakley%2C_c1850.jpg/330px-Joseph_Paxton_by_Octavius_Oakley%2C_c1850.jpg', name:'Sir Joseph Paxton', area:'Crystal Palace', pc:'SE26', cat:'resident', year:1854, era:'Lived here after the Palace moved, from 1854',
       lat:51.4275, lon:-0.0578, addr:'Westwood Hill, SE26',
-      text:'Sir Joseph Paxton, designer of the Crystal Palace for the 1851 Great Exhibition, lived at Rockhills on Westwood Hill after the building was re-erected on Sydenham Hill in 1854, close to the structure that gave the area its name.' },
+      text:'Gardener, architect and designer of the Crystal Palace itself, who lived at Rockhills on Crystal Palace Parade, close to his greatest creation after it was relocated here from Hyde Park in 1854. Paxton rose from working-class origins to become one of the most celebrated designers of the Victorian era, and giving his name to the entire area that grew up around the building he designed.' },
 
     { id:'garrison-church-st-george', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/2018_Woolwich%2C_St_George%27s_Garrison_Church.jpg/330px-2018_Woolwich%2C_St_George%27s_Garrison_Church.jpg', name:'St George\'s Garrison Church', area:'Woolwich', pc:'SE18', cat:'memory', year:1944, era:'Built 1862&ndash;63, bombed 1944',
       lat:51.4848, lon:0.0625, addr:'Grand Depot Road, SE18',
@@ -2007,17 +1999,13 @@
       lat:51.457, lon:-0.0311, addr:'Ivy Road, SE4',
       text:'Opened in 1858 as two adjoining Victorian cemeteries, Brockley and Ladywell Cemeteries became the resting place for tens of thousands of south Londoners. Today the site is also managed as a nature reserve, its older, overgrown sections left to grow wild among the gravestones.' },
 
-    { id:'charles-stewart-parnell-brockley', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Charles_Stewart_Parnell_-_Brady-Handy.jpg/330px-Charles_Stewart_Parnell_-_Brady-Handy.jpg', name:'Charles Stewart Parnell', area:'Brockley', pc:'SE4', cat:'resident', year:1880, era:'Lived on Tressillian Road',
-      lat:51.4623, lon:-0.0291, addr:'112 Tressillian Road, SE4',
-      text:'The Irish nationalist leader Charles Stewart Parnell, who dominated Irish politics in the campaign for Home Rule until scandal ended his career in 1891, lived for a time at 112 Tressillian Road in Brockley.' },
+    { id:'charles-stewart-parnell-brockley', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Charles_Stewart_Parnell_1885.jpg/330px-Charles_Stewart_Parnell_1885.jpg', name:'Charles Stewart Parnell', area:'Brockley', pc:'SE4', cat:'resident', year:1846, era:'1846&ndash;1891',
+      lat:51.4623, lon:-0.0291, addr:'112 Tressillian Road',
+      text:'Irish Nationalist leader and one of the most significant figures in 19th-century British and Irish politics, who lived at 112 Tressillian Road with Katharine O\'Shea, his lover and later wife. Their relationship, exposed in a divorce scandal in 1890, split the Irish Parliamentary Party and destroyed Parnell\'s political career within a year of the affair becoming public &mdash; a genuinely consequential piece of history playing out on an ordinary Brockley street.' },
 
     { id:'college-road-tollgate', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/The_College_Road_Tollgate_-_geograph.org.uk_-_5675890.jpg/330px-The_College_Road_Tollgate_-_geograph.org.uk_-_5675890.jpg', name:'College Road Tollgate', area:'Dulwich', pc:'SE21', cat:'grand', year:1789, era:'In operation since 1789',
       lat:51.4334, lon:-0.0792, addr:'College Road, SE21',
       text:'Established in 1789 to fund the upkeep of College Road, this tollgate is the last one still in daily operation on a public road anywhere in London, still collecting a toll from drivers who use the private road it guards.' },
-
-    { id:'dulwich-picture-gallery', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Dulwich_Picture_Gallery%2C_Gallery_Road_-_geograph.org.uk_-_4229615.jpg/330px-Dulwich_Picture_Gallery%2C_Gallery_Road_-_geograph.org.uk_-_4229615.jpg', name:'Dulwich Picture Gallery', area:'Dulwich', pc:'SE21', cat:'culture', year:1814, era:'Built 1811&ndash;14',
-      lat:51.446, lon:-0.0863, addr:'Gallery Road, SE21',
-      text:'Designed by Sir John Soane and completed in 1814, Dulwich Picture Gallery is generally recognised as England\'s first purpose-built public art gallery. It was built to house a collection originally assembled for the King of Poland and also contains, at Soane\'s design, a mausoleum for the gallery\'s founders.' },
 
     { id:'edward-alleyn', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Edward_alleyn.jpg/330px-Edward_alleyn.jpg', name:'Edward Alleyn', area:'Dulwich', pc:'SE21', cat:'resident', year:1619, era:'Founded the College of God\'s Gift, 1619',
       lat:51.4386, lon:-0.0853, addr:'Dulwich College, SE21',
@@ -2271,10 +2259,6 @@
       lat:null, lon:null, addr:'',
       text:'A Bronze Age burial mound surviving on Winns Common in Plumstead, part of a small scatter of ancient barrows across the high ground of this part of South East London &mdash; physical evidence that people were burying their dead on these hills long before any of the area\'s recorded history began.' },
 
-    { id:'charles-stewart-parnell', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Charles_Stewart_Parnell_1885.jpg/330px-Charles_Stewart_Parnell_1885.jpg', name:'Charles Stewart Parnell', area:'Brockley', pc:'SE4', cat:'resident', year:1846, era:'1846&ndash;1891',
-      lat:null, lon:null, addr:'112 Tressillian Road',
-      text:'Irish Nationalist leader and one of the most significant figures in 19th-century British and Irish politics, who lived at 112 Tressillian Road with Katharine O\'Shea, his lover and later wife. Their relationship, exposed in a divorce scandal in 1890, split the Irish Parliamentary Party and destroyed Parnell\'s political career within a year of the affair becoming public &mdash; a genuinely consequential piece of history playing out on an ordinary Brockley street.' },
-
     { id:'chiwetel-ejiofor', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Chiwetel_Ejiofor_by_Gage_Skidmore.jpg/330px-Chiwetel_Ejiofor_by_Gage_Skidmore.jpg', name:'Chiwetel Ejiofor', area:'Camberwell', pc:'SE5', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Acclaimed actor associated with Camberwell, celebrated for his stage work and for his Oscar-nominated role in 12 Years a Slave, among a long list of major film and theatre credits.' },
@@ -2334,10 +2318,6 @@
     { id:'gabrielle', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Gabrielle_performing_in_Birmingham_in_April_2025_%285%29.jpg/330px-Gabrielle_performing_in_Birmingham_in_April_2025_%285%29.jpg', name:'Gabrielle', area:'Brockley', pc:'SE4', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'British singer, associated with Brockley and Honor Oak, best known for her 1993 hit "Dreams," which topped the charts and became one of the defining British soul singles of the decade.' },
-
-    { id:'ginger-baker', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Ginger_Baker_in_1984.jpg/330px-Ginger_Baker_in_1984.jpg', name:'Ginger Baker', area:'Lewisham', pc:'SE13', cat:'resident', year:null, era:'',
-      lat:null, lon:null, addr:'',
-      text:'Drummer of the pioneering rock band Cream, born and brought up in Lewisham, celebrated as one of the most influential rock drummers in music history.' },
 
     { id:'grange-walk-and-the-bermondsey-abbey-gatehouse', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/5%E2%80%937_Grange_Walk%2C_Bermondsey_%282012%29.jpg/330px-5%E2%80%937_Grange_Walk%2C_Bermondsey_%282012%29.jpg', name:'Grange Walk and the Bermondsey Abbey gatehouse', area:'Bermondsey', pc:'SE1', cat:'grand', year:null, era:'Late 17th century; abbey dissolved mid-16th century',
       lat:null, lon:null, addr:'5, 6 &amp; 7 Grange Walk',
@@ -2479,10 +2459,6 @@
       lat:null, lon:null, addr:'',
       text:'A Bronze Age burial mound on Shooter\'s Hill, one of a small number of ancient barrows surviving in this part of South East London, marking the presence of prehistoric communities on this high ground many thousands of years before Severndroog Castle (covered separately in this gazetteer) was built nearby.' },
 
-    { id:'sid-vicious', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Sid_Vicious_1978_%28cropped%29.jpg/330px-Sid_Vicious_1978_%28cropped%29.jpg', name:'Sid Vicious', area:'Lewisham', pc:'SE13', cat:'resident', year:1979, era:'Died 1979',
-      lat:null, lon:null, addr:'',
-      text:'Bassist of the Sex Pistols and a defining, chaotic figure of the British punk movement, with connections to Lewisham. He died in 1979 aged just 21.' },
-
     { id:'siouxsie-sioux', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Siouxsie_sioux.jpg/330px-Siouxsie_sioux.jpg', name:'Siouxsie Sioux', area:'Bankside', pc:'SE1', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Singer-songwriter born in Southwark, frontwoman of Siouxsie and the Banshees, one of the defining and most influential voices to emerge from the British punk and post-punk scene of the late 1970s.' },
@@ -2494,10 +2470,6 @@
     { id:'sir-frank-watson-dyson', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Frank_Watson_Dyson.jpg/330px-Frank_Watson_Dyson.jpg', name:'Sir Frank Watson Dyson', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'Lived 1894&ndash;1906',
       lat:null, lon:null, addr:'',
       text:'Astronomer Royal who lived at 6 Vanbrugh Hill, SE3, between 1894 and 1906, marked today with a blue plaque. Dyson\'s astronomical work later helped provide observational confirmation of Einstein\'s theory of general relativity.' },
-
-    { id:'sir-joseph-paxton', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Joseph_Paxton_by_Octavius_Oakley%2C_c1850.jpg/330px-Joseph_Paxton_by_Octavius_Oakley%2C_c1850.jpg', name:'Sir Joseph Paxton', area:'Crystal Palace', pc:'SE19', cat:'resident', year:null, era:'',
-      lat:null, lon:null, addr:'Rockhills, Crystal Palace Parade',
-      text:'Gardener, architect and designer of the Crystal Palace itself, who lived at Rockhills on Crystal Palace Parade, close to his greatest creation after it was relocated here from Hyde Park in 1854. Paxton rose from working-class origins to become one of the most celebrated designers of the Victorian era, and giving his name to the entire area that grew up around the building he designed.' },
 
     { id:'sir-kenneth-branagh', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Kenneth_Branagh_2010.jpg/330px-Kenneth_Branagh_2010.jpg', name:'Sir Kenneth Branagh', area:'Camberwell', pc:'SE5', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
@@ -2542,10 +2514,6 @@
     { id:'the-king-s-head-inn', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/The_King%27s_Head%2C_Bexley.jpg/330px-The_King%27s_Head%2C_Bexley.jpg', name:'The King\'s Head Inn', area:'Bexley', pc:'DA5', cat:'pub', year:null, era:'16th&ndash;17th century',
       lat:null, lon:null, addr:'',
       text:'A 16th or early 17th-century timber-framed and weatherboarded pub, with a gabled front, casement windows and a single-flued chimney-stack &mdash; one of Bexley\'s oldest surviving buildings still serving its original purpose centuries on.' },
-
-    { id:'the-lord-nelson', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/The_Lord_Nelson%2C_Old_Kent_Road_-_geograph.org.uk_-_2020318.jpg/330px-The_Lord_Nelson%2C_Old_Kent_Road_-_geograph.org.uk_-_2020318.jpg', name:'The Lord Nelson', area:'Bermondsey', pc:'SE1', cat:'pub', year:null, era:'Early 19th century',
-      lat:null, lon:null, addr:'386 Old Kent Road',
-      text:'A Grade II listed pub built in the early 19th century, included on CAMRA\'s National Inventory of Historic Pub Interiors in recognition of the quality of its surviving original interior.' },
 
     { id:'the-master-shipwright-s-house', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Former_Master_Shipwright%27s_House%2C_Deptford_%28North_Face_-_I%29.jpg/330px-Former_Master_Shipwright%27s_House%2C_Deptford_%28North_Face_-_I%29.jpg', name:'The Master Shipwright\'s House', area:'Deptford', pc:'SE8', cat:'grand', year:1708, era:'Built 1708',
       lat:null, lon:null, addr:'',
