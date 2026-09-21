@@ -95,6 +95,19 @@ function slugify(name) {
     .replace(/^-+|-+$/g, '') || 'stop';
 }
 
+// Strips common honorifics and punctuation so title variants of the same
+// name collapse to the same key — "Sir Ernest Shackleton" and "Ernest
+// Shackleton" both become "ernest shackleton". Deliberately loose: it's a
+// heads-up for a human to verify, not an automated merge.
+function normalizeNameForDupeCheck(name) {
+  return String(name)
+    .toLowerCase()
+    .replace(/^(sir|dame|dr|general|captain|professor|lord|lady|mr|mrs|miss|reverend|rev)\.?\s+/i, '')
+    .replace(/[.,'’]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 // Reverses the HTML-entity decoding done at import time, so the regenerated
 // data.js matches the site's existing embedding convention. Plain quotes and
 // backslashes are also escaped so every value stays a safe single-quoted JS
@@ -228,6 +241,31 @@ async function main() {
   if (unrouteable.length) {
     console.log(`${unrouteable.length} stop(s) published without coordinates (can't be added to a route yet):`);
     unrouteable.forEach((s) => console.log(`  - ${s.name || s.id}`));
+  }
+
+  // Flag stops whose name collides once honorifics/punctuation are stripped
+  // — often the same person entered twice under a title variant ("Sir
+  // Ernest Shackleton" vs "Ernest Shackleton") or slightly different
+  // punctuation ("W.G. Grace" vs "W. G. Grace"), sometimes across
+  // categories (a Blue plaque and a Notable residents entry for the same
+  // person). This is a heads-up, not a hard stop: two different people can
+  // share a name, and a joint entry (e.g. "Alfred and Ada Salter") can
+  // legitimately overlap a solo one ("Ada Salter") without being a true
+  // duplicate — read both entries' Description before merging or removing
+  // either one.
+  const possibleDupes = Array.from(
+    stops.reduce((map, s) => {
+      const key = normalizeNameForDupeCheck(s.name);
+      if (!map.has(key)) map.set(key, []);
+      map.get(key).push(s);
+      return map;
+    }, new Map()).values()
+  ).filter((group) => group.length > 1);
+  if (possibleDupes.length) {
+    console.log(`${possibleDupes.length} possible duplicate name group(s) — verify before merging/removing:`);
+    possibleDupes.forEach((group) => {
+      console.log(`  - ${group.map((s) => `${s.name} (${CATS[s.cat]})`).join('  /  ')}`);
+    });
   }
 
   const ordered = orderStops(stops, existingOrder);
