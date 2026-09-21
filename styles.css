@@ -46,7 +46,7 @@
   header{ position:sticky; top:0; z-index:30; background:var(--area-bg, var(--ground)); transition:background-color .45s ease; }
 
   /* Gazetteer entries: hairline separated, not stamped cards */
-  .stop{ background:var(--surface); border:1px solid var(--rule); border-radius:16px; box-shadow:var(--shadow); }
+  .stop{ background:var(--surface); border:1px solid var(--rule); border-radius:16px; }
   .stop.flash{ animation:flash 1.6s ease-out; }
   @keyframes flash{ 0%{ background:var(--plaque-soft);} 100%{ background:var(--surface); } }
 
