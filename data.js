@@ -1267,14 +1267,6 @@
       lat:null, lon:null, addr:'',
       text:'King Edward III had a riverside manor house built in Bermondsey in 1353; its excavated foundations remain visible today next to Bermondsey Wall East, close to the historic Angel public house, making it one of the oldest traceable structures in the area\'s long history.' },
 
-    { id:'enid-blyton', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Enid_Blyton_c._1923.jpg/330px-Enid_Blyton_c._1923.jpg', name:'Enid Blyton', area:'East Dulwich', pc:'SE22', cat:'resident', year:1897, era:'Born 1897',
-      lat:null, lon:null, addr:'',
-      text:'Children\'s author Enid Blyton was born at 354 Lordship Lane, East Dulwich, on 11 August 1897, shortly before her family moved to Beckenham. Blyton went on to become one of the best-selling and most translated children\'s authors in history, known for the Famous Five, Secret Seven and Noddy series.' },
-
-    { id:'ernest-dowson', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Ernest_Dowson.jpg/330px-Ernest_Dowson.jpg', name:'Ernest Dowson', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'1867&ndash;1900',
-      lat:null, lon:null, addr:'',
-      text:'Poet and prominent figure of the 1890s Decadent movement, who lived and died in Catford. Dowson coined two phrases that entered the English language directly from his poetry &mdash; "days of wine and roses" and "gone with the wind" &mdash; the latter later adopted as the title of Margaret Mitchell\'s novel and its famous film adaptation, without most people realising its Catford origins.' },
-
     { id:'eros-house', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Eros_House_%289175916827%29.jpg/330px-Eros_House_%289175916827%29.jpg', name:'Eros House', area:'Catford', pc:'SE6', cat:'grand', year:1962, era:'Built 1962',
       lat:null, lon:null, addr:'Brownhill Road',
       text:'A Brutalist office block built in 1962 by architect Owen Luder on the site of the demolished Hippodrome cinema. Critic Ian Nairn praised it in his day as "a monster sat down in Catford and just what the place needed," admiring its raw concrete forms, projecting frames and boxed-out bow windows, and noting a staircase tower that seems to lean. It remains one of the borough\'s most distinctive &mdash; and divisive &mdash; pieces of post-war architecture, and its 1960s ambition set the tone for the Catford Cat and Milford Towers that followed.' },
@@ -1331,10 +1323,6 @@
       lat:null, lon:null, addr:'',
       text:'Boxer who became British Heavyweight Champion in 1985&ndash;86, having lived in Catford, Brockley and briefly Bromley over the course of his career.' },
 
-    { id:'italo-svevo', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/ItaloSvevo.jpg/330px-ItaloSvevo.jpg', name:'Italo Svevo', area:'Charlton', pc:'SE7', cat:'resident', year:1903, era:'Lived in Charlton 1903&ndash;1913',
-      lat:null, lon:null, addr:'',
-      text:'Italian modernist writer, author of "Zeno\'s Conscience" and a close friend of James Joyce, who made his home in Charlton Village from 1903 to 1913. During this period his family\'s business sold underwater paint to the Royal Navy, used extensively on ships including through both World Wars &mdash; an unlikely commercial footnote to one of European literature\'s more significant novelists.' },
-
     { id:'jacqui-mcshee', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Pentangle2007_%28cropped%29.jpg/330px-Pentangle2007_%28cropped%29.jpg', name:'Jacqui McShee', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Folk singer and co-founder of the influential 1960s folk-jazz group Pentangle, known for her distinctive vocal style across the band\'s genre-blending catalogue of British folk, jazz and blues influences.' },
@@ -1354,10 +1342,6 @@
     { id:'jem-karacan', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Jem_Karacan_cropped.jpg/330px-Jem_Karacan_cropped.jpg', name:'Jem Karacan', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'International footballer born in Catford, who has represented Turkey at senior level after coming up through English football, including a spell at Reading F.C.' },
-
-    { id:'jim-connell', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Jim_Connell_1852-1929_Irish%2C_Socialist_and_Author_of_%27The_Red_Flag%27_lived_here_1915-1929.jpg/330px-Jim_Connell_1852-1929_Irish%2C_Socialist_and_Author_of_%27The_Red_Flag%27_lived_here_1915-1929.jpg', name:'Jim Connell', area:'Honor Oak', pc:'SE23', cat:'resident', year:1889, era:'Wrote "The Red Flag" 1889',
-      lat:null, lon:null, addr:'',
-      text:'Irish socialist Jim Connell composed "The Red Flag," one of the most famous socialist anthems in history, on a train journey from Charing Cross to Honor Oak in 1889, reportedly inspired by watching a railway guard raise and lower a red signal flag while thinking about that year\'s London Dock Strike. Connell had been born in County Meath, moved to London after losing his job for trying to unionise Dublin dockworkers, and lived in the Honor Oak and Crofton Park area for much of his later life.' },
 
     { id:'jim-legxacy', img:'', name:'Jim Legxacy', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
@@ -1414,10 +1398,6 @@
     { id:'leslie-dwyer', img:'', name:'Leslie Dwyer', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Actor born in Catford, who built a long career across British film and television through the mid-20th century.' },
-
-    { id:'leslie-howard', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Leslie_Howard_GWTW.jpg/330px-Leslie_Howard_GWTW.jpg', name:'Leslie Howard', area:'Forest Hill', pc:'SE23', cat:'resident', year:1943, era:'Died 1943',
-      lat:null, lon:null, addr:'',
-      text:'British actor best remembered internationally for playing Ashley Wilkes in Gone with the Wind, who lived in Forest Hill before his acting career took him to Hollywood. Howard was killed in 1943 when the civilian aircraft he was travelling on was shot down during the Second World War.' },
 
     { id:'lillie-langtry', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Lillie_Langtry_by_Sarony_cph.3b10327.jpg/330px-Lillie_Langtry_by_Sarony_cph.3b10327.jpg', name:'Lillie Langtry', area:'Brockley', pc:'SE4', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
@@ -1491,10 +1471,6 @@
       lat:null, lon:null, addr:'',
       text:'British singer and songwriter associated with Catford, known for blending R&amp;B, soul and UK rap influences; winner of the BBC Sound of 2017 poll, recognising her as one of the year\'s most promising new artists.' },
 
-    { id:'rio-ferdinand', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Rio_Ferdinand%2C_2004.jpg/330px-Rio_Ferdinand%2C_2004.jpg', name:'Rio Ferdinand', area:'Peckham', pc:'SE15', cat:'resident', year:1978, era:'Born 1978',
-      lat:null, lon:null, addr:'',
-      text:'Former England international footballer and one of the country\'s most decorated defenders, born in Peckham in 1978. Ferdinand went on to a long career with West Ham, Leeds United and Manchester United before becoming a prominent television pundit.' },
-
     { id:'river-cray', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/The_River_Cray_at_Bexley_-_geograph.org.uk_-_1409947.jpg/330px-The_River_Cray_at_Bexley_-_geograph.org.uk_-_1409947.jpg', name:'River Cray', area:'Bexley', pc:'DA5', cat:'maritime', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'The river running past Hall Place on its way through Bexley towards Crayford, historically central to the development of the village. The council-sponsored Cray River Way walking route follows the river\'s course from Crayford towards Foots Cray, and the river also forms part of the Mayor of London\'s London LOOP walk shortly after it begins at Erith.' },
@@ -1547,25 +1523,9 @@
       lat:null, lon:null, addr:'',
       text:'Creator of Sherlock Holmes, Sir Arthur Conan Doyle lived in the South Norwood area on the edge of Crystal Palace, a period during which he continued writing the detective stories that would make him one of the most widely read authors in the English language.' },
 
-    { id:'sir-arthur-eddington', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Arthur_Stanley_Eddington.jpg/330px-Arthur_Stanley_Eddington.jpg', name:'Sir Arthur Eddington', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'',
-      lat:null, lon:null, addr:'',
-      text:'Mathematician and astrophysicist who lived in Blackheath in the early 20th century. Eddington\'s 1919 expedition to observe a solar eclipse provided some of the first experimental confirmation of Einstein\'s general theory of relativity, making him one of the most significant scientific figures of his generation.' },
-
-    { id:'sir-francis-baring', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Sir_Francis_Baring%2C_1st_Baronet.jpg/330px-Sir_Francis_Baring%2C_1st_Baronet.jpg', name:'Sir Francis Baring', area:'Lee', pc:'SE12', cat:'resident', year:1792, era:'Purchased Manor House 1792',
-      lat:null, lon:null, addr:'',
-      text:'Founder of Barings Bank, one of Britain\'s most significant merchant banks. Baring purchased Lee\'s Manor House in 1792 and developed the surrounding area, shaping much of what became the Lee and Lee Green of today.' },
-
     { id:'sir-george-airy', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/George_Biddell_Airy_1891.jpg/330px-George_Biddell_Airy_1891.jpg', name:'Sir George Airy', area:'Greenwich', pc:'SE10', cat:'resident', year:1801, era:'1801&ndash;1892',
       lat:null, lon:null, addr:'',
       text:'Astronomer Royal from 1835 to 1881, who lived at the White House on Crooms Hill. Airy modernised the Royal Observatory\'s operations and is credited with helping establish the Greenwich meridian as the world standard for longitude and timekeeping.' },
-
-    { id:'sir-george-grove', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/George-grove.jpg/330px-George-grove.jpg', name:'Sir George Grove', area:'Sydenham', pc:'SE26', cat:'resident', year:1900, era:'Lived in Sydenham 1852&ndash;1860; died 1900',
-      lat:null, lon:null, addr:'',
-      text:'Engineer and musicologist Sir George Grove lived in Sydenham between 1852 and 1860, during which time he worked as secretary of the Society of Arts helping organise the Great Exhibition. He is much better remembered today as the founding editor of Grove\'s Dictionary of Music and Musicians, still a standard musical reference work, and as the first director of the Royal College of Music. He died at his cottage in Lower Sydenham in 1900 and is buried in Brockley and Ladywell Cemetery.' },
-
-    { id:'sir-james-clark-ross', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/James_Clark_Ross.jpg/330px-James_Clark_Ross.jpg', name:'Sir James Clark Ross', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'',
-      lat:null, lon:null, addr:'',
-      text:'Polar explorer who lived in Blackheath, best known for discovering the Ross Sea and the Ross Ice Shelf in Antarctica during his 1839&ndash;1843 expedition, and for locating the North Magnetic Pole in the Canadian Arctic in 1831. One of the most celebrated explorers of his era.' },
 
     { id:'sir-james-thornhill', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/James_Thornhill_self_portrait.jpg/330px-James_Thornhill_self_portrait.jpg', name:'Sir James Thornhill', area:'Greenwich', pc:'SE10', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
@@ -1682,10 +1642,6 @@
     { id:'tom-cribb', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Tom_Cribb_etching.jpg/330px-Tom_Cribb_etching.jpg', name:'Tom Cribb', area:'Woolwich', pc:'SE18', cat:'resident', year:1848, era:'Died in Woolwich 1848',
       lat:null, lon:null, addr:'',
       text:'Bare-knuckle boxing champion of England, born in Bristol but resident in Woolwich until his death there in 1848 aged 66. Cribb was buried at St Mary Magdalene, Woolwich, where his memorial &mdash; a lioness resting a paw on an urn &mdash; still stands in what is now St Mary\'s Gardens.' },
-
-    { id:'w-g-grace', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/WG_Grace_c1902.jpg/330px-WG_Grace_c1902.jpg', name:'W. G. Grace', area:'Sydenham', pc:'SE26', cat:'resident', year:null, era:'',
-      lat:null, lon:null, addr:'',
-      text:'Widely regarded as one of the greatest cricketers in the sport\'s history, W. G. Grace lived in Sydenham during part of his playing career, a period in which he dominated English cricket for decades and helped shape the modern game.' },
 
     { id:'walworth-town-hall', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Walworth_Town_Hall.jpg/330px-Walworth_Town_Hall.jpg', name:'Walworth Town Hall', area:'Walworth', pc:'SE17', cat:'grand', year:2013, era:'Fire 2013; on Heritage at Risk Register',
       lat:null, lon:null, addr:'',
@@ -2323,10 +2279,6 @@
       lat:null, lon:null, addr:'',
       text:'A Bronze Age burial mound surviving on Winns Common in Plumstead, part of a small scatter of ancient barrows across the high ground of this part of South East London &mdash; physical evidence that people were burying their dead on these hills long before any of the area\'s recorded history began.' },
 
-    { id:'charles-gounod', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Charles_Gounod_%281890%29_by_Nadar.jpg/330px-Charles_Gounod_%281890%29_by_Nadar.jpg', name:'Charles Gounod', area:'Blackheath', pc:'SE3', cat:'resident', year:1870, era:'Lived here 1870',
-      lat:null, lon:null, addr:'4 Morden Road',
-      text:'French Romantic composer, best known for the opera Faust, who lived at 4 Morden Road in 1870, marked today with a blue plaque &mdash; an unexpected outpost of French classical music history in South East London.' },
-
     { id:'charles-stewart-parnell', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Charles_Stewart_Parnell_1885.jpg/330px-Charles_Stewart_Parnell_1885.jpg', name:'Charles Stewart Parnell', area:'Brockley', pc:'SE4', cat:'resident', year:1846, era:'1846&ndash;1891',
       lat:null, lon:null, addr:'112 Tressillian Road',
       text:'Irish Nationalist leader and one of the most significant figures in 19th-century British and Irish politics, who lived at 112 Tressillian Road with Katharine O\'Shea, his lover and later wife. Their relationship, exposed in a divorce scandal in 1890, split the Irish Parliamentary Party and destroyed Parnell\'s political career within a year of the affair becoming public &mdash; a genuinely consequential piece of history playing out on an ordinary Brockley street.' },
@@ -2359,17 +2311,9 @@
       lat:null, lon:null, addr:'',
       text:'Beloved Arsenal and England midfielder, one of the standout English footballers of the late 1980s, whose death from cancer in 2001 at just 33 prompted an outpouring of grief across English football.' },
 
-    { id:'dietrich-bonhoeffer', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Bundesarchiv_Bild_146-1987-074-16%2C_Dietrich_Bonhoeffer.jpg/330px-Bundesarchiv_Bild_146-1987-074-16%2C_Dietrich_Bonhoeffer.jpg', name:'Dietrich Bonhoeffer', area:'Forest Hill', pc:'SE23', cat:'resident', year:1945, era:'Executed 1945',
-      lat:null, lon:null, addr:'',
-      text:'German Protestant theologian and anti-Nazi dissident, executed by the Nazi regime in 1945 for his involvement in resistance activities including a plot against Hitler. Bonhoeffer briefly lived and preached in Forest Hill during an earlier period of his life, giving this ordinary South London suburb a direct connection to one of the 20th century\'s most significant Christian martyrs.' },
-
     { id:'don-letts', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Bad-don-letts-2-np.jpg/330px-Bad-don-letts-2-np.jpg', name:'Don Letts', area:'Forest Hill', pc:'SE23', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Filmmaker, musician and DJ associated with Forest Hill, a key figure in bridging punk and reggae culture in 1970s Britain through his work with bands like Big Audio Dynamite and his documentary filmmaking on Black British and Jamaican music culture.' },
-
-    { id:'donald-mcgill', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Donald_McGill_-_5_Bennett_Park%2C_Blackheath%2C_SE3.JPG/330px-Donald_McGill_-_5_Bennett_Park%2C_Blackheath%2C_SE3.JPG', name:'Donald McGill', area:'Blackheath', pc:'SE3', cat:'resident', year:1875, era:'1875&ndash;1962',
-      lat:null, lon:null, addr:'5 Bennett Park',
-      text:'Postcard cartoonist famous for saucy seaside postcard designs that became a fixture of British popular culture, commemorated with a blue plaque at his former home, 5 Bennett Park.' },
 
     { id:'doris-stokes', img:'', name:'Doris Stokes', area:'Forest Hill', pc:'SE23', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
@@ -2378,10 +2322,6 @@
     { id:'dulwich-library', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Dulwich_Library_-_geograph.org.uk_-_3044631.jpg/330px-Dulwich_Library_-_geograph.org.uk_-_3044631.jpg', name:'Dulwich Library', area:'Dulwich', pc:'SE21', cat:'grand', year:1896, era:'Built 1896&ndash;1897',
       lat:null, lon:null, addr:'',
       text:'A Grade II listed library built in 1896&ndash;97 in Elizabethan Revival style by architect Charles Barry Junior &mdash; son of Sir Charles Barry, co-architect of the Houses of Parliament &mdash; as one of the Passmore Edwards libraries funded by philanthropist John Passmore Edwards. It was built specifically as a memorial to Edward Alleyn, the great Elizabethan actor who founded both Dulwich College and Alleyn\'s School, on a site donated by the College itself. The legendary actor Sir Henry Irving laid the foundation stone on 24 September 1896. Bomb-damaged in 1940 or 1941, its west wing was rebuilt around 1950, and the building was further refurbished in 2013.' },
-
-    { id:'edgar-wallace', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Bundesarchiv_Bild_102-13109%2C_Edgar_Wallace.jpg/330px-Bundesarchiv_Bild_102-13109%2C_Edgar_Wallace.jpg', name:'Edgar Wallace', area:'Brockley', pc:'SE4', cat:'resident', year:1900, era:'Lived here 1900&ndash;1932',
-      lat:null, lon:null, addr:'6 Tressillian Crescent',
-      text:'Enormously prolific author and playwright who lived at 6 Tressillian Crescent from 1900 to 1932, during which time he wrote the original screenplay treatment for King Kong (1933), among hundreds of thrillers and detective novels. His fictional detective J. G. Reeder is depicted living on Brockley Road, and his novel The Duke in the Suburbs is also set in Brockley.' },
 
     { id:'elsa-lanchester', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Elsa_Lanchester.jpg/330px-Elsa_Lanchester.jpg', name:'Elsa Lanchester', area:'Catford', pc:'SE6', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
@@ -2403,10 +2343,6 @@
       lat:null, lon:null, addr:'',
       text:'British singer, associated with Brockley and Honor Oak, best known for her 1993 hit "Dreams," which topped the charts and became one of the defining British soul singles of the decade.' },
 
-    { id:'general-james-wolfe', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/James_Wolfe.jpeg/330px-James_Wolfe.jpeg', name:'General James Wolfe', area:'Greenwich', pc:'SE10', cat:'resident', year:1759, era:'Died 1759',
-      lat:null, lon:null, addr:'Macartney House, Crooms Hill',
-      text:'British Army general famed for his victory at the 1759 Battle of the Plains of Abraham outside Quebec, a decisive moment in the Seven Years\' War that helped secure British control of Canada. Wolfe lived at Macartney House on Crooms Hill and is buried at St Alfege\'s Church, Greenwich.' },
-
     { id:'ginger-baker', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Ginger_Baker_in_1984.jpg/330px-Ginger_Baker_in_1984.jpg', name:'Ginger Baker', area:'Lewisham', pc:'SE13', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Drummer of the pioneering rock band Cream, born and brought up in Lewisham, celebrated as one of the most influential rock drummers in music history.' },
@@ -2422,10 +2358,6 @@
     { id:'harry-price', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Harry_price_by_william_hope.jpg/330px-Harry_price_by_william_hope.jpg', name:'Harry Price', area:'Brockley', pc:'SE4', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'22 Harefield Road',
       text:'Psychic researcher and paranormal investigator, famed for his high-profile investigation of the Borley Rectory hauntings, once dubbed "the most haunted house in England." Price lodged at 22 Harefield Road and attended school locally at Haberdashers\' Aske\'s Hatcham College.' },
-
-    { id:'henry-williamson', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Blue_plaque_commemorating_Henry_Williamson_-_geograph.org.uk_-_1632757.jpg/330px-Blue_plaque_commemorating_Henry_Williamson_-_geograph.org.uk_-_1632757.jpg', name:'Henry Williamson', area:'Brockley', pc:'SE4', cat:'resident', year:1895, era:'Born 1895',
-      lat:null, lon:null, addr:'66 Braxfield Road',
-      text:'Author of Tarka the Otter, born in 1895 at 66 Braxfield Road and raised at 21 Eastern Road. His semi-autobiographical novels The Dark Lantern and Donkey Boy describe turn-of-the-century Brockley in vivid detail.' },
 
     { id:'ian-wright', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Ian_Wright_at_SXSW_London_June_2025.jpg/330px-Ian_Wright_at_SXSW_London_June_2025.jpg', name:'Ian Wright', area:'Lewisham', pc:'SE13', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
@@ -2446,10 +2378,6 @@
     { id:'james-callaghan', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/James_Callaghan_%281975%29.jpg/330px-James_Callaghan_%281975%29.jpg', name:'James Callaghan', area:'Blackheath', pc:'SE3', cat:'resident', year:1976, era:'PM 1976&ndash;1979',
       lat:null, lon:null, addr:'',
       text:'Labour politician who served as Prime Minister of the United Kingdom from 1976 to 1979 &mdash; the only person to have held all four of the Great Offices of State (Chancellor, Home Secretary, Foreign Secretary and Prime Minister). He lived in Blackheath through the 1950s and 60s, and his daughter Margaret attended Blackheath High School.' },
-
-    { id:'james-glaisher', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/James_Glaisher.jpg/330px-James_Glaisher.jpg', name:'James Glaisher', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'',
-      lat:null, lon:null, addr:'20 Dartmouth Hill',
-      text:'Meteorologist who pioneered modern weather forecasting techniques, commemorated with a blue plaque at his former home, 20 Dartmouth Hill.' },
 
     { id:'james-robertson-justice', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/James_Robertson_Justice_in_The_Lady_Says_No_%281950%29.jpg/330px-James_Robertson_Justice_in_The_Lady_Says_No_%281950%29.jpg', name:'James Robertson Justice', area:'Lee', pc:'SE12', cat:'resident', year:1907, era:'Born 1907',
       lat:null, lon:null, addr:'Baring Road',
@@ -2570,10 +2498,6 @@
     { id:'sir-daniel-day-lewis', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Daniel_Day-Lewis_cropped.jpg/330px-Daniel_Day-Lewis_cropped.jpg', name:'Sir Daniel Day-Lewis', area:'Charlton', pc:'SE7', cat:'resident', year:null, era:'',
       lat:null, lon:null, addr:'',
       text:'Actor who grew up in Charlton, widely regarded as one of the greatest actors of his generation, with three Academy Awards, two Golden Globes and four BAFTAs to his name across a famously selective and intense body of work.' },
-
-    { id:'sir-ernest-shackleton', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Ernest_Shackleton_before_1909.jpg/330px-Ernest_Shackleton_before_1909.jpg', name:'Sir Ernest Shackleton', area:'Sydenham', pc:'SE26', cat:'resident', year:null, era:'',
-      lat:null, lon:null, addr:'',
-      text:'Legendary Antarctic explorer, who lived in Sydenham. Shackleton led three British expeditions to Antarctica, most famously the Endurance expedition of 1914&ndash;1917, celebrated for his leadership in bringing his entire crew home alive after their ship was crushed by pack ice.' },
 
     { id:'sir-frank-watson-dyson', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Frank_Watson_Dyson.jpg/330px-Frank_Watson_Dyson.jpg', name:'Sir Frank Watson Dyson', area:'Blackheath', pc:'SE3', cat:'resident', year:null, era:'Lived 1894&ndash;1906',
       lat:null, lon:null, addr:'',
