@@ -440,7 +440,7 @@
           '<div class="flex items-start gap-3 min-w-0">' +
             (s.img ? '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.remove()" class="w-14 h-14 shrink-0 rounded-lg object-cover border border-rule">' : '') +
             '<div class="min-w-0">' +
-              '<h3 class="font-display text-[23px] leading-[1.1] mb-1">' + s.name + '</h3>' +
+              '<h3 class="font-display text-[23px] sm:text-[28px] leading-[1.1] mb-1">' + s.name + '</h3>' +
               '<p class="font-mono text-[11px] text-muted num' + (compact ? ' truncate' : '') + '">' + s.area + ' &middot; ' + s.pc + '</p>' +
             '</div>' +
           '</div>' +
