@@ -22,7 +22,7 @@
     color-scheme:light;
   }
 
-  body{ background:var(--area-bg, var(--ground)); color:var(--ink); font-family:Archivo, Helvetica Neue, Arial, sans-serif; -webkit-font-smoothing:antialiased; transition:background-color .45s ease; }
+  body{ background:var(--area-bg, var(--ground)); color:var(--ink); font-family:Inter, Helvetica Neue, Arial, sans-serif; -webkit-font-smoothing:antialiased; transition:background-color .45s ease; }
   .warface-logo-dark{ display:block; }
   .warface-logo-light{ display:none; }
   :root[data-theme="light"] .warface-logo-dark{ display:none; }
@@ -115,7 +115,7 @@
     .area-row-track{ animation:none !important; }
   }
   .area-chip{
-    font-family:Archivo, Helvetica Neue, Arial, sans-serif;
+    font-family:Inter, Helvetica Neue, Arial, sans-serif;
     font-weight:700;
     font-size:18px;
     line-height:1;
