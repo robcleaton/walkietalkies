@@ -182,6 +182,48 @@
   }
 
   /* ---------------------------------------------------------------
+     Area map (Leaflet + OpenStreetMap) — every mapped stop in the
+     current area, colour-coded by category. Stops without a pinned
+     location (see the "Not mapped yet" button in stopHTML) just don't
+     get a marker; the map itself is hidden entirely if none do.
+  --------------------------------------------------------------- */
+  var areaMapEl = document.getElementById('areaMap');
+  var areaMap = null, areaMapLayer = null;
+
+  function renderAreaMap(stops) {
+    var mapped = stops.filter(function (s) {
+      return s.lat !== null && s.lat !== undefined && s.lon !== null && s.lon !== undefined;
+    });
+    areaMapEl.classList.toggle('hidden', mapped.length === 0);
+    if (!mapped.length || typeof L === 'undefined') return;
+
+    if (!areaMap) {
+      areaMap = L.map(areaMapEl, { scrollWheelZoom: false });
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
+      }).addTo(areaMap);
+      areaMapLayer = L.layerGroup().addTo(areaMap);
+    }
+    areaMapLayer.clearLayers();
+
+    var latlngs = mapped.map(function (s) { return [s.lat, s.lon]; });
+    mapped.forEach(function (s) {
+      var color = (CATMARK[s.cat] || {}).color || 'var(--ink)';
+      var icon = L.divIcon({
+        className: '',
+        html: '<span style="display:block;width:14px;height:14px;border-radius:50%;background:' + color + ';border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.4)"></span>',
+        iconSize: [14, 14], iconAnchor: [7, 7]
+      });
+      L.marker([s.lat, s.lon], { icon: icon }).addTo(areaMapLayer).bindPopup(plain(s.name));
+    });
+
+    areaMap.invalidateSize();
+    if (latlngs.length === 1) areaMap.setView(latlngs[0], 15);
+    else areaMap.fitBounds(latlngs, { padding: [24, 24] });
+  }
+
+  /* ---------------------------------------------------------------
      Persistence
   --------------------------------------------------------------- */
   function persist() {
@@ -922,6 +964,7 @@
     areaHeroEl.classList.remove('hidden');
     setHomeFurnitureHidden(true);
     document.getElementById('areaChipsBottom').classList.remove('hidden');
+    renderAreaMap(visible());
 
     if (scrollBehavior) {
       document.getElementById('list').scrollIntoView({ behavior: scrollBehavior, block: 'start' });
@@ -940,6 +983,7 @@
     document.documentElement.style.removeProperty('--area-ink');
     document.documentElement.classList.remove('area-active');
     areaHeroEl.classList.add('hidden');
+    areaMapEl.classList.add('hidden');
     setHomeFurnitureHidden(false);
     document.getElementById('areaChipsBottom').classList.add('hidden');
     Array.prototype.forEach.call(document.querySelectorAll('.area-chip--on-match'), function (chip) {
