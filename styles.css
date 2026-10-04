@@ -83,6 +83,12 @@
   .cat-card:hover{ transform:translateY(-2px); filter:brightness(1.06); }
   .cat-card:active{ transform:translateY(0); filter:brightness(.95); }
   .cat-card[aria-pressed="true"]{ box-shadow:0 0 0 2px var(--ground), 0 0 0 4px #fff; transform:translateY(-2px); }
+  /* A category card whose own colour matches the active area's background
+     (see the matching loop in applyAreaFilter) would otherwise have no
+     visible edge against the page — outline it in the area's own ink
+     colour, same as the title/header use against that bg. */
+  .cat-card--on-area-bg{ box-shadow:0 0 0 2px var(--area-ink); }
+  .cat-card--on-area-bg[aria-pressed="true"]{ box-shadow:0 0 0 2px var(--area-ink), 0 0 0 4px #fff; }
 
   /* Hide the scrollbar on horizontally-scrollable chip rows (#chips, #areaStickyRow) */
   .scroll-hide{ -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none; }

@@ -940,6 +940,15 @@
       var matches = !!(c && AREA_COLORS[key] && colorsAreClose(AREA_COLORS[key].bg, c.bg));
       chip.classList.toggle('area-chip--on-match', matches);
     });
+    // A category card whose own colour happens to match this area's
+    // background (e.g. "Great building" and "Notable residents" are both
+    // marigold, same as the Honor Oak page background) would otherwise
+    // disappear into the page — outline it in the area's own ink colour,
+    // the same colour the title/header already use against that bg.
+    Array.prototype.forEach.call(document.querySelectorAll('.cat-card[data-cat]'), function (card) {
+      var matches = !!(c && colorsAreClose(getComputedStyle(card).backgroundColor, c.bg));
+      card.classList.toggle('cat-card--on-area-bg', matches);
+    });
     document.getElementById('areaHeroTitle').textContent = areaTitle(area);
     document.getElementById('areaHeroDesc').innerHTML = AREA_DESCRIPTIONS[area.toLowerCase()] || '';
     document.getElementById('areaHeroPostcodes').innerHTML = postcodeBadgesHTML(areaPostcodes(area));
