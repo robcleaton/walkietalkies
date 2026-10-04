@@ -45,6 +45,13 @@
   /* Masthead: stays put on scroll, content scrolls underneath it */
   header{ position:sticky; top:0; z-index:30; background:var(--area-bg, var(--ground)); transition:background-color .45s ease; }
 
+  /* Leaflet's own CSS gives its panes/controls z-index values up to 1000,
+     which only stay below the sticky header (z-index:30) if the map
+     container itself establishes a stacking context — otherwise they
+     compete directly in the page's root stacking context and the zoom
+     controls/popups float above the header when scrolled underneath it. */
+  #areaMap, #routeMap{ position:relative; z-index:0; }
+
   /* Gazetteer entries: hairline separated, not stamped cards */
   .stop{ background:var(--surface); border:1px solid var(--rule); border-radius:16px; }
   .stop.flash{ animation:flash 1.6s ease-out; }
