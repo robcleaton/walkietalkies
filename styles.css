@@ -191,15 +191,19 @@
     line-height:clamp(44px, 17vw - 36px, 150px);
   }
 
-  /* Header icons follow the active area's ink colour, the same colour as
-     the area title, instead of the fixed light/dark theme colours —
-     --area-ink is only set on the root while an area page is open (see
-     applyAreaFilter / clearAreaFilter in app.js), so these rules fall
-     back to the normal theme colours everywhere else. */
+  /* Header icons and the WalkieTalkies wordmark follow the active area's
+     ink colour, the same colour as the area title, instead of the fixed
+     light/dark theme colours — --area-ink is only set on the root while
+     an area page is open (see applyAreaFilter / clearAreaFilter in
+     app.js), so these rules fall back to the normal theme colours
+     everywhere else. The wordmark svg sets its own `text-ink` colour
+     directly (not just inherited from #logoText), so it needs its own
+     selector rather than relying on #logoText's color alone. */
   header #searchToggle, header #themeToggle, header #routeHeaderBtn{
     color:var(--area-ink, var(--muted));
     border-color:var(--area-ink, var(--rule));
   }
+  html.area-active #logoText svg{ color:var(--area-ink); }
   header #searchToggle:hover, header #themeToggle:hover, header #routeHeaderBtn:hover{
     color:var(--area-ink, var(--ink));
     border-color:var(--area-ink, var(--ink));
