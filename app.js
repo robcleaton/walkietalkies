@@ -190,6 +190,29 @@
   var areaMapEl = document.getElementById('areaMap');
   var areaMap = null, areaMapLayer = null;
 
+  // Monotone-chain convex hull over [lat, lon] points — there's no real
+  // administrative boundary data for these informal area names (Honor Oak,
+  // Forest Hill etc. aren't clean OSM/ONS polygons), so the outline drawn
+  // on the area map is an approximation from the area's own mapped stops,
+  // not an official boundary.
+  function convexHull(points) {
+    var pts = points.slice().sort(function (a, b) { return a[0] - b[0] || a[1] - b[1]; });
+    if (pts.length < 3) return pts;
+    function cross(o, a, b) { return (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]); }
+    var lower = [];
+    for (var i = 0; i < pts.length; i++) {
+      while (lower.length >= 2 && cross(lower[lower.length - 2], lower[lower.length - 1], pts[i]) <= 0) lower.pop();
+      lower.push(pts[i]);
+    }
+    var upper = [];
+    for (var j = pts.length - 1; j >= 0; j--) {
+      while (upper.length >= 2 && cross(upper[upper.length - 2], upper[upper.length - 1], pts[j]) <= 0) upper.pop();
+      upper.push(pts[j]);
+    }
+    lower.pop(); upper.pop();
+    return lower.concat(upper);
+  }
+
   function renderAreaMap(stops) {
     var mapped = stops.filter(function (s) {
       return s.lat !== null && s.lat !== undefined && s.lon !== null && s.lon !== undefined;
@@ -208,6 +231,12 @@
     areaMapLayer.clearLayers();
 
     var latlngs = mapped.map(function (s) { return [s.lat, s.lon]; });
+    if (latlngs.length >= 3) {
+      L.polygon(convexHull(latlngs), {
+        color: '#171717', weight: 2, opacity: .55, dashArray: '6 6',
+        fill: true, fillColor: '#171717', fillOpacity: .06
+      }).addTo(areaMapLayer);
+    }
     mapped.forEach(function (s) {
       var color = (CATMARK[s.cat] || {}).color || 'var(--ink)';
       var icon = L.divIcon({
@@ -480,7 +509,9 @@
         '<div class="mb-2' + (compact ? ' shrink-0' : '') + '">' + catChip(s.cat) + '</div>' +
         '<div class="flex items-start justify-between gap-4' + (compact ? ' shrink-0' : '') + '">' +
           '<div class="flex items-start gap-3 min-w-0">' +
-            (s.img ? '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.remove()" class="w-14 h-14 shrink-0 rounded-lg object-cover border border-rule">' : '') +
+            (s.img ? '<button type="button" data-lightbox="' + bigImg(s.img) + '" data-lightbox-fallback="' + s.img + '" data-lightbox-alt="' + plain(s.name) + '" class="shrink-0 rounded-lg" aria-label="View larger image of ' + plain(s.name) + '">' +
+              '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.closest(\'button\').remove()" class="w-14 h-14 rounded-lg object-cover border border-rule">' +
+            '</button>' : '') +
             '<div class="min-w-0">' +
               '<h3 class="font-display text-[23px] sm:text-[28px] leading-[1.1] mb-1">' + s.name + '</h3>' +
               '<p class="font-mono text-[11px] text-muted num' + (compact ? ' truncate' : '') + '">' + s.area + ' &middot; ' + s.pc + '</p>' +
@@ -689,6 +720,15 @@
   }
 
   function plain(s) { return s.replace(/&[a-z]+;/g, ''); }
+
+  // Every stop image is a Wikimedia Commons "/330px-Filename.ext" thumbnail
+  // (see the gazetteer-entries skill) — Commons serves any width at the
+  // same path by swapping that prefix, so the lightbox can show a much
+  // larger version without a second image source. Falls back to the
+  // original URL for anything that doesn't match the expected pattern.
+  function bigImg(url) {
+    return url.replace(/\/330px-/, '/1200px-');
+  }
 
   /* ---------------------------------------------------------------
      Chips, events
@@ -1235,6 +1275,54 @@
   function esc(s) {
     return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
+
+  /* ---------------------------------------------------------------
+     Image lightbox — tap a stop's thumbnail (stopHTML's [data-lightbox]
+     button) to see it full-size. Mainly for mobile, where there's no
+     hover-to-preview and the 56px thumbnail is otherwise too small to
+     make out detail in.
+  --------------------------------------------------------------- */
+  var lightboxEl = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightboxImg');
+  var lightboxCaption = document.getElementById('lightboxCaption');
+  var lightboxTrigger = null;
+
+  function openLightbox(trigger) {
+    lightboxTrigger = trigger;
+    var name = trigger.getAttribute('data-lightbox-alt') || '';
+    // Not every source photo is large enough for the 1200px upscale in
+    // data-lightbox — Commons returns a 400 rather than capping at the
+    // original size, so fall back to the thumbnail already proven to
+    // work (data-lightbox-fallback) if the bigger request fails.
+    lightboxImg.onerror = function () {
+      lightboxImg.onerror = null;
+      lightboxImg.src = trigger.getAttribute('data-lightbox-fallback');
+    };
+    lightboxImg.src = trigger.getAttribute('data-lightbox');
+    lightboxImg.alt = name;
+    lightboxCaption.textContent = name;
+    lightboxEl.classList.remove('hidden');
+    lightboxEl.classList.add('flex');
+    document.getElementById('lightboxClose').focus();
+  }
+  function closeLightbox() {
+    if (lightboxEl.classList.contains('hidden')) return;
+    lightboxEl.classList.add('hidden');
+    lightboxEl.classList.remove('flex');
+    lightboxImg.src = '';
+    lightboxCaption.textContent = '';
+    if (lightboxTrigger) { lightboxTrigger.focus(); lightboxTrigger = null; }
+  }
+  document.addEventListener('click', function (e) {
+    var trigger = e.target.closest('[data-lightbox]');
+    if (trigger) { openLightbox(trigger); return; }
+    // Anywhere else inside the open lightbox except the image itself
+    // (the close button or the dark backdrop) dismisses it.
+    if (e.target.closest('#lightbox') && !e.target.closest('#lightboxImg')) closeLightbox();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !lightboxEl.classList.contains('hidden')) closeLightbox();
+  });
 
   /* ---------------------------------------------------------------
      Boot

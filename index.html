@@ -365,6 +365,19 @@
   </svg>
 </button>
 
+<!-- Image lightbox: tap a stop's thumbnail to see it full-size, mainly for
+     mobile where there's no hover-to-preview. Hidden by default; app.js
+     opens it on [data-lightbox] click and sets #lightboxImg's src. -->
+<div id="lightbox" class="hidden fixed inset-0 z-[100] bg-black/90 flex-col items-center justify-center gap-3 p-5" role="dialog" aria-modal="true" aria-label="Image preview">
+  <button id="lightboxClose" type="button" class="absolute top-4 right-4 sm:top-6 sm:right-6 inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors" aria-label="Close image preview">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M18 6 6 18" /><path d="m6 6 12 12" />
+    </svg>
+  </button>
+  <img id="lightboxImg" src="" alt="" class="max-w-full max-h-[75vh] rounded-lg object-contain">
+  <p id="lightboxCaption" class="font-display text-[20px] sm:text-[24px] text-white text-center max-w-[90vw]"></p>
+</div>
+
 <script src="data.js"></script>
 <script src="areas.js"></script>
 <script src="app.js"></script>
