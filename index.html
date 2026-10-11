@@ -294,45 +294,75 @@
 
       <!-- Route -->
       <aside id="routePanel" class="border border-rule rounded-[18px] flex flex-col overflow-hidden" role="dialog" aria-modal="true" aria-labelledby="routePanelTitle">
-        <div class="px-5 pt-5 pb-4 border-b border-rule">
-          <div class="flex items-start justify-between gap-3">
-            <div>
-              <h2 id="routePanelTitle" class="font-display text-[24px] leading-none">Your route</h2>
-              <div class="flex items-center gap-3 mt-2">
-                <p class="eyebrow text-faint" id="routeMeta">No stops yet</p>
-                <button id="clearBtn" class="eyebrow text-faint underline underline-offset-2 hover:text-ink transition-colors py-1.5 -my-1.5 px-1 -mx-1">Clear route</button>
+        <!-- Always-visible summary row — the closed mobile state is just
+             this row; opening/closing only changes #routePanelBody below
+             it (see the mobile media query in styles.css), so the sheet
+             reads as one component changing content, not a second panel
+             sliding in over the first. Hidden on desktop (lg:hidden),
+             where #routeHeaderBtn in the header opens the dropdown
+             instead. -->
+        <button id="routeBar" class="lg:hidden shrink-0 px-5 py-3.5 flex items-center justify-between gap-4 text-left" aria-label="Open route panel" aria-expanded="false">
+          <span>
+            <span class="eyebrow opacity-60 block">Your route</span>
+            <span class="text-[15px] font-semibold" id="barLabel">5 stops &middot; 2.1 km</span>
+          </span>
+          <svg id="routeBarChevron" class="lucide lucide-circle-chevron-up w-7 h-7 shrink-0 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <path d="m8 14 4-4 4 4" />
+          </svg>
+        </button>
+        <div id="routePanelBody" class="flex flex-col min-h-0">
+          <!-- Desktop-only — on mobile #routeBar above already covers the
+               title, stop count and open/close control, and the overview
+               box/map/list all live in #routeScroll below now, so there's
+               nothing left to show in a static top section. This block
+               only still exists for the dropdown, where #routeBar is
+               hidden and this is the sole header. -->
+          <div class="hidden lg:block px-5 pt-5 pb-4 border-b border-rule">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <h2 id="routePanelTitle" class="font-display text-[24px] leading-none">Your route</h2>
+                <p class="eyebrow text-faint mt-2" id="routeMeta">No stops yet</p>
               </div>
-            </div>
-            <button id="sheetClose" class="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full border border-rule text-muted hover:text-ink hover:border-ink transition-colors" aria-label="Close route panel">
-              <svg class="lucide lucide-circle-chevron-down w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10" />
-                <path d="m16 10-4 4-4-4" />
-              </svg>
-            </button>
-          </div>
-          <div class="grid grid-cols-2 gap-px bg-rule border border-rule rounded-[14px] overflow-hidden mt-4">
-            <div class="bg-surface px-3 py-2.5">
-              <p class="font-mono num text-[19px] leading-none" id="routeDist">0.0 km</p>
-              <p class="eyebrow text-faint mt-1.5">Point to point</p>
-            </div>
-            <div class="bg-surface px-3 py-2.5">
-              <p class="font-mono num text-[19px] leading-none" id="routeTime">&mdash;</p>
-              <p class="eyebrow text-faint mt-1.5">On foot</p>
+              <button id="sheetClose" class="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full border border-rule text-muted hover:text-ink hover:border-ink transition-colors" aria-label="Close route panel">
+                <svg class="lucide lucide-circle-chevron-down w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="m16 10-4 4-4-4" />
+                </svg>
+              </button>
             </div>
           </div>
-          <div id="routeMap" class="hidden h-[160px] rounded-[14px] overflow-hidden border border-rule mt-4"></div>
-        </div>
 
-        <div id="routeList" class="overflow-y-auto flex-1 min-h-0 max-h-[46vh] lg:max-h-[calc(100vh-var(--header-h,84px)-360px)]"></div>
+          <!-- The overview box and #routeMap are both siblings of
+               #routeList, not children — renderRoute() replaces
+               #routeList's innerHTML on every change, which would wipe
+               out the stats/Clear-route box and the Leaflet map if either
+               lived inside that element. -->
+          <div id="routeScroll" class="overflow-y-auto flex-1 min-h-0 max-h-[46vh] lg:max-h-[calc(100vh-var(--header-h,84px)-360px)]">
+            <div class="grid grid-cols-2 gap-px bg-rule border border-rule rounded-[14px] overflow-hidden mx-5 mt-1 lg:mt-4">
+              <div class="bg-surface px-3 py-2.5">
+                <p class="font-mono num text-[19px] leading-none" id="routeDist">0.0 km</p>
+                <p class="eyebrow text-faint mt-1.5">Point to point</p>
+              </div>
+              <div class="bg-surface px-3 py-2.5">
+                <p class="font-mono num text-[19px] leading-none" id="routeTime">&mdash;</p>
+                <p class="eyebrow text-faint mt-1.5">On foot</p>
+              </div>
+              <button id="clearBtn" class="col-span-2 bg-surface px-3 py-2 eyebrow text-faint text-center underline underline-offset-2 hover:text-ink transition-colors">Clear route</button>
+            </div>
+            <div id="routeMap" class="hidden h-[160px] rounded-[14px] overflow-hidden border border-rule mx-5 mt-4"></div>
+            <div id="routeList"></div>
+          </div>
 
-        <div class="px-5 py-4 border-t border-rule flex flex-col gap-2">
-          <a id="mapsLink" href="#" target="_blank" rel="noopener"
-             class="text-center text-[13px] font-semibold py-2.5 rounded-full bg-plaque text-white hover:opacity-90 transition-opacity">Open the walk in Maps</a>
-          <button id="gpxBtn" class="hidden w-full text-[13px] font-semibold py-2.5 rounded-full border border-rule text-ink hover:border-ink transition-colors">Save as GPX</button>
-          <a href="https://warface.co.uk/" target="_blank" rel="noopener noreferrer" class="lg:hidden flex justify-center hover:opacity-60 transition-opacity">
-            <img src="assets/warface/warface-logo-white.svg" alt="Warface" class="warface-logo-dark h-[24px]">
-            <img src="assets/warface/warface-logo-black.svg" alt="Warface" class="warface-logo-light h-[24px]">
-          </a>
+          <div class="px-5 py-4 border-t border-rule flex flex-col gap-2">
+            <a id="mapsLink" href="#" target="_blank" rel="noopener"
+               class="text-center text-[13px] font-semibold py-2.5 rounded-full bg-plaque text-white hover:opacity-90 transition-opacity">Open the walk in Maps</a>
+            <button id="gpxBtn" class="hidden w-full text-[13px] font-semibold py-2.5 rounded-full border border-rule text-ink hover:border-ink transition-colors">Save as GPX</button>
+            <a href="https://warface.co.uk/" target="_blank" rel="noopener noreferrer" class="lg:hidden flex justify-center hover:opacity-60 transition-opacity">
+              <img src="assets/warface/warface-logo-white.svg" alt="Warface" class="warface-logo-dark h-[24px]">
+              <img src="assets/warface/warface-logo-black.svg" alt="Warface" class="warface-logo-light h-[24px]">
+            </a>
+          </div>
         </div>
       </aside>
     </div>
@@ -353,17 +383,6 @@
 </div>
 
 <div id="scrim" class="fixed inset-0 bg-black/40 z-50" hidden></div>
-
-<button id="routeBar" class="fixed bottom-0 inset-x-0 z-40 lg:hidden bg-marigold text-[#171717] px-5 py-3.5 flex items-center justify-between gap-4 text-left" aria-label="Open route panel">
-  <span>
-    <span class="eyebrow opacity-60 block">Your route</span>
-    <span class="text-[15px] font-semibold" id="barLabel">5 stops &middot; 2.1 km</span>
-  </span>
-  <svg class="lucide lucide-circle-chevron-up w-7 h-7 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <circle cx="12" cy="12" r="10" />
-    <path d="m8 14 4-4 4 4" />
-  </svg>
-</button>
 
 <!-- Image lightbox: tap a stop's thumbnail to see it full-size, mainly for
      mobile where there's no hover-to-preview. Hidden by default; app.js

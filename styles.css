@@ -268,17 +268,35 @@
   /* Route sheet on small screens */
   #routePanel{ transition:transform .34s cubic-bezier(.32,.72,0,1), visibility 0s linear .34s; }
   @media (max-width:1023px){
+    /* The panel itself never moves or hides — only #routePanelBody's own
+       height animates, with #routeBar (the summary row, always visible)
+       staying in place throughout. Closed, the panel's visible height is
+       just #routeBar's natural height; open, #routePanelBody expands
+       below it. This is what makes it read as one component whose
+       content changes, rather than a second sheet sliding in over the
+       closed bar — the previous version translated the whole #routePanel
+       up from off-screen, so it visually arrived as a new surface
+       landing on top of #routeBar instead of growing out of it. */
     #routePanel{
       position:fixed; left:0; right:0; bottom:0; z-index:60;
-      max-height:84vh; transform:translateY(103%); visibility:hidden;
+      max-height:84vh;
       border-radius:22px 22px 0 0; border-bottom:0;
       box-shadow:0 -20px 50px -12px rgba(0,0,0,.35);
     }
-    /* Closed panel is translated off-screen but stays in the DOM — without
+    /* Closed body is collapsed but stays in the DOM — without
        visibility:hidden its buttons/links stayed in the tab order and
        screen-reader tree while invisible. visibility:visible has no delay
-       so it appears the instant the sheet starts opening. */
-    html.route-open #routePanel{ transform:translateY(0); visibility:visible; transition:transform .34s cubic-bezier(.32,.72,0,1); }
+       so content appears the instant the sheet starts opening. */
+    #routePanelBody{
+      max-height:0; overflow:hidden; visibility:hidden;
+      transition:max-height .45s cubic-bezier(.32,.72,0,1), visibility 0s linear .45s;
+    }
+    html.route-open #routePanelBody{
+      max-height:80vh; visibility:visible;
+      transition:max-height .45s cubic-bezier(.32,.72,0,1);
+    }
+    #routeBarChevron{ transform:rotate(180deg); }
+    html.route-open #routeBarChevron{ transform:rotate(0deg); }
     #scrim{ display:none; }
     html.route-open #scrim{ display:block; }
   }
@@ -304,7 +322,7 @@
     }
   }
   @media (prefers-reduced-motion: reduce){
-    #routePanel{ transition:none; }
+    #routePanel, #routePanelBody, #routeBarChevron{ transition:none; }
     .stop.flash{ animation:none; }
   }
   ::-webkit-scrollbar{ width:10px; height:10px; }

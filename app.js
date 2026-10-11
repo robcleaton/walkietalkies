@@ -1066,6 +1066,8 @@
   var routeHeaderBtn = document.getElementById('routeHeaderBtn');
   var routeHeaderChevron = document.getElementById('routeHeaderChevron');
   var routePanelEl = document.getElementById('routePanel');
+  var routePanelBodyEl = document.getElementById('routePanelBody');
+  var routeBarEl = document.getElementById('routeBar');
   var routeOpenTrigger = null; // element to refocus when the panel closes
   function focusableIn(container) {
     return Array.prototype.filter.call(
@@ -1079,19 +1081,32 @@
     document.getElementById('scrim').hidden = !v;
     routeHeaderBtn.setAttribute('aria-expanded', v ? 'true' : 'false');
     routeHeaderChevron.style.transform = v ? 'rotate(180deg)' : '';
+    routeBarEl.setAttribute('aria-expanded', v ? 'true' : 'false');
     // The panel's width can change between renders (dropdown vs. bottom
     // sheet, or a window resize while closed) — resync the map's canvas
     // to its container each time it becomes visible.
     if (v && routeMap) setTimeout(function () { routeMap.invalidateSize(); }, 0);
     if (v && !wasOpen) {
-      var focusables = focusableIn(routePanelEl);
+      // routePanelBodyEl, not routePanelEl — #routeBar (the always-visible
+      // summary row) is itself inside #routePanel now, so focusing the
+      // panel's first focusable would just refocus the button that was
+      // already clicked instead of moving into the newly revealed content.
+      var focusables = focusableIn(routePanelBodyEl);
       if (focusables.length) focusables[0].focus();
     } else if (!v && wasOpen && routeOpenTrigger) {
       routeOpenTrigger.focus();
       routeOpenTrigger = null;
     }
   }
-  document.getElementById('routeBar').addEventListener('click', function (e) { e.stopPropagation(); routeOpenTrigger = document.getElementById('routeBar'); openSheet(true); });
+  // Toggles both ways — #sheetClose is desktop-only now (see index.html),
+  // so on mobile tapping the always-visible bar again is how the sheet
+  // closes.
+  routeBarEl.addEventListener('click', function (e) {
+    e.stopPropagation();
+    var willOpen = !root.classList.contains('route-open');
+    if (willOpen) routeOpenTrigger = routeBarEl;
+    openSheet(willOpen);
+  });
   document.getElementById('sheetClose').addEventListener('click', function () { openSheet(false); });
   document.getElementById('scrim').addEventListener('click', function () { openSheet(false); });
   document.addEventListener('keydown', function (e) {
