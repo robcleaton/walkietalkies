@@ -93,6 +93,9 @@
   var route = [];
   var seeded = false;
   var filters = { q: '', cats: [], sort: 'district', areaRe: null };
+  // True on the Discover page (?view=discover), which shows the full stop
+  // list instead of the homepage carousel even with no filter applied.
+  var discoverMode = false;
   var db = null, docRef = null, adopted = false;
 
   function loadLocal() {
@@ -378,10 +381,11 @@
   var homeListEl = document.getElementById('homeList');
   var areaMatchesEl = document.getElementById('areaMatches');
   var resultCountEl = document.getElementById('resultCount');
+  var areaRowsEl = document.getElementById('areaRows');
 
   function renderList() {
     var items = visible();
-    var isHome = !filters.q && !filters.cats.length && !filters.areaRe;
+    var isHome = !filters.q && !filters.cats.length && !filters.areaRe && !discoverMode;
     // The count line ("N stops") is only useful once it reflects an actual
     // search/filter/area — on the plain homepage it's just noise, so leave
     // it blank there.
@@ -407,17 +411,29 @@
 
     listEl.classList.toggle('hidden', isHome);
     homeListEl.classList.toggle('hidden', !isHome);
+    // Only area pages fill the per-category rows (and CSS only shows them
+    // there, at lg+); everywhere else they're cleared so stale cards from a
+    // previous area can't linger.
+    var rowScroll = filters.areaRe ? areaRowScroll() : null;
+    areaRowsEl.innerHTML = '';
     if (isHome) {
       homeListEl.innerHTML = HOME_RANDOM_STOPS.map(function (s) {
         return '<div class="w-[300px] sm:w-[340px] h-[400px] shrink-0">' + stopHTML(s, true) + '</div>';
-      }).join('');
+      }).join('') +
+        // End of the carousel: a big round button through to the Discover
+        // page, where everything the 10 random cards are sampled from lives.
+        '<div class="h-[400px] shrink-0 flex items-center px-4 sm:px-8">' +
+          '<a href="?view=discover" data-discover aria-label="Discover all areas, categories and stops" class="inline-flex items-center justify-center w-[96px] h-[96px] sm:w-[112px] sm:h-[112px] rounded-full bg-marigold text-[#171717] transition-transform hover:scale-105">' +
+            '<svg class="lucide lucide-arrow-right w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>' +
+          '</a>' +
+        '</div>';
       // A tick out: the Tailwind CDN runtime generates CSS for these
       // freshly-inserted utility classes asynchronously, so measuring the
       // cards' real layout has to wait until that's landed, not just until
       // the innerHTML write itself is done. setTimeout (not
       // requestAnimationFrame, which browsers pause in a backgrounded tab)
       // keeps this reliable even if the page loads in a background tab.
-      setTimeout(adjustHomeCardClamps, 0);
+      setTimeout(function () { adjustCardClamps(homeListEl); }, 0);
       return;
     }
 
@@ -442,6 +458,51 @@
       html += stopHTML(s);
     });
     listEl.innerHTML = html;
+
+    if (filters.areaRe) renderAreaRows(items, rowScroll);
+  }
+
+  // Area pages on large screens: the area's stops as one homepage-style
+  // carousel per category, in the same category order as the category
+  // cards above. Each row keeps visible()'s own (district) sort.
+  function renderAreaRows(items, keepScroll) {
+    var byCat = {};
+    items.forEach(function (s) { (byCat[s.cat] = byCat[s.cat] || []).push(s); });
+    areaRowsEl.innerHTML = Object.keys(CATS).filter(function (cat) { return byCat[cat]; }).map(function (cat) {
+      var stops = byCat[cat];
+      return '<section data-cat-row="' + cat + '" aria-label="' + plain(catCountLabel(cat, stops.length)) + '">' +
+        '<h3 class="area-cat-head flex items-center gap-3 mb-4">' +
+          '<span class="inline-flex items-center justify-center w-9 h-9 rounded-[10px] shrink-0" style="background:' + CATMARK[cat].color + '">' +
+            '<svg viewBox="0 0 256 256" width="18" height="18" fill="' + CATMARK[cat].fg + '" aria-hidden="true">' + CATMARK[cat].icon + '</svg>' +
+          '</span>' +
+          '<span class="font-display text-[28px] leading-none">' + catCountLabel(cat, stops.length).replace(/&/g, '&amp;') + '</span>' +
+        '</h3>' +
+        '<div class="area-cat-row min-w-0 scroll-hide flex flex-nowrap gap-4 overflow-x-auto pb-2">' +
+          stops.map(function (s) {
+            return '<div class="w-[340px] h-[400px] shrink-0">' + stopHTML(s, true) + '</div>';
+          }).join('') +
+        '</div>' +
+      '</section>';
+    }).join('');
+    if (keepScroll) {
+      Object.keys(keepScroll).forEach(function (cat) {
+        var row = areaRowsEl.querySelector('[data-cat-row="' + cat + '"] .area-cat-row');
+        if (row) row.scrollLeft = keepScroll[cat];
+      });
+    }
+    setTimeout(function () { adjustCardClamps(areaRowsEl); }, 0);
+  }
+
+  // Each row's current horizontal scroll, keyed by category — renderList
+  // reruns on every route add/remove, and without this each one would
+  // snap every row back to its first card.
+  function areaRowScroll() {
+    var out = {};
+    Array.prototype.forEach.call(areaRowsEl.querySelectorAll('[data-cat-row]'), function (sec) {
+      var row = sec.querySelector('.area-cat-row');
+      if (row && row.scrollLeft) out[sec.getAttribute('data-cat-row')] = row.scrollLeft;
+    });
+    return out;
   }
 
   // Each homepage carousel card is a fixed height, and the name above the
@@ -451,10 +512,13 @@
   // actual space left in each card's description slot and clamp its text
   // to however many lines fit there, so the description always runs right
   // up to the address instead of leaving a gap.
-  function adjustHomeCardClamps() {
-    Array.prototype.forEach.call(homeListEl.querySelectorAll('[data-desc-wrap]'), function (wrap) {
+  // Used for the area pages' per-category rows too (same compact cards).
+  function adjustCardClamps(root) {
+    Array.prototype.forEach.call(root.querySelectorAll('[data-desc-wrap]'), function (wrap) {
       var p = wrap.querySelector('[data-desc-text]');
-      if (!p) return;
+      // Rows hidden at this screen size measure as zero height — skip them
+      // rather than clamp to one line; resize re-runs this once they show.
+      if (!p || !wrap.clientHeight) return;
       var lineHeight = parseFloat(getComputedStyle(p).lineHeight);
       if (!lineHeight || isNaN(lineHeight)) lineHeight = 22.4; // text-[14px] leading-[1.6] fallback
       var lines = Math.max(1, Math.floor(wrap.clientHeight / lineHeight));
@@ -469,7 +533,8 @@
     if (homeClampTimer) clearTimeout(homeClampTimer);
     homeClampTimer = setTimeout(function () {
       homeClampTimer = null;
-      if (!homeListEl.classList.contains('hidden')) adjustHomeCardClamps();
+      if (!homeListEl.classList.contains('hidden')) adjustCardClamps(homeListEl);
+      adjustCardClamps(areaRowsEl);
     }, 100);
   });
 
@@ -787,6 +852,7 @@
     // spam browser history.
     var url = new URL(location.href);
     url.searchParams.delete('area');
+    url.searchParams.delete('view');
     if (q) url.searchParams.set('q', q); else url.searchParams.delete('q');
     history.replaceState({}, '', url);
 
@@ -807,6 +873,8 @@
     if (m) { move(m.getAttribute('data-move'), parseInt(m.getAttribute('data-dir'), 10)); return; }
     var a = e.target.closest('[data-area]');
     if (a) { jumpToArea(a.getAttribute('data-area')); return; }
+    var d = e.target.closest('[data-discover]');
+    if (d && !e.metaKey && !e.ctrlKey && !e.shiftKey) { e.preventDefault(); jumpToDiscover(); return; }
   });
 
   function escapeRegExp(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
@@ -912,6 +980,82 @@
 
   var areaHeroEl = document.getElementById('areaHero');
   var homeIntroEl = document.getElementById('homeIntro');
+  var discoverHeroEl = document.getElementById('discoverHero');
+
+  // Plural category labels for the area cards' breakdown ("2 Blue
+  // plaques"); CATS stays as-is for the singular uses everywhere else.
+  var CAT_PLURALS = {
+    plaque: 'Blue plaques', grand: 'Great buildings', maritime: 'River & sea',
+    works: 'Industry & invention', culture: 'Museums & galleries',
+    memory: 'Memorials & protest', green: 'Parks & burial grounds',
+    pub: 'Historic pubs', art: 'Art & artists', brewery: 'Breweries',
+    resident: 'Notable residents'
+  };
+  var CAT_SINGULARS = { resident: 'Notable resident' };
+
+  // "1 Great building" / "2 Blue plaques" — shared by the Discover area
+  // cards and the area pages' per-category row headings.
+  function catCountLabel(cat, n) {
+    return n + ' ' + (n === 1 ? (CAT_SINGULARS[cat] || CATS[cat]) : CAT_PLURALS[cat]);
+  }
+
+  // Big-card version of an area chip: same colours, plus the area's total
+  // and a count per category, biggest first. Stops are matched the same
+  // way areaStopCount/the area page itself match them, so the numbers
+  // line up with what you see after clicking through.
+  function areaCardHTML(area) {
+    var c = AREA_COLORS[area];
+    var re = new RegExp('\\b' + escapeRegExp(area.toLowerCase()) + '\\b');
+    var counts = {}, total = 0;
+    STOPS.forEach(function (s) {
+      if (!re.test(stopHay(s))) return;
+      counts[s.cat] = (counts[s.cat] || 0) + 1;
+      total++;
+    });
+    var cats = Object.keys(counts).sort(function (a, b) {
+      return counts[b] - counts[a] || CATS[a].localeCompare(CATS[b]);
+    });
+    // Same photo and one-line description as the area page's hero. Most
+    // areas don't have a photo yet, so those get a neutral placeholder
+    // panel the same size, keeping every card in the carousel lined up.
+    var info = (typeof AREA_INFO !== 'undefined' && AREA_INFO[area]) || null;
+    var desc = AREA_DESCRIPTIONS[area] || '';
+    return '<button class="area-card" data-area="' + area + '" style="background:' + c.bg + ';color:' + c.fg + '">' +
+      (info && info.image
+        ? '<img class="area-card__img" src="' + info.image + '" alt="" loading="lazy" onerror="this.outerHTML=\'<span class=&quot;area-card__img&quot;></span>\'">'
+        : '<span class="area-card__img"></span>') +
+      '<span class="area-card__head">' +
+        '<span class="area-card__name">' + areaTitle(area) + '</span>' +
+        '<span class="area-card__total">' + total + (total === 1 ? ' stop' : ' stops') + '</span>' +
+      '</span>' +
+      (desc ? '<span class="area-card__desc">' + desc + '</span>' : '') +
+      '<span class="area-card__cats">' +
+        cats.map(function (cat) {
+          var n = counts[cat];
+          var label = n === 1 ? (CAT_SINGULARS[cat] || CATS[cat]) : CAT_PLURALS[cat];
+          return '<span class="area-card__cat">' +
+            '<svg viewBox="0 0 256 256" width="14" height="14" fill="currentColor" aria-hidden="true">' + CATMARK[cat].icon + '</svg>' +
+            '<span class="area-card__n">' + n + '</span>' +
+            '<span>' + label.replace(/&/g, '&amp;') + '</span>' +
+          '</span>';
+        }).join('') +
+      '</span>' +
+    '</button>';
+  }
+
+  // Every area as a card for the Discover page, in the same order as the
+  // homepage's area chips (AREA_COLORS is collected from them in DOM order).
+  document.getElementById('discoverAreas').innerHTML = Object.keys(AREA_COLORS)
+    .map(areaCardHTML).join('');
+
+  var reconnectStickyAreaBar = null; // set by stickyAreaBar() below
+
+  function setDiscoverMode(on) {
+    var changed = discoverMode !== on;
+    discoverMode = on;
+    discoverHeroEl.classList.toggle('hidden', !on);
+    if (changed && reconnectStickyAreaBar) reconnectStickyAreaBar();
+  }
 
   // Hides the homepage furniture (hero placeholder, intro copy, area-chip
   // marquee) — used both by area pages and by an active search, so results
@@ -931,6 +1075,7 @@
   // input handler and a direct/back-button ?q= load both need, minus the
   // URL write (callers that already have the right URL skip that part).
   function applySearchState(q, resetCats) {
+    setDiscoverMode(false);
     document.getElementById('search').value = q;
     filters.q = q;
     filters.areaRe = null;
@@ -961,6 +1106,7 @@
   }
 
   function applyAreaFilter(area, scrollBehavior) {
+    setDiscoverMode(false);
     filters.q = '';
     filters.areaRe = new RegExp('\\b' + escapeRegExp(area.toLowerCase()) + '\\b');
     filters.cats = [];
@@ -1016,11 +1162,14 @@
     renderAreaMap(visible());
 
     if (scrollBehavior) {
-      document.getElementById('list').scrollIntoView({ behavior: scrollBehavior, block: 'start' });
+      // #list is hidden on large screens, where #areaRows replaces it.
+      var listTarget = listEl.offsetParent !== null ? listEl : areaRowsEl;
+      listTarget.scrollIntoView({ behavior: scrollBehavior, block: 'start' });
     }
   }
 
   function clearAreaFilter() {
+    setDiscoverMode(false);
     filters.q = '';
     filters.areaRe = null;
     filters.cats = [];
@@ -1040,10 +1189,32 @@
     });
   }
 
+  // Discover: the homepage minus its furniture, with the full stop list in
+  // place of the carousel — built on clearAreaFilter so every bit of
+  // area/search state is reset the same way going home does.
+  function applyDiscover() {
+    clearAreaFilter();
+    setDiscoverMode(true);
+    setHomeFurnitureHidden(true);
+    renderList();
+    document.title = 'Discover — WalkieTalkies';
+  }
+
+  function jumpToDiscover() {
+    applyDiscover();
+    var url = new URL(location.href);
+    url.searchParams.delete('q');
+    url.searchParams.delete('area');
+    url.searchParams.set('view', 'discover');
+    history.pushState({ view: 'discover' }, '', url);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   function jumpToArea(area) {
     applyAreaFilter(area);
     var url = new URL(location.href);
     url.searchParams.delete('q');
+    url.searchParams.delete('view');
     url.searchParams.set('area', areaSlug(area));
     history.pushState({ area: area }, '', url);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1055,6 +1226,7 @@
     var q = params.get('q');
     if (slug) applyAreaFilter(areaFromSlug(slug), false);
     else if (q) applySearchState(q, true);
+    else if (params.get('view') === 'discover') applyDiscover();
     else clearAreaFilter();
   });
 
@@ -1230,15 +1402,17 @@
   buildAreaRow('areaStickyRow', true);
   buildAreaRow('areaChipsBottomRow', false);
 
-  // Reveal the compact sticky area nav once the big area chips scroll past the header
+  // Reveal the compact sticky area nav once the big area chips scroll past
+  // the header — the homepage marquee normally, or the Discover page's own
+  // area chips while that view is showing (setDiscoverMode reconnects it).
   (function stickyAreaBar() {
-    var target = document.getElementById('areaChips');
     var bar = document.getElementById('areaStickyBar');
     var headerEl = document.querySelector('header');
-    if (!target || !bar || !headerEl || !window.IntersectionObserver) return;
+    if (!bar || !headerEl || !window.IntersectionObserver) return;
     var io = null;
     function connect() {
       if (io) io.disconnect();
+      var target = document.getElementById(discoverMode ? 'discoverAreas' : 'areaChips');
       io = new IntersectionObserver(function (entries) {
         var e = entries[0];
         var pastIt = !e.isIntersecting && e.boundingClientRect.top < 0;
@@ -1247,6 +1421,7 @@
       io.observe(target);
     }
     connect();
+    reconnectStickyAreaBar = connect;
     var raf = null;
     window.addEventListener('resize', function () {
       if (raf) return;
@@ -1352,5 +1527,6 @@
     var q = params.get('q');
     if (slug) applyAreaFilter(areaFromSlug(slug), 'auto');
     else if (q) applySearchState(q, true);
+    else if (params.get('view') === 'discover') applyDiscover();
   })();
 })();

@@ -42,8 +42,13 @@
     outline:2px solid var(--plaque); outline-offset:2px;
   }
 
-  /* Masthead: stays put on scroll, content scrolls underneath it */
-  header{ position:sticky; top:0; z-index:30; background:var(--area-bg, var(--ground)); transition:background-color .45s ease; }
+  /* Masthead: fixed to the top of the viewport, content scrolls underneath
+     it. Fixed rather than sticky so it holds in every browser (sticky is
+     at the mercy of ancestor overflow and mobile Safari quirks); body's
+     top padding reserves its space, using the height trackHeaderHeight()
+     in app.js measures, so nothing starts tucked under it. */
+  header{ position:fixed; top:0; left:0; right:0; z-index:30; background:var(--area-bg, var(--ground)); transition:background-color .45s ease; }
+  body{ padding-top:var(--header-h, 84px); }
 
   /* Leaflet's own CSS gives its panes/controls z-index values up to 1000,
      which only stay below the sticky header (z-index:30) if the map
@@ -159,6 +164,41 @@
     #areaStickyRow{ padding-left:max(32px, calc((100vw - 1280px) / 2 + 32px)); padding-right:32px; }
   }
   .area-chip--compact{ padding:9px 18px; font-size:14px; flex:0 0 auto; }
+
+  /* Area cards: the big-card take on .area-chip (same per-area colours),
+     with the area's stop count and a breakdown by category. Shown on the
+     Discover page as a horizontal carousel, like the homepage's stops
+     (#homeList) — the full-bleed track itself is set up alongside
+     #homeList below. Cards in a row stretch to the tallest one. */
+  .area-cards{ display:flex; flex-wrap:nowrap; gap:16px; overflow-x:auto; padding-top:4px; padding-bottom:8px; min-width:0; }
+  .area-card{
+    flex:0 0 auto; width:300px;
+    display:flex; flex-direction:column; gap:16px; text-align:left;
+    padding:22px 24px 24px; border-radius:22px;
+    transition:transform .15s ease, filter .15s ease;
+  }
+  @media (min-width:640px){ .area-card{ width:340px; } }
+  .area-card:hover{ transform:translateY(-2px); filter:brightness(1.08); }
+  .area-card:active{ transform:translateY(0); filter:brightness(.94); }
+  .area-card__img{
+    display:block; width:100%; height:180px; object-fit:cover;
+    border-radius:14px; background:var(--raised);
+  }
+  .area-card__desc{ font-size:14px; line-height:1.5; opacity:.9; margin-top:-6px; }
+  /* Name on its own line, stop count beneath — side by side, the big name
+     ran into the count on longer areas ("Blackheath", "Honor Oak"). */
+  .area-card__head{ display:flex; flex-direction:column; align-items:flex-start; gap:8px; }
+  .area-card__name{ font-family:"Gasoek One", Inter, sans-serif; font-size:36px; line-height:1; letter-spacing:-0.015em; }
+  @media (min-width:640px){ .area-card__name{ font-size:40px; } }
+  .area-card__total{ font-family:"Azeret Mono", ui-monospace, monospace; font-size:12px; font-weight:600; opacity:.75; white-space:nowrap; }
+  .area-card__cats{ display:flex; flex-direction:column; gap:7px; font-size:14px; font-weight:600; line-height:1.2; }
+  .area-card__cat{ display:flex; align-items:center; gap:9px; }
+  .area-card__cat svg{ flex:0 0 auto; opacity:.85; }
+  .area-card__n{ font-family:"Azeret Mono", ui-monospace, monospace; font-size:13px; min-width:2ch; text-align:right; }
+  @media (prefers-reduced-motion: reduce){
+    .area-card{ transition:none; }
+    .area-card:hover{ transform:none; }
+  }
   /* Room for the sticky header so scrolling search results into view
      doesn't land with the category cards tucked behind it. Just the
      header, not the sticky area nav bar too — #areaChips is hidden during
@@ -171,14 +211,16 @@
   /* Homepage teaser row: break out of <main>'s max-w-[1280px] cap so the
      scroll track uses the full window width on wide screens (same technique
      as #areaStickyRow), while resting-position alignment still matches the
-     rest of the page content via the calculated left padding. */
-  #homeList{
+     rest of the page content via the calculated left padding. The
+     Discover page's area-card carousel and the area pages' per-category
+     rows share the same track. */
+  #homeList, #discoverAreas, .area-cat-row{
     margin-left:calc(0px - max(20px, (100vw - 1280px) / 2 + 20px));
     margin-right:calc(0px - max(20px, (100vw - 1280px) / 2 + 20px));
     padding-left:max(20px, calc((100vw - 1280px) / 2 + 20px)); padding-right:20px;
   }
   @media (min-width:640px){
-    #homeList{
+    #homeList, #discoverAreas, .area-cat-row{
       margin-left:calc(0px - max(32px, (100vw - 1280px) / 2 + 32px));
       margin-right:calc(0px - max(32px, (100vw - 1280px) / 2 + 32px));
       padding-left:max(32px, calc((100vw - 1280px) / 2 + 32px)); padding-right:32px;
@@ -254,6 +296,16 @@
      the same area-tinted background — the bold postcode span had no colour
      class (inheriting the fixed --ink), and its district-name span is the
      same .eyebrow.text-faint pattern as above. */
+  /* Area pages, large screens only (for now): stops as one carousel per
+     category (#areaRows) in place of the single grouped list (#list).
+     Below lg, and on search results, #list is used as before. */
+  #areaRows{ display:none; }
+  #list, #areaRows{ scroll-margin-top:calc(var(--header-h, 84px) + 16px); }
+  @media (min-width:1024px){
+    html.area-active #list{ display:none; }
+    html.area-active #areaRows{ display:flex; flex-direction:column; gap:40px; }
+  }
+  .area-cat-head{ color:var(--area-ink, var(--ink)); }
   #list .pc-group-divider{ color:var(--area-ink, var(--ink)); }
   #list .pc-group-divider .eyebrow{ color:var(--area-ink, var(--faint)); }
 
