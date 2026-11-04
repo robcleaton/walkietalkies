@@ -92,7 +92,7 @@
   --------------------------------------------------------------- */
   var route = [];
   var seeded = false;
-  var filters = { q: '', cats: [], sort: 'district', areaRe: null };
+  var filters = { q: '', cats: [], sort: 'district', area: null };
   // True on the Discover page (?view=discover), which shows the full stop
   // list instead of the homepage carousel even with no filter applied.
   var discoverMode = false;
@@ -335,14 +335,32 @@
       .replace(/&[a-z]+;/g, ' ').toLowerCase();
   }
 
+  // Whether a stop belongs on an area page (area = a data-area key, e.g.
+  // 'crystal palace'). Stops tagged in Notion's "Areas" multi-select carry
+  // an `areas` list of area titles, and that list is the whole answer.
+  // Untagged data (an export from before that field existed) falls back to
+  // a whole-word match on the stop's name and Area text only — never its
+  // Description or Address, which mention neighbouring areas and street
+  // names ("Crystal Palace Road", "Lewisham Way") far too often.
+  function stopInArea(s, area) {
+    if (Array.isArray(s.areas)) {
+      var title = plainLower(areaTitle(area));
+      for (var i = 0; i < s.areas.length; i++) { if (plainLower(s.areas[i]) === title) return true; }
+      return false;
+    }
+    return new RegExp('\\b' + escapeRegExp(area) + '\\b').test(plainLower(s.name + ' ' + s.area));
+  }
+  function plainLower(str) {
+    return String(str).replace(/&amp;/g, '&').replace(/&[a-z]+;/g, ' ').toLowerCase();
+  }
+
   function visible() {
     var q = filters.q.trim().toLowerCase();
     var out = STOPS.filter(function (s) {
       if (filters.cats.length && filters.cats.indexOf(s.cat) === -1) return false;
-      if (!q && !filters.areaRe) return true;
-      var hay = stopHay(s);
-      if (filters.areaRe) return filters.areaRe.test(hay);
-      return hay.indexOf(q) !== -1;
+      if (filters.area) return stopInArea(s, filters.area);
+      if (!q) return true;
+      return stopHay(s).indexOf(q) !== -1;
     });
     var sorters = {
       district: function (a, b) { return pcRank(a.pc) - pcRank(b.pc) || a.lon - b.lon; },
@@ -356,11 +374,10 @@
   function stripEnt(s) { return s.replace(/&[a-z]+;/g, '’'); }
 
   function areaPostcodes(area) {
-    var re = new RegExp('\\b' + escapeRegExp(area.toLowerCase()) + '\\b');
     var seen = {};
     var pcs = [];
     STOPS.forEach(function (s) {
-      if (!re.test((s.name + ' ' + s.area + ' ' + s.pc + ' ' + s.addr).toLowerCase())) return;
+      if (!stopInArea(s, area.toLowerCase())) return;
       if (seen[s.pc]) return;
       seen[s.pc] = true;
       pcs.push(s.pc);
@@ -385,7 +402,7 @@
 
   function renderList() {
     var items = visible();
-    var isHome = !filters.q && !filters.cats.length && !filters.areaRe && !discoverMode;
+    var isHome = !filters.q && !filters.cats.length && !filters.area && !discoverMode;
     // The count line ("N stops") is only useful once it reflects an actual
     // search/filter/area — on the plain homepage it's just noise, so leave
     // it blank there.
@@ -414,7 +431,7 @@
     // Only area pages fill the per-category rows (and CSS only shows them
     // there, at lg+); everywhere else they're cleared so stale cards from a
     // previous area can't linger.
-    var rowScroll = filters.areaRe ? areaRowScroll() : null;
+    var rowScroll = filters.area ? areaRowScroll() : null;
     areaRowsEl.innerHTML = '';
     if (isHome) {
       homeListEl.innerHTML = HOME_RANDOM_STOPS.map(function (s) {
@@ -459,7 +476,7 @@
     });
     listEl.innerHTML = html;
 
-    if (filters.areaRe) renderAreaRows(items, rowScroll);
+    if (filters.area) renderAreaRows(items, rowScroll);
   }
 
   // Area pages on large screens: the area's stops as one homepage-style
@@ -520,7 +537,7 @@
       // rather than clamp to one line; resize re-runs this once they show.
       if (!p || !wrap.clientHeight) return;
       var lineHeight = parseFloat(getComputedStyle(p).lineHeight);
-      if (!lineHeight || isNaN(lineHeight)) lineHeight = 22.4; // text-[14px] leading-[1.6] fallback
+      if (!lineHeight || isNaN(lineHeight)) lineHeight = 26.35; // text-[17px] leading-[1.55] fallback
       var lines = Math.max(1, Math.floor(wrap.clientHeight / lineHeight));
       p.style.display = '-webkit-box';
       p.style.webkitBoxOrient = 'vertical';
@@ -571,26 +588,27 @@
     // needs, so short names don't leave a gap above a pinned address.
     return '' +
       '<article id="stop-' + s.id + '" class="stop px-5 py-5' + (compact ? ' h-full flex flex-col' : '') + '">' +
-        '<div class="mb-2' + (compact ? ' shrink-0' : '') + '">' + catChip(s.cat) + '</div>' +
+        // Image and route button share the top row; the category chip and
+        // title get their own full-width lines beneath, so long names never
+        // run into the button.
         '<div class="flex items-start justify-between gap-4' + (compact ? ' shrink-0' : '') + '">' +
-          '<div class="flex items-start gap-3 min-w-0">' +
-            (s.img ? '<button type="button" data-lightbox="' + bigImg(s.img) + '" data-lightbox-fallback="' + s.img + '" data-lightbox-alt="' + plain(s.name) + '" class="shrink-0 rounded-lg" aria-label="View larger image of ' + plain(s.name) + '">' +
-              '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.closest(\'button\').remove()" class="w-14 h-14 rounded-lg object-cover border border-rule">' +
-            '</button>' : '') +
-            '<div class="min-w-0">' +
-              '<h3 class="font-display text-[23px] sm:text-[28px] leading-[1.1] mb-1">' + s.name + '</h3>' +
-              '<p class="font-mono text-[11px] text-muted num' + (compact ? ' truncate' : '') + '">' + s.area + ' &middot; ' + s.pc + '</p>' +
-            '</div>' +
-          '</div>' +
+          (s.img ? '<button type="button" data-lightbox="' + bigImg(s.img) + '" data-lightbox-fallback="' + s.img + '" data-lightbox-alt="' + plain(s.name) + '" class="shrink-0 rounded-lg" aria-label="View larger image of ' + plain(s.name) + '">' +
+            '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.closest(\'button\').remove()" class="w-14 h-14 rounded-lg object-cover border border-rule">' +
+          '</button>' : '') +
           (hasLoc ?
-            '<button data-toggle="' + s.id + '" class="shrink-0 inline-flex items-center gap-1 text-[12px] font-semibold px-3 py-2 rounded-full border transition-colors ' +
+            '<button data-toggle="' + s.id + '" class="ml-auto shrink-0 inline-flex items-center gap-1 text-[12px] font-semibold px-3 py-2 rounded-full border transition-colors ' +
               (on ? 'bg-verdigris text-white border-verdigris' : 'border-rule text-ink hover:border-ink') + '">' +
               (on ? 'Stop ' + pos + ' <svg class="lucide lucide-check w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>' : 'Add to route') +
             '</button>'
-          : '<button disabled title="This stop doesn&rsquo;t have a location yet, so it can&rsquo;t be added to a route." class="shrink-0 inline-flex items-center text-[12px] font-semibold px-3 py-2 rounded-full border border-rule text-faint opacity-60 cursor-not-allowed">Not mapped yet</button>') +
+          : '<button disabled title="This stop doesn&rsquo;t have a location yet, so it can&rsquo;t be added to a route." class="ml-auto shrink-0 inline-flex items-center text-[12px] font-semibold px-3 py-2 rounded-full border border-rule text-faint opacity-60 cursor-not-allowed">Not mapped yet</button>') +
+        '</div>' +
+        '<div class="min-w-0 mt-3' + (compact ? ' shrink-0' : '') + '">' +
+          '<div class="mb-2">' + catChip(s.cat) + '</div>' +
+          '<h3 class="font-display text-[23px] sm:text-[28px] leading-[1.1] mb-1">' + s.name + '</h3>' +
+          '<p class="font-mono text-[11px] text-muted num' + (compact ? ' truncate' : '') + '">' + s.area + ' &middot; ' + s.pc + '</p>' +
         '</div>' +
         (compact ? '<div class="flex-1 min-h-0 overflow-hidden mt-3" data-desc-wrap>' : '') +
-        '<p class="text-[14px] leading-[1.6] text-ink max-w-[62ch]' + (compact ? '' : ' mt-3') + '"' + (compact ? ' data-desc-text' : '') + '>' +
+        '<p class="font-serif text-[17px] leading-[1.55] text-ink max-w-[62ch]' + (compact ? '' : ' mt-3') + '"' + (compact ? ' data-desc-text' : '') + '>' +
           (eraLead ? '<span class="font-semibold">' + eraLead + '.</span> ' : '') +
           // Compact cards clamp to a single flowing paragraph — joining every
           // paragraph with <br><br> first would let the clamp cut land on a
@@ -804,12 +822,9 @@
   // already toggled on. Used only to build the chips, not the list.
   function stopsInFilterScope() {
     var q = filters.q.trim().toLowerCase();
-    if (!q && !filters.areaRe) return STOPS;
-    return STOPS.filter(function (s) {
-      var hay = stopHay(s);
-      if (filters.areaRe) return filters.areaRe.test(hay);
-      return hay.indexOf(q) !== -1;
-    });
+    if (filters.area) return STOPS.filter(function (s) { return stopInArea(s, filters.area); });
+    if (!q) return STOPS;
+    return STOPS.filter(function (s) { return stopHay(s).indexOf(q) !== -1; });
   }
 
   function renderChips() {
@@ -840,8 +855,8 @@
   });
 
   document.getElementById('search').addEventListener('input', function (e) {
-    var wasHome = !filters.q && !filters.cats.length && !filters.areaRe;
-    var wasArea = !!filters.areaRe;
+    var wasHome = !filters.q && !filters.cats.length && !filters.area;
+    var wasArea = !!filters.area;
     var q = e.target.value;
 
     applySearchState(q, wasArea);
@@ -938,13 +953,12 @@
     AREA_COLORS[area] = { bg: cs.backgroundColor, fg: cs.color };
   });
 
-  // How many stops belong to an area, using the same whole-word match
-  // against every stop's full text as an actual area page filter does —
-  // so the count matches what you'd see if you jumped there.
+  // How many stops belong to an area, via the same stopInArea() test the
+  // area page itself filters with — so the count matches what you'd see
+  // if you jumped there.
   function areaStopCount(area) {
-    var re = new RegExp('\\b' + escapeRegExp(area.toLowerCase()) + '\\b');
     var n = 0;
-    for (var i = 0; i < STOPS.length; i++) { if (re.test(stopHay(STOPS[i]))) n++; }
+    for (var i = 0; i < STOPS.length; i++) { if (stopInArea(STOPS[i], area)) n++; }
     return n;
   }
 
@@ -993,6 +1007,19 @@
   };
   var CAT_SINGULARS = { resident: 'Notable resident' };
 
+  // Area photos on the Discover cards are switched off for now — only 6 of
+  // 30 areas have one, so most cards were showing an empty placeholder.
+  // Flip back to true once AREA_INFO has more photos.
+  var SHOW_AREA_CARD_PHOTOS = false;
+
+  // How the area cards list their categories: 'list' (one per line) or
+  // 'wrap' (pills that wrap onto multiple lines). Trying both out for now —
+  // ?catstyle=list or ?catstyle=wrap in the URL overrides the default.
+  var AREA_CARD_CAT_STYLE = (function () {
+    var fromUrl = new URLSearchParams(location.search).get('catstyle');
+    return fromUrl === 'list' || fromUrl === 'wrap' ? fromUrl : 'wrap';
+  })();
+
   // "1 Great building" / "2 Blue plaques" — shared by the Discover area
   // cards and the area pages' per-category row headings.
   function catCountLabel(cat, n) {
@@ -1005,23 +1032,23 @@
   // line up with what you see after clicking through.
   function areaCardHTML(area) {
     var c = AREA_COLORS[area];
-    var re = new RegExp('\\b' + escapeRegExp(area.toLowerCase()) + '\\b');
     var counts = {}, total = 0;
     STOPS.forEach(function (s) {
-      if (!re.test(stopHay(s))) return;
+      if (!stopInArea(s, area)) return;
       counts[s.cat] = (counts[s.cat] || 0) + 1;
       total++;
     });
     var cats = Object.keys(counts).sort(function (a, b) {
       return counts[b] - counts[a] || CATS[a].localeCompare(CATS[b]);
     });
-    // Same photo and one-line description as the area page's hero. Most
-    // areas don't have a photo yet, so those get a neutral placeholder
-    // panel the same size, keeping every card in the carousel lined up.
+    // Same one-line description as the area page's hero, and (when
+    // SHOW_AREA_CARD_PHOTOS is on) its photo. Most areas don't have a
+    // photo yet, so those get a neutral placeholder panel the same size,
+    // keeping every card in the carousel lined up.
     var info = (typeof AREA_INFO !== 'undefined' && AREA_INFO[area]) || null;
     var desc = AREA_DESCRIPTIONS[area] || '';
     return '<button class="area-card" data-area="' + area + '" style="background:' + c.bg + ';color:' + c.fg + '">' +
-      (info && info.image
+      (!SHOW_AREA_CARD_PHOTOS ? '' : info && info.image
         ? '<img class="area-card__img" src="' + info.image + '" alt="" loading="lazy" onerror="this.outerHTML=\'<span class=&quot;area-card__img&quot;></span>\'">'
         : '<span class="area-card__img"></span>') +
       '<span class="area-card__head">' +
@@ -1029,7 +1056,7 @@
         '<span class="area-card__total">' + total + (total === 1 ? ' stop' : ' stops') + '</span>' +
       '</span>' +
       (desc ? '<span class="area-card__desc">' + desc + '</span>' : '') +
-      '<span class="area-card__cats">' +
+      '<span class="area-card__cats' + (AREA_CARD_CAT_STYLE === 'wrap' ? ' area-card__cats--wrap' : '') + '">' +
         cats.map(function (cat) {
           var n = counts[cat];
           var label = n === 1 ? (CAT_SINGULARS[cat] || CATS[cat]) : CAT_PLURALS[cat];
@@ -1078,7 +1105,7 @@
     setDiscoverMode(false);
     document.getElementById('search').value = q;
     filters.q = q;
-    filters.areaRe = null;
+    filters.area = null;
     // Only reset the category *selection* when actually leaving an area
     // (it's meant to combine with an ordinary text search, so typing
     // further into an existing search shouldn't silently drop it) — but
@@ -1108,7 +1135,7 @@
   function applyAreaFilter(area, scrollBehavior) {
     setDiscoverMode(false);
     filters.q = '';
-    filters.areaRe = new RegExp('\\b' + escapeRegExp(area.toLowerCase()) + '\\b');
+    filters.area = area.toLowerCase();
     filters.cats = [];
     document.getElementById('search').value = area;
     renderChips();
@@ -1171,7 +1198,7 @@
   function clearAreaFilter() {
     setDiscoverMode(false);
     filters.q = '';
-    filters.areaRe = null;
+    filters.area = null;
     filters.cats = [];
     document.getElementById('search').value = '';
     renderChips();

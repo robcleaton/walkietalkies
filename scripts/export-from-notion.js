@@ -74,6 +74,14 @@ function getSelect(page, propName) {
   return prop.select.name || '';
 }
 
+// null (not []) when the property doesn't exist at all, so callers can
+// tell "no Areas column yet" apart from "tagged with no areas".
+function getMultiSelect(page, propName) {
+  const prop = page.properties[propName];
+  if (!prop || !prop.multi_select) return null;
+  return prop.multi_select.map((o) => o.name);
+}
+
 function getNumber(page, propName) {
   const prop = page.properties[propName];
   if (!prop || prop.number === null || prop.number === undefined) return null;
@@ -188,7 +196,11 @@ function pageToStop(page, usedSlugs) {
     lat: getNumber(page, 'Latitude'),
     lon: getNumber(page, 'Longitude'),
     addr: getRichText(page, 'Address'),
-    text: getRichText(page, 'Description')
+    text: getRichText(page, 'Description'),
+    // Which area pages the stop appears on (app.js stopInArea). Left off
+    // entirely while the database has no "Areas" column, so the site falls
+    // back to matching on name/Area text instead.
+    areas: getMultiSelect(page, 'Areas')
   };
 }
 
@@ -212,7 +224,9 @@ function formatStop(stop) {
   return (
     `    { id:'${stop.id}', img:'${encodeField(stop.img)}', name:'${encodeField(stop.name)}', area:'${encodeField(stop.area)}', pc:'${encodeField(stop.pc)}', cat:'${stop.cat}', year:${year}, era:'${encodeField(stop.era)}',\n` +
     `      lat:${lat}, lon:${lon}, addr:'${encodeField(stop.addr)}',\n` +
-    `      text:'${encodeField(stop.text)}' }`
+    `      text:'${encodeField(stop.text)}'` +
+    (stop.areas ? `,\n      areas:[${stop.areas.map((a) => `'${encodeField(a)}'`).join(', ')}]` : '') +
+    ` }`
   );
 }
 

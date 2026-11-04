@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "export": "node scripts/export-from-notion.js",
-    "export:areas": "node scripts/export-areas-from-notion.js"
+    "export:areas": "node scripts/export-areas-from-notion.js",
+    "prefill:areas": "node scripts/prefill-areas.js"
   },
   "dependencies": {
     "@notionhq/client": "^5.26.0"

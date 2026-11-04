@@ -32,7 +32,7 @@
 <meta name="twitter:image" content="https://walkietalkies.warface.co.uk/assets/social/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Azeret+Mono:wght@400;500;600&family=Gasoek+One&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Azeret+Mono:wght@400;500;600&family=Gasoek+One&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
@@ -49,7 +49,9 @@
           display: ['"Gasoek One"', 'Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
           logo: ['"Kura Rounded"', 'Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
           sans: ['Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
-          mono: ['"Azeret Mono"', 'ui-monospace', 'Menlo', 'monospace']
+          mono: ['"Azeret Mono"', 'ui-monospace', 'Menlo', 'monospace'],
+          // Body copy (descriptions, area intros/history) — UI text stays Inter.
+          serif: ['Newsreader', 'Georgia', 'Times New Roman', 'serif']
         }
       }
     }
@@ -155,13 +157,13 @@
     <div class="min-w-0">
       <img id="areaHeroImage" class="hidden w-full h-[200px] sm:h-[320px] object-cover rounded-[18px] mb-6 border border-rule" alt="">
       <h2 id="areaHeroTitle" class="font-display tracking-[-0.02em]">Forest Hill</h2>
-      <p id="areaHeroDesc" class="text-[15px] sm:text-[16px] leading-[1.55] mt-3 max-w-[62ch] opacity-90"></p>
+      <p id="areaHeroDesc" class="font-serif text-[18px] sm:text-[19px] leading-[1.55] mt-3 max-w-[62ch] opacity-90"></p>
       <div id="areaHeroPostcodes" class="flex flex-wrap items-center gap-1.5 mt-3"></div>
       <div id="areaMap" class="hidden w-full h-[280px] sm:h-[380px] rounded-[18px] border border-rule mt-6 overflow-hidden"></div>
       <div id="areaHeroInfo" class="hidden mt-6 max-w-[62ch] border-t border-rule pt-5">
-        <p id="areaHeroOverview" class="text-[15px] leading-[1.6]"></p>
+        <p id="areaHeroOverview" class="font-serif text-[18px] leading-[1.6]"></p>
         <p class="eyebrow text-faint mt-5 mb-1.5">History</p>
-        <p id="areaHeroHistory" class="text-[15px] leading-[1.6]"></p>
+        <p id="areaHeroHistory" class="font-serif text-[18px] leading-[1.6]"></p>
       </div>
     </div>
   </section>
@@ -171,14 +173,14 @@
        Reached from the round button at the end of the homepage carousel. -->
   <section id="discoverHero" class="hidden mx-auto max-w-[1280px] px-5 sm:px-8 pt-8 pb-4 sm:pb-2">
     <h2 class="font-display tracking-[-0.02em] text-[40px] sm:text-[56px] leading-none">Discover</h2>
-    <p class="text-[15px] sm:text-[16px] leading-[1.55] mt-3 max-w-[62ch] text-muted">Every area, category and stop in the gazetteer, in one place.</p>
+    <p class="font-serif text-[18px] sm:text-[19px] leading-[1.55] mt-3 max-w-[62ch] text-muted">Every area, category and stop in the gazetteer, in one place.</p>
     <div id="discoverAreas" class="area-cards scroll-hide mt-8"></div>
   </section>
 
   <!-- Intro -->
   <section id="introSection" class="mx-auto max-w-[1280px] px-5 sm:px-8 pt-6 pb-4 sm:pb-6">
     <!-- Placeholder for the homepage intro copy — swap this back in later. -->
-    <p id="homeIntro" class="text-[15px] sm:text-[16px] leading-[1.55] text-muted max-w-[62ch] mb-4"></p>
+    <p id="homeIntro" class="font-serif text-[18px] sm:text-[19px] leading-[1.55] text-muted max-w-[62ch] mb-4"></p>
     <div class="-mx-5 sm:mx-0">
       <div id="areaChips" class="sm:px-0">
         <div class="area-rows">
