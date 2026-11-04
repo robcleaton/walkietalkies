@@ -1,0 +1,128 @@
+{
+  "horniman-conservatory": {
+    "hash": "2e0c4fab7441c0f1",
+    "voice": "Xb7hH8MSUJpSbSDYk0k2",
+    "model": "eleven_multilingual_v2",
+    "chars": 828
+  },
+  "horniman": {
+    "hash": "21d6144783b8a481",
+    "voice": "Xb7hH8MSUJpSbSDYk0k2",
+    "model": "eleven_multilingual_v2",
+    "chars": 329
+  },
+  "blythe-hill-tavern": {
+    "hash": "8835ca3b8c072010",
+    "voice": "Xb7hH8MSUJpSbSDYk0k2",
+    "model": "eleven_multilingual_v2",
+    "chars": 335
+  },
+  "forest-hill-mural": {
+    "hash": "e0617a81d1c74586",
+    "voice": "Xb7hH8MSUJpSbSDYk0k2",
+    "model": "eleven_multilingual_v2",
+    "chars": 409
+  },
+  "sylvan-post": {
+    "hash": "dde05c8c5b247dd5",
+    "voice": "Xb7hH8MSUJpSbSDYk0k2",
+    "model": "eleven_multilingual_v2",
+    "chars": 359
+  },
+  "parris-cues": {
+    "hash": "7b2cf4e251414284",
+    "voice": "Xb7hH8MSUJpSbSDYk0k2",
+    "model": "eleven_multilingual_v2",
+    "chars": 481
+  },
+  "the-capitol-forest-hill": {
+    "hash": "79560b4245a50f46",
+    "voice": "Xb7hH8MSUJpSbSDYk0k2",
+    "model": "eleven_multilingual_v2",
+    "chars": 471
+  },
+  "louise-house": {
+    "hash": "1e4e0fb709c3f0d4",
+    "voice": "Xb7hH8MSUJpSbSDYk0k2",
+    "model": "eleven_multilingual_v2",
+    "chars": 573
+  },
+  "forest-hill-pools": {
+    "hash": "558fcc8a35015bbb",
+    "voice": "Xb7hH8MSUJpSbSDYk0k2",
+    "model": "eleven_multilingual_v2",
+    "chars": 393
+  },
+  "forest-hill-library": {
+    "hash": "7ba2eb1b36f6404d",
+    "voice": "Xb7hH8MSUJpSbSDYk0k2",
+    "model": "eleven_multilingual_v2",
+    "chars": 516
+  },
+  "havelock-walk": {
+    "hash": "caa5dadff6e9e10e",
+    "voice": "Xb7hH8MSUJpSbSDYk0k2",
+    "model": "eleven_multilingual_v2",
+    "chars": 862
+  },
+  "stanhope-forest-hill-walrus": {
+    "hash": "731b1e2b81e94e1e",
+    "voice": "Xb7hH8MSUJpSbSDYk0k2",
+    "model": "eleven_multilingual_v2",
+    "chars": 473
+  },
+  "dacres-wood-nature-reserve": {
+    "hash": "dc4fc4c53aea004d",
+    "voice": "Xb7hH8MSUJpSbSDYk0k2",
+    "model": "eleven_multilingual_v2",
+    "chars": 257
+  },
+  "jon-robyns": {
+    "hash": "f453418fddf26ab9",
+    "voice": "Xb7hH8MSUJpSbSDYk0k2",
+    "model": "eleven_multilingual_v2",
+    "chars": 92
+  },
+  "michael-gambon-forest-hill": {
+    "hash": "28c3ec41c1b0148b",
+    "voice": "Xb7hH8MSUJpSbSDYk0k2",
+    "model": "eleven_multilingual_v2",
+    "chars": 182
+  },
+  "rachael-wooding": {
+    "hash": "a05af2e667de7c4e",
+    "voice": "Xb7hH8MSUJpSbSDYk0k2",
+    "model": "eleven_multilingual_v2",
+    "chars": 106
+  },
+  "raymond-chandler": {
+    "hash": "d234b3733b970684",
+    "voice": "Xb7hH8MSUJpSbSDYk0k2",
+    "model": "eleven_multilingual_v2",
+    "chars": 212
+  },
+  "blythe-hill-fields": {
+    "hash": "b582d508ae10cb7c",
+    "voice": "Xb7hH8MSUJpSbSDYk0k2",
+    "model": "eleven_multilingual_v2",
+    "chars": 714
+  },
+  "taymount-grange": {
+    "hash": "cabea5d356966f9a",
+    "voice": "Xb7hH8MSUJpSbSDYk0k2",
+    "model": "eleven_multilingual_v2",
+    "chars": 749
+  },
+  "ted-christmas": {
+    "hash": "e0f8372cf54006f2",
+    "voice": "Xb7hH8MSUJpSbSDYk0k2",
+    "model": "eleven_multilingual_v2",
+    "chars": 857
+  },
+  "e-w-swanton": {
+    "hash": "2e7cf2ce417b513d",
+    "voice": "Xb7hH8MSUJpSbSDYk0k2",
+    "model": "eleven_multilingual_v2",
+    "chars": 182
+  }
+}

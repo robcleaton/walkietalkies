@@ -440,7 +440,7 @@
         // End of the carousel: a big round button through to the Discover
         // page, where everything the 10 random cards are sampled from lives.
         '<div class="h-[400px] shrink-0 flex items-center px-4 sm:px-8">' +
-          '<a href="?view=discover" data-discover aria-label="Discover all areas, categories and stops" class="inline-flex items-center justify-center w-[96px] h-[96px] sm:w-[112px] sm:h-[112px] rounded-full bg-marigold text-[#171717] transition-transform hover:scale-105">' +
+          '<a href="?view=discover" data-discover aria-label="Discover all areas, categories and stops" class="inline-flex items-center justify-center w-[96px] h-[96px] sm:w-[112px] sm:h-[112px] rounded-full bg-surface border border-rule text-white transition-transform hover:scale-105 hover:border-ink">' +
             '<svg class="lucide lucide-arrow-right w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>' +
           '</a>' +
         '</div>';
@@ -588,19 +588,22 @@
     // needs, so short names don't leave a gap above a pinned address.
     return '' +
       '<article id="stop-' + s.id + '" class="stop px-5 py-5' + (compact ? ' h-full flex flex-col' : '') + '">' +
-        // Image and route button share the top row; the category chip and
-        // title get their own full-width lines beneath, so long names never
-        // run into the button.
+        // Image, plus the listen/route buttons, share the top row; the
+        // category chip and title get their own full-width lines beneath,
+        // so long names never run into the buttons.
         '<div class="flex items-start justify-between gap-4' + (compact ? ' shrink-0' : '') + '">' +
           (s.img ? '<button type="button" data-lightbox="' + bigImg(s.img) + '" data-lightbox-fallback="' + s.img + '" data-lightbox-alt="' + plain(s.name) + '" class="shrink-0 rounded-lg" aria-label="View larger image of ' + plain(s.name) + '">' +
             '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.closest(\'button\').remove()" class="w-14 h-14 rounded-lg object-cover border border-rule">' +
           '</button>' : '') +
+          '<div class="ml-auto shrink-0 flex items-center gap-2">' +
+          listenButtonHTML(s) +
           (hasLoc ?
-            '<button data-toggle="' + s.id + '" class="ml-auto shrink-0 inline-flex items-center gap-1 text-[12px] font-semibold px-3 py-2 rounded-full border transition-colors ' +
+            '<button data-toggle="' + s.id + '" class="shrink-0 inline-flex items-center gap-1 text-[12px] font-semibold px-3 py-2 rounded-full border transition-colors ' +
               (on ? 'bg-verdigris text-white border-verdigris' : 'border-rule text-ink hover:border-ink') + '">' +
               (on ? 'Stop ' + pos + ' <svg class="lucide lucide-check w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>' : 'Add to route') +
             '</button>'
-          : '<button disabled title="This stop doesn&rsquo;t have a location yet, so it can&rsquo;t be added to a route." class="ml-auto shrink-0 inline-flex items-center text-[12px] font-semibold px-3 py-2 rounded-full border border-rule text-faint opacity-60 cursor-not-allowed">Not mapped yet</button>') +
+          : '<button disabled title="This stop doesn&rsquo;t have a location yet, so it can&rsquo;t be added to a route." class="shrink-0 inline-flex items-center text-[12px] font-semibold px-3 py-2 rounded-full border border-rule text-faint opacity-60 cursor-not-allowed">Not mapped yet</button>') +
+          '</div>' +
         '</div>' +
         '<div class="min-w-0 mt-3' + (compact ? ' shrink-0' : '') + '">' +
           '<div class="mb-2">' + catChip(s.cat) + '</div>' +
@@ -688,6 +691,8 @@
       if (!btn) return;
       var s = byId[btn.getAttribute('data-speak')];
       var synth = window.speechSynthesis;
+      // Don't talk over a card's ElevenLabs narration (see Narration below).
+      if (typeof narrationAudio !== 'undefined' && narrationAudio) narrationAudio.pause();
 
       if (speakingBtn === btn && synth.speaking && !synth.paused) {
         synth.pause();
@@ -779,12 +784,7 @@
           '<div class="min-w-0 flex-1">' +
             '<p class="text-[14px] font-semibold leading-tight">' + s.name + '</p>' +
             '<p class="font-mono text-[11px] text-faint mt-0.5">' + s.pc + ' &middot; ' + s.area + '</p>' +
-            (s.id === 'horniman' && window.speechSynthesis ?
-              '<button data-speak="' + id + '" aria-pressed="false" class="listen-btn mt-1.5 inline-flex items-center gap-1.5 text-[11px] font-semibold text-verdigris border border-verdigris/40 rounded-full pl-1.5 pr-2.5 py-1 hover:bg-verdigris/10 transition-colors" aria-label="Listen to a description of ' + plain(s.name) + '">' +
-                '<span class="listen-btn__icon inline-flex items-center justify-center w-4 h-4">' + SPEAK_ICON_PLAY + '</span>' +
-                '<span class="listen-btn__label">Listen</span>' +
-              '</button>'
-            : '') +
+            (narrationFiles[s.id] ? '<div class="mt-1.5">' + listenButtonHTML(s, true) + '</div>' : '') +
           '</div>' +
           '<div class="shrink-0 flex items-start gap-1">' +
             '<button data-move="' + id + '" data-dir="-1" class="w-6 h-6 rounded border border-rule text-muted hover:text-ink hover:border-ink inline-flex items-center justify-center disabled:opacity-25" ' + (i === 0 ? 'disabled' : '') + ' aria-label="Move ' + plain(s.name) + ' earlier">' +
@@ -1492,6 +1492,80 @@
   function esc(s) {
     return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
+
+  /* ---------------------------------------------------------------
+     Narration — ElevenLabs MP3s made by scripts/generate-audio.js. Its
+     assets/audio/manifest.json lists which stops have one; those cards
+     get a Listen button. One shared <audio>, so starting a stop stops
+     whatever was playing before.
+  --------------------------------------------------------------- */
+  var narrationFiles = {}; // stop id → manifest entry
+  var narrationAudio = new Audio();
+  narrationAudio.preload = 'none';
+  var narrationId = null; // stop currently loaded into narrationAudio
+
+  var ICON_PLAY = '<svg class="w-3.5 h-3.5 translate-x-px" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg>';
+  var ICON_PAUSE = '<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>';
+
+  function isNarrating(id) { return narrationId === id && !narrationAudio.paused; }
+
+  function listenButtonInner(id) {
+    // Icon only — the button's aria-label carries the words.
+    return isNarrating(id) ? ICON_PAUSE : ICON_PLAY;
+  }
+
+  // small: the compact version for the route panel's stop list.
+  function listenButtonHTML(s, small) {
+    if (!narrationFiles[s.id]) return '';
+    var playing = isNarrating(s.id);
+    return '<button type="button" data-listen="' + s.id + '" aria-pressed="' + playing + '" aria-label="' + (playing ? 'Pause' : 'Listen to') + ' ' + plain(s.name) + '" ' +
+      'class="shrink-0 inline-flex items-center justify-center ' + (small ? 'w-7 h-7' : 'w-9 h-9') + ' rounded-full border border-rule text-ink hover:border-ink transition-colors">' +
+      listenButtonInner(s.id) +
+    '</button>';
+  }
+
+  // Updates every Listen button in place rather than re-rendering the
+  // lists, so carousels keep their scroll position while audio plays.
+  function syncListenButtons() {
+    Array.prototype.forEach.call(document.querySelectorAll('[data-listen]'), function (btn) {
+      var id = btn.getAttribute('data-listen');
+      var playing = isNarrating(id);
+      btn.innerHTML = listenButtonInner(id);
+      btn.setAttribute('aria-pressed', String(playing));
+      btn.setAttribute('aria-label', (playing ? 'Pause' : 'Listen to') + ' ' + plain((byId[id] && byId[id].name) || ''));
+    });
+  }
+
+  function toggleNarration(id) {
+    if (isNarrating(id)) { narrationAudio.pause(); return; }
+    // The route panel's browser-voice Listen and this shouldn't talk over each other.
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+    if (narrationId !== id) {
+      narrationId = id;
+      // The manifest hash changes whenever the file is regenerated, so it
+      // doubles as a cache-buster for browsers holding an old version.
+      narrationAudio.src = 'assets/audio/' + id + '.mp3?v=' + (narrationFiles[id].hash || '');
+    }
+    narrationAudio.play().catch(function () { syncListenButtons(); });
+  }
+
+  ['play', 'pause', 'ended', 'error'].forEach(function (ev) {
+    narrationAudio.addEventListener(ev, syncListenButtons);
+  });
+  narrationAudio.addEventListener('ended', function () { narrationAudio.currentTime = 0; });
+
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-listen]');
+    if (b) toggleNarration(b.getAttribute('data-listen'));
+  });
+
+  fetch('assets/audio/manifest.json', { cache: 'no-cache' })
+    .then(function (r) { return r.ok ? r.json() : {}; })
+    .then(function (m) {
+      narrationFiles = m || {};
+      if (Object.keys(narrationFiles).length) { renderList(); renderRoute(); }
+    })
+    .catch(function () { /* no narration yet — cards just don't get a Listen button */ });
 
   /* ---------------------------------------------------------------
      Image lightbox — tap a stop's thumbnail (stopHTML's [data-lightbox]

@@ -4,7 +4,8 @@
   "scripts": {
     "export": "node scripts/export-from-notion.js",
     "export:areas": "node scripts/export-areas-from-notion.js",
-    "prefill:areas": "node scripts/prefill-areas.js"
+    "prefill:areas": "node scripts/prefill-areas.js",
+    "audio": "node scripts/generate-audio.js"
   },
   "dependencies": {
     "@notionhq/client": "^5.26.0"
