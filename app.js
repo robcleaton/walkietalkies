@@ -1536,23 +1536,56 @@
     });
   }
 
+  // The WalkieTalkies signature sound plays before every clip. It goes
+  // through the same <audio> as the narration (swapping src when it ends)
+  // rather than a second element, because mobile Safari only lets an
+  // element play without a tap once a tap has started it.
+  var SIGNATURE_SRC = 'assets/signature.mp3';
+  var inSignature = false; // narrationAudio is playing the signature, the clip comes next
+
+  function narrationSrc(id) {
+    // The manifest hash changes whenever the file is regenerated, so it
+    // doubles as a cache-buster for browsers holding an old version.
+    return 'assets/audio/' + id + '.mp3?v=' + (narrationFiles[id].hash || '');
+  }
+
+  function playNarration() {
+    narrationAudio.play().catch(function () { syncListenButtons(); });
+  }
+
+  // Signature over (or failed to load): on to the stop's clip.
+  function startClipAfterSignature() {
+    inSignature = false;
+    narrationAudio.src = narrationSrc(narrationId);
+    playNarration();
+  }
+
   function toggleNarration(id) {
     if (isNarrating(id)) { narrationAudio.pause(); return; }
     // The route panel's browser-voice Listen and this shouldn't talk over each other.
     if (window.speechSynthesis) window.speechSynthesis.cancel();
+    // A new stop, or one that played to the end, starts again with the
+    // signature; a paused one resumes where it was (signature or clip).
     if (narrationId !== id) {
       narrationId = id;
-      // The manifest hash changes whenever the file is regenerated, so it
-      // doubles as a cache-buster for browsers holding an old version.
-      narrationAudio.src = 'assets/audio/' + id + '.mp3?v=' + (narrationFiles[id].hash || '');
+      inSignature = true;
+      narrationAudio.src = SIGNATURE_SRC;
     }
-    narrationAudio.play().catch(function () { syncListenButtons(); });
+    playNarration();
   }
 
+  // Registered before syncListenButtons so the buttons never flash back
+  // to Play in the gap between the signature and the clip.
+  narrationAudio.addEventListener('ended', function () {
+    if (inSignature) startClipAfterSignature();
+    else narrationId = null; // finished — the next Listen starts from the signature
+  });
+  narrationAudio.addEventListener('error', function () {
+    if (inSignature) startClipAfterSignature();
+  });
   ['play', 'pause', 'ended', 'error'].forEach(function (ev) {
     narrationAudio.addEventListener(ev, syncListenButtons);
   });
-  narrationAudio.addEventListener('ended', function () { narrationAudio.currentTime = 0; });
 
   document.addEventListener('click', function (e) {
     var b = e.target.closest('[data-listen]');
@@ -1563,7 +1596,11 @@
     .then(function (r) { return r.ok ? r.json() : {}; })
     .then(function (m) {
       narrationFiles = m || {};
-      if (Object.keys(narrationFiles).length) { renderList(); renderRoute(); }
+      if (Object.keys(narrationFiles).length) {
+        renderList(); renderRoute();
+        // Warm the cache so the first Listen doesn't wait on the signature.
+        fetch(SIGNATURE_SRC).catch(function () {});
+      }
     })
     .catch(function () { /* no narration yet — cards just don't get a Listen button */ });
 
