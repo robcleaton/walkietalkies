@@ -354,19 +354,17 @@
                #routeList's innerHTML on every change, which would wipe
                out the stats/Clear-route box and the Leaflet map if either
                lived inside that element. -->
-          <div id="routeScroll" class="overflow-y-auto flex-1 min-h-0 max-h-[46vh] lg:max-h-[calc(100vh-var(--header-h,84px)-360px)]">
-            <div class="grid grid-cols-2 gap-px bg-rule border border-rule rounded-[14px] overflow-hidden mx-5 mt-1 lg:mt-4">
-              <div class="bg-surface px-3 py-2.5">
-                <p class="font-mono num text-[19px] leading-none" id="routeDist">0.0 km</p>
-                <p class="eyebrow text-faint mt-1.5">Point to point</p>
-              </div>
-              <div class="bg-surface px-3 py-2.5">
-                <p class="font-mono num text-[19px] leading-none" id="routeTime">&mdash;</p>
-                <p class="eyebrow text-faint mt-1.5">On foot</p>
-              </div>
-              <button id="clearBtn" class="col-span-2 bg-surface px-3 py-2 eyebrow text-faint text-center underline underline-offset-2 hover:text-ink transition-colors">Clear route</button>
+          <!-- List / Map switch (see setRouteView() in app.js). Hidden while
+               the route is empty, when there's only the empty-state list. -->
+          <div id="routeViewTabs" class="px-5 pt-1 pb-3 lg:pt-4" role="tablist" aria-label="Route view">
+            <div class="flex p-1 rounded-full border border-rule bg-surface">
+              <button type="button" role="tab" data-route-view="list" aria-selected="true" class="route-view-tab flex-1 rounded-full py-1.5 text-[13px] font-semibold transition-colors">List</button>
+              <button type="button" role="tab" data-route-view="map" aria-selected="false" class="route-view-tab flex-1 rounded-full py-1.5 text-[13px] font-semibold transition-colors">Map</button>
             </div>
-            <div id="routeMap" class="hidden h-[160px] rounded-[14px] overflow-hidden border border-rule mx-5 mt-4"></div>
+          </div>
+
+          <div id="routeScroll" class="overflow-y-auto flex-1 min-h-0 max-h-[46vh] lg:max-h-[calc(100vh-var(--header-h,84px)-400px)]">
+            <div id="routeMap" class="hidden rounded-[14px] overflow-hidden border border-rule mx-5 mb-4"></div>
             <div id="routeList"></div>
           </div>
 

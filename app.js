@@ -143,7 +143,6 @@
     return total;
   }
 
-  function pad(n) { return n < 10 ? '0' + n : '' + n; }
 
   /* ---------------------------------------------------------------
      Route map (Leaflet + OpenStreetMap) — a small preview of the
@@ -151,6 +150,35 @@
   --------------------------------------------------------------- */
   var routeMapEl = document.getElementById('routeMap');
   var routeMap = null, routeMapLayer = null;
+
+  // Your route's List / Map switch. An empty route always shows the list
+  // (its empty-state message) and hides the switch.
+  var routeView = 'list';
+  var routePanelViewEl = document.getElementById('routePanel');
+  var routeViewTabsEl = document.getElementById('routeViewTabs');
+
+  function applyRouteView() {
+    var empty = route.length === 0;
+    var view = empty ? 'list' : routeView;
+    routeViewTabsEl.classList.toggle('hidden', empty);
+    routePanelViewEl.setAttribute('data-view', view);
+    Array.prototype.forEach.call(routeViewTabsEl.querySelectorAll('[data-route-view]'), function (tab) {
+      tab.setAttribute('aria-selected', String(tab.getAttribute('data-route-view') === view));
+    });
+  }
+
+  function setRouteView(view) {
+    if (view === routeView) return;
+    routeView = view;
+    applyRouteView();
+    // The map was display:none while the list showed — resize and refit it.
+    if (view === 'map') renderRouteMap();
+  }
+
+  routeViewTabsEl.addEventListener('click', function (e) {
+    var tab = e.target.closest('[data-route-view]');
+    if (tab) setRouteView(tab.getAttribute('data-route-view'));
+  });
 
   function renderRouteMap() {
     var n = route.length;
@@ -315,11 +343,6 @@
     var tmp = route[i]; route[i] = route[j]; route[j] = tmp;
     seeded = false;
     persist(); renderRoute();
-  }
-
-  function clearRoute() {
-    route = []; seeded = false;
-    persist(); renderRoute(); renderList();
   }
 
   /* ---------------------------------------------------------------
@@ -731,12 +754,9 @@
     currentUtterance = null;
     var n = route.length;
     var km = routeKm();
-    var mins = Math.round((km / 4.8) * 60);
 
     document.getElementById('routeMeta').textContent =
       n === 0 ? 'No stops yet' : n + (n === 1 ? ' stop' : ' stops');
-    document.getElementById('routeDist').textContent = km.toFixed(1) + ' km';
-    document.getElementById('routeTime').textContent = n < 2 ? '—' : (mins >= 60 ? Math.floor(mins / 60) + 'h ' + pad(mins % 60) : mins + ' min');
     document.getElementById('barLabel').textContent =
       n === 0 ? 'Empty — add a stop' : n + (n === 1 ? ' stop' : ' stops') + ' · ' + km.toFixed(1) + ' km';
 
@@ -757,6 +777,7 @@
         route.slice(0, 10).map(function (id) { return byId[id].lat + ',' + byId[id].lon; }).join('/') + '/data=!4m2!4m1!3e2';
     }
 
+    applyRouteView();
     renderRouteMap();
 
     if (n === 0) {
@@ -771,7 +792,7 @@
     var html = '';
     if (seeded) {
       html += '<p class="px-5 pt-4 pb-1 text-[12px] leading-relaxed text-brass">' +
-              'Starter route: a Greenwich morning, riverside first, uphill last. Clear it and build your own.</p>';
+              'Starter route: a Greenwich morning, riverside first, uphill last. Remove stops with &times; and build your own.</p>';
     }
     route.forEach(function (id, i) {
       var s = byId[id];
@@ -1257,7 +1278,6 @@
     else clearAreaFilter();
   });
 
-  document.getElementById('clearBtn').addEventListener('click', clearRoute);
 
   // Route panel: a bottom sheet on small screens, a dropdown menu off the
   // header button on larger ones — same open/closed state either way.
@@ -1329,6 +1349,9 @@
   // the scrim for this, but the desktop dropdown has no full-screen scrim)
   document.addEventListener('click', function (e) {
     if (!root.classList.contains('route-open')) return;
+    // A remove (×) or move button re-renders #routeList before this runs,
+    // so the clicked button is already detached and would look "outside".
+    if (!e.target.isConnected) return;
     if (routePanelEl.contains(e.target) || routeHeaderBtn.contains(e.target)) return;
     openSheet(false);
   });

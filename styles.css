@@ -336,6 +336,16 @@
     --rule:rgba(23,23,23,.2); --surface:rgba(255,255,255,.4);
   }
 
+  /* Your route: List / Map views. #routePanel carries the current view
+     in data-view (setRouteView() in app.js); the map fills the space the
+     list would otherwise scroll in. */
+  .route-view-tab{ color:var(--muted); }
+  .route-view-tab[aria-selected="true"]{ background:var(--ink); color:#fff; }
+  #routePanel[data-view="list"] #routeMap{ display:none; }
+  #routePanel[data-view="map"] #routeList{ display:none; }
+  #routeMap{ height:min(42vh, 380px); }
+  @media (min-width:1024px){ #routeMap{ height:calc(100vh - var(--header-h, 84px) - 420px); min-height:260px; max-height:420px; } }
+
   /* Route sheet on small screens */
   #routePanel{ transition:transform .34s cubic-bezier(.32,.72,0,1), visibility 0s linear .34s; }
   @media (max-width:1023px){
