@@ -60,6 +60,20 @@
   /* Gazetteer entries: hairline separated, not stamped cards */
   .stop{ background:var(--surface); border:1px solid var(--rule); border-radius:16px; }
   .stop.flash{ animation:flash 1.6s ease-out; }
+  /* Narration playbar (playbarHTML() in app.js). On a card it sits in the
+     bottom padding, so showing it doesn't move anything. */
+  .playbar{ display:flex; align-items:center; gap:8px; font-family:"Azeret Mono", ui-monospace, monospace; font-size:10px; line-height:1; color:var(--muted); }
+  .playbar[hidden]{ display:none; }
+  .stop > .playbar{ position:absolute; left:20px; right:20px; bottom:6px; }
+  /* Full-height list cards end on the address line; give the bar room
+     below it. (Fixed-height carousel cards keep it in their padding.) */
+  .stop:not(.h-full):has(> .playbar:not([hidden])){ padding-bottom:36px; }
+  .stop:not(.h-full) > .playbar{ bottom:14px; }
+  .playbar--inline{ margin-top:8px; }
+  .playbar__track{ position:relative; flex:1; height:4px; border-radius:4px; background:var(--rule); cursor:pointer; touch-action:none; }
+  .playbar__track::before{ content:""; position:absolute; left:0; right:0; top:-8px; bottom:-8px; } /* bigger tap target */
+  .playbar__track:focus-visible{ outline:2px solid var(--ink); outline-offset:4px; }
+  .playbar__fill{ position:absolute; inset:0; border-radius:inherit; background:var(--ink); transform-origin:left center; }
   @keyframes flash{ 0%{ background:var(--plaque-soft);} 100%{ background:var(--surface); } }
 
   /* Category filter chips: colour, icon, name and count all in one line —
@@ -336,14 +350,42 @@
     --rule:rgba(23,23,23,.2); --surface:rgba(255,255,255,.4);
   }
 
-  /* Your route: List / Map views. #routePanel carries the current view
-     in data-view (setRouteView() in app.js); the map fills the space the
-     list would otherwise scroll in. */
-  .route-view-tab{ color:var(--muted); }
-  .route-view-tab[aria-selected="true"]{ background:var(--ink); color:#fff; }
+  /* A route stop's ⋯ menu (openRouteMenu() in app.js). Lives in <body>,
+     so it's styled outright rather than from the panel's tokens. */
+  #routeItemMenu{
+    position:fixed; z-index:70; min-width:168px; padding:6px;
+    background:#171717; color:#fff; border-radius:14px;
+    box-shadow:0 12px 32px -8px rgba(0,0,0,.45);
+  }
+  #routeItemMenu[hidden]{ display:none; }
+  #routeItemMenu button{
+    display:flex; align-items:center; gap:10px; width:100%;
+    padding:9px 10px; border-radius:9px; text-align:left;
+    font-size:14px; font-weight:600;
+  }
+  #routeItemMenu button:hover:not([disabled]), #routeItemMenu button:focus-visible{ background:rgba(255,255,255,.1); outline:none; }
+  #routeItemMenu button[disabled]{ opacity:.35; cursor:default; }
+  #routeItemMenu button[data-toggle]{ color:var(--marigold); }
+  /* A route stop that's playing: its Pause button inverts to black with an
+     orange icon (aria-pressed is kept in sync by syncListenButtons()). */
+  #routePanel [data-listen][aria-pressed="true"]{ background:#171717; border-color:#171717; color:var(--marigold); }
+  /* Your route: list or map. #routePanel carries the current view in
+     data-view (setRouteView() in app.js); the map fills the space the
+     list would otherwise scroll in. The Map toggle by the panel's
+     chevron has the Listen buttons' outline, inverted while the map is showing. */
+  .route-map-toggle{ border:1px solid var(--rule); color:var(--ink); transition:border-color .15s; }
+  .route-map-toggle:hover{ border-color:var(--ink); }
+  .route-map-toggle:not(.hidden){ display:inline-flex; }
+  /* Desktop header version: matches #sheetClose beside it. */
+  .route-map-toggle--quiet{ border:1px solid var(--rule); color:var(--muted); }
+  .route-map-toggle--quiet:hover{ border-color:var(--ink); color:var(--ink); }
+  .route-map-toggle[aria-pressed="true"]{ background:#171717; border-color:#171717; color:var(--marigold); }
   #routePanel[data-view="list"] #routeMap{ display:none; }
   #routePanel[data-view="map"] #routeList{ display:none; }
   #routeMap{ height:min(42vh, 380px); }
+  /* The incoming view fades up as the drawer resizes (animateRouteViewChange()) */
+  #routeScroll.route-view-enter > #routeMap, #routeScroll.route-view-enter > #routeList{ animation:route-view-in .32s ease-out both; }
+  @keyframes route-view-in{ from{ opacity:0; transform:translateY(6px); } to{ opacity:1; transform:none; } }
   @media (min-width:1024px){ #routeMap{ height:calc(100vh - var(--header-h, 84px) - 420px); min-height:260px; max-height:420px; } }
 
   /* Route sheet on small screens */
@@ -404,6 +446,7 @@
   }
   @media (prefers-reduced-motion: reduce){
     #routePanel, #routePanelBody, #routeBarChevron{ transition:none; }
+    #routeScroll.route-view-enter > *{ animation:none; }
     .stop.flash{ animation:none; }
   }
   ::-webkit-scrollbar{ width:10px; height:10px; }

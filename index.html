@@ -100,7 +100,7 @@
         <label id="searchLabel" class="hidden sm:flex flex-1 sm:flex-initial min-w-0 relative">
           <span class="sr-only">Search stops</span>
           <input id="search" type="search" placeholder="Search a person, place or street&hellip;"
-            class="w-full sm:w-[260px] bg-raised border border-rule rounded-full px-4 py-2.5 text-[16px] sm:text-[14px] placeholder:text-faint text-ink">
+            class="w-full sm:w-[260px] h-10 sm:h-auto bg-raised border border-rule rounded-full px-4 py-0 sm:py-2.5 text-[16px] sm:text-[14px] placeholder:text-faint text-ink">
         </label>
         <button id="searchToggle" class="sm:hidden shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full border border-rule text-muted hover:text-ink hover:border-ink transition-colors" aria-label="Search" aria-expanded="false">
           <span id="searchToggleIcon" class="inline-flex items-center justify-center w-5 h-5">
@@ -317,7 +317,10 @@
              sliding in over the first. Hidden on desktop (lg:hidden),
              where #routeHeaderBtn in the header opens the dropdown
              instead. -->
-        <button id="routeBar" class="lg:hidden shrink-0 px-5 py-3.5 flex items-center justify-between gap-4 text-left" aria-label="Open route panel" aria-expanded="false">
+        <!-- The Map button sits over #routeBar, just left of its chevron,
+             as a sibling rather than inside it (a button can't hold one). -->
+        <div class="relative lg:hidden shrink-0">
+        <button id="routeBar" class="w-full px-5 py-3.5 flex items-center justify-between gap-4 text-left" aria-label="Open route panel" aria-expanded="false">
           <span>
             <span class="eyebrow opacity-60 block">Your route</span>
             <span class="text-[15px] font-semibold" id="barLabel">5 stops &middot; 2.1 km</span>
@@ -327,6 +330,10 @@
             <path d="m8 14 4-4 4 4" />
           </svg>
         </button>
+        <button type="button" data-route-map-toggle aria-pressed="false" aria-label="Show the route map" class="route-map-toggle hidden absolute top-1/2 -translate-y-1/2 right-[60px] w-7 h-7 rounded-full items-center justify-center">
+          <svg class="lucide lucide-map w-[15px] h-[15px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg>
+        </button>
+        </div>
         <div id="routePanelBody" class="flex flex-col min-h-0">
           <!-- Desktop-only — on mobile #routeBar above already covers the
                title, stop count and open/close control, and the overview
@@ -340,12 +347,17 @@
                 <h2 id="routePanelTitle" class="font-display text-[24px] leading-none">Your route</h2>
                 <p class="eyebrow text-faint mt-2" id="routeMeta">No stops yet</p>
               </div>
+              <div class="shrink-0 flex items-center gap-2">
+              <button type="button" data-route-map-toggle aria-pressed="false" aria-label="Show the route map" class="route-map-toggle route-map-toggle--quiet hidden w-9 h-9 rounded-full items-center justify-center transition-colors">
+                <svg class="lucide lucide-map w-[17px] h-[17px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg>
+              </button>
               <button id="sheetClose" class="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full border border-rule text-muted hover:text-ink hover:border-ink transition-colors" aria-label="Close route panel">
                 <svg class="lucide lucide-circle-chevron-down w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <circle cx="12" cy="12" r="10" />
                   <path d="m16 10-4 4-4-4" />
                 </svg>
               </button>
+              </div>
             </div>
           </div>
 
@@ -354,23 +366,14 @@
                #routeList's innerHTML on every change, which would wipe
                out the stats/Clear-route box and the Leaflet map if either
                lived inside that element. -->
-          <!-- List / Map switch (see setRouteView() in app.js). Hidden while
-               the route is empty, when there's only the empty-state list. -->
-          <div id="routeViewTabs" class="px-5 pt-1 pb-3 lg:pt-4" role="tablist" aria-label="Route view">
-            <div class="flex p-1 rounded-full border border-rule bg-surface">
-              <button type="button" role="tab" data-route-view="list" aria-selected="true" class="route-view-tab flex-1 rounded-full py-1.5 text-[13px] font-semibold transition-colors">List</button>
-              <button type="button" role="tab" data-route-view="map" aria-selected="false" class="route-view-tab flex-1 rounded-full py-1.5 text-[13px] font-semibold transition-colors">Map</button>
-            </div>
-          </div>
-
           <div id="routeScroll" class="overflow-y-auto flex-1 min-h-0 max-h-[46vh] lg:max-h-[calc(100vh-var(--header-h,84px)-400px)]">
-            <div id="routeMap" class="hidden rounded-[14px] overflow-hidden border border-rule mx-5 mb-4"></div>
+            <div id="routeMap" class="hidden rounded-[14px] overflow-hidden border border-rule mx-5 mt-1 mb-4 lg:mt-4"></div>
             <div id="routeList"></div>
           </div>
 
           <div class="px-5 py-4 border-t border-rule flex flex-col gap-2">
             <a id="mapsLink" href="#" target="_blank" rel="noopener"
-               class="text-center text-[13px] font-semibold py-2.5 rounded-full bg-plaque text-white hover:opacity-90 transition-opacity">Open the walk in Maps</a>
+               class="text-center text-[13px] font-semibold py-2.5 rounded-full bg-[#171717] text-white hover:opacity-90 transition-opacity">Open in Maps</a>
             <button id="gpxBtn" class="hidden w-full text-[13px] font-semibold py-2.5 rounded-full border border-rule text-ink hover:border-ink transition-colors">Save as GPX</button>
           </div>
         </div>

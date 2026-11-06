@@ -151,33 +151,83 @@
   var routeMapEl = document.getElementById('routeMap');
   var routeMap = null, routeMapLayer = null;
 
-  // Your route's List / Map switch. An empty route always shows the list
-  // (its empty-state message) and hides the switch.
+  // Your route shows its stop list or, toggled by the Map buttons by the
+  // panel's chevron (one in the mobile bar, one in the desktop header),
+  // just the route map. An empty route always shows the list (its
+  // empty-state message) and hides the buttons.
   var routeView = 'list';
   var routePanelViewEl = document.getElementById('routePanel');
-  var routeViewTabsEl = document.getElementById('routeViewTabs');
+  var routeMapToggles = document.querySelectorAll('[data-route-map-toggle]');
 
   function applyRouteView() {
     var empty = route.length === 0;
     var view = empty ? 'list' : routeView;
-    routeViewTabsEl.classList.toggle('hidden', empty);
     routePanelViewEl.setAttribute('data-view', view);
-    Array.prototype.forEach.call(routeViewTabsEl.querySelectorAll('[data-route-view]'), function (tab) {
-      tab.setAttribute('aria-selected', String(tab.getAttribute('data-route-view') === view));
+    Array.prototype.forEach.call(routeMapToggles, function (btn) {
+      btn.classList.toggle('hidden', empty);
+      btn.setAttribute('aria-pressed', String(view === 'map'));
+      btn.setAttribute('aria-label', view === 'map' ? 'Show the route list' : 'Show the route map');
     });
   }
 
   function setRouteView(view) {
     if (view === routeView) return;
     routeView = view;
-    applyRouteView();
-    // The map was display:none while the list showed — resize and refit it.
-    if (view === 'map') renderRouteMap();
+    animateRouteViewChange(function () {
+      applyRouteView();
+      // The map was display:none while the list showed — resize and refit it.
+      if (view === 'map') renderRouteMap();
+    });
   }
 
-  routeViewTabsEl.addEventListener('click', function (e) {
-    var tab = e.target.closest('[data-route-view]');
-    if (tab) setRouteView(tab.getAttribute('data-route-view'));
+  // List and map are different heights, so swapping them outright makes
+  // the drawer jump. Instead #routeScroll eases from the old height to the
+  // new one (with the drawer, bottom-anchored on mobile, following it)
+  // while the incoming view fades up. Skipped while the panel is closed
+  // and for reduced motion.
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var routeViewAnimEnd = null;
+  function animateRouteViewChange(change) {
+    var el = document.getElementById('routeScroll');
+    if (routeViewAnimEnd) routeViewAnimEnd();
+    if (reduceMotion.matches || !document.documentElement.classList.contains('route-open')) { change(); return; }
+
+    var from = el.offsetHeight;
+    change();
+    var to = el.offsetHeight;
+
+    el.classList.remove('route-view-enter');
+    el.style.height = from + 'px';
+    el.style.overflow = 'hidden';
+    void el.offsetHeight; // commit the starting height before transitioning
+    el.classList.add('route-view-enter');
+    el.style.transition = 'height .42s cubic-bezier(.32,.72,0,1)';
+    el.style.height = to + 'px';
+
+    var timer;
+    function end(e) {
+      if (e && (e.target !== el || e.propertyName !== 'height')) return;
+      clearTimeout(timer);
+      el.removeEventListener('transitionend', end);
+      el.style.height = el.style.overflow = el.style.transition = '';
+      routeViewAnimEnd = null;
+    }
+    el.addEventListener('transitionend', end);
+    timer = setTimeout(end, 600); // in case transitionend never fires (no height change)
+    routeViewAnimEnd = end;
+  }
+
+  Array.prototype.forEach.call(routeMapToggles, function (btn) {
+    btn.addEventListener('click', function () {
+      // From the closed mobile bar, open the sheet straight onto the map.
+      if (!document.documentElement.classList.contains('route-open')) {
+        routeOpenTrigger = btn;
+        setRouteView('map');
+        openSheet(true);
+        return;
+      }
+      setRouteView(routeView === 'map' ? 'list' : 'map');
+    });
   });
 
   function renderRouteMap() {
@@ -610,7 +660,8 @@
     // lines actually fit in the space left once the name has taken what it
     // needs, so short names don't leave a gap above a pinned address.
     return '' +
-      '<article id="stop-' + s.id + '" class="stop px-5 py-5' + (compact ? ' h-full flex flex-col' : '') + '">' +
+      '<article id="stop-' + s.id + '" class="stop relative px-5 py-5' + (compact ? ' h-full flex flex-col' : '') + '">' +
+        playbarHTML(s) +
         // Image, plus the listen/route buttons, share the top row; the
         // category chip and title get their own full-width lines beneath,
         // so long names never run into the buttons.
@@ -805,17 +856,12 @@
           '<div class="min-w-0 flex-1">' +
             '<p class="text-[14px] font-semibold leading-tight">' + s.name + '</p>' +
             '<p class="font-mono text-[11px] text-faint mt-0.5">' + s.pc + ' &middot; ' + s.area + '</p>' +
-            (narrationFiles[s.id] ? '<div class="mt-1.5">' + listenButtonHTML(s, true) + '</div>' : '') +
+            playbarHTML(s, true) +
           '</div>' +
-          '<div class="shrink-0 flex items-start gap-1">' +
-            '<button data-move="' + id + '" data-dir="-1" class="w-6 h-6 rounded border border-rule text-muted hover:text-ink hover:border-ink inline-flex items-center justify-center disabled:opacity-25" ' + (i === 0 ? 'disabled' : '') + ' aria-label="Move ' + plain(s.name) + ' earlier">' +
-              '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6L12 2L16 6" /><path d="M12 2V22" /></svg>' +
-            '</button>' +
-            '<button data-move="' + id + '" data-dir="1" class="w-6 h-6 rounded border border-rule text-muted hover:text-ink hover:border-ink inline-flex items-center justify-center disabled:opacity-25" ' + (i === route.length - 1 ? 'disabled' : '') + ' aria-label="Move ' + plain(s.name) + ' later">' +
-              '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 18L12 22L16 18" /><path d="M12 2V22" /></svg>' +
-            '</button>' +
-            '<button data-toggle="' + id + '" class="w-6 h-6 rounded border border-rule text-muted hover:text-ink hover:border-ink inline-flex items-center justify-center" aria-label="Remove ' + plain(s.name) + ' from route">' +
-              '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>' +
+          '<div class="shrink-0 self-center flex items-center gap-1">' +
+            (narrationFiles[s.id] ? listenButtonHTML(s, true) : '') +
+            '<button type="button" data-route-menu="' + id + '" aria-haspopup="menu" aria-expanded="false" aria-label="More actions for ' + plain(s.name) + '" class="w-7 h-7 rounded-full text-ink hover:bg-surface inline-flex items-center justify-center transition-colors">' +
+              '<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><circle cx="12" cy="5" r="1.75"/><circle cx="12" cy="12" r="1.75"/><circle cx="12" cy="19" r="1.75"/></svg>' +
             '</button>' +
           '</div>' +
         '</div>';
@@ -1295,6 +1341,7 @@
     );
   }
   function openSheet(v) {
+    if (!v && routeMenuEl) closeRouteMenu();
     var wasOpen = root.classList.contains('route-open');
     root.classList.toggle('route-open', v);
     document.getElementById('scrim').hidden = !v;
@@ -1345,6 +1392,118 @@
     if (willOpen) routeOpenTrigger = routeHeaderBtn;
     openSheet(willOpen);
   });
+  /* Route stop overflow menu — Move up / Move down / Remove, opened from a
+     stop's ⋯ button. One shared menu in <body>, position:fixed beside the
+     button: inside #routePanel it would be clipped by the panel's
+     overflow (and by #routeScroll's). Its items reuse the data-move /
+     data-toggle actions handled by the document click handler above. */
+  var routeMenuEl = document.createElement('div');
+  routeMenuEl.id = 'routeItemMenu';
+  routeMenuEl.setAttribute('role', 'menu');
+  routeMenuEl.hidden = true;
+  document.body.appendChild(routeMenuEl);
+  var routeScrollEl = document.getElementById('routeScroll');
+  var routeMenuFor = null; // stop id the open menu belongs to
+  var routeMenuIndex = 0; // …and its place in the route when it opened
+
+  var MENU_ICON_UP = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6L12 2L16 6" /><path d="M12 2V22" /></svg>';
+  var MENU_ICON_DOWN = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 18L12 22L16 18" /><path d="M12 2V22" /></svg>';
+  var MENU_ICON_REMOVE = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>';
+
+  function routeMenuTrigger(id) {
+    return id ? document.querySelector('[data-route-menu="' + id + '"]') : null;
+  }
+
+  function closeRouteMenu(refocus) {
+    if (routeMenuEl.hidden) return;
+    var trigger = routeMenuTrigger(routeMenuFor);
+    routeMenuEl.hidden = true;
+    if (trigger) trigger.setAttribute('aria-expanded', 'false');
+    if (refocus && trigger) trigger.focus();
+    routeMenuFor = null;
+  }
+
+  // Right-aligned under the stop's ⋯, or above it when there's no room below.
+  function positionRouteMenu() {
+    var btn = routeMenuTrigger(routeMenuFor);
+    if (!btn) return;
+    var r = btn.getBoundingClientRect();
+    var w = routeMenuEl.offsetWidth, h = routeMenuEl.offsetHeight;
+    var top = r.bottom + 6;
+    if (top + h > window.innerHeight - 8) top = Math.max(8, r.top - h - 6);
+    routeMenuEl.style.top = top + 'px';
+    routeMenuEl.style.left = Math.max(8, Math.min(r.right - w, window.innerWidth - w - 8)) + 'px';
+  }
+
+  function openRouteMenu(btn) {
+    var id = btn.getAttribute('data-route-menu');
+    var i = route.indexOf(id);
+    closeRouteMenu();
+    routeMenuEl.innerHTML =
+      '<button type="button" role="menuitem" data-move="' + id + '" data-dir="-1"' + (i === 0 ? ' disabled' : '') + '>' + MENU_ICON_UP + 'Move up</button>' +
+      '<button type="button" role="menuitem" data-move="' + id + '" data-dir="1"' + (i === route.length - 1 ? ' disabled' : '') + '>' + MENU_ICON_DOWN + 'Move down</button>' +
+      '<button type="button" role="menuitem" data-toggle="' + id + '">' + MENU_ICON_REMOVE + 'Remove</button>';
+    routeMenuEl.hidden = false;
+    routeMenuFor = id;
+    routeMenuIndex = i;
+    btn.setAttribute('aria-expanded', 'true');
+
+    positionRouteMenu();
+
+    var first = routeMenuEl.querySelector('button:not([disabled])');
+    if (first) first.focus();
+  }
+
+  document.addEventListener('click', function (e) {
+    var trigger = e.target.closest('[data-route-menu]');
+    if (trigger) {
+      if (routeMenuFor === trigger.getAttribute('data-route-menu')) closeRouteMenu();
+      else openRouteMenu(trigger);
+      return;
+    }
+    var item = e.target.closest('#routeItemMenu [role="menuitem"]');
+    if (item) {
+      // The action itself already ran (document click handler above) and
+      // re-rendered the list. Focus goes back to the stop's ⋯ after a move,
+      // or to the ⋯ of whichever stop took a removed one's place.
+      var id = routeMenuFor;
+      var at = routeMenuIndex;
+      closeRouteMenu();
+      var t = routeMenuTrigger(id);
+      if (!t) {
+        var all = document.querySelectorAll('[data-route-menu]');
+        t = all[Math.min(at, all.length - 1)];
+      }
+      if (t) t.focus();
+      return;
+    }
+    if (!routeMenuEl.contains(e.target)) closeRouteMenu();
+  });
+
+  // Capture phase, so Escape closes just the menu, not the whole route panel.
+  document.addEventListener('keydown', function (e) {
+    if (routeMenuEl.hidden) return;
+    if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); closeRouteMenu(true); return; }
+    if (e.key === 'Tab') { closeRouteMenu(true); return; }
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      var items = Array.prototype.slice.call(routeMenuEl.querySelectorAll('button:not([disabled])'));
+      var at = items.indexOf(document.activeElement);
+      var next = e.key === 'ArrowDown' ? (at + 1) % items.length : (at - 1 + items.length) % items.length;
+      if (items[next]) items[next].focus();
+    }
+  }, true);
+
+  // It's pinned to the viewport, so don't leave it floating as things move.
+  routeScrollEl.addEventListener('scroll', function () { closeRouteMenu(); });
+  // A width change closes it; a height-only one (mobile browsers' toolbars
+  // showing and hiding) moves the bottom sheet, so the menu follows it.
+  var routeMenuVw = window.innerWidth;
+  window.addEventListener('resize', function () {
+    if (window.innerWidth !== routeMenuVw) { routeMenuVw = window.innerWidth; closeRouteMenu(); }
+    else if (!routeMenuEl.hidden) positionRouteMenu();
+  });
+
   // Dismiss the dropdown on an outside click (the mobile sheet already has
   // the scrim for this, but the desktop dropdown has no full-screen scrim)
   document.addEventListener('click', function (e) {
@@ -1352,7 +1511,7 @@
     // A remove (×) or move button re-renders #routeList before this runs,
     // so the clicked button is already detached and would look "outside".
     if (!e.target.isConnected) return;
-    if (routePanelEl.contains(e.target) || routeHeaderBtn.contains(e.target)) return;
+    if (routePanelEl.contains(e.target) || routeHeaderBtn.contains(e.target) || routeMenuEl.contains(e.target)) return;
     openSheet(false);
   });
 
@@ -1549,6 +1708,105 @@
 
   // Updates every Listen button in place rather than re-rendering the
   // lists, so carousels keep their scroll position while audio plays.
+  /* Playbar — elapsed time, a seekable track and the clip's length, shown
+     on a stop's card (pinned in its bottom padding, so the card's layout
+     doesn't move) and its route item while that stop is loaded: playing,
+     paused part-way, or still on the signature (held at 0:00 until the
+     clip itself starts). */
+  function fmtTime(t) {
+    if (!isFinite(t) || t < 0) t = 0;
+    var m = Math.floor(t / 60), sec = Math.floor(t % 60);
+    return m + ':' + (sec < 10 ? '0' : '') + sec;
+  }
+
+  function playbarState(id) {
+    var active = narrationId === id;
+    var clip = active && !inSignature;
+    var dur = clip ? narrationAudio.duration : NaN;
+    var at = clip ? narrationAudio.currentTime : 0;
+    return { active: active, at: at, dur: dur, frac: isFinite(dur) && dur > 0 ? Math.min(1, at / dur) : 0 };
+  }
+
+  // inline: the route panel's version, in the stop's text column.
+  function playbarHTML(s, inline) {
+    if (!narrationFiles[s.id]) return '';
+    var st = playbarState(s.id);
+    return '<div data-playbar="' + s.id + '" class="playbar' + (inline ? ' playbar--inline' : '') + '"' + (st.active ? '' : ' hidden') + '>' +
+      '<span data-pb-at class="num">' + fmtTime(st.at) + '</span>' +
+      '<div data-pb-track role="slider" tabindex="0" aria-label="Seek ' + plain(s.name) + '" aria-valuemin="0" aria-valuemax="' + Math.round(st.dur || 0) + '" aria-valuenow="' + Math.round(st.at) + '" class="playbar__track">' +
+        '<div data-pb-fill class="playbar__fill" style="transform:scaleX(' + st.frac + ')"></div>' +
+      '</div>' +
+      '<span data-pb-dur class="num">' + (isFinite(st.dur) ? fmtTime(st.dur) : '–:––') + '</span>' +
+    '</div>';
+  }
+
+  function updatePlaybars() {
+    Array.prototype.forEach.call(document.querySelectorAll('[data-playbar]'), function (bar) {
+      var st = playbarState(bar.getAttribute('data-playbar'));
+      bar.hidden = !st.active;
+      if (!st.active) return;
+      bar.querySelector('[data-pb-fill]').style.transform = 'scaleX(' + st.frac + ')';
+      bar.querySelector('[data-pb-at]').textContent = fmtTime(st.at);
+      bar.querySelector('[data-pb-dur]').textContent = isFinite(st.dur) ? fmtTime(st.dur) : '–:––';
+      var track = bar.querySelector('[data-pb-track]');
+      track.setAttribute('aria-valuemax', String(Math.round(st.dur || 0)));
+      track.setAttribute('aria-valuenow', String(Math.round(st.at)));
+      track.setAttribute('aria-valuetext', fmtTime(st.at) + ' of ' + (isFinite(st.dur) ? fmtTime(st.dur) : 'unknown'));
+    });
+  }
+
+  // timeupdate only fires ~4 times a second; a frame loop while playing
+  // keeps the fill moving smoothly.
+  var playbarFrame = null;
+  function playbarLoop() {
+    updatePlaybars();
+    playbarFrame = narrationAudio.paused ? null : requestAnimationFrame(playbarLoop);
+  }
+  narrationAudio.addEventListener('play', function () { if (!playbarFrame) playbarFrame = requestAnimationFrame(playbarLoop); });
+  ['pause', 'ended', 'timeupdate', 'loadedmetadata', 'durationchange', 'seeked', 'emptied'].forEach(function (ev) {
+    narrationAudio.addEventListener(ev, updatePlaybars);
+  });
+
+  // Seeking: tap or drag along the track (once the clip itself is
+  // playing — not during the signature), or arrow keys for 5s steps.
+  // Needs the server to support range requests (GitHub Pages does;
+  // python -m http.server doesn't, and there a seek would restart the clip).
+  function seekableTrack(track) {
+    var bar = track.closest('[data-playbar]');
+    var sk = narrationAudio.seekable;
+    return bar && bar.getAttribute('data-playbar') === narrationId && !inSignature &&
+      isFinite(narrationAudio.duration) && sk.length && sk.end(sk.length - 1) > 0 ? track : null;
+  }
+  function seekTo(track, clientX) {
+    var r = track.getBoundingClientRect();
+    var frac = Math.max(0, Math.min(1, (clientX - r.left) / r.width));
+    narrationAudio.currentTime = frac * narrationAudio.duration;
+    updatePlaybars();
+  }
+  var seekingTrack = null;
+  document.addEventListener('pointerdown', function (e) {
+    var track = e.target.closest('[data-pb-track]');
+    if (!track || !seekableTrack(track)) return;
+    e.preventDefault();
+    seekingTrack = track;
+    track.setPointerCapture(e.pointerId);
+    seekTo(track, e.clientX);
+  });
+  document.addEventListener('pointermove', function (e) {
+    if (seekingTrack) seekTo(seekingTrack, e.clientX);
+  });
+  document.addEventListener('pointerup', function () { seekingTrack = null; });
+  document.addEventListener('pointercancel', function () { seekingTrack = null; });
+  document.addEventListener('keydown', function (e) {
+    var track = e.target.closest && e.target.closest('[data-pb-track]');
+    if (!track || !seekableTrack(track)) return;
+    var step = { ArrowRight: 5, ArrowUp: 5, ArrowLeft: -5, ArrowDown: -5 }[e.key];
+    if (step === undefined) return;
+    e.preventDefault();
+    narrationAudio.currentTime = Math.max(0, Math.min(narrationAudio.duration, narrationAudio.currentTime + step));
+    updatePlaybars();
+  });
+
   function syncListenButtons() {
     Array.prototype.forEach.call(document.querySelectorAll('[data-listen]'), function (btn) {
       var id = btn.getAttribute('data-listen');
@@ -1557,13 +1815,14 @@
       btn.setAttribute('aria-pressed', String(playing));
       btn.setAttribute('aria-label', (playing ? 'Pause' : 'Listen to') + ' ' + plain((byId[id] && byId[id].name) || ''));
     });
+    updatePlaybars();
   }
 
   // The WalkieTalkies signature sound plays before every clip. It goes
   // through the same <audio> as the narration (swapping src when it ends)
   // rather than a second element, because mobile Safari only lets an
   // element play without a tap once a tap has started it.
-  var SIGNATURE_SRC = 'assets/signature.mp3';
+  var SIGNATURE_SRC = 'assets/signature.mp3?v=3'; // bump v when the file changes
   var inSignature = false; // narrationAudio is playing the signature, the clip comes next
 
   function narrationSrc(id) {
