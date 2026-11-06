@@ -2,7 +2,7 @@
   'use strict';
 
   /* ---------------------------------------------------------------
-     The gazetteer
+     Stops: categories and data checks
   --------------------------------------------------------------- */
   var CATS = {
     plaque:   'Blue plaque',
@@ -77,7 +77,7 @@
   STOPS.forEach(function (s) {
     REQUIRED_STOP_FIELDS.forEach(function (f) {
       if (s[f] === undefined || s[f] === null || s[f] === '') {
-        console.warn('Gazetteer entry "' + (s.id || '?') + '" is missing required field "' + f + '"');
+        console.warn('Stop "' + (s.id || '?') + '" is missing required field "' + f + '"');
       }
     });
   });
@@ -167,6 +167,7 @@
       btn.classList.toggle('hidden', empty);
       btn.setAttribute('aria-pressed', String(view === 'map'));
       btn.setAttribute('aria-label', view === 'map' ? 'Show the route list' : 'Show the route map');
+      btn.setAttribute('data-tooltip', view === 'map' ? 'Show list' : 'Show map');
     });
   }
 
@@ -465,7 +466,7 @@
   }
 
   /* ---------------------------------------------------------------
-     Render: gazetteer
+     Render: stop lists
   --------------------------------------------------------------- */
   var listEl = document.getElementById('list');
   var homeListEl = document.getElementById('homeList');
@@ -513,7 +514,7 @@
         // End of the carousel: a big round button through to the Discover
         // page, where everything the 10 random cards are sampled from lives.
         '<div class="h-[400px] shrink-0 flex items-center px-4 sm:px-8">' +
-          '<a href="?view=discover" data-discover aria-label="Discover all areas, categories and stops" class="inline-flex items-center justify-center w-[96px] h-[96px] sm:w-[112px] sm:h-[112px] rounded-full bg-surface border border-rule text-white transition-transform hover:scale-105 hover:border-ink">' +
+          '<a href="?view=discover" data-discover data-tooltip="Discover" aria-label="Discover all areas, categories and stops" class="inline-flex items-center justify-center w-[96px] h-[96px] sm:w-[112px] sm:h-[112px] rounded-full bg-surface border border-rule text-white transition-transform hover:scale-105 hover:border-ink">' +
             '<svg class="lucide lucide-arrow-right w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>' +
           '</a>' +
         '</div>';
@@ -835,7 +836,7 @@
       routeListEl.innerHTML =
         '<div class="px-5 py-10 text-center">' +
           '<p class="font-display text-[21px] leading-tight mb-1.5">An empty morning</p>' +
-          '<p class="text-[13px] leading-relaxed text-muted max-w-[30ch] mx-auto">Add stops from the gazetteer. They stack in the order you add them, and you can shuffle them after.</p>' +
+          '<p class="text-[13px] leading-relaxed text-muted max-w-[30ch] mx-auto">Add stops from WalkieTalkies. They stack in the order you add them, and you can shuffle them after.</p>' +
         '</div>';
       return;
     }
@@ -860,7 +861,7 @@
           '</div>' +
           '<div class="shrink-0 self-center flex items-center gap-1">' +
             (narrationFiles[s.id] ? listenButtonHTML(s, true) : '') +
-            '<button type="button" data-route-menu="' + id + '" aria-haspopup="menu" aria-expanded="false" aria-label="More actions for ' + plain(s.name) + '" class="w-7 h-7 rounded-full text-ink hover:bg-surface inline-flex items-center justify-center transition-colors">' +
+            '<button type="button" data-route-menu="' + id + '" data-tooltip="More" aria-haspopup="menu" aria-expanded="false" aria-label="More actions for ' + plain(s.name) + '" class="w-7 h-7 rounded-full text-ink hover:bg-surface inline-flex items-center justify-center transition-colors">' +
               '<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><circle cx="12" cy="5" r="1.75"/><circle cx="12" cy="12" r="1.75"/><circle cx="12" cy="19" r="1.75"/></svg>' +
             '</button>' +
           '</div>' +
@@ -872,7 +873,7 @@
   function plain(s) { return s.replace(/&[a-z]+;/g, ''); }
 
   // Every stop image is a Wikimedia Commons "/330px-Filename.ext" thumbnail
-  // (see the gazetteer-entries skill) — Commons serves any width at the
+  // (see the stop-entries skill) — Commons serves any width at the
   // same path by swapping that prefix, so the lightbox can show a much
   // larger version without a second image source. Falls back to the
   // original URL for anything that doesn't match the expected pattern.
@@ -1364,16 +1365,15 @@
       routeOpenTrigger = null;
     }
   }
-  // Toggles both ways — #sheetClose is desktop-only now (see index.html),
-  // so on mobile tapping the always-visible bar again is how the sheet
-  // closes.
+  // Toggles both ways: tapping the always-visible bar again is how the
+  // mobile sheet closes (on desktop it's #routeHeaderBtn again, an outside
+  // click or Escape).
   routeBarEl.addEventListener('click', function (e) {
     e.stopPropagation();
     var willOpen = !root.classList.contains('route-open');
     if (willOpen) routeOpenTrigger = routeBarEl;
     openSheet(willOpen);
   });
-  document.getElementById('sheetClose').addEventListener('click', function () { openSheet(false); });
   document.getElementById('scrim').addEventListener('click', function () { openSheet(false); });
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape' && e.key !== 'Tab') return;
@@ -1515,6 +1515,77 @@
     openSheet(false);
   });
 
+  /* Tooltips for icon-only buttons: any element with data-tooltip. Shown
+     after a short hover with a mouse, or straight away on keyboard focus;
+     touch never shows them (there's no hover, and a tap acts at once).
+     The text is read when shown, so buttons that change state (Listen ↔
+     Pause, Show map ↔ Show list) just update their data-tooltip. It's
+     aria-hidden: each button's aria-label already names it for screen
+     readers. */
+  (function () {
+    var tip = document.createElement('div');
+    tip.id = 'tooltip';
+    tip.setAttribute('aria-hidden', 'true');
+    tip.hidden = true;
+    document.body.appendChild(tip);
+    var target = null, timer = null;
+    var canHover = window.matchMedia('(hover: hover) and (pointer: fine)');
+
+    function place() {
+      var r = target.getBoundingClientRect();
+      var w = tip.offsetWidth, h = tip.offsetHeight;
+      // Above by default; below when that would run off the top (or under
+      // the fixed header, for buttons in it).
+      var headerBottom = (document.querySelector('header') || { getBoundingClientRect: function () { return { bottom: 0 }; } }).getBoundingClientRect().bottom;
+      var inHeader = !!target.closest('header');
+      var top = r.top - h - 8;
+      if (inHeader || top < (inHeader ? 0 : headerBottom) + 4) top = r.bottom + 8;
+      var left = Math.max(8, Math.min(r.left + r.width / 2 - w / 2, window.innerWidth - w - 8));
+      tip.style.top = top + 'px';
+      tip.style.left = left + 'px';
+    }
+
+    function show(el) {
+      var text = el.getAttribute('data-tooltip');
+      if (!text) return;
+      target = el;
+      tip.textContent = text;
+      tip.hidden = false;
+      place();
+      tip.classList.add('is-on');
+    }
+
+    function hide() {
+      clearTimeout(timer);
+      timer = null;
+      target = null;
+      tip.classList.remove('is-on');
+      tip.hidden = true;
+    }
+
+    document.addEventListener('pointerover', function (e) {
+      if (e.pointerType !== 'mouse' || !canHover.matches) return;
+      var el = e.target.closest('[data-tooltip]');
+      if (!el || el === target) return;
+      hide();
+      timer = setTimeout(function () { if (el.isConnected) show(el); }, 450);
+    });
+    document.addEventListener('pointerout', function (e) {
+      var el = e.target.closest('[data-tooltip]');
+      if (el && !el.contains(e.relatedTarget)) hide();
+    });
+    document.addEventListener('focusin', function (e) {
+      var el = e.target.closest && e.target.closest('[data-tooltip]');
+      if (el && el.matches(':focus-visible')) show(el); else hide();
+    });
+    document.addEventListener('focusout', hide);
+    // A press acts straight away (and may change the label), so get out of the way.
+    document.addEventListener('pointerdown', hide, true);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && target) hide(); });
+    window.addEventListener('scroll', hide, true);
+    window.addEventListener('resize', hide);
+  })();
+
   // Search — collapses to an icon button on small screens, expanding
   // into the input on tap and collapsing back once it's empty and blurred
   (function () {
@@ -1541,6 +1612,7 @@
       label.classList.toggle('flex', open);
       toggleIcon.innerHTML = open ? ICON_CLOSE : ICON_SEARCH;
       toggleBtn.setAttribute('aria-label', open ? 'Close search' : 'Search');
+      toggleBtn.setAttribute('data-tooltip', open ? 'Close search' : 'Search');
       toggleBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
       // Make room for a full-width bar on small screens: drop the
       // wordmark and the logo's reserved width, keep the square icon.
@@ -1579,9 +1651,17 @@
     var headerEl = document.querySelector('header');
     if (!headerEl) return;
     var raf = null;
+    var routeBtn = document.getElementById('routeHeaderBtn');
     function measure() {
       raf = null;
       root.style.setProperty('--header-h', headerEl.offsetHeight + 'px');
+      // The desktop route dropdown hangs just under its header button
+      // (styles.css). The header is fixed, so this doesn't change on scroll.
+      if (routeBtn && routeBtn.offsetParent) {
+        var r = routeBtn.getBoundingClientRect();
+        root.style.setProperty('--route-btn-bottom', r.bottom + 'px');
+        root.style.setProperty('--route-btn-right', (document.documentElement.clientWidth - r.right) + 'px');
+      }
     }
     function schedule() {
       if (raf) return;
@@ -1700,7 +1780,7 @@
   function listenButtonHTML(s, small) {
     if (!narrationFiles[s.id]) return '';
     var playing = isNarrating(s.id);
-    return '<button type="button" data-listen="' + s.id + '" aria-pressed="' + playing + '" aria-label="' + (playing ? 'Pause' : 'Listen to') + ' ' + plain(s.name) + '" ' +
+    return '<button type="button" data-listen="' + s.id + '" data-tooltip="' + (playing ? 'Pause' : 'Listen') + '" aria-pressed="' + playing + '" aria-label="' + (playing ? 'Pause' : 'Listen to') + ' ' + plain(s.name) + '" ' +
       'class="shrink-0 inline-flex items-center justify-center ' + (small ? 'w-7 h-7' : 'w-9 h-9') + ' rounded-full border border-rule text-ink hover:border-ink transition-colors">' +
       listenButtonInner(s.id) +
     '</button>';
@@ -1814,6 +1894,7 @@
       btn.innerHTML = listenButtonInner(id);
       btn.setAttribute('aria-pressed', String(playing));
       btn.setAttribute('aria-label', (playing ? 'Pause' : 'Listen to') + ' ' + plain((byId[id] && byId[id].name) || ''));
+      btn.setAttribute('data-tooltip', playing ? 'Pause' : 'Listen');
     });
     updatePlaybars();
   }

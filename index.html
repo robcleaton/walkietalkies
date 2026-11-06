@@ -102,7 +102,7 @@
           <input id="search" type="search" placeholder="Search a person, place or street&hellip;"
             class="w-full sm:w-[260px] h-10 sm:h-auto bg-raised border border-rule rounded-full px-4 py-0 sm:py-2.5 text-[16px] sm:text-[14px] placeholder:text-faint text-ink">
         </label>
-        <button id="searchToggle" class="sm:hidden shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full border border-rule text-muted hover:text-ink hover:border-ink transition-colors" aria-label="Search" aria-expanded="false">
+        <button id="searchToggle" data-tooltip="Search" class="sm:hidden shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full border border-rule text-muted hover:text-ink hover:border-ink transition-colors" aria-label="Search" aria-expanded="false">
           <span id="searchToggleIcon" class="inline-flex items-center justify-center w-5 h-5">
             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <circle cx="11" cy="11" r="8" />
@@ -110,7 +110,7 @@
             </svg>
           </span>
         </button>
-        <button id="themeToggle" class="hidden shrink-0 items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-rule text-muted hover:text-ink hover:border-ink transition-colors" aria-label="Switch colour theme">
+        <button id="themeToggle" data-tooltip="Switch theme" class="hidden shrink-0 items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-rule text-muted hover:text-ink hover:border-ink transition-colors" aria-label="Switch colour theme">
           <svg class="lucide lucide-sun w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="12" cy="12" r="4" />
             <path d="M12 2v2" />
@@ -123,7 +123,7 @@
             <path d="m19.07 4.93-1.41 1.41" />
           </svg>
         </button>
-        <button id="routeHeaderBtn" class="hidden lg:inline-flex shrink-0 items-center gap-1 h-10 sm:h-11 px-3.5 sm:px-4 rounded-full border border-rule text-muted hover:text-ink hover:border-ink transition-colors" aria-haspopup="true" aria-expanded="false" aria-label="View your route">
+        <button id="routeHeaderBtn" data-tooltip="Your route" class="hidden lg:inline-flex shrink-0 items-center gap-1 h-10 sm:h-11 px-3.5 sm:px-4 rounded-full border border-rule text-muted hover:text-ink hover:border-ink transition-colors" aria-haspopup="true" aria-expanded="false" aria-label="View your route">
           <svg class="lucide lucide-route w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="6" cy="19" r="3" />
             <path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15" />
@@ -173,7 +173,7 @@
        Reached from the round button at the end of the homepage carousel. -->
   <section id="discoverHero" class="hidden mx-auto max-w-[1280px] px-5 sm:px-8 pt-8 pb-4 sm:pb-2">
     <h2 class="font-display tracking-[-0.02em] text-[40px] sm:text-[56px] leading-none">Discover</h2>
-    <p class="font-serif text-[18px] sm:text-[19px] leading-[1.55] mt-3 max-w-[62ch] text-muted">Every area, category and stop in the gazetteer, in one place.</p>
+    <p class="font-serif text-[18px] sm:text-[19px] leading-[1.55] mt-3 max-w-[62ch] text-muted">Every area, category and stop on WalkieTalkies, in one place.</p>
     <div id="discoverAreas" class="area-cards scroll-hide mt-8"></div>
   </section>
 
@@ -282,13 +282,13 @@
     <div id="chips" class="scroll-hide flex flex-nowrap sm:flex-wrap overflow-x-auto sm:overflow-visible gap-2.5 px-5 sm:px-8 py-2 sm:py-0"></div>
   </section>
 
-  <!-- Gazetteer + route -->
+  <!-- Stops + route -->
   <main id="main" class="mx-auto max-w-[1280px] px-5 sm:px-8 pt-3 sm:pt-8">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
 
-      <!-- Gazetteer -->
-      <div id="gazetteerCol" class="lg:col-span-12">
-        <h2 class="sr-only">Gazetteer</h2>
+      <!-- Stops -->
+      <div id="stopsCol" class="lg:col-span-12">
+        <h2 class="sr-only">Stops</h2>
         <p class="eyebrow text-faint mb-4" id="resultCount" aria-live="polite" aria-atomic="true"></p>
 
         <!-- Areas whose name matches the current search, shown as chips
@@ -330,7 +330,7 @@
             <path d="m8 14 4-4 4 4" />
           </svg>
         </button>
-        <button type="button" data-route-map-toggle aria-pressed="false" aria-label="Show the route map" class="route-map-toggle hidden absolute top-1/2 -translate-y-1/2 right-[60px] w-7 h-7 rounded-full items-center justify-center">
+        <button type="button" data-route-map-toggle data-tooltip="Show map" aria-pressed="false" aria-label="Show the route map" class="route-map-toggle hidden absolute top-1/2 -translate-y-1/2 right-[60px] w-7 h-7 rounded-full items-center justify-center">
           <svg class="lucide lucide-map w-[15px] h-[15px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg>
         </button>
         </div>
@@ -348,14 +348,8 @@
                 <p class="eyebrow text-faint mt-2" id="routeMeta">No stops yet</p>
               </div>
               <div class="shrink-0 flex items-center gap-2">
-              <button type="button" data-route-map-toggle aria-pressed="false" aria-label="Show the route map" class="route-map-toggle route-map-toggle--quiet hidden w-9 h-9 rounded-full items-center justify-center transition-colors">
+              <button type="button" data-route-map-toggle data-tooltip="Show map" aria-pressed="false" aria-label="Show the route map" class="route-map-toggle route-map-toggle--quiet hidden w-9 h-9 rounded-full items-center justify-center transition-colors">
                 <svg class="lucide lucide-map w-[17px] h-[17px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg>
-              </button>
-              <button id="sheetClose" class="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full border border-rule text-muted hover:text-ink hover:border-ink transition-colors" aria-label="Close route panel">
-                <svg class="lucide lucide-circle-chevron-down w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="m16 10-4 4-4-4" />
-                </svg>
               </button>
               </div>
             </div>
@@ -386,7 +380,7 @@
     </div>
 
     <footer class="mt-10 pt-5 flex flex-col gap-3">
-      <p class="eyebrow text-faint text-center">&copy;<span id="footerYear"></span> WalkieTalkies &middot; a South East London gazetteer</p>
+      <p class="eyebrow text-faint text-center">&copy;<span id="footerYear"></span> WalkieTalkies &middot; South East London</p>
       <a href="https://warface.co.uk/" target="_blank" rel="noopener noreferrer" class="w-full flex justify-center hover:opacity-60 transition-opacity">
         <img src="assets/warface/warface-logo-white.svg" alt="Warface" class="warface-logo-dark h-[24px]">
         <img src="assets/warface/warface-logo-black.svg" alt="Warface" class="warface-logo-light h-[24px]">
@@ -401,7 +395,7 @@
      mobile where there's no hover-to-preview. Hidden by default; app.js
      opens it on [data-lightbox] click and sets #lightboxImg's src. -->
 <div id="lightbox" class="hidden fixed inset-0 z-[100] bg-black/90 flex-col items-center justify-center gap-3 p-5" role="dialog" aria-modal="true" aria-label="Image preview">
-  <button id="lightboxClose" type="button" class="absolute top-4 right-4 sm:top-6 sm:right-6 inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors" aria-label="Close image preview">
+  <button id="lightboxClose" data-tooltip="Close" type="button" class="absolute top-4 right-4 sm:top-6 sm:right-6 inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors" aria-label="Close image preview">
     <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M18 6 6 18" /><path d="m6 6 12 12" />
     </svg>

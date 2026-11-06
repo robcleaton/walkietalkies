@@ -57,7 +57,7 @@
      controls/popups float above the header when scrolled underneath it. */
   #areaMap, #routeMap{ position:relative; z-index:0; }
 
-  /* Gazetteer entries: hairline separated, not stamped cards */
+  /* Stop cards: hairline separated, not stamped cards */
   .stop{ background:var(--surface); border:1px solid var(--rule); border-radius:16px; }
   .stop.flash{ animation:flash 1.6s ease-out; }
   /* Narration playbar (playbarHTML() in app.js). On a card it sits in the
@@ -350,6 +350,19 @@
     --rule:rgba(23,23,23,.2); --surface:rgba(255,255,255,.4);
   }
 
+  /* Icon-button tooltips (data-tooltip; see app.js). Above the route
+     panel (60) and its ⋯ menu (70). */
+  #tooltip{
+    position:fixed; z-index:80; pointer-events:none;
+    padding:5px 9px; border-radius:7px;
+    background:#F4F3EF; color:#171717;
+    font:600 12px/1.2 Inter, "Helvetica Neue", Arial, sans-serif; white-space:nowrap;
+    box-shadow:0 6px 18px -6px rgba(0,0,0,.5);
+    opacity:0; transform:translateY(2px); transition:opacity .12s ease, transform .12s ease;
+  }
+  #tooltip[hidden]{ display:none; }
+  #tooltip.is-on{ opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce){ #tooltip{ transition:none; } }
   /* A route stop's ⋯ menu (openRouteMenu() in app.js). Lives in <body>,
      so it's styled outright rather than from the panel's tokens. */
   #routeItemMenu{
@@ -376,7 +389,7 @@
   .route-map-toggle{ border:1px solid var(--rule); color:var(--ink); transition:border-color .15s; }
   .route-map-toggle:hover{ border-color:var(--ink); }
   .route-map-toggle:not(.hidden){ display:inline-flex; }
-  /* Desktop header version: matches #sheetClose beside it. */
+  /* Desktop header version: the quieter outline of the header's buttons. */
   .route-map-toggle--quiet{ border:1px solid var(--rule); color:var(--muted); }
   .route-map-toggle--quiet:hover{ border-color:var(--ink); color:var(--ink); }
   .route-map-toggle[aria-pressed="true"]{ background:#171717; border-color:#171717; color:var(--marigold); }
@@ -430,10 +443,12 @@
        openSheet() in app.js), the same state the mobile sheet uses. */
     #routePanel{
       position:fixed; z-index:60;
-      top:calc(var(--header-h, 84px) + 12px);
-      right:max(20px, calc((100vw - 1280px) / 2 + 20px));
+      /* Just under #routeHeaderBtn, right edges aligned (measured in
+         app.js trackHeaderHeight; the fallbacks are the old position). */
+      top:calc(var(--route-btn-bottom, calc(var(--header-h, 84px) + 4px)) + 8px);
+      right:var(--route-btn-right, max(20px, calc((100vw - 1280px) / 2 + 20px)));
       width:380px; max-width:calc(100vw - 40px);
-      max-height:calc(100vh - var(--header-h, 84px) - 32px);
+      max-height:calc(100vh - var(--route-btn-bottom, var(--header-h, 84px)) - 24px);
       transform-origin:top right;
       opacity:0; visibility:hidden; transform:translateY(-8px) scale(.98);
       box-shadow:0 20px 50px -12px rgba(0,0,0,.35);

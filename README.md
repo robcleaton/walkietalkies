@@ -1,6 +1,6 @@
 # WalkieTalkies
 
-A single-page gazetteer of South East London history — blue plaques, great
+WalkieTalkies is a single-page guide to South East London history — blue plaques, great
 buildings, murals, pubs and more. No build step: `index.html` is the whole
 site, styled inline and loading its stop data from `data.js`.
 
