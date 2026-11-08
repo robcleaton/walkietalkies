@@ -512,8 +512,9 @@
     var carousel = NEAR_CAROUSEL_MQ.matches;
     nearListEl.innerHTML = near.map(function (n) {
       // No id: the same stop can also be in the random carousel below.
-      var card = stopHTML(n.s, carousel, fmtDist(n.km)).replace(' id="stop-' + n.s.id + '"', '');
-      return carousel ? '<div class="w-[340px] h-[400px] shrink-0">' + card + '</div>' : card;
+      var card = stopHTML(n.s, carousel, fmtDist(n.km), true).replace(' id="stop-' + n.s.id + '"', '');
+      // No fixed height without descriptions; the row's cards stretch to the tallest.
+      return carousel ? '<div class="w-[340px] shrink-0">' + card + '</div>' : card;
     }).join('');
     nearListEl.classList.remove('hidden');
     nearListEl.scrollLeft = keep;
@@ -534,6 +535,8 @@
       nearLocating = false;
       nearBtn.disabled = false;
       nearBtnLabel.textContent = 'Refresh';
+      // Refresh is hidden for now: once located, the button goes away.
+      nearBtn.classList.add('hidden');
       nearPos = { lat: p.coords.latitude, lon: p.coords.longitude };
       renderNearYou(!homeListEl.classList.contains('hidden'));
     }, function (err) {
@@ -731,7 +734,8 @@
   }
 
   // dist: optional distance label (Near you) shown at the start of the area line.
-  function stopHTML(s, compact, dist) {
+  // noText: leave out the description (Near you).
+  function stopHTML(s, compact, dist, noText) {
     var on = inRoute(s.id);
     var pos = route.indexOf(s.id) + 1;
     // Stops still missing a pinned location in Notion are published (with
@@ -773,6 +777,9 @@
           '<h3 class="font-display text-[23px] sm:text-[28px] leading-[1.1] mb-1">' + s.name + '</h3>' +
           '<p class="font-mono text-[11px] text-muted num' + (compact ? ' truncate' : '') + '">' + (dist ? '<span class="text-ink font-semibold">' + dist + '</span> &middot; ' : '') + s.area + ' &middot; ' + s.pc + '</p>' +
         '</div>' +
+        // Without a description, a spacer keeps compact cards' address
+        // pinned to the bottom, level across a carousel row.
+        (noText ? (compact ? '<div class="flex-1"></div>' : '') : (
         (compact ? '<div class="flex-1 min-h-0 overflow-hidden mt-3" data-desc-wrap>' : '') +
         '<p class="font-serif text-[17px] leading-[1.55] text-ink max-w-[62ch]' + (compact ? '' : ' mt-3') + '"' + (compact ? ' data-desc-text' : '') + '>' +
           (eraLead ? '<span class="font-semibold">' + eraLead + '.</span> ' : '') +
@@ -782,7 +789,7 @@
           // its own instead of trailing the last visible word.
           (compact ? s.text.split('\n\n')[0] : s.text.split('\n\n').join('<br><br>')) +
         '</p>' +
-        (compact ? '</div>' : '') +
+        (compact ? '</div>' : ''))) +
         '<p class="text-[12px] text-faint mt-3' + (compact ? ' shrink-0 truncate' : '') + '">' + s.addr + '</p>' +
       '</article>';
   }
