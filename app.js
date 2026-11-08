@@ -474,6 +474,86 @@
   var resultCountEl = document.getElementById('resultCount');
   var areaRowsEl = document.getElementById('areaRows');
 
+  /* Near you (homepage): the 10 closest mapped stops to the viewer.
+     Location is only asked for when they tap Use my location — or read
+     straight away if they've already allowed it on an earlier visit —
+     and it never leaves the device: it's only used to sort STOPS. */
+  var NEAR_COUNT = 10;
+  var NEAR_FAR_KM = 3; // further than this from every stop: "you're X away"
+  var nearYouEl = document.getElementById('nearYou');
+  var nearListEl = document.getElementById('nearList');
+  var nearStatusEl = document.getElementById('nearYouStatus');
+  var nearBtn = document.getElementById('nearYouBtn');
+  var nearBtnLabel = document.getElementById('nearYouBtnLabel');
+  var nearPos = null; // { lat, lon } once known
+  var nearLocating = false;
+
+  function fmtDist(km) {
+    if (km < 1) return Math.max(10, Math.round(km * 1000 / 10) * 10) + ' m';
+    return (km < 10 ? km.toFixed(1) : Math.round(km)) + ' km';
+  }
+
+  function nearestStops() {
+    return STOPS.filter(function (s) {
+      return s.lat !== null && s.lat !== undefined && s.lon !== null && s.lon !== undefined;
+    }).map(function (s) {
+      return { s: s, km: haversine(nearPos, s) };
+    }).sort(function (a, b) { return a.km - b.km; }).slice(0, NEAR_COUNT);
+  }
+
+  function renderNearYou(isHome) {
+    if (!navigator.geolocation) return; // stays hidden
+    nearYouEl.classList.toggle('hidden', !isHome);
+    if (!isHome || !nearPos) return;
+    var near = nearestStops();
+    var keep = nearListEl.scrollLeft;
+    nearListEl.innerHTML = near.map(function (n) {
+      // No id: the same stop can also be in the random carousel below.
+      return '<div class="w-[300px] sm:w-[340px] h-[400px] shrink-0">' +
+        stopHTML(n.s, true, fmtDist(n.km)).replace(' id="stop-' + n.s.id + '"', '') + '</div>';
+    }).join('');
+    nearListEl.classList.remove('hidden');
+    nearListEl.scrollLeft = keep;
+    if (near.length && near[0].km > NEAR_FAR_KM) {
+      nearStatusEl.textContent = 'You’re ' + fmtDist(near[0].km) + ' from the nearest stop — here are the closest.';
+    } else {
+      nearStatusEl.textContent = 'The closest stops to you, nearest first.';
+    }
+    setTimeout(function () { adjustCardClamps(nearListEl); }, 0);
+  }
+
+  function locateNearYou() {
+    if (!navigator.geolocation || nearLocating) return;
+    nearLocating = true;
+    nearBtn.disabled = true;
+    nearBtnLabel.textContent = 'Locating…';
+    navigator.geolocation.getCurrentPosition(function (p) {
+      nearLocating = false;
+      nearBtn.disabled = false;
+      nearBtnLabel.textContent = 'Refresh';
+      nearPos = { lat: p.coords.latitude, lon: p.coords.longitude };
+      renderNearYou(!homeListEl.classList.contains('hidden'));
+    }, function (err) {
+      nearLocating = false;
+      nearBtn.disabled = false;
+      nearBtnLabel.textContent = nearPos ? 'Refresh' : 'Use my location';
+      nearStatusEl.textContent = err && err.code === 1
+        ? 'Location is turned off for this site. Allow it in your browser settings to see stops near you.'
+        : 'Couldn’t find your location just now. Try again in a moment.';
+    }, { enableHighAccuracy: true, timeout: 15000, maximumAge: 60000 });
+  }
+
+  if (navigator.geolocation) {
+    nearBtn.addEventListener('click', locateNearYou);
+    // Already allowed on an earlier visit: no prompt will show, so fill
+    // the row in straight away rather than waiting for a tap.
+    if (navigator.permissions && navigator.permissions.query) {
+      navigator.permissions.query({ name: 'geolocation' }).then(function (st) {
+        if (st.state === 'granted') locateNearYou();
+      }).catch(function () {});
+    }
+  }
+
   function renderList() {
     var items = visible();
     var isHome = !filters.q && !filters.cats.length && !filters.area && !discoverMode;
@@ -502,6 +582,7 @@
 
     listEl.classList.toggle('hidden', isHome);
     homeListEl.classList.toggle('hidden', !isHome);
+    renderNearYou(isHome);
     // Only area pages fill the per-category rows (and CSS only shows them
     // there, at lg+); everywhere else they're cleared so stale cards from a
     // previous area can't linger.
@@ -625,6 +706,7 @@
     homeClampTimer = setTimeout(function () {
       homeClampTimer = null;
       if (!homeListEl.classList.contains('hidden')) adjustCardClamps(homeListEl);
+      if (!nearListEl.classList.contains('hidden')) adjustCardClamps(nearListEl);
       adjustCardClamps(areaRowsEl);
     }, 100);
   });
@@ -642,7 +724,8 @@
     return map[pc] || '';
   }
 
-  function stopHTML(s, compact) {
+  // dist: optional distance label (Near you) shown at the start of the area line.
+  function stopHTML(s, compact, dist) {
     var on = inRoute(s.id);
     var pos = route.indexOf(s.id) + 1;
     // Stops still missing a pinned location in Notion are published (with
@@ -683,7 +766,7 @@
         '<div class="min-w-0 mt-3' + (compact ? ' shrink-0' : '') + '">' +
           '<div class="mb-2">' + catChip(s.cat) + '</div>' +
           '<h3 class="font-display text-[23px] sm:text-[28px] leading-[1.1] mb-1">' + s.name + '</h3>' +
-          '<p class="font-mono text-[11px] text-muted num' + (compact ? ' truncate' : '') + '">' + s.area + ' &middot; ' + s.pc + '</p>' +
+          '<p class="font-mono text-[11px] text-muted num' + (compact ? ' truncate' : '') + '">' + (dist ? '<span class="text-ink font-semibold">' + dist + '</span> &middot; ' : '') + s.area + ' &middot; ' + s.pc + '</p>' +
         '</div>' +
         (compact ? '<div class="flex-1 min-h-0 overflow-hidden mt-3" data-desc-wrap>' : '') +
         '<p class="font-serif text-[17px] leading-[1.55] text-ink max-w-[62ch]' + (compact ? '' : ' mt-3') + '"' + (compact ? ' data-desc-text' : '') + '>' +
@@ -710,8 +793,8 @@
      play/pause button. Uses the browser's built-in speech synthesis
      rather than a hosted audio file — no asset, no network request.
   --------------------------------------------------------------- */
-  var SPEAK_ICON_PLAY = '<svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
-  var SPEAK_ICON_PAUSE = '<svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>';
+  var SPEAK_ICON_PLAY = '<svg class="lucide lucide-play" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>';
+  var SPEAK_ICON_PAUSE = '<svg class="lucide lucide-pause" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="3" width="5" height="18" rx="1"/><rect x="5" y="3" width="5" height="18" rx="1"/></svg>';
   var speakingBtn = null;
   var currentUtterance = null; // must stay referenced, or Chrome silently drops it mid-speech
   var cachedVoices = [];
@@ -862,7 +945,7 @@
           '<div class="shrink-0 self-center flex items-center gap-1">' +
             (narrationFiles[s.id] ? listenButtonHTML(s, true) : '') +
             '<button type="button" data-route-menu="' + id + '" data-tooltip="More" aria-haspopup="menu" aria-expanded="false" aria-label="More actions for ' + plain(s.name) + '" class="w-7 h-7 rounded-full text-ink hover:bg-surface inline-flex items-center justify-center transition-colors">' +
-              '<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><circle cx="12" cy="5" r="1.75"/><circle cx="12" cy="12" r="1.75"/><circle cx="12" cy="19" r="1.75"/></svg>' +
+              '<svg class="lucide lucide-ellipsis-vertical" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>' +
             '</button>' +
           '</div>' +
         '</div>';
@@ -1406,9 +1489,9 @@
   var routeMenuFor = null; // stop id the open menu belongs to
   var routeMenuIndex = 0; // …and its place in the route when it opened
 
-  var MENU_ICON_UP = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6L12 2L16 6" /><path d="M12 2V22" /></svg>';
-  var MENU_ICON_DOWN = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 18L12 22L16 18" /><path d="M12 2V22" /></svg>';
-  var MENU_ICON_REMOVE = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>';
+  var MENU_ICON_UP = '<svg class="lucide lucide-arrow-up" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>';
+  var MENU_ICON_DOWN = '<svg class="lucide lucide-arrow-down" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>';
+  var MENU_ICON_REMOVE = '<svg class="lucide lucide-x" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>';
 
   function routeMenuTrigger(id) {
     return id ? document.querySelector('[data-route-menu="' + id + '"]') : null;
@@ -1601,9 +1684,9 @@
     // Same button throughout: a magnifier before the (collapsed) input,
     // which becomes a close icon sitting right after it once open — the
     // input's own flex-1 growth is what pushes it there, not positioning.
-    var ICON_SEARCH = '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+    var ICON_SEARCH = '<svg class="lucide lucide-search w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
       '<circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg>';
-    var ICON_CLOSE = '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+    var ICON_CLOSE = '<svg class="lucide lucide-x w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
       '<path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>';
 
     function setOpen(open) {
@@ -1766,8 +1849,9 @@
   narrationAudio.preload = 'none';
   var narrationId = null; // stop currently loaded into narrationAudio
 
-  var ICON_PLAY = '<svg class="w-3.5 h-3.5 translate-x-px" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg>';
-  var ICON_PAUSE = '<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>';
+  // Lucide play / pause, filled.
+  var ICON_PLAY = '<svg class="lucide lucide-play w-3.5 h-3.5 translate-x-px" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>';
+  var ICON_PAUSE = '<svg class="lucide lucide-pause w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="3" width="5" height="18" rx="1"/><rect x="5" y="3" width="5" height="18" rx="1"/></svg>';
 
   function isNarrating(id) { return narrationId === id && !narrationAudio.paused; }
 
@@ -1888,6 +1972,7 @@
   });
 
   function syncListenButtons() {
+    document.documentElement.classList.toggle('narrating', !!narrationId && !narrationAudio.paused);
     Array.prototype.forEach.call(document.querySelectorAll('[data-listen]'), function (btn) {
       var id = btn.getAttribute('data-listen');
       var playing = isNarrating(id);
@@ -1913,7 +1998,73 @@
   }
 
   function playNarration() {
+    updateMediaSession();
     narrationAudio.play().catch(function () { syncListenButtons(); });
+  }
+
+  // Lock screen / Control Centre: the stop's title, area and thumbnail,
+  // with play, pause and seek wired to the same <audio>. Set again on
+  // every play because iOS can drop the metadata when the src changes
+  // (signature → clip).
+  var mediaSession = 'mediaSession' in navigator ? navigator.mediaSession : null;
+  var entityDecoder = document.createElement('textarea');
+  function decodeEntities(str) { entityDecoder.innerHTML = str; return entityDecoder.value; }
+
+  function updateMediaSession() {
+    if (!mediaSession || !window.MediaMetadata) return;
+    var s = byId[narrationId];
+    if (!s) { mediaSession.metadata = null; return; }
+    var artwork = [];
+    if (s.img) artwork.push({ src: s.img, sizes: '330x330', type: /\.png$/i.test(s.img) ? 'image/png' : 'image/jpeg' });
+    artwork.push({ src: 'assets/walkietalkies-apple-touch-icon.png', sizes: '180x180', type: 'image/png' });
+    mediaSession.metadata = new MediaMetadata({
+      title: decodeEntities(s.name),
+      artist: 'WalkieTalkies',
+      album: decodeEntities(s.area || ''),
+      artwork: artwork
+    });
+  }
+
+  function updateMediaPosition() {
+    if (!mediaSession || !mediaSession.setPositionState) return;
+    var d = narrationAudio.duration;
+    try {
+      if (inSignature || !isFinite(d) || d <= 0) mediaSession.setPositionState();
+      else mediaSession.setPositionState({ duration: d, playbackRate: narrationAudio.playbackRate || 1, position: Math.min(narrationAudio.currentTime, d) });
+    } catch (e) { /* older browsers reject an empty or partial state */ }
+  }
+
+  if (mediaSession) {
+    var mediaAction = function (name, fn) {
+      try { mediaSession.setActionHandler(name, fn); } catch (e) { /* action not supported */ }
+    };
+    mediaAction('play', function () { if (narrationId) playNarration(); });
+    mediaAction('pause', function () { narrationAudio.pause(); });
+    mediaAction('seekto', function (d) {
+      if (inSignature || !isFinite(narrationAudio.duration)) return;
+      narrationAudio.currentTime = Math.max(0, Math.min(narrationAudio.duration, d.seekTime));
+      updateMediaPosition();
+    });
+    var mediaSkip = function (sign) {
+      return function (d) {
+        if (inSignature || !isFinite(narrationAudio.duration)) return;
+        var step = (d && d.seekOffset) || 10;
+        narrationAudio.currentTime = Math.max(0, Math.min(narrationAudio.duration, narrationAudio.currentTime + sign * step));
+        updateMediaPosition();
+      };
+    };
+    mediaAction('seekbackward', mediaSkip(-1));
+    mediaAction('seekforward', mediaSkip(1));
+    ['loadedmetadata', 'play', 'pause', 'seeked', 'ratechange'].forEach(function (ev) {
+      narrationAudio.addEventListener(ev, updateMediaPosition);
+    });
+    narrationAudio.addEventListener('play', function () { mediaSession.playbackState = 'playing'; });
+    narrationAudio.addEventListener('pause', function () { mediaSession.playbackState = 'paused'; });
+    narrationAudio.addEventListener('ended', function () {
+      if (inSignature) return; // still going: the clip follows the signature
+      mediaSession.playbackState = 'none';
+      mediaSession.metadata = null;
+    });
   }
 
   // Signature over (or failed to load): on to the stop's clip.

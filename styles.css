@@ -260,6 +260,12 @@
     }
   }
 
+  /* Homepage "Near you": its own panel on a very faint tint of the text
+     colour, so it reads as a step apart from the page in either theme.
+     The carousel runs edge to edge inside the panel and clips at its
+     rounded corners. */
+  #nearYou{ background:color-mix(in srgb, var(--ink) 4%, transparent); border-radius:24px; overflow:hidden; }
+
   /* Area hero: shown when an area page is active */
   #areaHero{ color:var(--area-ink, var(--ink)); }
   /* Line-height scales via its own clamp, not a fixed ratio of font-size —
@@ -292,6 +298,26 @@
     border-color:var(--area-ink, var(--rule));
   }
   html.area-active #logoText svg{ color:var(--area-ink); }
+  /* A stop's narration playing (html.narrating, set in app.js
+     syncListenButtons): the Your route button inverts and shows a speaker,
+     and the mobile route bar shows one too. */
+  .route-speaker{ display:none; }
+  html.narrating .route-speaker{ display:block; }
+  /* Sound waves pulse outward: the inner one fades in, then the outer,
+     then both fade out together. */
+  html.narrating .route-speaker .speaker-wave{ animation:speaker-wave 1.6s ease-in-out infinite; }
+  html.narrating .route-speaker .speaker-wave--2{ animation-name:speaker-wave-outer; }
+  @keyframes speaker-wave{ 0%{opacity:0} 25%,70%{opacity:1} 100%{opacity:0} }
+  @keyframes speaker-wave-outer{ 0%,20%{opacity:0} 45%,70%{opacity:1} 100%{opacity:0} }
+  @media (prefers-reduced-motion: reduce){
+    html.narrating .route-speaker .speaker-wave{ animation:none; }
+  }
+  html.narrating header #routeHeaderBtn,
+  html.narrating header #routeHeaderBtn:hover{
+    background:var(--area-ink, var(--ink));
+    border-color:var(--area-ink, var(--ink));
+    color:var(--area-bg, var(--ground));
+  }
   header #searchToggle:hover, header #themeToggle:hover, header #routeHeaderBtn:hover{
     color:var(--area-ink, var(--ink));
     border-color:var(--area-ink, var(--ink));
