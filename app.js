@@ -587,11 +587,25 @@
     if (NEAR_CAROUSEL_MQ.addEventListener) NEAR_CAROUSEL_MQ.addEventListener('change', onNearLayoutChange);
     else NEAR_CAROUSEL_MQ.addListener(onNearLayoutChange);
     // Already allowed on an earlier visit: no prompt will show, so fill
-    // the row in straight away rather than waiting for a tap.
+    // the row in straight away. On a first visit (never asked, by our own
+    // note or the browser's), ask straight away too; a refusal sticks in
+    // the browser, so it's only ever asked unprompted once — after that
+    // it's the Use my location button.
+    var NEAR_ASKED_KEY = 'walkietalkies:location-asked';
+    var askedBefore = false;
+    try { askedBefore = localStorage.getItem(NEAR_ASKED_KEY) === '1'; } catch (e) { /* storage blocked */ }
+    var askOnArrival = function () {
+      if (askedBefore) return;
+      try { localStorage.setItem(NEAR_ASKED_KEY, '1'); } catch (e) { /* storage blocked */ }
+      locateNearYou();
+    };
     if (navigator.permissions && navigator.permissions.query) {
       navigator.permissions.query({ name: 'geolocation' }).then(function (st) {
         if (st.state === 'granted') locateNearYou();
-      }).catch(function () {});
+        else if (st.state === 'prompt') askOnArrival();
+      }).catch(askOnArrival);
+    } else {
+      askOnArrival();
     }
   }
 
@@ -890,11 +904,13 @@
       var leg = i > 0 ? haversine(byId[route[i - 1]], s) : 0;
       html += '' +
         (i > 0 ? '<p class="pl-[52px] pr-5 py-1 font-mono text-[11px] text-faint num">&darr; ' + distHTML(leg.toFixed(2), 'km') + '</p>' : '') +
-        '<div class="flex gap-3 px-5 py-2.5 ' + (i > 0 ? '' : 'pt-4') + '">' +
-          '<span class="shrink-0 w-6 h-6 mt-0.5 rounded-full bg-verdigris text-white font-mono num text-[11px] font-semibold grid place-items-center">' + (i + 1) + '</span>' +
-          (s.img ? '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.remove()" class="w-10 h-10 shrink-0 rounded-lg object-cover border border-rule">' : '') +
+        // Mobile rows match the Near you list (48px image, 15px name,
+        // centred, py-3); the desktop dropdown keeps its tighter rows (lg:).
+        '<div class="flex items-center lg:items-start gap-3 px-5 py-3 lg:py-2.5 ' + (i > 0 ? '' : 'pt-4') + '">' +
+          '<span class="shrink-0 w-6 h-6 lg:mt-0.5 rounded-full bg-verdigris text-white font-mono num text-[11px] font-semibold grid place-items-center">' + (i + 1) + '</span>' +
+          (s.img ? '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.remove()" class="w-12 h-12 lg:w-10 lg:h-10 shrink-0 rounded-lg object-cover border border-rule">' : '') +
           '<div class="min-w-0 flex-1">' +
-            '<p class="text-[14px] font-semibold leading-tight">' + s.name + '</p>' +
+            '<p class="text-[15px] leading-snug lg:text-[14px] lg:leading-tight font-semibold">' + s.name + '</p>' +
             '<p class="font-mono text-[11px] text-faint mt-0.5">' + s.pc + ' &middot; ' + s.area + '</p>' +
             playbarHTML(s) +
           '</div>' +
