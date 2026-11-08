@@ -309,7 +309,8 @@
              the device — it's only used to sort stops (app.js, Near you). -->
         <section id="nearYou" class="hidden min-w-0 mb-10" aria-labelledby="nearYouTitle">
           <div class="mb-4">
-            <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <!-- Button under the title on phones, beside it from sm up -->
+            <div class="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4">
               <h3 id="nearYouTitle" class="font-display text-[28px] leading-none">Near you</h3>
               <button id="nearYouBtn" type="button" class="shrink-0 inline-flex items-center gap-2 text-[13px] font-semibold px-4 py-2.5 rounded-full border border-rule text-ink hover:border-ink transition-colors">
                 <svg class="lucide lucide-locate-fixed w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2" x2="5" y1="12" y2="12"/><line x1="19" x2="22" y1="12" y2="12"/><line x1="12" x2="12" y1="2" y2="5"/><line x1="12" x2="12" y1="19" y2="22"/><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="3"/></svg>
@@ -318,9 +319,9 @@
             </div>
             <p id="nearYouStatus" class="text-[13px] text-muted mt-2" aria-live="polite">See the stops closest to where you are.</p>
           </div>
-          <!-- A vertical list of full cards on phones (like an area page's
-               list), a carousel from sm up (like #homeList below). -->
-          <div id="nearList" class="hidden min-w-0 flex flex-col gap-3 sm:flex-row sm:flex-nowrap sm:gap-4 sm:overflow-x-auto sm:pb-2 scroll-hide"></div>
+          <!-- One grouped list on phones (nearRowHTML in app.js), a carousel of
+               cards from sm up (like #homeList below). -->
+          <div id="nearList" class="hidden min-w-0 sm:flex sm:flex-row sm:flex-nowrap sm:gap-4 sm:overflow-x-auto sm:pb-2 scroll-hide"></div>
         </section>
 
         <div id="homeList" class="min-w-0 scroll-hide flex flex-nowrap gap-4 overflow-x-auto pb-2"></div>

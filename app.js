@@ -503,6 +503,30 @@
     }).sort(function (a, b) { return a.km - b.km; }).slice(0, NEAR_COUNT);
   }
 
+  // Phones: one row of a grouped list — thumbnail, name, distance line,
+  // then Listen and a round add button (the stop's number once it's in
+  // the route, like the route panel's numbering).
+  function nearRowHTML(n) {
+    var s = n.s, on = inRoute(s.id), pos = route.indexOf(s.id) + 1;
+    return '<li class="flex items-center gap-3 px-4 py-3">' +
+      (s.img ? '<button type="button" data-lightbox="' + bigImg(s.img) + '" data-lightbox-fallback="' + s.img + '" data-lightbox-alt="' + plain(s.name) + '" class="shrink-0 rounded-lg" aria-label="View larger image of ' + plain(s.name) + '">' +
+        '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.closest(\'button\').remove()" class="w-12 h-12 rounded-lg object-cover border border-rule">' +
+      '</button>' : '') +
+      '<div class="min-w-0 flex-1">' +
+        '<h4 class="text-[15px] font-semibold leading-snug">' + s.name + '</h4>' +
+        '<p class="font-mono text-[11px] text-muted num truncate mt-0.5"><span class="text-ink font-semibold">' + fmtDist(n.km) + '</span> &middot; ' + s.area + '</p>' +
+      '</div>' +
+      '<div class="shrink-0 flex items-center gap-2">' +
+        listenButtonHTML(s) +
+        '<button type="button" data-toggle="' + s.id + '" data-tooltip="' + (on ? 'Remove from route' : 'Add to route') + '" aria-label="' + (on ? 'Remove ' + plain(s.name) + ' from your route (stop ' + pos + ')' : 'Add ' + plain(s.name) + ' to your route') + '" ' +
+          'class="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full border transition-colors ' +
+          (on ? 'bg-verdigris border-verdigris text-white font-mono text-[12px] font-bold' : 'border-rule text-ink hover:border-ink') + '">' +
+          (on ? pos : '<svg class="lucide lucide-plus w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg>') +
+        '</button>' +
+      '</div>' +
+    '</li>';
+  }
+
   function renderNearYou(isHome) {
     if (!navigator.geolocation) return; // stays hidden
     nearYouEl.classList.toggle('hidden', !isHome);
@@ -510,12 +534,13 @@
     var near = nearestStops();
     var keep = nearListEl.scrollLeft;
     var carousel = NEAR_CAROUSEL_MQ.matches;
-    nearListEl.innerHTML = near.map(function (n) {
+    nearListEl.innerHTML = carousel ? near.map(function (n) {
       // No id: the same stop can also be in the random carousel below.
-      var card = stopHTML(n.s, carousel, fmtDist(n.km), true).replace(' id="stop-' + n.s.id + '"', '');
+      var card = stopHTML(n.s, true, fmtDist(n.km), true).replace(' id="stop-' + n.s.id + '"', '');
       // No fixed height without descriptions; the row's cards stretch to the tallest.
-      return carousel ? '<div class="w-[340px] shrink-0">' + card + '</div>' : card;
-    }).join('');
+      return '<div class="w-[340px] shrink-0">' + card + '</div>';
+    }).join('') :
+      '<ul class="bg-surface border border-rule rounded-[16px] divide-y divide-rule">' + near.map(nearRowHTML).join('') + '</ul>';
     nearListEl.classList.remove('hidden');
     nearListEl.scrollLeft = keep;
     if (near.length && near[0].km > NEAR_FAR_KM) {
