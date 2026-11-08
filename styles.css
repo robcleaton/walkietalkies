@@ -57,6 +57,8 @@
   .dist{ white-space:nowrap; }
   .dist-u{ margin-left:.09em; }
   .font-mono .dist-u{ margin-left:.2em; }
+  #nearList .dist-u{ margin-left:.08em; } /* Near you: tighter still */
+  @media (max-width:639px){ #nearList .dist-u{ margin-left:0; } } /* Near you list on phones: no gap */
   .stop{ background:var(--surface); border:1px solid var(--rule); border-radius:16px; }
   .stop.flash{ animation:flash 1.6s ease-out; }
   /* Narration playbar (playbarHTML() in app.js), under a route stop's name. */
