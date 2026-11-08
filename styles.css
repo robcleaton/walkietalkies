@@ -1,9 +1,3 @@
-  @font-face{
-    font-family:'Kura Rounded';
-    src:url('assets/fonts/kura-rounded.otf') format('opentype');
-    font-weight:400;
-    font-display:swap;
-  }
   :root{
     --ground:#0A0A0B; --surface:#161618; --raised:#1F1F22;
     --ink:#F4F3EF; --muted:#A6A6AB; --faint:#6E6E74;
@@ -214,20 +208,16 @@
   @media (min-width:640px){ .area-card__name{ font-size:40px; } }
   @media (min-width:1024px){ .area-card__head{ gap:8px; } .area-card__name{ font-size:46px; } }
   .area-card__total{ font-family:"Azeret Mono", ui-monospace, monospace; font-size:12px; font-weight:600; opacity:.75; white-space:nowrap; }
-  .area-card__cats{ display:flex; flex-direction:column; gap:7px; font-size:14px; font-weight:600; line-height:1.2; }
-  .area-card__cat{ display:flex; align-items:center; gap:9px; }
-  .area-card__cat svg{ flex:0 0 auto; opacity:.85; }
-  .area-card__n{ font-family:"Azeret Mono", ui-monospace, monospace; font-size:13px; min-width:2ch; text-align:right; }
-  /* Alternative breakdown: each category as a pill, wrapping onto as many
-     lines as it needs instead of one per row (AREA_CARD_CAT_STYLE in
-     app.js). Tinted from the card's own text colour so it reads on every
-     area colour, light or dark. */
-  .area-card__cats--wrap{ flex-direction:row; flex-wrap:wrap; gap:6px; font-size:13px; }
-  .area-card__cats--wrap .area-card__cat{
-    gap:6px; padding:6px 11px 6px 9px; border-radius:999px;
+  /* Category breakdown: each category as a pill, wrapping onto as many
+     lines as it needs. Tinted from the card's own text colour so it reads
+     on every area colour, light or dark. */
+  .area-card__cats{ display:flex; flex-wrap:wrap; gap:6px; font-size:13px; font-weight:600; line-height:1.2; }
+  .area-card__cat{
+    display:flex; align-items:center; gap:6px; padding:6px 11px 6px 9px; border-radius:999px;
     background:color-mix(in srgb, currentColor 14%, transparent);
   }
-  .area-card__cats--wrap .area-card__n{ min-width:0; font-size:12px; }
+  .area-card__cat svg{ flex:0 0 auto; opacity:.85; }
+  .area-card__n{ font-family:"Azeret Mono", ui-monospace, monospace; font-size:12px; }
   @media (prefers-reduced-motion: reduce){
     .area-card{ transition:none; }
     .area-card:hover{ transform:none; }

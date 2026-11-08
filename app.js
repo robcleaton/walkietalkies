@@ -787,106 +787,7 @@
   --------------------------------------------------------------- */
   var routeListEl = document.getElementById('routeList');
 
-  /* ---------------------------------------------------------------
-     Listen (proof of concept): read a stop's text aloud in the
-     Your Route panel, in place of a written description, with a
-     play/pause button. Uses the browser's built-in speech synthesis
-     rather than a hosted audio file — no asset, no network request.
-  --------------------------------------------------------------- */
-  var SPEAK_ICON_PLAY = '<svg class="lucide lucide-play" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>';
-  var SPEAK_ICON_PAUSE = '<svg class="lucide lucide-pause" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="3" width="5" height="18" rx="1"/><rect x="5" y="3" width="5" height="18" rx="1"/></svg>';
-  var speakingBtn = null;
-  var currentUtterance = null; // must stay referenced, or Chrome silently drops it mid-speech
-  var cachedVoices = [];
-
-  // Prefer nicer-sounding *local* voices (Apple's/Microsoft's named ones)
-  // over the flattest default. Deliberately local-only: Chrome's "Google …"
-  // voices are cloud-synthesised, and silently produce no audio at all if
-  // that network request can't complete — worse than just using whatever
-  // voice already works offline.
-  var VOICE_PREFERENCE = ['Samantha', 'Daniel', 'Karen', 'Moira', 'Tessa', 'Serena', 'Ava', 'Nicky'];
-
-  function firstMatch(list, test) {
-    for (var i = 0; i < list.length; i++) { if (test(list[i])) return list[i]; }
-    return null;
-  }
-
-  function refreshVoices() { cachedVoices = window.speechSynthesis.getVoices(); }
-
-  function pickNaturalVoice() {
-    var local = [];
-    for (var i = 0; i < cachedVoices.length; i++) { if (cachedVoices[i].localService) local.push(cachedVoices[i]); }
-    if (!local.length) return null; // nothing safe to pick — leave utter.voice unset
-
-    var byName = null;
-    for (var j = 0; j < VOICE_PREFERENCE.length && !byName; j++) {
-      byName = firstMatch(local, function (v) { return v.name === VOICE_PREFERENCE[j]; });
-    }
-    return byName || firstMatch(local, function (v) { return /^en/i.test(v.lang); }) || local[0];
-  }
-
-  function speakableText(s) {
-    return (s.name + '. ' + s.text)
-      .replace(/&rsquo;/g, '’').replace(/&lsquo;/g, '‘')
-      .replace(/&rdquo;/g, '”').replace(/&ldquo;/g, '“')
-      .replace(/&mdash;/g, '—').replace(/&ndash;/g, '–')
-      .replace(/&amp;/g, '&')
-      .replace(/&[a-z#0-9]+;/gi, '');
-  }
-
-  function setListenBtnState(btn, playing) {
-    btn.setAttribute('aria-pressed', playing ? 'true' : 'false');
-    btn.querySelector('.listen-btn__icon').innerHTML = playing ? SPEAK_ICON_PAUSE : SPEAK_ICON_PLAY;
-    btn.querySelector('.listen-btn__label').textContent = playing ? 'Pause' : 'Listen';
-  }
-
-  if (window.speechSynthesis) {
-    refreshVoices();
-    window.speechSynthesis.onvoiceschanged = refreshVoices;
-
-    routeListEl.addEventListener('click', function (e) {
-      var btn = e.target.closest('[data-speak]');
-      if (!btn) return;
-      var s = byId[btn.getAttribute('data-speak')];
-      var synth = window.speechSynthesis;
-      // Don't talk over a card's ElevenLabs narration (see Narration below).
-      if (typeof narrationAudio !== 'undefined' && narrationAudio) narrationAudio.pause();
-
-      if (speakingBtn === btn && synth.speaking && !synth.paused) {
-        synth.pause();
-        setListenBtnState(btn, false);
-        return;
-      }
-      if (speakingBtn === btn && synth.paused) {
-        synth.resume();
-        setListenBtnState(btn, true);
-        return;
-      }
-      if (synth.speaking || synth.pending) synth.cancel();
-      if (speakingBtn) setListenBtnState(speakingBtn, false);
-
-      var utter = new SpeechSynthesisUtterance(speakableText(s));
-      var voice = pickNaturalVoice();
-      if (voice) utter.voice = voice;
-      utter.rate = 0.95;
-      utter.pitch = 1;
-      utter.onend = utter.onerror = function () {
-        setListenBtnState(btn, false);
-        if (speakingBtn === btn) { speakingBtn = null; currentUtterance = null; }
-      };
-      speakingBtn = btn;
-      currentUtterance = utter; // keep a strong reference — see note above
-      setListenBtnState(btn, true);
-      // Call speak() synchronously, in the same tick as the click: Safari
-      // silently refuses it once it's no longer inside the user gesture.
-      synth.speak(utter);
-    });
-  }
-
   function renderRoute() {
-    if (window.speechSynthesis) window.speechSynthesis.cancel();
-    speakingBtn = null;
-    currentUtterance = null;
     var n = route.length;
     var km = routeKm();
 
@@ -1163,14 +1064,6 @@
   // Flip back to true once AREA_INFO has more photos.
   var SHOW_AREA_CARD_PHOTOS = false;
 
-  // How the area cards list their categories: 'list' (one per line) or
-  // 'wrap' (pills that wrap onto multiple lines). Trying both out for now —
-  // ?catstyle=list or ?catstyle=wrap in the URL overrides the default.
-  var AREA_CARD_CAT_STYLE = (function () {
-    var fromUrl = new URLSearchParams(location.search).get('catstyle');
-    return fromUrl === 'list' || fromUrl === 'wrap' ? fromUrl : 'wrap';
-  })();
-
   // "1 Great building" / "2 Blue plaques" — shared by the Discover area
   // cards and the area pages' per-category row headings.
   function catCountLabel(cat, n) {
@@ -1207,7 +1100,7 @@
         '<span class="area-card__total">' + total + (total === 1 ? ' stop' : ' stops') + '</span>' +
       '</span>' +
       (desc ? '<span class="area-card__desc">' + desc + '</span>' : '') +
-      '<span class="area-card__cats' + (AREA_CARD_CAT_STYLE === 'wrap' ? ' area-card__cats--wrap' : '') + '">' +
+      '<span class="area-card__cats">' +
         cats.map(function (cat) {
           var n = counts[cat];
           var label = n === 1 ? (CAT_SINGULARS[cat] || CATS[cat]) : CAT_PLURALS[cat];
@@ -2076,8 +1969,6 @@
 
   function toggleNarration(id) {
     if (isNarrating(id)) { narrationAudio.pause(); return; }
-    // The route panel's browser-voice Listen and this shouldn't talk over each other.
-    if (window.speechSynthesis) window.speechSynthesis.cancel();
     // A new stop, or one that played to the end, starts again with the
     // signature; a paused one resumes where it was (signature or clip).
     if (narrationId !== id) {
