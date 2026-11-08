@@ -779,7 +779,17 @@
     return map[pc] || '';
   }
 
-  // dist: optional distance label (Near you) shown at the start of the area line.
+  // The line under a card's title: the street address with a full postcode
+  // cut to its district ("100 London Road, SE23 3PQ" → "…, SE23"), the
+  // district added when the address has none, or the area when there's no
+  // address at all.
+  function cardAddress(s) {
+    var addr = (s.addr || '').trim().replace(/\b([A-Z]{1,2}\d[A-Z\d]?) ?\d[A-Z]{2}\b/g, '$1');
+    if (!addr) return s.area + ', ' + s.pc;
+    return new RegExp('\\b' + s.pc + '\\b').test(addr) ? addr : addr + ', ' + s.pc;
+  }
+
+  // dist: optional distance label (Near you) shown at the start of the address line.
   // noText: leave out the description (Near you).
   function stopHTML(s, compact, dist, noText) {
     var on = inRoute(s.id);
@@ -821,11 +831,9 @@
         '<div class="min-w-0 mt-3' + (compact ? ' shrink-0' : '') + '">' +
           '<div class="mb-2">' + catChip(s.cat) + '</div>' +
           '<h3 class="font-display text-[23px] sm:text-[28px] leading-[1.1] mb-1">' + s.name + '</h3>' +
-          '<p class="font-mono text-[11px] text-muted num' + (compact ? ' truncate' : '') + '">' + (dist ? '<span class="text-ink font-semibold">' + dist + '</span> &middot; ' : '') + s.area + ' &middot; ' + s.pc + '</p>' +
+          '<p class="font-mono text-[11px] text-muted num' + (compact ? ' truncate' : '') + '">' + (dist ? '<span class="text-ink font-semibold">' + dist + '</span> &middot; ' : '') + cardAddress(s) + '</p>' +
         '</div>' +
-        // Without a description, a spacer keeps compact cards' address
-        // pinned to the bottom, level across a carousel row.
-        (noText ? (compact ? '<div class="flex-1"></div>' : '') : (
+        (noText ? '' : (
         (compact ? '<div class="flex-1 min-h-0 overflow-hidden mt-3" data-desc-wrap>' : '') +
         '<p class="font-serif text-[17px] leading-[1.55] text-ink max-w-[62ch]' + (compact ? '' : ' mt-3') + '"' + (compact ? ' data-desc-text' : '') + '>' +
           (eraLead ? '<span class="font-semibold">' + eraLead + '.</span> ' : '') +
@@ -836,7 +844,6 @@
           (compact ? s.text.split('\n\n')[0] : s.text.split('\n\n').join('<br><br>')) +
         '</p>' +
         (compact ? '</div>' : ''))) +
-        '<p class="text-[12px] text-faint mt-3' + (compact ? ' shrink-0 truncate' : '') + '">' + s.addr + '</p>' +
       '</article>';
   }
 
@@ -1104,17 +1111,6 @@
     '</button>';
   }
 
-  function parseRGB(str) {
-    var m = /rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)/.exec(str || '');
-    return m ? [+m[1], +m[2], +m[3]] : null;
-  }
-  function colorsAreClose(a, b) {
-    var ca = parseRGB(a), cb = parseRGB(b);
-    if (!ca || !cb) return a === b;
-    var dr = ca[0] - cb[0], dg = ca[1] - cb[1], db = ca[2] - cb[2];
-    return Math.sqrt(dr * dr + dg * dg + db * db) <= 70;
-  }
-
   var areaHeroEl = document.getElementById('areaHero');
   var homeIntroEl = document.getElementById('homeIntro');
   var discoverHeroEl = document.getElementById('discoverHero');
@@ -1134,6 +1130,8 @@
   // 30 areas have one, so most cards were showing an empty placeholder.
   // Flip back to true once AREA_INFO has more photos.
   var SHOW_AREA_CARD_PHOTOS = false;
+  // Same for the photo at the top of an area page — off for now.
+  var SHOW_AREA_HERO_PHOTO = false;
 
   // "1 Great building" / "2 Blue plaques" — shared by the Discover area
   // cards and the area pages' per-category row headings.
@@ -1237,14 +1235,9 @@
     // Always reset area-page state, not just when we know we're leaving
     // one — this also runs from popstate/initFromURL, where the previous
     // state (an area page) isn't tracked, so clearing unconditionally is
-    // the only way to avoid the area hero/theming leaking into a search.
-    document.documentElement.style.removeProperty('--area-bg');
-    document.documentElement.style.removeProperty('--area-ink');
+    // the only way to avoid the area hero leaking into a search.
     document.documentElement.classList.remove('area-active');
     areaHeroEl.classList.add('hidden');
-    Array.prototype.forEach.call(document.querySelectorAll('.area-chip--on-match'), function (chip) {
-      chip.classList.remove('area-chip--on-match');
-    });
   }
 
   function applyAreaFilter(area, scrollBehavior) {
@@ -1257,32 +1250,15 @@
     renderList();
     document.title = areaTitle(area) + ' — WalkieTalkies';
 
-    var c = AREA_COLORS[area.toLowerCase()];
-    if (c) {
-      document.documentElement.style.setProperty('--area-bg', c.bg);
-      document.documentElement.style.setProperty('--area-ink', c.fg);
-    }
+    // Area pages share the homepage's colours; the area's own colour is
+    // only used on its chips and Discover card.
     document.documentElement.classList.add('area-active');
-    Array.prototype.forEach.call(document.querySelectorAll('.area-chip[data-area]'), function (chip) {
-      var key = chip.getAttribute('data-area');
-      var matches = !!(c && AREA_COLORS[key] && colorsAreClose(AREA_COLORS[key].bg, c.bg));
-      chip.classList.toggle('area-chip--on-match', matches);
-    });
-    // A category card whose own colour happens to match this area's
-    // background (e.g. "Great building" and "Notable residents" are both
-    // marigold, same as the Honor Oak page background) would otherwise
-    // disappear into the page — outline it in the area's own ink colour,
-    // the same colour the title/header already use against that bg.
-    Array.prototype.forEach.call(document.querySelectorAll('.cat-card[data-cat]'), function (card) {
-      var matches = !!(c && colorsAreClose(getComputedStyle(card).backgroundColor, c.bg));
-      card.classList.toggle('cat-card--on-area-bg', matches);
-    });
     document.getElementById('areaHeroTitle').textContent = areaTitle(area);
     document.getElementById('areaHeroDesc').innerHTML = AREA_DESCRIPTIONS[area.toLowerCase()] || '';
     document.getElementById('areaHeroPostcodes').innerHTML = postcodeBadgesHTML(areaPostcodes(area));
     var info = (typeof AREA_INFO !== 'undefined' && AREA_INFO[area.toLowerCase()]) || null;
     var imageEl = document.getElementById('areaHeroImage');
-    if (info && info.image) {
+    if (SHOW_AREA_HERO_PHOTO && info && info.image) {
       imageEl.src = info.image;
       imageEl.alt = areaTitle(area);
       imageEl.classList.remove('hidden');
@@ -1319,16 +1295,11 @@
     renderChips();
     renderList();
     document.title = 'WalkieTalkies';
-    document.documentElement.style.removeProperty('--area-bg');
-    document.documentElement.style.removeProperty('--area-ink');
     document.documentElement.classList.remove('area-active');
     areaHeroEl.classList.add('hidden');
     areaMapEl.classList.add('hidden');
     setHomeFurnitureHidden(false);
     document.getElementById('areaChipsBottom').classList.add('hidden');
-    Array.prototype.forEach.call(document.querySelectorAll('.area-chip--on-match'), function (chip) {
-      chip.classList.remove('area-chip--on-match');
-    });
   }
 
   // Discover: the homepage minus its furniture, with the full stop list in

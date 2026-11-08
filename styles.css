@@ -16,7 +16,7 @@
     color-scheme:light;
   }
 
-  body{ background:var(--area-bg, var(--ground)); color:var(--ink); font-family:Inter, Helvetica Neue, Arial, sans-serif; -webkit-font-smoothing:antialiased; transition:background-color .45s ease; }
+  body{ background:var(--ground); color:var(--ink); font-family:Inter, Helvetica Neue, Arial, sans-serif; -webkit-font-smoothing:antialiased; transition:background-color .45s ease; }
   .warface-logo-dark{ display:block; }
   .warface-logo-light{ display:none; }
   :root[data-theme="light"] .warface-logo-dark{ display:none; }
@@ -41,7 +41,7 @@
      at the mercy of ancestor overflow and mobile Safari quirks); body's
      top padding reserves its space, using the height trackHeaderHeight()
      in app.js measures, so nothing starts tucked under it. */
-  header{ position:fixed; top:0; left:0; right:0; z-index:30; background:var(--area-bg, var(--ground)); transition:background-color .45s ease; }
+  header{ position:fixed; top:0; left:0; right:0; z-index:30; background:var(--ground); transition:background-color .45s ease; }
   body{ padding-top:var(--header-h, 84px); }
 
   /* Leaflet's own CSS gives its panes/controls z-index values up to 1000,
@@ -107,8 +107,6 @@
      (see the matching loop in applyAreaFilter) would otherwise have no
      visible edge against the page — outline it in the area's own ink
      colour, same as the title/header use against that bg. */
-  .cat-card--on-area-bg{ box-shadow:0 0 0 2px var(--area-ink); }
-  .cat-card--on-area-bg[aria-pressed="true"]{ box-shadow:0 0 0 2px var(--area-ink), 0 0 0 4px #fff; }
 
   /* Hide the scrollbar on horizontally-scrollable chip rows (#chips, #areaStickyRow) */
   .scroll-hide{ -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none; }
@@ -150,7 +148,6 @@
     border-radius:999px;
     transition:transform .15s ease, filter .15s ease;
   }
-  .area-chip.area-chip--on-match{ box-shadow:0 0 0 1.25px #fff; }
   .area-chip:hover{ transform:translateY(-2px); filter:brightness(1.08); }
   .area-chip:active{ transform:translateY(0); filter:brightness(.94); }
   @media (prefers-reduced-motion: reduce){
@@ -162,7 +159,7 @@
      chips above have scrolled out of view; one user-scrollable row */
   #areaStickyBar{
     position:fixed; top:var(--header-h, 84px); left:0; right:0; z-index:20;
-    background:var(--area-bg, var(--ground)); border-bottom:1px solid var(--rule);
+    background:var(--ground); border-bottom:1px solid var(--rule);
     transition:background-color .45s ease;
   }
   #areaStickyRow{
@@ -251,7 +248,6 @@
   }
 
   /* Area hero: shown when an area page is active */
-  #areaHero{ color:var(--area-ink, var(--ink)); }
   /* Line-height scales via its own clamp, not a fixed ratio of font-size —
      a flat multiplier looks fine at the small end but leaves almost no
      breathing room above the description once the title is near its
@@ -269,19 +265,6 @@
     line-height:clamp(44px, 17vw - 36px, 150px);
   }
 
-  /* Header icons and the WalkieTalkies wordmark follow the active area's
-     ink colour, the same colour as the area title, instead of the fixed
-     light/dark theme colours — --area-ink is only set on the root while
-     an area page is open (see applyAreaFilter / clearAreaFilter in
-     app.js), so these rules fall back to the normal theme colours
-     everywhere else. The wordmark svg sets its own `text-ink` colour
-     directly (not just inherited from #logoText), so it needs its own
-     selector rather than relying on #logoText's color alone. */
-  header #searchToggle, header #themeToggle, header #routeHeaderBtn{
-    color:var(--area-ink, var(--muted));
-    border-color:var(--area-ink, var(--rule));
-  }
-  html.area-active #logoText svg{ color:var(--area-ink); }
   /* One of the route's stops playing (html.narrating, set in app.js
      syncRoutePlaying): the Your route button inverts and shows a speaker,
      and the mobile route bar shows one too. */
@@ -298,47 +281,12 @@
   }
   html.narrating header #routeHeaderBtn,
   html.narrating header #routeHeaderBtn:hover{
-    background:var(--area-ink, var(--ink));
-    border-color:var(--area-ink, var(--ink));
-    color:var(--area-bg, var(--ground));
-  }
-  header #searchToggle:hover, header #themeToggle:hover, header #routeHeaderBtn:hover{
-    color:var(--area-ink, var(--ink));
-    border-color:var(--area-ink, var(--ink));
-  }
-  /* Search input on an area page: a flat black overlay on top of the
-     header's own opaque --area-bg, so the box reads as a darker shade of
-     the area colour rather than a stark, disconnected black fill (or, for
-     a light-ink area, a jarring lighter one) — no border, just the fill.
-     At 30% alpha, marigold/brass (Honor Oak, Blackheath and the other
-     light-ink areas) land just under 4.5:1 at ~4.4-4.5:1; every other
-     area colour clears it comfortably. Scoped to html.area-active
-     (set/cleared in applyAreaFilter/clearAreaFilter) rather than a
-     var() fallback, so the homepage search box is untouched. */
-  html.area-active header #search{
-    background:rgba(0,0,0,.3);
-    border-color:transparent;
-    color:var(--area-ink);
-  }
-  html.area-active header #search::placeholder{
-    color:color-mix(in srgb, var(--area-ink) 65%, transparent);
+    background:var(--ink);
+    border-color:var(--ink);
+    color:var(--ground);
   }
 
-  /* Same fix as the header icons above, for the other faint/muted text
-     that sits directly on the page background rather than on a card's own
-     --surface: the result count ("31 stops"), the area hero's "History"
-     label, and the footer credit line. Left on the fixed --faint token,
-     these read at ~2.5:1 against a light area colour like brass or
-     marigold — nearly invisible. Falls back to the normal theme colour
-     everywhere an area isn't active, same as above. */
-  #resultCount, #areaHeroInfo .eyebrow, footer .eyebrow{
-    color:var(--area-ink, var(--faint));
-  }
   #resultCount{ font-size:13px; }
-  /* Postcode group dividers in the list ("SE15  Peckham & Nunhead") sit on
-     the same area-tinted background — the bold postcode span had no colour
-     class (inheriting the fixed --ink), and its district-name span is the
-     same .eyebrow.text-faint pattern as above. */
   /* Area pages, large screens only (for now): stops as one carousel per
      category (#areaRows) in place of the single grouped list (#list).
      Below lg, and on search results, #list is used as before. */
@@ -348,9 +296,6 @@
     html.area-active #list{ display:none; }
     html.area-active #areaRows{ display:flex; flex-direction:column; gap:40px; }
   }
-  .area-cat-head{ color:var(--area-ink, var(--ink)); }
-  #list .pc-group-divider{ color:var(--area-ink, var(--ink)); }
-  #list .pc-group-divider .eyebrow{ color:var(--area-ink, var(--faint)); }
 
   /* Your route: branded orange background, with the panel's own text,
      rules and tiles re-tuned to read against it rather than the theme */
