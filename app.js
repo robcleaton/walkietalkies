@@ -480,6 +480,8 @@
      and it never leaves the device: it's only used to sort STOPS. */
   var NEAR_COUNT = 10;
   var NEAR_FAR_KM = 3; // further than this from every stop: "you're X away"
+  // Phones get a vertical list of full cards; sm and up, a carousel.
+  var NEAR_CAROUSEL_MQ = window.matchMedia('(min-width: 640px)');
   var nearYouEl = document.getElementById('nearYou');
   var nearListEl = document.getElementById('nearList');
   var nearStatusEl = document.getElementById('nearYouStatus');
@@ -507,10 +509,11 @@
     if (!isHome || !nearPos) return;
     var near = nearestStops();
     var keep = nearListEl.scrollLeft;
+    var carousel = NEAR_CAROUSEL_MQ.matches;
     nearListEl.innerHTML = near.map(function (n) {
       // No id: the same stop can also be in the random carousel below.
-      return '<div class="w-[300px] sm:w-[340px] h-[400px] shrink-0">' +
-        stopHTML(n.s, true, fmtDist(n.km)).replace(' id="stop-' + n.s.id + '"', '') + '</div>';
+      var card = stopHTML(n.s, carousel, fmtDist(n.km)).replace(' id="stop-' + n.s.id + '"', '');
+      return carousel ? '<div class="w-[340px] h-[400px] shrink-0">' + card + '</div>' : card;
     }).join('');
     nearListEl.classList.remove('hidden');
     nearListEl.scrollLeft = keep;
@@ -545,6 +548,9 @@
 
   if (navigator.geolocation) {
     nearBtn.addEventListener('click', locateNearYou);
+    var onNearLayoutChange = function () { if (nearPos) renderNearYou(!homeListEl.classList.contains('hidden')); };
+    if (NEAR_CAROUSEL_MQ.addEventListener) NEAR_CAROUSEL_MQ.addEventListener('change', onNearLayoutChange);
+    else NEAR_CAROUSEL_MQ.addListener(onNearLayoutChange);
     // Already allowed on an earlier visit: no prompt will show, so fill
     // the row in straight away rather than waiting for a tap.
     if (navigator.permissions && navigator.permissions.query) {
@@ -744,8 +750,7 @@
     // lines actually fit in the space left once the name has taken what it
     // needs, so short names don't leave a gap above a pinned address.
     return '' +
-      '<article id="stop-' + s.id + '" class="stop relative px-5 py-5' + (compact ? ' h-full flex flex-col' : '') + '">' +
-        playbarHTML(s) +
+      '<article id="stop-' + s.id + '" class="stop px-5 py-5' + (compact ? ' h-full flex flex-col' : '') + '">' +
         // Image, plus the listen/route buttons, share the top row; the
         // category chip and title get their own full-width lines beneath,
         // so long names never run into the buttons.
@@ -787,7 +792,18 @@
   --------------------------------------------------------------- */
   var routeListEl = document.getElementById('routeList');
 
+  // html.narrating: one of the route's own stops is playing — shows the
+  // speaker on the Your route button/bar (styles.css). A stop playing from
+  // a card that isn't in the route doesn't count. Rechecked on every play
+  // and pause, and on every route change (a playing stop added or removed).
+  function syncRoutePlaying() {
+    var on = typeof narrationAudio !== 'undefined' && !!narrationAudio &&
+      !!narrationId && !narrationAudio.paused && inRoute(narrationId);
+    document.documentElement.classList.toggle('narrating', on);
+  }
+
   function renderRoute() {
+    syncRoutePlaying();
     var n = route.length;
     var km = routeKm();
 
@@ -841,11 +857,11 @@
           '<div class="min-w-0 flex-1">' +
             '<p class="text-[14px] font-semibold leading-tight">' + s.name + '</p>' +
             '<p class="font-mono text-[11px] text-faint mt-0.5">' + s.pc + ' &middot; ' + s.area + '</p>' +
-            playbarHTML(s, true) +
+            playbarHTML(s) +
           '</div>' +
           '<div class="shrink-0 self-center flex items-center gap-1">' +
             (narrationFiles[s.id] ? listenButtonHTML(s, true) : '') +
-            '<button type="button" data-route-menu="' + id + '" data-tooltip="More" aria-haspopup="menu" aria-expanded="false" aria-label="More actions for ' + plain(s.name) + '" class="w-7 h-7 rounded-full text-ink hover:bg-surface inline-flex items-center justify-center transition-colors">' +
+            '<button type="button" data-route-menu="' + id + '" data-tooltip="More" aria-haspopup="menu" aria-expanded="false" aria-label="More actions for ' + plain(s.name) + '" class="w-10 h-10 rounded-full text-ink hover:bg-surface inline-flex items-center justify-center transition-colors">' +
               '<svg class="lucide lucide-ellipsis-vertical" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>' +
             '</button>' +
           '</div>' +
@@ -1758,7 +1774,7 @@
     if (!narrationFiles[s.id]) return '';
     var playing = isNarrating(s.id);
     return '<button type="button" data-listen="' + s.id + '" data-tooltip="' + (playing ? 'Pause' : 'Listen') + '" aria-pressed="' + playing + '" aria-label="' + (playing ? 'Pause' : 'Listen to') + ' ' + plain(s.name) + '" ' +
-      'class="shrink-0 inline-flex items-center justify-center ' + (small ? 'w-7 h-7' : 'w-9 h-9') + ' rounded-full border border-rule text-ink hover:border-ink transition-colors">' +
+      'class="shrink-0 inline-flex items-center justify-center ' + (small ? 'w-10 h-10' : 'w-9 h-9') + ' rounded-full border border-rule text-ink hover:border-ink transition-colors">' +
       listenButtonInner(s.id) +
     '</button>';
   }
@@ -1766,10 +1782,9 @@
   // Updates every Listen button in place rather than re-rendering the
   // lists, so carousels keep their scroll position while audio plays.
   /* Playbar — elapsed time, a seekable track and the clip's length, shown
-     on a stop's card (pinned in its bottom padding, so the card's layout
-     doesn't move) and its route item while that stop is loaded: playing,
-     paused part-way, or still on the signature (held at 0:00 until the
-     clip itself starts). */
+     under a route stop's name (Your route panel only, not on the cards)
+     while that stop is loaded: playing, paused part-way, or still on the
+     signature (held at 0:00 until the clip itself starts). */
   function fmtTime(t) {
     if (!isFinite(t) || t < 0) t = 0;
     var m = Math.floor(t / 60), sec = Math.floor(t % 60);
@@ -1784,11 +1799,10 @@
     return { active: active, at: at, dur: dur, frac: isFinite(dur) && dur > 0 ? Math.min(1, at / dur) : 0 };
   }
 
-  // inline: the route panel's version, in the stop's text column.
-  function playbarHTML(s, inline) {
+  function playbarHTML(s) {
     if (!narrationFiles[s.id]) return '';
     var st = playbarState(s.id);
-    return '<div data-playbar="' + s.id + '" class="playbar' + (inline ? ' playbar--inline' : '') + '"' + (st.active ? '' : ' hidden') + '>' +
+    return '<div data-playbar="' + s.id + '" class="playbar"' + (st.active ? '' : ' hidden') + '>' +
       '<span data-pb-at class="num">' + fmtTime(st.at) + '</span>' +
       '<div data-pb-track role="slider" tabindex="0" aria-label="Seek ' + plain(s.name) + '" aria-valuemin="0" aria-valuemax="' + Math.round(st.dur || 0) + '" aria-valuenow="' + Math.round(st.at) + '" class="playbar__track">' +
         '<div data-pb-fill class="playbar__fill" style="transform:scaleX(' + st.frac + ')"></div>' +
@@ -1865,7 +1879,7 @@
   });
 
   function syncListenButtons() {
-    document.documentElement.classList.toggle('narrating', !!narrationId && !narrationAudio.paused);
+    syncRoutePlaying();
     Array.prototype.forEach.call(document.querySelectorAll('[data-listen]'), function (btn) {
       var id = btn.getAttribute('data-listen');
       var playing = isNarrating(id);
