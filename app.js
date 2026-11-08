@@ -490,9 +490,16 @@
   var nearPos = null; // { lat, lon } once known
   var nearLocating = false;
 
+  // A distance as HTML: the unit gets a hairline gap from the number via
+  // CSS (.dist-u in styles.css) — tighter than any space character — and
+  // .dist keeps the two on one line.
+  function distHTML(n, unit) {
+    return '<span class="dist">' + n + '<span class="dist-u">' + unit + '</span></span>';
+  }
+
   function fmtDist(km) {
-    if (km < 1) return Math.max(10, Math.round(km * 1000 / 10) * 10) + ' m';
-    return (km < 10 ? km.toFixed(1) : Math.round(km)) + ' km';
+    if (km < 1) return distHTML(Math.max(10, Math.round(km * 1000 / 10) * 10), 'm');
+    return distHTML(km < 10 ? km.toFixed(1) : Math.round(km), 'km');
   }
 
   function nearestStops() {
@@ -544,7 +551,7 @@
     nearListEl.classList.remove('hidden');
     nearListEl.scrollLeft = keep;
     if (near.length && near[0].km > NEAR_FAR_KM) {
-      nearStatusEl.textContent = 'You’re ' + fmtDist(near[0].km) + ' from the nearest stop — here are the closest.';
+      nearStatusEl.innerHTML = 'You’re ' + fmtDist(near[0].km) + ' from the nearest stop — here are the closest.';
     } else {
       nearStatusEl.textContent = 'The closest stops to you, nearest first.';
     }
@@ -841,8 +848,8 @@
 
     document.getElementById('routeMeta').textContent =
       n === 0 ? 'No stops yet' : n + (n === 1 ? ' stop' : ' stops');
-    document.getElementById('barLabel').textContent =
-      n === 0 ? 'Empty — add a stop' : n + (n === 1 ? ' stop' : ' stops') + ' · ' + km.toFixed(1) + ' km';
+    document.getElementById('barLabel').innerHTML =
+      n === 0 ? 'Empty — add a stop' : n + (n === 1 ? ' stop' : ' stops') + ' · ' + distHTML(km.toFixed(1), 'km');
 
     var headerCount = document.getElementById('routeHeaderCount');
     headerCount.textContent = n;
@@ -882,7 +889,7 @@
       var s = byId[id];
       var leg = i > 0 ? haversine(byId[route[i - 1]], s) : 0;
       html += '' +
-        (i > 0 ? '<p class="pl-[52px] pr-5 py-1 font-mono text-[11px] text-faint num">&darr; ' + leg.toFixed(2) + ' km</p>' : '') +
+        (i > 0 ? '<p class="pl-[52px] pr-5 py-1 font-mono text-[11px] text-faint num">&darr; ' + distHTML(leg.toFixed(2), 'km') + '</p>' : '') +
         '<div class="flex gap-3 px-5 py-2.5 ' + (i > 0 ? '' : 'pt-4') + '">' +
           '<span class="shrink-0 w-6 h-6 mt-0.5 rounded-full bg-verdigris text-white font-mono num text-[11px] font-semibold grid place-items-center">' + (i + 1) + '</span>' +
           (s.img ? '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.remove()" class="w-10 h-10 shrink-0 rounded-lg object-cover border border-rule">' : '') +

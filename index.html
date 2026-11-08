@@ -308,16 +308,15 @@
              visits, if they've already allowed it). The position stays on
              the device — it's only used to sort stops (app.js, Near you). -->
         <section id="nearYou" class="hidden min-w-0 mb-10" aria-labelledby="nearYouTitle">
-          <div class="mb-4">
-            <!-- Button under the title on phones, beside it from sm up -->
-            <div class="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4">
-              <h3 id="nearYouTitle" class="font-display text-[28px] leading-none">Near you</h3>
-              <button id="nearYouBtn" type="button" class="shrink-0 inline-flex items-center gap-2 text-[13px] font-semibold px-4 py-2.5 rounded-full border border-rule text-ink hover:border-ink transition-colors">
-                <svg class="lucide lucide-locate-fixed w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2" x2="5" y1="12" y2="12"/><line x1="19" x2="22" y1="12" y2="12"/><line x1="12" x2="12" y1="2" y2="5"/><line x1="12" x2="12" y1="19" y2="22"/><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="3"/></svg>
-                <span id="nearYouBtnLabel">Use my location</span>
-              </button>
-            </div>
-            <p id="nearYouStatus" class="text-[13px] text-muted mt-2" aria-live="polite">See the stops closest to where you are.</p>
+          <!-- Phones: title, status, then the button. From sm up the button
+               sits beside the title, with the status on its own line below. -->
+          <div class="mb-4 flex flex-col items-start sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-4">
+            <h3 id="nearYouTitle" class="font-display text-[28px] leading-none">Near you</h3>
+            <p id="nearYouStatus" class="order-1 sm:order-2 sm:basis-full text-[13px] text-muted mt-2" aria-live="polite">See the stops closest to where you are.</p>
+            <button id="nearYouBtn" type="button" class="order-2 sm:order-1 mt-3 sm:mt-0 shrink-0 inline-flex items-center gap-2 text-[13px] font-semibold px-4 py-2.5 rounded-full border border-rule text-ink hover:border-ink transition-colors">
+              <svg class="lucide lucide-locate-fixed w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2" x2="5" y1="12" y2="12"/><line x1="19" x2="22" y1="12" y2="12"/><line x1="12" x2="12" y1="2" y2="5"/><line x1="12" x2="12" y1="19" y2="22"/><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="3"/></svg>
+              <span id="nearYouBtnLabel">Use my location</span>
+            </button>
           </div>
           <!-- One grouped list on phones (nearRowHTML in app.js), a carousel of
                cards from sm up (like #homeList below). -->
@@ -356,7 +355,7 @@
                 <path class="speaker-wave speaker-wave--1" d="M16 9a5 5 0 0 1 0 6" />
                 <path class="speaker-wave speaker-wave--2" d="M19.364 18.364a9 9 0 0 0 0-12.728" />
               </svg>
-              <span class="text-[15px] font-semibold" id="barLabel">5 stops &middot; 2.1 km</span>
+              <span class="text-[15px] font-semibold" id="barLabel">5 stops &middot; <span class="dist">2.1<span class="dist-u">km</span></span></span>
             </span>
           </span>
           <svg id="routeBarChevron" class="lucide lucide-chevron-up w-10 h-10 shrink-0 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="1.7 1.7 20.6 20.6" fill="none" stroke="currentColor" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
