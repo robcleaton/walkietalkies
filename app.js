@@ -837,11 +837,12 @@
         (compact ? '<div class="flex-1 min-h-0 overflow-hidden mt-3" data-desc-wrap>' : '') +
         '<p class="font-serif text-[17px] leading-[1.55] text-ink max-w-[62ch]' + (compact ? '' : ' mt-3') + '"' + (compact ? ' data-desc-text' : '') + '>' +
           (eraLead ? '<span class="font-semibold">' + eraLead + '.</span> ' : '') +
-          // Compact cards clamp to a single flowing paragraph — joining every
-          // paragraph with <br><br> first would let the clamp cut land on a
-          // blank line between paragraphs, leaving a stray "…" on a line of
-          // its own instead of trailing the last visible word.
-          (compact ? s.text.split('\n\n')[0] : s.text.split('\n\n').join('<br><br>')) +
+          // Cards show the short description (Notion's "Short description",
+          // up to 40 words); the full text stays for search and narration.
+          // Without one, compact cards fall back to the first paragraph —
+          // a single flowing paragraph, so the clamp's "…" never lands on a
+          // blank line between paragraphs — and full cards to everything.
+          (s.short || (compact ? s.text.split('\n\n')[0] : s.text.split('\n\n').join('<br><br>'))) +
         '</p>' +
         (compact ? '</div>' : ''))) +
       '</article>';

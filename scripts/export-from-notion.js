@@ -197,6 +197,9 @@ function pageToStop(page, usedSlugs) {
     lon: getNumber(page, 'Longitude'),
     addr: getRichText(page, 'Address'),
     text: getRichText(page, 'Description'),
+    // Up to 40 words, shown on the stop cards; the full Description above
+    // stays the source for the narration audio.
+    short: getRichText(page, 'Short description'),
     // Which area pages the stop appears on (app.js stopInArea). Left off
     // entirely while the database has no "Areas" column, so the site falls
     // back to matching on name/Area text instead.
@@ -225,6 +228,7 @@ function formatStop(stop) {
     `    { id:'${stop.id}', img:'${encodeField(stop.img)}', name:'${encodeField(stop.name)}', area:'${encodeField(stop.area)}', pc:'${encodeField(stop.pc)}', cat:'${stop.cat}', year:${year}, era:'${encodeField(stop.era)}',\n` +
     `      lat:${lat}, lon:${lon}, addr:'${encodeField(stop.addr)}',\n` +
     `      text:'${encodeField(stop.text)}'` +
+    (stop.short ? `,\n      short:'${encodeField(stop.short)}'` : '') +
     (stop.areas ? `,\n      areas:[${stop.areas.map((a) => `'${encodeField(a)}'`).join(', ')}]` : '') +
     ` }`
   );
