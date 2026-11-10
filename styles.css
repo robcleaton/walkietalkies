@@ -343,6 +343,14 @@
   /* A route stop that's playing: its Pause button inverts to black with an
      orange icon (aria-pressed is kept in sync by syncListenButtons()). */
   #routePanel [data-listen][aria-pressed="true"]{ background:#171717; border-color:#171717; color:var(--marigold); }
+  /* Play button hover: the colours invert — a filled circle in the text
+     colour with the icon in the background colour (black with a white
+     icon on the route panel and light theme; light with a dark icon on
+     the dark theme). Pointer devices only, so it doesn't stick on touch. */
+  @media (hover:hover){
+    [data-listen][aria-pressed="false"]:hover{ background:var(--ink); border-color:var(--ink); color:var(--ground); }
+    #routePanel [data-listen][aria-pressed="false"]:hover{ color:#fff; }
+  }
   /* Your route: list or map. #routePanel carries the current view in
      data-view (setRouteView() in app.js); the map fills the space the
      list would otherwise scroll in. The Map toggle by the panel's
@@ -388,7 +396,10 @@
       max-height:0; overflow:hidden; visibility:hidden;
       transition:max-height .45s cubic-bezier(.32,.72,0,1), visibility 0s linear .45s;
     }
+    /* Open, the body tucks up into #routeBar's bottom padding, so the
+       stops start closer under the "5 stops" summary. */
     html.route-open #routePanelBody{
+      margin-top:-14px;
       max-height:80vh; visibility:visible;
       transition:max-height .45s cubic-bezier(.32,.72,0,1);
     }

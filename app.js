@@ -903,7 +903,7 @@
 
     var html = '';
     if (seeded) {
-      html += '<p class="px-5 pt-4 lg:pt-1 pb-1 text-[12px] leading-relaxed text-brass">' +
+      html += '<p class="px-5 pt-1 pb-1 text-[12px] leading-relaxed text-brass">' +
               'Starter route: a Greenwich morning, riverside first, uphill last. Remove stops with &times; and build your own.</p>';
     }
     route.forEach(function (id, i) {
@@ -913,7 +913,7 @@
         (i > 0 ? '<p class="pl-[52px] pr-5 font-mono text-[11px] leading-4 text-faint num">&darr; ' + distHTML(leg.toFixed(2), 'km') + '</p>' : '') +
         // Mobile rows match the Near you list (48px image, 15px name,
         // centred); the desktop dropdown keeps its tighter rows (lg:).
-        '<div class="flex items-center lg:items-start gap-3 px-5 py-2 lg:py-1.5 ' + (i > 0 ? '' : 'pt-4') + '">' +
+        '<div class="flex items-center lg:items-start gap-3 px-5 py-2 lg:py-1.5 ' + (i > 0 ? '' : 'pt-3') + '">' +
           // Desktop rows are top-aligned: drop the number to the middle of the
           // 56px thumbnail ((56 - 24) / 2); mobile rows are centred already.
           '<span class="route-num relative z-[1] shrink-0 w-6 h-6 ' + (s.img ? 'lg:mt-4' : 'lg:mt-0.5') + ' rounded-full bg-verdigris text-white font-mono num text-[11px] font-semibold grid place-items-center">' + (i + 1) + '</span>' +
