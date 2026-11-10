@@ -297,6 +297,12 @@
     html.area-active #areaRows{ display:flex; flex-direction:column; gap:40px; }
   }
 
+  /* Your route: one subtle grey dashed line joining the green stop
+     numbers, placed behind them by positionRouteLine() in app.js. */
+  #routeList{ position:relative; }
+  .route-line{ position:absolute; width:0; border-left:1.5px dashed #8E8E93; pointer-events:none; }
+  .route-line[hidden]{ display:none; }
+
   /* Your route: branded orange background, with the panel's own text,
      rules and tiles re-tuned to read against it rather than the theme */
   #routePanel{

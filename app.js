@@ -903,19 +903,21 @@
 
     var html = '';
     if (seeded) {
-      html += '<p class="px-5 pt-4 pb-1 text-[12px] leading-relaxed text-brass">' +
+      html += '<p class="px-5 pt-4 lg:pt-1 pb-1 text-[12px] leading-relaxed text-brass">' +
               'Starter route: a Greenwich morning, riverside first, uphill last. Remove stops with &times; and build your own.</p>';
     }
     route.forEach(function (id, i) {
       var s = byId[id];
       var leg = i > 0 ? haversine(byId[route[i - 1]], s) : 0;
       html += '' +
-        (i > 0 ? '<p class="pl-[52px] pr-5 py-1 font-mono text-[11px] text-faint num">&darr; ' + distHTML(leg.toFixed(2), 'km') + '</p>' : '') +
+        (i > 0 ? '<p class="pl-[52px] pr-5 font-mono text-[11px] leading-4 text-faint num">&darr; ' + distHTML(leg.toFixed(2), 'km') + '</p>' : '') +
         // Mobile rows match the Near you list (48px image, 15px name,
-        // centred, py-3); the desktop dropdown keeps its tighter rows (lg:).
-        '<div class="flex items-center lg:items-start gap-3 px-5 py-3 lg:py-2.5 ' + (i > 0 ? '' : 'pt-4') + '">' +
-          '<span class="shrink-0 w-6 h-6 lg:mt-0.5 rounded-full bg-verdigris text-white font-mono num text-[11px] font-semibold grid place-items-center">' + (i + 1) + '</span>' +
-          (s.img ? '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.remove()" class="w-12 h-12 lg:w-10 lg:h-10 shrink-0 rounded-lg object-cover border border-rule">' : '') +
+        // centred); the desktop dropdown keeps its tighter rows (lg:).
+        '<div class="flex items-center lg:items-start gap-3 px-5 py-2 lg:py-1.5 ' + (i > 0 ? '' : 'pt-4') + '">' +
+          // Desktop rows are top-aligned: drop the number to the middle of the
+          // 56px thumbnail ((56 - 24) / 2); mobile rows are centred already.
+          '<span class="route-num relative z-[1] shrink-0 w-6 h-6 ' + (s.img ? 'lg:mt-4' : 'lg:mt-0.5') + ' rounded-full bg-verdigris text-white font-mono num text-[11px] font-semibold grid place-items-center">' + (i + 1) + '</span>' +
+          (s.img ? '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.remove()" class="w-12 h-12 lg:w-14 lg:h-14 shrink-0 rounded-lg object-cover border border-rule">' : '') +
           '<div class="min-w-0 flex-1">' +
             '<p class="text-[15px] leading-snug lg:text-[14px] lg:leading-tight font-semibold">' + s.name + '</p>' +
             '<p class="font-mono text-[11px] text-faint mt-0.5">' + s.pc + ' &middot; ' + s.area + '</p>' +
@@ -929,8 +931,29 @@
           '</div>' +
         '</div>';
     });
-    routeListEl.innerHTML = html;
+    // One dashed line joining the numbers, placed by positionRouteLine.
+    routeListEl.innerHTML = html + '<span class="route-line" aria-hidden="true"></span>';
+    positionRouteLine();
   }
+
+  // The dashed line runs from the first stop number's centre to the last
+  // one's, behind the numbers — a single line, so its dashes stay even
+  // (separate pieces per row restart the pattern at every join). It's
+  // re-measured whenever the list changes size: opening the panel, the
+  // window resizing, fonts loading, the list/map switch.
+  function positionRouteLine() {
+    var line = routeListEl.querySelector('.route-line');
+    if (!line) return;
+    var nums = routeListEl.querySelectorAll('.route-num');
+    if (nums.length < 2 || !routeListEl.offsetHeight) { line.hidden = true; return; }
+    var box = routeListEl.getBoundingClientRect();
+    var a = nums[0].getBoundingClientRect(), b = nums[nums.length - 1].getBoundingClientRect();
+    line.hidden = false;
+    line.style.left = (a.left + a.width / 2 - box.left - 0.75) + 'px';
+    line.style.top = (a.top + a.height / 2 - box.top) + 'px';
+    line.style.height = (b.top - a.top) + 'px';
+  }
+  if (window.ResizeObserver) new ResizeObserver(positionRouteLine).observe(routeListEl);
 
   function plain(s) { return s.replace(/&[a-z]+;/g, ''); }
 
