@@ -581,6 +581,19 @@
     }, { enableHighAccuracy: true, timeout: 15000, maximumAge: 60000 });
   }
 
+  // Your route's empty-state Use my location: close the route panel and
+  // bring up Near you on the homepage (from another page, via ?near).
+  function goToNearYou() {
+    if (homeListEl.classList.contains('hidden')) { location.href = './?near'; return; }
+    nearYouEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (!nearPos) locateNearYou();
+  }
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('[data-near-you]')) return;
+    openSheet(false);
+    goToNearYou();
+  });
+
   if (navigator.geolocation) {
     nearBtn.addEventListener('click', locateNearYou);
     var onNearLayoutChange = function () { if (nearPos) renderNearYou(!homeListEl.classList.contains('hidden')); };
@@ -863,6 +876,13 @@
     document.documentElement.classList.toggle('narrating', on);
   }
 
+  // The empty route's title follows the viewer's clock: "An empty morning"
+  // before noon, afternoon until 5pm, evening after that (and overnight).
+  function partOfDay() {
+    var h = new Date().getHours();
+    return h >= 5 && h < 12 ? 'morning' : h >= 12 && h < 17 ? 'afternoon' : 'evening';
+  }
+
   function renderRoute() {
     syncRoutePlaying();
     var n = route.length;
@@ -896,8 +916,14 @@
     if (n === 0) {
       routeListEl.innerHTML =
         '<div class="px-5 py-10 text-center">' +
-          '<p class="font-display text-[21px] leading-tight mb-1.5">An empty morning</p>' +
+          '<p class="font-display text-[21px] leading-tight mb-1.5">An empty ' + partOfDay() + '</p>' +
           '<p class="text-[13px] leading-relaxed text-muted max-w-[30ch] mx-auto">Add stops from WalkieTalkies. They stack in the order you add them, and you can shuffle them after.</p>' +
+          // Straight to the homepage's Near you, for stops to start from.
+          (navigator.geolocation ?
+            '<button type="button" data-near-you class="mt-5 inline-flex items-center gap-2 text-[13px] font-semibold px-4 py-2.5 rounded-full bg-[#171717] text-white transition-opacity hover:opacity-90">' +
+              '<svg class="lucide lucide-locate-fixed w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2" x2="5" y1="12" y2="12"/><line x1="19" x2="22" y1="12" y2="12"/><line x1="12" x2="12" y1="2" y2="5"/><line x1="12" x2="12" y1="19" y2="22"/><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="3"/></svg>' +
+              'Use my location' +
+            '</button>' : '') +
         '</div>';
       return;
     }
@@ -2147,5 +2173,10 @@
     if (slug) applyAreaFilter(areaFromSlug(slug), 'auto');
     else if (q) applySearchState(q, true);
     else if (params.get('view') === 'discover') applyDiscover();
+    else if (params.get('near') !== null) {
+      // Arrived from Your route's Use my location on another page.
+      history.replaceState(null, '', location.pathname);
+      setTimeout(goToNearYou, 0);
+    }
   })();
 })();

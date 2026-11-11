@@ -291,6 +291,7 @@
   }
 
   #resultCount{ font-size:13px; }
+  #nearYou{ scroll-margin-top:calc(var(--header-h, 84px) + 16px); }
   /* Phones: the stop count sits close above the first postcode group —
      the first divider drops the top padding that spaces later groups. */
   @media (max-width:639px){ #list > .pc-group-divider:first-child{ padding-top:0; } }
