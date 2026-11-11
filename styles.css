@@ -4,6 +4,7 @@
     --rule:#2B2B2F; --plaque:#3358E0; --plaque-soft:#1C2748;
     --verdigris:#15855A; --brass:#EFA935;
     --tomato:#E1481C; --violet:#8636CC; --bubblegum:#E85C97; --marigold:#F2A400;
+    --focus:var(--marigold);
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -16px rgba(0,0,0,.9);
     color-scheme:dark;
   }
@@ -12,10 +13,21 @@
     --ink:#131315; --muted:#5A5A60; --faint:#8C8C92;
     --rule:#E1E0DA; --plaque-soft:#E4E9FB;
     --brass:#A8730A;
+    --focus:var(--ink);
     --shadow:0 1px 2px rgba(20,27,34,.05), 0 8px 24px -14px rgba(20,27,34,.22);
     color-scheme:light;
   }
 
+  /* Mouse and trackpad only: the arrow and hand cursors drawn about 20%
+     larger than the system ones. Text fields keep the text cursor and
+     disabled buttons the "not allowed" one. Touch screens are unaffected. */
+  @media (hover:hover) and (pointer:fine){
+    html{ cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='31' viewBox='0 0 18 25'%3E%3Cpath d='M1.5 1.5v18.6l4.6-4.5 3.1 7 3-1.3-3-6.9h6.4z' fill='%23000' stroke='%23fff' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E") 2 2, auto; }
+    a[href], button:not(:disabled), [role="button"], label, select, summary,
+    [data-lightbox], .playbar__track, .leaflet-marker-icon{ cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23fff' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15V4a2 2 0 0 1 4 0v5.5a2 2 0 0 1 4 0V10a2 2 0 0 1 4 .5z'/%3E%3Cpath d='M11 9.5V12M15 10v2M19 11v1' fill='none'/%3E%3C/svg%3E") 9 2, pointer; }
+    input, textarea, [contenteditable]{ cursor:text; }
+    button:disabled{ cursor:not-allowed; }
+  }
   /* Text selection in the brand orange (the route drawer and logo), with
      dark text; inverted on the orange route panel itself so it still shows. */
   ::selection{ background:var(--marigold); color:#171717; }
@@ -37,7 +49,7 @@
      box, icon buttons, chips) into a squared-off corner on focus. The
      outline now just follows whatever radius the element already has. */
   a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, [tabindex]:focus-visible{
-    outline:2px solid var(--plaque); outline-offset:2px;
+    outline:2px solid var(--focus); outline-offset:2px;
   }
 
   /* Masthead: fixed to the top of the viewport, content scrolls underneath
@@ -292,6 +304,15 @@
 
   #resultCount{ font-size:13px; }
   #nearYou{ scroll-margin-top:calc(var(--header-h, 84px) + 16px); }
+  /* Near you rows (phones): the chevron slides the short description open
+     beneath the name and turns to point up. */
+  .near-desc{ display:grid; grid-template-rows:0fr; visibility:hidden;
+    transition:grid-template-rows .3s cubic-bezier(.32,.72,0,1), visibility 0s linear .3s; }
+  .near-desc > div{ overflow:hidden; min-height:0; }
+  .near-row.is-open .near-desc{ grid-template-rows:1fr; visibility:visible; transition-delay:0s; }
+  .near-expand svg{ transition:transform .3s cubic-bezier(.32,.72,0,1); }
+  .near-row.is-open .near-expand svg{ transform:rotate(180deg); }
+  @media (prefers-reduced-motion: reduce){ .near-desc, .near-expand svg{ transition:none; } }
   /* Phones: the stop count sits close above the first postcode group —
      the first divider drops the top padding that spaces later groups. */
   @media (max-width:639px){ #list > .pc-group-divider:first-child{ padding-top:0; } }
@@ -317,6 +338,7 @@
     background:var(--marigold); border-color:var(--marigold); color:#171717;
     --ink:#171717; --muted:rgba(23,23,23,.7); --faint:rgba(23,23,23,.5);
     --rule:rgba(23,23,23,.2); --surface:rgba(255,255,255,.4);
+    --focus:#171717;
   }
 
   /* Icon-button tooltips (data-tooltip; see app.js). Above the route
@@ -411,6 +433,14 @@
       max-height:80vh; visibility:visible;
       transition:max-height .45s cubic-bezier(.32,.72,0,1);
     }
+    /* The contents fade in just behind the drawer opening, and out quickly
+       as it closes. */
+    #routePanelBody > *{ opacity:0; transition:opacity .15s ease; }
+    html.route-open #routePanelBody > *{ opacity:1; transition:opacity .35s ease .1s; }
+    /* No classic scrollbar on touch-sized screens: it took 10px from the
+       list's width, so the stops sat off-centre and could shift sideways. */
+    #routeScroll{ scrollbar-width:none; }
+    #routeScroll::-webkit-scrollbar{ display:none; }
     #routeBarChevron{ transform:rotate(180deg); }
     html.route-open #routeBarChevron{ transform:rotate(0deg); }
     #scrim{ display:none; }
@@ -440,7 +470,7 @@
     }
   }
   @media (prefers-reduced-motion: reduce){
-    #routePanel, #routePanelBody, #routeBarChevron{ transition:none; }
+    #routePanel, #routePanelBody, #routePanelBody > *, #routeBarChevron{ transition:none; }
     #routeScroll.route-view-enter > *{ animation:none; }
     .stop.flash{ animation:none; }
   }

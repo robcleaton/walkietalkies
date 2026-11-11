@@ -50,7 +50,7 @@ const CATS = {
   green: 'Park & burial ground',
   pub: 'Historic pub',
   art: 'Art & artists',
-  brewery: 'Brewery',
+  food: 'Food & drink',
   resident: 'Notable residents'
 };
 

@@ -14,7 +14,7 @@
     green:    'Park & burial ground',
     pub:      'Historic pub',
     art:      'Art & artists',
-    brewery:  'Brewery',
+    food:     'Food & drink',
     resident: 'Notable residents'
   };
 
@@ -28,7 +28,7 @@
     green:    { color:'var(--verdigris)', fg:'#fff',    icon:'<path d="M 64 0 C 99.346 0 128 28.654 128 64 L 128 192 C 128 227.346 99.346 256 64 256 C 28.654 256 0 227.346 0 192 C 0 156.654 28.654 128 64 128 C 28.654 128 0 99.346 0 64 C 0 28.654 28.654 0 64 0 Z M 192 128 C 156.654 128 128 99.346 128 64 C 128 28.654 156.654 0 192 0 C 227.346 0 256 28.654 256 64 L 256 192 C 256 227.346 227.346 256 192 256 C 156.654 256 128 227.346 128 192 C 128 156.654 156.654 128 192 128 Z"/>' },
     pub:      { color:'var(--tomato)',    fg:'#fff',    icon:'<path d="M 192 0 C 227.346 0 256 28.654 256 64 C 256 99.346 227.346 128 192 128 C 227.346 128 256 156.654 256 192 C 256 227.346 227.346 256 192 256 C 156.654 256 128 227.346 128 192 C 128 227.346 99.346 256 64 256 C 28.654 256 0 227.346 0 192 C 0 156.654 28.654 128 64 128 C 28.654 128 0 99.346 0 64 C 0 28.654 28.654 0 64 0 C 99.346 0 128 28.654 128 64 C 128 28.654 156.654 0 192 0 Z M 64 160 C 46.327 160 32 174.327 32 192 C 32 209.673 46.327 224 64 224 C 81.673 224 96 209.673 96 192 C 96 174.327 81.673 160 64 160 Z M 192 160 C 174.327 160 160 174.327 160 192 C 160 209.673 174.327 224 192 224 C 209.673 224 224 209.673 224 192 C 224 174.327 209.673 160 192 160 Z M 64 32 C 46.327 32 32 46.327 32 64 C 32 81.673 46.327 96 64 96 C 81.673 96 96 81.673 96 64 C 96 46.327 81.673 32 64 32 Z M 192 32 C 174.327 32 160 46.327 160 64 C 160 81.673 174.327 96 192 96 C 209.673 96 224 81.673 224 64 C 224 46.327 209.673 32 192 32 Z"/>' },
     art:      { color:'var(--bubblegum)', fg:'#fff',    icon:'<path d="M 28 0 C 83.228 0 128 44.772 128 100 C 128 44.772 172.772 0 228 0 L 256 0 L 256 156 C 256 211.228 211.228 256 156 256 L 100 256 C 44.772 256 0 211.228 0 156 L 0 0 Z"/>' },
-    brewery:  { color:'var(--brass)',     fg:'#171717', icon:'<path d="M 0 128.007 C 0.004 198.696 57.31 256 128 256 L 0 256 Z M 256 256 L 128 256 C 198.69 256 255.996 198.696 256 128.007 Z M 192 128 C 192 163.346 163.346 192 128 192 C 92.654 192 64 163.346 64 128 Z M 128 0 C 198.692 0 256 57.308 256 128 L 192 128 C 192 92.654 163.346 64 128 64 C 92.654 64 64 92.654 64 128 L 0 128 C 0 57.308 57.308 0 128 0 Z"/>' },
+    food:     { color:'var(--brass)',     fg:'#171717', icon:'<path d="M 0 128.007 C 0.004 198.696 57.31 256 128 256 L 0 256 Z M 256 256 L 128 256 C 198.69 256 255.996 198.696 256 128.007 Z M 192 128 C 192 163.346 163.346 192 128 192 C 92.654 192 64 163.346 64 128 Z M 128 0 C 198.692 0 256 57.308 256 128 L 192 128 C 192 92.654 163.346 64 128 64 C 92.654 64 64 92.654 64 128 L 0 128 C 0 57.308 57.308 0 128 0 Z"/>' },
     resident: { color:'var(--marigold)',  fg:'#171717', icon:'<path d="M 228 0 C 172.772 0 128 44.772 128 100 L 128 0 L 0 0 L 0 28 C 0 83.228 44.772 128 100 128 L 0 128 L 0 256 L 28 256 C 83.228 256 128 211.228 128 156 L 128 256 L 256 256 L 256 228 C 256 172.772 211.228 128 156 128 L 256 128 L 256 0 Z"/>' }
   };
 
@@ -513,9 +513,14 @@
   // Phones: one row of a grouped list — thumbnail, name, distance line,
   // then Listen and a round add button (the stop's number once it's in
   // the route, like the route panel's numbering).
+  var nearOpen = {}; // stop id → description expanded, kept across re-renders
+  var ICON_CHEVRON_DOWN = '<svg class="lucide lucide-chevron-down w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+
   function nearRowHTML(n) {
-    var s = n.s, on = inRoute(s.id), pos = route.indexOf(s.id) + 1;
-    return '<li class="flex items-center gap-3 px-4 py-3">' +
+    var s = n.s, on = inRoute(s.id), pos = route.indexOf(s.id) + 1, open = !!nearOpen[s.id];
+    var desc = s.short || s.text.split('\n\n')[0];
+    return '<li class="near-row px-4 py-3' + (open ? ' is-open' : '') + '">' +
+      '<div class="flex items-center gap-3">' +
       (s.img ? '<button type="button" data-lightbox="' + bigImg(s.img) + '" data-lightbox-fallback="' + s.img + '" data-lightbox-alt="' + plain(s.name) + '" class="shrink-0 rounded-lg" aria-label="View larger image of ' + plain(s.name) + '">' +
         '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.closest(\'button\').remove()" class="w-12 h-12 rounded-lg object-cover border border-rule">' +
       '</button>' : '') +
@@ -525,11 +530,21 @@
       '</div>' +
       '<div class="shrink-0 flex items-center gap-2">' +
         listenButtonHTML(s) +
+        // Expands the row to show the short description beneath.
+        '<button type="button" data-near-expand="' + s.id + '" aria-expanded="' + open + '" aria-controls="near-desc-' + s.id + '" data-tooltip="' + (open ? 'Hide description' : 'Show description') + '" aria-label="' + (open ? 'Hide' : 'Show') + ' description of ' + plain(s.name) + '" ' +
+          'class="near-expand shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full text-ink hover:bg-surface transition-colors">' +
+          ICON_CHEVRON_DOWN +
+        '</button>' +
         '<button type="button" data-toggle="' + s.id + '" data-tooltip="' + (on ? 'Remove from route' : 'Add to route') + '" aria-label="' + (on ? 'Remove ' + plain(s.name) + ' from your route (stop ' + pos + ')' : 'Add ' + plain(s.name) + ' to your route') + '" ' +
           'class="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full border transition-colors ' +
           (on ? 'bg-verdigris border-verdigris text-white font-mono text-[12px] font-bold' : 'border-rule text-ink hover:border-ink') + '">' +
           (on ? pos : '<svg class="lucide lucide-plus w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg>') +
         '</button>' +
+      '</div>' +
+      '</div>' +
+      // Lined up with the name (past the 48px thumbnail and its 12px gap).
+      '<div class="near-desc" id="near-desc-' + s.id + '"' + (open ? '' : ' aria-hidden="true"') + '>' +
+        '<div><p class="font-serif text-[15px] leading-[1.5] text-ink pt-2' + (s.img ? ' pl-[60px]' : '') + '">' + desc + '</p></div>' +
       '</div>' +
     '</li>';
   }
@@ -588,6 +603,23 @@
     nearYouEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
     if (!nearPos) locateNearYou();
   }
+  // Near you rows: the chevron opens and closes the short description.
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-near-expand]');
+    if (!btn) return;
+    var id = btn.getAttribute('data-near-expand');
+    var row = btn.closest('.near-row');
+    var open = !nearOpen[id];
+    if (open) nearOpen[id] = true; else delete nearOpen[id];
+    row.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('data-tooltip', open ? 'Hide description' : 'Show description');
+    var name = btn.getAttribute('aria-label').replace(/^(Show|Hide) description of /, '');
+    btn.setAttribute('aria-label', (open ? 'Hide' : 'Show') + ' description of ' + name);
+    var d = row.querySelector('.near-desc');
+    if (open) d.removeAttribute('aria-hidden'); else d.setAttribute('aria-hidden', 'true');
+  });
+
   document.addEventListener('click', function (e) {
     if (!e.target.closest('[data-near-you]')) return;
     openSheet(false);
@@ -888,10 +920,12 @@
     var n = route.length;
     var km = routeKm();
 
-    document.getElementById('routeMeta').textContent =
-      n === 0 ? 'No stops yet' : n + (n === 1 ? ' stop' : ' stops');
+    // Empty route: no stop count line at all (the empty state says it).
+    var meta = document.getElementById('routeMeta');
+    meta.textContent = n === 0 ? '' : n + (n === 1 ? ' stop' : ' stops');
+    meta.classList.toggle('hidden', n === 0);
     document.getElementById('barLabel').innerHTML =
-      n === 0 ? 'Empty — add a stop' : n + (n === 1 ? ' stop' : ' stops') + ' · ' + distHTML(km.toFixed(1), 'km');
+      n === 0 ? 'Add your first stop' : n + (n === 1 ? ' stop' : ' stops') + ' · ' + distHTML(km.toFixed(1), 'km');
 
     var headerCount = document.getElementById('routeHeaderCount');
     headerCount.textContent = n;
@@ -899,13 +933,12 @@
     headerCount.classList.toggle('inline-flex', n > 0);
 
     var maps = document.getElementById('mapsLink');
-    if (n === 0) {
-      maps.setAttribute('aria-disabled', 'true');
-      maps.classList.add('opacity-40', 'pointer-events-none');
-      maps.href = '#';
-    } else {
-      maps.removeAttribute('aria-disabled');
-      maps.classList.remove('opacity-40', 'pointer-events-none');
+    // Empty route: no Open in Maps at all, and no actions bar unless
+    // something else (Save as GPX) is still showing in it.
+    maps.classList.toggle('hidden', n === 0);
+    var actions = document.getElementById('routeActions');
+    actions.classList.toggle('hidden', n === 0 && document.getElementById('gpxBtn').classList.contains('hidden'));
+    if (n > 0) {
       maps.href = 'https://www.google.com/maps/dir/' +
         route.slice(0, 10).map(function (id) { return byId[id].lat + ',' + byId[id].lon; }).join('/') + '/data=!4m2!4m1!3e2';
     }
@@ -915,7 +948,7 @@
 
     if (n === 0) {
       routeListEl.innerHTML =
-        '<div class="px-5 py-10 text-center">' +
+        '<div class="px-5 pt-10 pb-14 text-center">' +
           '<p class="font-display text-[21px] leading-tight mb-1.5">An empty ' + partOfDay() + '</p>' +
           '<p class="text-[13px] leading-relaxed text-muted max-w-[30ch] mx-auto">Add stops from WalkieTalkies. They stack in the order you add them, and you can shuffle them after.</p>' +
           // Straight to the homepage's Near you, for stops to start from.
@@ -1171,7 +1204,7 @@
     plaque: 'Blue plaques', grand: 'Great buildings', maritime: 'River & sea',
     works: 'Industry & invention', culture: 'Museums & galleries',
     memory: 'Memorials & protest', green: 'Parks & burial grounds',
-    pub: 'Historic pubs', art: 'Art & artists', brewery: 'Breweries',
+    pub: 'Historic pubs', art: 'Art & artists', food: 'Food & drink',
     resident: 'Notable residents'
   };
   var CAT_SINGULARS = { resident: 'Notable resident' };
@@ -1427,7 +1460,9 @@
       // panel's first focusable would just refocus the button that was
       // already clicked instead of moving into the newly revealed content.
       var focusables = focusableIn(routePanelBodyEl);
-      if (focusables.length) focusables[0].focus();
+      // preventScroll: focusing inside the still-opening (clipped) body
+      // would otherwise scroll it, nudging the contents sideways.
+      if (focusables.length) focusables[0].focus({ preventScroll: true });
     } else if (!v && wasOpen && routeOpenTrigger) {
       routeOpenTrigger.focus();
       routeOpenTrigger = null;
@@ -1804,6 +1839,7 @@
       if (!dl) return;
       var btn = document.getElementById('gpxBtn');
       btn.classList.remove('hidden');
+      renderRoute(); // re-show the actions bar now it has a button in it
       btn.addEventListener('click', function () {
         if (!route.length) return;
         var gpx = '<?xml version="1.0" encoding="UTF-8"?>\n' +
