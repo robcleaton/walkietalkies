@@ -168,7 +168,7 @@
       <p id="areaHeroDesc" class="font-serif text-[18px] sm:text-[19px] leading-[1.55] mt-3 max-w-[62ch] opacity-90"></p>
       <div id="areaHeroPostcodes" class="flex flex-wrap items-center gap-1.5 mt-3"></div>
       <div id="areaMap" class="hidden w-full h-[280px] sm:h-[380px] rounded-[18px] border border-rule mt-6 overflow-hidden"></div>
-      <div id="areaHeroInfo" class="hidden mt-6 max-w-[62ch] border-t border-rule pt-5">
+      <div id="areaHeroInfo" class="hidden mt-6 max-w-[62ch]">
         <p id="areaHeroOverview" class="font-serif text-[18px] leading-[1.6]"></p>
         <p class="eyebrow text-faint mt-5 mb-1.5">History</p>
         <p id="areaHeroHistory" class="font-serif text-[18px] leading-[1.6]"></p>
@@ -297,7 +297,7 @@
       <!-- Stops -->
       <div id="stopsCol" class="lg:col-span-12">
         <h2 class="sr-only">Stops</h2>
-        <p class="eyebrow text-faint mb-4" id="resultCount" aria-live="polite" aria-atomic="true"></p>
+        <p class="eyebrow text-faint mb-2 sm:mb-4" id="resultCount" aria-live="polite" aria-atomic="true"></p>
 
         <!-- Areas whose name matches the current search, shown as chips
              above the stop results (populated in renderList in app.js). -->
@@ -410,8 +410,8 @@
     </div>
 
     <!-- Area chips, repeated at the bottom of an area page (populated by JS, mirroring #areaChips above) -->
-    <div id="areaChipsBottom" class="hidden mt-10 pt-8 border-t border-rule">
-      <div id="areaChipsBottomRow" class="flex flex-wrap gap-2.5"></div>
+    <div id="areaChipsBottom" class="hidden mt-10">
+      <div id="areaChipsBottomRow" class="-mx-5 sm:mx-0"></div>
     </div>
 
     <footer class="mt-10 pt-5 flex flex-col gap-3">

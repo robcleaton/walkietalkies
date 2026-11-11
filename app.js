@@ -1731,7 +1731,19 @@
     });
   }
   buildAreaRow('areaStickyRow', true);
-  buildAreaRow('areaChipsBottomRow', false);
+
+  // The area pages' chips at the bottom: a copy of the homepage's own rows,
+  // so phones get the same drifting, swipeable marquee rows and wider
+  // screens the same single wrapped block (styles.css .area-rows).
+  (function () {
+    var src = document.querySelector('#areaChips .area-rows');
+    var row = document.getElementById('areaChipsBottomRow');
+    if (!src || !row) return;
+    var copy = src.cloneNode(true);
+    // The marquee's duplicate rows are only there for the loop.
+    Array.prototype.forEach.call(copy.querySelectorAll('.area-row-dup .area-chip'), function (b) { b.tabIndex = -1; });
+    row.appendChild(copy);
+  })();
 
   // Reveal the compact sticky area nav once the big area chips scroll past
   // the header — the homepage marquee normally, or the Discover page's own
