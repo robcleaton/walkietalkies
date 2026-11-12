@@ -339,15 +339,14 @@
 
   #resultCount{ font-size:13px; }
   #nearYou{ scroll-margin-top:calc(var(--header-h, 84px) + 16px); }
-  /* Near you rows (phones): the chevron slides the short description open
-     beneath the name and turns to point up. */
+  /* Near you rows (phones): tapping the row slides the short description
+     open beneath the name, and closed again. */
   .near-desc{ display:grid; grid-template-rows:0fr; visibility:hidden;
     transition:grid-template-rows .3s cubic-bezier(.32,.72,0,1), visibility 0s linear .3s; }
   .near-desc > div{ overflow:hidden; min-height:0; }
   .near-row.is-open .near-desc{ grid-template-rows:1fr; visibility:visible; transition-delay:0s; }
-  .near-expand svg{ transition:transform .3s cubic-bezier(.32,.72,0,1); }
-  .near-row.is-open .near-expand svg{ transform:rotate(180deg); }
-  @media (prefers-reduced-motion: reduce){ .near-desc, .near-expand svg{ transition:none; } }
+  .near-row{ cursor:pointer; }
+  @media (prefers-reduced-motion: reduce){ .near-desc{ transition:none; } }
   /* Phones: the stop count sits close above the first postcode group —
      the first divider drops the top padding that spaces later groups. */
   @media (max-width:639px){ #list > .pc-group-divider:first-child{ padding-top:0; } }

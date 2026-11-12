@@ -514,7 +514,6 @@
   // then Listen and a round add button (the stop's number once it's in
   // the route, like the route panel's numbering).
   var nearOpen = {}; // stop id → description expanded, kept across re-renders
-  var ICON_CHEVRON_DOWN = '<svg class="lucide lucide-chevron-down w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
 
   function nearRowHTML(n) {
     var s = n.s, on = inRoute(s.id), pos = route.indexOf(s.id) + 1, open = !!nearOpen[s.id];
@@ -524,17 +523,14 @@
       (s.img ? '<button type="button" data-lightbox="' + bigImg(s.img) + '" data-lightbox-fallback="' + s.img + '" data-lightbox-alt="' + plain(s.name) + '" class="shrink-0 rounded-lg" aria-label="View larger image of ' + plain(s.name) + '">' +
         '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.closest(\'button\').remove()" class="w-12 h-12 rounded-lg object-cover border border-rule">' +
       '</button>' : '') +
-      '<div class="min-w-0 flex-1">' +
+      // The name and distance open and close the short description beneath
+      // (as does a tap anywhere else on the row that isn't another control).
+      '<button type="button" data-near-expand="' + s.id + '" aria-expanded="' + open + '" aria-controls="near-desc-' + s.id + '" class="min-w-0 flex-1 text-left">' +
         '<h4 class="text-[15px] font-semibold leading-snug">' + s.name + '</h4>' +
         '<p class="font-mono text-[11px] text-muted num truncate mt-0.5"><span class="text-ink font-semibold">' + fmtDist(n.km) + '</span> &middot; ' + s.area + '</p>' +
-      '</div>' +
+      '</button>' +
       '<div class="shrink-0 flex items-center gap-2">' +
         listenButtonHTML(s) +
-        // Expands the row to show the short description beneath.
-        '<button type="button" data-near-expand="' + s.id + '" aria-expanded="' + open + '" aria-controls="near-desc-' + s.id + '" data-tooltip="' + (open ? 'Hide description' : 'Show description') + '" aria-label="' + (open ? 'Hide' : 'Show') + ' description of ' + plain(s.name) + '" ' +
-          'class="near-expand shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full text-ink hover:bg-surface transition-colors">' +
-          ICON_CHEVRON_DOWN +
-        '</button>' +
         '<button type="button" data-toggle="' + s.id + '" data-tooltip="' + (on ? 'Remove from route' : 'Add to route') + '" aria-label="' + (on ? 'Remove ' + plain(s.name) + ' from your route (stop ' + pos + ')' : 'Add ' + plain(s.name) + ' to your route') + '" ' +
           'class="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full border transition-colors ' +
           (on ? 'bg-verdigris border-verdigris text-white font-mono text-[12px] font-bold' : 'border-rule text-ink hover:border-ink') + '">' +
@@ -627,19 +623,19 @@
     nearYouEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
     if (!nearPos) locateNearYou();
   }
-  // Near you rows: the chevron opens and closes the short description.
+  // Near you rows: tapping the row (its name, or any spot that isn't the
+  // thumbnail, Listen or add button) opens and closes the short description.
   document.addEventListener('click', function (e) {
-    var btn = e.target.closest('[data-near-expand]');
-    if (!btn) return;
+    var row = e.target.closest('.near-row');
+    if (!row) return;
+    var ctl = e.target.closest('button, a');
+    if (ctl && !ctl.hasAttribute('data-near-expand')) return;
+    var btn = row.querySelector('[data-near-expand]');
     var id = btn.getAttribute('data-near-expand');
-    var row = btn.closest('.near-row');
     var open = !nearOpen[id];
     if (open) nearOpen[id] = true; else delete nearOpen[id];
     row.classList.toggle('is-open', open);
     btn.setAttribute('aria-expanded', String(open));
-    btn.setAttribute('data-tooltip', open ? 'Hide description' : 'Show description');
-    var name = btn.getAttribute('aria-label').replace(/^(Show|Hide) description of /, '');
-    btn.setAttribute('aria-label', (open ? 'Hide' : 'Show') + ' description of ' + name);
     var d = row.querySelector('.near-desc');
     if (open) d.removeAttribute('aria-hidden'); else d.setAttribute('aria-hidden', 'true');
   });
