@@ -36,7 +36,7 @@
     var m = CATMARK[cat];
     return '<span class="inline-flex items-center gap-1.5 shrink-0 rounded-full pl-1.5 pr-3 py-1" style="background:' + m.color + ';color:' + m.fg + '">' +
       '<svg viewBox="0 0 256 256" width="14" height="14" fill="' + m.fg + '" aria-hidden="true">' + m.icon + '</svg>' +
-      '<span class="eyebrow">' + CATS[cat] + '</span>' +
+      '<span class="eyebrow eyebrow--cat">' + CATS[cat] + '</span>' +
     '</span>';
   }
 
@@ -855,7 +855,8 @@
     // lines actually fit in the space left once the name has taken what it
     // needs, so short names don't leave a gap above a pinned address.
     return '' +
-      '<article id="stop-' + s.id + '" class="stop px-5 py-5' + (compact ? ' h-full flex flex-col' : '') + '">' +
+      '<article id="stop-' + s.id + '" class="stop relative px-5 pt-5 pb-8' + (compact ? ' h-full flex flex-col' : '') + '">' +
+        playbarHTML(s, true) +
         // Image, plus the listen/route buttons, share the top row; the
         // category chip and title get their own full-width lines beneath,
         // so long names never run into the buttons.
@@ -931,6 +932,8 @@
     headerCount.textContent = n;
     headerCount.classList.toggle('hidden', n === 0);
     headerCount.classList.toggle('inline-flex', n > 0);
+    // Desktop header button turns orange once the route has stops (styles.css).
+    document.getElementById('routeHeaderBtn').classList.toggle('has-stops', n > 0);
 
     var maps = document.getElementById('mapsLink');
     // Empty route: no Open in Maps at all, and no actions bar unless
@@ -1923,10 +1926,12 @@
     return { active: active, at: at, dur: dur, frac: isFinite(dur) && dur > 0 ? Math.min(1, at / dur) : 0 };
   }
 
-  function playbarHTML(s) {
+  // card: the slim version pinned in a stop card's bottom padding (styles.css
+  // .playbar--card), so the card never changes height.
+  function playbarHTML(s, card) {
     if (!narrationFiles[s.id]) return '';
     var st = playbarState(s.id);
-    return '<div data-playbar="' + s.id + '" class="playbar"' + (st.active ? '' : ' hidden') + '>' +
+    return '<div data-playbar="' + s.id + '" class="playbar' + (card ? ' playbar--card' : '') + '"' + (st.active ? '' : ' hidden') + '>' +
       '<span data-pb-at class="num">' + fmtTime(st.at) + '</span>' +
       '<div data-pb-track role="slider" tabindex="0" aria-label="Seek ' + plain(s.name) + '" aria-valuemin="0" aria-valuemax="' + Math.round(st.dur || 0) + '" aria-valuenow="' + Math.round(st.at) + '" class="playbar__track">' +
         '<div data-pb-fill class="playbar__fill" style="transform:scaleX(' + st.frac + ')"></div>' +
@@ -2158,6 +2163,67 @@
   var lightboxCaption = document.getElementById('lightboxCaption');
   var lightboxTrigger = null;
 
+  /* Photo credit in the lightbox: author, licence and a link to the file
+     on Wikimedia Commons, which every stop image comes from. Looked up
+     from the Commons API when the image opens (cached per file), so all
+     credits stay current with nothing stored in data.js. */
+  var lightboxCredit = document.getElementById('lightboxCredit');
+  var creditCache = {};
+  var creditToken = 0;
+
+  // ".../commons/thumb/a/ab/File.jpg/330px-File.jpg" or ".../commons/a/ab/File.jpg" → "File.jpg"
+  function commonsFileName(url) {
+    var m = /\/commons\/(?:thumb\/)?[0-9a-f]\/[0-9a-f]{2}\/([^/?#]+)/.exec(url || '');
+    if (!m) return null;
+    try { return decodeURIComponent(m[1]); } catch (e) { return m[1]; }
+  }
+
+  function htmlToText(html) {
+    var doc = new DOMParser().parseFromString(String(html || ''), 'text/html');
+    return (doc.body.textContent || '').replace(/\s+/g, ' ').trim();
+  }
+
+  function creditLink(text, href) {
+    var a = document.createElement('a');
+    a.href = href; a.target = '_blank'; a.rel = 'noopener';
+    a.className = 'underline underline-offset-2 hover:text-white';
+    a.textContent = text;
+    return a;
+  }
+
+  function renderCredit(file, info) {
+    lightboxCredit.textContent = '';
+    var parts = [];
+    if (info && info.artist) parts.push(document.createTextNode('Photo: ' + info.artist));
+    if (info && info.licence) parts.push(info.licenceUrl ? creditLink(info.licence, info.licenceUrl) : document.createTextNode(info.licence));
+    parts.push(creditLink('Wikimedia Commons', 'https://commons.wikimedia.org/wiki/File:' + encodeURIComponent(file.replace(/ /g, '_'))));
+    parts.forEach(function (node, i) {
+      if (i) lightboxCredit.appendChild(document.createTextNode(' · '));
+      lightboxCredit.appendChild(node);
+    });
+  }
+
+  function loadImageCredit(url) {
+    var token = ++creditToken;
+    lightboxCredit.textContent = '';
+    var file = commonsFileName(url);
+    if (!file) return;
+    if (creditCache[file]) { renderCredit(file, creditCache[file]); return; }
+    fetch('https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*&prop=imageinfo&iiprop=extmetadata' +
+          '&iiextmetadatafilter=Artist|LicenseShortName|LicenseUrl&titles=' + encodeURIComponent('File:' + file))
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        var page = j && j.query && j.query.pages ? j.query.pages[Object.keys(j.query.pages)[0]] : null;
+        var meta = page && page.imageinfo && page.imageinfo[0] && page.imageinfo[0].extmetadata || {};
+        var val = function (k) { return meta[k] && meta[k].value || ''; };
+        var info = { artist: htmlToText(val('Artist')).slice(0, 120), licence: htmlToText(val('LicenseShortName')), licenceUrl: val('LicenseUrl') };
+        creditCache[file] = info;
+        if (token === creditToken) renderCredit(file, info);
+      })
+      // Offline or blocked: still point to the file's Commons page.
+      .catch(function () { if (token === creditToken) renderCredit(file, null); });
+  }
+
   function openLightbox(trigger) {
     lightboxTrigger = trigger;
     var name = trigger.getAttribute('data-lightbox-alt') || '';
@@ -2172,6 +2238,7 @@
     lightboxImg.src = trigger.getAttribute('data-lightbox');
     lightboxImg.alt = name;
     lightboxCaption.textContent = name;
+    loadImageCredit(trigger.getAttribute('data-lightbox-fallback') || trigger.getAttribute('data-lightbox'));
     lightboxEl.classList.remove('hidden');
     lightboxEl.classList.add('flex');
     document.getElementById('lightboxClose').focus();
@@ -2182,6 +2249,8 @@
     lightboxEl.classList.remove('flex');
     lightboxImg.src = '';
     lightboxCaption.textContent = '';
+    creditToken++;
+    lightboxCredit.textContent = '';
     if (lightboxTrigger) { lightboxTrigger.focus(); lightboxTrigger = null; }
   }
   document.addEventListener('click', function (e) {
@@ -2189,7 +2258,8 @@
     if (trigger) { openLightbox(trigger); return; }
     // Anywhere else inside the open lightbox except the image itself
     // (the close button or the dark backdrop) dismisses it.
-    if (e.target.closest('#lightbox') && !e.target.closest('#lightboxImg')) closeLightbox();
+    // The credit's links open Commons and the licence without closing it.
+    if (e.target.closest('#lightbox') && !e.target.closest('#lightboxImg') && !e.target.closest('#lightboxCredit a')) closeLightbox();
   });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && !lightboxEl.classList.contains('hidden')) closeLightbox();

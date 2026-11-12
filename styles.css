@@ -43,6 +43,8 @@
   h1,h2,h3{ text-wrap:balance; }
   .num{ font-variant-numeric:tabular-nums; }
   .eyebrow{ font-family:"Azeret Mono", ui-monospace, monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; }
+  /* The category pill on stop cards: the body font, small and bold. */
+  .eyebrow--cat{ font-family:Inter, "Helvetica Neue", Arial, sans-serif; font-size:9px; font-weight:600; }
   .card-shadow{ box-shadow:var(--shadow); }
   /* No border-radius override here — that used to hard-code a 3px radius
      on every focused control, flattening pill/circle shapes (the search
@@ -84,6 +86,22 @@
   .playbar__track::before{ content:""; position:absolute; left:0; right:0; top:-8px; bottom:-8px; } /* bigger tap target */
   .playbar__track:focus-visible{ outline:2px solid var(--ink); outline-offset:4px; }
   .playbar__fill{ position:absolute; inset:0; border-radius:inherit; background:var(--ink); transform-origin:left center; }
+  /* On a stop card: a slim track with the elapsed time and the clip's
+     length to its right, floating in the card's bottom padding (cards have
+     a deeper bottom padding for it), so the card keeps its height. It fades and widens in when the
+     stop starts and out when it ends; the fill runs on the playbar's frame
+     loop, and it thickens under the pointer for seeking. */
+  .playbar.playbar--card{ position:absolute; left:20px; right:20px; bottom:14px; margin:0; display:flex; font-size:11px; gap:8px;
+    opacity:1; transform:scaleX(1); transition:opacity .35s ease, transform .45s cubic-bezier(.32,.72,0,1); }
+  .playbar.playbar--card[hidden]{ display:flex; opacity:0; transform:scaleX(.92); visibility:hidden; pointer-events:none;
+    transition:opacity .25s ease, transform .25s ease, visibility 0s linear .25s; }
+  .playbar--card .playbar__track{ order:-1; height:3px; transition:height .15s ease; }
+  /* Times sit together to the right of the track: "0:42 / 1:58". */
+  .playbar--card [data-pb-at]{ margin-left:4px; }
+  .playbar--card [data-pb-dur]{ margin-left:-4px; }
+  .playbar--card [data-pb-dur]::before{ content:"/ "; }
+  .playbar--card .playbar__track:hover, .playbar--card .playbar__track:focus-visible{ height:5px; }
+  @media (prefers-reduced-motion: reduce){ .playbar.playbar--card, .playbar.playbar--card[hidden]{ transition:none; } }
   @keyframes flash{ 0%{ background:var(--plaque-soft);} 100%{ background:var(--surface); } }
 
   /* Category filter chips: colour, icon, name and count all in one line —
@@ -295,6 +313,12 @@
   @media (prefers-reduced-motion: reduce){
     html.narrating .route-speaker .speaker-wave{ animation:none; }
   }
+  /* Once the route has stops (app.js renderRoute), the header button takes
+     the route's orange, with its count badge flipped to black so it still
+     shows. Playing a route stop overrides this with the inverted look below. */
+  html:not(.narrating) header #routeHeaderBtn.has-stops{ background:var(--marigold); border-color:var(--marigold); color:#171717; }
+  html:not(.narrating) header #routeHeaderBtn.has-stops:hover{ filter:brightness(1.06); }
+  html:not(.narrating) #routeHeaderBtn.has-stops #routeHeaderCount{ background:#171717; color:var(--marigold); }
   html.narrating header #routeHeaderBtn,
   html.narrating header #routeHeaderBtn:hover{
     background:var(--ink);
@@ -372,6 +396,10 @@
   #routeItemMenu button[data-toggle]{ color:var(--marigold); }
   /* A route stop that's playing: its Pause button inverts to black with an
      orange icon (aria-pressed is kept in sync by syncListenButtons()). */
+  /* A playing stop's Pause button inverts: filled in the text colour (white
+     on the dark theme) with the icon in the background colour. The route
+     panel keeps its own black-and-orange version below. */
+  [data-listen][aria-pressed="true"]{ background:var(--ink); border-color:var(--ink); color:var(--ground); }
   #routePanel [data-listen][aria-pressed="true"]{ background:#171717; border-color:#171717; color:var(--marigold); }
   /* Play button hover: the colours invert — a filled circle in the text
      colour with the icon in the background colour (black with a white
