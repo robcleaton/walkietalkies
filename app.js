@@ -907,6 +907,15 @@
     var on = typeof narrationAudio !== 'undefined' && !!narrationAudio &&
       !!narrationId && !narrationAudio.paused && inRoute(narrationId);
     document.documentElement.classList.toggle('narrating', on);
+    // The playing stop's name, shown in the route bar/panel header in place
+    // of the stop count while it plays (styles.css .route-now-playing).
+    var title = '';
+    if (on && byId[narrationId]) {
+      var t = document.createElement('textarea');
+      t.innerHTML = byId[narrationId].name;
+      title = t.value;
+    }
+    Array.prototype.forEach.call(document.querySelectorAll('[data-now-playing]'), function (el) { el.textContent = title; });
   }
 
   // The empty route's title follows the viewer's clock: "An empty morning"

@@ -303,6 +303,12 @@
      syncRoutePlaying): the Your route button inverts and shows a speaker,
      and the mobile route bar shows one too. */
   .route-speaker{ display:none; }
+  /* Route header while one of its stops plays: the stop's name (with the
+     speaker) replaces the stop count / distance summary. */
+  .route-now-playing{ display:none; }
+  html.narrating p.route-now-playing{ display:flex; }
+  html.narrating span.route-now-playing{ display:block; }
+  html.narrating .route-summary{ display:none; }
   html.narrating .route-speaker{ display:block; }
   /* Sound waves pulse outward: the inner one fades in, then the outer,
      then both fade out together. */
