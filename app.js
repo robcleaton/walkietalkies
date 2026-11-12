@@ -570,7 +570,31 @@
     } else {
       nearStatusEl.textContent = 'The closest stops to you, nearest first.';
     }
+    renderNearAreas(near);
     setTimeout(function () { adjustCardClamps(nearListEl); }, 0);
+  }
+
+  // Up to three areas the nearest stops belong to — most nearby stops first,
+  // ties to whichever has the closer stop — as the same compact chips as
+  // the sticky area bar (tapping one opens that area, via [data-area]).
+  function renderNearAreas(near) {
+    var el = document.getElementById('nearAreas');
+    var tally = {};
+    near.forEach(function (n, i) {
+      Object.keys(AREA_COLORS).forEach(function (area) {
+        if (!stopInArea(n.s, area)) return;
+        if (!tally[area]) tally[area] = { area: area, count: 0, first: i };
+        tally[area].count++;
+      });
+    });
+    var top = Object.keys(tally).map(function (k) { return tally[k]; })
+      .sort(function (a, b) { return b.count - a.count || a.first - b.first; }).slice(0, 3);
+    el.innerHTML = '';
+    top.forEach(function (t) {
+      var chip = document.querySelector('#areaStickyRow .area-chip[data-area="' + t.area + '"]');
+      if (chip) el.appendChild(chip.cloneNode(true));
+    });
+    el.classList.toggle('hidden', !el.children.length);
   }
 
   function locateNearYou() {
@@ -1816,6 +1840,89 @@
     // The marquee's duplicate rows are only there for the loop.
     Array.prototype.forEach.call(copy.querySelectorAll('.area-row-dup .area-chip'), function (b) { b.tabIndex = -1; });
     row.appendChild(copy);
+  })();
+
+  /* Area-chip rows on phones: swipeable strips that drift on their own.
+     The CSS marquee (transform on .area-row-track) can't be swiped, so on
+     small screens each .area-row-wrap scrolls instead and a frame loop
+     nudges its scrollLeft. Each track holds its chips twice, so wrapping
+     the position by half the track keeps the loop seamless whichever way
+     it's swiped. Touching, swiping or wheel-scrolling a row pauses its
+     drift; it picks up again two seconds after the last interaction.
+     Covers the homepage rows and their copy at the bottom of area pages. */
+  (function areaChipMarquee() {
+    var mq = window.matchMedia('(max-width: 639px)');
+    var still = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var DURATION = 55; // seconds per loop, as the CSS marquee
+    var rows = [], raf = null, last = 0;
+
+    function setup() {
+      rows = Array.prototype.map.call(document.querySelectorAll('.area-row-wrap'), function (wrap) {
+        var track = wrap.querySelector('.area-row-track');
+        if (!track) return null;
+        var row = { wrap: wrap, track: track, dir: track.classList.contains('marquee-right') ? -1 : 1, pos: 0, pausedUntil: 0 };
+        if (!wrap._marqueeBound) {
+          wrap._marqueeBound = true;
+          var hold = function () { row.pausedUntil = Infinity; };
+          var release = function () { row.pausedUntil = performance.now() + 2000; };
+          wrap.addEventListener('pointerdown', hold, { passive: true });
+          wrap.addEventListener('touchstart', hold, { passive: true });
+          wrap.addEventListener('pointerup', release, { passive: true });
+          wrap.addEventListener('pointercancel', release, { passive: true });
+          wrap.addEventListener('touchend', release, { passive: true });
+          wrap.addEventListener('wheel', release, { passive: true });
+          wrap.addEventListener('scroll', function () {
+            // Our own nudges land within a pixel of pos; anything else is
+            // the viewer moving it: follow, and keep it inside the loop.
+            if (Math.abs(wrap.scrollLeft - row.pos) < 2) return;
+            if (row.pausedUntil !== Infinity) release();
+            row.pos = wrap.scrollLeft;
+            wrapPos(row);
+          }, { passive: true });
+        }
+        return row;
+      }).filter(Boolean);
+      rows.forEach(function (r) {
+        // Rightward rows start half-way so they have room to run backwards.
+        r.pos = r.dir < 0 ? r.track.scrollWidth / 2 : 0;
+        r.wrap.scrollLeft = r.pos;
+      });
+    }
+
+    function wrapPos(r) {
+      var half = r.track.scrollWidth / 2;
+      if (!half) return;
+      var p = r.pos;
+      if (p >= half) p -= half;
+      else if (p <= 0) p += half;
+      if (p !== r.pos) { r.pos = p; r.wrap.scrollLeft = p; }
+    }
+
+    function tick(now) {
+      var dt = last ? Math.min(0.1, (now - last) / 1000) : 0;
+      last = now;
+      if (!still.matches) {
+        rows.forEach(function (r) {
+          if (now < r.pausedUntil || !r.wrap.offsetParent) return;
+          r.pos += r.dir * (r.track.scrollWidth / 2) / DURATION * dt;
+          r.wrap.scrollLeft = r.pos;
+          wrapPos(r);
+        });
+      }
+      raf = requestAnimationFrame(tick);
+    }
+
+    function apply() {
+      document.documentElement.classList.toggle('js-marquee', mq.matches);
+      if (mq.matches) {
+        setup();
+        if (!raf) { last = 0; raf = requestAnimationFrame(tick); }
+      } else if (raf) {
+        cancelAnimationFrame(raf); raf = null;
+      }
+    }
+    apply();
+    if (mq.addEventListener) mq.addEventListener('change', apply); else mq.addListener(apply);
   })();
 
   // Reveal the compact sticky area nav once the big area chips scroll past

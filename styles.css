@@ -154,6 +154,11 @@
   /* Area chips: bold, oversized, 3 independently drifting rows on small screens */
   .area-rows{ display:flex; flex-direction:column; gap:12px; }
   .area-row-wrap{ width:100%; overflow:hidden; padding:6px 0; }
+  /* With JS (app.js area-chip marquee), each row is a swipeable strip and
+     the drift is done by scrolling it, so a swipe takes over at once. */
+  html.js-marquee .area-row-wrap{ overflow-x:auto; overscroll-behavior-x:contain; scrollbar-width:none; }
+  html.js-marquee .area-row-wrap::-webkit-scrollbar{ display:none; }
+  html.js-marquee .area-row-track{ animation:none !important; }
   .area-row-track{ display:flex; flex-wrap:nowrap; width:max-content; }
   .area-row{ display:flex; flex-wrap:nowrap; gap:12px; margin-right:12px; flex:0 0 auto; }
   @keyframes areaMarqueeLeft{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
