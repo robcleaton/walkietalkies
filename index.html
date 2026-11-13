@@ -462,6 +462,39 @@
   </figure>
 </div>
 
+<!-- Suggest a stop: opened from the "Nothing matches" search state
+     ([data-suggest-stop]). Submitting builds a mailto: link to
+     SUGGEST_EMAIL in app.js, so it needs no backend. -->
+<dialog id="suggestDialog" class="suggest-dialog w-[calc(100%-32px)] max-w-[440px] p-0 rounded-[18px] border border-rule bg-surface text-ink" aria-labelledby="suggestTitle">
+  <form id="suggestForm" class="p-5 sm:p-6 flex flex-col gap-4" novalidate>
+    <div class="flex items-start justify-between gap-4">
+      <div>
+        <h2 id="suggestTitle" class="font-display text-[22px] leading-tight">Suggest a stop</h2>
+        <p class="mt-1 text-[13px] leading-relaxed text-muted">Know a place we&rsquo;ve missed? Tell us about it.</p>
+      </div>
+      <button type="button" data-suggest-close data-tooltip="Close" class="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full border border-rule text-muted hover:text-ink hover:border-ink transition-colors" aria-label="Close">
+        <svg class="lucide lucide-x w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
+      </button>
+    </div>
+    <label class="flex flex-col gap-1.5">
+      <span class="text-[13px] font-semibold">Link</span>
+      <input name="url" type="url" required placeholder="https://" autocomplete="url" class="suggest-input">
+      <span class="text-[12px] text-faint">Wikipedia, a blue plaque listing, the venue&rsquo;s site&hellip;</span>
+    </label>
+    <label class="flex flex-col gap-1.5">
+      <span class="text-[13px] font-semibold">Description</span>
+      <textarea name="description" required rows="4" placeholder="What is it, where is it, and why is it worth a stop?" class="suggest-input resize-y"></textarea>
+    </label>
+    <label class="flex flex-col gap-1.5">
+      <span class="text-[13px] font-semibold">Your email</span>
+      <input name="email" type="email" required placeholder="you@example.com" autocomplete="email" class="suggest-input">
+    </label>
+    <p id="suggestError" class="hidden text-[13px] text-tomato" role="alert"></p>
+    <button type="submit" class="mt-1 w-full text-[14px] font-semibold py-3 rounded-full bg-ink text-ground transition-opacity hover:opacity-90">Send suggestion</button>
+    <p class="text-[12px] text-faint text-center -mt-1">Opens your email app with this filled in.</p>
+  </form>
+</dialog>
+
 <script src="data.js"></script>
 <script src="areas.js"></script>
 <script src="app.js"></script>

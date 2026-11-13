@@ -19,11 +19,11 @@
   };
 
   var CATMARK = {
-    plaque:   { color:'var(--plaque)',    fg:'#fff',    icon:'<path d="M 128 64 L 160 33 L 192.5 0 L 256 0 L 256 64 L 192 128 L 191.5 128 L 224 161 L 256 192 L 256 256 L 192 256 L 128 192 L 96 223 L 63.5 256 L 0 256 L 0 192 L 64 128 L 64.5 128 L 32 95 L 0 64 L 0 0 L 64 0 Z"/>' },
+    plaque:   { color:'var(--plaque)',    fg:'#fff',    icon:'<path d="M 128 0 C 198.692 0 256 57.308 256 128 C 256 198.692 198.692 256 128 256 C 57.308 256 0 198.692 0 128 C 0 57.308 57.308 0 128 0 Z M 128 32 C 74.98 32 32 74.98 32 128 C 32 181.019 74.98 224 128 224 C 181.019 224 224 181.019 224 128 C 224 74.98 181.019 32 128 32 Z M 128 56 C 167.765 56 200 88.236 200 128 C 200 167.765 167.765 200 128 200 C 88.236 200 56 167.765 56 128 C 56 88.236 88.236 56 128 56 Z M 128 88 C 105.909 88 88 105.909 88 128 C 88 150.091 105.909 168 128 168 C 150.091 168 168 150.091 168 128 C 168 105.909 150.091 88 128 88 Z"/>' },
     grand:    { color:'var(--marigold)',  fg:'#171717', icon:'<path d="M 152 70.059 L 201.539 20.519 L 235.48 54.461 L 185.941 104 L 256 104 L 256 152 L 185.941 152 L 235.48 201.539 L 201.539 235.48 L 152 185.941 L 152 256 L 104 256 L 104 185.941 L 54.46 235.48 L 20.52 201.539 L 70.059 152 L 0 152 L 0 104 L 70.059 104 L 20.519 54.46 L 54.461 20.52 L 104 70.059 L 104 0 L 152 0 Z"/>' },
     maritime: { color:'var(--verdigris)', fg:'#fff',    icon:'<path d="M 180 0 C 221.974 0 256 34.026 256 76 L 256 256 L 208 256 L 208 76 C 208 60.536 195.464 48 180 48 C 164.536 48 152 60.536 152 76 L 152 180 C 152 221.974 117.974 256 76 256 C 34.026 256 0 221.974 0 180 L 0 0 L 48 0 L 48 180 C 48 195.464 60.536 208 76 208 C 91.464 208 104 195.464 104 180 L 104 76 C 104 34.026 138.026 0 180 0 Z"/>' },
     works:    { color:'var(--tomato)',    fg:'#fff',    icon:'<path d="M 164 0 C 188.301 0 208 19.7 208 44 C 208 45.417 207.93 46.818 207.799 48.2 C 209.182 48.07 210.583 48 212 48 C 236.301 48 256 67.7 256 92 C 256 106.883 248.609 120.037 237.3 128 C 248.609 135.963 256 149.117 256 164 C 256 188.301 236.301 208 212 208 C 210.583 208 209.182 207.93 207.799 207.799 C 207.93 209.182 208 210.583 208 212 C 208 236.301 188.301 256 164 256 C 149.117 256 135.963 248.609 128 237.3 C 120.037 248.609 106.883 256 92 256 C 67.7 256 48 236.301 48 212 C 48 210.583 48.07 209.182 48.2 207.799 C 46.804 207.932 45.402 207.999 44 208 C 19.7 208 0 188.301 0 164 C 0 149.118 7.39 135.963 18.7 128 C 7.39 120.037 0 106.882 0 92 C 0 67.7 19.7 48 44 48 C 45.417 48 46.818 48.07 48.2 48.2 C 48.07 46.818 48 45.417 48 44 C 48 19.7 67.7 0 92 0 C 106.882 0 120.037 7.39 128 18.7 C 135.963 7.39 149.118 0 164 0 Z M 128 69.3 C 120.037 80.61 106.883 88 92 88 C 90.583 88 89.182 87.93 87.799 87.799 C 87.932 89.195 87.999 90.597 88 92 C 88 106.883 80.61 120.037 69.3 128 C 80.61 135.963 88 149.117 88 164 C 88 165.417 87.93 166.818 87.799 168.2 C 89.182 168.069 90.583 168 92 168 C 106.882 168 120.037 175.39 128 186.699 C 135.963 175.39 149.118 168 164 168 C 165.417 168 166.818 168.069 168.2 168.2 C 168.067 166.804 168 165.402 168 164 C 168 149.118 175.39 135.963 186.699 128 C 175.39 120.037 168 106.882 168 92 C 168 90.583 168.069 89.182 168.2 87.799 C 166.804 87.932 165.402 87.999 164 88 C 149.117 88 135.963 80.61 128 69.3 Z"/>' },
-    culture:  { color:'var(--violet)',    fg:'#fff',    icon:'<path d="M 128 0 C 198.692 0 256 57.308 256 128 C 256 198.692 198.692 256 128 256 C 57.308 256 0 198.692 0 128 C 0 57.308 57.308 0 128 0 Z M 128 32 C 74.98 32 32 74.98 32 128 C 32 181.019 74.98 224 128 224 C 181.019 224 224 181.019 224 128 C 224 74.98 181.019 32 128 32 Z M 128 56 C 167.765 56 200 88.236 200 128 C 200 167.765 167.765 200 128 200 C 88.236 200 56 167.765 56 128 C 56 88.236 88.236 56 128 56 Z M 128 88 C 105.909 88 88 105.909 88 128 C 88 150.091 105.909 168 128 168 C 150.091 168 168 150.091 168 128 C 168 105.909 150.091 88 128 88 Z M 128 112 C 136.837 112 144 119.163 144 128 C 144 136.837 136.837 144 128 144 C 119.163 144 112 136.837 112 128 C 112 119.163 119.163 112 128 112 Z"/>' },
+    culture:  { color:'var(--violet)',    fg:'#fff',    icon:'<path d="M 128 64 L 160 33 L 192.5 0 L 256 0 L 256 64 L 192 128 L 191.5 128 L 224 161 L 256 192 L 256 256 L 192 256 L 128 192 L 96 223 L 63.5 256 L 0 256 L 0 192 L 64 128 L 64.5 128 L 32 95 L 0 64 L 0 0 L 64 0 Z"/>' },
     memory:   { color:'var(--violet)',    fg:'#fff',    icon:'<path d="M 256 0 C 256 35.346 227.346 64 192 64 C 227.346 64 256 92.654 256 128 C 256 163.346 227.346 192 192 192 C 227.346 192 256 220.654 256 256 L 0 256 C 0 220.654 28.654 192 64 192 C 28.654 192 0 163.346 0 128 C 0 92.654 28.654 64 64 64 C 28.654 64 0 35.346 0 0 Z"/>' },
     green:    { color:'var(--verdigris)', fg:'#fff',    icon:'<path d="M 64 0 C 99.346 0 128 28.654 128 64 L 128 192 C 128 227.346 99.346 256 64 256 C 28.654 256 0 227.346 0 192 C 0 156.654 28.654 128 64 128 C 28.654 128 0 99.346 0 64 C 0 28.654 28.654 0 64 0 Z M 192 128 C 156.654 128 128 99.346 128 64 C 128 28.654 156.654 0 192 0 C 227.346 0 256 28.654 256 64 L 256 192 C 256 227.346 227.346 256 192 256 C 156.654 256 128 227.346 128 192 C 128 156.654 156.654 128 192 128 Z"/>' },
     pub:      { color:'var(--tomato)',    fg:'#fff',    icon:'<path d="M 192 0 C 227.346 0 256 28.654 256 64 C 256 99.346 227.346 128 192 128 C 227.346 128 256 156.654 256 192 C 256 227.346 227.346 256 192 256 C 156.654 256 128 227.346 128 192 C 128 227.346 99.346 256 64 256 C 28.654 256 0 227.346 0 192 C 0 156.654 28.654 128 64 128 C 28.654 128 0 99.346 0 64 C 0 28.654 28.654 0 64 0 C 99.346 0 128 28.654 128 64 C 128 28.654 156.654 0 192 0 Z M 64 160 C 46.327 160 32 174.327 32 192 C 32 209.673 46.327 224 64 224 C 81.673 224 96 209.673 96 192 C 96 174.327 81.673 160 64 160 Z M 192 160 C 174.327 160 160 174.327 160 192 C 160 209.673 174.327 224 192 224 C 209.673 224 224 209.673 224 192 C 224 174.327 209.673 160 192 160 Z M 64 32 C 46.327 32 32 46.327 32 64 C 32 81.673 46.327 96 64 96 C 81.673 96 96 81.673 96 64 C 96 46.327 81.673 32 64 32 Z M 192 32 C 174.327 32 160 46.327 160 64 C 160 81.673 174.327 96 192 96 C 209.673 96 224 81.673 224 64 C 224 46.327 209.673 32 192 32 Z"/>' },
@@ -490,6 +490,36 @@
   var nearPos = null; // { lat, lon } once known
   var nearLocating = false;
 
+  // The last position found is remembered on this device, so Near you
+  // stays filled in on later visits and other pages without asking again
+  // (some browsers, iOS Safari especially, forget the permission between
+  // visits). It's only ever read back here.
+  var NEAR_POS_KEY = 'walkietalkies:near-pos';
+  function saveNearPos(pos) {
+    try {
+      if (pos) localStorage.setItem(NEAR_POS_KEY, JSON.stringify(pos));
+      else localStorage.removeItem(NEAR_POS_KEY);
+    } catch (e) { /* storage blocked */ }
+  }
+  // Back to the not-located state: list gone, Use my location back.
+  function forgetNearPos() {
+    nearPos = null;
+    saveNearPos(null);
+    nearListEl.classList.add('hidden');
+    nearListEl.innerHTML = '';
+    document.getElementById('nearAreas').classList.add('hidden');
+    nearStatusEl.textContent = 'See the stops closest to where you are.';
+    nearBtnLabel.textContent = 'Use my location';
+    nearBtn.classList.remove('hidden');
+  }
+  function loadNearPos() {
+    try {
+      var p = JSON.parse(localStorage.getItem(NEAR_POS_KEY) || 'null');
+      if (p && isFinite(p.lat) && isFinite(p.lon)) return { lat: +p.lat, lon: +p.lon };
+    } catch (e) { /* storage blocked or bad JSON */ }
+    return null;
+  }
+
   // A distance as HTML: the unit gets a hairline gap from the number via
   // CSS (.dist-u in styles.css) — tighter than any space character — and
   // .dist keeps the two on one line.
@@ -521,7 +551,7 @@
     return '<li class="near-row px-4 py-3' + (open ? ' is-open' : '') + '">' +
       '<div class="flex items-center gap-3">' +
       (s.img ? '<button type="button" data-lightbox="' + bigImg(s.img) + '" data-lightbox-fallback="' + s.img + '" data-lightbox-alt="' + plain(s.name) + '" class="shrink-0 rounded-lg" aria-label="View larger image of ' + plain(s.name) + '">' +
-        '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.closest(\'button\').remove()" class="w-12 h-12 rounded-lg object-cover border border-rule">' +
+        '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.closest(\'button\').remove()" class="w-14 h-14 rounded-lg object-cover border border-rule">' +
       '</button>' : '') +
       // The name and distance open and close the short description beneath
       // (as does a tap anywhere else on the row that isn't another control).
@@ -538,9 +568,9 @@
         '</button>' +
       '</div>' +
       '</div>' +
-      // Lined up with the name (past the 48px thumbnail and its 12px gap).
+      // Lined up with the name (past the 56px thumbnail and its 12px gap).
       '<div class="near-desc" id="near-desc-' + s.id + '"' + (open ? '' : ' aria-hidden="true"') + '>' +
-        '<div><p class="font-serif text-[15px] leading-[1.5] text-ink pt-2' + (s.img ? ' pl-[60px]' : '') + '">' + desc + '</p></div>' +
+        '<div><p class="font-serif text-[15px] leading-[1.5] text-ink pt-2' + (s.img ? ' pl-[68px]' : '') + '">' + desc + '</p></div>' +
       '</div>' +
     '</li>';
   }
@@ -605,10 +635,16 @@
       // Refresh is hidden for now: once located, the button goes away.
       nearBtn.classList.add('hidden');
       nearPos = { lat: p.coords.latitude, lon: p.coords.longitude };
+      saveNearPos(nearPos);
       renderNearYou(!homeListEl.classList.contains('hidden'));
     }, function (err) {
       nearLocating = false;
       nearBtn.disabled = false;
+      // Still showing a remembered position: keep its list rather than
+      // swapping in an error (a quiet background refresh just failed).
+      if (nearPos && !(err && err.code === 1)) { nearBtnLabel.textContent = 'Refresh'; return; }
+      // Location since turned off: forget the remembered position too.
+      if (err && err.code === 1 && nearPos) forgetNearPos();
       nearBtnLabel.textContent = nearPos ? 'Refresh' : 'Use my location';
       nearStatusEl.textContent = err && err.code === 1
         ? 'Location is turned off for this site. Allow it in your browser settings to see stops near you.'
@@ -656,6 +692,12 @@
     // note or the browser's), ask straight away too; a refusal sticks in
     // the browser, so it's only ever asked unprompted once — after that
     // it's the Use my location button.
+    // A remembered position fills Near you in straight away (the first
+    // renderList at boot draws it); a live fix below then updates it.
+    // It may be out of date, so Refresh stays until a live fix replaces it
+    // (locateNearYou hides the button again on success).
+    nearPos = loadNearPos();
+    if (nearPos) nearBtnLabel.textContent = 'Refresh';
     var NEAR_ASKED_KEY = 'walkietalkies:location-asked';
     var askedBefore = false;
     try { askedBefore = localStorage.getItem(NEAR_ASKED_KEY) === '1'; } catch (e) { /* storage blocked */ }
@@ -668,6 +710,8 @@
       navigator.permissions.query({ name: 'geolocation' }).then(function (st) {
         if (st.state === 'granted') locateNearYou();
         else if (st.state === 'prompt') askOnArrival();
+        // Turned off since it was remembered: drop the stale list.
+        else if (st.state === 'denied' && nearPos) forgetNearPos();
       }).catch(askOnArrival);
     } else {
       askOnArrival();
@@ -734,6 +778,13 @@
         '<div class="bg-surface border border-rule rounded-[16px] px-5 py-12 text-center">' +
           '<p class="font-display text-[22px] mb-1">Nothing matches</p>' +
           '<p class="text-[13px] text-muted">Try a shorter search, or clear the category filters.</p>' +
+          // Only for a text search: a place someone looked for and we
+          // don't have is worth hearing about.
+          (filters.q ?
+            '<button type="button" data-suggest-stop class="mt-5 inline-flex items-center gap-2 text-[13px] font-semibold px-4 py-2.5 rounded-full border border-rule text-ink hover:border-ink transition-colors">' +
+              '<svg class="lucide lucide-map-pin-plus w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19.914 11.105A7.298 7.298 0 0 0 20 10a8 8 0 0 0-16 0c0 4.993 5.539 10.193 7.399 11.799a1 1 0 0 0 1.202 0 32 32 0 0 0 .824-.738"/><circle cx="12" cy="10" r="3"/><path d="M16 18h6"/><path d="M19 15v6"/></svg>' +
+              'Suggest a missing stop' +
+            '</button>' : '') +
         '</div>';
       return;
     }
@@ -882,7 +933,7 @@
         // so long names never run into the buttons.
         '<div class="flex items-start justify-between gap-4' + (compact ? ' shrink-0' : '') + '">' +
           (s.img ? '<button type="button" data-lightbox="' + bigImg(s.img) + '" data-lightbox-fallback="' + s.img + '" data-lightbox-alt="' + plain(s.name) + '" class="shrink-0 rounded-lg" aria-label="View larger image of ' + plain(s.name) + '">' +
-            '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.closest(\'button\').remove()" class="w-14 h-14 rounded-lg object-cover border border-rule">' +
+            '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.closest(\'button\').remove()" class="w-[72px] h-[72px] sm:w-14 sm:h-14 rounded-lg object-cover border border-rule">' +
           '</button>' : '') +
           '<div class="ml-auto shrink-0 flex items-center gap-2">' +
           listenButtonHTML(s) +
@@ -1003,13 +1054,13 @@
       var leg = i > 0 ? haversine(byId[route[i - 1]], s) : 0;
       html += '' +
         (i > 0 ? '<p class="pl-[52px] pr-5 font-mono text-[11px] leading-4 text-faint num">&darr; ' + distHTML(leg.toFixed(2), 'km') + '</p>' : '') +
-        // Mobile rows match the Near you list (48px image, 15px name,
+        // Mobile rows match the Near you list (56px image, 15px name,
         // centred); the desktop dropdown keeps its tighter rows (lg:).
         '<div class="flex items-center lg:items-start gap-3 px-5 py-2 lg:py-1.5 ' + (i > 0 ? '' : 'pt-3') + '">' +
           // Desktop rows are top-aligned: drop the number to the middle of the
           // 56px thumbnail ((56 - 24) / 2); mobile rows are centred already.
           '<span class="route-num relative z-[1] shrink-0 w-6 h-6 ' + (s.img ? 'lg:mt-4' : 'lg:mt-0.5') + ' rounded-full bg-verdigris text-white font-mono num text-[11px] font-semibold grid place-items-center">' + (i + 1) + '</span>' +
-          (s.img ? '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.remove()" class="w-12 h-12 lg:w-14 lg:h-14 shrink-0 rounded-lg object-cover border border-rule">' : '') +
+          (s.img ? '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.remove()" class="w-14 h-14 shrink-0 rounded-lg object-cover border border-rule">' : '') +
           '<div class="min-w-0 flex-1">' +
             '<p class="text-[15px] leading-snug lg:text-[14px] lg:leading-tight font-semibold">' + s.name + '</p>' +
             '<p class="font-mono text-[11px] text-faint mt-0.5">' + s.pc + ' &middot; ' + s.area + '</p>' +
@@ -1046,6 +1097,21 @@
     line.style.height = (b.top - a.top) + 'px';
   }
   if (window.ResizeObserver) new ResizeObserver(positionRouteLine).observe(routeListEl);
+
+  // On mobile, the rule above Open in Maps only shows once the stops
+  // overflow #routeScroll — with a short route it's just a stray line.
+  // Re-checked whenever the scroll box or its contents change size.
+  var routeScrollEl = document.getElementById('routeScroll');
+  var routeActionsEl = document.getElementById('routeActions');
+  function updateRouteScrollable() {
+    routeActionsEl.classList.toggle('is-scrollable', routeScrollEl.scrollHeight > routeScrollEl.clientHeight + 1);
+  }
+  if (window.ResizeObserver) {
+    var scrollRO = new ResizeObserver(updateRouteScrollable);
+    scrollRO.observe(routeScrollEl);
+    scrollRO.observe(routeListEl);
+    scrollRO.observe(document.getElementById('routeMap'));
+  }
 
   function plain(s) { return s.replace(/&[a-z]+;/g, ''); }
 
@@ -2375,6 +2441,76 @@
   });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && !lightboxEl.classList.contains('hidden')) closeLightbox();
+  });
+
+  /* ---------------------------------------------------------------
+     Suggest a stop — the "Nothing matches" search state's button opens
+     #suggestDialog. There's no backend, so sending builds a mailto: to
+     SUGGEST_EMAIL and hands it to the visitor's email app.
+  --------------------------------------------------------------- */
+  // TODO: set the address suggestions should go to (it is public in the page source).
+  var SUGGEST_EMAIL = 'SUGGEST_EMAIL_HERE';
+
+  var suggestDialog = document.getElementById('suggestDialog');
+  var suggestForm = document.getElementById('suggestForm');
+  var suggestError = document.getElementById('suggestError');
+  var suggestTrigger = null;
+  var suggestQuery = '';
+
+  function openSuggest(trigger) {
+    suggestTrigger = trigger;
+    suggestQuery = filters.q || '';
+    suggestForm.reset();
+    suggestError.classList.add('hidden');
+    Array.prototype.forEach.call(suggestForm.elements, function (el) { el.removeAttribute('aria-invalid'); });
+    if (typeof suggestDialog.showModal === 'function') suggestDialog.showModal();
+    else suggestDialog.setAttribute('open', '');
+    suggestForm.elements.url.focus();
+  }
+  function closeSuggest() {
+    if (suggestDialog.open) suggestDialog.close();
+  }
+  suggestDialog.addEventListener('close', function () {
+    if (suggestTrigger && document.contains(suggestTrigger)) suggestTrigger.focus();
+    suggestTrigger = null;
+  });
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-suggest-stop]');
+    if (t) { openSuggest(t); return; }
+    if (e.target.closest('[data-suggest-close]')) { closeSuggest(); return; }
+    // A click on the backdrop lands on the <dialog> itself.
+    if (e.target === suggestDialog) closeSuggest();
+  });
+
+  suggestForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = suggestForm.elements;
+    var firstBad = null;
+    ['url', 'description', 'email'].forEach(function (name) {
+      var el = f[name];
+      el.value = el.value.trim();
+      var bad = !el.checkValidity();
+      if (bad) el.setAttribute('aria-invalid', 'true'); else el.removeAttribute('aria-invalid');
+      if (bad && !firstBad) firstBad = el;
+    });
+    if (firstBad) {
+      suggestError.textContent = !f.url.checkValidity() ? 'Add a link starting with https://' :
+        !f.description.checkValidity() ? 'Add a short description.' : 'Add a valid email address.';
+      suggestError.classList.remove('hidden');
+      firstBad.focus();
+      return;
+    }
+    suggestError.classList.add('hidden');
+    var subject = 'WalkieTalkies stop suggestion' + (suggestQuery ? ': ' + suggestQuery : '');
+    var body =
+      'Link: ' + f.url.value + '\n\n' +
+      'Description:\n' + f.description.value + '\n\n' +
+      'Email: ' + f.email.value + '\n' +
+      (suggestQuery ? 'Searched for: ' + suggestQuery + '\n' : '');
+    location.href = 'mailto:' + SUGGEST_EMAIL +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(body);
+    closeSuggest();
   });
 
   /* ---------------------------------------------------------------
