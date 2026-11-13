@@ -225,7 +225,7 @@
       short:'Sir John Soane&rsquo;s building was England&rsquo;s first purpose-built public art gallery, and doubles as its founders&rsquo; mausoleum. Its small Rembrandt has been stolen four times.' },
 
     { id:'dulwich-college', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Christ%27s_Chapel_of_God%27s_Gift_-_geograph.org.uk_-_840002.jpg/330px-Christ%27s_Chapel_of_God%27s_Gift_-_geograph.org.uk_-_840002.jpg', name:'Edward Alleyn&rsquo;s College of God&rsquo;s Gift', area:'Dulwich', pc:'SE21', cat:'culture', year:1619, era:'Founded 1619',
-      lat:51.4405, lon:-0.0842, addr:'Dulwich Common, SE21 7LD',
+      lat:51.4463, lon:-0.0859, addr:'Old College, Gallery Road, SE21 7AE',
       text:'Edward Alleyn, the great actor of Marlowe&rsquo;s leading roles and part-owner of the Rose, spent his theatrical fortune on a school and almshouse here in 1619.\n\nThe college archive holds Philip Henslowe&rsquo;s papers &mdash; including the 1598 property list for the Rose, which itemises &ldquo;j Hell mought&rdquo;: one mouth of Hell.',
       short:'The actor Edward Alleyn, star of Marlowe&rsquo;s plays, spent his theatrical fortune on a school and almshouse here in 1619. Its archive includes the Rose theatre&rsquo;s props list &mdash; one mouth of Hell.' },
 
@@ -1045,7 +1045,7 @@
       short:'Built in 1866 as Denmark Hill station&rsquo;s ticket hall, it burned in 1980 and reopened as a pub named for the fire. The bar is cut from a single mahogany tree.' },
 
     { id:'crown-greyhound-dulwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/The_Crown_and_Greyhound_Dulwich_Village_-_geograph.org.uk_-_1270849.jpg/330px-The_Crown_and_Greyhound_Dulwich_Village_-_geograph.org.uk_-_1270849.jpg', name:'Crown &amp; Greyhound', area:'Dulwich Village', pc:'SE21', cat:'pub', year:1900, era:'Built c.1900, replacing two rival inns',
-      lat:51.4455, lon:-0.0865, addr:'73 Dulwich Village, SE21 7BJ',
+      lat:51.4494, lon:-0.0847, addr:'73 Dulwich Village, SE21 7BJ',
       text:'Named for two separate, older pubs &mdash; the Crown and the Greyhound &mdash; that stood facing each other until they were demolished and merged into this one building around 1900.\n\nThe Greyhound drew Dulwich&rsquo;s middle-class club crowd, the Crown its farm labourers; the merger is a small monument to Dulwich itself urbanising.',
       short:'Built around 1900 to replace two rival inns facing each other &mdash; the Greyhound for Dulwich&rsquo;s club set, the Crown for its farm labourers.' },
 
@@ -2485,7 +2485,7 @@
       short:'The Irish Nationalist leader lived here with Katharine O&rsquo;Shea. Their affair, exposed in an 1890 divorce, split his party and ended his career within a year.' },
 
     { id:'college-road-tollgate', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/The_College_Road_Tollgate_-_geograph.org.uk_-_5675890.jpg/330px-The_College_Road_Tollgate_-_geograph.org.uk_-_5675890.jpg', name:'College Road Tollgate', area:'Dulwich', pc:'SE21', cat:'grand', year:1789, era:'In operation since 1789',
-      lat:51.4334, lon:-0.0792, addr:'College Road, SE21',
+      lat:51.4368, lon:-0.0812, addr:'College Road, SE21',
       text:'Established in 1789 to fund the upkeep of College Road, this tollgate is the last one still in daily operation on a public road anywhere in London, still collecting a toll from drivers who use the private road it guards.',
       short:'Established in 1789 to fund the upkeep of College Road, this tollgate is the last one still in daily operation on a public road anywhere in London, still collecting a toll from drivers who use the private road it guards.' },
 
@@ -3317,5 +3317,175 @@
     { id:'trivet', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/View_along_Snowsfields_-_geograph.org.uk_-_6034834.jpg/330px-View_along_Snowsfields_-_geograph.org.uk_-_6034834.jpg', name:'Trivet', area:'Snowsfields, Bermondsey', pc:'SE1', cat:'food', year:2019, era:'Opened 2019, two Michelin stars',
       lat:51.5024, lon:-0.0846, addr:'36 Snowsfields, SE1 3SU',
       text:'Chef Jonny Lake and Master Sommelier Isa Bal opened Trivet on Snowsfields in 2019, after years together at Heston Blumenthal&rsquo;s Fat Duck, where Lake was executive chef for fifteen years.\n\nIt was awarded a second Michelin star in the 2024 Great Britain &amp; Ireland guide &mdash; unusual among two-star restaurants for not serving a tasting menu.',
-      short:'Two former Fat Duck colleagues, chef Jonny Lake and Master Sommelier Isa Bal, opened Trivet in 2019. It won a second Michelin star in 2024 &mdash; without a tasting menu.' }
+      short:'Two former Fat Duck colleagues, chef Jonny Lake and Master Sommelier Isa Bal, opened Trivet in 2019. It won a second Michelin star in 2024 &mdash; without a tasting menu.' },
+
+    { id:'alan-bush', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Alan_Bush_%28Bundesarchiv_Bild_183-13756-0002%29.jpg/330px-Alan_Bush_%28Bundesarchiv_Bild_183-13756-0002%29.jpg', name:'Alan Bush', area:'Dulwich', pc:'SE21', cat:'resident', year:1900, era:'Born in Dulwich, 1900',
+      lat:null, lon:null, addr:'',
+      text:'The composer Alan Bush was born in Dulwich on 22 December 1900, into a prosperous family of industrial chemists. A delicate child, he was taught at home before going to Highgate School and the Royal Academy of Music, where he later taught for more than 50 years.\n\nA committed communist, he founded the Workers&rsquo; Music Association in 1936. His opera about Wat Tyler and the Peasants&rsquo; Revolt won a Festival of Britain prize, yet was staged in East Germany long before Britain saw it in 1974 &mdash; the British musical establishment largely ignored him.',
+      short:'Composer Alan Bush was born in Dulwich in 1900. A committed communist, he founded the Workers&rsquo; Music Association; his Wat Tyler opera was staged in East Germany decades before Britain.' },
+
+    { id:'alison-neilans', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Alison_Neilans%2C_Women%27s_Freedom_League.jpg/330px-Alison_Neilans%2C_Women%27s_Freedom_League.jpg', name:'Alison Neilans', area:'East Dulwich', pc:'SE22', cat:'resident', year:1884, era:'Born in East Dulwich, 1884',
+      lat:null, lon:null, addr:'',
+      text:'The suffragette Alison Neilans was born in East Dulwich in 1884. Her father died when she was 12, and she worked as a bookkeeper before becoming financial secretary of the Women&rsquo;s Freedom League in 1908.\n\nShe was jailed three times. The longest sentence came after the 1909 Bermondsey by-election, when she and Alice Chapin poured chemicals into ballot boxes to protest the Prime Minister&rsquo;s refusal to meet suffrage campaigners; she worked alongside Sylvia Pankhurst in the East London Federation of Suffragettes.',
+      short:'East Dulwich-born suffragette Alison Neilans was jailed three times &mdash; once for pouring chemicals into ballot boxes at the 1909 Bermondsey by-election.' },
+
+    { id:'amanda-mealing', img:'', name:'Amanda Mealing', area:'Dulwich', pc:'SE21', cat:'resident', year:1967, era:'Grew up in Dulwich',
+      lat:null, lon:null, addr:'',
+      text:'Amanda Mealing grew up in Dulwich, the youngest of four children and the only one adopted &mdash; something the family kept secret. She was performing on BBC television at six and enrolled full-time at the Italia Conti Academy at nine.\n\nAfter Grange Hill and a long run of TV roles, she became best known as the cardiothoracic surgeon Connie Beauchamp in Holby City and Casualty.',
+      short:'Amanda Mealing grew up in Dulwich and was on BBC TV at six. She is best known as surgeon Connie Beauchamp in Holby City and Casualty.' },
+
+    { id:'anthony-gross', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/British_Official_War_Artists_of_the_Second_World_War_H8511.jpg/330px-British_Official_War_Artists_of_the_Second_World_War_H8511.jpg', name:'Anthony Gross', area:'Dulwich', pc:'SE21', cat:'resident', year:1905, era:'Born in Dulwich, 1905',
+      lat:null, lon:null, addr:'',
+      text:'The printmaker and painter Anthony Gross was born in Dulwich in 1905, the son of Alexander Gross, the Hungarian mapmaker who founded Geographia, and the suffragette Isabelle Crowley. His sister was Phyllis Pearsall, creator of the London A&ndash;Z.\n\nHe trained at the Slade and in Paris and Madrid, made animated films in the 1930s, and was an Official War Artist in the Second World War, painting in the Middle East and then on the front line in India and Burma.',
+      short:'Printmaker Anthony Gross was born in Dulwich, son of Geographia&rsquo;s founder and brother of A&ndash;Z creator Phyllis Pearsall. He was a Second World War Official War Artist.' },
+
+    { id:'catherine-amy-dawson-scott', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Catherine_Amy_Dawson_Scott.jpg/330px-Catherine_Amy_Dawson_Scott.jpg', name:'Catherine Amy Dawson Scott', area:'Dulwich', pc:'SE21', cat:'resident', year:1865, era:'Born in Dulwich, 1865',
+      lat:null, lon:null, addr:'',
+      text:'Catherine Amy Dawson was born in Dulwich in 1865, the daughter of a brick manufacturer. She worked as a secretary from 18 while writing poetry, publishing a 210-page epic, Sappho, at her own expense in 1889.\n\nIn 1921 she co-founded English PEN, a club for writers that became PEN International &mdash; one of the world&rsquo;s first organisations campaigning for free expression and human rights.',
+      short:'Born in Dulwich in 1865, the writer Catherine Amy Dawson Scott co-founded English PEN in 1921 &mdash; the start of PEN International, an early champion of free expression.' },
+
+    { id:'chris-eubank', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Chriseubank.jpg/330px-Chriseubank.jpg', name:'Chris Eubank', area:'Peckham', pc:'SE15', cat:'resident', year:1966, era:'Born in Dulwich, 1966; grew up in Peckham',
+      lat:null, lon:null, addr:'',
+      text:'Chris Eubank was born in Dulwich in 1966 and spent his early childhood in Jamaica. Back in London he lived in Hackney and then Peckham, going to Bellenden Junior School and Thomas Calton Secondary School, which suspended him 18 times in one year before expelling him. At 16 his father sent him to live with his mother in the South Bronx.\n\nIn New York he took up boxing at the Jerome Boxing Club, and he came home to become WBO middleweight champion in 1990 and super-middleweight champion from 1991 to 1995 &mdash; famous too for his monocle, jodhpurs, riding boots and cane.',
+      short:'Born in Dulwich and raised in Peckham, where he was expelled from Thomas Calton school, Chris Eubank learned to box in the Bronx and came home to win world titles at middleweight and super-middleweight.' },
+
+    { id:'daisy-haggard', img:'', name:'Daisy Haggard', area:'Dulwich', pc:'SE21', cat:'resident', year:1978, era:'Raised in Dulwich',
+      lat:null, lon:null, addr:'',
+      text:'The actor and writer Daisy Haggard was raised in Dulwich and went to James Allen&rsquo;s Girls&rsquo; School. Her father is the film director Piers Haggard, and her great-great-great-uncle was H. Rider Haggard, author of King Solomon&rsquo;s Mines.\n\nShe appeared in Green Wing, Episodes and Uncle, co-wrote and starred in Back to Life, and was BAFTA-nominated for Breeders.',
+      short:'Actor and writer Daisy Haggard grew up in Dulwich. She co-wrote and starred in Back to Life, and was BAFTA-nominated for Breeders.' },
+
+    { id:'frank-thornton', img:'', name:'Frank Thornton', area:'Dulwich', pc:'SE21', cat:'resident', year:1921, era:'Born in Dulwich, 1921',
+      lat:null, lon:null, addr:'',
+      text:'Frank Thornton Ball was born in Dulwich in 1921. His father was organist at St Stephen&rsquo;s Church on Sydenham Hill, and after Alleyn&rsquo;s School he was steered into an insurance job before talking his father into paying for drama school.\n\nAs Frank Thornton he became Captain Peacock, the haughty floorwalker of Are You Being Served?, and later Truly in Last of the Summer Wine.',
+      short:'Born in Dulwich and schooled at Alleyn&rsquo;s, Frank Thornton escaped an insurance job for drama school and became Captain Peacock in Are You Being Served?' },
+
+    { id:'grace-wales-bonner', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Grace_Wales_Bonner_%28cropped%29.jpg/330px-Grace_Wales_Bonner_%28cropped%29.jpg', name:'Grace Wales Bonner', area:'Dulwich', pc:'SE21', cat:'resident', year:1990, era:'Grew up partly in Dulwich',
+      lat:null, lon:null, addr:'',
+      text:'The fashion designer Grace Wales Bonner grew up between her mother&rsquo;s house in Dulwich and her father&rsquo;s in Stockwell. She graduated from Central Saint Martins in 2014 and founded her label the same year.\n\nShe won the LVMH Prize in 2016, and in 2025 was named creative director of Hermès menswear &mdash; the first woman of Black heritage to lead a major luxury fashion house.',
+      short:'Fashion designer Grace Wales Bonner grew up partly in Dulwich. In 2025 she became Hermès&rsquo;s menswear creative director, the first woman of Black heritage to lead a major luxury house.' },
+
+    { id:'guy-stevens', img:'', name:'Guy Stevens', area:'East Dulwich', pc:'SE22', cat:'resident', year:1943, era:'Born in East Dulwich, 1943',
+      lat:null, lon:null, addr:'',
+      text:'Guy Stevens was born in East Dulwich in 1943. Expelled from boarding school, he worked in insurance while collecting American blues and R&amp;B records, and from 1963 played them at his R&amp;B nights at the Scene Club in Soho to an audience that included the Who, the Rolling Stones and the Beatles.\n\nHe ran Island&rsquo;s Sue label, named Procol Harum and Mott the Hoople, and in 1979 co-produced the Clash&rsquo;s London Calling.',
+      short:'Born in East Dulwich, Guy Stevens spun R&amp;B for the Who and the Stones in 1960s Soho, named Procol Harum and Mott the Hoople, and co-produced the Clash&rsquo;s London Calling.' },
+
+    { id:'john-coghlan', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/John_Coghlan_2013.png/330px-John_Coghlan_2013.png', name:'John Coghlan', area:'Dulwich', pc:'SE21', cat:'resident', year:1962, era:'Grew up in Dulwich; joined Status Quo 1962',
+      lat:null, lon:null, addr:'',
+      text:'John Coghlan grew up in Dulwich and went to Kingsdale school, leaving at 15 to train as a mechanic. He took drum lessons from Lloyd Ryan, who also taught Phil Collins.\n\nIn 1962 he joined a band called the Spectres, which became Status Quo. He drummed on their first fourteen albums and on hits including Pictures of Matchstick Men, Down Down and Rockin&rsquo; All Over the World.',
+      short:'Status Quo&rsquo;s original drummer grew up in Dulwich. John Coghlan joined the band in 1962 and played on Pictures of Matchstick Men, Down Down and Rockin&rsquo; All Over the World.' },
+
+    { id:'john-middleton-murry', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/John_Middleton_Murry%2C_1917.jpg/330px-John_Middleton_Murry%2C_1917.jpg', name:'John Middleton Murry', area:'East Dulwich', pc:'SE22', cat:'resident', year:1893, era:'Grew up in East Dulwich from 1893',
+      lat:null, lon:null, addr:'',
+      text:'Born in Peckham in 1889, John Middleton Murry moved to East Dulwich with his family in 1893. His father, a self-made Inland Revenue clerk, pushed his education hard, and Murry won a scholarship to Christ&rsquo;s Hospital and went on to Oxford.\n\nHe became one of the busiest critics of his day, writing more than 60 books. He married Katherine Mansfield in 1918, was friends with D. H. Lawrence and T. S. Eliot, and after Mansfield&rsquo;s death edited and published her work.',
+      short:'The critic John Middleton Murry grew up in East Dulwich from 1893. He married Katherine Mansfield, befriended D. H. Lawrence and T. S. Eliot, and wrote more than 60 books.' },
+
+    { id:'lisa-vanderpump', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Lisa_Vanderpump_2014.jpg/330px-Lisa_Vanderpump_2014.jpg', name:'Lisa Vanderpump', area:'Dulwich', pc:'SE21', cat:'resident', year:1960, era:'Born in Dulwich, 1960',
+      lat:null, lon:null, addr:'',
+      text:'Lisa Vanderpump was born in Dulwich in 1960, the daughter of an advertising art director. She started ballet at three and drama school at nine, and had her own flat in Fulham by 19.\n\nAfter moving to the United States she built a restaurant business with her husband Ken Todd, and became famous on The Real Housewives of Beverly Hills and her own spin-off, Vanderpump Rules.',
+      short:'Dulwich-born Lisa Vanderpump became a Los Angeles restaurateur and reality-TV star on The Real Housewives of Beverly Hills and Vanderpump Rules.' },
+
+    { id:'mavis-batey', img:'', name:'Mavis Batey', area:'Dulwich', pc:'SE21', cat:'resident', year:1921, era:'Born in Dulwich, 1921',
+      lat:null, lon:null, addr:'',
+      text:'Mavis Lever was born in Dulwich in 1921, the daughter of a seamstress and a postal worker. She was studying German at University College London when war broke out, and at 19, with no training in cryptography, she was sent to Bletchley Park to work for Dilly Knox.\n\nHer breaking of Italian naval Enigma messages helped the Royal Navy to victory at the Battle of Cape Matapan in 1941 &mdash; Knox wrote that Cunningham won &ldquo;by the grace of God and Mavis&rdquo; &mdash; and she later helped crack the Abwehr&rsquo;s Enigma, confirming the Germans believed the Double-Cross agents. After the war she became a garden historian, campaigning to save historic parks.',
+      short:'Born in Dulwich, Mavis Batey was 19 when she joined Bletchley Park. Her codebreaking helped win the Battle of Cape Matapan &mdash; &ldquo;by the grace of God and Mavis&rdquo;, wrote her boss.' },
+
+    { id:'peter-cushing', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Revenge_of_Frankenstein_%28trailer%29_-_Peter_Cushing_%28cropped%29.png/330px-Revenge_of_Frankenstein_%28trailer%29_-_Peter_Cushing_%28cropped%29.png', name:'Peter Cushing', area:'Dulwich', pc:'SE21', cat:'resident', year:1914, era:'Childhood in Dulwich, 1914&ndash;1918',
+      lat:null, lon:null, addr:'',
+      text:'Peter Cushing&rsquo;s family lived in Dulwich during the First World War, and he began his schooling here before they moved to Purley in 1918. His mother kept him away from the war by having him play games under the kitchen table whenever an air raid threatened.\n\nHe went on to more than 100 films, best remembered as Baron Frankenstein and Van Helsing in Hammer&rsquo;s horror films of the 1950s to 70s, and as Grand Moff Tarkin in Star Wars.',
+      short:'Hammer horror&rsquo;s Baron Frankenstein spent his wartime childhood in Dulwich and began school here, sheltering under the kitchen table during raids. He later played Grand Moff Tarkin in Star Wars.' },
+
+    { id:'rafe-spall', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Rafe_Spall_and_wife_Elize_Du_Toit_%288464856194%29_%28Spall_cropped%29.jpg/330px-Rafe_Spall_and_wife_Elize_Du_Toit_%288464856194%29_%28Spall_cropped%29.jpg', name:'Rafe Spall', area:'East Dulwich', pc:'SE22', cat:'resident', year:1983, era:'Born here, 1983',
+      lat:51.4519, lon:-0.0645, addr:'Dunstan&rsquo;s Road, SE22',
+      text:'The actor Rafe Spall was born at 12 Dunstan&rsquo;s Road on 10 March 1983, the second of three children of the actor Timothy Spall. He was named after the hero of The Knight of the Burning Pestle, a part his father had played for the Royal Shakespeare Company and one Rafe would later play himself.\n\nHe left school to act, joining the National Youth Theatre at 15, and went on to appear in Shaun of the Dead, Hot Fuzz, One Day and Life of Pi, and to star in the Apple TV+ comedy Trying.',
+      short:'Actor Rafe Spall was born on Dunstan&rsquo;s Road in 1983, son of Timothy Spall. He went on to Shaun of the Dead, Hot Fuzz, Life of Pi and the comedy series Trying.' },
+
+    { id:'rob-key', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Robert_Key_playing_cricket_8x12.jpg/330px-Robert_Key_playing_cricket_8x12.jpg', name:'Rob Key', area:'East Dulwich', pc:'SE22', cat:'resident', year:1979, era:'Born in East Dulwich, 1979',
+      lat:null, lon:null, addr:'',
+      text:'Rob Key was born in East Dulwich in 1979 into a cricketing family &mdash; his mother played for Kent&rsquo;s women&rsquo;s team. He was in Kent&rsquo;s under-elevens before going on to Colfe&rsquo;s School in Lee.\n\nAn opening batsman, he won the Under-19 World Cup with England in 1998, played Test cricket from 2002 and captained Kent. He is now managing director of the England men&rsquo;s cricket team.',
+      short:'East Dulwich-born Rob Key opened the batting for England and captained Kent. He now runs the England men&rsquo;s cricket team as its managing director.' },
+
+    { id:'samuel-silkin', img:'', name:'Samuel Silkin', area:'Dulwich', pc:'SE21', cat:'resident', year:1964, era:'MP for Dulwich 1964&ndash;1983',
+      lat:null, lon:null, addr:'',
+      text:'Samuel Silkin was educated at Dulwich College, sat on Camberwell Borough Council in the 1950s, and was Labour MP for Dulwich from 1964 to 1983. He served as Attorney General from 1974 to 1979, and took the title Baron Silkin of Dulwich.\n\nBefore politics he was a barrister and soldier: in 1946, as a lieutenant colonel, he presided over Singapore&rsquo;s Double Tenth war crimes trial of Japanese military police.',
+      short:'Samuel Silkin was Dulwich&rsquo;s MP for nearly 20 years and Attorney General in the 1970s. In 1946 he presided over Singapore&rsquo;s Double Tenth war crimes trial.' },
+
+    { id:'norman-reid', img:'', name:'Sir Norman Reid', area:'Dulwich', pc:'SE21', cat:'resident', year:1915, era:'Born in Dulwich, 1915',
+      lat:null, lon:null, addr:'',
+      text:'Norman Reid was born in Dulwich in 1915, the son of a shoemaker, and went to Wilson&rsquo;s Grammar School before winning a scholarship to Edinburgh College of Art.\n\nHe joined the Tate in 1946 and was its director from 1964 to 1979, expanding the building and buying works by Picasso, Matisse, Giacometti and Mondrian. In 1972 the Tate also bought Carl Andre&rsquo;s Equivalent VIII, a stack of 120 firebricks.',
+      short:'A Dulwich shoemaker&rsquo;s son, Norman Reid ran the Tate from 1964 to 1979 &mdash; buying Picasso and Matisse, and Carl Andre&rsquo;s stack of 120 firebricks.' },
+
+    { id:'the-concrete-house', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/549_Lordship_Lane_January_2021.jpg/330px-549_Lordship_Lane_January_2021.jpg', name:'The Concrete House', area:'East Dulwich', pc:'SE22', cat:'grand', year:1873, era:'Built 1873; restored 2010s',
+      lat:51.4429, lon:-0.0665, addr:'549 Lordship Lane, SE22',
+      text:'Built in 1873 by Charles Drake of the Patent Concrete Building Company, this Gothic Revival house is an early example of a home made from concrete &mdash; unreinforced Portland cement cast between iron shutter panels Drake had patented in 1867, a method that anticipates modern slip-forming. It may have been designed by Charles Barry Jr. as a parsonage for his St Peter&rsquo;s Church across the road, and is thought to be the only surviving example of its kind in England.\n\nIt survived wartime bomb damage and successive plans to replace it with a petrol station, flats, a nursery and a nursing home, but stood empty and rotting from the 1980s and sat on the Buildings at Risk register from 1994 to 2013. Southwark Council bought it by compulsory purchase in 2009 and restored it as five shared-ownership flats.',
+      short:'An 1873 Gothic house cast in unreinforced concrete with patented iron shuttering &mdash; thought to be the only one of its kind left in England. Empty and decaying for decades, it was saved by Southwark Council and restored as flats.' },
+
+    { id:'all-saints-west-dulwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/All_Saints_Dulwich_%2816129644576%29.jpg/330px-All_Saints_Dulwich_%2816129644576%29.jpg', name:'All Saints Church, West Dulwich', area:'Dulwich', pc:'SE21', cat:'grand', year:1891, era:'Built 1888&ndash;1891; Grade I listed',
+      lat:51.4417, lon:-0.0972, addr:'Lovelace Road, SE21',
+      text:'George Fellowes Prynne&rsquo;s red-brick Gothic church, built from 1888 to 1891, is the only Grade I listed building in Dulwich. It was never finished: the nave was meant to run three bays further west, with a baptistery and a tall tower, and the plain west wall that stands there now was only ever meant to be temporary.\n\nThe site drops so steeply from Lovelace Road to Rosendale Road that almost the whole church sits on crypts. A V-1 flying bomb shattered its windows in 1944, and on 9 June 2000 a fire destroyed the interior; it reopened in 2006 with a modern entrance at the unfinished west end.',
+      short:'Dulwich&rsquo;s only Grade I building, a red-brick Gothic church that was never finished. Its interior burned out in 2000, and it reopened in 2006 with a modern entrance at the unbuilt west end.' },
+
+    { id:'belair-house', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Belair_House_from_Belair_Park%2C_West_Dulwich_-_geograph.org.uk_-_7175924.jpg/330px-Belair_House_from_Belair_Park%2C_West_Dulwich_-_geograph.org.uk_-_7175924.jpg', name:'Belair House and Park', area:'Dulwich', pc:'SE21', cat:'green', year:1785, era:'House built 1785',
+      lat:51.4433, lon:-0.0894, addr:'Gallery Road, SE21 7AB',
+      text:'A Georgian villa built in 1785 for John Willes, possibly with help from Robert Adam but more likely Henry Holland, and first called College Place. Later owners grew it to 47 rooms; the wool merchant Charles Hutton lived here with his wife, eleven children and ten servants, and the paper merchant Sir Evan Spicer kept cows, pigs and a coach to take his family across Dulwich Park to church.\n\nIts grounds are now a public park, and the lake is the only substantial stretch of the River Effra still above ground.',
+      short:'A 1785 villa whose grounds are now a public park. The park lake is the last substantial stretch of the River Effra still above ground.' },
+
+    { id:'bell-house-dulwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bell_House_%288667828239%29.jpg/330px-Bell_House_%288667828239%29.jpg', name:'Bell House', area:'Dulwich', pc:'SE21', cat:'grand', year:1767, era:'Built 1767; Grade II* listed',
+      lat:51.4446, lon:-0.0845, addr:'College Road, SE21 7BG',
+      text:'A Georgian house built in 1767 for Thomas Wright, a stationer and almanac publisher who became Lord Mayor of London in 1785, and who lived here until his death in 1798. It takes its name from the bell tower on the roof: when fire broke out in the village, its bell and the college chapel&rsquo;s were rung to call people to pump water for the village fire engine.\n\nSir Edwin Lutyens altered it in 1918, and from 1927 it was the home of the Master of Dulwich College, later a junior boarding house. Since 2016 it has been run by an educational charity.',
+      short:'Lord Mayor Thomas Wright&rsquo;s 1767 house, named for the rooftop bell that was rung to call villagers to the fire engine. Lutyens altered it in 1918.' },
+
+    { id:'dulwich-college-new-college', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Dulwich_College%2C_Dulwich_Common_-_geograph.org.uk_-_3318422.jpg/330px-Dulwich_College%2C_Dulwich_Common_-_geograph.org.uk_-_3318422.jpg', name:'Dulwich College (the New College)', area:'Dulwich', pc:'SE21', cat:'grand', year:1870, era:'Opened 1870; Grade II* listed',
+      lat:51.4404, lon:-0.0849, addr:'Dulwich Common, SE21 7LD',
+      text:'When Edward Alleyn&rsquo;s school outgrew its 17th-century home in the village, it moved here to 24 hectares of Dulwich Common. Charles Barry Jr., eldest son of the architect of the Houses of Parliament, designed the &ldquo;New College&rdquo;, and the Prince and Princess of Wales opened it on Founder&rsquo;s Day, 21 June 1870. Camille Pissarro, living in south London at the time, painted it soon afterwards.\n\nThe school keeps the James Caird, the open boat in which Ernest Shackleton &mdash; an Old Alleynian &mdash; sailed from Elephant Island to South Georgia in 1916. P. G. Wodehouse and Raymond Chandler were pupils here too.',
+      short:'Charles Barry Jr.&rsquo;s 1870 school buildings, painted by Pissarro soon after they opened. Inside is the James Caird, the boat old boy Ernest Shackleton sailed to South Georgia in 1916.' },
+
+    { id:'dulwich-park', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/The_Boating_Lake%2C_Dulwich_Park_-_geograph.org.uk_-_5482912.jpg/330px-The_Boating_Lake%2C_Dulwich_Park_-_geograph.org.uk_-_5482912.jpg', name:'Dulwich Park', area:'Dulwich', pc:'SE21', cat:'green', year:1890, era:'Opened 1890',
+      lat:51.4457, lon:-0.0788, addr:'College Road, SE21 7EB',
+      text:'Laid out on former farmland and meadows by the Metropolitan Board of Works, Dulwich Park was first designed by Charles Barry Jr. and refined by J. J. Sexby, who also shaped Battersea Park. Lord Rosebery opened it in 1890, and it is now on Historic England&rsquo;s register of historic parks and gardens, along with its Victorian lodges and gates.\n\nOn 20 December 2011 thieves cut Barbara Hepworth&rsquo;s sculpture Two Forms (Divided Circle) from its plinth here, probably for scrap metal. The park was restored to its Victorian layout between 2004 and 2006.',
+      short:'A Victorian park opened by Lord Rosebery in 1890, now on the register of historic parks. In 2011 thieves cut a Barbara Hepworth sculpture from its plinth here, probably for scrap.' },
+
+    { id:'dulwich-public-baths', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Dulwich_Public_Baths_%28geograph_3030631%29.jpg/330px-Dulwich_Public_Baths_%28geograph_3030631%29.jpg', name:'Dulwich Public Baths', area:'East Dulwich', pc:'SE22', cat:'grand', year:1892, era:'Opened 1892',
+      lat:51.4607, lon:-0.0721, addr:'Crystal Palace Road, SE22',
+      text:'Opened on 25 June 1892, these are London&rsquo;s oldest public baths still in continuous use &mdash; the first of seven designed by Spalding &amp; Cross. A first-class swim cost 6d, a price that held until 1957, and separate entrances for men and women still survive on the front.\n\nIn the First World War the baths housed Belgian refugees and then soldiers of the Camberwell gun brigades, and served as an unofficial air-raid shelter in 1917. The main pool was boarded over in 1982 and is now the gym.',
+      short:'London&rsquo;s oldest public baths still in use, opened in 1892. In the First World War they housed Belgian refugees and then soldiers, and sheltered locals from air raids.' },
+
+    { id:'david-greig-lordship-lane', img:'', name:'Former David Greig shop', area:'East Dulwich', pc:'SE22', cat:'grand', year:1890, era:'Late 19th-century shop interior',
+      lat:51.4586, lon:-0.0747, addr:'65 Lordship Lane, SE22 8EP',
+      text:'A branch of David Greig, the grocery chain that opened its first shop in Brixton in 1870, whose interior survives remarkably intact. Its walls are lined with glazed tiles made by H &amp; R Johnson of Stoke-on-Trent and decorated with thistles, the firm&rsquo;s emblem, above granite stall risers.\n\nHistoric England listed the shop front and ground-floor interior in 2017. The old sign has been moved inside.',
+      short:'A Victorian branch of the David Greig grocery chain whose thistle-tiled interior survives almost intact. It was listed in 2017.' },
+
+    { id:'kingswood-house', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Kingswood_House_in_its_setting%2C_Kingswood_Estate%2C_East_Dulwich_-_geograph.org.uk_-_6885077.jpg/330px-Kingswood_House_in_its_setting%2C_Kingswood_Estate%2C_East_Dulwich_-_geograph.org.uk_-_6885077.jpg', name:'Kingswood House (&ldquo;Bovril Castle&rdquo;)', area:'Dulwich', pc:'SE21', cat:'grand', year:1891, era:'Remodelled from 1891',
+      lat:51.4305, lon:-0.0818, addr:'Seeley Drive, SE21 8QN',
+      text:'A house here was leased in 1811 to William Vizard, solicitor to Caroline of Brunswick. From 1891 it belonged to John Lawson Johnston, the inventor of Bovril, who extended it and added battlements &mdash; so it became known locally as Bovril Castle.\n\nIn the First World War it was a convalescent home for wounded Canadian soldiers, which brought it to the attention of Lady Vestey; her husband, William Vestey, took it in 1919 and became Baron Vestey of Kingswood. The council bought it in 1956 for the new Kingswood Estate, and it was a public library until 2020.',
+      short:'The Bovril inventor&rsquo;s battlemented house, nicknamed Bovril Castle. It nursed wounded Canadians in the First World War, was Lord Vestey&rsquo;s home, and served as a public library until 2020.' },
+
+    { id:'dulwich-old-grammar-school', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Old_Grammar_School%2C_Dulwich_-_geograph.org.uk_-_5303812.jpg/330px-Old_Grammar_School%2C_Dulwich_-_geograph.org.uk_-_5303812.jpg', name:'Old Grammar School', area:'Dulwich', pc:'SE21', cat:'grand', year:1842, era:'Built 1841&ndash;1842',
+      lat:51.4473, lon:-0.0861, addr:'Dulwich Village, SE21 7AE',
+      text:'Built in 1841&ndash;42 opposite the Old College by Sir Charles Barry, architect of the Houses of Parliament, to give free schooling to 60 poor boys of Dulwich. It became the first home of what grew into Alleyn&rsquo;s School, which moved to its present site on Townley Road in 1887.\n\nBarry&rsquo;s son, Charles Barry Jr., went on to design the New College buildings on Dulwich Common and much else in the area.',
+      short:'Sir Charles Barry, architect of Parliament, built this little stuccoed school in 1842 for 60 poor Dulwich boys. It was the first home of Alleyn&rsquo;s School.' },
+
+    { id:'southwark-military-hospital-memorial', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/The_war_memorial_at_Dulwich_Hospital_-_geograph.org.uk_-_2605554.jpg/330px-The_war_memorial_at_Dulwich_Hospital_-_geograph.org.uk_-_2605554.jpg', name:'Southwark Military Hospital memorial', area:'East Dulwich', pc:'SE22', cat:'memory', year:1919, era:'Hospital 1915&ndash;1919',
+      lat:51.4589, lon:-0.0807, addr:'East Dulwich Grove, SE22 8PT',
+      text:'The St Saviour&rsquo;s Union Infirmary opened here in 1887 despite objections from neighbours including Charles Barry, worried about house prices, and Sir Henry Bessemer, worried about his view. In the First World War it became the Southwark Military Hospital &mdash; the first London infirmary cleared for war casualties.\n\nIt treated 12,522 soldiers from Britain, America, Australia, South Africa and Canada, with tents in the grounds for those well enough to be up by day; only 119 died. The listed memorial cross outside remembers that time. The site later became Dulwich Hospital.',
+      short:'A memorial cross outside the old Southwark Military Hospital, which treated 12,522 First World War soldiers here. Only 119 died.' },
+
+    { id:'st-john-goose-green', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/St_John_the_Evangelist_Church%2C_Goose_Green_-_geograph.org.uk_-_6214081.jpg/330px-St_John_the_Evangelist_Church%2C_Goose_Green_-_geograph.org.uk_-_6214081.jpg', name:'St John the Evangelist, Goose Green', area:'East Dulwich', pc:'SE22', cat:'grand', year:1865, era:'Built 1863&ndash;1865',
+      lat:51.4624, lon:-0.0723, addr:'East Dulwich Road, SE22 9AT',
+      text:'Charles Bailey designed this church, built in 1863&ndash;65 facing Goose Green at the corner of East Dulwich Road and Adys Road.\n\nIt was badly damaged by bombing in the Second World War, and was rebuilt and refurnished by the church architect Sebastian Comper in 1951.',
+      short:'East Dulwich&rsquo;s Victorian parish church, built in 1863&ndash;65 facing Goose Green. It was badly bombed in the Second World War and rebuilt by Sebastian Comper.' },
+
+    { id:'st-peters-lordship-lane', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/St_Peter%2C_Lordship_Lane_%28geograph_3318424%29.jpg/330px-St_Peter%2C_Lordship_Lane_%28geograph_3318424%29.jpg', name:'St Peter&rsquo;s Church, Lordship Lane', area:'East Dulwich', pc:'SE22', cat:'grand', year:1873, era:'Built 1873&ndash;1885',
+      lat:51.4425, lon:-0.0671, addr:'Lordship Lane, SE22 8LD',
+      text:'Charles Barry Jr. designed this church for a new parish carved out of St Giles, Camberwell, on land given by Dulwich College. Work began in 1873 and the tower was finished in 1885; the parish hall beside it and the First World War memorial in front are listed too.\n\nIt stands opposite the Concrete House, which may also be Barry&rsquo;s. Historic England has the church on its Heritage at Risk register in the most urgent category, at immediate risk of rapid deterioration.',
+      short:'Charles Barry Jr.&rsquo;s Victorian church opposite the Concrete House. It is now on Historic England&rsquo;s at-risk register in the most urgent category.' },
+
+    { id:'st-stephens-south-dulwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/St_Stephen%27s_church%2C_South_Dulwich_-_geograph.org.uk_-_840005.jpg/330px-St_Stephen%27s_church%2C_South_Dulwich_-_geograph.org.uk_-_840005.jpg', name:'St Stephen&rsquo;s Church, College Road', area:'Dulwich', pc:'SE21', cat:'grand', year:1870, era:'Built 1867&ndash;1875',
+      lat:51.4322, lon:-0.0786, addr:'College Road, SE21 7HW',
+      text:'Charles Barry Jr. designed this church, built between 1867 and 1875. Camille Pissarro, who had come to south London to escape the Franco-Prussian War, painted it in 1870.\n\nInside, the chancel has a fresco by Sir Edward Poynter showing the trial and stoning of St Stephen, which survived the bomb damage the church suffered in the Second World War.',
+      short:'Charles Barry Jr.&rsquo;s Victorian church, painted by Camille Pissarro in 1870 while he sheltered in south London from the Franco-Prussian War. Inside is a fresco by Sir Edward Poynter.' },
+
+    { id:'dulwich-lock-up-stone', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Stone_Plaque_from_the_Village_Lock_Up%2C_Dulwich_%2801%29.jpg/330px-Stone_Plaque_from_the_Village_Lock_Up%2C_Dulwich_%2801%29.jpg', name:'The village lock-up stone', area:'Dulwich', pc:'SE21', cat:'memory', year:1760, era:'Carved 1760',
+      lat:51.4506, lon:-0.0851, addr:'Dulwich Old Burial Ground, Dulwich Village, SE21',
+      text:'A carved stone from Dulwich&rsquo;s village lock-up &mdash; the small cell where drunks and petty offenders were held overnight &mdash; dated 1760 and inscribed: &ldquo;It is a sport for a fool to do mischief / to thine own wickedness shall correct thee&rdquo;, words adapted from the Book of Proverbs.\n\nThe lock-up itself was demolished and even its exact site is uncertain. The stone was rediscovered in 1922 when a parade of shops was built, set up in a nearby garden, listed in 2015, and has since been moved into the Old Burial Ground.',
+      short:'All that&rsquo;s left of Dulwich&rsquo;s 1760 village lock-up: a stone warning that &ldquo;It is a sport for a fool to do mischief&rdquo;. It was found in 1922 and now stands in the Old Burial Ground.' }
   ];
