@@ -70,7 +70,7 @@
       short:'Free since 1889, granted to the people of Woolwich in perpetuity. Beside it, the 1912 foot tunnel runs 504 metres of white glazed tile under the river bed.' },
 
     { id:'eltham-palace', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Eltham_Palace-8242930494.jpg/330px-Eltham_Palace-8242930494.jpg', name:'Eltham Palace', area:'Eltham', pc:'SE9', cat:'grand', year:1470, era:'1470s &amp; 1936',
-      lat:51.4485, lon:0.0523, addr:'Court Yard, SE9 5QE',
+      lat:51.4472, lon:0.0486, addr:'Court Yard, SE9 5QE',
       text:'Edward IV&rsquo;s great hall, carrying the third-largest hammerbeam roof in England, bolted onto an Art Deco house built for Stephen and Virginia Courtauld in 1936. It should not work. It does.\n\nThe Courtaulds&rsquo; pet ring-tailed lemur, Mah-Jongg, had his own centrally heated quarters upstairs, reached by a bamboo ladder.',
       short:'Edward IV&rsquo;s great hall, with England&rsquo;s third-largest hammerbeam roof, joined to an Art Deco house built for the Courtaulds in 1936. Their pet lemur had centrally heated quarters.' },
 
@@ -270,7 +270,7 @@
       short:'Refused hospital posts because he was Black, Moody opened his own practice here in 1913 &mdash; and in 1931 founded the League of Coloured Peoples to fight the colour bar.' },
 
     { id:'pioneer-health', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Former_Pioneer_Health_Centre%2C_St_Mary%27s_Road_-_geograph.org.uk_-_4229236.jpg/330px-Former_Pioneer_Health_Centre%2C_St_Mary%27s_Road_-_geograph.org.uk_-_4229236.jpg', name:'The Pioneer Health Centre', area:'St Mary&rsquo;s Road', pc:'SE15', cat:'grand', year:1935, era:'Built 1935; converted to flats 2000',
-      lat:51.472, lon:-0.0645, addr:'St Mary&rsquo;s Road, SE15 2DR &mdash; now flats',
+      lat:51.4721, lon:-0.0537, addr:'St Mary&rsquo;s Road, SE15 2DR &mdash; now flats',
       text:'A Grade II* listed Modernist building designed by the engineer Sir Owen Williams, opened in 1935 as the purpose-built home of the Pioneer Health Centre &mdash; the second and much larger site of the &ldquo;Peckham Experiment&rdquo;, begun in 1926 by the doctors George Scott Williamson and Innes Hope Pearse at 142 Queen&rsquo;s Road.\n\nWilliams used the latest structural techniques to create vast, open, glazed spaces so the doctors could watch up to 950 member families at their activities, games and the covered central swimming pool, all for a subscription of a shilling a week. The point was to study health rather than treat disease. Walter Gropius called it &ldquo;an oasis of glass in a desert of brick.&rdquo; The centre closed in 1950, its preventative approach a poor fit for the new NHS, and the building became private flats in 2000, keeping the original pool.',
       short:'Owen Williams&rsquo;s glass-walled 1935 building let doctors watch 950 families at play, to study health rather than treat disease &mdash; &ldquo;an oasis of glass in a desert of brick&rdquo;, said Gropius. It is now flats.' },
 
@@ -790,7 +790,7 @@
       short:'James Wyatt&rsquo;s facade runs over 300 metres, the longest continuous Georgian building front in the country. It was home to the Royal Artillery from 1776 until 2007.' },
 
     { id:'st-giles-camberwell', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/South_Face_of_the_Church_of_Saint_Giles%2C_Camberwell_%2805%29.jpg/330px-South_Face_of_the_Church_of_Saint_Giles%2C_Camberwell_%2805%29.jpg', name:'St Giles&rsquo; Church', area:'Camberwell Church Street', pc:'SE5', cat:'grand', year:1844, era:'Built 1842&ndash;44',
-      lat:51.4735, lon:-0.0925, addr:'Camberwell Church Street, SE5 8TR',
+      lat:51.473, lon:-0.0869, addr:'Camberwell Church Street, SE5 8TR',
       text:'Sir George Gilbert Scott&rsquo;s first major Gothic building, built after fire destroyed the medieval church in 1841; its stained glass includes windows made by a young John Ruskin, then a local resident.\n\nScott&rsquo;s original Caen stone facing decayed so badly in London&rsquo;s pollution that he paid to have the church reclad in Portland stone at his own expense.',
       short:'George Gilbert Scott&rsquo;s first major Gothic church, with stained glass by a young John Ruskin. When its stone decayed in London&rsquo;s smog, Scott paid to reclad it himself.' },
 
@@ -930,7 +930,7 @@
       short:'Dug by hand through the chalk in 1902 so dockers could walk to work on the Isle of Dogs. Its walls still carry 200,000 original glazed tiles.' },
 
     { id:'st-pauls-deptford', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Deptford_High_Street%2C_SE8_-_geograph.org.uk_-_1490848.jpg/330px-Deptford_High_Street%2C_SE8_-_geograph.org.uk_-_1490848.jpg', name:'St Paul\'s Church', area:'Deptford High Street', pc:'SE8', cat:'grand', year:1730, era:'Built 1712&ndash;1730',
-      lat:51.478, lon:-0.0263, addr:'Deptford High Street, SE8 4RT',
+      lat:51.4796, lon:-0.0244, addr:'Deptford High Street, SE8 4RT',
       text:'Thomas Archer&rsquo;s Baroque parish church, one of the Commissioners&rsquo; &ldquo;Queen Anne&rdquo; churches funded after 1711, is closer to Roman Baroque than any other English church of its date &mdash; Archer drew directly on Borromini&rsquo;s Sant&rsquo;Agnese and Pietro da Cortona&rsquo;s Santa Maria della Pace.\n\nIts main body is raised bodily over a crypt, reached by dramatic curved flanking stairs &mdash; an unusually theatrical solution built to dignify the parish&rsquo;s own burial vaults.',
       short:'Thomas Archer&rsquo;s church is closer to Roman Baroque than any other English church of its date, raised over a crypt and reached by dramatic curved stairs.' },
 
@@ -980,7 +980,7 @@
       short:'Chartered in 1700 for a thousand years and opened in 1737, it is still owned by Greenwich Hospital, the Royal Navy&rsquo;s oldest charity.' },
 
     { id:'royal-military-academy-woolwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/2017-Woolwich%2C_RMA_-_3.jpg/330px-2017-Woolwich%2C_RMA_-_3.jpg', name:'The Royal Military Academy', area:'Woolwich Common', pc:'SE18', cat:'grand', year:1741, era:'Founded 1741, this building 1796&ndash;1806',
-      lat:51.479, lon:0.0605, addr:'Woolwich Common, SE18',
+      lat:51.4758, lon:0.0588, addr:'Woolwich Common, SE18',
       text:'Founded in 1741 to train officers of the Royal Artillery and Royal Engineers, the Academy moved into James Wyatt&rsquo;s purpose-built mock-castellated building on Woolwich Common in 1806, training British Army officers here for over two centuries until it closed in 1939.\n\nEveryone still calls it &ldquo;The Shop&rdquo; &mdash; a nickname from its very first home, a converted workshop inside the Royal Arsenal &mdash; which is also where the everyday phrase &ldquo;talking shop&rdquo; is said to come from.',
       short:'For over two centuries it trained the Army&rsquo;s artillery and engineer officers. Its nickname, &ldquo;The Shop&rdquo;, came from its first home &mdash; a converted Arsenal workshop.' },
 
@@ -1575,7 +1575,7 @@
       short:'Dulwich&rsquo;s burial ground holds victims of the plagues of 1625 and 1655, when about one in six villagers died &mdash; and infants farmed out to local wet-nurses.' },
 
     { id:'edward-iii-s-bermondsey-manor-house', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/King_Edward_III_Manor_House%2C_Bermondsey_1.jpg/330px-King_Edward_III_Manor_House%2C_Bermondsey_1.jpg', name:'Edward III\'s Bermondsey manor house', area:'Bermondsey', pc:'SE16', cat:'grand', year:1353, era:'Built 1353',
-      lat:null, lon:null, addr:'',
+      lat:51.5001, lon:-0.0594, addr:'Cathay Street, SE16 4QH',
       text:'King Edward III had a riverside manor house built in Bermondsey in 1353; its excavated foundations remain visible today next to Bermondsey Wall East, close to the historic Angel public house, making it one of the oldest traceable structures in the area\'s long history.',
       short:'The excavated foundations of Edward III&rsquo;s 1353 riverside manor house lie open beside Bermondsey Wall East, near the Angel pub.' },
 
@@ -1930,7 +1930,7 @@
       short:'Bexley&rsquo;s medieval parish church, with an unusual spire like an octagonal cone on a truncated pyramid. Henry Oldenburg is buried in its churchyard.' },
 
     { id:'st-peter-s-church-walworth', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/St._Peter%27s_Church%2C_Walworth_-_geograph.org.uk_-_5141454.jpg/330px-St._Peter%27s_Church%2C_Walworth_-_geograph.org.uk_-_5141454.jpg', name:'St Peter\'s Church, Walworth', area:'Walworth', pc:'SE17', cat:'grand', year:1825, era:'Built c.1825',
-      lat:null, lon:null, addr:'',
+      lat:51.4866, lon:-0.0926, addr:'Liverpool Grove, SE17 2TL',
       text:'A neo-classical church built around 1825 to a design by the eminent architect Sir John Soane, reflecting the wealth of the middle-class merchants living in the area at the time who could afford an architect of such prominence. It remains one of Walworth\'s most architecturally significant buildings.',
       short:'A neo-classical church of around 1825 by Sir John Soane, built for the area&rsquo;s wealthy merchants &mdash; one of Walworth&rsquo;s most significant buildings.' },
 
@@ -2795,7 +2795,7 @@
       short:'Musician and frontman of the band Placebo, who lived in Brockley for a number of years while forming the group, which went on to become one of the defining alternative rock acts of the late 1990s and 2000s.' },
 
     { id:'burial-mound-winns-common', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Tumulus_on_Winn%27s_Common.jpg/330px-Tumulus_on_Winn%27s_Common.jpg', name:'Burial mound, Winns Common', area:'Woolwich', pc:'SE18', cat:'green', year:null, era:'',
-      lat:null, lon:null, addr:'',
+      lat:51.4813, lon:0.0969, addr:'Winns Common, SE18 2AA',
       text:'A Bronze Age burial mound surviving on Winns Common in Plumstead, part of a small scatter of ancient barrows across the high ground of this part of South East London &mdash; physical evidence that people were burying their dead on these hills long before any of the area\'s recorded history began.',
       short:'A Bronze Age burial mound on Winns Common &mdash; evidence that people buried their dead on these hills long before any recorded history.' },
 
@@ -3045,7 +3045,7 @@
       short:'Former England international footballer, son of Ian Wright, who grew up in Brockley and had a successful career including spells at Manchester City and Chelsea.' },
 
     { id:'shrewsbury-barrow-shooter-s-hill', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Shrewsbury_Tumulus_on_Shooter%27s_Hill.jpg/330px-Shrewsbury_Tumulus_on_Shooter%27s_Hill.jpg', name:'Shrewsbury Barrow, Shooter\'s Hill', area:'Woolwich', pc:'SE18', cat:'green', year:null, era:'',
-      lat:null, lon:null, addr:'',
+      lat:51.4747, lon:0.0703, addr:'Plum Lane, Shooters Hill, SE18 3HG',
       text:'A Bronze Age burial mound on Shooter\'s Hill, one of a small number of ancient barrows surviving in this part of South East London, marking the presence of prehistoric communities on this high ground many thousands of years before Severndroog Castle (covered separately on WalkieTalkies) was built nearby.',
       short:'A Bronze Age burial mound on Shooter&rsquo;s Hill, marking prehistoric communities on this high ground thousands of years before Severndroog Castle.' },
 
@@ -3095,7 +3095,7 @@
       short:'Much of Blackheath&rsquo;s elegant Georgian street plan was laid out by John Cator, who bought land here in the eighteenth century.' },
 
     { id:'the-fan-museum', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/The_Fan_Museum_%283400819225%29.jpg/330px-The_Fan_Museum_%283400819225%29.jpg', name:'The Fan Museum', area:'Greenwich', pc:'SE10', cat:'culture', year:1991, era:'Founded 1991',
-      lat:null, lon:null, addr:'',
+      lat:51.4791, lon:-0.0081, addr:'12 Crooms Hill, SE10 8ER',
       text:'The world\'s only museum dedicated entirely to fans, housed in a pair of Grade II listed Georgian townhouses. It was founded in 1991 by H&eacute;lène Alexander, who built the founding collection from her own personal gathering of fans &mdash; now numbering over 5,000 pieces spanning from the 11th century to the present day, a genuinely singular niche collection built by one person\'s decades of dedicated collecting.',
       short:'The world&rsquo;s only museum devoted entirely to fans, in two Georgian townhouses. H&eacute;lène Alexander founded it in 1991 from her own collection of over 5,000.' },
 
@@ -3115,7 +3115,7 @@
       short:'A 16th or early 17th-century timber-framed and weatherboarded pub, with a gabled front, casement windows and a single-flued chimney-stack &mdash; one of Bexley\'s oldest surviving buildings still serving its original purpose centuries on.' },
 
     { id:'the-master-shipwright-s-house', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Former_Master_Shipwright%27s_House%2C_Deptford_%28North_Face_-_I%29.jpg/330px-Former_Master_Shipwright%27s_House%2C_Deptford_%28North_Face_-_I%29.jpg', name:'The Master Shipwright\'s House', area:'Deptford', pc:'SE8', cat:'grand', year:1708, era:'Built 1708',
-      lat:null, lon:null, addr:'',
+      lat:51.4854, lon:-0.0252, addr:'Watergate Street, SE8 3JF',
       text:'Built in 1708 as the official residence of the Master Shipwright of the Royal Naval Dockyard at Deptford, on the site of an earlier building serving the same purpose. The house is one of the few substantial survivals of Deptford\'s centuries as a major Royal Navy shipbuilding centre.',
       short:'Built in 1708 for the Master Shipwright of the Deptford dockyard &mdash; one of the few substantial survivals of Deptford&rsquo;s centuries of naval shipbuilding.' },
 
@@ -3487,5 +3487,235 @@
     { id:'dulwich-lock-up-stone', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Stone_Plaque_from_the_Village_Lock_Up%2C_Dulwich_%2801%29.jpg/330px-Stone_Plaque_from_the_Village_Lock_Up%2C_Dulwich_%2801%29.jpg', name:'The village lock-up stone', area:'Dulwich', pc:'SE21', cat:'memory', year:1760, era:'Carved 1760',
       lat:51.4506, lon:-0.0851, addr:'Dulwich Old Burial Ground, Dulwich Village, SE21',
       text:'A carved stone from Dulwich&rsquo;s village lock-up &mdash; the small cell where drunks and petty offenders were held overnight &mdash; dated 1760 and inscribed: &ldquo;It is a sport for a fool to do mischief / to thine own wickedness shall correct thee&rdquo;, words adapted from the Book of Proverbs.\n\nThe lock-up itself was demolished and even its exact site is uncertain. The stone was rediscovered in 1922 when a parade of shops was built, set up in a nearby garden, listed in 2015, and has since been moved into the Old Burial Ground.',
-      short:'All that&rsquo;s left of Dulwich&rsquo;s 1760 village lock-up: a stone warning that &ldquo;It is a sport for a fool to do mischief&rdquo;. It was found in 1922 and now stands in the Old Burial Ground.' }
+      short:'All that&rsquo;s left of Dulwich&rsquo;s 1760 village lock-up: a stone warning that &ldquo;It is a sport for a fool to do mischief&rdquo;. It was found in 1922 and now stands in the Old Burial Ground.' },
+
+    { id:'all-saints-blackheath', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/AllSaints_Blackheath.jpg/330px-AllSaints_Blackheath.jpg', name:'All Saints&rsquo; Blackheath', area:'Blackheath', pc:'SE3', cat:'grand', year:1858, era:'Consecrated 1858',
+      lat:51.4682, lon:0.0077, addr:'All Saints&rsquo; Drive, SE3 0TJ',
+      text:'Until the 1850s Blackheath had no church of its own; residents petitioned for one in 1854, and the Earl of Dartmouth gave land on the edge of the heath. Benjamin Ferrey&rsquo;s church was consecrated on All Saints&rsquo; Day 1858, standing alone on the open common.\n\nSir Arthur Sullivan and Gustav Holst both brought choirs here, and the opera composer Alfred Cellier was its organist from 1862 to 1866. Terry Waite, held hostage in Lebanon from 1987 to 1991, worked at the church.',
+      short:'The church that stands alone on Blackheath, consecrated in 1858. Sullivan and Holst brought choirs here, and Terry Waite worked here.' },
+
+    { id:'greenwich-park-anglo-saxon-cemetery', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/View_over_the_Greenwich_Park_Barrow_Cemetery.jpg/330px-View_over_the_Greenwich_Park_Barrow_Cemetery.jpg', name:'Anglo-Saxon barrow cemetery', area:'Greenwich Park, Greenwich', pc:'SE10', cat:'green', year:600, era:'Anglo-Saxon',
+      lat:51.4758, lon:-0.0026, addr:'Greenwich Park, SE10 8HH',
+      text:'The low mounds near the Royal Observatory are Anglo-Saxon burial barrows &mdash; one of the best-preserved barrow cemeteries in England. Thirty-one survive; there may once have been more than forty. Twelve were levelled in 1844 for a reservoir before the scheme was stopped.\n\nFew grave goods have been found; the largest barrow produced an iron spearhead. The cemetery is a scheduled monument, and the Royal Parks are restoring its acid grassland.',
+      short:'The low mounds near the Royal Observatory are Anglo-Saxon burial barrows, among the best preserved in England. Thirty-one survive.' },
+
+    { id:'brockwell-hall', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Brockwell_Hall.jpg/330px-Brockwell_Hall.jpg', name:'Brockwell Hall', area:'Brockwell Park, Herne Hill', pc:'SE24', cat:'grand', year:1813, era:'Built 1811&ndash;1813',
+      lat:51.4491, lon:-0.1059, addr:'Brockwell Park, SE24 9BN',
+      text:'A late Georgian country house built in 1811&ndash;13 for the glass merchant John Blades, when this was still rural Surrey. It stands at the top of the hill in what became Brockwell Park, looking out over south London.\n\nIt is Grade II* listed and now houses the park caf&eacute;.',
+      short:'Glass merchant John Blades&rsquo;s 1813 country house on the hilltop of Brockwell Park, now the park caf&eacute;.' },
+
+    { id:'carnegie-library-herne-hill', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Carnegie_Library%2C_Herne_Hill.jpg/330px-Carnegie_Library%2C_Herne_Hill.jpg', name:'Carnegie Library', area:'Herne Hill Road, Herne Hill', pc:'SE24', cat:'grand', year:1906, era:'Opened 1906',
+      lat:51.4607, lon:-0.0965, addr:'Herne Hill Road, SE24 0DG',
+      text:'Paid for with a &pound;12,500 grant from Andrew Carnegie and designed by Wakeford and Sons, this library opened in 1906. It was one of 2,509 libraries Carnegie funded around the world; Historic England notes it is almost unchanged outside.\n\nWhen Lambeth Council closed it as a lending library in 2016, local people &mdash; pensioners and A-level students among them &mdash; occupied it for nine days in protest. It reopened in 2018.',
+      short:'Andrew Carnegie paid for this 1906 library. When it was closed in 2016, locals occupied it for nine days; it reopened in 2018.' },
+
+    { id:'caroline-gardens', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Caroline_Gardens_%28Licensed_Victualler%27s_Asylum%29_Asylum_Rd_Peckham_-_geograph.org.uk_-_542870.jpg/330px-Caroline_Gardens_%28Licensed_Victualler%27s_Asylum%29_Asylum_Rd_Peckham_-_geograph.org.uk_-_542870.jpg', name:'Caroline Gardens', area:'Asylum Road, Peckham', pc:'SE15', cat:'grand', year:1833, era:'Built 1828&ndash;1833',
+      lat:51.4793, lon:-0.0608, addr:'Asylum Road, SE15 2SF',
+      text:'Built in 1828&ndash;33 as almshouses for retired publicans and their families by the Licensed Victuallers&rsquo; Benevolent Institution, with a chapel behind a six-column portico by Henry Rose. Asylum Road takes its name from them.\n\nThe Institution moved out in 1959 and Southwark Council turned them into homes for older people, renaming them after a former resident, Caroline Secker &mdash; widow of a sailor who served under Nelson at Trafalgar and is said to have caught him as he fell.',
+      short:'Almshouses for retired publicans, built in 1833, which gave Asylum Road its name. They are named after the widow of a sailor said to have caught Nelson as he fell.' },
+
+    { id:'crystal-palace-sports-centre', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Crystal_Palace_National_Sports_Centre.jpg/330px-Crystal_Palace_National_Sports_Centre.jpg', name:'Crystal Palace National Sports Centre', area:'Crystal Palace Park, Crystal Palace', pc:'SE19', cat:'grand', year:1964, era:'Opened 1964',
+      lat:51.4211, lon:-0.0673, addr:'Ledrington Road, SE19 2BB',
+      text:'Opened in 1964 near the site of the burned-down Crystal Palace and of the ground that hosted FA Cup Finals from 1895 to 1914. Its indoor sports hall, designed by the London County Council&rsquo;s architects under Norman Engleback, is Grade II* listed for its interior: a delicate exposed concrete frame holding up a folded teak-lined roof.\n\nThe stadium beside it has hosted international athletics and open-air concerts by Bruce Springsteen, Coldplay and the Sex Pistols.',
+      short:'The 1964 national sports centre, listed for its concrete-and-teak sports hall. Its stadium has hosted international athletics and Bruce Springsteen.' },
+
+    { id:'deptford-pumping-station', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Deptford_pumping_station_from_Norman_Road_-_geograph.org.uk_-_4563554.jpg/330px-Deptford_pumping_station_from_Norman_Road_-_geograph.org.uk_-_4563554.jpg', name:'Deptford pumping station', area:'Norman Road, Greenwich', pc:'SE10', cat:'works', year:1865, era:'Built 1865',
+      lat:51.4772, lon:-0.0184, addr:'Norman Road, SE10 9LJ',
+      text:'Part of Joseph Bazalgette&rsquo;s sewer system, built after the cholera of 1853 and the Great Stink of 1858. Opened in 1865, its four steam beam engines &mdash; the largest ever built when installed &mdash; lifted south London&rsquo;s sewage 18 feet into the Southern Outfall Sewer to flow on to Crossness.\n\nIt was the south London counterpart of Abbey Mills. The Italianate engine houses are listed; the pumps are now electric, and the site is still run by Thames Water.',
+      short:'Bazalgette&rsquo;s 1865 pumping station, whose beam engines lifted south London&rsquo;s sewage towards Crossness. When installed they were the largest ever built.' },
+
+    { id:'driscoll-house', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Driscoll_House%2C_New_Kent_Road_%28geograph_4831823%29.jpg/330px-Driscoll_House%2C_New_Kent_Road_%28geograph_4831823%29.jpg', name:'Driscoll House', area:'New Kent Road, Elephant &amp; Castle', pc:'SE1', cat:'grand', year:1913, era:'Opened 1913',
+      lat:51.4939, lon:-0.0905, addr:'172 New Kent Road, SE1 4YT',
+      text:'Opened in 1913 as Ada Lewis House, named after the widow of the philanthropist Samuel Lewis, this was one of the first hostels in London built to house women. Princess Louise, Duchess of Argyll, opened it.\n\nTerence Driscoll bought it in 1965 and renamed it after himself. It has been a hostel for most of its life.',
+      short:'Built in 1913 as Ada Lewis House, one of London&rsquo;s first hostels for women, and a hostel for most of its life since.' },
+
+    { id:'eltham-conduit-head', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Southern_Face_of_the_Conduit_Head%2C_Eltham.jpg/330px-Southern_Face_of_the_Conduit_Head%2C_Eltham.jpg', name:'Eltham Conduit Head', area:'Avery Hill, Eltham', pc:'SE9', cat:'works', year:1500, era:'Tudor, probably c.1500',
+      lat:51.4486, lon:0.0651, addr:'Beside Holy Trinity Church, Southend Crescent, SE9 2SD',
+      text:'This small brick building held a sluice and tank controlling water from springs on the hillside, which flowed downhill in pipes nearly a mile to Eltham Palace and under its moat. Tradition credits it to Henry VII, before 1509; Historic England dates it to the 16th century.\n\nIt is both a scheduled monument and a listed building, and a rare survivor of the gravity-fed water supply of a royal palace.',
+      short:'A Tudor brick conduit house that sent spring water nearly a mile downhill to Eltham Palace &mdash; a rare survival of a royal palace&rsquo;s water supply.' },
+
+    { id:'eltham-house-orangery', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Greater_London_-_Orangery_To_Former_Eltham_House%2C_Now_At_North_End_Of_Grounds_Of_Number_113_%28southeastern_Gas_Board%29_-_2025-10-14_18-02-10_001.jpg/330px-Greater_London_-_Orangery_To_Former_Eltham_House%2C_Now_At_North_End_Of_Grounds_Of_Number_113_%28southeastern_Gas_Board%29_-_2025-10-14_18-02-10_001.jpg', name:'Eltham House orangery', area:'Eltham High Street, Eltham', pc:'SE9', cat:'grand', year:1700, era:'Late 17th or early 18th century',
+      lat:51.4522, lon:0.0544, addr:'Behind 113 Eltham High Street, SE9 1HN',
+      text:'A five-bay orangery of the late 17th or early 18th century, all that is left of the gardens of Eltham House, which stood on the High Street until it was demolished in 1937. It was already derelict when photographed in 1932.\n\nIt is listed Grade II*, among the oldest garden buildings in the borough.',
+      short:'A Grade II* orangery from around 1700, the last trace of Eltham House, which was demolished in 1937.' },
+
+    { id:'enderbys-wharf-cable-hauler', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Alcatel_Jetty_-_geograph.org.uk_-_377562.jpg/330px-Alcatel_Jetty_-_geograph.org.uk_-_377562.jpg', name:'Enderby&rsquo;s Wharf cable gantry', area:'Olympian Way, Greenwich Peninsula', pc:'SE10', cat:'works', year:1954, era:'Gantry c.1900; hauler 1954',
+      lat:51.4904, lon:0.0024, addr:'Enderby&rsquo;s Wharf, Olympian Way, SE10 0TH',
+      text:'For more than 150 years, submarine cables were made at Enderby&rsquo;s Wharf and loaded onto ships moored in the Thames &mdash; including part of the first, short-lived transatlantic telegraph cable. The steel gantry on the jetty dates from around 1900.\n\nThe cable hauler on it was installed in 1954 to load TAT-1, the first successful transatlantic telephone cable, which opened in 1956. Both were protected as a scheduled monument in October 2025.',
+      short:'The jetty gear that loaded TAT-1, the first transatlantic telephone cable, onto ships in 1956. It became a scheduled monument in 2025.' },
+
+    { id:'faesten-dic', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/The_Faesten_Dic_in_Joyden%27s_Wood.jpg/330px-The_Faesten_Dic_in_Joyden%27s_Wood.jpg', name:'Faesten Dic', area:'Joyden&rsquo;s Wood, Bexley', pc:'DA5', cat:'green', year:500, era:'Built around 1,500 years ago',
+      lat:51.4239, lon:0.1593, addr:'Joyden&rsquo;s Wood, DA5 2EN',
+      text:'Faesten Dic &mdash; &ldquo;the strong dyke&rdquo; &mdash; is a bank and ditch running for more than a kilometre through Joyden&rsquo;s Wood. It was dug around 1,500 years ago by Saxon settlers as a frontier, and is protected as a scheduled monument.\n\nThe earthwork can still be followed on foot through the trees, close to a wooden sculpture of a crashed Hurricane carved by Peter Leadbeater.',
+      short:'A Saxon frontier bank and ditch, &ldquo;the strong dyke&rdquo;, that still runs for over a kilometre through Joyden&rsquo;s Wood, dug some 1,500 years ago.' },
+
+    { id:'granada-woolwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Woolwich_Granada_Cinema.jpg/330px-Woolwich_Granada_Cinema.jpg', name:'Granada Cinema, Woolwich', area:'Powis Street, Woolwich', pc:'SE18', cat:'grand', year:1937, era:'Opened 1937',
+      lat:51.4933, lon:0.0619, addr:'Powis Street, SE18 6DS',
+      text:'Granada and Odeon both raced to open super-cinemas in Woolwich in the 1930s. The Granada opened first, on 20 April 1937, with seats for nearly 2,500. Its outside is severe, but the interior by the Russian-born designer Theodore Komisarjevsky is lavish.\n\nThe Odeon opened four months later across the road. The Granada is Grade II* listed for its interior and is now used by a church.',
+      short:'A 1937 super-cinema with nearly 2,500 seats and a lavish interior by Theodore Komisarjevsky, opened four months before its Odeon rival across the road.' },
+
+    { id:'greenwich-town-hall', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Meridian_House_%28Former_Greenwich_Town_Hall%29.jpg/330px-Meridian_House_%28Former_Greenwich_Town_Hall%29.jpg', name:'Greenwich Town Hall', area:'Royal Hill, Greenwich', pc:'SE10', cat:'grand', year:1939, era:'Built 1938&ndash;1939',
+      lat:51.4781, lon:-0.0108, addr:'Royal Hill, SE10 8RE',
+      text:'Clifford Culpin&rsquo;s town hall, built in 1938&ndash;39 on the site of the old Greenwich Theatre, has a 56-metre tower and a doorway canopy decorated with the signs of the zodiac.\n\nIt shows the influence of Hilversum Town Hall in the Netherlands. Pevsner called it &ldquo;the only town hall of any London borough to represent the style of our time adequately&rdquo;. It is now known as Meridian House.',
+      short:'Clifford Culpin&rsquo;s 1939 town hall with a 56-metre tower. Pevsner thought it the only London town hall to capture the style of its time.' },
+
+    { id:'penge-gorilla', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Guy_the_Gorilla_in_Crystal_Palace_Park.jpg/330px-Guy_the_Gorilla_in_Crystal_Palace_Park.jpg', name:'Guy the Gorilla', area:'Crystal Palace Park, Penge', pc:'SE20', cat:'art', year:1961, era:'Carved 1961',
+      lat:51.4188, lon:-0.0646, addr:'Crystal Palace Park, SE20 8DS',
+      text:'David Wynne&rsquo;s black marble sculpture of Guy the Gorilla, London Zoo&rsquo;s much-loved gorilla, who arrived on Bonfire Night 1947 and was named after Guy Fawkes. Wynne, who had studied zoology, was commissioned by the London County Council in 1959.\n\nFinished in 1961 and installed the next year by the park&rsquo;s children&rsquo;s zoo, it was listed in 2016. Guy died in 1978, and his preserved body is at the Natural History Museum.',
+      short:'David Wynne&rsquo;s 1961 marble of Guy, London Zoo&rsquo;s favourite gorilla, who arrived on Bonfire Night 1947 and was named after Guy Fawkes.' },
+
+    { id:'hays-galleria', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Hay%27s_Galleria_-_September_2007.jpg/330px-Hay%27s_Galleria_-_September_2007.jpg', name:'Hay&rsquo;s Galleria', area:'Tooley Street, Bermondsey', pc:'SE1', cat:'maritime', year:1856, era:'Enclosed dock 1856',
+      lat:51.5055, lon:-0.084, addr:'Tooley Street, SE1 2HP',
+      text:'The merchant Alexander Hay bought a brewhouse here in 1651. In 1856 William Cubitt turned the site into an enclosed dock, Hay&rsquo;s Wharf, which became one of the main landing points for tea ships in the Pool of London; at its height, 80% of the dry goods imported into London passed through it, earning it the name &ldquo;the Larder of London&rdquo;.\n\nRebuilt after the Great Fire of Southwark in 1861 and bombed in 1940, it closed as containers moved shipping downriver. In the 1980s the dock was roofed over in glass to make today&rsquo;s galleria.',
+      short:'Once &ldquo;the Larder of London&rdquo;, a dock where tea clippers unloaded, now roofed in glass. At its height 80% of London&rsquo;s dry imports passed through here.' },
+
+    { id:'hoptons-almshouses', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Hopton%27s_Almshouses_and_Neo_Bankside.jpg/330px-Hopton%27s_Almshouses_and_Neo_Bankside.jpg', name:'Hopton&rsquo;s Almshouses', area:'Hopton Street, Bankside', pc:'SE1', cat:'grand', year:1749, era:'Built 1746&ndash;1749',
+      lat:51.5065, lon:-0.1018, addr:'Hopton Gardens, Hopton Street, SE1 9JJ',
+      text:'Built in 1746&ndash;49 under the will of Charles Hopton as 26 homes for poor men of good character from Southwark, these almshouses with their committee room are all Grade II* listed.\n\nReconfigured in the 1980s as 20 homes for older Southwark people, they are still almshouses today, run since 2012 by United St Saviour&rsquo;s Charity &mdash; their gardens a quiet patch of green between Tate Modern and the towers of Bankside.',
+      short:'Almshouses built in 1746&ndash;49 for 26 poor Southwark men, and still homes for older local people today, tucked between the towers of Bankside.' },
+
+    { id:'kirkaldy-testing-works', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Facts_not_Opinions_cropped.jpg/330px-Facts_not_Opinions_cropped.jpg', name:'Kirkaldy Testing Works', area:'Southwark Street, Bankside', pc:'SE1', cat:'works', year:1865, era:'Machine installed 1865; Grade II* listed',
+      lat:51.506, lon:-0.1016, addr:'99 Southwark Street, SE1 0JE',
+      text:'David Kirkaldy, a Scottish engineer, spent years designing his own machine for testing the strength of materials, paid for it entirely himself, and had it delivered here &mdash; still unfinished &mdash; in 1865, frustrated at how slowly it was being built. The hydraulic machine is 14.5 metres long and weighs about 116 tons.\n\nKirkaldy&rsquo;s motto, &ldquo;Facts not Opinions&rdquo;, is carved over the door. The works is now the Kirkaldy Testing Museum, open on the first Sunday of each month, and the building was upgraded to Grade II* in 2014.',
+      short:'David Kirkaldy&rsquo;s 1865 materials-testing works, still holding his 116-ton testing machine. His motto, &ldquo;Facts not Opinions&rdquo;, is carved over the door.' },
+
+    { id:'laurie-grove-baths', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/New_Cross%2C_Laurie_Grove_Baths_-_geograph.org.uk_-_1786698.jpg/330px-New_Cross%2C_Laurie_Grove_Baths_-_geograph.org.uk_-_1786698.jpg', name:'Laurie Grove Baths', area:'Laurie Grove, New Cross', pc:'SE14', cat:'culture', year:2018, era:'Gallery opened 2018',
+      lat:51.475, lon:-0.0375, addr:'Laurie Grove, SE14 6NH',
+      text:'The Victorian Laurie Grove Baths are listed. Their former boiler house and public laundry were converted by the architects Assemble into Goldsmiths Centre for Contemporary Art, with seven galleries, which opened on 8 September 2018 with an exhibition by Mika Rottenberg.',
+      short:'The old Laurie Grove Baths laundry, now Goldsmiths&rsquo; contemporary art gallery, converted by Assemble in 2018.' },
+
+    { id:'maritime-greenwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Maritime_Greenwich_-_World_Heritage_Site_-_geograph.org.uk_-_4713.jpg/330px-Maritime_Greenwich_-_World_Heritage_Site_-_geograph.org.uk_-_4713.jpg', name:'Maritime Greenwich', area:'Greenwich', pc:'SE10', cat:'maritime', year:1997, era:'World Heritage Site since 1997',
+      lat:51.4782, lon:-0.001, addr:'Greenwich, SE10',
+      text:'UNESCO made Maritime Greenwich a World Heritage Site in 1997 for the ensemble seen from the hill by the Royal Observatory: Inigo Jones&rsquo;s Queen&rsquo;s House, Wren and Hawksmoor&rsquo;s Royal Naval Hospital, the park and the Royal Observatory, rising from the river.\n\nThe site began as the Tudor Palace of Placentia, where Henry VIII and Elizabeth I were born. The hospital replaced it, and later became the Royal Naval College.',
+      short:'The view that made Greenwich a World Heritage Site in 1997: the Queen&rsquo;s House, Wren&rsquo;s naval hospital and the observatory, rising from the Thames.' },
+
+    { id:'myatts-fields', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Myatt%27s_Fields_Park_in_winter.jpg/330px-Myatt%27s_Fields_Park_in_winter.jpg', name:'Myatt&rsquo;s Fields', area:'Camberwell', pc:'SE5', cat:'green', year:1889, era:'Opened 1889',
+      lat:51.4737, lon:-0.1037, addr:'Cormont Road, SE5 9QU',
+      text:'This land was part of an estate bought in 1770 by Sir Hughes Minet, descended from a Huguenot refugee &mdash; hence nearby street names like Calais Street. In 1889 William Minet gave 14½ acres to the London County Council for a public park, and it opened that year as Myatt&rsquo;s Fields.\n\nIt was in Camberwell until a boundary change in 1900 moved it into Lambeth, and it is on the register of historic parks and gardens.',
+      short:'A Victorian park given to Londoners in 1889 by William Minet, of a Huguenot family, whose French roots live on in street names like Calais Street.' },
+
+    { id:'neckinger-mills', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Neckinger_Mills%2C_Bermondsey_%28North_Face_-_03%29.jpg/330px-Neckinger_Mills%2C_Bermondsey_%28North_Face_-_03%29.jpg', name:'Neckinger Mills', area:'Abbey Street, Bermondsey', pc:'SE1', cat:'works', year:1864, era:'Built 1864',
+      lat:51.4982, lon:-0.0715, addr:'Abbey Street, SE1 2SH',
+      text:'Named after the River Neckinger, which once ran here, this warehouse was built in 1864 for the tanners Bevington &amp; Sons, who had taken over an old paper mill on the site in 1806. Bermondsey was the centre of London&rsquo;s leather trade, and Bevingtons were among its best known names.\n\nSamuel Bourne Bevington, who ran the firm in the late 19th century, became the first mayor of the Metropolitan Borough of Bermondsey. The building is now flats and offices.',
+      short:'A tannery warehouse of 1864, named for the buried River Neckinger. Its owners, Bevington &amp; Sons, were giants of Bermondsey leather, and one became the borough&rsquo;s first mayor.' },
+
+    { id:'cuming-museum', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Newington_Library.jpg/330px-Newington_Library.jpg', name:'Newington Library and the Cuming Museum', area:'Walworth Road, Walworth', pc:'SE17', cat:'culture', year:1906, era:'Museum opened 1906',
+      lat:51.4908, lon:-0.0968, addr:'Walworth Road, SE17 1RS',
+      text:'Richard Cuming started collecting at the age of five, with some fossils and a coin. He and his son Henry gathered natural history, archaeology and curios, and Henry left the lot to the people of Southwark in 1902. The Cuming Museum opened on the first floor of the Newington Library in 1906.\n\nThe galleries moved next door to the old Walworth Town Hall in 2006, but a fire in 2013 badly damaged that building; about 98% of the objects were saved, and the collection is now at the Southwark Heritage Centre.',
+      short:'Where the Cuming family&rsquo;s collection, begun with a fossil and a coin by a five-year-old, opened as a museum in 1906.' },
+
+    { id:'ruskin-park', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Bandstand%2C_Ruskin_Park%2C_Lambeth%2C_London-24March2012.jpg/330px-Bandstand%2C_Ruskin_Park%2C_Lambeth%2C_London-24March2012.jpg', name:'Ruskin Park', area:'Denmark Hill, Herne Hill', pc:'SE24', cat:'green', year:1907, era:'Opened 1907',
+      lat:51.4648, lon:-0.0938, addr:'Denmark Hill, SE24 0AA',
+      text:'Local residents campaigned for this park, which opened on 2 February 1907 and is named after John Ruskin, who lived nearby. J. J. Sexby laid it out with an Old English garden, a duck pond and a bandstand.\n\nOne of the houses cleared for it was Dane House, where Felix Mendelssohn wrote his Spring Song in 1842; a sundial marks his visit. In 1967 Pink Floyd had their first official photographs taken here.',
+      short:'A 1907 park named after John Ruskin. A sundial marks where Mendelssohn wrote his Spring Song, and Pink Floyd had their first band photos taken here.' },
+
+    { id:'southwark-park', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/East_End_of_Southwark_Park_%2801%29.jpg/330px-East_End_of_Southwark_Park_%2801%29.jpg', name:'Southwark Park', area:'Southwark Park, Rotherhithe', pc:'SE16', cat:'green', year:1869, era:'Opened 1869',
+      lat:51.4947, lon:-0.0546, addr:'Southwark Park Road, SE16 2UA',
+      text:'Opened in 1869, Southwark Park was one of the Metropolitan Board of Works&rsquo; first parks, laid out by Alexander McKenzie over 63 acres of Rotherhithe. Its rose garden was the idea of Dr Alfred Salter, MP for West Bermondsey, and was named after Ada Salter after her death in 1942.\n\nThe bandstand of 1884 was first put up in the Royal Horticultural Society&rsquo;s grounds in South Kensington before being moved here; its twin stands in Peckham Rye Park.',
+      short:'One of London&rsquo;s first municipal parks, opened in 1869. Its rose garden honours Ada Salter, and its bandstand began life in South Kensington.' },
+
+    { id:'st-alfege-greenwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Southeast_View_of_Saint_Alfege%27s_Church%2C_Greenwich_%2803%29.jpg/330px-Southeast_View_of_Saint_Alfege%27s_Church%2C_Greenwich_%2803%29.jpg', name:'St Alfege Church', area:'Greenwich Church Street, Greenwich', pc:'SE10', cat:'grand', year:1714, era:'Built 1712&ndash;1714; Grade I listed',
+      lat:51.4805, lon:-0.0097, addr:'Greenwich Church Street, SE10 8NA',
+      text:'The church is said to mark where Alfege, Archbishop of Canterbury, was killed by Danish raiders on 19 April 1012 when his ransom went unpaid. Henry VIII was baptised in the medieval church in 1491.\n\nThat church collapsed in a storm in 1710, its foundations weakened by burials, and Nicholas Hawksmoor designed the present Grade I building, built in 1712&ndash;14 as one of the Fifty New Churches.',
+      short:'Hawksmoor&rsquo;s Grade I church on the spot where Archbishop Alfege was killed by Danish raiders in 1012. Henry VIII was baptised in the church before it.' },
+
+    { id:'st-bartholomews-sydenham', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/St_Bartholomew%2C_Sydenham_-_geograph.org.uk_-_3607257.jpg/330px-St_Bartholomew%2C_Sydenham_-_geograph.org.uk_-_3607257.jpg', name:'St Bartholomew&rsquo;s Church', area:'Westwood Hill, Sydenham', pc:'SE26', cat:'grand', year:1832, era:'Built 1827&ndash;1832',
+      lat:51.4279, lon:-0.058, addr:'Westwood Hill, SE26 6QR',
+      text:'Built in 1827&ndash;32, St Bartholomew&rsquo;s stands at the top of Lawrie Park Avenue. In 1871 Camille Pissarro painted that view, The Avenue, Sydenham, with the church at the end of the road; the painting now hangs in the National Gallery.\n\nThe church is Grade II* listed.',
+      short:'The 1830s church at the end of Lawrie Park Avenue, painted by Pissarro in 1871 in The Avenue, Sydenham, now in the National Gallery.' },
+
+    { id:'st-george-the-martyr', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Landscape_View_of_St_George_the_Martyr%27s_Church%2C_Southwark.jpg/330px-Landscape_View_of_St_George_the_Martyr%27s_Church%2C_Southwark.jpg', name:'St George the Martyr', area:'Borough High Street, Bankside', pc:'SE1', cat:'grand', year:1736, era:'Rebuilt 1734&ndash;1736',
+      lat:51.5013, lon:-0.0925, addr:'Borough High Street, SE1 1JA',
+      text:'The Borough&rsquo;s parish church, rebuilt to John Price&rsquo;s designs in 1734&ndash;36, stands where Borough High Street meets Long Lane and Tabard Street. Charles Dickens knew it from the darkest stretch of his childhood: his father was imprisoned for debt in the Marshalsea, whose surviving wall still runs along the north side of the churchyard, and the boy lodged nearby in Lant Street in a house belonging to the church&rsquo;s vestry clerk while he worked in a blacking factory.\n\nDickens later set scenes of Little Dorrit in and around the church, and a small figure of Little Dorrit appears in its east window.',
+      short:'The Borough church beside the Marshalsea, where Dickens&rsquo;s father was jailed for debt. Dickens set scenes of Little Dorrit here, and she appears in the east window.' },
+
+    { id:'st-georges-circus-obelisk', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/StGeorgesCircus.jpg/330px-StGeorgesCircus.jpg', name:'St George&rsquo;s Circus obelisk', area:'St George&rsquo;s Circus, Bankside', pc:'SE1', cat:'grand', year:1771, era:'Erected 1771',
+      lat:51.4987, lon:-0.1048, addr:'St George&rsquo;s Circus, SE1 6HS',
+      text:'St George&rsquo;s Circus, laid out in 1771 as the new roads across St George&rsquo;s Fields were finished, was London&rsquo;s first purpose-built traffic junction. Robert Mylne, architect of Blackfriars Bridge, designed the obelisk at its centre, with oil lamps on its sides and its distances carved on its faces: one mile to Palace Yard, one mile 40 feet to London Bridge, and one mile 350 feet to Fleet Street.\n\nIt was moved in 1897 to make way for a Jubilee clock tower and spent most of the 20th century outside the Imperial War Museum. The clock tower was pulled down as a nuisance to traffic, and the obelisk came home in 1998.',
+      short:'Robert Mylne&rsquo;s 1771 obelisk at London&rsquo;s first purpose-built road junction, carved with its distance to Fleet Street and London Bridge. It spent a century elsewhere before returning in 1998.' },
+
+    { id:'st-james-bermondsey', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Church_of_Saint_James%2C_Bermondsey_%28Southwest_View_-_03%29.jpg/330px-Church_of_Saint_James%2C_Bermondsey_%28Southwest_View_-_03%29.jpg', name:'St James&rsquo;s Church, Bermondsey', area:'Thurland Road, Bermondsey', pc:'SE16', cat:'grand', year:1829, era:'Consecrated 1829',
+      lat:51.497, lon:-0.0668, addr:'Thurland Road, SE16 4QJ',
+      text:'James Savage&rsquo;s church, completed in 1829, was one of the &ldquo;Commissioners&rsquo; churches&rdquo; paid for by the Church Building Acts after the Napoleonic Wars. Its spire, modelled on Wren&rsquo;s St Stephen Walbrook, ran over budget and needed its own Act of Parliament in 1831 to borrow more money.\n\nThe churchyard closed to burials in 1855 and was used for communal drying before being turned into a public garden in 1886.',
+      short:'A Commissioners&rsquo; church of 1829 whose Wren-inspired spire needed its own Act of Parliament to fund. Its churchyard later served as Bermondsey&rsquo;s drying ground.' },
+
+    { id:'st-lukes-charlton', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Southwest_View_of_the_Church_of_Saint_Luke%2C_Charlton_%2805%29.jpg/330px-Southwest_View_of_the_Church_of_Saint_Luke%2C_Charlton_%2805%29.jpg', name:'St Luke&rsquo;s Church, Charlton', area:'Charlton Church Lane, Charlton', pc:'SE7', cat:'grand', year:1630, era:'Rebuilt 1630',
+      lat:51.4818, lon:0.0358, addr:'Charlton Church Lane, SE7 7TQ',
+      text:'There may have been a church here by 1077, but the present red-brick building dates from 1630, rebuilt with money from Sir Adam Newton of Charlton House.\n\nTwo victims of political assassinations are buried here: Spencer Perceval, the only British Prime Minister to be assassinated, shot in the Commons lobby in 1812, and Edward Drummond, private secretary to several prime ministers, whose murder in 1843 led to the M&rsquo;Naghten rules on insanity in criminal law.',
+      short:'A brick church of 1630 where two assassination victims are buried: Prime Minister Spencer Perceval and Edward Drummond, whose killing gave the law its test for insanity.' },
+
+    { id:'st-mary-magdalene-woolwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/London-Woolwich%2C_St_Mary_Magdalene%2C_north.jpg/330px-London-Woolwich%2C_St_Mary_Magdalene%2C_north.jpg', name:'St Mary Magdalene, Woolwich', area:'Woolwich Church Street, Woolwich', pc:'SE18', cat:'grand', year:1739, era:'Built 1732&ndash;1739',
+      lat:51.493, lon:0.0595, addr:'Woolwich Church Street, SE18 5AR',
+      text:'Woolwich&rsquo;s parish church stands just south of the site of its medieval predecessor, which overlooked the river. The present brick church, built in 1732&ndash;39 by the Deptford bricklayer Matthew Spray with 636,000 bricks, was part-funded by the Commission for Fifty New Churches.\n\nIn the 1960s the rector Nicolas Stacey&rsquo;s &ldquo;Woolwich Project&rdquo; turned part of it into a caf&eacute; and the crypt into a youth club; Princess Margaret opened the coffee house in 1961.',
+      short:'Woolwich&rsquo;s Georgian parish church, built from 636,000 bricks. In the 1960s it became home to a caf&eacute; and youth club, opened by Princess Margaret.' },
+
+    { id:'st-marys-lewisham', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/South_Face_of_the_Church_of_Saint_Mary_the_Virgin%2C_Lewisham_%2801%29.jpg/330px-South_Face_of_the_Church_of_Saint_Mary_the_Virgin%2C_Lewisham_%2801%29.jpg', name:'St Mary&rsquo;s Church, Lewisham', area:'Lewisham High Street, Lewisham', pc:'SE13', cat:'grand', year:1777, era:'Rebuilt 1774&ndash;1777',
+      lat:51.4557, lon:-0.016, addr:'Lewisham High Street, SE13 7UW',
+      text:'Lewisham&rsquo;s parish church, the centre of the old village. The base of its tower is late medieval, with building dates of 1498 and 1512 recorded, but damp and a growing congregation led the local architect George Gibson to rebuild the rest in 1774&ndash;77.\n\nA. W. Blomfield remodelled the interior and added the chancel in 1881&ndash;82. The church is Grade II* listed.',
+      short:'Lewisham&rsquo;s parish church, rebuilt in 1774&ndash;77 by George Gibson around a late medieval tower.' },
+
+    { id:'st-marys-rotherhithe', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/St_Mary%27s_Church%2C_Rotherhithe_-_geograph.org.uk_-_4003648.jpg/330px-St_Mary%27s_Church%2C_Rotherhithe_-_geograph.org.uk_-_4003648.jpg', name:'St Mary&rsquo;s Church, Rotherhithe', area:'St Marychurch Street, Rotherhithe', pc:'SE16', cat:'grand', year:1715, era:'Rebuilt 1714&ndash;1715',
+      lat:51.5014, lon:-0.0539, addr:'St Marychurch Street, SE16 4NJ',
+      text:'There has been a church here since at least 1282, and Roman bricks were found under the tower in 1913. The present building was designed by John James, an associate of Wren, and built in 1714&ndash;15, with chalk and flint from the medieval church still visible in the crypt.\n\nThe church is proud of its links with the Pilgrim Fathers: a memorial marks the resting place of Christopher Jones, captain of the Mayflower, which carried them to America in 1620.',
+      short:'Rotherhithe&rsquo;s 1715 parish church, with medieval walls in its crypt. Christopher Jones, captain of the Mayflower, is buried here.' },
+
+    { id:'st-nicholas-deptford', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Deptford%2C_Greater_London%2C_St_Nicholas_-_geograph.org.uk_-_5911206.jpg/330px-Deptford%2C_Greater_London%2C_St_Nicholas_-_geograph.org.uk_-_5911206.jpg', name:'St Nicholas Church, Deptford', area:'Deptford Green, Deptford', pc:'SE8', cat:'grand', year:1697, era:'Rebuilt 1697',
+      lat:51.482, lon:-0.0227, addr:'Deptford Green, SE8 3DQ',
+      text:'Deptford&rsquo;s original parish church was first built in the 13th century; the present brick nave dates from 1697. Christopher Marlowe, killed in Deptford in 1593, lies in an unmarked grave in its churchyard, as do three of the diarist John Evelyn&rsquo;s sons.\n\nInside is a carving of the Vision of the Valley of Dry Bones that once stood over the entrance to the charnel house. The church was badly damaged in the Blitz in 1940 and restored in the 1950s.',
+      short:'Deptford&rsquo;s first parish church, where Christopher Marlowe lies in an unmarked grave. Its 1697 nave survived bomb damage in 1940.' },
+
+    { id:'st-olaf-house', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/St_Olaf_House%2C_Tooley_Street_%2802%29.jpg/330px-St_Olaf_House%2C_Tooley_Street_%2802%29.jpg', name:'St Olaf House', area:'Tooley Street, Bermondsey', pc:'SE1', cat:'grand', year:1932, era:'Built 1928&ndash;1932',
+      lat:51.5065, lon:-0.0864, addr:'Tooley Street, SE1 2PR',
+      text:'H. S. Goodhart-Rendel&rsquo;s Art Deco headquarters for the Hay&rsquo;s Wharf Company, built in 1928&ndash;32 on the site of the demolished St Olave&rsquo;s Church. Its Portland stone river front carries terracotta panels by Frank Dobson, who also designed the black and gold mosaic of St Olaf &mdash; the Norwegian king who helped defend London against the Danes in 1014.\n\nHay&rsquo;s Wharf closed in 1969, and the building is now part of London Bridge Hospital.',
+      short:'Art Deco offices for Hay&rsquo;s Wharf, built on the site of St Olave&rsquo;s Church, with a gold mosaic of the Norwegian king St Olaf by Frank Dobson.' },
+
+    { id:'st-pauls-herne-hill', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/St_Paul%27s_Church%2C_Herne_Hill.jpg/330px-St_Paul%27s_Church%2C_Herne_Hill.jpg', name:'St Paul&rsquo;s Church, Herne Hill', area:'Herne Hill', pc:'SE24', cat:'grand', year:1858, era:'Rebuilt 1858',
+      lat:51.4548, lon:-0.0993, addr:'Herne Hill, SE24 9LX',
+      text:'The first church here, of 1843&ndash;44, was destroyed by fire on 28 February 1858, leaving only the tower, spire and lower walls. G. E. Street rebuilt it within eight months, to a design praised by John Ruskin, who had grown up on Herne Hill.\n\nThe Pre-Raphaelite painter William Holman Hunt unveiled a memorial to Ruskin here in 1901.',
+      short:'G. E. Street rebuilt this church in eight months after an 1858 fire, to a design praised by local boy John Ruskin.' },
+
+    { id:'king-alfred-statue', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Alfred_The_Great_statue.JPG/330px-Alfred_The_Great_statue.JPG', name:'Statue of Alfred the Great', area:'Trinity Church Square, Bankside', pc:'SE1', cat:'art', year:1836, era:'In the square since 1836',
+      lat:51.4989, lon:-0.0936, addr:'Trinity Church Square, SE1 4HT',
+      text:'Thought to be London&rsquo;s oldest outdoor statue &mdash; though nobody is quite sure. The lower half is from a Roman statue of the late 1st or early 2nd century; the crowned, bearded upper half is a Coade stone addition of around 1800, and the figure is taken to be Alfred the Great.\n\nIt has stood in the garden of Trinity Church Square since 1836, but where it came from is unknown: it may be one of the statues from Richard II&rsquo;s Westminster Hall, or one of a pair made for the garden of Carlton House.',
+      short:'Possibly London&rsquo;s oldest outdoor statue: a Roman torso of around AD 100 with a Coade stone king added on top. Nobody knows how it reached Trinity Church Square in 1836.' },
+
+    { id:'brockley-school-murals', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PrendergastSchoolMainEntrance.jpg/330px-PrendergastSchoolMainEntrance.jpg', name:'The Brockley School murals', area:'Hilly Fields, Brockley', pc:'SE4', cat:'art', year:1936, era:'Painted 1933&ndash;1936',
+      lat:51.4593, lon:-0.026, addr:'Adelaide Avenue, SE4 1LD',
+      text:'Between 1933 and 1936 the painter Charles Mahoney, then a tutor at the Royal College of Art, and his student Evelyn Dunbar covered the hall of Brockley County School with murals, many of them scenes from Aesop&rsquo;s Fables. Dunbar went on to become the only woman on a full-time salary from the War Artists&rsquo; Advisory Committee in the Second World War.\n\nThe murals are the main reason the building, now Prendergast School on Hilly Fields, is listed Grade II*.',
+      short:'1930s murals by Charles Mahoney and Evelyn Dunbar, later the only woman salaried full-time as a Second World War artist, in the hall of the old Brockley County School.' },
+
+    { id:'hop-exchange', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Hop_Exchange_London.jpg/330px-Hop_Exchange_London.jpg', name:'The Hop Exchange', area:'Southwark Street, Bankside', pc:'SE1', cat:'works', year:1867, era:'Opened 1867',
+      lat:51.5049, lon:-0.0911, addr:'24 Southwark Street, SE1 1TY',
+      text:'Opened in 1867 to designs by R. H. Moore, this was the single trading floor for the hops that came up by rail and river from the hop gardens of Kent to the Borough&rsquo;s warehouses. Dealers did business in a great hall under a glass roof, so they could judge the hops in natural light.\n\nLondon once had many such open-outcry exchanges &mdash; for coal, metal and stocks &mdash; but bombing, fire and redevelopment took the rest, leaving the Hop Exchange the only one still standing. A fire in 1920 took off its top two storeys, and it has been offices ever since.',
+      short:'The Victorian trading floor for Kent&rsquo;s hops, built under a glass roof so dealers could judge them in daylight. It is the last of London&rsquo;s open-outcry exchanges still standing.' },
+
+    { id:'maudsley-hospital', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Maudsley_Hospital_Main_Building.jpg/330px-Maudsley_Hospital_Main_Building.jpg', name:'The Maudsley Hospital', area:'Denmark Hill, Camberwell', pc:'SE5', cat:'grand', year:1923, era:'Opened 1923',
+      lat:51.4687, lon:-0.0914, addr:'Denmark Hill, SE5 8AZ',
+      text:'In 1907 the psychiatrist Henry Maudsley anonymously offered the London County Council &pound;30,000 towards a new kind of mental hospital, for early and acute cases rather than long-term asylum patients, with an outpatients&rsquo; clinic and teaching and research. It needed an Act of Parliament to let it take voluntary patients without certifying them insane.\n\nFinished in 1915, it was immediately taken over to treat soldiers, and opened as the Maudsley in 1923. It remains the UK&rsquo;s largest mental health training hospital.',
+      short:'Henry Maudsley&rsquo;s 1907 gift paid for a new kind of mental hospital, for voluntary patients and research. It finally opened in 1923.' },
+
+    { id:'tower-bridge', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Tower_Bridge_at_Dawn.jpg/330px-Tower_Bridge_at_Dawn.jpg', name:'Tower Bridge', area:'Tower Bridge Road, Bermondsey', pc:'SE1', cat:'maritime', year:1894, era:'Opened 1894; Grade I listed',
+      lat:51.5049, lon:-0.0758, addr:'Tower Bridge Road, SE1 2LY',
+      text:'Designed by the City architect Horace Jones and engineered by John Wolfe Barry, Tower Bridge was built from 1886 to 1894 to link the East End and Bermondsey &mdash; then home to 39% of London&rsquo;s population &mdash; without blocking ships heading for the Pool of London. Its central bascules lift to let them through.\n\nThe Prince and Princess of Wales opened it on 30 June 1894. The bascules ran on hydraulic power until 1972; the bridge is still owned by the City Bridge Foundation, a charity founded in 1282, and carries about 40,000 crossings a day.',
+      short:'Horace Jones and John Wolfe Barry&rsquo;s Grade I bascule bridge, opened in 1894 so ships could still reach the Pool of London. Its hydraulic engines worked the bridge until 1972.' },
+
+    { id:'tudor-naval-storehouse', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Deptford_Convoy%27s_Wharf.jpg/330px-Deptford_Convoy%27s_Wharf.jpg', name:'Tudor naval storehouse', area:'Convoys Wharf, Deptford', pc:'SE8', cat:'maritime', year:1513, era:'Built 1513',
+      lat:51.4859, lon:-0.026, addr:'Convoys Wharf, Prince Street, SE8 3JF',
+      text:'When Henry VIII founded the royal dockyard at Deptford in 1513, it was centred on a great storehouse, roughly 50 metres long, built to supply the navy for war with France. It outlasted the dockyard itself and was only pulled down in the 1950s.\n\nIts brick foundations, including an undercroft, survive below ground at Convoys Wharf and are protected as a scheduled monument. Archaeologists from MOLA uncovered large areas of them during excavations for the site&rsquo;s redevelopment.',
+      short:'The buried foundations of Henry VIII&rsquo;s 1513 naval storehouse, the heart of the Deptford dockyard. It stood until the 1950s and is now a scheduled monument.' },
+
+    { id:'vale-mascal-bath-house', img:'', name:'Vale Mascal bath house', area:'North Cray Road, Bexley', pc:'DA5', cat:'grand', year:1766, era:'Built c.1766',
+      lat:51.4372, lon:0.1481, addr:'Rear of 112 North Cray Road, DA5 3NA',
+      text:'A small Gothic cold-plunge bath house built around 1766 in the grounds of the Vale Mascal estate, beside the River Cray. Georgian landowners built such bath houses for bracing dips in spring-fed water, and this one is listed Grade II*.\n\nIt stands behind the house at 112 North Cray Road and has been restored.',
+      short:'A restored Gothic plunge bath built around 1766 in the grounds of Vale Mascal, beside the River Cray.' },
+
+    { id:'watermen-almshouses-penge', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Penge_Watermen%27s_Almshouses.JPG/330px-Penge_Watermen%27s_Almshouses.JPG', name:'Watermen&rsquo;s Almshouses', area:'Penge High Street, Penge', pc:'SE20', cat:'maritime', year:1841, era:'Built 1840&ndash;1841',
+      lat:51.4166, lon:-0.0537, addr:'Penge High Street, SE20 7EL',
+      text:'The Company of Watermen and Lightermen built these almshouses in 1840&ndash;41, to George Porter&rsquo;s designs, for retired Thames boatmen and their widows. They are the oldest and grandest of Penge&rsquo;s Victorian almshouses.\n\nThe last almspeople moved to Hastings in 1973 and the buildings became private homes.',
+      short:'Almshouses built in 1841 for retired Thames watermen and their widows, far from the river in Penge.' },
+
+    { id:'the-woodlands-charlton', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Woodlands%2C_Mycenae_Road_%28geograph_2176986%29.jpg/330px-Woodlands%2C_Mycenae_Road_%28geograph_2176986%29.jpg', name:'Woodlands House', area:'Mycenae Road, Charlton', pc:'SE3', cat:'grand', year:1776, era:'Built 1774&ndash;1776',
+      lat:51.4796, lon:0.0163, addr:'Mycenae Road, SE3 7AX',
+      text:'John Julius Angerstein, a Lloyd&rsquo;s underwriter and chairman of Lloyd&rsquo;s, leased this land in 1774 and built a villa here to designs by George Gibson. Part of his fortune came from trade and from a share in a slave plantation in Grenada.\n\nAfter his death, 38 of his paintings were bought by the government in 1824 to found the National Gallery. The house later became a convent, then from 1972 to 2003 the Woodlands Art Gallery, and is now a Steiner school.',
+      short:'John Julius Angerstein&rsquo;s 1776 villa. After his death his paintings were bought to found the National Gallery.' }
   ];
