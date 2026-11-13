@@ -1641,8 +1641,10 @@
     var i = route.indexOf(id);
     closeRouteMenu();
     routeMenuEl.innerHTML =
-      '<button type="button" role="menuitem" data-move="' + id + '" data-dir="-1"' + (i === 0 ? ' disabled' : '') + '>' + MENU_ICON_UP + 'Move up</button>' +
-      '<button type="button" role="menuitem" data-move="' + id + '" data-dir="1"' + (i === route.length - 1 ? ' disabled' : '') + '>' + MENU_ICON_DOWN + 'Move down</button>' +
+      // Only the moves that can happen: no Move up on the first stop, no
+      // Move down on the last (a one-stop route just gets Remove).
+      (i > 0 ? '<button type="button" role="menuitem" data-move="' + id + '" data-dir="-1">' + MENU_ICON_UP + 'Move up</button>' : '') +
+      (i < route.length - 1 ? '<button type="button" role="menuitem" data-move="' + id + '" data-dir="1">' + MENU_ICON_DOWN + 'Move down</button>' : '') +
       '<button type="button" role="menuitem" data-toggle="' + id + '">' + MENU_ICON_REMOVE + 'Remove</button>';
     routeMenuEl.hidden = false;
     routeMenuFor = id;
