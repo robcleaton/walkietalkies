@@ -322,6 +322,9 @@
           </div>
           <!-- One grouped list on phones (nearRowHTML in app.js), a carousel of
                cards from sm up (like #homeList below). -->
+          <!-- sm and up: the area chips with Refresh to their right, above
+               the cards (app.js placeNearControls moves them in and out). -->
+          <div id="nearBar" class="hidden flex flex-wrap items-center gap-2 mb-4"></div>
           <div id="nearList" class="hidden min-w-0 sm:flex sm:flex-row sm:flex-nowrap sm:gap-4 sm:overflow-x-auto sm:pb-2 scroll-hide"></div>
           <!-- The 1–3 areas the nearest stops fall in, as compact area chips
                (filled by app.js renderNearYou once located). -->
@@ -347,12 +350,15 @@
              sliding in over the first. Hidden on desktop (lg:hidden),
              where #routeHeaderBtn in the header opens the dropdown
              instead. -->
-        <!-- The Map button sits over #routeBar, just left of its chevron,
+        <!-- The Map button sits over #routeBar, at its right-hand end,
              as a sibling rather than inside it (a button can't hold one). -->
-        <div class="relative lg:hidden shrink-0">
+        <!-- #routeSheetHead is also the drag area: swipe it (or its handle)
+             up and down to open and close the sheet (app.js, sheet drag). -->
+        <div id="routeSheetHead" class="relative lg:hidden shrink-0">
+        <span class="route-handle" aria-hidden="true"></span>
         <button id="routeBar" class="w-full px-5 py-3.5 flex items-center justify-between gap-4 text-left" aria-label="Open route panel" aria-expanded="false">
-          <!-- pr clears the absolutely placed map toggle beside the chevron -->
-          <span class="min-w-0 flex-1 pr-14">
+          <!-- pr clears the absolutely placed map toggle -->
+          <span class="min-w-0 flex-1 pr-10">
             <span class="eyebrow opacity-60 block">Your route</span>
             <span class="flex items-center gap-1.5 min-w-0">
               <!-- Shown while a stop's narration plays, as on #routeHeaderBtn -->
@@ -366,12 +372,8 @@
               <span class="route-summary text-[15px] font-semibold" id="barLabel">5 stops &middot; <span class="dist">2.1<span class="dist-u">km</span></span></span>
             </span>
           </span>
-          <svg id="routeBarChevron" class="lucide lucide-chevron-up w-10 h-10 shrink-0 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="1.7 1.7 20.6 20.6" fill="none" stroke="currentColor" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <!-- Lucide's chevron scaled to 70% about the centre, in a 40px box -->
-            <path d="M9.2 13.4 12 10.6l2.8 2.8" />
-          </svg>
         </button>
-        <button type="button" data-route-map-toggle data-tooltip="Show map" aria-pressed="false" aria-label="Show the route map" class="route-map-toggle hidden absolute top-1/2 -translate-y-1/2 right-[72px] w-10 h-10 rounded-full items-center justify-center">
+        <button type="button" data-route-map-toggle data-tooltip="Show map" aria-pressed="false" aria-label="Show the route map" class="route-map-toggle hidden absolute top-1/2 -translate-y-1/2 right-3 w-10 h-10 rounded-full items-center justify-center">
           <svg class="lucide lucide-map w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg>
         </button>
         </div>
@@ -386,8 +388,8 @@
             <div class="flex items-start justify-between gap-3">
               <div class="min-w-0">
                 <h2 id="routePanelTitle" class="font-display text-[24px] leading-none">Your route</h2>
-                <p class="route-summary eyebrow text-faint mt-2 hidden" id="routeMeta"></p>
-                <p class="route-now-playing mt-2 items-center gap-1.5 min-w-0 text-[13px] font-semibold">
+                <p class="route-summary eyebrow text-faint mt-1 hidden" id="routeMeta"></p>
+                <p class="route-now-playing mt-1 items-center gap-1.5 min-w-0 text-[13px] font-semibold">
                   <svg class="route-speaker lucide lucide-volume-2 w-4 h-4 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z" />
                     <path class="speaker-wave speaker-wave--1" d="M16 9a5 5 0 0 1 0 6" />

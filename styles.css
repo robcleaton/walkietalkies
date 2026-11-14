@@ -351,9 +351,14 @@
   }
 
   /* Your route: one subtle grey dashed line joining the green stop
-     numbers, placed behind them by positionRouteLine() in app.js. */
+     numbers, placed behind them by positionRouteLine() in app.js. The
+     dashes are a striped background, not a dashed border: WebKit (every
+     iOS browser) doesn't paint a dashed border this thin at all. */
   #routeList{ position:relative; }
-  .route-line{ position:absolute; width:0; border-left:1.5px dashed #8E8E93; pointer-events:none; }
+  .route-line{
+    position:absolute; width:1.5px; pointer-events:none;
+    background:repeating-linear-gradient(to bottom, #8E8E93 0 4.5px, transparent 4.5px 9px);
+  }
   .route-line[hidden]{ display:none; }
 
   /* Your route: branded orange background, with the panel's own text,
@@ -467,10 +472,21 @@
     html.route-open #routePanelBody > *{ opacity:1; transition:opacity .35s ease .1s; }
     /* No classic scrollbar on touch-sized screens: it took 10px from the
        list's width, so the stops sat off-centre and could shift sideways. */
-    #routeScroll{ scrollbar-width:none; }
+    #routeScroll{ scrollbar-width:none; overscroll-behavior-y:contain; }
     #routeScroll::-webkit-scrollbar{ display:none; }
-    #routeBarChevron{ transform:rotate(180deg); }
-    html.route-open #routeBarChevron{ transform:rotate(0deg); }
+    /* Bottom-sheet drag handle and drag area (app.js, sheet drag). No
+       touch-action, so a vertical swipe moves the sheet, not the page. */
+    #routeSheetHead{ touch-action:none; }
+    .route-handle{
+      position:absolute; top:7px; left:50%; transform:translateX(-50%);
+      width:36px; height:4px; border-radius:4px;
+      background:currentColor; opacity:.3; pointer-events:none;
+    }
+    #routeBar{ padding-top:16px; }
+    /* Mid-drag: the body follows the finger (inline max-height from app.js)
+       with its contents shown and no easing. */
+    html.route-dragging #routePanelBody{ visibility:visible; transition:none; }
+    html.route-dragging #routePanelBody > *{ opacity:1; transition:none; }
     #scrim{ display:none; }
     html.route-open #scrim{ display:block; }
   }
@@ -498,7 +514,7 @@
     }
   }
   @media (prefers-reduced-motion: reduce){
-    #routePanel, #routePanelBody, #routePanelBody > *, #routeBarChevron{ transition:none; }
+    #routePanel, #routePanelBody, #routePanelBody > *{ transition:none; }
     #routeScroll.route-view-enter > *{ animation:none; }
     .stop.flash{ animation:none; }
   }

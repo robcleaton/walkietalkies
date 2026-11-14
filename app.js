@@ -489,6 +489,7 @@
   var nearBtnLabel = document.getElementById('nearYouBtnLabel');
   var nearPos = null; // { lat, lon } once known
   var nearLocating = false;
+  var nearLive = false; // located this visit (not just a remembered position)
 
   // The last position found is remembered on this device, so Near you
   // stays filled in on later visits and other pages without asking again
@@ -501,16 +502,38 @@
       else localStorage.removeItem(NEAR_POS_KEY);
     } catch (e) { /* storage blocked */ }
   }
+  // Where the area chips and the location button go. With the cards
+  // (sm and up) they share one row above them, chips then Refresh; with
+  // the phone list (or nothing located yet) the button sits under the
+  // heading and the chips under the list.
+  function placeNearControls(carousel) {
+    var bar = document.getElementById('nearBar');
+    var areasEl = document.getElementById('nearAreas');
+    if (carousel) {
+      bar.appendChild(areasEl);
+      bar.appendChild(nearBtn);
+    } else {
+      nearStatusEl.parentNode.appendChild(nearBtn);
+      nearListEl.parentNode.insertBefore(areasEl, nearListEl.nextSibling);
+    }
+    bar.classList.toggle('hidden', !carousel);
+    areasEl.classList.toggle('mt-4', !carousel);
+    nearBtn.classList.toggle('mt-3', !carousel);
+  }
+
   // Back to the not-located state: list gone, Use my location back.
   function forgetNearPos() {
     nearPos = null;
+    nearLive = false;
     saveNearPos(null);
     nearListEl.classList.add('hidden');
     nearListEl.innerHTML = '';
     document.getElementById('nearAreas').classList.add('hidden');
     nearStatusEl.textContent = 'See the stops closest to where you are.';
+    nearStatusEl.classList.remove('hidden');
     nearBtnLabel.textContent = 'Use my location';
     nearBtn.classList.remove('hidden');
+    placeNearControls(false);
   }
   function loadNearPos() {
     try {
@@ -584,9 +607,10 @@
     var carousel = NEAR_CAROUSEL_MQ.matches;
     nearListEl.innerHTML = carousel ? near.map(function (n) {
       // No id: the same stop can also be in the random carousel below.
-      var card = stopHTML(n.s, true, fmtDist(n.km), true).replace(' id="stop-' + n.s.id + '"', '');
-      // No fixed height without descriptions; the row's cards stretch to the tallest.
-      return '<div class="w-[340px] shrink-0">' + card + '</div>';
+      var card = stopHTML(n.s, true, fmtDist(n.km)).replace(' id="stop-' + n.s.id + '"', '');
+      // Same fixed size as the homepage carousel's cards, so the
+      // description clamps to the space left (adjustCardClamps below).
+      return '<div class="w-[340px] h-[400px] shrink-0">' + card + '</div>';
     }).join('') :
       '<ul class="bg-surface border border-rule rounded-[16px] divide-y divide-rule">' + near.map(nearRowHTML).join('') + '</ul>';
     nearListEl.classList.remove('hidden');
@@ -596,7 +620,15 @@
     } else {
       nearStatusEl.textContent = 'The closest stops to you, nearest first.';
     }
+    // The cards (sm and up) speak for themselves: no status line under the
+    // heading there. The phone list keeps it.
+    nearStatusEl.classList.toggle('hidden', carousel);
+    // Refresh: always there beside the cards (sm and up); on phones only
+    // while the list is from a remembered position, not a fix this visit.
+    if (!nearLocating) nearBtnLabel.textContent = 'Refresh';
+    nearBtn.classList.toggle('hidden', !carousel && nearLive);
     renderNearAreas(near);
+    placeNearControls(carousel);
     setTimeout(function () { adjustCardClamps(nearListEl); }, 0);
   }
 
@@ -632,8 +664,7 @@
       nearLocating = false;
       nearBtn.disabled = false;
       nearBtnLabel.textContent = 'Refresh';
-      // Refresh is hidden for now: once located, the button goes away.
-      nearBtn.classList.add('hidden');
+      nearLive = true;
       nearPos = { lat: p.coords.latitude, lon: p.coords.longitude };
       saveNearPos(nearPos);
       renderNearYou(!homeListEl.classList.contains('hidden'));
@@ -646,6 +677,7 @@
       // Location since turned off: forget the remembered position too.
       if (err && err.code === 1 && nearPos) forgetNearPos();
       nearBtnLabel.textContent = nearPos ? 'Refresh' : 'Use my location';
+      nearStatusEl.classList.remove('hidden');
       nearStatusEl.textContent = err && err.code === 1
         ? 'Location is turned off for this site. Allow it in your browser settings to see stops near you.'
         : 'Couldn’t find your location just now. Try again in a moment.';
@@ -1056,7 +1088,7 @@
         (i > 0 ? '<p class="pl-[52px] pr-5 font-mono text-[11px] leading-4 text-faint num">&darr; ' + distHTML(leg.toFixed(2), 'km') + '</p>' : '') +
         // Mobile rows match the Near you list (56px image, 15px name,
         // centred); the desktop dropdown keeps its tighter rows (lg:).
-        '<div class="flex items-center lg:items-start gap-3 px-5 py-2 lg:py-1.5 ' + (i > 0 ? '' : 'pt-3') + '">' +
+        '<div class="flex items-center lg:items-start gap-3 px-5 lg:pr-1.5 py-2 lg:py-1.5 ' + (i > 0 ? '' : 'pt-3') + '">' +
           // Desktop rows are top-aligned: drop the number to the middle of the
           // 56px thumbnail ((56 - 24) / 2); mobile rows are centred already.
           '<span class="route-num relative z-[1] shrink-0 w-6 h-6 ' + (s.img ? 'lg:mt-4' : 'lg:mt-0.5') + ' rounded-full bg-verdigris text-white font-mono num text-[11px] font-semibold grid place-items-center">' + (i + 1) + '</span>' +
@@ -1576,6 +1608,113 @@
     openSheet(willOpen);
   });
   document.getElementById('scrim').addEventListener('click', function () { openSheet(false); });
+
+  /* Mobile sheet drag: swiping #routeSheetHead (the handle and summary
+     bar) moves #routePanelBody's height with the finger, then lets go
+     open or closed — by flick direction if it was quick, otherwise by
+     whether it's past halfway. A tap still toggles via the click above;
+     a real drag swallows that click. Pulling down on the stop list while
+     it's scrolled to the top does the same (pull down to close). */
+  (function () {
+    var head = document.getElementById('routeSheetHead');
+    var scroller = document.getElementById('routeScroll');
+    var body = routePanelBodyEl;
+    var drag = null, suppressClick = false;
+
+    function fullHeight() { return Math.min(body.scrollHeight, window.innerHeight * 0.8); }
+    function startDrag(y, t) {
+      var open = root.classList.contains('route-open');
+      return { y0: y, lastY: y, lastT: t, v: 0, h: 0, full: 0, wasOpen: open, moved: false,
+               start: open ? body.getBoundingClientRect().height : 0 };
+    }
+    function beginMove(d) {
+      d.moved = true;
+      if (routeMenuEl) closeRouteMenu();
+      root.classList.add('route-dragging');
+      d.full = fullHeight();
+    }
+    function moveTo(d, y, t) {
+      var dt = t - d.lastT;
+      if (dt > 0) d.v = (y - d.lastY) / dt; // px/ms, + is downward
+      d.lastY = y; d.lastT = t;
+      d.h = Math.max(0, Math.min(d.full, d.start - (y - d.y0)));
+      body.style.maxHeight = d.h + 'px';
+    }
+    function finish(d, cancelled) {
+      var open = cancelled ? d.wasOpen :
+        Math.abs(d.v) > 0.4 ? d.v < 0 : d.h > d.full / 2;
+      root.classList.remove('route-dragging');
+      // Clearing the inline height hands it back to the CSS transition,
+      // which eases from where the finger left it to fully open or shut.
+      body.style.maxHeight = '';
+      if (open && !d.wasOpen) routeOpenTrigger = routeBarEl;
+      openSheet(open);
+    }
+
+    // The handle and bar: pointer events (touch-action:none in styles.css).
+    head.addEventListener('pointerdown', function (e) {
+      if (e.pointerType === 'mouse' && e.button !== 0) return;
+      drag = startDrag(e.clientY, e.timeStamp);
+      drag.id = e.pointerId;
+    });
+    head.addEventListener('pointermove', function (e) {
+      if (!drag || e.pointerId !== drag.id) return;
+      if (!drag.moved) {
+        if (Math.abs(e.clientY - drag.y0) < 6) return;
+        beginMove(drag);
+        try { head.setPointerCapture(e.pointerId); } catch (err) { /* already released */ }
+      }
+      moveTo(drag, e.clientY, e.timeStamp);
+    });
+    function headEnd(e) {
+      if (!drag || e.pointerId !== drag.id) return;
+      var d = drag; drag = null;
+      if (!d.moved) return;
+      suppressClick = true;
+      setTimeout(function () { suppressClick = false; }, 0);
+      finish(d, e.type === 'pointercancel');
+    }
+    head.addEventListener('pointerup', headEnd);
+    head.addEventListener('pointercancel', headEnd);
+    // Capture phase, so it runs before #routeBar's and the map toggle's own handlers.
+    head.addEventListener('click', function (e) {
+      if (suppressClick) { e.stopPropagation(); e.preventDefault(); suppressClick = false; }
+    }, true);
+
+    // The stop list: touch events, since the list scrolls natively and
+    // only a downward pull from the very top should move the sheet. Not
+    // on the route map, where a drag pans the map. Phones only.
+    var listDrag = null;
+    var mobile = window.matchMedia('(max-width: 1023px)');
+    scroller.addEventListener('touchstart', function (e) {
+      listDrag = null;
+      if (!mobile.matches || e.touches.length !== 1 || e.target.closest('#routeMap')) return;
+      if (!root.classList.contains('route-open')) return;
+      listDrag = startDrag(e.touches[0].clientY, e.timeStamp);
+      listDrag.top = scroller.scrollTop <= 0;
+    }, { passive: true });
+    scroller.addEventListener('touchmove', function (e) {
+      var d = listDrag;
+      if (!d) return;
+      var y = e.touches[0].clientY;
+      if (!d.moved) {
+        var dy = y - d.y0;
+        if (Math.abs(dy) < 6) return;
+        // Scrolling up the list, or not starting from the top: a normal scroll.
+        if (dy < 0 || !d.top || scroller.scrollTop > 0) { listDrag = null; return; }
+        beginMove(d);
+        d.y0 = y; // start following from here, so the sheet doesn't jump
+      }
+      e.preventDefault();
+      moveTo(d, y, e.timeStamp);
+    }, { passive: false });
+    function listEnd(e) {
+      var d = listDrag; listDrag = null;
+      if (d && d.moved) finish(d, e.type === 'touchcancel');
+    }
+    scroller.addEventListener('touchend', listEnd);
+    scroller.addEventListener('touchcancel', listEnd);
+  })();
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape' && e.key !== 'Tab') return;
     if (!root.classList.contains('route-open')) return;
