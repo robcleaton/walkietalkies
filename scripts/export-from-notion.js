@@ -38,7 +38,7 @@ if (!NOTION_TOKEN || !NOTION_DATABASE_ID) {
 
 const notion = new Client({ auth: NOTION_TOKEN });
 
-// Must match the CATS map in app.js exactly — this is the round-trip
+// Must match the CATS map in src/app exactly — this is the round-trip
 // between the site's internal category keys and Notion's human-readable labels.
 const CATS = {
   plaque: 'Blue plaque',
@@ -200,7 +200,7 @@ function pageToStop(page, usedSlugs) {
     // Up to 40 words, shown on the stop cards; the full Description above
     // stays the source for the narration audio.
     short: getRichText(page, 'Short description'),
-    // Which area pages the stop appears on (app.js stopInArea). Left off
+    // Which area pages the stop appears on (src/app stopInArea). Left off
     // entirely while the database has no "Areas" column, so the site falls
     // back to matching on name/Area text instead.
     areas: getMultiSelect(page, 'Areas')
@@ -250,7 +250,7 @@ async function main() {
   const usedSlugs = new Set();
   const stops = pages.map((page) => pageToStop(page, usedSlugs));
 
-  // Stops without Latitude/Longitude still get published — app.js disables
+  // Stops without Latitude/Longitude still get published — src/app disables
   // "Add to route" for them client-side (route maths, the Leaflet map, and
   // GPX export all need real coordinates) rather than the export hiding
   // them entirely. Just flag which ones, so it's easy to tell what's still

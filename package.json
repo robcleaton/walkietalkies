@@ -2,6 +2,11 @@
   "name": "walkietalkies",
   "private": true,
   "scripts": {
+    "build": "npm run build:css && npm run build:js && npm run build:pages",
+    "build:css": "tailwindcss -i src/tailwind.css -o build/tailwind.css --minify",
+    "build:js": "node scripts/build-js.js",
+    "build:pages": "node scripts/build-pages.js",
+    "dev": "tailwindcss -i src/tailwind.css -o build/tailwind.css --watch & node scripts/build-js.js --watch",
     "export": "node scripts/export-from-notion.js",
     "export:areas": "node scripts/export-areas-from-notion.js",
     "prefill:areas": "node scripts/prefill-areas.js",
@@ -9,5 +14,9 @@
   },
   "dependencies": {
     "@notionhq/client": "^5.26.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.2",
+    "tailwindcss": "^3.4.17"
   }
 }

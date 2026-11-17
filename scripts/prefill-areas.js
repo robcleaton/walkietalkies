@@ -2,7 +2,7 @@
 'use strict';
 
 // One-off: pre-fill the Stops database's "Areas" multi-select, which
-// decides which area pages each stop appears on (app.js stopInArea).
+// decides which area pages each stop appears on (src/app stopInArea).
 //
 //   node scripts/prefill-areas.js           # dry run: prints the plan only
 //   node scripts/prefill-areas.js --write   # writes it to Notion

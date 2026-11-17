@@ -2,7 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>WalkieTalkies</title>
+<!-- Every relative URL (assets, build files, page links like areas/<slug>/)
+     resolves from the site root, so the same markup works on the area and
+     stop pages that scripts/build-pages.js generates from this file. -->
+<base href="/">
+<script>
+  // Old ?area= links, from before area pages had their own URLs.
+  (function () {
+    var m = /[?&]area=([^&#]+)/.exec(location.search);
+    if (m && location.pathname === '/') location.replace('/areas/' + m[1] + '/');
+  })();
+</script>
+<title>WalkieTalkies — South East London&rsquo;s blue plaques, old pubs &amp; hidden history</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Stop iOS Safari turning stop names, addresses, dates and numbers into
      Maps/Phone/Calendar links on its own. -->
@@ -20,6 +31,8 @@
 <link rel="icon" type="image/png" sizes="256x256" href="assets/walkietalkies-favicon-256.png">
 <link rel="apple-touch-icon" href="assets/walkietalkies-apple-touch-icon.png?v=2">
 <meta name="description" content="A walking guide to the historic sites and blue plaques of South East London.">
+<link rel="canonical" href="https://walkietalkies.warface.co.uk/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"WalkieTalkies","url":"https://walkietalkies.warface.co.uk/","description":"A walking guide to the historic sites and blue plaques of South East London."}</script>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="WalkieTalkies">
 <meta property="og:title" content="WalkieTalkies &mdash; South East London&rsquo;s blue plaques, old pubs &amp; hidden history">
@@ -36,33 +49,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Azeret+Mono:wght@400;500;600&family=Gasoek+One&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          ground: 'var(--ground)', surface: 'var(--surface)', raised: 'var(--raised)',
-          ink: 'var(--ink)', muted: 'var(--muted)', faint: 'var(--faint)',
-          rule: 'var(--rule)', plaque: 'var(--plaque)', verdigris: 'var(--verdigris)',
-          brass: 'var(--brass)', plaquesoft: 'var(--plaque-soft)',
-          tomato: 'var(--tomato)', violet: 'var(--violet)', bubblegum: 'var(--bubblegum)', marigold: 'var(--marigold)'
-        },
-        fontFamily: {
-          display: ['"Gasoek One"', 'Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
-          sans: ['Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
-          mono: ['"Azeret Mono"', 'ui-monospace', 'Menlo', 'monospace'],
-          // Body copy (descriptions, area intros/history) — UI text stays Inter.
-          serif: ['Newsreader', 'Georgia', 'Times New Roman', 'serif']
-        }
-      }
-    }
-  }
-</script>
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
   integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+<!-- Tailwind utilities, built by `npm run build` (tailwind.config.js). Last
+     of the stylesheets, where the old CDN script injected them, so the
+     cascade is unchanged. -->
+<link rel="stylesheet" href="build/tailwind.css">
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
   integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body>
@@ -176,6 +170,11 @@
     </div>
   </section>
 
+  <!-- Stop page (/stops/<id>/): one stop in full. scripts/build-pages.js
+       fills it in each stop's static page (what search engines read first);
+       src/app/09b-stop-page.js renders it in the app. -->
+  <section id="stopPage" class="hidden mx-auto max-w-[1280px] px-5 sm:px-8 pt-4 pb-6"></section>
+
   <!-- Discover page (?view=discover): every area, then every category
        (the shared #chips cards below) and every stop (the shared #list).
        Reached from the round button at the end of the homepage carousel. -->
@@ -196,28 +195,28 @@
           <div class="area-row-wrap">
             <div class="area-row-track marquee-left">
               <div class="area-row">
-                <button class="area-chip" style="background:var(--tomato);color:#fff" data-area="elephant">Elephant &amp; Castle</button>
-                <button class="area-chip" style="background:var(--marigold);color:#171717" data-area="honor oak">Honor Oak</button>
-                <button class="area-chip" style="background:var(--brass);color:#171717" data-area="blackheath">Blackheath</button>
-                <button class="area-chip" style="background:var(--bubblegum);color:#fff" data-area="charlton">Charlton</button>
-                <button class="area-chip" style="background:var(--verdigris);color:#fff" data-area="greenwich">Greenwich</button>
-                <button class="area-chip" style="background:var(--violet);color:#fff" data-area="new cross">New Cross</button>
-                <button class="area-chip" style="background:var(--plaque);color:#fff" data-area="rotherhithe">Rotherhithe</button>
-                <button class="area-chip" style="background:var(--tomato);color:#fff" data-area="woolwich">Woolwich</button>
-                <button class="area-chip" style="background:var(--marigold);color:#171717" data-area="sydenham">Sydenham</button>
-                <button class="area-chip" style="background:var(--brass);color:#171717" data-area="herne hill">Herne Hill</button>
+                <a class="area-chip" href="areas/elephant-and-castle/" style="background:var(--tomato);color:#fff" data-area="elephant">Elephant &amp; Castle</a>
+                <a class="area-chip" href="areas/honor-oak/" style="background:var(--marigold);color:#171717" data-area="honor oak">Honor Oak</a>
+                <a class="area-chip" href="areas/blackheath/" style="background:var(--brass);color:#171717" data-area="blackheath">Blackheath</a>
+                <a class="area-chip" href="areas/charlton/" style="background:var(--bubblegum);color:#fff" data-area="charlton">Charlton</a>
+                <a class="area-chip" href="areas/greenwich/" style="background:var(--verdigris);color:#fff" data-area="greenwich">Greenwich</a>
+                <a class="area-chip" href="areas/new-cross/" style="background:var(--violet);color:#fff" data-area="new cross">New Cross</a>
+                <a class="area-chip" href="areas/rotherhithe/" style="background:var(--plaque);color:#fff" data-area="rotherhithe">Rotherhithe</a>
+                <a class="area-chip" href="areas/woolwich/" style="background:var(--tomato);color:#fff" data-area="woolwich">Woolwich</a>
+                <a class="area-chip" href="areas/sydenham/" style="background:var(--marigold);color:#171717" data-area="sydenham">Sydenham</a>
+                <a class="area-chip" href="areas/herne-hill/" style="background:var(--brass);color:#171717" data-area="herne hill">Herne Hill</a>
               </div>
               <div class="area-row area-row-dup" aria-hidden="true">
-                <button class="area-chip" tabindex="-1" style="background:var(--tomato);color:#fff" data-area="elephant">Elephant &amp; Castle</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--marigold);color:#171717" data-area="honor oak">Honor Oak</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--brass);color:#171717" data-area="blackheath">Blackheath</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--bubblegum);color:#fff" data-area="charlton">Charlton</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--verdigris);color:#fff" data-area="greenwich">Greenwich</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--violet);color:#fff" data-area="new cross">New Cross</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--plaque);color:#fff" data-area="rotherhithe">Rotherhithe</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--tomato);color:#fff" data-area="woolwich">Woolwich</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--marigold);color:#171717" data-area="sydenham">Sydenham</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--brass);color:#171717" data-area="herne hill">Herne Hill</button>
+                <a class="area-chip" href="areas/elephant-and-castle/" tabindex="-1" style="background:var(--tomato);color:#fff" data-area="elephant">Elephant &amp; Castle</a>
+                <a class="area-chip" href="areas/honor-oak/" tabindex="-1" style="background:var(--marigold);color:#171717" data-area="honor oak">Honor Oak</a>
+                <a class="area-chip" href="areas/blackheath/" tabindex="-1" style="background:var(--brass);color:#171717" data-area="blackheath">Blackheath</a>
+                <a class="area-chip" href="areas/charlton/" tabindex="-1" style="background:var(--bubblegum);color:#fff" data-area="charlton">Charlton</a>
+                <a class="area-chip" href="areas/greenwich/" tabindex="-1" style="background:var(--verdigris);color:#fff" data-area="greenwich">Greenwich</a>
+                <a class="area-chip" href="areas/new-cross/" tabindex="-1" style="background:var(--violet);color:#fff" data-area="new cross">New Cross</a>
+                <a class="area-chip" href="areas/rotherhithe/" tabindex="-1" style="background:var(--plaque);color:#fff" data-area="rotherhithe">Rotherhithe</a>
+                <a class="area-chip" href="areas/woolwich/" tabindex="-1" style="background:var(--tomato);color:#fff" data-area="woolwich">Woolwich</a>
+                <a class="area-chip" href="areas/sydenham/" tabindex="-1" style="background:var(--marigold);color:#171717" data-area="sydenham">Sydenham</a>
+                <a class="area-chip" href="areas/herne-hill/" tabindex="-1" style="background:var(--brass);color:#171717" data-area="herne hill">Herne Hill</a>
               </div>
             </div>
           </div>
@@ -225,28 +224,28 @@
           <div class="area-row-wrap">
             <div class="area-row-track marquee-right">
               <div class="area-row">
-                <button class="area-chip" style="background:var(--violet);color:#fff" data-area="forest hill">Forest Hill</button>
-                <button class="area-chip" style="background:var(--plaque);color:#fff" data-area="crystal palace">Crystal Palace</button>
-                <button class="area-chip" style="background:var(--tomato);color:#fff" data-area="camberwell">Camberwell</button>
-                <button class="area-chip" style="background:var(--marigold);color:#171717" data-area="deptford">Deptford</button>
-                <button class="area-chip" style="background:var(--brass);color:#171717" data-area="lee">Lee</button>
-                <button class="area-chip" style="background:var(--bubblegum);color:#fff" data-area="peckham">Peckham</button>
-                <button class="area-chip" style="background:var(--verdigris);color:#fff" data-area="bermondsey">Bermondsey</button>
-                <button class="area-chip" style="background:var(--violet);color:#fff" data-area="dulwich">Dulwich</button>
-                <button class="area-chip" style="background:var(--plaque);color:#fff" data-area="bexley">Bexley</button>
-                <button class="area-chip" style="background:var(--tomato);color:#fff" data-area="penge">Penge</button>
+                <a class="area-chip" href="areas/forest-hill/" style="background:var(--violet);color:#fff" data-area="forest hill">Forest Hill</a>
+                <a class="area-chip" href="areas/crystal-palace/" style="background:var(--plaque);color:#fff" data-area="crystal palace">Crystal Palace</a>
+                <a class="area-chip" href="areas/camberwell/" style="background:var(--tomato);color:#fff" data-area="camberwell">Camberwell</a>
+                <a class="area-chip" href="areas/deptford/" style="background:var(--marigold);color:#171717" data-area="deptford">Deptford</a>
+                <a class="area-chip" href="areas/lee/" style="background:var(--brass);color:#171717" data-area="lee">Lee</a>
+                <a class="area-chip" href="areas/peckham/" style="background:var(--bubblegum);color:#fff" data-area="peckham">Peckham</a>
+                <a class="area-chip" href="areas/bermondsey/" style="background:var(--verdigris);color:#fff" data-area="bermondsey">Bermondsey</a>
+                <a class="area-chip" href="areas/dulwich/" style="background:var(--violet);color:#fff" data-area="dulwich">Dulwich</a>
+                <a class="area-chip" href="areas/bexley/" style="background:var(--plaque);color:#fff" data-area="bexley">Bexley</a>
+                <a class="area-chip" href="areas/penge/" style="background:var(--tomato);color:#fff" data-area="penge">Penge</a>
               </div>
               <div class="area-row area-row-dup" aria-hidden="true">
-                <button class="area-chip" tabindex="-1" style="background:var(--violet);color:#fff" data-area="forest hill">Forest Hill</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--plaque);color:#fff" data-area="crystal palace">Crystal Palace</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--tomato);color:#fff" data-area="camberwell">Camberwell</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--marigold);color:#171717" data-area="deptford">Deptford</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--brass);color:#171717" data-area="lee">Lee</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--bubblegum);color:#fff" data-area="peckham">Peckham</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--verdigris);color:#fff" data-area="bermondsey">Bermondsey</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--violet);color:#fff" data-area="dulwich">Dulwich</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--plaque);color:#fff" data-area="bexley">Bexley</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--tomato);color:#fff" data-area="penge">Penge</button>
+                <a class="area-chip" href="areas/forest-hill/" tabindex="-1" style="background:var(--violet);color:#fff" data-area="forest hill">Forest Hill</a>
+                <a class="area-chip" href="areas/crystal-palace/" tabindex="-1" style="background:var(--plaque);color:#fff" data-area="crystal palace">Crystal Palace</a>
+                <a class="area-chip" href="areas/camberwell/" tabindex="-1" style="background:var(--tomato);color:#fff" data-area="camberwell">Camberwell</a>
+                <a class="area-chip" href="areas/deptford/" tabindex="-1" style="background:var(--marigold);color:#171717" data-area="deptford">Deptford</a>
+                <a class="area-chip" href="areas/lee/" tabindex="-1" style="background:var(--brass);color:#171717" data-area="lee">Lee</a>
+                <a class="area-chip" href="areas/peckham/" tabindex="-1" style="background:var(--bubblegum);color:#fff" data-area="peckham">Peckham</a>
+                <a class="area-chip" href="areas/bermondsey/" tabindex="-1" style="background:var(--verdigris);color:#fff" data-area="bermondsey">Bermondsey</a>
+                <a class="area-chip" href="areas/dulwich/" tabindex="-1" style="background:var(--violet);color:#fff" data-area="dulwich">Dulwich</a>
+                <a class="area-chip" href="areas/bexley/" tabindex="-1" style="background:var(--plaque);color:#fff" data-area="bexley">Bexley</a>
+                <a class="area-chip" href="areas/penge/" tabindex="-1" style="background:var(--tomato);color:#fff" data-area="penge">Penge</a>
               </div>
             </div>
           </div>
@@ -254,28 +253,28 @@
           <div class="area-row-wrap">
             <div class="area-row-track marquee-left">
               <div class="area-row">
-                <button class="area-chip" style="background:var(--bubblegum);color:#fff" data-area="brockley">Brockley</button>
-                <button class="area-chip" style="background:var(--verdigris);color:#fff" data-area="bankside">Bankside</button>
-                <button class="area-chip" style="background:var(--violet);color:#fff" data-area="catford">Catford</button>
-                <button class="area-chip" style="background:var(--plaque);color:#fff" data-area="eltham">Eltham</button>
-                <button class="area-chip" style="background:var(--tomato);color:#fff" data-area="lewisham">Lewisham</button>
-                <button class="area-chip" style="background:var(--marigold);color:#171717" data-area="nunhead">Nunhead</button>
-                <button class="area-chip" style="background:var(--brass);color:#171717" data-area="walworth">Walworth</button>
-                <button class="area-chip" style="background:var(--bubblegum);color:#fff" data-area="east dulwich">East Dulwich</button>
-                <button class="area-chip" style="background:var(--verdigris);color:#fff" data-area="bexleyheath">Bexleyheath</button>
-                <button class="area-chip" style="background:var(--violet);color:#fff" data-area="gipsy hill">Gipsy Hill</button>
+                <a class="area-chip" href="areas/brockley/" style="background:var(--bubblegum);color:#fff" data-area="brockley">Brockley</a>
+                <a class="area-chip" href="areas/bankside/" style="background:var(--verdigris);color:#fff" data-area="bankside">Bankside</a>
+                <a class="area-chip" href="areas/catford/" style="background:var(--violet);color:#fff" data-area="catford">Catford</a>
+                <a class="area-chip" href="areas/eltham/" style="background:var(--plaque);color:#fff" data-area="eltham">Eltham</a>
+                <a class="area-chip" href="areas/lewisham/" style="background:var(--tomato);color:#fff" data-area="lewisham">Lewisham</a>
+                <a class="area-chip" href="areas/nunhead/" style="background:var(--marigold);color:#171717" data-area="nunhead">Nunhead</a>
+                <a class="area-chip" href="areas/walworth/" style="background:var(--brass);color:#171717" data-area="walworth">Walworth</a>
+                <a class="area-chip" href="areas/east-dulwich/" style="background:var(--bubblegum);color:#fff" data-area="east dulwich">East Dulwich</a>
+                <a class="area-chip" href="areas/bexleyheath/" style="background:var(--verdigris);color:#fff" data-area="bexleyheath">Bexleyheath</a>
+                <a class="area-chip" href="areas/gipsy-hill/" style="background:var(--violet);color:#fff" data-area="gipsy hill">Gipsy Hill</a>
               </div>
               <div class="area-row area-row-dup" aria-hidden="true">
-                <button class="area-chip" tabindex="-1" style="background:var(--bubblegum);color:#fff" data-area="brockley">Brockley</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--verdigris);color:#fff" data-area="bankside">Bankside</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--violet);color:#fff" data-area="catford">Catford</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--plaque);color:#fff" data-area="eltham">Eltham</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--tomato);color:#fff" data-area="lewisham">Lewisham</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--marigold);color:#171717" data-area="nunhead">Nunhead</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--brass);color:#171717" data-area="walworth">Walworth</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--bubblegum);color:#fff" data-area="east dulwich">East Dulwich</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--verdigris);color:#fff" data-area="bexleyheath">Bexleyheath</button>
-                <button class="area-chip" tabindex="-1" style="background:var(--violet);color:#fff" data-area="gipsy hill">Gipsy Hill</button>
+                <a class="area-chip" href="areas/brockley/" tabindex="-1" style="background:var(--bubblegum);color:#fff" data-area="brockley">Brockley</a>
+                <a class="area-chip" href="areas/bankside/" tabindex="-1" style="background:var(--verdigris);color:#fff" data-area="bankside">Bankside</a>
+                <a class="area-chip" href="areas/catford/" tabindex="-1" style="background:var(--violet);color:#fff" data-area="catford">Catford</a>
+                <a class="area-chip" href="areas/eltham/" tabindex="-1" style="background:var(--plaque);color:#fff" data-area="eltham">Eltham</a>
+                <a class="area-chip" href="areas/lewisham/" tabindex="-1" style="background:var(--tomato);color:#fff" data-area="lewisham">Lewisham</a>
+                <a class="area-chip" href="areas/nunhead/" tabindex="-1" style="background:var(--marigold);color:#171717" data-area="nunhead">Nunhead</a>
+                <a class="area-chip" href="areas/walworth/" tabindex="-1" style="background:var(--brass);color:#171717" data-area="walworth">Walworth</a>
+                <a class="area-chip" href="areas/east-dulwich/" tabindex="-1" style="background:var(--bubblegum);color:#fff" data-area="east dulwich">East Dulwich</a>
+                <a class="area-chip" href="areas/bexleyheath/" tabindex="-1" style="background:var(--verdigris);color:#fff" data-area="bexleyheath">Bexleyheath</a>
+                <a class="area-chip" href="areas/gipsy-hill/" tabindex="-1" style="background:var(--violet);color:#fff" data-area="gipsy hill">Gipsy Hill</a>
               </div>
             </div>
           </div>
@@ -286,7 +285,7 @@
   </section>
 
   <!-- Category chips -->
-  <section class="mx-auto max-w-[1280px] pt-1 sm:pt-6">
+  <section id="chipsSection" class="mx-auto max-w-[1280px] pt-1 sm:pt-6">
     <div id="chips" class="scroll-hide flex flex-nowrap sm:flex-wrap overflow-x-auto sm:overflow-visible gap-2.5 px-5 sm:px-8 py-2 sm:py-0"></div>
   </section>
 
@@ -300,7 +299,7 @@
         <p class="eyebrow text-faint mb-2 sm:mb-4" id="resultCount" aria-live="polite" aria-atomic="true"></p>
 
         <!-- Areas whose name matches the current search, shown as chips
-             above the stop results (populated in renderList in app.js). -->
+             above the stop results (populated in renderList in src/app). -->
         <div id="areaMatches" class="hidden flex flex-wrap gap-2.5 mb-5"></div>
 
         <!-- Homepage teaser: 10 random stops, horizontally scrollable.
@@ -309,7 +308,7 @@
         <!-- Homepage "Near you": the closest mapped stops to the viewer,
              once they tap Use my location (or straight away on later
              visits, if they've already allowed it). The position stays on
-             the device — it's only used to sort stops (app.js, Near you). -->
+             the device — it's only used to sort stops (src/app, Near you). -->
         <section id="nearYou" class="hidden min-w-0 mt-5 sm:mt-0 mb-10 sm:mb-12" aria-labelledby="nearYouTitle">
           <!-- Title, status, then the location button beneath them. -->
           <div class="mb-4 flex flex-col items-start">
@@ -320,14 +319,14 @@
               <span id="nearYouBtnLabel">Use my location</span>
             </button>
           </div>
-          <!-- One grouped list on phones (nearRowHTML in app.js), a carousel of
+          <!-- One grouped list on phones (nearRowHTML in src/app), a carousel of
                cards from sm up (like #homeList below). -->
           <!-- sm and up: the area chips with Refresh to their right, above
-               the cards (app.js placeNearControls moves them in and out). -->
+               the cards (src/app placeNearControls moves them in and out). -->
           <div id="nearBar" class="hidden flex flex-wrap items-center gap-2 mb-4"></div>
           <div id="nearList" class="hidden min-w-0 sm:flex sm:flex-row sm:flex-nowrap sm:gap-4 sm:overflow-x-auto sm:pb-2 scroll-hide"></div>
           <!-- The 1–3 areas the nearest stops fall in, as compact area chips
-               (filled by app.js renderNearYou once located). -->
+               (filled by src/app renderNearYou once located). -->
           <div id="nearAreas" class="hidden flex flex-wrap gap-2 mt-4"></div>
         </section>
 
@@ -353,7 +352,7 @@
         <!-- The Map button sits over #routeBar, at its right-hand end,
              as a sibling rather than inside it (a button can't hold one). -->
         <!-- #routeSheetHead is also the drag area: swipe it (or its handle)
-             up and down to open and close the sheet (app.js, sheet drag). -->
+             up and down to open and close the sheet (src/app, sheet drag). -->
         <div id="routeSheetHead" class="relative lg:hidden shrink-0">
         <span class="route-handle" aria-hidden="true"></span>
         <button id="routeBar" class="w-full px-5 py-3.5 flex items-center justify-between gap-4 text-left" aria-label="Open route panel" aria-expanded="false">
@@ -443,7 +442,7 @@
 <div id="scrim" class="fixed inset-0 bg-black/40 z-50" hidden></div>
 
 <!-- Image lightbox: tap a stop's thumbnail to see it full-size, mainly for
-     mobile where there's no hover-to-preview. Hidden by default; app.js
+     mobile where there's no hover-to-preview. Hidden by default; src/app
      opens it on [data-lightbox] click and sets #lightboxImg's src. -->
 <div id="lightbox" class="hidden fixed inset-0 z-[100] bg-black/90 flex-col items-center justify-center gap-3 p-5" role="dialog" aria-modal="true" aria-label="Image preview">
   <button id="lightboxClose" data-tooltip="Close" type="button" class="absolute top-4 right-4 sm:top-6 sm:right-6 inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors" aria-label="Close image preview">
@@ -458,7 +457,7 @@
     <figcaption class="w-0 min-w-full text-left">
       <p id="lightboxCaption" class="font-sans font-semibold text-[18px] sm:text-[20px] leading-snug text-white"></p>
       <!-- Photo credit (author · licence · Commons), looked up from Wikimedia
-           Commons when the image opens (app.js loadImageCredit). -->
+           Commons when the image opens (src/app loadImageCredit). -->
       <p id="lightboxCredit" class="mt-1 text-[12px] leading-snug text-white/70 min-h-[1.25em]"></p>
     </figcaption>
   </figure>
@@ -466,7 +465,7 @@
 
 <!-- Suggest a stop: opened from the "Nothing matches" search state
      ([data-suggest-stop]). Submitting builds a mailto: link to
-     SUGGEST_EMAIL in app.js, so it needs no backend. -->
+     SUGGEST_EMAIL in src/app, so it needs no backend. -->
 <dialog id="suggestDialog" class="suggest-dialog w-[calc(100%-32px)] max-w-[440px] p-0 rounded-[18px] border border-rule bg-surface text-ink" aria-labelledby="suggestTitle">
   <form id="suggestForm" class="p-5 sm:p-6 flex flex-col gap-4" novalidate>
     <div class="flex items-start justify-between gap-4">
@@ -497,8 +496,9 @@
   </form>
 </dialog>
 
-<script src="data.js"></script>
-<script src="areas.js"></script>
-<script src="app.js"></script>
+<script defer src="data.js"></script>
+<script defer src="areas.js"></script>
+<!-- Built from src/app/ by `npm run build` (scripts/build-js.js). -->
+<script defer src="build/app.js"></script>
 </body>
 </html>

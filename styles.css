@@ -1,584 +1,68 @@
-  :root{
-    --ground:#0A0A0B; --surface:#161618; --raised:#1F1F22;
-    --ink:#F4F3EF; --muted:#A6A6AB; --faint:#6E6E74;
-    --rule:#2B2B2F; --plaque:#3358E0; --plaque-soft:#1C2748;
-    --verdigris:#15855A; --brass:#EFA935;
-    --tomato:#E1481C; --violet:#8636CC; --bubblegum:#E85C97; --marigold:#F2A400;
-    --focus:var(--marigold);
-    /* Pressed / active fill: a soft ink tint over the surface. Shared by the
-       Near you rows, the search field while in use, and outlined buttons. */
-    --press:color-mix(in srgb, var(--ink) 7%, var(--surface));
-    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -16px rgba(0,0,0,.9);
-    color-scheme:dark;
-  }
-  :root[data-theme="light"]{
-    --ground:#F5F5F1; --surface:#FFFFFF; --raised:#FFFFFF;
-    --ink:#131315; --muted:#5A5A60; --faint:#8C8C92;
-    --rule:#E1E0DA; --plaque-soft:#E4E9FB;
-    --brass:#A8730A;
-    --focus:var(--ink);
-    --shadow:0 1px 2px rgba(20,27,34,.05), 0 8px 24px -14px rgba(20,27,34,.22);
-    color-scheme:light;
-  }
-
-  /* Text selection in the brand orange (the route drawer and logo), with
-     dark text; inverted on the orange route panel itself so it still shows. */
-  ::selection{ background:var(--marigold); color:#171717; }
-  #routePanel ::selection{ background:#171717; color:var(--marigold); }
-  body{ background:var(--ground); color:var(--ink); font-family:Inter, Helvetica Neue, Arial, sans-serif; -webkit-font-smoothing:antialiased; transition:background-color .45s ease; }
-  .warface-logo-dark{ display:block; }
-  .warface-logo-light{ display:none; }
-  :root[data-theme="light"] .warface-logo-dark{ display:none; }
-  :root[data-theme="light"] .warface-logo-light{ display:block; }
-  /* Strip native control chrome so solid-colour buttons (route bar, cat
-     cards, route-toggle) render as a flat fill, not a native gradient */
-  button{ appearance:none !important; -webkit-appearance:none !important; background-image:none !important; }
-  h1,h2,h3{ text-wrap:balance; }
-  .num{ font-variant-numeric:tabular-nums; }
-  .eyebrow{ font-family:"Azeret Mono", ui-monospace, monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; }
-  /* The category pill on stop cards: the body font, small and bold. */
-  .eyebrow--cat{ font-family:Inter, "Helvetica Neue", Arial, sans-serif; font-size:9px; font-weight:600; }
-  .card-shadow{ box-shadow:var(--shadow); }
-  /* No border-radius override here — that used to hard-code a 3px radius
-     on every focused control, flattening pill/circle shapes (the search
-     box, icon buttons, chips) into a squared-off corner on focus. The
-     outline now just follows whatever radius the element already has. */
-  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, [tabindex]:focus-visible{
-    outline:2px solid var(--focus); outline-offset:2px;
-  }
-
-  /* Masthead: fixed to the top of the viewport, content scrolls underneath
-     it. Fixed rather than sticky so it holds in every browser (sticky is
-     at the mercy of ancestor overflow and mobile Safari quirks); body's
-     top padding reserves its space, using the height trackHeaderHeight()
-     in app.js measures, so nothing starts tucked under it. */
-  header{ position:fixed; top:0; left:0; right:0; z-index:30; background:var(--ground); transition:background-color .45s ease; }
-  body{ padding-top:var(--header-h, 84px); }
-
-  /* Leaflet's own CSS gives its panes/controls z-index values up to 1000,
-     which only stay below the sticky header (z-index:30) if the map
-     container itself establishes a stacking context — otherwise they
-     compete directly in the page's root stacking context and the zoom
-     controls/popups float above the header when scrolled underneath it. */
-  #areaMap, #routeMap{ position:relative; z-index:0; }
-
-  /* Stop cards: hairline separated, not stamped cards */
-  /* Distances (distHTML() in app.js): a hairline gap before the unit,
-     a touch wider in the monospaced lines where letters sit further apart. */
-  .dist{ white-space:nowrap; }
-  .dist-u{ margin-left:.09em; }
-  .font-mono .dist-u{ margin-left:.2em; }
-  #nearList .dist-u{ margin-left:.08em; } /* Near you: tighter still */
-  @media (max-width:639px){ #nearList .dist-u{ margin-left:0; } } /* Near you list on phones: no gap */
-  .stop{ background:var(--surface); border:1px solid var(--rule); border-radius:16px; }
-  .stop.flash{ animation:flash 1.6s ease-out; }
-  /* Narration playbar (playbarHTML() in app.js), under a route stop's name. */
-  .playbar{ display:flex; align-items:center; gap:8px; margin-top:8px; font-family:"Azeret Mono", ui-monospace, monospace; font-size:10px; line-height:1; color:var(--muted); }
-  .playbar[hidden]{ display:none; }
-  .playbar__track{ position:relative; flex:1; height:4px; border-radius:4px; background:var(--rule); cursor:pointer; touch-action:none; }
-  .playbar__track::before{ content:""; position:absolute; left:0; right:0; top:-8px; bottom:-8px; } /* bigger tap target */
-  .playbar__track:focus-visible{ outline:2px solid var(--ink); outline-offset:4px; }
-  .playbar__fill{ position:absolute; inset:0; border-radius:inherit; background:var(--ink); transform-origin:left center; }
-  /* On a stop card: a slim track with the elapsed time and the clip's
-     length to its right, floating in the card's bottom padding (cards have
-     a deeper bottom padding for it), so the card keeps its height. It fades and widens in when the
-     stop starts and out when it ends; the fill runs on the playbar's frame
-     loop, and it thickens under the pointer for seeking. */
-  .playbar.playbar--card{ position:absolute; left:20px; right:20px; bottom:14px; margin:0; display:flex; font-size:11px; gap:8px;
-    opacity:1; transform:scaleX(1); transition:opacity .35s ease, transform .45s cubic-bezier(.32,.72,0,1); }
-  .playbar.playbar--card[hidden]{ display:flex; opacity:0; transform:scaleX(.92); visibility:hidden; pointer-events:none;
-    transition:opacity .25s ease, transform .25s ease, visibility 0s linear .25s; }
-  .playbar--card .playbar__track{ order:-1; height:3px; transition:height .15s ease; }
-  /* Times sit together to the right of the track: "0:42 / 1:58". */
-  .playbar--card [data-pb-at]{ margin-left:4px; }
-  .playbar--card [data-pb-dur]{ margin-left:-4px; }
-  .playbar--card [data-pb-dur]::before{ content:"/ "; }
-  .playbar--card .playbar__track:hover, .playbar--card .playbar__track:focus-visible{ height:5px; }
-  @media (prefers-reduced-motion: reduce){ .playbar.playbar--card, .playbar.playbar--card[hidden]{ transition:none; } }
-  @keyframes flash{ 0%{ background:var(--plaque-soft);} 100%{ background:var(--surface); } }
-
-  /* Category filter chips: colour, icon, name and count all in one line —
-     compact, so they read as a quick filter row rather than a browsing
-     grid. Search results only (see renderChips in app.js) — home and area
-     pages use .cat-card below instead, regardless of screen size. */
-  .cat-chip{
-    display:inline-flex; align-items:center; gap:7px; flex:0 0 auto;
-    padding:8px 13px; border-radius:999px;
-    transition:transform .15s ease, filter .15s ease, box-shadow .15s ease;
-  }
-  .cat-chip__name{ font-weight:700; font-size:13px; line-height:1; white-space:nowrap; }
-  .cat-chip__count{ font-family:"Azeret Mono", ui-monospace, monospace; font-size:11px; opacity:.75; line-height:1; }
-  .cat-chip:hover{ transform:translateY(-1px); filter:brightness(1.06); }
-  .cat-chip:active{ transform:translateY(0); filter:brightness(.95); }
-  .cat-chip[aria-pressed="true"]{ box-shadow:0 0 0 2px var(--ground), 0 0 0 4px #fff; }
-
-  /* Category filter cards: colour, icon and name, like a small topic tile.
-     Home and area pages — search results use .cat-chip above instead. */
-  .cat-card{
-    display:flex; flex-direction:column; justify-content:space-between; gap:12px;
-    flex:0 0 auto; width:142px;
-    padding:13px 14px 14px; border-radius:18px; text-align:left;
-    transition:transform .15s ease, filter .15s ease, box-shadow .15s ease;
-  }
-  .cat-card__row{ display:flex; align-items:center; justify-content:space-between; gap:6px; }
-  .cat-card__icon{
-    width:32px; height:32px;
-    display:inline-flex; align-items:center; justify-content:center; flex-shrink:0;
-  }
-  .cat-card__count{ font-family:"Azeret Mono", ui-monospace, monospace; font-size:12px; opacity:.7; }
-  .cat-card__name{ font-weight:700; font-size:14px; line-height:1.2; letter-spacing:normal; text-transform:none; }
-  .cat-card:hover{ transform:translateY(-2px); filter:brightness(1.06); }
-  .cat-card:active{ transform:translateY(0); filter:brightness(.95); }
-  .cat-card[aria-pressed="true"]{ box-shadow:0 0 0 2px var(--ground), 0 0 0 4px #fff; transform:translateY(-2px); }
-  /* A category card whose own colour matches the active area's background
-     (see the matching loop in applyAreaFilter) would otherwise have no
-     visible edge against the page — outline it in the area's own ink
-     colour, same as the title/header use against that bg. */
-
-  /* Hide the scrollbar on horizontally-scrollable chip rows (#chips, #areaStickyRow) */
-  .scroll-hide{ -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none; }
-  .scroll-hide::-webkit-scrollbar{ display:none; }
-  @media (prefers-reduced-motion: reduce){
-    .cat-chip, .cat-card{ transition:none; }
-    .cat-chip:hover, .cat-chip[aria-pressed="true"],
-    .cat-card:hover, .cat-card[aria-pressed="true"]{ transform:none; }
-  }
-
-  /* Area chips: bold, oversized, 3 independently drifting rows on small screens */
-  .area-rows{ display:flex; flex-direction:column; gap:12px; }
-  .area-row-wrap{ width:100%; overflow:hidden; padding:6px 0; }
-  /* With JS (app.js area-chip marquee), each row is a swipeable strip and
-     the drift is done by scrolling it, so a swipe takes over at once. */
-  html.js-marquee .area-row-wrap{ overflow-x:auto; overscroll-behavior-x:contain; scrollbar-width:none; }
-  html.js-marquee .area-row-wrap::-webkit-scrollbar{ display:none; }
-  html.js-marquee .area-row-track{ animation:none !important; }
-  .area-row-track{ display:flex; flex-wrap:nowrap; width:max-content; }
-  .area-row{ display:flex; flex-wrap:nowrap; gap:12px; margin-right:12px; flex:0 0 auto; }
-  @keyframes areaMarqueeLeft{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
-  @keyframes areaMarqueeRight{ from{ transform:translateX(-50%); } to{ transform:translateX(0); } }
-  .area-row-track.marquee-left{ animation:areaMarqueeLeft 55s linear infinite; }
-  .area-row-track.marquee-right{ animation:areaMarqueeRight 55s linear infinite; }
-  .area-row-wrap:hover .area-row-track,
-  .area-row-wrap:active .area-row-track{ animation-play-state:paused; }
-  @media (min-width:640px){
-    .area-rows{ flex-direction:row; flex-wrap:wrap; }
-    .area-row-wrap{ width:auto; overflow:visible; display:contents; }
-    .area-row-track{ width:auto; display:contents; animation:none !important; }
-    .area-row{ display:contents; margin-right:0; }
-    .area-row-dup{ display:none !important; }
-  }
-  @media (prefers-reduced-motion: reduce){
-    .area-row-track{ animation:none !important; }
-  }
-  .area-chip{
-    font-family:Inter, Helvetica Neue, Arial, sans-serif;
-    font-weight:700;
-    font-size:18px;
-    line-height:1;
-    white-space:nowrap;
-    padding:20px 30px;
-    border-radius:999px;
-    transition:transform .15s ease, filter .15s ease;
-  }
-  .area-chip:hover{ transform:translateY(-2px); filter:brightness(1.08); }
-  .area-chip:active{ transform:translateY(0); filter:brightness(.94); }
-  @media (prefers-reduced-motion: reduce){
-    .area-chip{ transition:none; }
-    .area-chip:hover{ transform:none; }
-  }
-
-  /* Sticky area nav: appears docked under the header once the big area
-     chips above have scrolled out of view; one user-scrollable row */
-  /* Hidden, it's tucked up behind the header (which sits above it, z 30);
-     shown, it slides down into place, and back up when hidden again.
-     visibility keeps the hidden chips out of the tab order. */
-  #areaStickyBar{
-    position:fixed; top:var(--header-h, 84px); left:0; right:0; z-index:20;
-    background:var(--ground); border-bottom:1px solid var(--rule);
-    transform:translateY(-100%); visibility:hidden;
-    transition:transform .32s cubic-bezier(.32,.72,0,1), visibility 0s linear .32s, background-color .45s ease;
-  }
-  #areaStickyBar.is-shown{
-    transform:none; visibility:visible;
-    transition:transform .32s cubic-bezier(.32,.72,0,1), visibility 0s, background-color .45s ease;
-  }
-  @media (prefers-reduced-motion: reduce){ #areaStickyBar, #areaStickyBar.is-shown{ transition:none; } }
-  #areaStickyRow{
-    padding-left:max(20px, calc((100vw - 1280px) / 2 + 20px)); padding-right:20px;
-  }
-  @media (min-width:640px){
-    #areaStickyRow{ padding-left:max(32px, calc((100vw - 1280px) / 2 + 32px)); padding-right:32px; }
-  }
-  .area-chip--compact{ padding:9px 18px; font-size:14px; flex:0 0 auto; }
-
-  /* Area cards: the big-card take on .area-chip (same per-area colours),
-     with the area's stop count and a breakdown by category. Shown on the
-     Discover page as a horizontal carousel, like the homepage's stops
-     (#homeList) — the full-bleed track itself is set up alongside
-     #homeList below. Cards in a row stretch to the tallest one. */
-  .area-cards{ display:flex; flex-wrap:nowrap; gap:16px; overflow-x:auto; padding-top:4px; padding-bottom:8px; min-width:0; }  /* Below lg the cards go wide and short: nearly full-width on phones (the
-     next card still peeks in), tighter padding/gaps, and a 2-line
-     description — so the row takes far less of a small screen's height.
-     lg+ gets the roomier spacing and the full description back. */
-  .area-card{
-    flex:0 0 auto; width:min(calc(100vw - 60px), 420px);
-    display:flex; flex-direction:column; gap:12px; text-align:left;
-    padding:18px 20px 20px; border-radius:22px;
-    transition:transform .15s ease, filter .15s ease;
-  }
-  @media (min-width:640px){ .area-card{ width:440px; } }
-  @media (min-width:1024px){ .area-card{ width:480px; gap:16px; padding:22px 24px 24px; } }
-  .area-card:hover{ transform:translateY(-2px); filter:brightness(1.08); }
-  .area-card:active{ transform:translateY(0); filter:brightness(.94); }
-  .area-card__img{
-    display:block; width:100%; height:180px; object-fit:cover;
-    border-radius:14px; background:var(--raised);
-  }
-  .area-card__desc{
-    font-family:Newsreader, Georgia, serif; font-size:17px; line-height:1.45; opacity:.9; margin-top:-4px;
-    display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden;
-  }
-  @media (min-width:1024px){ .area-card__desc{ display:block; -webkit-line-clamp:unset; margin-top:-6px; } }
-  /* Name on its own line, stop count beneath — side by side, the big name
-     ran into the count on longer areas ("Blackheath", "Honor Oak"). */
-  .area-card__head{ display:flex; flex-direction:column; align-items:flex-start; gap:6px; }
-  .area-card__name{ font-family:"Gasoek One", Inter, sans-serif; font-size:36px; line-height:1; letter-spacing:-0.015em; }
-  @media (min-width:640px){ .area-card__name{ font-size:40px; } }
-  @media (min-width:1024px){ .area-card__head{ gap:8px; } .area-card__name{ font-size:46px; } }
-  .area-card__total{ font-family:"Azeret Mono", ui-monospace, monospace; font-size:12px; font-weight:600; opacity:.75; white-space:nowrap; }
-  /* Category breakdown: each category as a pill, wrapping onto as many
-     lines as it needs. Tinted from the card's own text colour so it reads
-     on every area colour, light or dark. */
-  .area-card__cats{ display:flex; flex-wrap:wrap; gap:6px; font-size:13px; font-weight:600; line-height:1.2; }
-  .area-card__cat{
-    display:flex; align-items:center; gap:6px; padding:6px 11px 6px 9px; border-radius:999px;
-    background:color-mix(in srgb, currentColor 14%, transparent);
-  }
-  .area-card__cat svg{ flex:0 0 auto; opacity:.85; }
-  .area-card__n{ font-family:"Azeret Mono", ui-monospace, monospace; font-size:12px; }
-  @media (prefers-reduced-motion: reduce){
-    .area-card{ transition:none; }
-    .area-card:hover{ transform:none; }
-  }
-  /* Room for the sticky header so scrolling search results into view
-     doesn't land with the category cards tucked behind it. Just the
-     header, not the sticky area nav bar too — #areaChips is hidden during
-     a search (see setHomeFurnitureHidden), so that bar never triggers
-     here. Lives on #chips, not #resultCount below it — scrolling to
-     #resultCount left #chips's own height unaccounted for, landing with
-     the category cards clipped off above the fold. */
-  #chips{ scroll-margin-top:calc(var(--header-h, 84px) + 12px); }
-
-  /* Homepage teaser row: break out of <main>'s max-w-[1280px] cap so the
-     scroll track uses the full window width on wide screens (same technique
-     as #areaStickyRow), while resting-position alignment still matches the
-     rest of the page content via the calculated left padding. The
-     Discover page's area-card carousel and the area pages' per-category
-     rows share the same track. */
-  #homeList, #discoverAreas, .area-cat-row{
-    margin-left:calc(0px - max(20px, (100vw - 1280px) / 2 + 20px));
-    margin-right:calc(0px - max(20px, (100vw - 1280px) / 2 + 20px));
-    padding-left:max(20px, calc((100vw - 1280px) / 2 + 20px)); padding-right:20px;
-  }
-  @media (min-width:640px){
-    #homeList, #nearList, #discoverAreas, .area-cat-row{
-      margin-left:calc(0px - max(32px, (100vw - 1280px) / 2 + 32px));
-      margin-right:calc(0px - max(32px, (100vw - 1280px) / 2 + 32px));
-      padding-left:max(32px, calc((100vw - 1280px) / 2 + 32px)); padding-right:32px;
-    }
-  }
-
-  /* Area hero: shown when an area page is active */
-  /* Line-height scales via its own clamp, not a fixed ratio of font-size —
-     a flat multiplier looks fine at the small end but leaves almost no
-     breathing room above the description once the title is near its
-     140px ceiling. This clamp holds roughly the same ratio as font-size
-     at phone widths, then opens up faster than font-size grows. The
-     150px ceiling is sized to the font's own worst case — a word with a
-     descender (e.g. "Bexleyheath") still gets clear breathing room below
-     it — rather than to a plain multiple of font-size, which would leave
-     an oversized gap under titles with no descenders at all (e.g. "Honor
-     Oak"). The line-height ceiling is reached around a 1094px viewport,
-     a bit before font-size hits its own 140px ceiling at ~1273px; both
-     stay flat beyond that, on any laptop-or-wider screen. */
-  #areaHero #areaHeroTitle{
-    font-size:clamp(52px, 11vw, 140px);
-    line-height:clamp(44px, 17vw - 36px, 150px);
-  }
-
-  /* One of the route's stops playing (html.narrating, set in app.js
-     syncRoutePlaying): the Your route button inverts and shows a speaker,
-     and the mobile route bar shows one too. */
-  .route-speaker{ display:none; }
-  /* Route header while one of its stops plays: the stop's name (with the
-     speaker) replaces the stop count / distance summary. */
-  .route-now-playing{ display:none; }
-  html.narrating p.route-now-playing{ display:flex; }
-  html.narrating span.route-now-playing{ display:block; }
-  html.narrating .route-summary{ display:none; }
-  html.narrating .route-speaker{ display:block; }
-  /* Sound waves pulse outward: the inner one fades in, then the outer,
-     then both fade out together. */
-  html.narrating .route-speaker .speaker-wave{ animation:speaker-wave 1.6s ease-in-out infinite; }
-  html.narrating .route-speaker .speaker-wave--2{ animation-name:speaker-wave-outer; }
-  @keyframes speaker-wave{ 0%{opacity:0} 25%,70%{opacity:1} 100%{opacity:0} }
-  @keyframes speaker-wave-outer{ 0%,20%{opacity:0} 45%,70%{opacity:1} 100%{opacity:0} }
-  @media (prefers-reduced-motion: reduce){
-    html.narrating .route-speaker .speaker-wave{ animation:none; }
-  }
-  /* Once the route has stops (app.js renderRoute), the header button takes
-     the route's orange, with its count badge flipped to black so it still
-     shows. Playing a route stop overrides this with the inverted look below. */
-  html:not(.narrating) header #routeHeaderBtn.has-stops{ background:var(--marigold); border-color:var(--marigold); color:#171717; }
-  html:not(.narrating) header #routeHeaderBtn.has-stops:hover{ filter:brightness(1.06); }
-  html:not(.narrating) #routeHeaderBtn.has-stops #routeHeaderCount{ background:#171717; color:var(--marigold); }
-  html.narrating header #routeHeaderBtn,
-  html.narrating header #routeHeaderBtn:hover{
-    background:var(--ink);
-    border-color:var(--ink);
-    color:var(--ground);
-  }
-
-  #resultCount{ font-size:13px; }
-  #nearYou{ scroll-margin-top:calc(var(--header-h, 84px) + 16px); }
-  /* Near you rows (phones): tapping the row slides the short description
-     open beneath the name, and closed again. */
-  .near-desc{ display:grid; grid-template-rows:0fr; visibility:hidden;
-    transition:grid-template-rows .3s cubic-bezier(.32,.72,0,1), visibility 0s linear .3s; }
-  .near-desc > div{ overflow:hidden; min-height:0; }
-  .near-row.is-open .near-desc, .route-row.is-open .near-desc{ grid-template-rows:1fr; visibility:visible; transition-delay:0s; }
-  /* Your route rows open the same way (app.js renderRoute). */
-  .route-row{ cursor:pointer; -webkit-tap-highlight-color:transparent; transition:background-color .25s ease; }
-  /* Open, the row's bottom padding goes so the description sits close
-     under the location line (it's indented past the thumbnail, so the
-     two never collide). Eased with the description's own opening. */
-  .route-row > .flex{ transition:padding-bottom .3s cubic-bezier(.32,.72,0,1); }
-  .route-row.is-open > .flex{ padding-bottom:0; }
-  @media (prefers-reduced-motion: reduce){ .route-row > .flex{ transition:none; } }
-  /* Pressed: a faint white wash over the orange panel (subtler than the
-     ⋯ button's), landing at once and fading on release. */
-  .route-row.is-pressed{ background-color:rgba(255,255,255,.18); transition-duration:0s; }
-  .near-row{ cursor:pointer; -webkit-tap-highlight-color:transparent; transition:background-color .25s ease; }
-  /* Pressed (set from app.js while a finger or mouse is down on the row,
-     not on its thumbnail, Listen or add button): a soft ink tint that
-     lands at once and fades out on release. */
-  .near-row.is-pressed{ background-color:var(--press); transition-duration:0s; }
-  /* The search field takes the same fill while it's in use. */
-  #search{ transition:background-color .2s ease; }
-  #search:focus{ background-color:var(--press); }
-  /* Outlined buttons (Add to route, the round add, search, theme, Near
-     you, Save as GPX…): the same fill while pressed. Not the Listen
-     play/pause buttons ([data-listen]), which keep their own colours. */
-  button.border-rule:not([data-listen]){ -webkit-tap-highlight-color:transparent; transition-property:color, background-color, border-color; }
-  button.border-rule:not([data-listen]):not(:disabled):active{ background-color:var(--press); transition-duration:0s; }
-  @media (prefers-reduced-motion: reduce){ .near-desc{ transition:none; } }
-  /* Phones: the stop count sits close above the first postcode group —
-     the first divider drops the top padding that spaces later groups. */
-  @media (max-width:639px){ #list > .pc-group-divider:first-child{ padding-top:0; } }
-  /* Area pages, large screens only (for now): stops as one carousel per
-     category (#areaRows) in place of the single grouped list (#list).
-     Below lg, and on search results, #list is used as before. */
-  #areaRows{ display:none; }
-  #list, #areaRows{ scroll-margin-top:calc(var(--header-h, 84px) + 16px); }
-  @media (min-width:1024px){
-    html.area-active #list{ display:none; }
-    html.area-active #areaRows{ display:flex; flex-direction:column; gap:40px; }
-  }
-
-  /* Your route: one subtle grey dashed line joining the green stop
-     numbers, placed behind them by positionRouteLine() in app.js. The
-     dashes are a striped background, not a dashed border: WebKit (every
-     iOS browser) doesn't paint a dashed border this thin at all. */
-  #routeList{ position:relative; }
-  .route-line{
-    position:absolute; width:1.5px; pointer-events:none;
-    background:repeating-linear-gradient(to bottom, #8E8E93 0 4.5px, transparent 4.5px 9px);
-  }
-  .route-line[hidden]{ display:none; }
-
-  /* Your route: branded orange background, with the panel's own text,
-     rules and tiles re-tuned to read against it rather than the theme */
-  #routePanel{
-    background:var(--marigold); border-color:var(--marigold); color:#171717;
-    --ink:#171717; --muted:rgba(23,23,23,.7); --faint:rgba(23,23,23,.5);
-    --rule:rgba(23,23,23,.2); --surface:rgba(255,255,255,.4);
-    --focus:#171717;
-  }
-
-  /* Icon-button tooltips (data-tooltip; see app.js). Above the route
-     panel (60) and its ⋯ menu (70). */
-  #tooltip{
-    position:fixed; z-index:80; pointer-events:none;
-    padding:5px 9px; border-radius:7px;
-    background:#F4F3EF; color:#171717;
-    font:600 12px/1.2 Inter, "Helvetica Neue", Arial, sans-serif; white-space:nowrap;
-    box-shadow:0 6px 18px -6px rgba(0,0,0,.5);
-    opacity:0; transform:translateY(2px); transition:opacity .12s ease, transform .12s ease;
-  }
-  #tooltip[hidden]{ display:none; }
-  #tooltip.is-on{ opacity:1; transform:none; }
-  @media (prefers-reduced-motion: reduce){ #tooltip{ transition:none; } }
-  /* A route stop's ⋯ menu (openRouteMenu() in app.js). Lives in <body>,
-     so it's styled outright rather than from the panel's tokens. */
-  #routeItemMenu{
-    position:fixed; z-index:70; min-width:168px; padding:6px;
-    background:#171717; color:#fff; border-radius:14px;
-    box-shadow:0 12px 32px -8px rgba(0,0,0,.45);
-  }
-  #routeItemMenu[hidden]{ display:none; }
-  #routeItemMenu button{
-    display:flex; align-items:center; gap:10px; width:100%;
-    padding:9px 10px; border-radius:9px; text-align:left;
-    font-size:14px; font-weight:600;
-  }
-  #routeItemMenu button:hover:not([disabled]), #routeItemMenu button:focus-visible{ background:rgba(255,255,255,.1); outline:none; }
-  #routeItemMenu button[disabled]{ opacity:.35; cursor:default; }
-  #routeItemMenu button[data-toggle]{ color:var(--marigold); }
-  /* A route stop that's playing: its Pause button inverts to black with an
-     orange icon (aria-pressed is kept in sync by syncListenButtons()). */
-  /* A playing stop's Pause button inverts: filled in the text colour (white
-     on the dark theme) with the icon in the background colour. The route
-     panel keeps its own black-and-orange version below. */
-  [data-listen][aria-pressed="true"]{ background:var(--ink); border-color:var(--ink); color:var(--ground); }
-  #routePanel [data-listen][aria-pressed="true"]{ background:#171717; border-color:#171717; color:#fff; }
-  /* Play button hover: the colours invert — a filled circle in the text
-     colour with the icon in the background colour (black with a white
-     icon on the route panel and light theme; light with a dark icon on
-     the dark theme). Pointer devices only, so it doesn't stick on touch. */
-  @media (hover:hover){
-    [data-listen][aria-pressed="false"]:hover{ background:var(--ink); border-color:var(--ink); color:var(--ground); }
-    #routePanel [data-listen][aria-pressed="false"]:hover{ color:#fff; }
-  }
-  /* Your route: list or map. #routePanel carries the current view in
-     data-view (setRouteView() in app.js); the map fills the space the
-     list would otherwise scroll in. The Map toggle by the panel's
-     chevron has the Listen buttons' outline, inverted while the map is showing. */
-  .route-map-toggle{ border:1px solid var(--rule); color:var(--ink); transition:border-color .15s; }
-  .route-map-toggle:hover{ border-color:var(--ink); }
-  .route-map-toggle:not(.hidden){ display:inline-flex; }
-  /* Desktop header version: the quieter outline of the header's buttons. */
-  .route-map-toggle--quiet{ border:1px solid var(--rule); color:var(--muted); }
-  .route-map-toggle--quiet:hover{ border-color:var(--ink); color:var(--ink); }
-  .route-map-toggle[aria-pressed="true"]{ background:#171717; border-color:#171717; color:var(--marigold); }
-  #routePanel[data-view="list"] #routeMap{ display:none; }
-  #routePanel[data-view="map"] #routeList{ display:none; }
-  #routeMap{ height:min(42vh, 380px); }
-  /* Phones: never shorter than the list view was (less the map's 12px top
-     margin), so a drawer the stops have filled to its max height keeps
-     that height in map view. --route-list-h is set by app.js. */
-  @media (max-width:1023px){
-    #routeMap{ height:max(min(42vh, 380px), calc(var(--route-list-h, 0px) - 12px)); }
-  }
-  /* The incoming view fades up as the drawer resizes (animateRouteViewChange()) */
-  #routeScroll.route-view-enter > #routeMap, #routeScroll.route-view-enter > #routeList{ animation:route-view-in .32s ease-out both; }
-  @keyframes route-view-in{ from{ opacity:0; transform:translateY(6px); } to{ opacity:1; transform:none; } }
-  @media (min-width:1024px){ #routeMap{ height:calc(100vh - var(--header-h, 84px) - 420px); min-height:260px; max-height:420px; } }
-
-  /* Route sheet on small screens */
-  #routePanel{ transition:transform .34s cubic-bezier(.32,.72,0,1), visibility 0s linear .34s; }
-  @media (max-width:1023px){
-    /* The panel itself never moves or hides — only #routePanelBody's own
-       height animates, with #routeBar (the summary row, always visible)
-       staying in place throughout. Closed, the panel's visible height is
-       just #routeBar's natural height; open, #routePanelBody expands
-       below it. This is what makes it read as one component whose
-       content changes, rather than a second sheet sliding in over the
-       closed bar — the previous version translated the whole #routePanel
-       up from off-screen, so it visually arrived as a new surface
-       landing on top of #routeBar instead of growing out of it. */
-    #routePanel{
-      position:fixed; left:0; right:0; bottom:0; z-index:60;
-      max-height:84vh;
-      border-radius:22px 22px 0 0; border-bottom:0;
-      box-shadow:0 -20px 50px -12px rgba(0,0,0,.35);
-    }
-    /* Closed body is collapsed but stays in the DOM — without
-       visibility:hidden its buttons/links stayed in the tab order and
-       screen-reader tree while invisible. visibility:visible has no delay
-       so content appears the instant the sheet starts opening. */
-    #routePanelBody{
-      max-height:0; overflow:hidden; visibility:hidden;
-      transition:max-height .45s cubic-bezier(.32,.72,0,1), visibility 0s linear .45s;
-    }
-    /* Open, the body tucks up into #routeBar's bottom padding, so the
-       stops start closer under the "5 stops" summary. */
-    html.route-open #routePanelBody{
-      margin-top:-14px;
-      max-height:80vh; visibility:visible;
-      transition:max-height .45s cubic-bezier(.32,.72,0,1);
-    }
-    /* The contents fade in just behind the drawer opening, and out quickly
-       as it closes. */
-    #routePanelBody > *{ opacity:0; transition:opacity .15s ease; }
-    html.route-open #routePanelBody > *{ opacity:1; transition:opacity .35s ease .1s; }
-    /* No classic scrollbar on touch-sized screens: it took 10px from the
-       list's width, so the stops sat off-centre and could shift sideways. */
-    #routeScroll{ scrollbar-width:none; overscroll-behavior-y:contain; }
-    #routeScroll::-webkit-scrollbar{ display:none; }
-    /* Bottom-sheet drag handle and drag area (app.js, sheet drag). No
-       touch-action, so a vertical swipe moves the sheet, not the page. */
-    #routeSheetHead{ touch-action:none; }
-    .route-handle{
-      position:absolute; top:7px; left:50%; transform:translateX(-50%);
-      width:36px; height:4px; border-radius:4px;
-      background:currentColor; opacity:.3; pointer-events:none;
-    }
-    #routeBar{ padding-top:16px; }
-    /* Mid-drag: the body follows the finger (inline max-height from app.js)
-       with its contents shown and no easing. */
-    html.route-dragging #routePanelBody{ visibility:visible; transition:none; }
-    html.route-dragging #routePanelBody > *{ opacity:1; transition:none; }
-    #scrim{ display:none; }
-    html.route-open #scrim{ display:block; }
-  }
-  @media (min-width:1024px){
-    #scrim, #routeBar{ display:none !important; }
-    /* Closed by default: a dropdown menu anchored under #routeHeaderBtn,
-       not a permanent sidebar column. Toggled via html.route-open (see
-       openSheet() in app.js), the same state the mobile sheet uses. */
-    #routePanel{
-      position:fixed; z-index:60;
-      /* Just under #routeHeaderBtn, right edges aligned (measured in
-         app.js trackHeaderHeight; the fallbacks are the old position). */
-      top:calc(var(--route-btn-bottom, calc(var(--header-h, 84px) + 4px)) + 8px);
-      right:var(--route-btn-right, max(20px, calc((100vw - 1280px) / 2 + 20px)));
-      width:380px; max-width:calc(100vw - 40px);
-      max-height:calc(100vh - var(--route-btn-bottom, var(--header-h, 84px)) - 24px);
-      transform-origin:top right;
-      opacity:0; visibility:hidden; transform:translateY(-8px) scale(.98);
-      box-shadow:0 20px 50px -12px rgba(0,0,0,.35);
-      transition:opacity .16s ease, transform .16s ease, visibility 0s linear .16s;
-    }
-    html.route-open #routePanel{
-      opacity:1; visibility:visible; transform:translateY(0) scale(1);
-      transition:opacity .16s ease, transform .16s ease;
-    }
-  }
-  @media (prefers-reduced-motion: reduce){
-    #routePanel, #routePanelBody, #routePanelBody > *{ transition:none; }
-    #routeScroll.route-view-enter > *{ animation:none; }
-    .stop.flash{ animation:none; }
-  }
-
-/* Suggest a stop dialog (index.html #suggestDialog). Native <dialog>, so
-   Escape and the focus trap come free; this only styles it. */
-.suggest-dialog{ margin:auto; max-height:calc(100dvh - 32px); box-shadow:var(--shadow); }
-.suggest-dialog::backdrop{ background:rgba(0,0,0,.6); }
-.suggest-input{
-  width:100%; background:var(--raised); color:var(--ink);
-  border:1px solid var(--rule); border-radius:12px;
-  padding:10px 14px; font-size:16px; line-height:1.4;
+:root{
+  /* Near-black for text and fills on the bright colours (orange route
+     panel, marigold/brass chips); the same in both themes. */
+  --ink-dark:#171717;
+  --ground:#0A0A0B; --surface:#161618; --raised:#1F1F22;
+  --ink:#F4F3EF; --muted:#A6A6AB; --faint:#6E6E74;
+  --rule:#2B2B2F; --plaque:#3358E0; --plaque-soft:#1C2748;
+  --verdigris:#15855A; --brass:#EFA935;
+  --tomato:#E1481C; --violet:#8636CC; --bubblegum:#E85C97; --marigold:#F2A400;
+  --focus:var(--marigold);
+  /* Pressed / active fill: a soft ink tint over the surface. Shared by the
+     Near you rows, the search field while in use, and outlined buttons. */
+  --press:color-mix(in srgb, var(--ink) 7%, var(--surface));
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -16px rgba(0,0,0,.9);
+  color-scheme:dark;
 }
-.suggest-input::placeholder{ color:var(--faint); }
-.suggest-input:focus{ outline:2px solid var(--focus); outline-offset:1px; border-color:transparent; }
-.suggest-input[aria-invalid="true"]{ border-color:var(--tomato); }
-@media (min-width:640px){ .suggest-input{ font-size:14px; } }
-
-/* Mobile Your route: no rule between the stops and Open in Maps until the
-   stops actually scroll (app.js updateRouteScrollable sets .is-scrollable). */
-@media (max-width:1023px){
-  #routeActions:not(.is-scrollable){ border-top-color:transparent; }
+:root[data-theme="light"]{
+  --ground:#F5F5F1; --surface:#FFFFFF; --raised:#FFFFFF;
+  --ink:#131315; --muted:#5A5A60; --faint:#8C8C92;
+  --rule:#E1E0DA; --plaque-soft:#E4E9FB;
+  --brass:#A8730A;
+  --focus:var(--ink);
+  --shadow:0 1px 2px rgba(20,27,34,.05), 0 8px 24px -14px rgba(20,27,34,.22);
+  color-scheme:light;
 }
+
+/* Text selection in the brand orange (the route drawer and logo), with
+   dark text; inverted on the orange route panel itself so it still shows. */
+::selection{ background:var(--marigold); color:var(--ink-dark); }
+#routePanel ::selection{ background:var(--ink-dark); color:var(--marigold); }
+body{ background:var(--ground); color:var(--ink); font-family:Inter, Helvetica Neue, Arial, sans-serif; -webkit-font-smoothing:antialiased; transition:background-color .45s ease; }
+.warface-logo-dark{ display:block; }
+.warface-logo-light{ display:none; }
+:root[data-theme="light"] .warface-logo-dark{ display:none; }
+:root[data-theme="light"] .warface-logo-light{ display:block; }
+/* Strip native control chrome so solid-colour buttons (route bar, cat
+   cards, route-toggle) render as a flat fill, not a native gradient */
+button{ appearance:none !important; -webkit-appearance:none !important; background-image:none !important; }
+h1,h2,h3{ text-wrap:balance; }
+.num{ font-variant-numeric:tabular-nums; }
+.eyebrow{ font-family:"Azeret Mono", ui-monospace, monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; }
+/* The category pill on stop cards: the body font, small and bold. */
+.eyebrow--cat{ font-family:Inter, "Helvetica Neue", Arial, sans-serif; font-size:9px; font-weight:600; }
+/* No border-radius override here — that used to hard-code a 3px radius
+   on every focused control, flattening pill/circle shapes (the search
+   box, icon buttons, chips) into a squared-off corner on focus. The
+   outline now just follows whatever radius the element already has. */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, [tabindex]:focus-visible{
+  outline:2px solid var(--focus); outline-offset:2px;
+}
+
+/* Masthead: fixed to the top of the viewport, content scrolls underneath
+   it. Fixed rather than sticky so it holds in every browser (sticky is
+   at the mercy of ancestor overflow and mobile Safari quirks); body's
+   top padding reserves its space, using the height trackHeaderHeight()
+   in src/app measures, so nothing starts tucked under it. */
+header{ position:fixed; top:0; left:0; right:0; z-index:30; background:var(--ground); transition:background-color .45s ease; }
+body{ padding-top:var(--header-h, 84px); }
+
+/* Leaflet's own CSS gives its panes/controls z-index values up to 1000,
+   which only stay below the sticky header (z-index:30) if the map
+   container itself establishes a stacking context — otherwise they
+   compete directly in the page's root stacking context and the zoom
+   controls/popups float above the header when scrolled underneath it. */
+#areaMap, #routeMap{ position:relative; z-index:0; }
 
 /* Stop thumbnail placeholder (no image, or it failed to load): a quiet
    raised tile with the wordmark's looped "a" (from WALKIE): oversized,
@@ -589,6 +73,320 @@
   position:absolute; height:112%; width:auto; left:50%; top:-2%; transform:translateX(-50%);
   opacity:.09; pointer-events:none;
 }
+
+/* Stop cards: hairline separated, not stamped cards */
+/* Distances (distHTML() in src/app): a hairline gap before the unit,
+   a touch wider in the monospaced lines where letters sit further apart. */
+.dist{ white-space:nowrap; }
+.dist-u{ margin-left:.09em; }
+.font-mono .dist-u{ margin-left:.2em; }
+#nearList .dist-u{ margin-left:.08em; } /* Near you: tighter still */
+@media (max-width:639px){ #nearList .dist-u{ margin-left:0; } } /* Near you list on phones: no gap */
+.stop{ background:var(--surface); border:1px solid var(--rule); border-radius:16px; }
+.stop.flash{ animation:flash 1.6s ease-out; }
+/* Narration playbar (playbarHTML() in src/app), under a route stop's name. */
+.playbar{ display:flex; align-items:center; gap:8px; margin-top:8px; font-family:"Azeret Mono", ui-monospace, monospace; font-size:10px; line-height:1; color:var(--muted); }
+.playbar[hidden]{ display:none; }
+.playbar__track{ position:relative; flex:1; height:4px; border-radius:4px; background:var(--rule); cursor:pointer; touch-action:none; }
+.playbar__track::before{ content:""; position:absolute; left:0; right:0; top:-8px; bottom:-8px; } /* bigger tap target */
+.playbar__track:focus-visible{ outline:2px solid var(--ink); outline-offset:4px; }
+.playbar__fill{ position:absolute; inset:0; border-radius:inherit; background:var(--ink); transform-origin:left center; }
+/* On a stop card: a slim track with the elapsed time and the clip's
+   length to its right, floating in the card's bottom padding (cards have
+   a deeper bottom padding for it), so the card keeps its height. It fades and widens in when the
+   stop starts and out when it ends; the fill runs on the playbar's frame
+   loop, and it thickens under the pointer for seeking. */
+.playbar.playbar--card{ position:absolute; left:20px; right:20px; bottom:14px; margin:0; display:flex; font-size:11px; gap:8px;
+  opacity:1; transform:scaleX(1); transition:opacity .35s ease, transform .45s cubic-bezier(.32,.72,0,1); }
+.playbar.playbar--card[hidden]{ display:flex; opacity:0; transform:scaleX(.92); visibility:hidden; pointer-events:none;
+  transition:opacity .25s ease, transform .25s ease, visibility 0s linear .25s; }
+.playbar--card .playbar__track{ order:-1; height:3px; transition:height .15s ease; }
+/* Times sit together to the right of the track: "0:42 / 1:58". */
+.playbar--card [data-pb-at]{ margin-left:4px; }
+.playbar--card [data-pb-dur]{ margin-left:-4px; }
+.playbar--card [data-pb-dur]::before{ content:"/ "; }
+.playbar--card .playbar__track:hover, .playbar--card .playbar__track:focus-visible{ height:5px; }
+@media (prefers-reduced-motion: reduce){ .playbar.playbar--card, .playbar.playbar--card[hidden]{ transition:none; } }
+@keyframes flash{ 0%{ background:var(--plaque-soft);} 100%{ background:var(--surface); } }
+
+/* Category filter chips: colour, icon, name and count all in one line —
+   compact, so they read as a quick filter row rather than a browsing
+   grid. Search results only (see renderChips in src/app) — home and area
+   pages use .cat-card below instead, regardless of screen size. */
+.cat-chip{
+  display:inline-flex; align-items:center; gap:7px; flex:0 0 auto;
+  padding:8px 13px; border-radius:999px;
+  transition:transform .15s ease, filter .15s ease, box-shadow .15s ease;
+}
+.cat-chip__name{ font-weight:700; font-size:13px; line-height:1; white-space:nowrap; }
+.cat-chip__count{ font-family:"Azeret Mono", ui-monospace, monospace; font-size:11px; opacity:.75; line-height:1; }
+.cat-chip:hover{ transform:translateY(-1px); filter:brightness(1.06); }
+.cat-chip:active{ transform:translateY(0); filter:brightness(.95); }
+.cat-chip[aria-pressed="true"]{ box-shadow:0 0 0 2px var(--ground), 0 0 0 4px #fff; }
+
+/* Category filter cards: colour, icon and name, like a small topic tile.
+   Home and area pages — search results use .cat-chip above instead. */
+.cat-card{
+  display:flex; flex-direction:column; justify-content:space-between; gap:12px;
+  flex:0 0 auto; width:142px;
+  padding:13px 14px 14px; border-radius:18px; text-align:left;
+  transition:transform .15s ease, filter .15s ease, box-shadow .15s ease;
+}
+.cat-card__row{ display:flex; align-items:center; justify-content:space-between; gap:6px; }
+.cat-card__icon{
+  width:32px; height:32px;
+  display:inline-flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.cat-card__count{ font-family:"Azeret Mono", ui-monospace, monospace; font-size:12px; opacity:.7; }
+.cat-card__name{ font-weight:700; font-size:14px; line-height:1.2; letter-spacing:normal; text-transform:none; }
+.cat-card:hover{ transform:translateY(-2px); filter:brightness(1.06); }
+.cat-card:active{ transform:translateY(0); filter:brightness(.95); }
+.cat-card[aria-pressed="true"]{ box-shadow:0 0 0 2px var(--ground), 0 0 0 4px #fff; transform:translateY(-2px); }
+/* A category card whose own colour matches the active area's background
+   (see the matching loop in applyAreaFilter) would otherwise have no
+   visible edge against the page — outline it in the area's own ink
+   colour, same as the title/header use against that bg. */
+
+/* Hide the scrollbar on horizontally-scrollable chip rows (#chips, #areaStickyRow) */
+.scroll-hide{ -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none; }
+.scroll-hide::-webkit-scrollbar{ display:none; }
+@media (prefers-reduced-motion: reduce){
+  .cat-chip, .cat-card{ transition:none; }
+  .cat-chip:hover, .cat-chip[aria-pressed="true"],
+  .cat-card:hover, .cat-card[aria-pressed="true"]{ transform:none; }
+}
+
+/* Area chips: bold, oversized, 3 independently drifting rows on small screens */
+.area-rows{ display:flex; flex-direction:column; gap:12px; }
+.area-row-wrap{ width:100%; overflow:hidden; padding:6px 0; }
+/* With JS (src/app area-chip marquee), each row is a swipeable strip and
+   the drift is done by scrolling it, so a swipe takes over at once. */
+html.js-marquee .area-row-wrap{ overflow-x:auto; overscroll-behavior-x:contain; scrollbar-width:none; }
+html.js-marquee .area-row-wrap::-webkit-scrollbar{ display:none; }
+html.js-marquee .area-row-track{ animation:none !important; }
+.area-row-track{ display:flex; flex-wrap:nowrap; width:max-content; }
+.area-row{ display:flex; flex-wrap:nowrap; gap:12px; margin-right:12px; flex:0 0 auto; }
+@keyframes areaMarqueeLeft{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+@keyframes areaMarqueeRight{ from{ transform:translateX(-50%); } to{ transform:translateX(0); } }
+.area-row-track.marquee-left{ animation:areaMarqueeLeft 55s linear infinite; }
+.area-row-track.marquee-right{ animation:areaMarqueeRight 55s linear infinite; }
+.area-row-wrap:hover .area-row-track,
+.area-row-wrap:active .area-row-track{ animation-play-state:paused; }
+@media (min-width:640px){
+  .area-rows{ flex-direction:row; flex-wrap:wrap; }
+  .area-row-wrap{ width:auto; overflow:visible; display:contents; }
+  .area-row-track{ width:auto; display:contents; animation:none !important; }
+  .area-row{ display:contents; margin-right:0; }
+  .area-row-dup{ display:none !important; }
+}
+@media (prefers-reduced-motion: reduce){
+  .area-row-track{ animation:none !important; }
+}
+.area-chip{
+  font-family:Inter, Helvetica Neue, Arial, sans-serif;
+  font-weight:700;
+  font-size:18px;
+  line-height:1;
+  white-space:nowrap;
+  padding:20px 30px;
+  border-radius:999px;
+  transition:transform .15s ease, filter .15s ease;
+}
+.area-chip:hover{ transform:translateY(-2px); filter:brightness(1.08); }
+.area-chip:active{ transform:translateY(0); filter:brightness(.94); }
+@media (prefers-reduced-motion: reduce){
+  .area-chip{ transition:none; }
+  .area-chip:hover{ transform:none; }
+}
+
+/* Sticky area nav: appears docked under the header once the big area
+   chips above have scrolled out of view; one user-scrollable row */
+/* Hidden, it's tucked up behind the header (which sits above it, z 30);
+   shown, it slides down into place, and back up when hidden again.
+   visibility keeps the hidden chips out of the tab order. */
+#areaStickyBar{
+  position:fixed; top:var(--header-h, 84px); left:0; right:0; z-index:20;
+  background:var(--ground); border-bottom:1px solid var(--rule);
+  transform:translateY(-100%); visibility:hidden;
+  transition:transform .32s cubic-bezier(.32,.72,0,1), visibility 0s linear .32s, background-color .45s ease;
+}
+#areaStickyBar.is-shown{
+  transform:none; visibility:visible;
+  transition:transform .32s cubic-bezier(.32,.72,0,1), visibility 0s, background-color .45s ease;
+}
+@media (prefers-reduced-motion: reduce){ #areaStickyBar, #areaStickyBar.is-shown{ transition:none; } }
+#areaStickyRow{
+  padding-left:max(20px, calc((100vw - 1280px) / 2 + 20px)); padding-right:20px;
+}
+@media (min-width:640px){
+  #areaStickyRow{ padding-left:max(32px, calc((100vw - 1280px) / 2 + 32px)); padding-right:32px; }
+}
+.area-chip--compact{ padding:9px 18px; font-size:14px; flex:0 0 auto; }
+
+/* Area cards: the big-card take on .area-chip (same per-area colours),
+   with the area's stop count and a breakdown by category. Shown on the
+   Discover page as a horizontal carousel, like the homepage's stops
+   (#homeList) — the full-bleed track itself is set up alongside
+   #homeList below. Cards in a row stretch to the tallest one. */
+.area-cards{ display:flex; flex-wrap:nowrap; gap:16px; overflow-x:auto; padding-top:4px; padding-bottom:8px; min-width:0; }  /* Below lg the cards go wide and short: nearly full-width on phones (the
+   next card still peeks in), tighter padding/gaps, and a 2-line
+   description — so the row takes far less of a small screen's height.
+   lg+ gets the roomier spacing and the full description back. */
+.area-card{
+  flex:0 0 auto; width:min(calc(100vw - 60px), 420px);
+  display:flex; flex-direction:column; gap:12px; text-align:left;
+  padding:18px 20px 20px; border-radius:22px;
+  transition:transform .15s ease, filter .15s ease;
+}
+@media (min-width:640px){ .area-card{ width:440px; } }
+@media (min-width:1024px){ .area-card{ width:480px; gap:16px; padding:22px 24px 24px; } }
+.area-card:hover{ transform:translateY(-2px); filter:brightness(1.08); }
+.area-card:active{ transform:translateY(0); filter:brightness(.94); }
+.area-card__img{
+  display:block; width:100%; height:180px; object-fit:cover;
+  border-radius:14px; background:var(--raised);
+}
+.area-card__desc{
+  font-family:Newsreader, Georgia, serif; font-size:17px; line-height:1.45; opacity:.9; margin-top:-4px;
+  display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden;
+}
+@media (min-width:1024px){ .area-card__desc{ display:block; -webkit-line-clamp:unset; margin-top:-6px; } }
+/* Name on its own line, stop count beneath — side by side, the big name
+   ran into the count on longer areas ("Blackheath", "Honor Oak"). */
+.area-card__head{ display:flex; flex-direction:column; align-items:flex-start; gap:6px; }
+.area-card__name{ font-family:"Gasoek One", Inter, sans-serif; font-size:36px; line-height:1; letter-spacing:-0.015em; }
+@media (min-width:640px){ .area-card__name{ font-size:40px; } }
+@media (min-width:1024px){ .area-card__head{ gap:8px; } .area-card__name{ font-size:46px; } }
+.area-card__total{ font-family:"Azeret Mono", ui-monospace, monospace; font-size:12px; font-weight:600; opacity:.75; white-space:nowrap; }
+/* Category breakdown: each category as a pill, wrapping onto as many
+   lines as it needs. Tinted from the card's own text colour so it reads
+   on every area colour, light or dark. */
+.area-card__cats{ display:flex; flex-wrap:wrap; gap:6px; font-size:13px; font-weight:600; line-height:1.2; }
+.area-card__cat{
+  display:flex; align-items:center; gap:6px; padding:6px 11px 6px 9px; border-radius:999px;
+  background:color-mix(in srgb, currentColor 14%, transparent);
+}
+.area-card__cat svg{ flex:0 0 auto; opacity:.85; }
+.area-card__n{ font-family:"Azeret Mono", ui-monospace, monospace; font-size:12px; }
+@media (prefers-reduced-motion: reduce){
+  .area-card{ transition:none; }
+  .area-card:hover{ transform:none; }
+}
+/* Room for the sticky header so scrolling search results into view
+   doesn't land with the category cards tucked behind it. Just the
+   header, not the sticky area nav bar too — #areaChips is hidden during
+   a search (see setHomeFurnitureHidden), so that bar never triggers
+   here. Lives on #chips, not #resultCount below it — scrolling to
+   #resultCount left #chips's own height unaccounted for, landing with
+   the category cards clipped off above the fold. */
+#chips{ scroll-margin-top:calc(var(--header-h, 84px) + 12px); }
+
+/* Homepage teaser row: break out of <main>'s max-w-[1280px] cap so the
+   scroll track uses the full window width on wide screens (same technique
+   as #areaStickyRow), while resting-position alignment still matches the
+   rest of the page content via the calculated left padding. The
+   Discover page's area-card carousel and the area pages' per-category
+   rows share the same track. */
+#homeList, #discoverAreas, .area-cat-row{
+  margin-left:calc(0px - max(20px, (100vw - 1280px) / 2 + 20px));
+  margin-right:calc(0px - max(20px, (100vw - 1280px) / 2 + 20px));
+  padding-left:max(20px, calc((100vw - 1280px) / 2 + 20px)); padding-right:20px;
+}
+@media (min-width:640px){
+  #homeList, #nearList, #discoverAreas, .area-cat-row{
+    margin-left:calc(0px - max(32px, (100vw - 1280px) / 2 + 32px));
+    margin-right:calc(0px - max(32px, (100vw - 1280px) / 2 + 32px));
+    padding-left:max(32px, calc((100vw - 1280px) / 2 + 32px)); padding-right:32px;
+  }
+}
+
+/* Stop pages (html.stop-page, src/app/09b-stop-page.js): the stop takes
+   the place of the category chips and stop lists. */
+html.stop-page #chipsSection, html.stop-page #stopsCol{ display:none; }
+
+/* Area hero: shown when an area page is active */
+/* Line-height scales via its own clamp, not a fixed ratio of font-size —
+   a flat multiplier looks fine at the small end but leaves almost no
+   breathing room above the description once the title is near its
+   140px ceiling. This clamp holds roughly the same ratio as font-size
+   at phone widths, then opens up faster than font-size grows. The
+   150px ceiling is sized to the font's own worst case — a word with a
+   descender (e.g. "Bexleyheath") still gets clear breathing room below
+   it — rather than to a plain multiple of font-size, which would leave
+   an oversized gap under titles with no descenders at all (e.g. "Honor
+   Oak"). The line-height ceiling is reached around a 1094px viewport,
+   a bit before font-size hits its own 140px ceiling at ~1273px; both
+   stay flat beyond that, on any laptop-or-wider screen. */
+#areaHero #areaHeroTitle{
+  font-size:clamp(52px, 11vw, 140px);
+  line-height:clamp(44px, 17vw - 36px, 150px);
+}
+
+/* One of the route's stops playing (html.narrating, set in src/app
+   syncRoutePlaying): the Your route button inverts and shows a speaker,
+   and the mobile route bar shows one too. */
+.route-speaker{ display:none; }
+/* Route header while one of its stops plays: the stop's name (with the
+   speaker) replaces the stop count / distance summary. */
+.route-now-playing{ display:none; }
+html.narrating p.route-now-playing{ display:flex; }
+html.narrating span.route-now-playing{ display:block; }
+html.narrating .route-summary{ display:none; }
+html.narrating .route-speaker{ display:block; }
+/* Sound waves pulse outward: the inner one fades in, then the outer,
+   then both fade out together. */
+html.narrating .route-speaker .speaker-wave{ animation:speaker-wave 1.6s ease-in-out infinite; }
+html.narrating .route-speaker .speaker-wave--2{ animation-name:speaker-wave-outer; }
+@keyframes speaker-wave{ 0%{opacity:0} 25%,70%{opacity:1} 100%{opacity:0} }
+@keyframes speaker-wave-outer{ 0%,20%{opacity:0} 45%,70%{opacity:1} 100%{opacity:0} }
+@media (prefers-reduced-motion: reduce){
+  html.narrating .route-speaker .speaker-wave{ animation:none; }
+}
+/* Once the route has stops (src/app renderRoute), the header button takes
+   the route's orange, with its count badge flipped to black so it still
+   shows. Playing a route stop overrides this with the inverted look below. */
+html:not(.narrating) header #routeHeaderBtn.has-stops{ background:var(--marigold); border-color:var(--marigold); color:var(--ink-dark); }
+html:not(.narrating) header #routeHeaderBtn.has-stops:hover{ filter:brightness(1.06); }
+html:not(.narrating) #routeHeaderBtn.has-stops #routeHeaderCount{ background:var(--ink-dark); color:var(--marigold); }
+html.narrating header #routeHeaderBtn,
+html.narrating header #routeHeaderBtn:hover{
+  background:var(--ink);
+  border-color:var(--ink);
+  color:var(--ground);
+}
+
+#resultCount{ font-size:13px; }
+#nearYou{ scroll-margin-top:calc(var(--header-h, 84px) + 16px); }
+/* Near you rows (phones): tapping the row slides the short description
+   open beneath the name, and closed again. */
+.row-desc{ display:grid; grid-template-rows:0fr; visibility:hidden;
+  transition:grid-template-rows .3s cubic-bezier(.32,.72,0,1), visibility 0s linear .3s; }
+.row-desc > div{ overflow:hidden; min-height:0; }
+.near-row.is-open .row-desc, .route-row.is-open .row-desc{ grid-template-rows:1fr; visibility:visible; transition-delay:0s; }
+/* Your route rows open the same way (src/app renderRoute). */
+.route-row{ cursor:pointer; -webkit-tap-highlight-color:transparent; transition:background-color .25s ease; }
+/* Open, the row's bottom padding goes so the description sits close
+   under the location line (it's indented past the thumbnail, so the
+   two never collide). Eased with the description's own opening. */
+.route-row > .flex{ transition:padding-bottom .3s cubic-bezier(.32,.72,0,1); }
+.route-row.is-open > .flex{ padding-bottom:0; }
+@media (prefers-reduced-motion: reduce){ .route-row > .flex{ transition:none; } }
+/* Pressed: a faint white wash over the orange panel (subtler than the
+   ⋯ button's), landing at once and fading on release. */
+.route-row.is-pressed{ background-color:rgba(255,255,255,.18); transition-duration:0s; }
+.near-row{ cursor:pointer; -webkit-tap-highlight-color:transparent; transition:background-color .25s ease; }
+/* Pressed (set from src/app while a finger or mouse is down on the row,
+   not on its thumbnail, Listen or add button): a soft ink tint that
+   lands at once and fades out on release. */
+.near-row.is-pressed{ background-color:var(--press); transition-duration:0s; }
+/* The search field takes the same fill while it's in use. */
+#search{ transition:background-color .2s ease; }
+#search:focus{ background-color:var(--press); }
+/* Outlined buttons (Add to route, the round add, search, theme, Near
+   you, Save as GPX…): the same fill while pressed. Not the Listen
+   play/pause buttons ([data-listen]), which keep their own colours. */
+button.border-rule:not([data-listen]){ -webkit-tap-highlight-color:transparent; transition-property:color, background-color, border-color; }
+button.border-rule:not([data-listen]):not(:disabled):active{ background-color:var(--press); transition-duration:0s; }
 
 /* Listen (play/pause) and add-to-route buttons grow a little while pressed,
    as touch feedback. transform doesn't affect layout, so nothing around
@@ -603,7 +401,210 @@ button[data-toggle]:not([role="menuitem"]):not(:disabled):active{ transform:scal
 @media (prefers-reduced-motion: reduce){
   button[data-listen]:active, button[data-toggle]:active{ transform:none; }
 }
+@media (prefers-reduced-motion: reduce){ .row-desc{ transition:none; } }
+/* Phones: the stop count sits close above the first postcode group —
+   the first divider drops the top padding that spaces later groups. */
+@media (max-width:639px){ #list > .pc-group-divider:first-child{ padding-top:0; } }
+/* Area pages, large screens only (for now): stops as one carousel per
+   category (#areaRows) in place of the single grouped list (#list).
+   Below lg, and on search results, #list is used as before. */
+#areaRows{ display:none; }
+#list, #areaRows{ scroll-margin-top:calc(var(--header-h, 84px) + 16px); }
+@media (min-width:1024px){
+  html.area-active #list{ display:none; }
+  html.area-active #areaRows{ display:flex; flex-direction:column; gap:40px; }
+}
 
+/* Your route: one subtle grey dashed line joining the green stop
+   numbers, placed behind them by positionRouteLine() in src/app. The
+   dashes are a striped background, not a dashed border: WebKit (every
+   iOS browser) doesn't paint a dashed border this thin at all. */
+#routeList{ position:relative; }
+.route-line{
+  position:absolute; width:1.5px; pointer-events:none;
+  background:repeating-linear-gradient(to bottom, #8E8E93 0 4.5px, transparent 4.5px 9px);
+}
+.route-line[hidden]{ display:none; }
+
+/* Your route: branded orange background, with the panel's own text,
+   rules and tiles re-tuned to read against it rather than the theme */
+#routePanel{
+  background:var(--marigold); border-color:var(--marigold); color:var(--ink-dark);
+  --ink:var(--ink-dark); --muted:rgba(23,23,23,.7); --faint:rgba(23,23,23,.5);
+  --rule:rgba(23,23,23,.2); --surface:rgba(255,255,255,.4);
+  --focus:var(--ink-dark);
+}
+
+/* Icon-button tooltips (data-tooltip; see src/app). Above the route
+   panel (60) and its ⋯ menu (70). */
+#tooltip{
+  position:fixed; z-index:80; pointer-events:none;
+  padding:5px 9px; border-radius:7px;
+  background:#F4F3EF; color:var(--ink-dark);
+  font:600 12px/1.2 Inter, "Helvetica Neue", Arial, sans-serif; white-space:nowrap;
+  box-shadow:0 6px 18px -6px rgba(0,0,0,.5);
+  opacity:0; transform:translateY(2px); transition:opacity .12s ease, transform .12s ease;
+}
+#tooltip[hidden]{ display:none; }
+#tooltip.is-on{ opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce){ #tooltip{ transition:none; } }
+/* A route stop's ⋯ menu (openRouteMenu() in src/app). Lives in <body>,
+   so it's styled outright rather than from the panel's tokens. */
+#routeItemMenu{
+  position:fixed; z-index:70; min-width:168px; padding:6px;
+  background:var(--ink-dark); color:#fff; border-radius:14px;
+  box-shadow:0 12px 32px -8px rgba(0,0,0,.45);
+}
+#routeItemMenu[hidden]{ display:none; }
+#routeItemMenu button{
+  display:flex; align-items:center; gap:10px; width:100%;
+  padding:9px 10px; border-radius:9px; text-align:left;
+  font-size:14px; font-weight:600;
+}
+#routeItemMenu button:hover:not([disabled]), #routeItemMenu button:focus-visible{ background:rgba(255,255,255,.1); outline:none; }
+#routeItemMenu button[data-toggle]{ color:var(--marigold); }
+/* A route stop that's playing: its Pause button inverts to black with an
+   orange icon (aria-pressed is kept in sync by syncListenButtons()). */
+/* A playing stop's Pause button inverts: filled in the text colour (white
+   on the dark theme) with the icon in the background colour. The route
+   panel keeps its own black-and-orange version below. */
+[data-listen][aria-pressed="true"]{ background:var(--ink); border-color:var(--ink); color:var(--ground); }
+#routePanel [data-listen][aria-pressed="true"]{ background:var(--ink-dark); border-color:var(--ink-dark); color:#fff; }
+/* Play button hover: the colours invert — a filled circle in the text
+   colour with the icon in the background colour (black with a white
+   icon on the route panel and light theme; light with a dark icon on
+   the dark theme). Pointer devices only, so it doesn't stick on touch. */
+@media (hover:hover){
+  [data-listen][aria-pressed="false"]:hover{ background:var(--ink); border-color:var(--ink); color:var(--ground); }
+  #routePanel [data-listen][aria-pressed="false"]:hover{ color:#fff; }
+}
+/* Your route: list or map. #routePanel carries the current view in
+   data-view (setRouteView() in src/app); the map fills the space the
+   list would otherwise scroll in. The Map toggle by the panel's
+   chevron has the Listen buttons' outline, inverted while the map is showing. */
+.route-map-toggle{ border:1px solid var(--rule); color:var(--ink); transition:border-color .15s; }
+.route-map-toggle:hover{ border-color:var(--ink); }
+.route-map-toggle:not(.hidden){ display:inline-flex; }
+/* Desktop header version: the quieter outline of the header's buttons. */
+.route-map-toggle--quiet{ border:1px solid var(--rule); color:var(--muted); }
+.route-map-toggle--quiet:hover{ border-color:var(--ink); color:var(--ink); }
+.route-map-toggle[aria-pressed="true"]{ background:var(--ink-dark); border-color:var(--ink-dark); color:var(--marigold); }
+#routePanel[data-view="list"] #routeMap{ display:none; }
+#routePanel[data-view="map"] #routeList{ display:none; }
 /* Your route in map view: no rule between the map and Open in Maps (the
    map's own border already separates them), on every screen size. */
 #routePanel[data-view="map"] #routeActions{ border-top-color:transparent; }
+#routeMap{ height:min(42vh, 380px); }
+/* Phones: never shorter than the list view was (less the map's 12px top
+   margin), so a drawer the stops have filled to its max height keeps
+   that height in map view. --route-list-h is set by src/app. */
+@media (max-width:1023px){
+  #routeMap{ height:max(min(42vh, 380px), calc(var(--route-list-h, 0px) - 12px)); }
+}
+/* The incoming view fades up as the drawer resizes (animateRouteViewChange()) */
+#routeScroll.route-view-enter > #routeMap, #routeScroll.route-view-enter > #routeList{ animation:route-view-in .32s ease-out both; }
+@keyframes route-view-in{ from{ opacity:0; transform:translateY(6px); } to{ opacity:1; transform:none; } }
+@media (min-width:1024px){ #routeMap{ height:calc(100vh - var(--header-h, 84px) - 420px); min-height:260px; max-height:420px; } }
+
+/* Route sheet on small screens */
+#routePanel{ transition:transform .34s cubic-bezier(.32,.72,0,1), visibility 0s linear .34s; }
+@media (max-width:1023px){
+  /* The panel itself never moves or hides — only #routePanelBody's own
+     height animates, with #routeBar (the summary row, always visible)
+     staying in place throughout. Closed, the panel's visible height is
+     just #routeBar's natural height; open, #routePanelBody expands
+     below it. This is what makes it read as one component whose
+     content changes, rather than a second sheet sliding in over the
+     closed bar — the previous version translated the whole #routePanel
+     up from off-screen, so it visually arrived as a new surface
+     landing on top of #routeBar instead of growing out of it. */
+  #routePanel{
+    position:fixed; left:0; right:0; bottom:0; z-index:60;
+    max-height:84vh;
+    border-radius:22px 22px 0 0; border-bottom:0;
+    box-shadow:0 -20px 50px -12px rgba(0,0,0,.35);
+  }
+  /* Closed body is collapsed but stays in the DOM — without
+     visibility:hidden its buttons/links stayed in the tab order and
+     screen-reader tree while invisible. visibility:visible has no delay
+     so content appears the instant the sheet starts opening. */
+  #routePanelBody{
+    max-height:0; overflow:hidden; visibility:hidden;
+    transition:max-height .45s cubic-bezier(.32,.72,0,1), visibility 0s linear .45s;
+  }
+  /* Open, the body tucks up into #routeBar's bottom padding, so the
+     stops start closer under the "5 stops" summary. */
+  html.route-open #routePanelBody{
+    margin-top:-14px;
+    max-height:80vh; visibility:visible;
+    transition:max-height .45s cubic-bezier(.32,.72,0,1);
+  }
+  /* The contents fade in just behind the drawer opening, and out quickly
+     as it closes. */
+  #routePanelBody > *{ opacity:0; transition:opacity .15s ease; }
+  html.route-open #routePanelBody > *{ opacity:1; transition:opacity .35s ease .1s; }
+  /* No classic scrollbar on touch-sized screens: it took 10px from the
+     list's width, so the stops sat off-centre and could shift sideways. */
+  #routeScroll{ scrollbar-width:none; overscroll-behavior-y:contain; }
+  #routeScroll::-webkit-scrollbar{ display:none; }
+  /* Bottom-sheet drag handle and drag area (src/app, sheet drag). No
+     touch-action, so a vertical swipe moves the sheet, not the page. */
+  #routeSheetHead{ touch-action:none; }
+  .route-handle{
+    position:absolute; top:7px; left:50%; transform:translateX(-50%);
+    width:36px; height:4px; border-radius:4px;
+    background:currentColor; opacity:.3; pointer-events:none;
+  }
+  #routeBar{ padding-top:16px; }
+  /* Mid-drag: the body follows the finger (inline max-height from src/app)
+     with its contents shown and no easing. */
+  html.route-dragging #routePanelBody{ visibility:visible; transition:none; }
+  html.route-dragging #routePanelBody > *{ opacity:1; transition:none; }
+  #scrim{ display:none; }
+  html.route-open #scrim{ display:block; }
+  /* No rule between the stops and Open in Maps until the stops actually
+     scroll (updateRouteScrollable in src/app sets .is-scrollable). */
+  #routeActions:not(.is-scrollable){ border-top-color:transparent; }
+}
+@media (min-width:1024px){
+  #scrim, #routeBar{ display:none !important; }
+  /* Closed by default: a dropdown menu anchored under #routeHeaderBtn,
+     not a permanent sidebar column. Toggled via html.route-open (see
+     openSheet() in src/app), the same state the mobile sheet uses. */
+  #routePanel{
+    position:fixed; z-index:60;
+    /* Just under #routeHeaderBtn, right edges aligned (measured in
+       src/app trackHeaderHeight; the fallbacks are the old position). */
+    top:calc(var(--route-btn-bottom, calc(var(--header-h, 84px) + 4px)) + 8px);
+    right:var(--route-btn-right, max(20px, calc((100vw - 1280px) / 2 + 20px)));
+    width:380px; max-width:calc(100vw - 40px);
+    max-height:calc(100vh - var(--route-btn-bottom, var(--header-h, 84px)) - 24px);
+    transform-origin:top right;
+    opacity:0; visibility:hidden; transform:translateY(-8px) scale(.98);
+    box-shadow:0 20px 50px -12px rgba(0,0,0,.35);
+    transition:opacity .16s ease, transform .16s ease, visibility 0s linear .16s;
+  }
+  html.route-open #routePanel{
+    opacity:1; visibility:visible; transform:translateY(0) scale(1);
+    transition:opacity .16s ease, transform .16s ease;
+  }
+}
+@media (prefers-reduced-motion: reduce){
+  #routePanel, #routePanelBody, #routePanelBody > *{ transition:none; }
+  #routeScroll.route-view-enter > *{ animation:none; }
+  .stop.flash{ animation:none; }
+}
+
+/* Suggest a stop dialog (index.html #suggestDialog). Native <dialog>, so
+   Escape and the focus trap come free; this only styles it. */
+.suggest-dialog{ margin:auto; max-height:calc(100dvh - 32px); box-shadow:var(--shadow); }
+.suggest-dialog::backdrop{ background:rgba(0,0,0,.6); }
+.suggest-input{
+  width:100%; background:var(--raised); color:var(--ink);
+  border:1px solid var(--rule); border-radius:12px;
+  padding:10px 14px; font-size:16px; line-height:1.4;
+}
+.suggest-input::placeholder{ color:var(--faint); }
+.suggest-input:focus{ outline:2px solid var(--focus); outline-offset:1px; border-color:transparent; }
+.suggest-input[aria-invalid="true"]{ border-color:var(--tomato); }
+@media (min-width:640px){ .suggest-input{ font-size:14px; } }

@@ -10,7 +10,7 @@
 //   node scripts/generate-audio.js forest-hill --budget=8000   # cap credits
 //
 // The area is the slug from the site URL (?area=forest-hill). Stops are
-// picked the same way the area page picks them (app.js stopInArea): a
+// picked the same way the area page picks them (src/app stopInArea): a
 // stop's Notion "Areas" tags when data.js has them, otherwise a whole-word
 // match on its name and Area text.
 //
@@ -98,7 +98,7 @@ function loadAreas() {
   return areas;
 }
 
-// Mirrors app.js AREA_SLUGS / areaFromSlug.
+// Mirrors src/app AREA_SLUGS / areaFromSlug.
 const AREA_SLUGS_REVERSE = { 'elephant-and-castle': 'elephant' };
 function areaKeyFromSlug(slug) {
   const key = slug.toLowerCase().trim();
@@ -108,13 +108,13 @@ function areaKeyFromSlug(slug) {
 const plainLower = (s) => String(s).replace(/&amp;/g, '&').replace(/&[a-z]+;/g, ' ').toLowerCase();
 const escapeRegExp = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
-// Mirrors app.js stopInArea.
+// Mirrors src/app stopInArea.
 function stopInArea(stop, key, title) {
   if (Array.isArray(stop.areas)) return stop.areas.some((a) => plainLower(a) === plainLower(title));
   return new RegExp(`\\b${escapeRegExp(key)}\\b`).test(plainLower(`${stop.name} ${stop.area}`));
 }
 
-// Same text the site's Listen button reads (app.js speakableText): name,
+// Same text the site's Listen button reads (src/app speakableText): name,
 // then the description, with HTML entities turned back into characters.
 function narration(stop) {
   return `${stop.name}. ${stop.text}`

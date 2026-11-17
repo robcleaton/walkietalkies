@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://walkietalkies.warface.co.uk/sitemap.xml
