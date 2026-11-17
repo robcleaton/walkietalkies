@@ -1040,7 +1040,7 @@
       short:'A Grade II-listed pub at the heart of Greenwich Market since 1780 &mdash; older than the naval buildings around it in their current form.' },
 
     { id:'phoenix-camberwell', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Phoenix%2C_Denmark_Hill%2C_SE5_%282429314820%29.jpg/330px-Phoenix%2C_Denmark_Hill%2C_SE5_%282429314820%29.jpg', name:'The Phoenix', area:'Windsor Walk, Camberwell', pc:'SE5', cat:'pub', year:1866, era:'Built 1866 as a station ticket hall, pub since 1984',
-      lat:51.468, lon:-0.0925, addr:'Windsor Walk, SE5 8BB',
+      lat:51.468, lon:-0.0897, addr:'Windsor Walk, SE5 8BB',
       text:'Built in 1866 as the ticket hall for Denmark Hill station, the Grade II-listed building burned down in 1980 &mdash; and when it reopened as a pub in 1984, it was named the Phoenix for exactly that reason.\n\nThe bar is made from a single mahogany tree, and a station clock salvaged from Llandudno Junction still hangs over the room.',
       short:'Built in 1866 as Denmark Hill station&rsquo;s ticket hall, it burned in 1980 and reopened as a pub named for the fire. The bar is cut from a single mahogany tree.' },
 
@@ -3717,5 +3717,10 @@
     { id:'the-woodlands-charlton', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Woodlands%2C_Mycenae_Road_%28geograph_2176986%29.jpg/330px-Woodlands%2C_Mycenae_Road_%28geograph_2176986%29.jpg', name:'Woodlands House', area:'Mycenae Road, Charlton', pc:'SE3', cat:'grand', year:1776, era:'Built 1774&ndash;1776',
       lat:51.4796, lon:0.0163, addr:'Mycenae Road, SE3 7AX',
       text:'John Julius Angerstein, a Lloyd&rsquo;s underwriter and chairman of Lloyd&rsquo;s, leased this land in 1774 and built a villa here to designs by George Gibson. Part of his fortune came from trade and from a share in a slave plantation in Grenada.\n\nAfter his death, 38 of his paintings were bought by the government in 1824 to found the National Gallery. The house later became a convent, then from 1972 to 2003 the Woodlands Art Gallery, and is now a Steiner school.',
-      short:'John Julius Angerstein&rsquo;s 1776 villa. After his death his paintings were bought to found the National Gallery.' }
+      short:'John Julius Angerstein&rsquo;s 1776 villa. After his death his paintings were bought to found the National Gallery.' },
+
+    { id:'denmark-hill-station', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Denmark_Hill_Railway_Station_-_geograph.org.uk_-_5304102.jpg/330px-Denmark_Hill_Railway_Station_-_geograph.org.uk_-_5304102.jpg', name:'Denmark Hill Station', area:'Windsor Walk, Denmark Hill, Camberwell', pc:'SE5', cat:'grand', year:1866, era:'Built 1864&ndash;1866, restored 1985',
+      lat:51.4683, lon:-0.0894, addr:'Windsor Walk, SE5 8BB',
+      text:'Charles Henry Driver designed the station, built between 1864 and 1866, in an Italianate style with a highly decorated frontage and French pavilion roofs. The platforms sit in a cutting below the road, between the short Grove Tunnel and the Denmark Hill road bridge.\n\nIn 1920 the waiting room became home to the Mystical Church of the Comforter, founded by Elizabeth Mary Eagle Skinner, known to her followers as &ldquo;The Messenger&rdquo;. Its altar was painted white and ringed with the seven colours of the rainbow, and in 1926 a newspaper reported baptisms, funerals and even a wedding held there, with porters and clerks working to the sound of hymns. The church is thought to have ended with Skinner&rsquo;s death in 1929.\n\nBy the late 1970s the building was derelict, and in March 1980 arsonists set fire to the booking hall. When British Rail began demolishing parts of what was left, the Camberwell Society campaigned to save it, and the building was restored in 1985 with a pub, named the Phoenix and Firkin after the fire. It won a Civic Trust award in 2009, and the Camberwell Society tends a small vineyard at the station.',
+      short:'An 1860s Italianate station whose waiting room was a church in the 1920s. Saved from demolition after a 1980 arson attack, it was restored with a pub named for the fire.' }
   ];

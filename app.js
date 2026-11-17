@@ -567,6 +567,7 @@
   // then Listen and a round add button (the stop's number once it's in
   // the route, like the route panel's numbering).
   var nearOpen = {}; // stop id → description expanded, kept across re-renders
+  var routeOpen = {}; // the same for Your route's rows
 
   function nearRowHTML(n) {
     var s = n.s, on = inRoute(s.id), pos = route.indexOf(s.id) + 1, open = !!nearOpen[s.id];
@@ -612,7 +613,7 @@
       // description clamps to the space left (adjustCardClamps below).
       return '<div class="w-[340px] h-[400px] shrink-0">' + card + '</div>';
     }).join('') :
-      '<ul class="bg-surface border border-rule rounded-[16px] divide-y divide-rule">' + near.map(nearRowHTML).join('') + '</ul>';
+      '<ul class="bg-surface border border-rule rounded-[16px] divide-y divide-rule overflow-hidden">' + near.map(nearRowHTML).join('') + '</ul>';
     nearListEl.classList.remove('hidden');
     nearListEl.scrollLeft = keep;
     if (near.length && near[0].km > NEAR_FAR_KM) {
@@ -693,20 +694,53 @@
   }
   // Near you rows: tapping the row (its name, or any spot that isn't the
   // thumbnail, Listen or add button) opens and closes the short description.
+  // Your route's rows work the same way (data-route-expand, routeOpen).
   document.addEventListener('click', function (e) {
-    var row = e.target.closest('.near-row');
+    var row = e.target.closest('.near-row, .route-row');
     if (!row) return;
-    var ctl = e.target.closest('button, a');
-    if (ctl && !ctl.hasAttribute('data-near-expand')) return;
-    var btn = row.querySelector('[data-near-expand]');
-    var id = btn.getAttribute('data-near-expand');
-    var open = !nearOpen[id];
-    if (open) nearOpen[id] = true; else delete nearOpen[id];
+    var attr = row.classList.contains('route-row') ? 'data-route-expand' : 'data-near-expand';
+    var state = attr === 'data-route-expand' ? routeOpen : nearOpen;
+    var ctl = e.target.closest('button, a, [data-pb-track], .playbar');
+    if (ctl && !ctl.hasAttribute(attr)) return;
+    var btn = row.querySelector('[' + attr + ']');
+    var id = btn.getAttribute(attr);
+    var open = !state[id];
+    if (open) state[id] = true; else delete state[id];
     row.classList.toggle('is-open', open);
     btn.setAttribute('aria-expanded', String(open));
     var d = row.querySelector('.near-desc');
     if (open) d.removeAttribute('aria-hidden'); else d.setAttribute('aria-hidden', 'true');
   });
+
+  // iOS Safari only applies :active (the outlined buttons' pressed fill in
+  // styles.css) once the page listens for touches; this empty one is enough.
+  document.addEventListener('touchstart', function () {}, { passive: true });
+
+  // Near you rows: pressed state while the row itself is held (not its
+  // thumbnail, Listen or add button). A scroll that starts on a row fires
+  // pointercancel, so the tint drops away rather than sticking.
+  (function () {
+    var pressed = null;
+    function release() {
+      if (pressed) pressed.classList.remove('is-pressed');
+      pressed = null;
+    }
+    document.addEventListener('pointerdown', function (e) {
+      if (e.button !== 0) return;
+      var row = e.target.closest('.near-row, .route-row');
+      if (!row) return;
+      var attr = row.classList.contains('route-row') ? 'data-route-expand' : 'data-near-expand';
+      var ctl = e.target.closest('button, a, [data-pb-track], .playbar');
+      if (ctl && !ctl.hasAttribute(attr)) return;
+      release();
+      pressed = row;
+      row.classList.add('is-pressed');
+    });
+    ['pointerup', 'pointercancel', 'dragstart'].forEach(function (t) {
+      document.addEventListener(t, release);
+    });
+    window.addEventListener('scroll', release, { passive: true });
+  })();
 
   document.addEventListener('click', function (e) {
     if (!e.target.closest('[data-near-you]')) return;
@@ -1084,18 +1118,24 @@
     route.forEach(function (id, i) {
       var s = byId[id];
       var leg = i > 0 ? haversine(byId[route[i - 1]], s) : 0;
+      var open = !!routeOpen[id];
       html += '' +
         (i > 0 ? '<p class="pl-[52px] pr-5 font-mono text-[11px] leading-4 text-faint num">&darr; ' + distHTML(leg.toFixed(2), 'km') + '</p>' : '') +
         // Mobile rows match the Near you list (56px image, 15px name,
         // centred); the desktop dropdown keeps its tighter rows (lg:).
-        '<div class="flex items-center lg:items-start gap-3 px-5 lg:pr-1.5 py-2 lg:py-1.5 ' + (i > 0 ? '' : 'pt-3') + '">' +
+        // .route-row: tapping it (bar the Listen, ⋯ and playbar controls)
+        // opens the short description underneath, as on Near you.
+        '<div class="route-row' + (open ? ' is-open' : '') + '">' +
+        '<div class="flex items-center lg:items-start gap-3 pl-5 pr-2 lg:pr-1.5 py-2 lg:py-1.5 ' + (i > 0 ? '' : 'pt-3') + '">' +
           // Desktop rows are top-aligned: drop the number to the middle of the
           // 56px thumbnail ((56 - 24) / 2); mobile rows are centred already.
           '<span class="route-num relative z-[1] shrink-0 w-6 h-6 ' + (s.img ? 'lg:mt-4' : 'lg:mt-0.5') + ' rounded-full bg-verdigris text-white font-mono num text-[11px] font-semibold grid place-items-center">' + (i + 1) + '</span>' +
           (s.img ? '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.remove()" class="w-14 h-14 shrink-0 rounded-lg object-cover border border-rule">' : '') +
           '<div class="min-w-0 flex-1">' +
-            '<p class="text-[15px] leading-snug lg:text-[14px] lg:leading-tight font-semibold">' + s.name + '</p>' +
-            '<p class="font-mono text-[11px] text-faint mt-0.5">' + s.pc + ' &middot; ' + s.area + '</p>' +
+            '<button type="button" data-route-expand="' + id + '" aria-expanded="' + open + '" aria-controls="route-desc-' + id + '" class="block w-full text-left">' +
+              '<span class="block text-[15px] leading-snug lg:text-[14px] lg:leading-tight font-semibold">' + s.name + '</span>' +
+              '<span class="block font-mono text-[11px] text-faint mt-0.5">' + s.pc + ' &middot; ' + s.area + '</span>' +
+            '</button>' +
             playbarHTML(s) +
           '</div>' +
           '<div class="shrink-0 self-center flex items-center gap-1">' +
@@ -1104,6 +1144,15 @@
               '<svg class="lucide lucide-ellipsis-vertical" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>' +
             '</button>' +
           '</div>' +
+        '</div>' +
+        // Lined up with the name: past the 20px inset, 24px number and
+        // 56px thumbnail with their 12px gaps. It ends in line with the ⋯
+        // button's left edge: the row's right inset (8px, lg 6px) + its 40px.
+        '<div class="near-desc" id="route-desc-' + id + '"' + (open ? '' : ' aria-hidden="true"') + '>' +
+          '<div><p class="font-serif text-[15px] leading-[1.5] text-ink pb-2 pr-[48px] lg:pr-[46px] ' + (s.img ? 'pl-[124px]' : 'pl-[56px]') + '">' +
+            (s.short || s.text.split('\n\n')[0]) +
+          '</p></div>' +
+        '</div>' +
         '</div>';
     });
     // One dashed line joining the numbers, placed by positionRouteLine.

@@ -5,6 +5,9 @@
     --verdigris:#15855A; --brass:#EFA935;
     --tomato:#E1481C; --violet:#8636CC; --bubblegum:#E85C97; --marigold:#F2A400;
     --focus:var(--marigold);
+    /* Pressed / active fill: a soft ink tint over the surface. Shared by the
+       Near you rows, the search field while in use, and outlined buttons. */
+    --press:color-mix(in srgb, var(--ink) 7%, var(--surface));
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -16px rgba(0,0,0,.9);
     color-scheme:dark;
   }
@@ -334,8 +337,31 @@
   .near-desc{ display:grid; grid-template-rows:0fr; visibility:hidden;
     transition:grid-template-rows .3s cubic-bezier(.32,.72,0,1), visibility 0s linear .3s; }
   .near-desc > div{ overflow:hidden; min-height:0; }
-  .near-row.is-open .near-desc{ grid-template-rows:1fr; visibility:visible; transition-delay:0s; }
-  .near-row{ cursor:pointer; }
+  .near-row.is-open .near-desc, .route-row.is-open .near-desc{ grid-template-rows:1fr; visibility:visible; transition-delay:0s; }
+  /* Your route rows open the same way (app.js renderRoute). */
+  .route-row{ cursor:pointer; -webkit-tap-highlight-color:transparent; transition:background-color .25s ease; }
+  /* Open, the row's bottom padding goes so the description sits close
+     under the location line (it's indented past the thumbnail, so the
+     two never collide). Eased with the description's own opening. */
+  .route-row > .flex{ transition:padding-bottom .3s cubic-bezier(.32,.72,0,1); }
+  .route-row.is-open > .flex{ padding-bottom:0; }
+  @media (prefers-reduced-motion: reduce){ .route-row > .flex{ transition:none; } }
+  /* Pressed: a faint white wash over the orange panel (subtler than the
+     ⋯ button's), landing at once and fading on release. */
+  .route-row.is-pressed{ background-color:rgba(255,255,255,.18); transition-duration:0s; }
+  .near-row{ cursor:pointer; -webkit-tap-highlight-color:transparent; transition:background-color .25s ease; }
+  /* Pressed (set from app.js while a finger or mouse is down on the row,
+     not on its thumbnail, Listen or add button): a soft ink tint that
+     lands at once and fades out on release. */
+  .near-row.is-pressed{ background-color:var(--press); transition-duration:0s; }
+  /* The search field takes the same fill while it's in use. */
+  #search{ transition:background-color .2s ease; }
+  #search:focus{ background-color:var(--press); }
+  /* Outlined buttons (Add to route, the round add, search, theme, Near
+     you, Save as GPX…): the same fill while pressed. Not the Listen
+     play/pause buttons ([data-listen]), which keep their own colours. */
+  button.border-rule:not([data-listen]){ -webkit-tap-highlight-color:transparent; transition-property:color, background-color, border-color; }
+  button.border-rule:not([data-listen]):not(:disabled):active{ background-color:var(--press); transition-duration:0s; }
   @media (prefers-reduced-motion: reduce){ .near-desc{ transition:none; } }
   /* Phones: the stop count sits close above the first postcode group —
      the first divider drops the top padding that spaces later groups. */
