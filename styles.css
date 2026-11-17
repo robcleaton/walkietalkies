@@ -189,11 +189,20 @@
 
   /* Sticky area nav: appears docked under the header once the big area
      chips above have scrolled out of view; one user-scrollable row */
+  /* Hidden, it's tucked up behind the header (which sits above it, z 30);
+     shown, it slides down into place, and back up when hidden again.
+     visibility keeps the hidden chips out of the tab order. */
   #areaStickyBar{
     position:fixed; top:var(--header-h, 84px); left:0; right:0; z-index:20;
     background:var(--ground); border-bottom:1px solid var(--rule);
-    transition:background-color .45s ease;
+    transform:translateY(-100%); visibility:hidden;
+    transition:transform .32s cubic-bezier(.32,.72,0,1), visibility 0s linear .32s, background-color .45s ease;
   }
+  #areaStickyBar.is-shown{
+    transform:none; visibility:visible;
+    transition:transform .32s cubic-bezier(.32,.72,0,1), visibility 0s, background-color .45s ease;
+  }
+  @media (prefers-reduced-motion: reduce){ #areaStickyBar, #areaStickyBar.is-shown{ transition:none; } }
   #areaStickyRow{
     padding-left:max(20px, calc((100vw - 1280px) / 2 + 20px)); padding-right:20px;
   }
@@ -431,7 +440,7 @@
      on the dark theme) with the icon in the background colour. The route
      panel keeps its own black-and-orange version below. */
   [data-listen][aria-pressed="true"]{ background:var(--ink); border-color:var(--ink); color:var(--ground); }
-  #routePanel [data-listen][aria-pressed="true"]{ background:#171717; border-color:#171717; color:var(--marigold); }
+  #routePanel [data-listen][aria-pressed="true"]{ background:#171717; border-color:#171717; color:#fff; }
   /* Play button hover: the colours invert — a filled circle in the text
      colour with the icon in the background colour (black with a white
      icon on the route panel and light theme; light with a dark icon on
@@ -454,6 +463,12 @@
   #routePanel[data-view="list"] #routeMap{ display:none; }
   #routePanel[data-view="map"] #routeList{ display:none; }
   #routeMap{ height:min(42vh, 380px); }
+  /* Phones: never shorter than the list view was (less the map's 12px top
+     margin), so a drawer the stops have filled to its max height keeps
+     that height in map view. --route-list-h is set by app.js. */
+  @media (max-width:1023px){
+    #routeMap{ height:max(min(42vh, 380px), calc(var(--route-list-h, 0px) - 12px)); }
+  }
   /* The incoming view fades up as the drawer resizes (animateRouteViewChange()) */
   #routeScroll.route-view-enter > #routeMap, #routeScroll.route-view-enter > #routeList{ animation:route-view-in .32s ease-out both; }
   @keyframes route-view-in{ from{ opacity:0; transform:translateY(6px); } to{ opacity:1; transform:none; } }
@@ -544,8 +559,6 @@
     #routeScroll.route-view-enter > *{ animation:none; }
     .stop.flash{ animation:none; }
   }
-  ::-webkit-scrollbar{ width:10px; height:10px; }
-  ::-webkit-scrollbar-thumb{ background:var(--rule); border-radius:10px; }
 
 /* Suggest a stop dialog (index.html #suggestDialog). Native <dialog>, so
    Escape and the focus trap come free; this only styles it. */
@@ -566,3 +579,31 @@
 @media (max-width:1023px){
   #routeActions:not(.is-scrollable){ border-top-color:transparent; }
 }
+
+/* Stop thumbnail placeholder (no image, or it failed to load): a quiet
+   raised tile with the wordmark's looped "a" (from WALKIE): oversized,
+   faint and cropped by the tile's edges, so it reads as texture rather
+   than a label. Sized in % of the tile, so it scales with it. */
+.thumb-ph{ position:relative; display:block; overflow:hidden; background:var(--raised); color:var(--ink); }
+.thumb-ph__glyph{
+  position:absolute; height:112%; width:auto; left:50%; top:-2%; transform:translateX(-50%);
+  opacity:.09; pointer-events:none;
+}
+
+/* Listen (play/pause) and add-to-route buttons grow a little while pressed,
+   as touch feedback. transform doesn't affect layout, so nothing around
+   them shifts. Not the route menu's Remove item (also [data-toggle]). */
+button[data-listen], button[data-toggle]:not([role="menuitem"]){
+  transition-property:color, background-color, border-color, transform;
+  transition-duration:.15s; transition-timing-function:ease;
+  -webkit-tap-highlight-color:transparent;
+}
+button[data-listen]:not(:disabled):active,
+button[data-toggle]:not([role="menuitem"]):not(:disabled):active{ transform:scale(1.12); }
+@media (prefers-reduced-motion: reduce){
+  button[data-listen]:active, button[data-toggle]:active{ transform:none; }
+}
+
+/* Your route in map view: no rule between the map and Open in Maps (the
+   map's own border already separates them), on every screen size. */
+#routePanel[data-view="map"] #routeActions{ border-top-color:transparent; }

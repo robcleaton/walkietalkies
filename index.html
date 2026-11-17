@@ -156,12 +156,12 @@
 
   <!-- Sticky area nav: single scrollable row, shown once the big area chips below scroll out of view.
        Populated by JS from the #areaChips buttons below, so the area/colour list stays defined once. -->
-  <div id="areaStickyBar" class="hidden">
+  <div id="areaStickyBar" aria-hidden="true">
     <div id="areaStickyRow" class="scroll-hide flex flex-nowrap gap-2 overflow-x-auto py-3"></div>
   </div>
 
   <!-- Area hero: shown only when an area page is active -->
-  <section id="areaHero" class="hidden mx-auto max-w-[1280px] px-5 sm:px-8 pt-8 pb-5 sm:pb-2">
+  <section id="areaHero" class="hidden mx-auto max-w-[1280px] px-5 sm:px-8 pt-4 pb-5 sm:pb-2">
     <div class="min-w-0">
       <img id="areaHeroImage" class="hidden w-full h-[200px] sm:h-[320px] object-cover rounded-[18px] mb-6 border border-rule" alt="">
       <h2 id="areaHeroTitle" class="font-display tracking-[-0.02em]">Forest Hill</h2>
@@ -412,7 +412,7 @@
                out the stats/Clear-route box and the Leaflet map if either
                lived inside that element. -->
           <div id="routeScroll" class="overflow-y-auto flex-1 min-h-0 max-h-[46vh] lg:max-h-[calc(100vh-var(--header-h,84px)-400px)]">
-            <div id="routeMap" class="hidden rounded-[14px] overflow-hidden border border-rule mx-5 mt-1 mb-4 lg:mt-4"></div>
+            <div id="routeMap" class="hidden rounded-[14px] overflow-hidden border border-rule mx-5 mt-3 mb-0 lg:mt-4 lg:mb-4"></div>
             <div id="routeList"></div>
           </div>
 

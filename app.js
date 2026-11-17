@@ -489,7 +489,6 @@
   var nearBtnLabel = document.getElementById('nearYouBtnLabel');
   var nearPos = null; // { lat, lon } once known
   var nearLocating = false;
-  var nearLive = false; // located this visit (not just a remembered position)
 
   // The last position found is remembered on this device, so Near you
   // stays filled in on later visits and other pages without asking again
@@ -502,29 +501,48 @@
       else localStorage.removeItem(NEAR_POS_KEY);
     } catch (e) { /* storage blocked */ }
   }
-  // Where the area chips and the location button go. With the cards
-  // (sm and up) they share one row above them, chips then Refresh; with
-  // the phone list (or nothing located yet) the button sits under the
-  // heading and the chips under the list.
-  function placeNearControls(carousel) {
+  // Where the area chips and the location button go. Once located (cards
+  // or the phone list) they share one row above the stops, chips then
+  // Refresh (when it's showing); before that the button sits under the
+  // heading on its own.
+  function placeNearControls(located) {
     var bar = document.getElementById('nearBar');
     var areasEl = document.getElementById('nearAreas');
-    if (carousel) {
+    if (located) {
       bar.appendChild(areasEl);
       bar.appendChild(nearBtn);
     } else {
       nearStatusEl.parentNode.appendChild(nearBtn);
       nearListEl.parentNode.insertBefore(areasEl, nearListEl.nextSibling);
     }
-    bar.classList.toggle('hidden', !carousel);
-    areasEl.classList.toggle('mt-4', !carousel);
-    nearBtn.classList.toggle('mt-3', !carousel);
+    bar.classList.toggle('hidden', !located);
+    areasEl.classList.toggle('mt-4', !located);
+    nearBtn.classList.toggle('mt-3', !located);
   }
+
+  // "just now", "5 min ago", "2 hours ago", "yesterday", "3 days ago"
+  function timeAgo(t) {
+    var min = Math.floor((Date.now() - t) / 60000);
+    if (min < 1) return 'just now';
+    if (min < 60) return min + ' min ago';
+    var h = Math.floor(min / 60);
+    if (h < 24) return h + (h === 1 ? ' hour ago' : ' hours ago');
+    var d = Math.floor(h / 24);
+    return d === 1 ? 'yesterday' : d + ' days ago';
+  }
+  var nearWherePc = null; // postcode the "Around …" line is showing, if any
+  function nearWhereText() {
+    return 'Around ' + nearWherePc + (nearPos && nearPos.t ? ' · located ' + timeAgo(nearPos.t) : '');
+  }
+  // Keep "located … ago" current while the page stays open.
+  setInterval(function () {
+    if (nearWherePc && nearPos && nearPos.t) nearStatusEl.textContent = nearWhereText();
+  }, 60000);
 
   // Back to the not-located state: list gone, Use my location back.
   function forgetNearPos() {
     nearPos = null;
-    nearLive = false;
+    nearWherePc = null;
     saveNearPos(null);
     nearListEl.classList.add('hidden');
     nearListEl.innerHTML = '';
@@ -538,7 +556,8 @@
   function loadNearPos() {
     try {
       var p = JSON.parse(localStorage.getItem(NEAR_POS_KEY) || 'null');
-      if (p && isFinite(p.lat) && isFinite(p.lon)) return { lat: +p.lat, lon: +p.lon };
+      // t: when it was found (ms); positions saved before that was kept have none.
+      if (p && isFinite(p.lat) && isFinite(p.lon)) return { lat: +p.lat, lon: +p.lon, t: isFinite(p.t) ? +p.t : null };
     } catch (e) { /* storage blocked or bad JSON */ }
     return null;
   }
@@ -574,9 +593,7 @@
     var desc = s.short || s.text.split('\n\n')[0];
     return '<li class="near-row px-4 py-3' + (open ? ' is-open' : '') + '">' +
       '<div class="flex items-center gap-3">' +
-      (s.img ? '<button type="button" data-lightbox="' + bigImg(s.img) + '" data-lightbox-fallback="' + s.img + '" data-lightbox-alt="' + plain(s.name) + '" class="shrink-0 rounded-lg" aria-label="View larger image of ' + plain(s.name) + '">' +
-        '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.closest(\'button\').remove()" class="w-14 h-14 rounded-lg object-cover border border-rule">' +
-      '</button>' : '') +
+      stopThumbHTML(s, 'w-14 h-14', true) +
       // The name and distance open and close the short description beneath
       // (as does a tap anywhere else on the row that isn't another control).
       '<button type="button" data-near-expand="' + s.id + '" aria-expanded="' + open + '" aria-controls="near-desc-' + s.id + '" class="min-w-0 flex-1 text-left">' +
@@ -594,7 +611,7 @@
       '</div>' +
       // Lined up with the name (past the 56px thumbnail and its 12px gap).
       '<div class="near-desc" id="near-desc-' + s.id + '"' + (open ? '' : ' aria-hidden="true"') + '>' +
-        '<div><p class="font-serif text-[15px] leading-[1.5] text-ink pt-2' + (s.img ? ' pl-[68px]' : '') + '">' + desc + '</p></div>' +
+        '<div><p class="font-serif text-[15px] leading-[1.5] text-ink pt-2 pl-[68px]">' + desc + '</p></div>' +
       '</div>' +
     '</li>';
   }
@@ -616,20 +633,21 @@
       '<ul class="bg-surface border border-rule rounded-[16px] divide-y divide-rule overflow-hidden">' + near.map(nearRowHTML).join('') + '</ul>';
     nearListEl.classList.remove('hidden');
     nearListEl.scrollLeft = keep;
-    if (near.length && near[0].km > NEAR_FAR_KM) {
-      nearStatusEl.innerHTML = 'You’re ' + fmtDist(near[0].km) + ' from the nearest stop — here are the closest.';
-    } else {
-      nearStatusEl.textContent = 'The closest stops to you, nearest first.';
-    }
-    // The cards (sm and up) speak for themselves: no status line under the
-    // heading there. The phone list keeps it.
-    nearStatusEl.classList.toggle('hidden', carousel);
-    // Refresh: always there beside the cards (sm and up); on phones only
-    // while the list is from a remembered position, not a fix this visit.
+    // The line under the heading: roughly where you are and how fresh that
+    // is ("Around SE10 · located 2 hours ago"), from the nearest stop's
+    // postcode district, so nothing leaves the device. A long way from
+    // every stop that postcode would be wrong, so phones say how far
+    // instead (and the cards, sm and up, show nothing).
+    var far = near.length && near[0].km > NEAR_FAR_KM;
+    nearWherePc = !far && near.length ? near[0].s.pc : null;
+    if (far) nearStatusEl.innerHTML = 'You’re ' + fmtDist(near[0].km) + ' from the nearest stop — here are the closest.';
+    else nearStatusEl.textContent = nearWherePc ? nearWhereText() : '';
+    nearStatusEl.classList.toggle('hidden', far ? carousel : !near.length);
+    // Refresh: always there once located, beside the area chips.
     if (!nearLocating) nearBtnLabel.textContent = 'Refresh';
-    nearBtn.classList.toggle('hidden', !carousel && nearLive);
+    nearBtn.classList.remove('hidden');
     renderNearAreas(near);
-    placeNearControls(carousel);
+    placeNearControls(true);
     setTimeout(function () { adjustCardClamps(nearListEl); }, 0);
   }
 
@@ -665,8 +683,7 @@
       nearLocating = false;
       nearBtn.disabled = false;
       nearBtnLabel.textContent = 'Refresh';
-      nearLive = true;
-      nearPos = { lat: p.coords.latitude, lon: p.coords.longitude };
+      nearPos = { lat: p.coords.latitude, lon: p.coords.longitude, t: Date.now() };
       saveNearPos(nearPos);
       renderNearYou(!homeListEl.classList.contains('hidden'));
     }, function (err) {
@@ -678,6 +695,7 @@
       // Location since turned off: forget the remembered position too.
       if (err && err.code === 1 && nearPos) forgetNearPos();
       nearBtnLabel.textContent = nearPos ? 'Refresh' : 'Use my location';
+      nearWherePc = null;
       nearStatusEl.classList.remove('hidden');
       nearStatusEl.textContent = err && err.code === 1
         ? 'Location is turned off for this site. Allow it in your browser settings to see stops near you.'
@@ -760,8 +778,7 @@
     // it's the Use my location button.
     // A remembered position fills Near you in straight away (the first
     // renderList at boot draws it); a live fix below then updates it.
-    // It may be out of date, so Refresh stays until a live fix replaces it
-    // (locateNearYou hides the button again on success).
+    // It may be out of date; Refresh (shown once located) updates it.
     nearPos = loadNearPos();
     if (nearPos) nearBtnLabel.textContent = 'Refresh';
     var NEAR_ASKED_KEY = 'walkietalkies:location-asked';
@@ -998,9 +1015,7 @@
         // category chip and title get their own full-width lines beneath,
         // so long names never run into the buttons.
         '<div class="flex items-start justify-between gap-4' + (compact ? ' shrink-0' : '') + '">' +
-          (s.img ? '<button type="button" data-lightbox="' + bigImg(s.img) + '" data-lightbox-fallback="' + s.img + '" data-lightbox-alt="' + plain(s.name) + '" class="shrink-0 rounded-lg" aria-label="View larger image of ' + plain(s.name) + '">' +
-            '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.closest(\'button\').remove()" class="w-[72px] h-[72px] sm:w-14 sm:h-14 rounded-lg object-cover border border-rule">' +
-          '</button>' : '') +
+          stopThumbHTML(s, 'w-[72px] h-[72px] sm:w-14 sm:h-14', true) +
           '<div class="ml-auto shrink-0 flex items-center gap-2">' +
           listenButtonHTML(s) +
           (hasLoc ?
@@ -1129,8 +1144,8 @@
         '<div class="flex items-center lg:items-start gap-3 pl-5 pr-2 lg:pr-1.5 py-2 lg:py-1.5 ' + (i > 0 ? '' : 'pt-3') + '">' +
           // Desktop rows are top-aligned: drop the number to the middle of the
           // 56px thumbnail ((56 - 24) / 2); mobile rows are centred already.
-          '<span class="route-num relative z-[1] shrink-0 w-6 h-6 ' + (s.img ? 'lg:mt-4' : 'lg:mt-0.5') + ' rounded-full bg-verdigris text-white font-mono num text-[11px] font-semibold grid place-items-center">' + (i + 1) + '</span>' +
-          (s.img ? '<img src="' + s.img + '" alt="" loading="lazy" onerror="this.remove()" class="w-14 h-14 shrink-0 rounded-lg object-cover border border-rule">' : '') +
+          '<span class="route-num relative z-[1] shrink-0 w-6 h-6 ' + 'lg:mt-4' + ' rounded-full bg-verdigris text-white font-mono num text-[11px] font-semibold grid place-items-center">' + (i + 1) + '</span>' +
+          stopThumbHTML(s, 'w-14 h-14', false) +
           '<div class="min-w-0 flex-1">' +
             '<button type="button" data-route-expand="' + id + '" aria-expanded="' + open + '" aria-controls="route-desc-' + id + '" class="block w-full text-left">' +
               '<span class="block text-[15px] leading-snug lg:text-[14px] lg:leading-tight font-semibold">' + s.name + '</span>' +
@@ -1149,7 +1164,7 @@
         // 56px thumbnail with their 12px gaps. It ends in line with the ⋯
         // button's left edge: the row's right inset (8px, lg 6px) + its 40px.
         '<div class="near-desc" id="route-desc-' + id + '"' + (open ? '' : ' aria-hidden="true"') + '>' +
-          '<div><p class="font-serif text-[15px] leading-[1.5] text-ink pb-2 pr-[48px] lg:pr-[46px] ' + (s.img ? 'pl-[124px]' : 'pl-[56px]') + '">' +
+          '<div><p class="font-serif text-[15px] leading-[1.5] text-ink pb-2 pr-[48px] lg:pr-[46px] ' + 'pl-[124px]' + '">' +
             (s.short || s.text.split('\n\n')[0]) +
           '</p></div>' +
         '</div>' +
@@ -1186,6 +1201,12 @@
   var routeActionsEl = document.getElementById('routeActions');
   function updateRouteScrollable() {
     routeActionsEl.classList.toggle('is-scrollable', routeScrollEl.scrollHeight > routeScrollEl.clientHeight + 1);
+    // Remember how tall the list view is, so the map view can match it
+    // when the stops have filled the drawer to its max height (styles.css
+    // #routeMap, phones) rather than shrinking on the switch.
+    if (routeView === 'list' && routeListEl.offsetHeight) {
+      document.getElementById('routePanel').style.setProperty('--route-list-h', routeScrollEl.offsetHeight + 'px');
+    }
   }
   if (window.ResizeObserver) {
     var scrollRO = new ResizeObserver(updateRouteScrollable);
@@ -1195,6 +1216,32 @@
   }
 
   function plain(s) { return s.replace(/&[a-z]+;/g, ''); }
+
+  // Placeholder thumbnail for a stop with no image (or one that fails to
+  // load): a neutral tile with the wordmark's looped "a" (from WALKIE),
+  // oversized, faint and cropped by the tile's edges (.thumb-ph in
+  // styles.css). `size` is the tile's width/height classes.
+  var THUMB_PH_GLYPH = '<svg class="thumb-ph__glyph" viewBox="75 0 65 76" fill="currentColor" aria-hidden="true">' +
+    '<path fill-rule="evenodd" clip-rule="evenodd" d="M105.748 1.52673C109.419 0.1241 112.852 -0.32559 116.126 0.233762C119.618 0.830542 122.881 2.56811 126.026 5.43493L126.025 5.43591C126.931 6.23964 127.876 7.25545 128.671 8.23864C129.458 9.21092 130.125 10.1827 130.463 10.9027C130.812 11.5989 131.159 12.2318 131.436 12.6859C131.561 12.8898 131.667 13.0489 131.75 13.1595C131.789 13.148 131.834 13.1356 131.882 13.1205C132.106 13.0508 132.415 12.9475 132.787 12.8168C133.53 12.5553 134.516 12.1865 135.568 11.7592L135.576 11.7562L135.583 11.7533C137.297 11.1201 139.469 10.4369 140.908 10.0277V7.29333C140.908 5.72505 141.738 4.89392 143.306 4.89392H161.572C163.14 4.89392 163.97 5.72505 163.97 7.29333V51.0199H173.565C175.133 51.02 175.963 51.8504 175.963 53.4183V67.0717C175.963 68.6399 175.133 69.471 173.565 69.4711H143.306C141.738 69.4711 140.908 68.6399 140.908 67.0717V22.6263C140.841 22.6525 140.774 22.6802 140.707 22.7064L134.465 25.141L134.923 27.7103L134.924 27.7142C135.067 28.5555 135.085 30.2889 135.008 32.3558C134.931 34.4419 134.753 36.921 134.487 39.2816C132.717 54.8071 129.257 64.3443 123.303 70.2601L123.301 70.2621L122.91 70.641C120.962 72.4901 119.186 73.6993 117.118 74.3998C114.919 75.1445 112.437 75.2981 109.145 75.101L109.141 75.1C106.848 74.9436 105.35 74.7657 104.086 74.3197C102.806 73.868 101.8 73.1546 100.462 72.0082C98.1138 70.0074 96.5516 67.9213 95.6441 65.3256C94.741 62.7419 94.5008 59.692 94.7233 55.7884V55.7845C95.442 44.8757 100.583 36.3098 113.083 25.2318L120.045 19.0619L118.965 16.7377L118.962 16.7279C118.681 16.0877 118.141 15.3082 117.505 14.5619C116.876 13.825 116.178 13.1526 115.597 12.7093C114.086 11.6609 112.621 11.4217 110.931 12.0189C109.19 12.6344 107.181 14.1485 104.676 16.7191L104.671 16.724C100.625 20.7734 96.8811 26.8371 94.027 33.5697C91.1743 40.2991 89.2257 47.6614 88.7447 54.2884L88.7438 54.2933L88.6744 55.0785C88.505 56.8795 88.2883 58.468 88.0524 59.6703C87.9181 60.3546 87.7745 60.9303 87.6246 61.3529C87.5503 61.5624 87.4672 61.755 87.3727 61.9086C87.2931 62.0377 87.1412 62.2483 86.8863 62.3236C86.7138 62.3745 86.4076 62.4277 86.0387 62.4808C85.6572 62.5357 85.1735 62.5946 84.6236 62.6537C83.5273 62.7715 82.1576 62.8894 80.7858 62.9681L75.1178 63.4877V59.1049C75.1178 50.6499 77.4332 40.6455 81.1031 31.4574C84.657 22.5599 89.5027 14.3735 94.8033 9.07751L95.318 8.57361C98.4397 5.56996 102.288 2.94665 105.01 1.82068L105.748 1.52673ZM121.617 34.0941C121.272 34.3421 120.836 34.711 120.332 35.1791C119.325 36.1133 118.081 37.4112 116.801 38.8519C114.234 41.7431 111.572 45.152 110.409 47.2904L110.406 47.2972L110.097 47.8627C108.595 50.7164 107.685 53.9266 107.432 56.723C107.297 58.214 107.351 59.5704 107.59 60.682C107.831 61.8007 108.249 62.6246 108.8 63.1136C109.734 63.9413 110.885 64.0587 112.112 63.4935C113.365 62.9161 114.688 61.6206 115.804 59.642C116.832 57.8211 118.055 54.3695 119.135 50.4222C120.211 46.4927 121.131 42.1201 121.57 38.475C121.702 37.032 121.789 35.7328 121.811 34.8002C121.819 34.4642 121.816 34.1837 121.807 33.9652C121.749 34.0028 121.685 34.045 121.617 34.0941Z"/></svg>';
+  function thumbPlaceholderHTML(size) {
+    return '<span class="thumb-ph ' + size + ' shrink-0 rounded-lg border border-rule" aria-hidden="true">' + THUMB_PH_GLYPH + '</span>';
+  }
+  // Inline onerror target: swaps a broken thumbnail (or the lightbox button
+  // wrapping it) for the placeholder, keeping the image's size classes.
+  window.wtThumbFail = function (img) {
+    var el = img.closest('button[data-lightbox]') || img;
+    var tmp = document.createElement('span');
+    tmp.innerHTML = thumbPlaceholderHTML(img.getAttribute('data-size') || 'w-14 h-14');
+    el.replaceWith(tmp.firstChild);
+  };
+  // A stop's thumbnail: the image (in a lightbox button when `lightbox`),
+  // or the placeholder when it has none.
+  function stopThumbHTML(s, size, lightbox) {
+    if (!s.img) return thumbPlaceholderHTML(size);
+    var img = '<img src="' + s.img + '" alt="" loading="lazy" data-size="' + size + '" onerror="wtThumbFail(this)" class="' + size + ' shrink-0 rounded-lg object-cover border border-rule">';
+    if (!lightbox) return img;
+    return '<button type="button" data-lightbox="' + bigImg(s.img) + '" data-lightbox-fallback="' + s.img + '" data-lightbox-alt="' + plain(s.name) + '" class="shrink-0 rounded-lg" aria-label="View larger image of ' + plain(s.name) + '">' + img + '</button>';
+  }
 
   // Every stop image is a Wikimedia Commons "/330px-Filename.ext" thumbnail
   // (see the stop-entries skill) — Commons serves any width at the
@@ -2191,7 +2238,9 @@
       io = new IntersectionObserver(function (entries) {
         var e = entries[0];
         var pastIt = !e.isIntersecting && e.boundingClientRect.top < 0;
-        bar.classList.toggle('hidden', !pastIt);
+        // Slides down from behind the header (styles.css .is-shown).
+        bar.classList.toggle('is-shown', pastIt);
+        bar.setAttribute('aria-hidden', String(!pastIt));
       }, { rootMargin: '-' + headerEl.offsetHeight + 'px 0px 0px 0px', threshold: 0 });
       io.observe(target);
     }
