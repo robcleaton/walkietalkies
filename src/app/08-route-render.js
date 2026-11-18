@@ -39,7 +39,7 @@
     meta.textContent = n === 0 ? '' : n + (n === 1 ? ' stop' : ' stops');
     meta.classList.toggle('hidden', n === 0);
     document.getElementById('barLabel').innerHTML =
-      n === 0 ? 'Add your first stop' : n + (n === 1 ? ' stop' : ' stops') + ' · ' + distHTML(km.toFixed(1), 'km');
+      n === 0 ? 'Add your first stop' : n + (n === 1 ? ' stop' : ' stops') + ' · ' + fmtDist(km);
 
     var headerCount = document.getElementById('routeHeaderCount');
     headerCount.textContent = n;
@@ -87,7 +87,7 @@
       var leg = i > 0 ? haversine(byId[route[i - 1]], s) : 0;
       var open = !!routeOpen[id];
       html += '' +
-        (i > 0 ? '<p class="pl-[52px] pr-5 font-mono text-[11px] leading-4 text-faint num">&darr; ' + distHTML(leg.toFixed(2), 'km') + '</p>' : '') +
+        (i > 0 ? '<p class="pl-[52px] pr-5 font-mono text-[11px] leading-4 text-faint num">&darr; ' + fmtDist(leg) + '</p>' : '') +
         // Mobile rows match the Near you list (56px image, 15px name,
         // centred); the desktop dropdown keeps its tighter rows (lg:).
         // .route-row: tapping it (bar the Listen, ⋯ and playbar controls)

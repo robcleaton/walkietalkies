@@ -142,7 +142,8 @@
   }
 
   function fmtDist(km) {
-    if (km < 1) return distHTML(Math.max(10, Math.round(km * 1000 / 10) * 10), 'm');
+    if (km <= 0) return distHTML(0, 'm'); // a one-stop route, or two stops on one spot
+    if (km < 0.995) return distHTML(Math.max(10, Math.round(km * 1000 / 10) * 10), 'm'); // not "1000 m"
     return distHTML(km < 10 ? km.toFixed(1) : Math.round(km), 'km');
   }
 
@@ -189,23 +190,59 @@
        o.actionsHTML   Listen / Add to route (app only)
        o.nearbyHTML    the nearby stops block
   --------------------------------------------------------------- */
+  // A stop's Sources (data.js refs) as a list of links. Wikipedia and
+  // Historic England links read as the article or list entry; anything
+  // else as its site name.
+  function refLabel(url) {
+    var m = /^https?:\/\/([^\/?#]+)([^?#]*)/.exec(url);
+    if (!m) return url;
+    var host = m[1].replace(/^www\./, ''), path = m[2];
+    var esc = function (t) { return t.replace(/&(?![a-z#0-9]+;)/gi, '&amp;').replace(/</g, '&lt;'); };
+    var wiki = /^\/wiki\/(.+)/.exec(path);
+    if (/(^|\.)wikipedia\.org$/.test(host) && wiki) {
+      var title = wiki[1];
+      try { title = decodeURIComponent(title); } catch (e) {}
+      return 'Wikipedia: ' + esc(title.replace(/_/g, ' '));
+    }
+    var entry = /list-entry\/(\d+)/.exec(path);
+    if (host === 'historicengland.org.uk' && entry) return 'Historic England: list entry ' + entry[1];
+    return esc(host);
+  }
+
+  function refsHTML(s) {
+    if (!s.refs || !s.refs.length) return '';
+    return '<div class="lg:col-span-12 border-t border-rule pt-5">' +
+      '<p class="eyebrow text-faint mb-3">References</p>' +
+      '<ol class="text-[14px] leading-snug text-muted space-y-1.5 list-decimal pl-5">' +
+        s.refs.map(function (url) {
+          return '<li><a href="' + url + '" target="_blank" rel="noopener" class="underline decoration-rule underline-offset-2 hover:text-ink break-words">' + refLabel(url) + '</a></li>';
+        }).join('') +
+      '</ol>' +
+    '</div>';
+  }
+
   function stopPageHTML(s, o) {
     var sep = '<span aria-hidden="true">/</span>';
     var paras = String(s.text || '').split('\n\n').map(function (p) { return '<p>' + p + '</p>'; }).join('');
     var meta = (s.era ? s.era + ' &middot; ' : '') + cardAddress(s);
     var name = htmlToPlain(s.name);
     return '' +
-      '<nav aria-label="Breadcrumb" class="eyebrow text-faint mb-5 flex flex-wrap items-center gap-x-2 gap-y-1">' +
+      '<nav aria-label="Breadcrumb" class="eyebrow text-faint mb-4 flex flex-wrap items-center gap-x-2 gap-y-1">' +
         '<a href="./" class="hover:text-ink">Home</a>' +
         (o.areas[0] ? sep + '<a href="' + areaPath(o.areas[0]) + '" data-area="' + o.areas[0] + '" class="hover:text-ink">' + areaTitle(o.areas[0]) + '</a>' : '') +
         sep + '<span aria-current="page" class="text-muted">' + s.name + '</span>' +
       '</nav>' +
-      '<article class="grid gap-6 lg:grid-cols-12 lg:gap-10 items-start">' +
+      // The stop itself sits in a card, like the stop cards elsewhere
+      // (same surface, hairline border and corner radius as .stop).
+      '<article class="bg-surface border border-rule rounded-[16px] p-5 sm:p-8 grid gap-6 lg:grid-cols-12 lg:gap-10 items-start">' +
         (s.img ?
           '<figure class="lg:col-span-5">' +
-            '<button type="button" data-lightbox="' + bigImg(s.img) + '" data-lightbox-fallback="' + s.img + '" data-lightbox-alt="' + name + '" class="block w-full rounded-[18px] overflow-hidden border border-rule" aria-label="View larger image of ' + name + '">' +
+            '<button type="button" data-lightbox="' + bigImg(s.img) + '" data-lightbox-fallback="' + s.img + '" data-lightbox-alt="' + name + '" class="block w-full rounded-[12px] overflow-hidden border border-rule" aria-label="View larger image of ' + name + '">' +
               '<img src="' + mediumImg(s.img) + '" data-fallback="' + s.img + '" onerror="this.onerror=null;this.src=this.getAttribute(\'data-fallback\')" alt="' + name + '" width="1200" height="900" class="block w-full h-auto aspect-[4/3] object-cover">' +
             '</button>' +
+            // The map that the app's Map button swaps in for the photo
+            // (09b-stop-page.js), the same size.
+            '<div data-stop-map class="hidden w-full aspect-[4/3] rounded-[12px] overflow-hidden border border-rule"></div>' +
             // Photo credit (author · licence · Commons), filled in by the app.
             '<figcaption data-photo-credit class="mt-2 text-[12px] leading-snug text-faint min-h-[1.25em]"></figcaption>' +
           '</figure>' : '') +
@@ -221,6 +258,7 @@
               '<div class="flex flex-wrap gap-2">' + o.areas.map(o.areaChipHTML).join('') + '</div>' +
             '</div>' : '') +
         '</div>' +
+        refsHTML(s) +
       '</article>' +
       (o.nearbyHTML ?
         '<section class="mt-12" aria-labelledby="nearbyTitle">' +

@@ -62,7 +62,7 @@ body{ padding-top:var(--header-h, 84px); }
    container itself establishes a stacking context — otherwise they
    compete directly in the page's root stacking context and the zoom
    controls/popups float above the header when scrolled underneath it. */
-#areaMap, #routeMap{ position:relative; z-index:0; }
+#areaMap, #routeMap, [data-stop-map]{ position:relative; z-index:0; }
 
 /* Stop thumbnail placeholder (no image, or it failed to load): a quiet
    raised tile with the wordmark's looped "a" (from WALKIE): oversized,
@@ -83,6 +83,17 @@ body{ padding-top:var(--header-h, 84px); }
 #nearList .dist-u{ margin-left:.08em; } /* Near you: tighter still */
 @media (max-width:639px){ #nearList .dist-u{ margin-left:0; } } /* Near you list on phones: no gap */
 .stop{ background:var(--surface); border:1px solid var(--rule); border-radius:16px; }
+/* The whole card links to the stop's page: the title's link stretches over
+   it (::after), with the card's own controls lifted above that layer. */
+.stop{ transition:background-color .25s ease; }
+.stop-link{ -webkit-tap-highlight-color:transparent; }
+.stop-link::after{ content:""; position:absolute; inset:0; border-radius:inherit; }
+.stop-link:focus-visible{ outline:none; }
+.stop:has(.stop-link:focus-visible){ outline:2px solid var(--focus); outline-offset:2px; }
+.stop [data-lightbox], .stop [data-listen], .stop [data-toggle], .stop button[disabled]{ position:relative; z-index:1; }
+.stop .playbar{ z-index:1; }
+/* Pressed: the same tint as Near you's rows (set from src/app/06b-row-expand.js). */
+.stop.is-pressed{ background-color:var(--press); transition-duration:0s; }
 .stop.flash{ animation:flash 1.6s ease-out; }
 /* Narration playbar (playbarHTML() in src/app), under a route stop's name. */
 .playbar{ display:flex; align-items:center; gap:8px; margin-top:8px; font-family:"Azeret Mono", ui-monospace, monospace; font-size:10px; line-height:1; color:var(--muted); }
@@ -285,15 +296,15 @@ html.js-marquee .area-row-track{ animation:none !important; }
    scroll track uses the full window width on wide screens (same technique
    as #areaStickyRow), while resting-position alignment still matches the
    rest of the page content via the calculated left padding. The
-   Discover page's area-card carousel and the area pages' per-category
-   rows share the same track. */
-#homeList, #discoverAreas, .area-cat-row{
+   Discover page's area-card carousel, the area pages' per-category
+   rows and the stop page's Nearby row share the same track. */
+#homeList, #discoverAreas, .area-cat-row, [data-nearby-row]{
   margin-left:calc(0px - max(20px, (100vw - 1280px) / 2 + 20px));
   margin-right:calc(0px - max(20px, (100vw - 1280px) / 2 + 20px));
   padding-left:max(20px, calc((100vw - 1280px) / 2 + 20px)); padding-right:20px;
 }
 @media (min-width:640px){
-  #homeList, #nearList, #discoverAreas, .area-cat-row{
+  #homeList, #nearList, #discoverAreas, .area-cat-row, [data-nearby-row]{
     margin-left:calc(0px - max(32px, (100vw - 1280px) / 2 + 32px));
     margin-right:calc(0px - max(32px, (100vw - 1280px) / 2 + 32px));
     padding-left:max(32px, calc((100vw - 1280px) / 2 + 32px)); padding-right:32px;

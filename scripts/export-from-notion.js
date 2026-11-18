@@ -200,6 +200,9 @@ function pageToStop(page, usedSlugs) {
     // Up to 40 words, shown on the stop cards; the full Description above
     // stays the source for the narration audio.
     short: getRichText(page, 'Short description'),
+    // Sources, one URL per line in Notion, listed as References at the
+    // foot of the stop page.
+    refs: getRichText(page, 'Sources').split(/\n+/).map((l) => l.trim()).filter((l) => /^https?:\/\//.test(l)),
     // Which area pages the stop appears on (src/app stopInArea). Left off
     // entirely while the database has no "Areas" column, so the site falls
     // back to matching on name/Area text instead.
@@ -229,6 +232,7 @@ function formatStop(stop) {
     `      lat:${lat}, lon:${lon}, addr:'${encodeField(stop.addr)}',\n` +
     `      text:'${encodeField(stop.text)}'` +
     (stop.short ? `,\n      short:'${encodeField(stop.short)}'` : '') +
+    (stop.refs.length ? `,\n      refs:[${stop.refs.map((r) => `'${encodeField(r)}'`).join(', ')}]` : '') +
     (stop.areas ? `,\n      areas:[${stop.areas.map((a) => `'${encodeField(a)}'`).join(', ')}]` : '') +
     ` }`
   );

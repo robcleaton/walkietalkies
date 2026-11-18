@@ -44,8 +44,20 @@
     if (open) d.removeAttribute('aria-hidden'); else d.setAttribute('aria-hidden', 'true');
   });
 
-  // Pressed tint while a row is held. A scroll or drag that starts on a
-  // row fires pointercancel, so the tint drops away rather than sticking.
+  // What a press on `target` should tint: an expandable row, or a stop
+  // card (the whole card links to its page) — but not when it lands on one
+  // of their own controls.
+  function pressableAt(target) {
+    var hit = expandableRowAt(target);
+    if (hit) return hit.row;
+    var card = target.closest('.stop');
+    if (!card || !card.querySelector('.stop-link')) return null;
+    if (target.closest('button, [data-pb-track], .playbar')) return null;
+    return card;
+  }
+
+  // Pressed tint while a row or card is held. A scroll or drag that starts
+  // on one fires pointercancel, so the tint drops away rather than sticking.
   (function () {
     var pressed = null;
     function release() {
@@ -54,10 +66,10 @@
     }
     document.addEventListener('pointerdown', function (e) {
       if (e.button !== 0) return;
-      var hit = expandableRowAt(e.target);
-      if (!hit) return;
+      var el = pressableAt(e.target);
+      if (!el) return;
       release();
-      pressed = hit.row;
+      pressed = el;
       pressed.classList.add('is-pressed');
     });
     ['pointerup', 'pointercancel', 'dragstart'].forEach(function (t) {

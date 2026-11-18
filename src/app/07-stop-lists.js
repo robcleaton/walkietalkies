@@ -222,7 +222,9 @@
         '<div class="min-w-0 mt-3' + (compact ? ' shrink-0' : '') + '">' +
           '<div class="mb-2">' + catChip(s.cat) + '</div>' +
           '<h3 class="font-display text-[23px] sm:text-[28px] leading-[1.1] mb-1">' +
-            '<a href="' + stopPath(s.id) + '" data-stop-link="' + s.id + '" class="hover:underline decoration-2 underline-offset-4">' + s.name + '</a>' +
+            // .stop-link stretches over the whole card (styles.css), so the
+            // card is one big link to the stop's page; its own buttons sit above.
+            '<a href="' + stopPath(s.id) + '" data-stop-link="' + s.id + '" class="stop-link">' + s.name + '</a>' +
           '</h3>' +
           '<p class="font-mono text-[11px] text-muted num' + (compact ? ' truncate' : '') + '">' + (dist ? '<span class="text-ink font-semibold">' + dist + '</span> &middot; ' : '') + cardAddress(s) + '</p>' +
         '</div>' +
