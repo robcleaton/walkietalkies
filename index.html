@@ -140,12 +140,12 @@
     </div>
   </header>
 
-  <!-- Homepage hero: full-viewport-height placeholder, shown only on the homepage (hidden on area pages) -->
-  <section id="homeHero" class="min-h-[68vh] sm:min-h-[84vh] flex items-center justify-center border-b border-rule">
-    <div class="text-center px-5">
-      <p class="eyebrow text-faint mb-3">Hero placeholder &middot; <span class="sm:hidden">68vh</span><span class="hidden sm:inline">84vh</span></p>
-      <p class="text-muted text-[14px]">Swap this section for the real homepage hero.</p>
-    </div>
+  <!-- Homepage hero: shown only on the homepage (hidden on area pages).
+       Three rows of tiles drifting in opposite directions: big type,
+       stop photos and photos cropped into shapes. Filled by
+       src/app/13b-hero.js from STOPS, so it's different on every visit. -->
+  <section id="homeHero" class="hero h-[68vh] sm:h-[84vh] border-b border-rule" aria-label="Stops from around South East London">
+    <div id="heroRows" class="hero-rows"></div>
   </section>
 
   <!-- Sticky area nav: single scrollable row, shown once the big area chips below scroll out of view.

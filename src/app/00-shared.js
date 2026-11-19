@@ -254,7 +254,7 @@
           '<div class="font-serif text-[18px] leading-[1.6] mt-6 max-w-[62ch] space-y-4">' + paras + '</div>' +
           (o.areas.length ?
             '<div class="mt-8">' +
-              '<p class="eyebrow text-faint mb-3">Part of</p>' +
+              '<p class="eyebrow text-faint mb-2">Area</p>' +
               '<div class="flex flex-wrap gap-2">' + o.areas.map(o.areaChipHTML).join('') + '</div>' +
             '</div>' : '') +
         '</div>' +

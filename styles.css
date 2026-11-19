@@ -619,3 +619,108 @@ button[data-toggle]:not([role="menuitem"]):not(:disabled):active{ transform:scal
 .suggest-input:focus{ outline:2px solid var(--focus); outline-offset:1px; border-color:transparent; }
 .suggest-input[aria-invalid="true"]{ border-color:var(--tomato); }
 @media (min-width:640px){ .suggest-input{ font-size:14px; } }
+
+/* ---------------------------------------------------------------
+   Homepage hero (src/app/13b-hero.js): three rows of tiles, each a
+   track holding its set of tiles twice and sliding by half its width,
+   so the loop is seamless. Rows alternate direction and speed. Tiles
+   are sized off the row's height (cqh), so the whole thing scales with
+   the hero's 68vh / 84vh.
+--------------------------------------------------------------- */
+.hero{ position:relative; overflow:hidden; padding:12px 0; }
+.hero-rows{ height:100%; display:flex; flex-direction:column; gap:12px; }
+.hero-row{ flex:1 1 0; min-height:0; container-type:size; overflow:hidden; }
+.hero-track{ display:flex; height:100%; width:max-content; animation:heroDrift var(--dur,80s) linear infinite; animation-direction:var(--dir,normal); }
+.hero-set{ display:flex; gap:12px; padding-right:12px; height:100%; }
+@keyframes heroDrift{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+.hero-row:hover .hero-track{ animation-play-state:paused; }
+.hero.is-offscreen .hero-track, .hero.is-offscreen .hero-shape img{ animation-play-state:paused; }
+
+.hero-tile{ position:relative; flex:0 0 auto; height:100%; border-radius:clamp(14px, 9cqh, 28px); overflow:hidden; text-decoration:none;
+  transition:transform .5s cubic-bezier(.32,.72,0,1); }
+a.hero-tile:hover{ transform:scale(.97); }
+a.hero-tile:focus-visible{ outline:2px solid var(--focus); outline-offset:-2px; }
+
+/* Type: a solid brand colour with two lines of display type... */
+.hero-word{ display:flex; align-items:center; padding:0 11cqh; font-family:"Gasoek One", Inter, sans-serif;
+  font-size:31cqh; line-height:.9; letter-spacing:-.01em; text-transform:uppercase; white-space:nowrap; }
+/* ...or one huge word straight on the page, no tile. */
+.hero-word--bare{ background:none; border-radius:0; padding:0 1cqh; font-size:92cqh; line-height:.78; }
+
+/* Version C (?hero=c): stops as just the shaped photo, no card behind
+   it (overriding the inline category colour) and no visible name (kept
+   for screen readers); the bare middle-row step a little smaller so
+   more of it reads at once. */
+.hero--c .hero-shape{ aspect-ratio:1; padding:0; background:none !important; border-radius:0; overflow:visible; }
+.hero--c .hero-shape .hero-name{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; margin:0; padding:0; }
+.hero--c .hero-word--bare{ font-size:74cqh; padding:0 4cqh; }
+
+/* Area: its chip colour, stop count up top, name in display type below. */
+.hero-area{ min-width:110cqh; display:flex; flex-direction:column; justify-content:space-between; padding:11cqh 11cqh 10cqh; }
+.hero-area__top{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.hero-area__top .eyebrow{ font-size:clamp(10px, 5.2cqh, 14px); opacity:.85; }
+.hero-area__arrow{ width:clamp(16px, 9cqh, 26px); height:auto; flex:0 0 auto; transition:transform .5s cubic-bezier(.32,.72,0,1); }
+a.hero-area:hover .hero-area__arrow{ transform:translate(3px,-3px); }
+.hero-area__name{ font-family:"Gasoek One", Inter, sans-serif; font-size:62cqh; line-height:.8; letter-spacing:-.01em; text-transform:uppercase; white-space:nowrap; }
+
+/* Photo: full bleed, a category chip and the stop's name on a scrim. */
+.hero-photo{ aspect-ratio:1.55; background:var(--raised); }
+.hero-photo--tall{ aspect-ratio:.82; }
+.hero-photo img{ width:100%; height:100%; object-fit:cover; display:block; animation:heroBreathe 14s ease-in-out infinite alternate; animation-delay:var(--delay,0s); }
+.hero-photo::after{ content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.62), rgba(0,0,0,0) 48%); pointer-events:none; }
+.hero-cap{ position:absolute; left:clamp(14px,10cqh,32px); right:clamp(14px,10cqh,32px); bottom:clamp(14px,10cqh,30px); z-index:1; color:#fff; }
+.hero-cap .eyebrow--cat{ display:inline-block; white-space:nowrap; border-radius:999px; padding:3px 8px; margin-bottom:6px; letter-spacing:.1em; }
+.hero-name{ display:block; font-weight:700; font-size:clamp(13px, 7.4cqh, 20px); line-height:1.15; letter-spacing:-.01em;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+
+/* Shape: a coloured card with the photo cropped to a shape (masks set
+   inline from the JS), the name underneath. */
+.hero-shape{ aspect-ratio:.8; display:flex; flex-direction:column; align-items:center; padding:11cqh 11cqh 10cqh; }
+.hero-shape__mask{ width:100%; aspect-ratio:1; flex:0 0 auto; overflow:hidden;
+  -webkit-mask-size:100% 100%; mask-size:100% 100%; -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat; }
+.hero-shape img{ width:100%; height:100%; object-fit:cover; display:block; animation:heroBreathe 12s ease-in-out infinite alternate; animation-delay:var(--delay,0s); }
+.hero-shape .hero-name{ margin-top:auto; width:100%; font-size:clamp(12px, 6.6cqh, 18px); }
+@keyframes heroBreathe{ from{ transform:scale(1); } to{ transform:scale(1.09); } }
+
+@media (prefers-reduced-motion: reduce){
+  .hero-track, .hero-photo img, .hero-shape img{ animation:none; }
+  a.hero-tile{ transition:none; }
+  /* Without the drift, let people swipe the rows instead. */
+  .hero-row{ overflow-x:auto; scrollbar-width:none; }
+  .hero-row::-webkit-scrollbar{ display:none; }
+}
+
+/* ---------------------------------------------------------------
+   Homepage hero, version B (?hero=b, src/app/13c-hero-route.js):
+   stop to stop, static. One centred block of display type with marks
+   and stop photos set into the lines.
+   Sized off the hero (cqh / cqw) so the block always fits.
+--------------------------------------------------------------- */
+.hero:has(.hero2){ padding:0; }
+.hero2{ height:100%; container-type:size; display:flex; align-items:center; justify-content:center; padding:0 20px; }
+.hero2-inner{ display:flex; flex-direction:column; align-items:center; gap:min(6cqh, 40px); }
+.hero2-type{ display:flex; flex-direction:column; align-items:center; font-family:"Gasoek One", Inter, sans-serif;
+  font-size:min(17cqh, 8.6cqw); line-height:.98; text-transform:uppercase; letter-spacing:-.005em; color:var(--ink); text-align:center; }
+.hero2-l{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; column-gap:.16em; row-gap:0; }
+.hero2-w{ white-space:nowrap; }
+
+/* A stop's photo, cropped to a shape (mask set inline from the JS, the
+   same shapes as version A's shape cards), well taller than the caps;
+   the negative margins let it overhang the lines above and below. */
+.hero2-photo{ display:block; flex:0 0 auto; width:1.4em; height:1.4em; margin:-.14em .02em;
+  -webkit-mask-size:100% 100%; mask-size:100% 100%; -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+  transition:transform .5s cubic-bezier(.32,.72,0,1); }
+.hero2-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+.hero2-photo:hover{ transform:scale(1.05) rotate(-2deg); }
+.hero2-photo:focus-visible{ outline:2px solid var(--focus); outline-offset:3px; }
+
+/* A category mark, at cap height. */
+.hero2-mark{ display:block; flex:0 0 auto; width:.74em; height:.74em; }
+.hero2-mark svg{ width:100%; height:100%; display:block; }
+
+/* Phones: bigger type that wraps between words, and bigger photos still. */
+@media (max-width:639px){
+  .hero2-type{ font-size:min(10cqh, 14.5cqw); }
+  .hero2-photo{ width:1.85em; height:1.85em; margin:-.1em .02em; }
+}
+@media (prefers-reduced-motion: reduce){ .hero2-photo{ transition:none; } }
