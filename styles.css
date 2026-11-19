@@ -662,6 +662,7 @@ a.hero-tile:focus-visible{ outline:2px solid var(--focus); outline-offset:-2px; 
 .hero-area__arrow{ width:clamp(16px, 9cqh, 26px); height:auto; flex:0 0 auto; transition:transform .5s cubic-bezier(.32,.72,0,1); }
 a.hero-area:hover .hero-area__arrow{ transform:translate(3px,-3px); }
 .hero-area__name{ font-family:"Gasoek One", Inter, sans-serif; font-size:62cqh; line-height:.8; letter-spacing:-.01em; text-transform:uppercase; white-space:nowrap; }
+@media (max-width:639px){ .hero-area__name{ font-size:40cqh; } } /* phones: smaller, so more of the name shows at once */
 
 /* Photo: full bleed, a category chip and the stop's name on a scrim. */
 .hero-photo{ aspect-ratio:1.55; background:var(--raised); }
