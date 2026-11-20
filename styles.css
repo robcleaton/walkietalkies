@@ -653,7 +653,40 @@ a.hero-tile:focus-visible{ outline:2px solid var(--focus); outline-offset:-2px; 
    more of it reads at once. */
 .hero--c .hero-shape{ aspect-ratio:1; padding:0; background:none !important; border-radius:0; overflow:visible; }
 .hero--c .hero-shape .hero-name{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; margin:0; padding:0; }
-.hero--c .hero-word--bare{ font-size:74cqh; padding:0 4cqh; }
+
+/* Version C's chips: pills centred in the row, a category's mark before
+   its name. */
+.hero-chip{ align-self:center; height:44cqh; display:flex; align-items:center; gap:.45em; padding:0 .9em; border-radius:999px;
+  font-family:Inter, "Helvetica Neue", Arial, sans-serif; font-weight:700; font-size:15cqh; letter-spacing:-.01em; white-space:nowrap; }
+/* Category chips are the row's full height, with the stop's photo
+   sitting in generous padding (20cqh all round) and plenty of room
+   either side of the name. */
+.hero-chip--cat{ height:100cqh; padding:0 2em 0 20cqh; font-family:"Gasoek One", Inter, sans-serif; font-weight:400; font-size:17cqh; letter-spacing:-.005em; text-transform:uppercase; gap:1em; }
+/* Version C's category row is taller, so its chips (and their photos) are bigger. */
+.hero--c .hero-row:first-child{ flex-grow:1.8; }
+.hero-chip__img{ width:60cqh; height:60cqh; flex:0 0 auto; overflow:hidden;
+  -webkit-mask-size:100% 100%; mask-size:100% 100%; -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat; }
+.hero-chip__img img{ width:100%; height:100%; object-fit:cover; display:block; }
+a.hero-chip:hover{ transform:scale(.96); }
+
+/* Version C's headline row: the biggest thing in the hero, static. */
+.hero--c .hero-row--headline{ flex-grow:1.7; display:flex; align-items:center; justify-content:center; padding:0 20px; }
+.hero-head{ display:flex; flex-direction:column; align-items:center; font-family:"Gasoek One", Inter, sans-serif; font-weight:400;
+  font-size:min(30cqh, 5.6cqw); line-height:.96; text-transform:uppercase; letter-spacing:-.005em; color:var(--ink); text-align:center; }
+.hero-head__l{ display:flex; flex-wrap:wrap; justify-content:center; align-items:center; column-gap:.22em; }
+.hero-head__l > span{ white-space:nowrap; }
+.hero-head__hl{ display:flex; column-gap:.22em; color:var(--marigold); }
+.hero-head__play{ display:flex; align-items:center; justify-content:center; width:.82em; height:.82em; border-radius:50%; background:var(--marigold); color:#171717; }
+.hero-head__play svg{ width:.42em; height:.42em; margin-left:.05em; }
+.hero-head__wave{ display:flex; align-items:center; gap:.05em; height:.6em; margin-right:.06em; }
+.hero-head__wave i{ display:block; width:.06em; height:100%; border-radius:.03em; background:var(--marigold); transform-origin:center; animation:heroWave 1.1s ease-in-out infinite alternate; }
+@keyframes heroWave{ from{ transform:scaleY(.25); } to{ transform:scaleY(1); } }
+.hero.is-offscreen .hero-head__wave i{ animation-play-state:paused; }
+@media (max-width:639px){
+  .hero--c .hero-row--headline{ flex-grow:2.4; }
+  .hero-head{ font-size:min(17cqh, 10cqw); }
+}
+@media (prefers-reduced-motion: reduce){ .hero-head__wave i{ animation:none; transform:scaleY(.6); } }
 
 /* Area: its chip colour, stop count up top, name in display type below. */
 .hero-area{ min-width:110cqh; display:flex; flex-direction:column; justify-content:space-between; padding:11cqh 11cqh 10cqh; }

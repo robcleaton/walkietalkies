@@ -18,11 +18,7 @@
     if (!heroEl || !rowsEl) return;
 
     var WORDS = {
-      plaques: { html:'Blue<br>plaques',  bg:'var(--plaque)',    fg:'#fff' },
-      // Version C's three steps.
-      find:    { html:'Find the<br>stops',   bg:'var(--marigold)', fg:'#171717' },
-      route:   { html:'Build your route',    bare:true, fg:'var(--marigold)' },
-      hear:    { html:'Hear the<br>stories', bg:'var(--marigold)', fg:'#171717' }
+      plaques: { html:'Blue<br>plaques',  bg:'var(--plaque)',    fg:'#fff' }
     };
 
     // Each row's tiles, in order: 'w:<word>', 'photo', 'tall' (portrait
@@ -33,17 +29,17 @@
       { tiles:['shape', 'photo', 'area', 'shape', 'tall', 'shape', 'photo', 'area', 'photo'], dur:105, dir:'normal' }
     ];
 
-    // Version C (?hero=c): simpler, and says what the site does. One
-    // step per row (find the stops, build your route, hear the stories),
-    // repeated between stops' photos cropped into shapes (version A's
-    // shape cards without the card or the name), all in marigold.
+    // Version C (?hero=c): says what the site is. The middle row is a
+    // big static headline, "Audio guide to South East London stops";
+    // above it a row of category chips (each with a stop's photo,
+    // cropped to a shape) drifts past, and below it a row of area chips.
     var VERSION_C = /[?&]hero=c(&|$)/.test(location.search);
     if (VERSION_C) {
       heroEl.classList.add('hero--c');
       ROWS = [
-        { tiles:['w:find', 'shape', 'w:find', 'shape', 'w:find', 'shape'], dur:90, dir:'normal' },
-        { tiles:['shape', 'w:route', 'shape', 'w:route'], dur:120, dir:'reverse' },
-        { tiles:['w:hear', 'shape', 'w:hear', 'shape', 'w:hear', 'shape'], dur:100, dir:'normal' }
+        { tiles:['cat', 'cat', 'cat', 'cat', 'cat', 'cat', 'cat', 'cat'], dur:90, dir:'normal' },
+        { headline:true },
+        { tiles:['areachip', 'areachip', 'areachip', 'areachip', 'areachip', 'areachip', 'areachip', 'areachip'], dur:100, dir:'reverse' }
       ];
     }
 
@@ -139,6 +135,33 @@
         '<span class="hero-area__name">' + areaTitle(area) + '</span></a>';
     }
 
+    // Version C's chips, at hero size: a category (its plural name, in its colour, with a
+    // photo of one of its stops cropped to a shape, linking to that stop) and an area
+    // (its chip colour, linking to its page).
+    function catChipHTML(cat, s) {
+      var m = CATMARK[cat];
+      var mask = SHAPES[shapeIndex++ % SHAPES.length]; // cropped like the shape tiles
+      return '<a class="hero-tile hero-chip hero-chip--cat" href="' + stopPath(s.id) + '" title="' + s.name.replace(/"/g, '&quot;') + '" style="background:' + m.color + ';color:' + m.fg + '">' +
+        '<span class="hero-chip__img" style="-webkit-mask-image:' + mask + ';mask-image:' + mask + '">' + imgHTML(s) + '</span>' + (CAT_PLURALS[cat] || CATS[cat]) + '</a>';
+    }
+    function areaChipHTML(area) {
+      var c = AREA_COLORS[area];
+      return '<a class="hero-tile hero-chip" href="' + areaPath(area) + '" style="background:' + c.bg + ';color:' + c.fg + '">' + areaTitle(area) + '</a>';
+    }
+    // Version C's headline row: static, centred, a play button with a
+    // waveform before it. Each word its own box, so it wraps on phones.
+    function headlineHTML() {
+      var bars = '';
+      for (var i = 0; i < 9; i++) bars += '<i style="animation-delay:-' + (i * 0.17).toFixed(2) + 's"></i>';
+      function words(t) { return t.split(' ').map(function (w) { return '<span>' + w + '</span>'; }).join(' '); }
+      return '<div class="hero-row hero-row--headline"><h2 class="hero-head">' +
+        '<span class="hero-head__l"><span class="hero-head__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></span>' +
+          '<span class="hero-head__wave" aria-hidden="true">' + bars + '</span>' +
+          '<span class="hero-head__hl">' + words('Audio guide') + '</span> ' + words('to') + '</span>' +
+        '<span class="hero-head__l">' + words('South East London stops') + '</span>' +
+        '</h2></div>';
+    }
+
     function build() {
       var pool = shuffle(STOPS.filter(function (s) { return s.img && CATMARK[s.cat]; }));
       var next = 0;
@@ -146,11 +169,27 @@
       var areas = shuffle(Object.keys(AREA_COLORS).filter(function (a) { return areaStopCount(a) > 0; }));
       var nextArea = 0;
 
+      var cats = shuffle(Object.keys(CATS));
+      var nextCat = 0;
+
       rowsEl.innerHTML = ROWS.map(function (row) {
+        if (row.headline) return headlineHTML();
         var set = row.tiles.map(function (t) {
           if (t.indexOf('w:') === 0) return wordHTML(t.slice(2));
           if (t === 'shape') return shapeHTML(take());
           if (t === 'area') return areas.length ? areaHTML(areas[nextArea++ % areas.length]) : '';
+          if (t === 'cat') {
+            // A stop from that category, not shown elsewhere in the hero.
+            var cat = cats[nextCat++ % cats.length];
+            for (var i = next; i < pool.length; i++) {
+              if (pool[i].cat === cat) {
+                var s = pool.splice(i, 1)[0];
+                return catChipHTML(cat, s);
+              }
+            }
+            return '';
+          }
+          if (t === 'areachip') return areas.length ? areaChipHTML(areas[nextArea++ % areas.length]) : '';
           return photoHTML(take(), t === 'tall');
         }).join('');
         // The set twice, so sliding the track by half loops seamlessly;
