@@ -174,19 +174,20 @@
   function thumbPlaceholderHTML(size) {
     return '<span class="thumb-ph ' + size + ' shrink-0 rounded-lg border border-rule" aria-hidden="true">' + THUMB_PH_GLYPH + '</span>';
   }
-  // Inline onerror target: swaps a broken thumbnail (or the lightbox button
+  // Inline onerror target: swaps a broken thumbnail (or the stop link
   // wrapping it) for the placeholder, keeping the image's size classes.
   window.wtThumbFail = function (img) {
-    var el = img.closest('button[data-lightbox]') || img;
+    var el = img.closest('a[data-thumb-link]') || img;
     var tmp = document.createElement('span');
     tmp.innerHTML = thumbPlaceholderHTML(img.getAttribute('data-size') || 'w-14 h-14');
     el.replaceWith(tmp.firstChild);
   };
-  // A stop's thumbnail: the image (in a lightbox button when `lightbox`),
-  // or the placeholder when it has none.
-  function stopThumbHTML(s, size, lightbox) {
+  // A stop's thumbnail: the image (a link to the stop's page when `link`),
+  // or the placeholder when it has none. The full-size photo is on the
+  // stop page, where tapping it opens the lightbox.
+  function stopThumbHTML(s, size, link) {
     if (!s.img) return thumbPlaceholderHTML(size);
     var img = '<img src="' + s.img + '" alt="" loading="lazy" data-size="' + size + '" onerror="wtThumbFail(this)" class="' + size + ' shrink-0 rounded-lg object-cover border border-rule">';
-    if (!lightbox) return img;
-    return '<button type="button" data-lightbox="' + bigImg(s.img) + '" data-lightbox-fallback="' + s.img + '" data-lightbox-alt="' + plain(s.name) + '" class="shrink-0 rounded-lg" aria-label="View larger image of ' + plain(s.name) + '">' + img + '</button>';
+    if (!link) return img;
+    return '<a href="' + stopPath(s.id) + '" data-stop-link="' + s.id + '" data-thumb-link class="shrink-0 rounded-lg" aria-label="' + plain(s.name) + '">' + img + '</a>';
   }
