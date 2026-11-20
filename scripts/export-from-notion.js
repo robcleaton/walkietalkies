@@ -203,6 +203,10 @@ function pageToStop(page, usedSlugs) {
     // Sources, one URL per line in Notion, listed as References at the
     // foot of the stop page.
     refs: getRichText(page, 'Sources').split(/\n+/).map((l) => l.trim()).filter((l) => /^https?:\/\//.test(l)),
+    // The venue's own website and Instagram, linked under "Visit" on the
+    // stop page. Blank for stops with neither (a plaque, a lost theatre).
+    web: getUrl(page, 'Website'),
+    ig: getUrl(page, 'Instagram'),
     // Which area pages the stop appears on (src/app stopInArea). Left off
     // entirely while the database has no "Areas" column, so the site falls
     // back to matching on name/Area text instead.
@@ -233,6 +237,8 @@ function formatStop(stop) {
     `      text:'${encodeField(stop.text)}'` +
     (stop.short ? `,\n      short:'${encodeField(stop.short)}'` : '') +
     (stop.refs.length ? `,\n      refs:[${stop.refs.map((r) => `'${encodeField(r)}'`).join(', ')}]` : '') +
+    (stop.web ? `,\n      web:'${encodeField(stop.web)}'` : '') +
+    (stop.ig ? `,\n      ig:'${encodeField(stop.ig)}'` : '') +
     (stop.areas ? `,\n      areas:[${stop.areas.map((a) => `'${encodeField(a)}'`).join(', ')}]` : '') +
     ` }`
   );
