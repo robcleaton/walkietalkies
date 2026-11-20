@@ -7,6 +7,13 @@
   var routePanelBodyEl = document.getElementById('routePanelBody');
   var routeBarEl = document.getElementById('routeBar');
   var routeOpenTrigger = null; // element to refocus when the panel closes
+  // Whether the last input was a key rather than a tap or click. Moving
+  // focus into the panel only helps keyboard users; after a tap, Safari
+  // still draws a focus ring on whatever is focused in code (the first
+  // stop's name), so taps leave focus where it is.
+  var keyboardInput = false;
+  document.addEventListener('keydown', function () { keyboardInput = true; }, true);
+  document.addEventListener('pointerdown', function () { keyboardInput = false; }, true);
   function focusableIn(container) {
     return Array.prototype.filter.call(
       container.querySelectorAll('a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])'),
@@ -25,7 +32,7 @@
     // sheet, or a window resize while closed) — resync the map's canvas
     // to its container each time it becomes visible.
     if (v && routeMap) setTimeout(function () { routeMap.invalidateSize(); }, 0);
-    if (v && !wasOpen) {
+    if (v && !wasOpen && keyboardInput) {
       // routePanelBodyEl, not routePanelEl — #routeBar (the always-visible
       // summary row) is itself inside #routePanel now, so focusing the
       // panel's first focusable would just refocus the button that was
@@ -35,7 +42,7 @@
       // would otherwise scroll it, nudging the contents sideways.
       if (focusables.length) focusables[0].focus({ preventScroll: true });
     } else if (!v && wasOpen && routeOpenTrigger) {
-      routeOpenTrigger.focus();
+      if (keyboardInput) routeOpenTrigger.focus();
       routeOpenTrigger = null;
     }
   }
