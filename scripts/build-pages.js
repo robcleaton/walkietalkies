@@ -177,6 +177,10 @@ function stopPage(s) {
       { postalCode: pcMatch ? pcMatch[1] + ' ' + pcMatch[2] : s.pc, addressLocality: 'London', addressCountry: 'GB' }),
   };
   if (s.img) place.image = app.bigImg(s.img);
+  // The venue's own website and Instagram tell search engines which real
+  // place this page is about.
+  const sameAs = [s.web, s.ig].filter(Boolean);
+  if (sameAs.length) place.sameAs = sameAs;
   if (s.lat != null && s.lon != null) place.geo = { '@type': 'GeoCoordinates', latitude: s.lat, longitude: s.lon };
   if (areas.length) place.containedInPlace = areas.map(a => ({ '@type': 'Place', name: app.areaTitle(a) + ', London', url: abs(app.areaPath(a)) }));
 

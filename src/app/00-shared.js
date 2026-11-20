@@ -221,6 +221,22 @@
     '</div>';
   }
 
+  // The venue's own website and Instagram (data.js web / ig), as a "Visit"
+  // row under the Area chips. Nothing at all when a stop has neither.
+  function visitHTML(s) {
+    var link = function (url, label) {
+      return '<a href="' + url + '" target="_blank" rel="noopener" class="underline decoration-rule underline-offset-2 hover:text-ink">' + label + '</a>';
+    };
+    var links = [];
+    if (s.web) links.push(link(s.web, 'Website'));
+    if (s.ig) links.push(link(s.ig, 'Instagram'));
+    if (!links.length) return '';
+    return '<div class="mt-6">' +
+      '<p class="eyebrow text-faint mb-2">Visit</p>' +
+      '<p class="text-[15px] text-muted flex flex-wrap gap-x-4 gap-y-1">' + links.join('') + '</p>' +
+    '</div>';
+  }
+
   function stopPageHTML(s, o) {
     var sep = '<span aria-hidden="true">/</span>';
     var paras = String(s.text || '').split('\n\n').map(function (p) { return '<p>' + p + '</p>'; }).join('');
@@ -257,6 +273,7 @@
               '<p class="eyebrow text-faint mb-2">Area</p>' +
               '<div class="flex flex-wrap gap-2">' + o.areas.map(o.areaChipHTML).join('') + '</div>' +
             '</div>' : '') +
+          visitHTML(s) +
         '</div>' +
         refsHTML(s) +
       '</article>' +
