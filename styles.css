@@ -90,7 +90,7 @@ body{ padding-top:var(--header-h, 84px); }
 .stop-link::after{ content:""; position:absolute; inset:0; border-radius:inherit; }
 .stop-link:focus-visible{ outline:none; }
 .stop:has(.stop-link:focus-visible){ outline:2px solid var(--focus); outline-offset:2px; }
-.stop [data-lightbox], .stop [data-listen], .stop [data-toggle], .stop button[disabled]{ position:relative; z-index:1; }
+.stop [data-thumb-link], .stop [data-listen], .stop [data-toggle], .stop button[disabled]{ position:relative; z-index:1; }
 .stop .playbar{ z-index:1; }
 /* Pressed: the same tint as Near you's rows (set from src/app/06b-row-expand.js). */
 .stop.is-pressed{ background-color:var(--press); transition-duration:0s; }
