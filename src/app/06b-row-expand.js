@@ -15,7 +15,7 @@
   function rowDescHTML(domId, open, s, pClass) {
     return '<div class="row-desc" id="' + domId + '"' + (open ? '' : ' aria-hidden="true"') + '>' +
       '<div><p class="font-serif text-[15px] leading-[1.5] text-ink ' + pClass + '">' +
-        (s.short || s.text.split('\n\n')[0]) +
+        (s.short || stopRefsPlain(s.text).split('\n\n')[0]) +
       '</p></div>' +
     '</div>';
   }

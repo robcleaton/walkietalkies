@@ -108,8 +108,23 @@
   var NAMED_ENTITIES = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', mdash: '—', ndash: '–',
     rsquo: '’', lsquo: '‘', rdquo: '”', ldquo: '“', hellip: '…', middot: '·', eacute: 'é', egrave: 'è',
     times: '×', pound: '£', deg: '°', frac12: '½', aacute: 'á', oacute: 'ó', iacute: 'í', uuml: 'ü', ouml: 'ö', auml: 'ä', ccedil: 'ç' };
+  // Stop text can point at another stop with [[stop-id|Label]]. The stop
+  // page renders that as a link to the other stop; everywhere else (cards,
+  // rows, search, meta descriptions, narration) shows just the label.
+  var STOP_REF_RE = /\[\[([a-z0-9-]+)\|([^\]]+)\]\]/g;
+  function stopRefsPlain(text) {
+    return String(text || '').replace(STOP_REF_RE, '$2');
+  }
+  function stopRefsHTML(text) {
+    return String(text || '').replace(STOP_REF_RE, function (m, id, label) {
+      var known = STOPS.some(function (s) { return s.id === id; });
+      if (!known) return label;
+      return '<a href="' + stopPath(id) + '" data-stop-link="' + id + '" class="underline decoration-rule underline-offset-2 hover:text-ink">' + label + '</a>';
+    });
+  }
+
   function htmlToPlain(html) {
-    return String(html || '')
+    return stopRefsPlain(html)
       .replace(/<[^>]*>/g, '')
       .replace(/&#(\d+);/g, function (_, n) { return String.fromCharCode(+n); })
       .replace(/&#x([0-9a-f]+);/gi, function (_, n) { return String.fromCharCode(parseInt(n, 16)); })
@@ -244,7 +259,7 @@
 
   function stopPageHTML(s, o) {
     var sep = '<span aria-hidden="true">/</span>';
-    var paras = String(s.text || '').split('\n\n').map(function (p) { return '<p>' + p + '</p>'; }).join('');
+    var paras = stopRefsHTML(s.text).split('\n\n').map(function (p) { return '<p>' + p + '</p>'; }).join('');
     var meta = (s.era ? s.era + ' &middot; ' : '') + cardAddress(s);
     var name = htmlToPlain(s.name);
     return '' +
@@ -268,7 +283,7 @@
             '<figcaption data-photo-credit class="mt-2 text-[12px] leading-snug text-faint min-h-[1.25em]"></figcaption>' +
           '</figure>' : '') +
         '<div class="' + (s.img ? 'lg:col-span-7' : 'lg:col-span-12') + ' min-w-0">' +
-          '<div class="mb-3">' + catChip(s.cat) + '</div>' +
+          '<div class="mb-1">' + catChip(s.cat) + '</div>' +
           '<h1 class="font-display text-[34px] sm:text-[48px] leading-[1.05] tracking-[-0.01em]">' + s.name + '</h1>' +
           '<p class="font-mono text-[12px] text-muted num mt-3">' + meta + '</p>' +
           (o.actionsHTML ? '<div class="flex flex-wrap items-center gap-2 mt-5">' + o.actionsHTML + '</div>' : '') +

@@ -7,7 +7,7 @@
   }
 
   function stopHay(s) {
-    return (s.name + ' ' + s.area + ' ' + s.pc + ' ' + s.addr + ' ' + s.text + ' ' + CATS[s.cat])
+    return (s.name + ' ' + s.area + ' ' + s.pc + ' ' + s.addr + ' ' + stopRefsPlain(s.text) + ' ' + CATS[s.cat])
       .replace(/&[a-z]+;/g, ' ').toLowerCase();
   }
 

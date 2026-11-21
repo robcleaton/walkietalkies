@@ -150,8 +150,8 @@ function areaPage(area) {
   removeHidden('list');
   fillInner('list', stops.map(s =>
     '<a href="' + app.stopPath(s.id) + '" data-stop-link="' + s.id + '" class="block bg-surface border border-rule rounded-[16px] px-5 py-4 hover:border-ink">' +
-      '<span class="block mb-2">' + app.catChip(s.cat) + '</span>' +
-      '<span class="block font-display text-[23px] leading-[1.1]">' + s.name + '</span>' +
+      '<span class="block mb-1">' + app.catChip(s.cat) + '</span>' +
+      '<span class="block font-display text-[24px] leading-[1.1]">' + s.name + '</span>' +
       '<span class="block font-mono text-[11px] text-muted mt-1">' + app.cardAddress(s) + '</span>' +
       (s.short ? '<span class="block font-serif text-[17px] leading-[1.55] mt-2">' + s.short + '</span>' : '') +
     '</a>').join(''));
