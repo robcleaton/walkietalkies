@@ -180,20 +180,17 @@
 
   // dist: optional distance label (Near you) shown at the start of the address line.
   // noText: leave out the description (Near you).
-  // A stop's Add to route / "Stop N ✓" button (on cards and the stop page),
-  // or "Not mapped yet" for a stop with no pinned location: those are
-  // published with whatever they have, but can't go into a route (its
-  // distance maths, map and GPX export all need real coordinates).
+  // A stop's Add to route / "Stop N ✓" button (on cards and the stop page).
+  // Stops with no pinned location can go in a route too; they're listed
+  // in it but left off the route map, distances, Open in Maps and GPX.
   function routeButtonHTML(s) {
     var on = inRoute(s.id);
     var pos = route.indexOf(s.id) + 1;
-    var hasLoc = s.lat !== null && s.lat !== undefined && s.lon !== null && s.lon !== undefined;
-    return (hasLoc ?
+    return (
       '<button data-toggle="' + s.id + '" class="shrink-0 inline-flex items-center gap-1 text-[12px] font-semibold px-3 py-2 rounded-full border transition-colors ' +
         (on ? 'bg-verdigris text-white border-verdigris' : 'border-rule text-ink hover:border-ink') + '">' +
         (on ? 'Stop ' + pos + ' <svg class="lucide lucide-check w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>' : 'Add to route') +
-      '</button>'
-    : '<button disabled title="This stop doesn&rsquo;t have a location yet, so it can&rsquo;t be added to a route." class="shrink-0 inline-flex items-center text-[12px] font-semibold px-3 py-2 rounded-full border border-rule text-faint opacity-60 cursor-not-allowed">Not mapped yet</button>');
+      '</button>');
   }
 
   function stopHTML(s, compact, dist, noText) {

@@ -86,7 +86,10 @@
   });
 
   function renderRouteMap() {
-    var n = route.length;
+    // Only stops with a location go on the map; markers keep their number
+    // in the route, so a gap shows where an unmapped stop sits.
+    var onMap = route.filter(function (id) { return hasLoc(byId[id]); });
+    var n = onMap.length;
     routeMapEl.classList.toggle('hidden', n === 0);
     if (n === 0 || typeof L === 'undefined') return;
 
@@ -100,13 +103,13 @@
     }
     routeMapLayer.clearLayers();
 
-    var latlngs = route.map(function (id) { return [byId[id].lat, byId[id].lon]; });
+    var latlngs = onMap.map(function (id) { return [byId[id].lat, byId[id].lon]; });
     L.polyline(latlngs, { color: '#171717', weight: 3, opacity: .55, dashArray: '1 8', lineCap: 'round' }).addTo(routeMapLayer);
-    route.forEach(function (id, i) {
+    onMap.forEach(function (id) {
       var s = byId[id];
       var icon = L.divIcon({
         className: '',
-        html: '<span class="flex items-center justify-center w-[22px] h-[22px] rounded-full text-white font-mono text-[11px] font-semibold" style="background:var(--verdigris);box-shadow:0 1px 3px rgba(0,0,0,.4)">' + (i + 1) + '</span>',
+        html: '<span class="flex items-center justify-center w-[22px] h-[22px] rounded-full text-white font-mono text-[11px] font-semibold" style="background:var(--verdigris);box-shadow:0 1px 3px rgba(0,0,0,.4)">' + (route.indexOf(id) + 1) + '</span>',
         iconSize: [22, 22], iconAnchor: [11, 11]
       });
       L.marker([s.lat, s.lon], { icon: icon }).addTo(routeMapLayer).bindPopup(plain(s.name));
@@ -120,8 +123,8 @@
   /* ---------------------------------------------------------------
      Area map (Leaflet + OpenStreetMap) — every mapped stop in the
      current area, colour-coded by category. Stops without a pinned
-     location (see the "Not mapped yet" button in stopHTML) just don't
-     get a marker; the map itself is hidden entirely if none do.
+     location just don't get a marker; the map itself is hidden
+     entirely if none do.
   --------------------------------------------------------------- */
   var areaMapEl = document.getElementById('areaMap');
   var areaMap = null, areaMapLayer = null;

@@ -51,12 +51,13 @@
     var maps = document.getElementById('mapsLink');
     // Empty route: no Open in Maps at all, and no actions bar unless
     // something else (Save as GPX) is still showing in it.
-    maps.classList.toggle('hidden', n === 0);
+    var mapped = mappedRoute();
+    maps.classList.toggle('hidden', mapped.length === 0);
     var actions = document.getElementById('routeActions');
     actions.classList.toggle('hidden', n === 0 && document.getElementById('gpxBtn').classList.contains('hidden'));
-    if (n > 0) {
+    if (mapped.length) {
       maps.href = 'https://www.google.com/maps/dir/' +
-        route.slice(0, 10).map(function (id) { return byId[id].lat + ',' + byId[id].lon; }).join('/') + '/data=!4m2!4m1!3e2';
+        mapped.slice(0, 10).map(function (s) { return s.lat + ',' + s.lon; }).join('/') + '/data=!4m2!4m1!3e2';
     }
 
     applyRouteView();
@@ -82,12 +83,16 @@
       html += '<p class="px-5 pt-1 pb-1 text-[12px] leading-relaxed text-brass">' +
               'Starter route: a Greenwich morning, riverside first, uphill last. Remove stops with &times; and build your own.</p>';
     }
+    var lastMapped = null; // the previous stop with a location, for leg distances
     route.forEach(function (id, i) {
       var s = byId[id];
-      var leg = i > 0 ? haversine(byId[route[i - 1]], s) : 0;
+      // The leg into this stop: from the last mapped stop, or a note that
+      // this one isn't on the map (no location yet).
+      var legText = !hasLoc(s) ? 'not on the map' : (lastMapped ? fmtDist(haversine(lastMapped, s)) : '');
+      if (hasLoc(s)) lastMapped = s;
       var open = !!routeOpen[id];
       html += '' +
-        (i > 0 ? '<p class="pl-[52px] pr-5 font-mono text-[11px] leading-4 text-faint num">&darr; ' + fmtDist(leg) + '</p>' : '') +
+        (i > 0 && legText ? '<p class="pl-[52px] pr-5 font-mono text-[11px] leading-4 text-faint num">&darr; ' + legText + '</p>' : '') +
         // Mobile rows match the Near you list (56px image, 15px name,
         // centred); the desktop dropdown keeps its tighter rows (lg:).
         // .route-row: tapping it (bar the Listen, ⋯ and playbar controls)

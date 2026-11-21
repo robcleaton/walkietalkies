@@ -38,12 +38,9 @@
   function toggle(id) {
     var i = route.indexOf(id);
     if (i === -1) {
-      // Belt-and-braces: the button is already disabled for a stop with
-      // no pinned location (see stopHTML), but never let one into the
-      // route by any path — everything downstream (distance/time maths,
-      // the Leaflet map, GPX export) trusts route stops to have real coords.
-      var s = byId[id];
-      if (!s || s.lat === null || s.lat === undefined || s.lon === null || s.lon === undefined) return;
+      // Stops without a location are allowed: everything that needs
+      // coordinates (distances, the map, Open in Maps, GPX) skips them.
+      if (!byId[id]) return;
       route.push(id);
     } else {
       route.splice(i, 1);

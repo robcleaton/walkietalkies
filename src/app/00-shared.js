@@ -124,6 +124,11 @@
   }
 
   /* Geography and formatting (also used by the stop pages) */
+  // Whether a stop has a pinned location (so can go on a map).
+  function hasLoc(s) {
+    return !!s && s.lat !== null && s.lat !== undefined && s.lon !== null && s.lon !== undefined;
+  }
+
   function haversine(a, b) {
     var R = 6371, toRad = Math.PI / 180;
     var dLat = (b.lat - a.lat) * toRad, dLon = (b.lon - a.lon) * toRad;
