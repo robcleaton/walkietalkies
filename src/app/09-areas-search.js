@@ -249,6 +249,16 @@
     areaHeroEl.classList.add('hidden');
   }
 
+  // The area page's actions: its intro's playbar, Listen (once the manifest
+  // has the clip) and Add to route. Re-rendered by renderList, so the route
+  // button follows route changes.
+  function renderAreaActions() {
+    var el = document.getElementById('areaHeroActions');
+    var s = filters.area && byId[areaItemId(filters.area)];
+    if (!el) return;
+    el.innerHTML = s ? playbarHTML(s, 'inline') + listenButtonHTML(s) + routeButtonHTML(s) : '';
+  }
+
   function applyAreaFilter(area, scrollBehavior) {
     leaveStopPage();
     setDiscoverMode(false);
