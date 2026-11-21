@@ -67,6 +67,7 @@ PRONOUNCE = {
     "Sydenham": "Sidnum",  # SID-num, not SY-den-ham
     "Dadabhai": "Dahdahbye",  # DAH-dah-bye
     "Naoroji": "Now-rohji",  # now-ROH-jee
+    "Dulwich": "Dullitch",  # DULL-itch, no w
 }
 PRONOUNCE_RE = re.compile(r"\b(" + "|".join(map(re.escape, PRONOUNCE)) + r")\b")
 
