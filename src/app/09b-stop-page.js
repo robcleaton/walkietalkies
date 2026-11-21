@@ -28,11 +28,16 @@
   var ICON_MAP = '<svg class="lucide lucide-map w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg>';
   var ICON_PHOTO = '<svg class="lucide lucide-image w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>';
 
+  // The label is its own span so phones can fold it away while the playbar
+  // is open beside it (styles.css .stop-map-label).
+  function stopMapButtonInner() {
+    return (stopMapOn ? ICON_PHOTO : ICON_MAP) + '<span class="stop-map-label">' + (stopMapOn ? 'Photo' : 'Map') + '</span>';
+  }
   function stopMapButtonHTML(s) {
     if (!s.img || s.lat == null || s.lon == null) return '';
     return '<button type="button" data-stop-map-toggle aria-pressed="' + stopMapOn + '" ' +
       'class="shrink-0 inline-flex items-center gap-1.5 text-[12px] font-semibold px-3 py-2 rounded-full border border-rule text-ink hover:border-ink transition-colors">' +
-      (stopMapOn ? ICON_PHOTO + 'Photo' : ICON_MAP + 'Map') +
+      stopMapButtonInner() +
     '</button>';
   }
 
@@ -76,7 +81,7 @@
     if (!btn) return;
     stopMapOn = !stopMapOn;
     btn.setAttribute('aria-pressed', String(stopMapOn));
-    btn.innerHTML = stopMapOn ? ICON_PHOTO + 'Photo' : ICON_MAP + 'Map';
+    btn.innerHTML = stopMapButtonInner();
     showStopMap(stopMapOn);
   });
 

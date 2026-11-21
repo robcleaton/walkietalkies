@@ -71,6 +71,24 @@
   var byId = {};
   STOPS.forEach(function (s) { byId[s.id] = s; });
 
+  /* Areas as route items: "area:<slug>" (e.g. area:herne-hill), shaped
+     like a stop so the route list, Listen button and playbar work on them
+     unchanged. No location, so they're left off the route map, distances
+     and GPX like unmapped stops. Only in byId, never in STOPS, so they
+     don't appear in stop lists or search. */
+  function areaItemId(area) { return 'area:' + areaSlug(area); }
+  if (typeof AREA_INFO !== 'undefined') {
+    Object.keys(AREA_INFO).forEach(function (key) {
+      var info = AREA_INFO[key];
+      byId[areaItemId(key)] = {
+        id: areaItemId(key), isArea: true, areaKey: key,
+        name: info.name, area: info.name, pc: info.postcodes || '',
+        short: AREA_DESCRIPTIONS[key] || '', text: info.overview || '',
+        img: info.image || '', lat: null, lon: null
+      };
+    });
+  }
+
   var REQUIRED_STOP_FIELDS = ['id', 'img', 'name', 'area', 'pc', 'cat', 'year', 'era', 'lat', 'lon', 'addr', 'text'];
   STOPS.forEach(function (s) {
     REQUIRED_STOP_FIELDS.forEach(function (f) {

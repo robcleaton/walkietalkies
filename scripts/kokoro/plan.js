@@ -10,6 +10,8 @@
 //   node scripts/kokoro/plan.js --only=a,b       just these stops (redo)
 //   node scripts/kokoro/plan.js --match=Croydon  every stop whose text has a word
 //   node scripts/kokoro/plan.js --all            every stop (redo everything)
+//   node scripts/kokoro/plan.js --areas          every area's intro (name,
+//                                                overview, history) → work/areas/
 //
 // A stop keeps the folder its clip is already in. A new stop goes in the
 // first area it belongs to, in homepage chip order, or "other" if none.
@@ -28,6 +30,7 @@ const ALL = args.includes('--all');
 const AREA = opt('area');
 const ONLY = opt('only') ? opt('only').split(',').filter(Boolean) : null;
 const MATCH = opt('match');
+const AREAS = args.includes('--areas');
 
 const STOPS = new Function(`${fs.readFileSync(path.join(ROOT, 'data.js'), 'utf8')}; return STOPS;`)();
 const manifest = JSON.parse(fs.readFileSync(MANIFEST, 'utf8'));
@@ -80,14 +83,29 @@ function wanted(stop) {
 
 fs.rmSync(WORK, { recursive: true, force: true });
 const counts = {};
-for (const stop of STOPS.filter(wanted)) {
+const sentences = (t) => t.split(/(?<=[.!?])\s+(?=[A-Z‘“"0-9])/).join('\n');
+
+if (AREAS) {
+  // Area intros from areas.js: the name, then the overview and history as
+  // two sections. Files are named by the area's URL slug.
+  const AREA_INFO = new Function(`${fs.readFileSync(path.join(ROOT, 'areas.js'), 'utf8')}; return AREA_INFO;`)();
+  fs.mkdirSync(path.join(WORK, 'areas'), { recursive: true });
+  for (const [key, a] of Object.entries(AREA_INFO)) {
+    const slug = slugOf(key);
+    const parts = [plain(a.name) + '.', plain(a.overview), plain(a.history)].filter(Boolean).map(sentences);
+    fs.writeFileSync(path.join(WORK, 'areas', `${slug}.txt`), parts.join('\n\n') + '\n');
+    counts.areas = (counts.areas || 0) + 1;
+  }
+}
+
+for (const stop of AREAS ? [] : STOPS.filter(wanted)) {
   const folder = folderFor(stop);
   const text = plain(stop.text);
-  const body = `${plain(stop.name)}.\n\n${text.split(/(?<=[.!?])\s+(?=[A-Z‘“"0-9])/).join('\n')}\n`;
+  const body = `${plain(stop.name)}.\n\n${sentences(text)}\n`;
   fs.mkdirSync(path.join(WORK, folder), { recursive: true });
   fs.writeFileSync(path.join(WORK, folder, `${stop.id}.txt`), body);
   counts[folder] = (counts[folder] || 0) + 1;
 }
 const total = Object.values(counts).reduce((a, b) => a + b, 0);
 console.log(total ? `${total} stop(s) planned: ${Object.entries(counts).map(([a, n]) => `${a} ${n}`).join(', ')}` : 'Nothing to do.');
-if (total) console.log(`Next: scripts/kokoro/run.sh${ALL || AREA || ONLY || MATCH ? ' --force' : ''}`);
+if (total) console.log(`Next: scripts/kokoro/run.sh${ALL || AREA || ONLY || MATCH || AREAS ? ' --force' : ''}`);

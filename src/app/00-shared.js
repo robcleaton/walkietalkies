@@ -244,12 +244,20 @@
   // The venue's own website and Instagram (data.js web / ig), as a "Visit"
   // row under the Area chips. Nothing at all when a stop has neither.
   function visitHTML(s) {
-    var link = function (url, label) {
-      return '<a href="' + url + '" target="_blank" rel="noopener" class="underline decoration-rule underline-offset-2 hover:text-ink">' + label + '</a>';
+    // Each link has its icon before it (Lucide's globe and Instagram marks,
+    // the latter as in the footer); only the label is underlined.
+    var svg = function (body) {
+      return '<svg aria-hidden="true" class="shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + body + '</svg>';
+    };
+    var ICON_WEB = svg('<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>');
+    var ICON_IG = svg('<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none"/>');
+    var link = function (url, icon, label) {
+      return '<a href="' + url + '" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 hover:text-ink">' + icon +
+        '<span class="underline decoration-rule underline-offset-2">' + label + '</span></a>';
     };
     var links = [];
-    if (s.web) links.push(link(s.web, 'Website'));
-    if (s.ig) links.push(link(s.ig, 'Instagram'));
+    if (s.web) links.push(link(s.web, ICON_WEB, 'Website'));
+    if (s.ig) links.push(link(s.ig, ICON_IG, 'Instagram'));
     if (!links.length) return '';
     return '<div class="mt-6">' +
       '<p class="eyebrow text-faint mb-2">Visit</p>' +

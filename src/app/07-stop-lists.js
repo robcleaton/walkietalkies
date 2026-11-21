@@ -2,6 +2,7 @@
     // Lists re-render on every route change; the stop page's Add to route
     // button and nearby cards need to follow along.
     if (stopPageId) renderStopPage();
+    if (filters.area) renderAreaActions();
     var items = visible();
     var isHome = !filters.q && !filters.cats.length && !filters.area && !discoverMode;
     // The count line ("N stops") is only useful once it reflects an actual
@@ -183,13 +184,15 @@
   // A stop's Add to route / "Stop N ✓" button (on cards and the stop page).
   // Stops with no pinned location can go in a route too; they're listed
   // in it but left off the route map, distances, Open in Maps and GPX.
+  // An area (s.isArea) reads "In route" rather than "Stop N" once added.
   function routeButtonHTML(s) {
     var on = inRoute(s.id);
     var pos = route.indexOf(s.id) + 1;
+    var onLabel = s.isArea ? 'In route' : 'Stop ' + pos;
     return (
       '<button data-toggle="' + s.id + '" class="shrink-0 inline-flex items-center gap-1 text-[12px] font-semibold px-3 py-2 rounded-full border transition-colors ' +
         (on ? 'bg-verdigris text-white border-verdigris' : 'border-rule text-ink hover:border-ink') + '">' +
-        (on ? 'Stop ' + pos + ' <svg class="lucide lucide-check w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>' : 'Add to route') +
+        (on ? onLabel + ' <svg class="lucide lucide-check w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>' : 'Add to route') +
       '</button>');
   }
 
