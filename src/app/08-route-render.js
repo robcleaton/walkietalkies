@@ -112,7 +112,7 @@
           // Desktop rows are top-aligned: drop the number to the middle of the
           // 56px thumbnail ((56 - 24) / 2); mobile rows are centred already.
           '<span class="route-num relative z-[1] shrink-0 w-6 h-6 ' + 'lg:mt-4' + ' rounded-full bg-verdigris text-white font-mono num text-[11px] font-semibold grid place-items-center">' + (i + 1) + '</span>' +
-          stopThumbHTML(s, 'w-14 h-14', false) +
+          stopThumbHTML(s, 'w-14 h-14', false, true) +
           '<div class="min-w-0 flex-1">' +
             '<button type="button" data-route-expand="' + id + '" aria-expanded="' + open + '" aria-controls="route-desc-' + id + '" class="block w-full text-left">' +
               '<span class="block text-[15px] leading-snug lg:text-[14px] lg:leading-tight font-semibold">' + s.name + '</span>' +
@@ -134,9 +134,33 @@
         '</div>';
     });
     // One dashed line joining the numbers, placed by positionRouteLine.
+    var oldImgs = routeImages();
     routeListEl.innerHTML = html + '<span class="route-line" aria-hidden="true"></span>';
+    reuseRouteImages(oldImgs);
     positionRouteLine();
     animateRouteRows(routeSnap);
+  }
+
+  /* Re-rendering the list makes new <img>s, which Safari paints blank for
+     a frame or two while it decodes them again, so every thumbnail (and
+     an area's map tiles) flickers on each change. Instead, the already
+     loaded images are moved across into the new rows, matched by src. */
+  function routeImages() {
+    var bySrc = {};
+    Array.prototype.forEach.call(routeListEl.querySelectorAll('[data-route-key] img'), function (img) {
+      if (!img.complete || !img.naturalWidth) return;
+      (bySrc[img.getAttribute('src')] = bySrc[img.getAttribute('src')] || []).push(img);
+    });
+    return bySrc;
+  }
+  function reuseRouteImages(bySrc) {
+    Array.prototype.forEach.call(routeListEl.querySelectorAll('[data-route-key] img'), function (img) {
+      var pool = bySrc[img.getAttribute('src')];
+      var old = pool && pool.shift();
+      if (!old) return;
+      old.className = img.className; // same markup, but keep the new row's in case
+      img.replaceWith(old);
+    });
   }
 
   /* Moving rows: when the list re-renders (a stop removed, moved up or
@@ -150,6 +174,8 @@
     if (!routeListEl.offsetHeight || !routeListEl.animate) return null;
     if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return null;
     var top = routeListEl.getBoundingClientRect().top, snap = {};
+    var line = routeListEl.querySelector('.route-line');
+    if (line && !line.hidden) snap['\u0000line'] = { top: line.offsetTop, height: line.offsetHeight };
     Array.prototype.forEach.call(routeListEl.querySelectorAll('[data-route-key]'), function (el) {
       snap[el.getAttribute('data-route-key')] = { el: el, top: el.getBoundingClientRect().top - top };
     });
@@ -169,19 +195,32 @@
       if (Math.abs(dy) < 1) return;
       el.animate([{ transform: 'translateY(' + dy + 'px)' }, { transform: 'none' }], { duration: 420, easing: ROUTE_EASE });
     });
+    // The dashed line grows or shrinks from its old length alongside them.
+    var line = routeListEl.querySelector('.route-line'), was = snap['\u0000line'];
+    if (line && !line.hidden && was) {
+      line.animate([{ top: was.top + 'px', height: was.height + 'px' }, { top: line.style.top, height: line.style.height }], { duration: 420, easing: ROUTE_EASE });
+    }
     // Gone rows: the old element, put back where it was, fading out.
     Object.keys(snap).forEach(function (key) {
-      if (seen[key]) return;
+      if (seen[key] || key === '\u0000line') return;
       var ghost = snap[key].el;
       ghost.setAttribute('aria-hidden', 'true');
       ghost.setAttribute('inert', '');
       ghost.removeAttribute('data-route-key');
-      ghost.style.cssText = 'position:absolute;left:0;right:0;top:' + snap[key].top + 'px;pointer-events:none;z-index:0';
+      // Behind the rows (#routeList isolates its own stacking), so the ones
+      // sliding up pass over it rather than under it.
+      ghost.style.cssText = 'position:absolute;left:0;right:0;top:' + snap[key].top + 'px;pointer-events:none;z-index:-1';
       routeListEl.appendChild(ghost);
-      ghost.animate([{ opacity: 1, transform: 'scale(1)' }, { opacity: 0, transform: 'scale(.97)' }], { duration: 200, easing: 'ease-out', fill: 'forwards' })
+      ghost.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 140, easing: 'ease-out', fill: 'forwards' })
         .onfinish = function () { ghost.remove(); };
     });
+    // The fading row and the sliding ones still count towards the scroll
+    // height while they move, so the "is the list scrollable?" check (and
+    // with it the rule above Open in Maps) is re-run once they've settled.
+    clearTimeout(routeSettleTimer);
+    routeSettleTimer = setTimeout(function () { updateRouteScrollable(); positionRouteLine(); }, 460);
   }
+  var routeSettleTimer = null;
 
   // The dashed line runs from the first stop number's centre to the last
   // one's, behind the numbers — a single line, so its dashes stay even
@@ -193,12 +232,20 @@
     if (!line) return;
     var nums = routeListEl.querySelectorAll('[data-route-key] .route-num');
     if (nums.length < 2 || !routeListEl.offsetHeight) { line.hidden = true; return; }
-    var box = routeListEl.getBoundingClientRect();
-    var a = nums[0].getBoundingClientRect(), b = nums[nums.length - 1].getBoundingClientRect();
+    // Layout positions (offsets), not getBoundingClientRect: rows can be
+    // mid-slide (animateRouteRows) when this runs, and their transforms
+    // would stretch the line to where a row was rather than where it ends up.
+    var a = numOffset(nums[0]), b = numOffset(nums[nums.length - 1]);
+    var size = nums[0].offsetWidth;
     line.hidden = false;
-    line.style.left = (a.left + a.width / 2 - box.left - 0.75) + 'px';
-    line.style.top = (a.top + a.height / 2 - box.top) + 'px';
-    line.style.height = (b.top - a.top) + 'px';
+    line.style.left = (a.x + size / 2 - 0.75) + 'px';
+    line.style.top = (a.y + size / 2) + 'px';
+    line.style.height = (b.y - a.y) + 'px';
+  }
+  function numOffset(el) {
+    var x = 0, y = 0;
+    while (el && el !== routeListEl) { x += el.offsetLeft; y += el.offsetTop; el = el.offsetParent; }
+    return { x: x, y: y };
   }
   if (window.ResizeObserver) new ResizeObserver(positionRouteLine).observe(routeListEl);
 
@@ -273,10 +320,12 @@
     '</span>';
   }
 
-  function stopThumbHTML(s, size, link) {
+  // eager: load now rather than when scrolled to (the route list, which is
+  // short, and whose rows slide into view when a stop above is removed).
+  function stopThumbHTML(s, size, link, eager) {
     if (s.isArea) { var map = areaMapThumbHTML(s, size); if (map) return map; }
     if (!s.img) return thumbPlaceholderHTML(size);
-    var img = '<img src="' + s.img + '" alt="" loading="lazy" data-size="' + size + '" onerror="wtThumbFail(this)" class="' + size + ' shrink-0 rounded-lg object-cover border border-rule">';
+    var img = '<img src="' + s.img + '" alt=""' + (eager ? '' : ' loading="lazy"') + ' data-size="' + size + '" onerror="wtThumbFail(this)" class="' + size + ' shrink-0 rounded-lg object-cover border border-rule">';
     if (!link) return img;
     return '<a href="' + stopPath(s.id) + '" data-stop-link="' + s.id + '" data-thumb-link class="shrink-0 rounded-lg" aria-label="' + plain(s.name) + '">' + img + '</a>';
   }

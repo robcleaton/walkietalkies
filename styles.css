@@ -463,7 +463,7 @@ button[data-toggle]:not([role="menuitem"]):not(:disabled):active{ transform:scal
    numbers, placed behind them by positionRouteLine() in src/app. The
    dashes are a striped background, not a dashed border: WebKit (every
    iOS browser) doesn't paint a dashed border this thin at all. */
-#routeList{ position:relative; }
+#routeList{ position:relative; isolation:isolate; }
 .route-line{
   position:absolute; width:1.5px; pointer-events:none;
   background:repeating-linear-gradient(to bottom, #8E8E93 0 4.5px, transparent 4.5px 9px);
