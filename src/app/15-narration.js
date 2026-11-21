@@ -248,6 +248,7 @@
     if (narrationId !== id) {
       narrationId = id;
       inSignature = true;
+      trackItem('listen_start', id); // fresh starts only, not resumes after pause
       narrationAudio.src = SIGNATURE_SRC;
     }
     playNarration();
@@ -257,7 +258,10 @@
   // to Play in the gap between the signature and the clip.
   narrationAudio.addEventListener('ended', function () {
     if (inSignature) startClipAfterSignature();
-    else narrationId = null; // finished — the next Listen starts from the signature
+    else {
+      trackItem('listen_complete', narrationId);
+      narrationId = null; // finished — the next Listen starts from the signature
+    }
   });
   narrationAudio.addEventListener('error', function () {
     if (inSignature) startClipAfterSignature();

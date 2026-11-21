@@ -35,6 +35,22 @@
   --------------------------------------------------------------- */
   function inRoute(id) { return route.indexOf(id) !== -1; }
 
+  // GA4 custom event for a stop or area item (add_to_route, listen_start).
+  // A no-op if gtag is blocked or missing.
+  function trackItem(event, id, extra) {
+    if (typeof window.gtag !== 'function') return;
+    var s = byId[id];
+    if (!s) return;
+    var params = {
+      item_id: id,
+      item_name: decodeEntities(s.name),
+      item_area: decodeEntities(s.area || ''),
+      item_type: s.isArea ? 'area' : 'stop'
+    };
+    if (extra) Object.keys(extra).forEach(function (k) { params[k] = extra[k]; });
+    try { window.gtag('event', event, params); } catch (e) { /* analytics never breaks the app */ }
+  }
+
   function toggle(id) {
     var i = route.indexOf(id);
     if (i === -1) {
@@ -42,6 +58,7 @@
       // coordinates (distances, the map, Open in Maps, GPX) skips them.
       if (!byId[id]) return;
       route.push(id);
+      trackItem('add_to_route', id, { route_length: route.length });
     } else {
       route.splice(i, 1);
     }
