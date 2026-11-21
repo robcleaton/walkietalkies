@@ -246,7 +246,7 @@
       refs:['https://en.wikipedia.org/wiki/Crystal_Palace_Dinosaurs', 'https://en.wikipedia.org/wiki/The_Crystal_Palace', 'https://historicengland.org.uk/listing/the-list/list-entry/1067798'],
       web:'https://cpdinosaurs.org/' },
 
-    { id:'crystal-palace-terraces', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Crystal_Palace_Park.jpg/330px-Crystal_Palace_Park.jpg', name:'Crystal Palace terraces', area:'Crystal Palace Park', pc:'SE19', cat:'works', year:1854, era:'1854&ndash;1936',
+    { id:'crystal-palace-terraces', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Italian_terraces%2C_Crystal_Palace_Park_%281%29_-_geograph.org.uk_-_2328714.jpg/330px-Italian_terraces%2C_Crystal_Palace_Park_%281%29_-_geograph.org.uk_-_2328714.jpg', name:'Crystal Palace terraces', area:'Crystal Palace Park', pc:'SE19', cat:'works', year:1854, era:'1854&ndash;1936',
       lat:51.4222, lon:-0.0723, addr:'Crystal Palace Parade, SE19 2GA',
       text:'Paxton&rsquo;s Great Exhibition building was taken down in Hyde Park, enlarged, and re-erected on this ridge. It burned down in a single night in November 1936.\n\nWhat is left is the earthwork: Italianate terraces, broken flights of steps, and a row of sphinxes. The glow of the fire was visible from Brighton.',
       short:'Paxton&rsquo;s great glass building was moved here from Hyde Park and burned down in a single night in 1936. What survives are Italianate terraces, broken steps and a row of sphinxes.',
@@ -1076,7 +1076,7 @@
       short:'Marks the Friary Estate playground where Rio Ferdinand played as a boy before captaining Manchester United and England &mdash; a plaque voted for by local residents.',
       refs:['https://en.wikipedia.org/wiki/Rio_Ferdinand'] },
 
-    { id:'crystal-palace-building', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Upper_Norwood_Town_Centre_-_1.jpg/330px-Upper_Norwood_Town_Centre_-_1.jpg', name:'The Crystal Palace', area:'Crystal Palace Park', pc:'SE19', cat:'grand', year:1854, era:'Rebuilt at Sydenham 1854, burned 1936',
+    { id:'crystal-palace-building', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Crystal_Palace_General_view_from_Water_Temple.jpg/330px-Crystal_Palace_General_view_from_Water_Temple.jpg', name:'The Crystal Palace', area:'Crystal Palace Park', pc:'SE19', cat:'grand', year:1854, era:'Rebuilt at Sydenham 1854, burned 1936',
       lat:51.4205, lon:-0.0715, addr:'Crystal Palace Park, SE19 2GA',
       text:'Joseph Paxton&rsquo;s Great Exhibition building was dismantled from Hyde Park and rebuilt here in 1854, three times its original size &mdash; 1,848 feet long, 108 feet high at the central transept, nearly a million square feet of glass and iron.\n\nIt burned to the ground in a single night on 30 November 1936; the glow was reportedly visible from eight counties. Nothing of the glasshouse itself survives &mdash; only the terraces and substructure below it.',
       short:'Paxton&rsquo;s Great Exhibition building was rebuilt here in 1854 at three times its original size. It burned down in a single night in 1936; only its terraces survive.',
@@ -2836,7 +2836,7 @@
       refs:['https://en.wikipedia.org/wiki/Christ_Church,_Gipsy_Hill', 'https://historicengland.org.uk/listing/the-list/list-entry/1080465'],
       web:'https://www.gipsyhill.org.uk/' },
 
-    { id:'crystal-palace-transmitter', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/View_of_the_Crystal_Palace_TV_transmitter_from_Crystal_Palace_Park_%5E4_-_geograph.org.uk_-_4491253.jpg/330px-View_of_the_Crystal_Palace_TV_transmitter_from_Crystal_Palace_Park_%5E4_-_geograph.org.uk_-_4491253.jpg', name:'Crystal Palace Transmitter', area:'Crystal Palace', pc:'SE19', cat:'works', year:1956, era:'Completed 1956',
+    { id:'crystal-palace-transmitter', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/View_of_the_Crystal_Palace_TV_transmitter_from_Crystal_Palace_Park_%5E5_-_geograph.org.uk_-_4491284.jpg/330px-View_of_the_Crystal_Palace_TV_transmitter_from_Crystal_Palace_Park_%5E5_-_geograph.org.uk_-_4491284.jpg', name:'Crystal Palace Transmitter', area:'Crystal Palace', pc:'SE19', cat:'works', year:1956, era:'Completed 1956',
       lat:51.424, lon:-0.0749, addr:'Crystal Palace Park, SE19',
       text:'Completed in 1956, the 219-metre Crystal Palace Transmitter became the tallest structure in London on completion and remains the fourth tallest in the city, broadcasting television and radio signals across the capital.',
       short:'Completed in 1956, the 219-metre Crystal Palace Transmitter became the tallest structure in London on completion and remains the fourth tallest in the city, broadcasting television and radio signals across the capital.',

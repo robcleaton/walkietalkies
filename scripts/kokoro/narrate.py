@@ -69,7 +69,24 @@ PRONOUNCE = {
     "Naoroji": "Now-rohji",  # now-ROH-jee
     "Dulwich": "Dullitch",  # DULL-itch, no w
     "Portobello": "Porta-bello",  # Port-a-BELL-o
+    "Domesday": "Doomsday",  # the Domesday Book
+    "Bussey": "Bus-ee",  # BUS-ee, the Peckham building
+    "Damilola": "Dammy-ola",  # DAM-ee-OH-la, not DAY-mi-lola
+    # Roman numerals that aren't regnal (Kokoro says "Roman four").
+    "Gipsy Moth IV": "Gipsy Moth Four",
+    "Highpoint I": "Highpoint One",
+    "Equivalent VIII": "Equivalent Eight",
 }
+
+# Regnal numbers: Henry VIII → Henry the Eighth, John Paul II → John Paul
+# the Second. Kokoro reads "VIII" as "Roman eight" and "I" as "eye".
+ROMAN = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6, "VII": 7, "VIII": 8, "IX": 9, "X": 10}
+ORDINAL = ["", "First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth"]
+REGNAL_NAMES = ("Anne Charles Edward Elizabeth George Haakon Henry James John Mary Mutesa Olav "
+                "Paul Richard Victoria William Gheyn").split()
+REGNAL_RE = re.compile(r"\b(" + "|".join(REGNAL_NAMES) + r") (X|IX|IV|V?I{1,3}|V)\b")
+# Listed buildings: Grade II* → Grade two-star.
+GRADE_RE = re.compile(r"\bGrade (II|I)\b(\*)?")
 PRONOUNCE_RE = re.compile(r"\b(" + "|".join(map(re.escape, PRONOUNCE)) + r")\b")
 
 
@@ -92,7 +109,26 @@ def speakable(line):
             return year_words(y, decade=True) if y % 10 == 0 else m.group(0)
         return year_words(y)
     line = PRONOUNCE_RE.sub(lambda m: PRONOUNCE[m.group(1)], line)
-    return YEAR_RE.sub(repl, line)
+    line = REGNAL_RE.sub(lambda m: f"{m.group(1)} the {ORDINAL[ROMAN[m.group(2)]]}", line)
+    line = GRADE_RE.sub(lambda m: "Grade " + ("one" if m.group(1) == "I" else "two") + ("-star" if m.group(2) else ""), line)
+    line = YEAR_RE.sub(repl, line)
+    return PRICE_RE.sub(price_words, line)
+
+
+# Prices said as people say them: £290 million → 290 million pounds,
+# £3.5m → 3.5 million pounds, £298.86 → 298 pounds 86, £1 → 1 pound.
+# Runs after the year fix, so £1850 isn't read as a year.
+PRICE_RE = re.compile(r"£(\d[\d,]*(?:\.\d+)?)(?:\s?(million|billion|thousand)\b|(m|bn|k)\b)?")
+PRICE_UNITS = {"m": "million", "bn": "billion", "k": "thousand"}
+
+
+def price_words(m):
+    num, unit = m.group(1), m.group(2) or PRICE_UNITS.get(m.group(3))
+    if unit:
+        return f"{num} {unit} pounds"
+    whole, _, pence = num.partition(".")
+    words = f"{whole} pound" + ("" if whole == "1" else "s")
+    return f"{words} {pence}" if len(pence) == 2 and pence != "00" else words
 
 
 # Southern English BATH words: said with a long "ah" (cast = kahst), where
@@ -112,6 +148,7 @@ BATH_FORMS = {w.lower() + suf for w in BATH_WORDS for suf in BATH_SUFFIXES}
 # dance -> dancing, danced: the e drops before -ing / -ed.
 BATH_FORMS |= {w.lower()[:-1] + suf for w in BATH_WORDS if w.endswith("e") for suf in ("ing", "ed", "er", "ers")}
 WORD_RE = re.compile(r"[A-Za-z]+")
+COMPOUND_RE = re.compile(r"\b[A-Za-z]+(?:-[A-Za-z]+)+\b")
 # Where a word's phonemes start and end inside a sentence's phonemes.
 PH_EDGE_L = r"(?<![^\s.,;:!?—–\"“”‘’()\-])"
 PH_EDGE_R = r"(?=$|[\sˈˌ.,;:!?—–\"“”‘’()\-])"
@@ -120,6 +157,11 @@ _word_ph = {}
 
 def southern(kokoro, sentence):
     """The sentence's phonemes, with BATH words given the long ɑː."""
+    # Kokoro runs a hyphenated compound into one word (fast-moving →
+    # fˈastmˈuːvɪŋ), hiding the BATH word inside it, so split those apart.
+    sentence = COMPOUND_RE.sub(
+        lambda m: m.group(0).replace("-", " ")
+        if any(p.lower() in BATH_FORMS for p in m.group(0).split("-")) else m.group(0), sentence)
     ph = kokoro.tokenizer.phonemize(sentence, LANG)
     for word in {w for w in WORD_RE.findall(sentence) if w.lower() in BATH_FORMS}:
         if word not in _word_ph:
