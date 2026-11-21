@@ -39,8 +39,14 @@
   /* ---------------------------------------------------------------
      Geography
   --------------------------------------------------------------- */
+  // The route's mapped stops, in order (unmapped ones are left out).
+  function mappedRoute() {
+    return route.map(function (id) { return byId[id]; }).filter(hasLoc);
+  }
+
+  // Walking distance between the mapped stops, in order.
   function routeKm() {
-    var total = 0;
-    for (var i = 1; i < route.length; i++) total += haversine(byId[route[i - 1]], byId[route[i]]);
+    var m = mappedRoute(), total = 0;
+    for (var i = 1; i < m.length; i++) total += haversine(m[i - 1], m[i]);
     return total;
   }

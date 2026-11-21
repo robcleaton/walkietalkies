@@ -18,15 +18,21 @@
     if (!heroEl || !rowsEl) return;
 
     var WORDS = {
-      plaques: { html:'Blue<br>plaques',  bg:'var(--plaque)',    fg:'#fff' }
+      plaques: { html:'Blue<br>plaques',  bg:'var(--plaque)',    fg:'#fff' },
+      // What the site is for, three short lines; read out, unlike the others.
+      intent:  { html:'Walk.<br>Listen.<br>Discover.', bg:'var(--marigold)', fg:'var(--ink-dark)', lines:3, read:true },
+      guides:  { html:'Audio guides<br>for SE London', bg:'var(--bubblegum)', fg:'#fff', read:true, icon:'speaker' }
     };
 
+    // Rows marked lead open with a tile saying what the site is. One of
+    // them, picked at random, starts at the beginning of its loop rather
+    // than a random point, so that tile is on screen when the page loads.
     // Each row's tiles, in order: 'w:<word>', 'photo', 'tall' (portrait
     // photo), 'shape' or 'area'. Then how long one loop takes, and which way.
     var ROWS = [
       { tiles:['photo', 'shape', 'area', 'tall', 'w:plaques', 'shape', 'photo', 'area', 'shape', 'tall'], dur:95, dir:'normal' },
-      { tiles:['photo', 'area', 'shape', 'tall', 'shape', 'area', 'photo', 'shape'], dur:120, dir:'reverse' },
-      { tiles:['shape', 'photo', 'area', 'shape', 'tall', 'shape', 'photo', 'area', 'photo'], dur:105, dir:'normal' }
+      { tiles:['w:intent', 'photo', 'area', 'shape', 'tall', 'shape', 'area', 'photo', 'shape'], dur:120, dir:'reverse', lead:true },
+      { tiles:['w:guides', 'shape', 'photo', 'area', 'shape', 'tall', 'shape', 'photo', 'area', 'photo'], dur:105, dir:'normal', lead:true }
     ];
 
     // Version C (?hero=c): says what the site is. The middle row is a
@@ -97,10 +103,15 @@
 
     function wordHTML(key) {
       var w = WORDS[key];
-      return '<span class="hero-tile hero-word' + (w.bare ? ' hero-word--bare' : '') + '" style="' +
-        (w.bare ? '' : 'background:' + w.bg + ';') + 'color:' + w.fg + '" aria-hidden="true">' +
+      return '<span class="hero-tile hero-word' + (w.bare ? ' hero-word--bare' : '') + (w.lines === 3 ? ' hero-word--three' : '') + '" style="' +
+        (w.bare ? '' : 'background:' + w.bg + ';') + 'color:' + w.fg + '"' + (w.read ? '' : ' aria-hidden="true"') + '>' +
+        (w.icon === 'speaker' ? SPEAKER : '') +
         (w.bare ? w.html : '<span>' + w.html + '</span>') + '</span>';
     }
+    // The speaker from the Your route button (index.html), sized to the tile's type.
+    var SPEAKER = '<svg class="hero-word__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+      '<path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/>' +
+      '<path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.364 18.364a9 9 0 0 0 0-12.728"/></svg>';
 
     function photoHTML(s, tall) {
       var m = CATMARK[s.cat];
@@ -129,10 +140,8 @@
     function areaHTML(area) {
       var c = AREA_COLORS[area], n = areaStopCount(area);
       return '<a class="hero-tile hero-area" href="' + areaPath(area) + '" style="background:' + c.bg + ';color:' + c.fg + '">' +
-        '<span class="hero-area__top"><span class="eyebrow">Area &middot; ' + n + (n === 1 ? ' stop' : ' stops') + '</span>' +
-          '<svg class="hero-area__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>' +
-        '</span>' +
-        '<span class="hero-area__name">' + areaTitle(area) + '</span></a>';
+        '<span class="hero-area__name">' + areaTitle(area) + '</span>' +
+        '<span class="hero-area__top"><span class="eyebrow">' + n + (n === 1 ? ' stop' : ' stops') + '</span></span></a>';
     }
 
     // Version C's chips, at hero size: a category (its plural name, in its colour, with a
@@ -172,6 +181,9 @@
       var cats = shuffle(Object.keys(CATS));
       var nextCat = 0;
 
+      var leads = ROWS.filter(function (r) { return r.lead; });
+      var leadRow = leads[Math.floor(Math.random() * leads.length)];
+
       rowsEl.innerHTML = ROWS.map(function (row) {
         if (row.headline) return headlineHTML();
         var set = row.tiles.map(function (t) {
@@ -196,7 +208,7 @@
         // the copy is inert, so keyboard and screen readers meet each
         // stop once. Each row starts at a random point in its loop.
         return '<div class="hero-row"><div class="hero-track" style="--dur:' + row.dur + 's;--dir:' + row.dir +
-          ';animation-delay:-' + (Math.random() * row.dur).toFixed(1) + 's">' +
+          ';animation-delay:-' + (row === leadRow ? 0 : Math.random() * row.dur).toFixed(1) + 's">' +
           '<div class="hero-set">' + set + '</div>' +
           '<div class="hero-set" aria-hidden="true" inert>' + set + '</div>' +
           '</div></div>';

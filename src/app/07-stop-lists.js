@@ -180,20 +180,17 @@
 
   // dist: optional distance label (Near you) shown at the start of the address line.
   // noText: leave out the description (Near you).
-  // A stop's Add to route / "Stop N ✓" button (on cards and the stop page),
-  // or "Not mapped yet" for a stop with no pinned location: those are
-  // published with whatever they have, but can't go into a route (its
-  // distance maths, map and GPX export all need real coordinates).
+  // A stop's Add to route / "Stop N ✓" button (on cards and the stop page).
+  // Stops with no pinned location can go in a route too; they're listed
+  // in it but left off the route map, distances, Open in Maps and GPX.
   function routeButtonHTML(s) {
     var on = inRoute(s.id);
     var pos = route.indexOf(s.id) + 1;
-    var hasLoc = s.lat !== null && s.lat !== undefined && s.lon !== null && s.lon !== undefined;
-    return (hasLoc ?
+    return (
       '<button data-toggle="' + s.id + '" class="shrink-0 inline-flex items-center gap-1 text-[12px] font-semibold px-3 py-2 rounded-full border transition-colors ' +
         (on ? 'bg-verdigris text-white border-verdigris' : 'border-rule text-ink hover:border-ink') + '">' +
         (on ? 'Stop ' + pos + ' <svg class="lucide lucide-check w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>' : 'Add to route') +
-      '</button>'
-    : '<button disabled title="This stop doesn&rsquo;t have a location yet, so it can&rsquo;t be added to a route." class="shrink-0 inline-flex items-center text-[12px] font-semibold px-3 py-2 rounded-full border border-rule text-faint opacity-60 cursor-not-allowed">Not mapped yet</button>');
+      '</button>');
   }
 
   function stopHTML(s, compact, dist, noText) {
@@ -220,8 +217,8 @@
           '</div>' +
         '</div>' +
         '<div class="min-w-0 mt-3' + (compact ? ' shrink-0' : '') + '">' +
-          '<div class="mb-2">' + catChip(s.cat) + '</div>' +
-          '<h3 class="font-display text-[23px] sm:text-[28px] leading-[1.1] mb-1">' +
+          '<div class="mb-1">' + catChip(s.cat) + '</div>' +
+          '<h3 class="font-display text-[24px] sm:text-[28px] leading-[1.1] mb-1">' +
             // .stop-link stretches over the whole card (styles.css), so the
             // card is one big link to the stop's page; its own buttons sit above.
             '<a href="' + stopPath(s.id) + '" data-stop-link="' + s.id + '" class="stop-link">' + s.name + '</a>' +
@@ -237,7 +234,7 @@
           // Without one, compact cards fall back to the first paragraph —
           // a single flowing paragraph, so the clamp's "…" never lands on a
           // blank line between paragraphs — and full cards to everything.
-          (s.short || (compact ? s.text.split('\n\n')[0] : s.text.split('\n\n').join('<br><br>'))) +
+          (s.short || (compact ? stopRefsPlain(s.text).split('\n\n')[0] : stopRefsPlain(s.text).split('\n\n').join('<br><br>'))) +
         '</p>' +
         (compact ? '</div>' : ''))) +
       '</article>';

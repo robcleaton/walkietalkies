@@ -89,7 +89,7 @@
     stopPageEl.innerHTML = stopPageHTML(s, {
       areas: stopPageAreas(s),
       areaChipHTML: areaLinkChipHTML,
-      actionsHTML: listenButtonHTML(s) + routeButtonHTML(s) + stopMapButtonHTML(s),
+      actionsHTML: playbarHTML(s, 'inline') + listenButtonHTML(s) + routeButtonHTML(s) + stopMapButtonHTML(s),
       // The nearest stops as the homepage carousel's cards.
       nearbyHTML: near.length ?
         '<div data-nearby-row class="min-w-0 scroll-hide flex flex-nowrap gap-4 overflow-x-auto pb-2">' +

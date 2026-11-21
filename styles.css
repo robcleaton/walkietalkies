@@ -117,7 +117,21 @@ body{ padding-top:var(--header-h, 84px); }
 .playbar--card [data-pb-dur]{ margin-left:-4px; }
 .playbar--card [data-pb-dur]::before{ content:"/ "; }
 .playbar--card .playbar__track:hover, .playbar--card .playbar__track:focus-visible{ height:5px; }
-@media (prefers-reduced-motion: reduce){ .playbar.playbar--card, .playbar.playbar--card[hidden]{ transition:none; } }
+/* On a stop page: first in the row of actions. While the stop is loaded it
+   opens out to the left of the buttons, sliding them right; closed, it
+   takes no room (the negative margin cancels the row's 8px gap). The
+   vertical padding keeps the track's bigger tap target inside the clip. */
+.playbar.playbar--inline{ margin:0; padding:12px 4px; flex:1 1 0; min-width:0; max-width:280px; overflow:hidden; white-space:nowrap; font-size:11px;
+  opacity:1; transition:max-width .45s cubic-bezier(.32,.72,0,1), margin .45s cubic-bezier(.32,.72,0,1), opacity .3s ease .12s; }
+.playbar.playbar--inline[hidden]{ display:flex; max-width:0; padding-left:0; padding-right:0; margin-right:-8px; opacity:0; visibility:hidden; pointer-events:none;
+  transition:max-width .35s cubic-bezier(.32,.72,0,1), margin .35s cubic-bezier(.32,.72,0,1), padding .35s ease, opacity .15s ease, visibility 0s linear .35s; }
+.playbar--inline .playbar__track{ order:-1; min-width:48px; height:3px; transition:height .15s ease; }
+.playbar--inline .num{ flex:0 0 auto; }
+.playbar--inline [data-pb-at]{ margin-left:4px; }
+.playbar--inline [data-pb-dur]{ margin-left:-4px; }
+.playbar--inline [data-pb-dur]::before{ content:"/ "; }
+.playbar--inline .playbar__track:hover, .playbar--inline .playbar__track:focus-visible{ height:5px; }
+@media (prefers-reduced-motion: reduce){ .playbar.playbar--card, .playbar.playbar--card[hidden], .playbar.playbar--inline, .playbar.playbar--inline[hidden]{ transition:none; } }
 @keyframes flash{ 0%{ background:var(--plaque-soft);} 100%{ background:var(--surface); } }
 
 /* Category filter chips: colour, icon, name and count all in one line —
@@ -625,9 +639,9 @@ button[data-toggle]:not([role="menuitem"]):not(:disabled):active{ transform:scal
    track holding its set of tiles twice and sliding by half its width,
    so the loop is seamless. Rows alternate direction and speed. Tiles
    are sized off the row's height (cqh), so the whole thing scales with
-   the hero's 68vh / 84vh.
+   the hero's 66vh (phones) / 84vh.
 --------------------------------------------------------------- */
-.hero{ position:relative; overflow:hidden; padding:12px 0; }
+.hero{ position:relative; overflow:hidden; padding:24px 0; }
 .hero-rows{ height:100%; display:flex; flex-direction:column; gap:12px; }
 .hero-row{ flex:1 1 0; min-height:0; container-type:size; overflow:hidden; }
 .hero-track{ display:flex; height:100%; width:max-content; animation:heroDrift var(--dur,80s) linear infinite; animation-direction:var(--dir,normal); }
@@ -645,6 +659,10 @@ a.hero-tile:focus-visible{ outline:2px solid var(--focus); outline-offset:-2px; 
 .hero-word{ display:flex; align-items:center; padding:0 11cqh; font-family:"Gasoek One", Inter, sans-serif;
   font-size:31cqh; line-height:.9; letter-spacing:-.01em; text-transform:uppercase; white-space:nowrap; }
 /* ...or one huge word straight on the page, no tile. */
+/* Three lines (the "Walk. Listen. Discover." tile): smaller, to fit. */
+.hero-word--three{ font-size:24cqh; }
+/* The speaker on the "Audio guides" tile, as tall as its two lines of type. */
+.hero-word__icon{ width:56cqh; height:56cqh; flex:0 0 auto; margin-right:7cqh; }
 .hero-word--bare{ background:none; border-radius:0; padding:0 1cqh; font-size:92cqh; line-height:.78; }
 
 /* Version C (?hero=c): stops as just the shaped photo, no card behind
@@ -658,10 +676,9 @@ a.hero-tile:focus-visible{ outline:2px solid var(--focus); outline-offset:-2px; 
    its name. */
 .hero-chip{ align-self:center; height:44cqh; display:flex; align-items:center; gap:.45em; padding:0 .9em; border-radius:999px;
   font-family:Inter, "Helvetica Neue", Arial, sans-serif; font-weight:700; font-size:15cqh; letter-spacing:-.01em; white-space:nowrap; }
-/* Category chips are the row's full height, with the stop's photo
-   sitting in generous padding (20cqh all round) and plenty of room
-   either side of the name. */
-.hero-chip--cat{ height:100cqh; padding:0 2em 0 20cqh; font-family:"Gasoek One", Inter, sans-serif; font-weight:400; font-size:17cqh; letter-spacing:-.005em; text-transform:uppercase; gap:1em; }
+/* Category chips: the stop's photo with 10cqh above and below it,
+   20cqh to its left, and plenty of room either side of the name. */
+.hero-chip--cat{ height:80cqh; padding:0 2em 0 20cqh; font-family:"Gasoek One", Inter, sans-serif; font-weight:400; font-size:17cqh; letter-spacing:-.005em; text-transform:uppercase; gap:1em; }
 /* Version C's category row is taller, so its chips (and their photos) are bigger. */
 .hero--c .hero-row:first-child{ flex-grow:1.8; }
 .hero-chip__img{ width:60cqh; height:60cqh; flex:0 0 auto; overflow:hidden;
@@ -692,10 +709,8 @@ a.hero-chip:hover{ transform:scale(.96); }
 .hero-area{ min-width:110cqh; display:flex; flex-direction:column; justify-content:space-between; padding:11cqh 11cqh 10cqh; }
 .hero-area__top{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
 .hero-area__top .eyebrow{ font-size:clamp(10px, 5.2cqh, 14px); opacity:.85; }
-.hero-area__arrow{ width:clamp(16px, 9cqh, 26px); height:auto; flex:0 0 auto; transition:transform .5s cubic-bezier(.32,.72,0,1); }
-a.hero-area:hover .hero-area__arrow{ transform:translate(3px,-3px); }
-.hero-area__name{ font-family:"Gasoek One", Inter, sans-serif; font-size:62cqh; line-height:.8; letter-spacing:-.01em; text-transform:uppercase; white-space:nowrap; }
-@media (max-width:639px){ .hero-area__name{ font-size:40cqh; } } /* phones: smaller, so more of the name shows at once */
+.hero-area__name{ font-family:"Gasoek One", Inter, sans-serif; font-size:50cqh; line-height:.8; letter-spacing:-.01em; text-transform:uppercase; white-space:nowrap; }
+@media (max-width:639px){ .hero-area__name{ font-size:32cqh; } } /* phones: smaller, so more of the name shows at once */
 
 /* Photo: full bleed, a category chip and the stop's name on a scrim. */
 .hero-photo{ aspect-ratio:1.55; background:var(--raised); }
