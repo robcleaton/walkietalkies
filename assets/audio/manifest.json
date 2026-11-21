@@ -3957,5 +3957,10 @@
     "file": "kokoro/areas/woolwich.mp3",
     "fileHash": "cdc44e9720c68f42",
     "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "zodiac-court-peep-show": {
+    "file": "kokoro/other/zodiac-court-peep-show.mp3",
+    "fileHash": "f33ac8a369c23891",
+    "fileVoice": "kokoro-v1.0/bf_alice"
   }
 }
