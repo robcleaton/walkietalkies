@@ -20,8 +20,7 @@
     var WORDS = {
       plaques: { html:'Blue<br>plaques',  bg:'var(--plaque)',    fg:'#fff' },
       // What the site is for, three short lines; read out, unlike the others.
-      intent:  { html:'Walk.<br>Listen.<br>Discover.', bg:'var(--marigold)', fg:'var(--ink-dark)', lines:3, read:true },
-      guides:  { html:'Audio guides<br>for SE London', bg:'var(--bubblegum)', fg:'#fff', read:true, icon:'speaker' }
+      intent:  { html:'Walk.<br>Listen.<br>Discover.', bg:'var(--marigold)', fg:'var(--ink-dark)', lines:3, read:true, sub:'Audio guides for SE London' }
     };
 
     // Rows marked lead open with a tile saying what the site is. One of
@@ -32,7 +31,7 @@
     var ROWS = [
       { tiles:['photo', 'shape', 'area', 'tall', 'w:plaques', 'shape', 'photo', 'area', 'shape', 'tall'], dur:95, dir:'normal' },
       { tiles:['w:intent', 'photo', 'area', 'shape', 'tall', 'shape', 'area', 'photo', 'shape'], dur:120, dir:'reverse', lead:true },
-      { tiles:['w:guides', 'shape', 'photo', 'area', 'shape', 'tall', 'shape', 'photo', 'area', 'photo'], dur:105, dir:'normal', lead:true }
+      { tiles:['shape', 'photo', 'area', 'shape', 'tall', 'shape', 'photo', 'area', 'photo'], dur:105, dir:'normal' }
     ];
 
     // Version C (?hero=c): says what the site is. The middle row is a
@@ -103,15 +102,11 @@
 
     function wordHTML(key) {
       var w = WORDS[key];
-      return '<span class="hero-tile hero-word' + (w.bare ? ' hero-word--bare' : '') + (w.lines === 3 ? ' hero-word--three' : '') + '" style="' +
+      return '<span class="hero-tile hero-word' + (w.bare ? ' hero-word--bare' : '') + (w.lines === 3 ? ' hero-word--three' : '') + (w.sub ? ' hero-word--sub' : '') + '" style="' +
         (w.bare ? '' : 'background:' + w.bg + ';') + 'color:' + w.fg + '"' + (w.read ? '' : ' aria-hidden="true"') + '>' +
-        (w.icon === 'speaker' ? SPEAKER : '') +
-        (w.bare ? w.html : '<span>' + w.html + '</span>') + '</span>';
+        (w.bare ? w.html : '<span>' + w.html + '</span>') +
+        (w.sub ? '<span class="eyebrow hero-word__sub">' + w.sub + '</span>' : '') + '</span>';
     }
-    // The speaker from the Your route button (index.html), sized to the tile's type.
-    var SPEAKER = '<svg class="hero-word__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
-      '<path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/>' +
-      '<path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.364 18.364a9 9 0 0 0 0-12.728"/></svg>';
 
     function photoHTML(s, tall) {
       var m = CATMARK[s.cat];
@@ -141,7 +136,7 @@
       var c = AREA_COLORS[area], n = areaStopCount(area);
       return '<a class="hero-tile hero-area" href="' + areaPath(area) + '" style="background:' + c.bg + ';color:' + c.fg + '">' +
         '<span class="hero-area__name">' + areaTitle(area) + '</span>' +
-        '<span class="hero-area__top"><span class="eyebrow">' + n + (n === 1 ? ' stop' : ' stops') + '</span></span></a>';
+        '<span class="hero-area__top"><span class="eyebrow">' + areaPostcodes(area).join(', ') + ' &bull; ' + n + (n === 1 ? ' stop' : ' stops') + '</span></span></a>';
     }
 
     // Version C's chips, at hero size: a category (its plural name, in its colour, with a

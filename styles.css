@@ -68,6 +68,12 @@ body{ padding-top:var(--header-h, 84px); }
    raised tile with the wordmark's looped "a" (from WALKIE): oversized,
    faint and cropped by the tile's edges, so it reads as texture rather
    than a label. Sized in % of the tile, so it scales with it. */
+/* An area's thumbnail in Your route: a small street map (areaMapThumbHTML()
+   in src/app/08-route-render.js), its tiles placed inline. */
+.area-map-thumb{ position:relative; display:block; overflow:hidden; background:#f2efe9; }
+.area-map-thumb__tiles{ position:absolute; display:grid; grid-template-columns:repeat(2, 128px); width:256px; pointer-events:none; }
+.area-map-thumb__tiles img{ display:block; width:128px; height:128px; max-width:none; }
+.area-map-thumb__dot{ position:absolute; left:50%; top:50%; width:12px; height:12px; margin:-6px 0 0 -6px; border-radius:50%; background:var(--verdigris); border:2px solid #fff; box-shadow:0 1px 3px rgba(0,0,0,.35); }
 .thumb-ph{ position:relative; display:block; overflow:hidden; background:var(--raised); color:var(--ink); }
 .thumb-ph__glyph{
   position:absolute; height:112%; width:auto; left:50%; top:-2%; transform:translateX(-50%);
@@ -131,7 +137,17 @@ body{ padding-top:var(--header-h, 84px); }
 .playbar--inline [data-pb-dur]{ margin-left:-4px; }
 .playbar--inline [data-pb-dur]::before{ content:"/ "; }
 .playbar--inline .playbar__track:hover, .playbar--inline .playbar__track:focus-visible{ height:5px; }
-@media (prefers-reduced-motion: reduce){ .playbar.playbar--card, .playbar.playbar--card[hidden], .playbar.playbar--inline, .playbar.playbar--inline[hidden]{ transition:none; } }
+/* Phones: the row is too narrow for the playbar beside all three buttons,
+   so while it's open the Map/Photo button folds to its icon (the label
+   stays for screen readers) and the playbar shows only the elapsed time. */
+.stop-map-label{ display:inline-block; max-width:5em; overflow:hidden; white-space:nowrap; vertical-align:bottom; transition:max-width .45s cubic-bezier(.32,.72,0,1); }
+[data-stop-map-toggle]{ transition:border-color .15s, padding .45s cubic-bezier(.32,.72,0,1), gap .45s cubic-bezier(.32,.72,0,1); }
+@media (max-width:639px){
+  .playbar--inline:not([hidden]) ~ [data-stop-map-toggle]{ gap:0; padding-left:9px; padding-right:9px; }
+  .playbar--inline:not([hidden]) ~ [data-stop-map-toggle] .stop-map-label{ max-width:0; }
+  .playbar--inline [data-pb-dur]{ display:none; }
+}
+@media (prefers-reduced-motion: reduce){ .playbar.playbar--card, .playbar.playbar--card[hidden], .playbar.playbar--inline, .playbar.playbar--inline[hidden], .stop-map-label, [data-stop-map-toggle]{ transition:none; } }
 @keyframes flash{ 0%{ background:var(--plaque-soft);} 100%{ background:var(--surface); } }
 
 /* Category filter chips: colour, icon, name and count all in one line —
@@ -395,6 +411,9 @@ html.narrating header #routeHeaderBtn:hover{
    two never collide). Eased with the description's own opening. */
 .route-row > .flex{ transition:padding-bottom .3s cubic-bezier(.32,.72,0,1); }
 .route-row.is-open > .flex{ padding-bottom:0; }
+/* With a playbar showing under the name, give the opened description some
+   room below it (inside the row-desc clip, so it opens with the text). */
+.route-row:has(.playbar:not([hidden])) .row-desc p{ padding-top:12px; }
 @media (prefers-reduced-motion: reduce){ .route-row > .flex{ transition:none; } }
 /* Pressed: a faint white wash over the orange panel (subtler than the
    ⋯ button's), landing at once and fading on release. */
@@ -661,8 +680,6 @@ a.hero-tile:focus-visible{ outline:2px solid var(--focus); outline-offset:-2px; 
 /* ...or one huge word straight on the page, no tile. */
 /* Three lines (the "Walk. Listen. Discover." tile): smaller, to fit. */
 .hero-word--three{ font-size:24cqh; }
-/* The speaker on the "Audio guides" tile, as tall as its two lines of type. */
-.hero-word__icon{ width:56cqh; height:56cqh; flex:0 0 auto; margin-right:7cqh; }
 .hero-word--bare{ background:none; border-radius:0; padding:0 1cqh; font-size:92cqh; line-height:.78; }
 
 /* Version C (?hero=c): stops as just the shaped photo, no card behind
@@ -706,9 +723,13 @@ a.hero-chip:hover{ transform:scale(.96); }
 @media (prefers-reduced-motion: reduce){ .hero-head__wave i{ animation:none; transform:scaleY(.6); } }
 
 /* Area: its chip colour, stop count up top, name in display type below. */
-.hero-area{ min-width:110cqh; display:flex; flex-direction:column; justify-content:space-between; padding:11cqh 11cqh 10cqh; }
+.hero-area{ min-width:110cqh; display:flex; flex-direction:column; justify-content:flex-end; gap:7cqh; padding:11cqh 11cqh 10cqh; }
 .hero-area__top{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
-.hero-area__top .eyebrow{ font-size:clamp(10px, 5.2cqh, 14px); opacity:.85; }
+.hero-area__top .eyebrow, .hero-word__sub{ font-size:clamp(10px, 5.2cqh, 14px); opacity:.85; }
+/* A word tile with a line of small type under it (the "Walk. Listen. Discover." tile),
+   set like an area tile's postcode and stop count. */
+.hero-word--sub{ flex-direction:column; align-items:flex-start; justify-content:center; gap:3cqh; }
+.hero-word__sub{ line-height:normal; }
 .hero-area__name{ font-family:"Gasoek One", Inter, sans-serif; font-size:50cqh; line-height:.8; letter-spacing:-.01em; text-transform:uppercase; white-space:nowrap; }
 @media (max-width:639px){ .hero-area__name{ font-size:32cqh; } } /* phones: smaller, so more of the name shows at once */
 

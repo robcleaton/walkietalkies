@@ -34,12 +34,18 @@
     var n = route.length;
     var km = routeKm();
 
+    // "3 stops", or "3 stops · 1 area" once areas are in the route.
+    var nAreas = route.filter(function (id) { return byId[id] && byId[id].isArea; }).length;
+    var nStops = n - nAreas;
+    var countText = (nStops || !nAreas ? nStops + (nStops === 1 ? ' stop' : ' stops') : '') +
+      (nStops && nAreas ? ' · ' : '') + (nAreas ? nAreas + (nAreas === 1 ? ' area' : ' areas') : '');
+
     // Empty route: no stop count line at all (the empty state says it).
     var meta = document.getElementById('routeMeta');
-    meta.textContent = n === 0 ? '' : n + (n === 1 ? ' stop' : ' stops');
+    meta.textContent = n === 0 ? '' : countText;
     meta.classList.toggle('hidden', n === 0);
     document.getElementById('barLabel').innerHTML =
-      n === 0 ? 'Add your first stop' : n + (n === 1 ? ' stop' : ' stops') + ' · ' + fmtDist(km);
+      n === 0 ? 'Add your first stop' : countText + (nStops ? ' · ' + fmtDist(km) : '');
 
     var headerCount = document.getElementById('routeHeaderCount');
     headerCount.textContent = n;
@@ -62,6 +68,9 @@
 
     applyRouteView();
     renderRouteMap();
+
+    // Where each row sits now, so the new list can slide from there (below).
+    var routeSnap = snapshotRouteRows();
 
     if (n === 0) {
       routeListEl.innerHTML =
@@ -88,16 +97,17 @@
       var s = byId[id];
       // The leg into this stop: from the last mapped stop, or a note that
       // this one isn't on the map (no location yet).
-      var legText = !hasLoc(s) ? 'not on the map' : (lastMapped ? fmtDist(haversine(lastMapped, s)) : '');
+      // An area intro gets no leg line; distances skip over it.
+      var legText = s.isArea ? '' : !hasLoc(s) ? 'not on the map' : (lastMapped ? fmtDist(haversine(lastMapped, s)) : '');
       if (hasLoc(s)) lastMapped = s;
       var open = !!routeOpen[id];
       html += '' +
-        (i > 0 && legText ? '<p class="pl-[52px] pr-5 font-mono text-[11px] leading-4 text-faint num">&darr; ' + legText + '</p>' : '') +
+        (i > 0 && legText ? '<p data-route-key="leg:' + id + '" class="pl-[52px] pr-5 font-mono text-[11px] leading-4 text-faint num">&darr; ' + legText + '</p>' : '') +
         // Mobile rows match the Near you list (56px image, 15px name,
         // centred); the desktop dropdown keeps its tighter rows (lg:).
         // .route-row: tapping it (bar the Listen, ⋯ and playbar controls)
         // opens the short description underneath, as on Near you.
-        '<div class="route-row' + (open ? ' is-open' : '') + '">' +
+        '<div data-route-key="row:' + id + '" class="route-row' + (open ? ' is-open' : '') + '">' +
         '<div class="flex items-center lg:items-start gap-3 pl-5 pr-2 lg:pr-1.5 py-2 lg:py-1.5 ' + (i > 0 ? '' : 'pt-3') + '">' +
           // Desktop rows are top-aligned: drop the number to the middle of the
           // 56px thumbnail ((56 - 24) / 2); mobile rows are centred already.
@@ -106,7 +116,7 @@
           '<div class="min-w-0 flex-1">' +
             '<button type="button" data-route-expand="' + id + '" aria-expanded="' + open + '" aria-controls="route-desc-' + id + '" class="block w-full text-left">' +
               '<span class="block text-[15px] leading-snug lg:text-[14px] lg:leading-tight font-semibold">' + s.name + '</span>' +
-              '<span class="block font-mono text-[11px] text-faint mt-0.5">' + s.pc + ' &middot; ' + s.area + '</span>' +
+              '<span class="block font-mono text-[11px] text-faint mt-0.5">' + (s.isArea ? 'Area' : s.pc) + ' &middot; ' + (s.isArea ? s.pc : s.area) + '</span>' +
             '</button>' +
             playbarHTML(s) +
           '</div>' +
@@ -126,6 +136,51 @@
     // One dashed line joining the numbers, placed by positionRouteLine.
     routeListEl.innerHTML = html + '<span class="route-line" aria-hidden="true"></span>';
     positionRouteLine();
+    animateRouteRows(routeSnap);
+  }
+
+  /* Moving rows: when the list re-renders (a stop removed, moved up or
+     down, or added), each row that was already there slides from its old
+     place to its new one, so the rows below a removed stop glide up into
+     the gap. The removed row itself stays where it was for a moment and
+     fades out over them. Only while the list is on screen, and not with
+     reduced motion. */
+  var ROUTE_EASE = 'cubic-bezier(.32,.72,0,1)';
+  function snapshotRouteRows() {
+    if (!routeListEl.offsetHeight || !routeListEl.animate) return null;
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return null;
+    var top = routeListEl.getBoundingClientRect().top, snap = {};
+    Array.prototype.forEach.call(routeListEl.querySelectorAll('[data-route-key]'), function (el) {
+      snap[el.getAttribute('data-route-key')] = { el: el, top: el.getBoundingClientRect().top - top };
+    });
+    return snap;
+  }
+  function animateRouteRows(snap) {
+    if (!snap) return;
+    var top = routeListEl.getBoundingClientRect().top, seen = {};
+    Array.prototype.forEach.call(routeListEl.querySelectorAll('[data-route-key]'), function (el) {
+      var key = el.getAttribute('data-route-key'), was = snap[key];
+      seen[key] = true;
+      if (!was) {
+        el.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 250, delay: 120, easing: 'ease-out', fill: 'backwards' });
+        return;
+      }
+      var dy = was.top - (el.getBoundingClientRect().top - top);
+      if (Math.abs(dy) < 1) return;
+      el.animate([{ transform: 'translateY(' + dy + 'px)' }, { transform: 'none' }], { duration: 420, easing: ROUTE_EASE });
+    });
+    // Gone rows: the old element, put back where it was, fading out.
+    Object.keys(snap).forEach(function (key) {
+      if (seen[key]) return;
+      var ghost = snap[key].el;
+      ghost.setAttribute('aria-hidden', 'true');
+      ghost.setAttribute('inert', '');
+      ghost.removeAttribute('data-route-key');
+      ghost.style.cssText = 'position:absolute;left:0;right:0;top:' + snap[key].top + 'px;pointer-events:none;z-index:0';
+      routeListEl.appendChild(ghost);
+      ghost.animate([{ opacity: 1, transform: 'scale(1)' }, { opacity: 0, transform: 'scale(.97)' }], { duration: 200, easing: 'ease-out', fill: 'forwards' })
+        .onfinish = function () { ghost.remove(); };
+    });
   }
 
   // The dashed line runs from the first stop number's centre to the last
@@ -136,7 +191,7 @@
   function positionRouteLine() {
     var line = routeListEl.querySelector('.route-line');
     if (!line) return;
-    var nums = routeListEl.querySelectorAll('.route-num');
+    var nums = routeListEl.querySelectorAll('[data-route-key] .route-num');
     if (nums.length < 2 || !routeListEl.offsetHeight) { line.hidden = true; return; }
     var box = routeListEl.getBoundingClientRect();
     var a = nums[0].getBoundingClientRect(), b = nums[nums.length - 1].getBoundingClientRect();
@@ -190,7 +245,36 @@
   // A stop's thumbnail: the image (a link to the stop's page when `link`),
   // or the placeholder when it has none. The full-size photo is on the
   // stop page, where tapping it opens the lightbox.
+  /* An area in the route: a small street map of it rather than a photo.
+     Static OpenStreetMap tiles (no Leaflet), centred on the middle of the
+     area's mapped stops, with a dot in the area's colour. Zoom 14 tiles
+     drawn at half size (128px), so they stay sharp on 2x screens and the
+     56px tile shows roughly a kilometre across. A 2 × 2 block of tiles,
+     picked so the centre is never near its edge. */
+  var AREA_MAP_ZOOM = 14, AREA_MAP_TILE = 128;
+  function areaMapThumbHTML(s, size) {
+    var pts = areaStops(s.areaKey).filter(hasLoc);
+    if (!pts.length) return '';
+    var lat = 0, lon = 0;
+    pts.forEach(function (p) { lat += p.lat; lon += p.lon; });
+    lat /= pts.length; lon /= pts.length;
+    var n = Math.pow(2, AREA_MAP_ZOOM), r = lat * Math.PI / 180;
+    var fx = (lon + 180) / 360 * n;
+    var fy = (1 - Math.log(Math.tan(r) + 1 / Math.cos(r)) / Math.PI) / 2 * n;
+    var x0 = Math.floor(fx - 0.5), y0 = Math.floor(fy - 0.5);
+    var tiles = '';
+    for (var dy = 0; dy < 2; dy++) for (var dx = 0; dx < 2; dx++) {
+      tiles += '<img src="https://tile.openstreetmap.org/' + AREA_MAP_ZOOM + '/' + (x0 + dx) + '/' + (y0 + dy) + '.png" alt="" draggable="false">';
+    }
+    var c = AREA_COLORS && AREA_COLORS[s.areaKey];
+    return '<span class="area-map-thumb ' + size + ' shrink-0 rounded-lg border border-rule" aria-hidden="true" title="Map: \u00a9 OpenStreetMap contributors">' +
+      '<span class="area-map-thumb__tiles" style="left:calc(50% - ' + ((fx - x0) * AREA_MAP_TILE).toFixed(1) + 'px);top:calc(50% - ' + ((fy - y0) * AREA_MAP_TILE).toFixed(1) + 'px)">' + tiles + '</span>' +
+      '<span class="area-map-thumb__dot"' + (c ? ' style="background:' + c.bg + '"' : '') + '></span>' +
+    '</span>';
+  }
+
   function stopThumbHTML(s, size, link) {
+    if (s.isArea) { var map = areaMapThumbHTML(s, size); if (map) return map; }
     if (!s.img) return thumbPlaceholderHTML(size);
     var img = '<img src="' + s.img + '" alt="" loading="lazy" data-size="' + size + '" onerror="wtThumbFail(this)" class="' + size + ' shrink-0 rounded-lg object-cover border border-rule">';
     if (!link) return img;
