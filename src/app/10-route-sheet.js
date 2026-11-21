@@ -180,3 +180,35 @@
     if (willOpen) routeOpenTrigger = routeHeaderBtn;
     openSheet(willOpen);
   });
+
+  /* Chrome on iOS: when its bottom toolbar slides away on scroll, a
+     position:fixed; bottom:0 element can stay where the toolbar's top
+     edge was, leaving page content showing underneath the route bar.
+     Measure the gap between the panel's bottom and the visible bottom
+     edge and pull the panel down by that much (bottom: -gap). Where
+     fixed positioning already tracks the toolbar (Safari, Android) the
+     gap is 0 and this does nothing. Phones only — on desktop the panel
+     is a dropdown anchored to the header. */
+  (function () {
+    var vv = window.visualViewport;
+    var mobile = window.matchMedia('(max-width: 1023px)');
+    var applied = 0, queued = false;
+    function sync() {
+      queued = false;
+      var gap = 0;
+      if (mobile.matches) {
+        var visibleBottom = Math.max(window.innerHeight, vv ? vv.offsetTop + vv.height : 0);
+        // The panel's bottom as it would sit without this offset.
+        var natural = routePanelEl.getBoundingClientRect().bottom - applied;
+        gap = Math.max(0, Math.round(visibleBottom - natural));
+      }
+      if (gap === applied) return;
+      applied = gap;
+      routePanelEl.style.bottom = gap ? -gap + 'px' : '';
+    }
+    function queue() { if (!queued) { queued = true; requestAnimationFrame(sync); } }
+    window.addEventListener('scroll', queue, { passive: true });
+    window.addEventListener('resize', queue);
+    if (vv) { vv.addEventListener('resize', queue); vv.addEventListener('scroll', queue); }
+    queue();
+  })();
