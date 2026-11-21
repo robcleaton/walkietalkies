@@ -68,6 +68,7 @@ PRONOUNCE = {
     "Dadabhai": "Dahdahbye",  # DAH-dah-bye
     "Naoroji": "Now-rohji",  # now-ROH-jee
     "Dulwich": "Dullitch",  # DULL-itch, no w
+    "Portobello": "Porta-bello",  # Port-a-BELL-o
 }
 PRONOUNCE_RE = re.compile(r"\b(" + "|".join(map(re.escape, PRONOUNCE)) + r")\b")
 
