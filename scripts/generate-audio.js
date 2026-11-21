@@ -14,7 +14,7 @@
 // stop's Notion "Areas" tags when data.js has them, otherwise a whole-word
 // match on its name and Area text.
 //
-// Files land in assets/audio/<stop-id>.mp3, alongside a manifest.json that
+// Files land in assets/audio/elevenlabs/<stop-id>.mp3; assets/audio/manifest.json
 // records a hash of the text, voice and model each file was made from. A
 // re-run only regenerates stops whose text (or voice/model) has changed,
 // so it's cheap to run again after editing stops in Notion and exporting.
@@ -29,6 +29,7 @@ const crypto = require('crypto');
 const ROOT = path.join(__dirname, '..');
 const AUDIO_DIR = path.join(ROOT, 'assets', 'audio');
 const MANIFEST_PATH = path.join(AUDIO_DIR, 'manifest.json');
+const ELEVEN_DIR = path.join(AUDIO_DIR, 'elevenlabs');
 
 function loadEnvFile(filePath) {
   if (!fs.existsSync(filePath)) return;
@@ -118,6 +119,7 @@ function stopInArea(stop, key, title) {
 // then the description, with HTML entities turned back into characters.
 function narration(stop) {
   return `${stop.name}. ${stop.text}`
+    .replace(/\[\[[a-z0-9-]+\|([^\]]+)\]\]/g, '$1')
     .replace(/&rsquo;/g, '’').replace(/&lsquo;/g, '‘')
     .replace(/&rdquo;/g, '”').replace(/&ldquo;/g, '“')
     .replace(/&mdash;/g, '—').replace(/&ndash;/g, '–')
@@ -177,7 +179,7 @@ async function main() {
   const manifest = fs.existsSync(MANIFEST_PATH) ? JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8')) : {};
 
   let todo = stops.map((s) => ({ stop: s, text: narration(s) })).filter(({ stop, text }) => {
-    const file = path.join(AUDIO_DIR, `${stop.id}.mp3`);
+    const file = path.join(ELEVEN_DIR, `${stop.id}.mp3`);
     return FORCE || !fs.existsSync(file) || !manifest[stop.id] || manifest[stop.id].hash !== hashOf(text);
   });
   const needed = todo.length;
@@ -208,19 +210,20 @@ async function main() {
     return;
   }
 
-  fs.mkdirSync(AUDIO_DIR, { recursive: true });
+  fs.mkdirSync(ELEVEN_DIR, { recursive: true });
   let done = 0;
   for (const { stop, text } of todo) {
     process.stdout.write(`[${++done}/${todo.length}] ${stop.id}… `);
     const audio = await synthesize(text);
-    fs.writeFileSync(path.join(AUDIO_DIR, `${stop.id}.mp3`), audio);
-    manifest[stop.id] = { hash: hashOf(text), voice: VOICE_ID, model: MODEL_ID, chars: text.length };
+    fs.writeFileSync(path.join(ELEVEN_DIR, `${stop.id}.mp3`), audio);
+    // Keeps any "file" (e.g. a Kokoro clip) the entry points the site at.
+    manifest[stop.id] = { ...manifest[stop.id], hash: hashOf(text), voice: VOICE_ID, model: MODEL_ID, chars: text.length };
     // Saved after every file, so an interrupted run keeps what it finished.
     fs.writeFileSync(MANIFEST_PATH, `${JSON.stringify(manifest, null, 2)}\n`);
     console.log(`${Math.round(audio.length / 1024)} KB`);
     await sleep(500);
   }
-  console.log(`\nDone. ${todo.length} file(s) in assets/audio/.`);
+  console.log(`\nDone. ${todo.length} file(s) in assets/audio/elevenlabs/.`);
 }
 
 main().catch((err) => {

@@ -51,11 +51,14 @@
   }
 
   // card: the slim version pinned in a stop card's bottom padding (styles.css
-  // .playbar--card), so the card never changes height.
+  // .playbar--card), so the card never changes height. 'inline': the stop
+  // page's, at the start of its row of actions, sliding them right as it
+  // opens (.playbar--inline).
   function playbarHTML(s, card) {
     if (!narrationFiles[s.id]) return '';
     var st = playbarState(s.id);
-    return '<div data-playbar="' + s.id + '" class="playbar' + (card ? ' playbar--card' : '') + '"' + (st.active ? '' : ' hidden') + '>' +
+    var mod = card === 'inline' ? ' playbar--inline' : card ? ' playbar--card' : '';
+    return '<div data-playbar="' + s.id + '" class="playbar' + mod + '"' + (st.active ? '' : ' hidden') + '>' +
       '<span data-pb-at class="num">' + fmtTime(st.at) + '</span>' +
       '<div data-pb-track role="slider" tabindex="0" aria-label="Seek ' + plain(s.name) + '" aria-valuemin="0" aria-valuemax="' + Math.round(st.dur || 0) + '" aria-valuenow="' + Math.round(st.at) + '" class="playbar__track">' +
         '<div data-pb-fill class="playbar__fill" style="transform:scaleX(' + st.frac + ')"></div>' +
@@ -152,9 +155,13 @@
   var inSignature = false; // narrationAudio is playing the signature, the clip comes next
 
   function narrationSrc(id) {
+    var f = narrationFiles[id];
+    // An entry with a "file" (e.g. kokoro/<id>.mp3) plays that instead of
+    // the ElevenLabs clip; its fileHash is a hash of the file itself.
+    if (f.file) return 'assets/audio/' + f.file + '?v=' + (f.fileHash || '');
     // The manifest hash changes whenever the file is regenerated, so it
     // doubles as a cache-buster for browsers holding an old version.
-    return 'assets/audio/' + id + '.mp3?v=' + (narrationFiles[id].hash || '');
+    return 'assets/audio/elevenlabs/' + id + '.mp3?v=' + (f.hash || '');
   }
 
   function playNarration() {
