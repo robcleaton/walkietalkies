@@ -41,7 +41,7 @@
     "model": "eleven_multilingual_v2",
     "chars": 359,
     "file": "kokoro/forest-hill/sylvan-post.mp3",
-    "fileHash": "b7e11f6f180eabcd",
+    "fileHash": "52a78b4da0c9d75a",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "parris-cues": {
@@ -2870,7 +2870,7 @@
   },
   "royal-albert-new-cross": {
     "file": "kokoro/new-cross/royal-albert-new-cross.mp3",
-    "fileHash": "3eb5a4e0c2979316",
+    "fileHash": "31291880f043dbb9",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "sir-barnes-wallis": {
