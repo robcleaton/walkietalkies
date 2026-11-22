@@ -95,7 +95,7 @@
     "model": "eleven_multilingual_v2",
     "chars": 862,
     "file": "kokoro/forest-hill/havelock-walk.mp3",
-    "fileHash": "b807283d1f53aebd",
+    "fileHash": "eab086e20950f28d",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "stanhope-forest-hill-walrus": {
@@ -230,7 +230,7 @@
   },
   "hello-and-goodbye-mural": {
     "file": "kokoro/forest-hill/hello-and-goodbye-mural.mp3",
-    "fileHash": "f13ae4b60a48b44c",
+    "fileHash": "96074a543f722efc",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "iwan-rheon": {

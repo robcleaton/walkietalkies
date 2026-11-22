@@ -69,6 +69,7 @@ PRONOUNCE = {
     "Naoroji": "Now-rohji",  # now-ROH-jee
     "Dulwich": "Dullitch",  # DULL-itch, no w
     "Portobello": "Porta-bello",  # Port-a-BELL-o
+    "Havelock": "Havlock",  # HAV-lock, not HAYV-lock
     "Domesday": "Doomsday",  # the Domesday Book
     "Bussey": "Bus-ee",  # BUS-ee, the Peckham building
     "Damilola": "Dammy-ola",  # DAM-ee-OH-la, not DAY-mi-lola
