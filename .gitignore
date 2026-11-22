@@ -6,3 +6,5 @@ scripts/kokoro/venv/
 scripts/kokoro/models/
 scripts/kokoro/work/
 __pycache__/
+
+.claude/settings.local.json

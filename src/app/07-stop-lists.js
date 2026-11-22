@@ -174,7 +174,7 @@
       SE19:'Crystal Palace', SE21:'Dulwich', SE22:'East Dulwich', SE23:'Forest Hill',
       SE26:'Sydenham', DA5:'Bexley', DA6:'Bexleyheath', SE6:'Catford',
       SE12:'Lee', SE13:'Lewisham', SE5:'Camberwell', SE17:'Walworth', SE4:'Brockley', SE24:'Herne Hill',
-      SE20:'Penge', SE27:'Gipsy Hill', SE25:'South Norwood'
+      SE20:'Penge', SE27:'West Norwood', SE25:'South Norwood'
     };
     return map[pc] || '';
   }

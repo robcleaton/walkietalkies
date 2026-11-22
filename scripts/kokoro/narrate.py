@@ -78,6 +78,14 @@ PRONOUNCE = {
     "Rindt": "Rint",  # Jochen Rindt
     "Kail": "Kale",  # Edgar Kail, Dulwich Hamlet
     "Victory VI": "Victory Six",  # HMS Victory VI, the Crystal Palace naval base
+    "Southwark": "Sutherck",  # SUTH-uk
+    "Woolwich": "Woolitch",  # WOOL-itch, no w
+    "Eltham": "Eltum",  # ELT-um, no th
+    "Caröe": "Carrow",  # CA-row, W. D. Caröe the architect
+    "Gervais": "Zhervay",  # zher-VAY, Eugène-Jacques Gervais
+    "Menier": "Menyay",  # MEN-ee-ay, the French chocolate firm
+    "Searles": "Surls",  # SURLS, Michael Searles the architect
+    "Cabanel": "Cabba-nell",  # CAB-a-nel, Rudolph Cabanel
     "Anerley": "Annerlee",  # AN-er-lee
     "Haslehurst": "Hazelhurst",  # HAZEL-hurst, Edward Haslehurst, the library architect
     "Streatfeild": "Stretfield",  # STRET-field, T. E. C. Streatfeild, the Foresters Hall architect

@@ -32,6 +32,8 @@
   <url><loc>https://walkietalkies.warface.co.uk/areas/bexleyheath/</loc></url>
   <url><loc>https://walkietalkies.warface.co.uk/areas/gipsy-hill/</loc></url>
   <url><loc>https://walkietalkies.warface.co.uk/areas/south-norwood/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/areas/south-bank/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/areas/west-norwood/</loc></url>
   <url><loc>https://walkietalkies.warface.co.uk/stops/royal-observatory/</loc></url>
   <url><loc>https://walkietalkies.warface.co.uk/stops/cutty-sark/</loc></url>
   <url><loc>https://walkietalkies.warface.co.uk/stops/painted-hall/</loc></url>
@@ -813,4 +815,110 @@
   <url><loc>https://walkietalkies.warface.co.uk/stops/upper-norwood-library/</loc></url>
   <url><loc>https://walkietalkies.warface.co.uk/stops/westow-house/</loc></url>
   <url><loc>https://walkietalkies.warface.co.uk/stops/rnvr-trophy-memorial/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/61st-battery-boer-war-memorial/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/addington-square/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/albion-mills/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/anchor-brewhouse/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/angerstein-wharf/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/aylesbury-estate/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/bermondsey-market/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/borough-welsh-chapel/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/brandon-estate/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/bricklayers-arms/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/bridge-theatre/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/browning-hall-walworth/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/camberwell-grove/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/charlton-cemetery/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/charlton-lido/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/christ-church-southwark/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/christs-chapel-dulwich/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/church-of-the-ascension-blackheath/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/cliefden-house-eltham/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/colonnade-house-blackheath/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/coronet-cinema-eltham/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/county-hall/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/dulwich-old-college-war-memorial/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/east-street-market/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/fashion-and-textile-museum/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/foreign-cattle-market/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/forster-memorial-park/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/greek-necropolis-west-norwood/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/greenland-dock/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/greenwich-cemetery/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/greenwich-theatre/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/grove-park-cemetery/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/hither-green-cemetery/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/holy-innocents-south-norwood/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/holy-trinity-eltham/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/ladywell-fields/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/lambeth-palace/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/livesey-hall-war-memorial/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/lorrimore-square/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/henry-tate-mausoleum/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/menier-chocolate-factory/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/millennium-dome/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/minet-library/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/national-theatre/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/goldsmiths-tavern/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/new-cross-inn/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/our-lady-of-grace-charlton/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/oxo-tower/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/pullens-buildings/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/repository-woods/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/royal-festival-hall/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/sir-john-call-monument/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/south-bank-lion/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/south-london-theatre/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/south-norwood-library/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/st-andrews-catford/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/st-augustine-bermondsey/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/st-john-the-baptist-eltham/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/st-lukes-west-norwood/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/st-marys-vicarage-lewisham/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/st-nicholas-plumstead/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/standard-reservoir-conduit-house/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/walter-raleigh-statue/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/albany-deptford/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/anchor-tap-bermondsey/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/asylum-tavern-peckham/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/beehive-new-eltham/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/blacksmiths-arms-rotherhithe/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/boot-and-flogger-borough/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/british-oak-kidbrooke/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/brunel-rotherhithe/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/chandos-honor-oak/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/commercial-herne-hill/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/dacre-arms-lee/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/farmhouse-new-eltham/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/george-tower-bridge-road/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/good-intent-walworth/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/great-exhibition-east-dulwich/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/greyhound-peckham/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/joiners-camberwell/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/kings-arms-roupell-street/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/lord-clyde-borough/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/lord-palmerston-east-dulwich/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/man-of-kent-nunhead/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/manor-house-crooms-hill/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/marquis-of-granby-new-cross/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/old-justice-bermondsey/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/old-mill-plumstead-common/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/old-vic/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/plume-of-feathers-greenwich/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/princess-of-wales-blackheath/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/queen-elizabeth-walworth/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/red-bull-peckham/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/red-lion-shooters-hill/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/royal-george-deptford/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/ship-rotherhithe/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/shipwrights-arms-tooley-street/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/star-plumstead-common/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/tankard-walworth/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/victoria-pages-walk/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/white-hart-new-cross/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/wickham-arms-brockley/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/well-hall-pleasaunce/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/west-norwood-cemetery/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/westminster-bridge/</loc></url>
+  <url><loc>https://walkietalkies.warface.co.uk/stops/woolwich-cemetery/</loc></url>
 </urlset>
