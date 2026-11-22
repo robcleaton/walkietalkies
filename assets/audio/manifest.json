@@ -4667,5 +4667,30 @@
     "file": "kokoro/woolwich/st-nicholas-plumstead.mp3",
     "fileHash": "19975169cdca0cc4",
     "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "poured-lines": {
+    "file": "kokoro/bankside/poured-lines.mp3",
+    "fileHash": "6cd472e9167e7d67",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "borough-yards-murals": {
+    "file": "kokoro/borough/borough-yards-murals.mp3",
+    "fileHash": "3bd1aa92514c82b1",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "london-bridge-attack-hearts-mural": {
+    "file": "kokoro/borough/london-bridge-attack-hearts-mural.mp3",
+    "fileHash": "4615d451e3ee4aad",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "maya-house-blue-men": {
+    "file": "kokoro/borough/maya-house-blue-men.mp3",
+    "fileHash": "7cd571ba91fa73a3",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "union-swans-mural": {
+    "file": "kokoro/borough/union-swans-mural.mp3",
+    "fileHash": "0b2a98a8656d8cc3",
+    "fileVoice": "kokoro-v1.0/bf_alice"
   }
 }
