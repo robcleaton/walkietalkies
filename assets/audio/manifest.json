@@ -3713,11 +3713,6 @@
     "fileHash": "72a87b459529e958",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
-  "lee-rigby-memorial": {
-    "file": "kokoro/woolwich/lee-rigby-memorial.mp3",
-    "fileHash": "648335eb8581df9e",
-    "fileVoice": "kokoro-v1.0/bf_alice"
-  },
   "princess-alice-disaster": {
     "file": "kokoro/woolwich/princess-alice-disaster.mp3",
     "fileHash": "bf1dd313adf75120",
@@ -3765,7 +3760,7 @@
   },
   "the-murder-of-lee-rigby": {
     "file": "kokoro/woolwich/the-murder-of-lee-rigby.mp3",
-    "fileHash": "1e124e2627a70d3e",
+    "fileHash": "f93e075635f37f10",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "the-royal-arsenal-and-woolwich-on-screen": {
@@ -4691,6 +4686,26 @@
   "union-swans-mural": {
     "file": "kokoro/borough/union-swans-mural.mp3",
     "fileHash": "0b2a98a8656d8cc3",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "area:borough": {
+    "file": "kokoro/areas/borough.mp3",
+    "fileHash": "d2df80249c5f1fd8",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "area:south-bank": {
+    "file": "kokoro/areas/south-bank.mp3",
+    "fileHash": "405ae4c3519f77af",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "area:south-norwood": {
+    "file": "kokoro/areas/south-norwood.mp3",
+    "fileHash": "0bc867ed3f83ce2a",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "area:west-norwood": {
+    "file": "kokoro/areas/west-norwood.mp3",
+    "fileHash": "46385820a2705ac6",
     "fileVoice": "kokoro-v1.0/bf_alice"
   }
 }
