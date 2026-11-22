@@ -73,6 +73,14 @@ PRONOUNCE = {
     "Domesday": "Doomsday",  # the Domesday Book
     "Bussey": "Bus-ee",  # BUS-ee, the Peckham building
     "Damilola": "Dammy-ola",  # DAM-ee-OH-la, not DAY-mi-lola
+    "Leitch": "Leech",  # Archibald Leitch, the stadium architect
+    "Baden-Powell": "Bayden Pole",  # BAY-den POLE
+    "Rindt": "Rint",  # Jochen Rindt
+    "Kail": "Kale",  # Edgar Kail, Dulwich Hamlet
+    "Victory VI": "Victory Six",  # HMS Victory VI, the Crystal Palace naval base
+    "Anerley": "Annerlee",  # AN-er-lee
+    "Haslehurst": "Hazelhurst",  # HAZEL-hurst, Edward Haslehurst, the library architect
+    "Streatfeild": "Stretfield",  # STRET-field, T. E. C. Streatfeild, the Foresters Hall architect
     # Roman numerals that aren't regnal (Kokoro says "Roman four").
     "Gipsy Moth IV": "Gipsy Moth Four",
     "Highpoint I": "Highpoint One",

@@ -72,7 +72,7 @@ const POSTCODE_AREA = {
   SE7: 'charlton', SE8: 'deptford', SE9: 'eltham', SE10: 'greenwich',
   SE12: 'lee', SE13: 'lewisham', SE14: 'new cross', SE17: 'walworth',
   SE18: 'woolwich', SE19: 'crystal palace', SE20: 'penge', SE21: 'dulwich',
-  SE22: 'east dulwich', SE23: 'forest hill', SE24: 'herne hill',
+  SE22: 'east dulwich', SE23: 'forest hill', SE24: 'herne hill', SE25: 'south norwood',
   SE26: 'sydenham', SE27: 'gipsy hill', DA5: 'bexley', DA6: 'bexleyheath'
 };
 
