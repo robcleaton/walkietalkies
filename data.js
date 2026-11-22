@@ -410,26 +410,26 @@
       short:'A house of two halves: chequerboard flint from the 1530s at the front, plain red brick from the 1650s behind. The topiary Queen&rsquo;s Beasts were planted for the 1953 coronation.',
       refs:['https://en.wikipedia.org/wiki/Hall_Place', 'https://historicengland.org.uk/listing/the-list/list-entry/1188277'] },
 
-    { id:'tabard-chaucer', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Tabard_inn_mid19th.jpg/330px-Tabard_inn_mid19th.jpg', name:'Site of the Tabard Inn', area:'Talbot Yard, Borough, Bankside', pc:'SE1', cat:'memory', year:1380, era:'Founded 1307, burned 1676',
+    { id:'tabard-chaucer', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Tabard_inn_mid19th.jpg/330px-Tabard_inn_mid19th.jpg', name:'Site of the Tabard Inn', area:'Talbot Yard, Borough', pc:'SE1', cat:'memory', year:1380, era:'Founded 1307, burned 1676',
       lat:51.5024, lon:-0.0903, addr:'Talbot Yard, Borough High Street, SE1 1PA',
       text:'Geoffrey Chaucer sent his pilgrims off from here in the 1380s &mdash; the Tabard was a working inn, built in 1307 for the Abbot of Hyde, long before it became the opening scene of the Canterbury Tales.\n\nIt burned down in the Great Fire of Southwark in 1676, was rebuilt, and was finally demolished in 1873. Only the name Talbot Yard, and a wall plaque, mark where its gateway stood.',
       short:'Chaucer&rsquo;s pilgrims set off from the Tabard, a working inn built in 1307. It burned in 1676 and was demolished in 1873; only Talbot Yard and a plaque mark its gateway.',
       refs:['https://en.wikipedia.org/wiki/The_Tabard'] },
 
-    { id:'marshalsea-wall', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Marshalsea_prison%2C_London%2C_18th_century_%283%29.jpg/330px-Marshalsea_prison%2C_London%2C_18th_century_%283%29.jpg', name:'Marshalsea Prison wall', area:'Angel Place, Borough, Bankside', pc:'SE1', cat:'memory', year:1824, era:'Prison closed 1842',
+    { id:'marshalsea-wall', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Marshalsea_prison%2C_London%2C_18th_century_%283%29.jpg/330px-Marshalsea_prison%2C_London%2C_18th_century_%283%29.jpg', name:'Marshalsea Prison wall', area:'Angel Place, Borough', pc:'SE1', cat:'memory', year:1824, era:'Prison closed 1842',
       lat:51.5015, lon:-0.0912, addr:'Angel Place, off Borough High Street, SE1 1LX',
       text:'A single brick wall behind the library garden is the last standing fragment of the Marshalsea debtors&rsquo; prison. Charles Dickens&rsquo;s father was locked up here for debt in 1824, and twelve-year-old Charles was sent out to work in a blacking factory.\n\nDickens rebuilt the prison in fiction as the setting of Little Dorrit, whose heroine is born within its walls. A council plaque on the wall quotes his own description of finding it still standing, decades later.',
       short:'One brick wall is all that&rsquo;s left of the Marshalsea debtors&rsquo; prison, where Dickens&rsquo;s father was locked up in 1824. Dickens rebuilt it in fiction in Little Dorrit.',
       refs:['https://en.wikipedia.org/wiki/Marshalsea'] },
 
-    { id:'cross-bones', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Western_Side_of_Cross_Bones_Graveyard.jpg/330px-Western_Side_of_Cross_Bones_Graveyard.jpg', name:'Cross Bones Graveyard', area:'Redcross Way, Borough, Bankside', pc:'SE1', cat:'green', year:1853, era:'Closed 1853',
+    { id:'cross-bones', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Western_Side_of_Cross_Bones_Graveyard.jpg/330px-Western_Side_of_Cross_Bones_Graveyard.jpg', name:'Cross Bones Graveyard', area:'Redcross Way, Borough', pc:'SE1', cat:'green', year:1853, era:'Closed 1853',
       lat:51.5033, lon:-0.0925, addr:'Redcross Way, SE1 1TA',
       text:'An unconsecrated burial ground for the poor, and for centuries before that for the Bankside &ldquo;Winchester Geese&rdquo; &mdash; the licensed prostitutes of the Bishop of Winchester&rsquo;s Liberty, who could not be buried in holy ground.\n\nA 1990s excavation for the Jubilee line found around 148 skeletons, mostly infants and the very old. The railings are still hung with ribbons, flowers and messages from an ongoing vigil.',
       short:'An unconsecrated burial ground for the poor and for Bankside&rsquo;s licensed prostitutes, denied holy ground. Its railings are still hung with ribbons, flowers and messages from an ongoing vigil.',
       refs:['https://en.wikipedia.org/wiki/Cross_Bones'],
       web:'https://bost.org.uk/crossbones-graveyard' },
 
-    { id:'george-inn', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/The_George_Inn_1.jpg/330px-The_George_Inn_1.jpg', name:'The George Inn', area:'Borough High Street, Bankside', pc:'SE1', cat:'pub', year:1677, era:'Rebuilt 1677',
+    { id:'george-inn', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/The_George_Inn_1.jpg/330px-The_George_Inn_1.jpg', name:'The George Inn', area:'Borough High Street', pc:'SE1', cat:'pub', year:1677, era:'Rebuilt 1677',
       lat:51.5027, lon:-0.0906, addr:'77 Borough High Street, SE1 1NH',
       text:'London&rsquo;s last galleried coaching inn, rebuilt after the Great Fire of Southwark of 1676 on a medieval footprint. Two tiers of open wooden gallery still look down onto the yard where mail coaches once loaded.\n\nDickens drank in the coffee room and gave the George a passing mention in Little Dorrit. The National Trust has owned it since 1937 and leases it out as a working pub.',
       short:'London&rsquo;s last galleried coaching inn, rebuilt after the Southwark fire of 1676. Two tiers of wooden gallery still look down on the yard where mail coaches once loaded.',
@@ -557,7 +557,7 @@
       short:'Marks the council flat the LGBT and human rights campaigner has lived in since 1978 &mdash; a plaque for someone still living. Ian McKellen unveiled it in 2010.',
       refs:['https://en.wikipedia.org/wiki/Peter_Tatchell'] },
 
-    { id:'red-cross-garden', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Redcross_Gardens_and_Cottages_%287327429482%29.jpg/330px-Redcross_Gardens_and_Cottages_%287327429482%29.jpg', name:'Red Cross Garden', area:'Redcross Way, Borough, Bankside', pc:'SE1', cat:'green', year:1887, era:'Opened 1887',
+    { id:'red-cross-garden', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Redcross_Gardens_and_Cottages_%287327429482%29.jpg/330px-Redcross_Gardens_and_Cottages_%287327429482%29.jpg', name:'Red Cross Garden', area:'Redcross Way, Borough', pc:'SE1', cat:'green', year:1887, era:'Opened 1887',
       lat:51.5023, lon:-0.094, addr:'Redcross Way, SE1 1HA',
       text:'The housing reformer Octavia Hill created this pocket park as &ldquo;an oasis in Southwark&rdquo; for slum-dwelling families, complete with a cottage hall for recreation and evening classes.\n\nIt predates the far larger institution she is now remembered for: Hill co-founded the National Trust a few years later. The garden was restored to her 1887 layout in the 2000s.',
       short:'Octavia Hill created this pocket park in 1887 as &ldquo;an oasis in Southwark&rdquo; for slum families, a few years before she co-founded the National Trust.',
@@ -714,7 +714,7 @@
       short:'A statue of Albert McKenzie, an eighteen-year-old Bermondsey sailor whose crewmates voted him the Victoria Cross for the 1918 Zeebrugge raid. He died of influenza the next year.',
       refs:['https://en.wikipedia.org/wiki/Albert_Edward_McKenzie'] },
 
-    { id:'st-saviours-war-memorial', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/War_memorial_on_Borough_High_Street%2C_south_London_-_geograph.org.uk_-_1522091.jpg/330px-War_memorial_on_Borough_High_Street%2C_south_London_-_geograph.org.uk_-_1522091.jpg', name:'St Saviour&rsquo;s War Memorial', area:'Borough High Street, Bankside', pc:'SE1', cat:'memory', year:1922, era:'Unveiled 16 Nov 1922',
+    { id:'st-saviours-war-memorial', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/War_memorial_on_Borough_High_Street%2C_south_London_-_geograph.org.uk_-_1522091.jpg/330px-War_memorial_on_Borough_High_Street%2C_south_London_-_geograph.org.uk_-_1522091.jpg', name:'St Saviour&rsquo;s War Memorial', area:'Borough High Street', pc:'SE1', cat:'memory', year:1922, era:'Unveiled 16 Nov 1922',
       lat:51.5013, lon:-0.091, addr:'Borough High Street, near Talbot Yard, SE1 1LB',
       text:'A bronze soldier on a Portland stone pedestal, modelled by Philip Lindsey Clark, who served through the war himself and finished it a captain with a DSO. Reliefs on the pedestal show biplanes and battleships on the long sides, Saint George and the Dragon and a mourning woman with a child on the ends.\n\nIt was upgraded from Grade II to Grade II* listed in 2018 &mdash; a rare rating for a parish war memorial.',
       short:'A bronze soldier by Philip Lindsey Clark, himself a decorated veteran, on a pedestal carved with biplanes, battleships and Saint George. It is Grade II* listed, rare for a parish memorial.',
@@ -1088,7 +1088,7 @@
       short:'Charles Barry Jr&rsquo;s vaulted brick subway let first-class passengers reach the Palace without touching the street. Buried and forgotten for decades, it reopened in 2024.',
       refs:['https://en.wikipedia.org/wiki/The_Crystal_Palace'] },
 
-    { id:'borough-market', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/London_2018_March_IMG_0663.jpg/330px-London_2018_March_IMG_0663.jpg', name:'Borough Market', area:'Borough High Street, Bankside', pc:'SE1', cat:'works', year:1756, era:'Chartered 1756, Victorian halls 1851',
+    { id:'borough-market', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/London_2018_March_IMG_0663.jpg/330px-London_2018_March_IMG_0663.jpg', name:'Borough Market', area:'Borough High Street', pc:'SE1', cat:'works', year:1756, era:'Chartered 1756, Victorian halls 1851',
       lat:51.5055, lon:-0.091, addr:'8 Southwark Street, SE1 1TL',
       text:'Trading here in some form since at least 1276, it was formally re-founded by local subscription in 1756 after Parliament closed the chaotic street market on London Bridge&rsquo;s approach. Henry Rose&rsquo;s Gothic ironwork halls, built in 1851, still stand under the railway viaduct.\n\nA slice of the old Royal Opera House&rsquo;s Floral Hall, dismantled and rebuilt here in 2004, now roofs part of the market &mdash; a fragment of Covent Garden hiding in Southwark.',
       short:'Trading here since at least 1276 and re-founded in 1756, under Victorian ironwork halls. Part of Covent Garden&rsquo;s old Floral Hall now roofs one corner of the market.',
@@ -1440,7 +1440,7 @@
       short:'A mid-Victorian pub whose interwar interior survives almost untouched, earning it a place on CAMRA&rsquo;s National Inventory of Historic Pub Interiors.',
       refs:['https://en.wikipedia.org/wiki/Herne_Tavern'] },
 
-    { id:'white-hart-southwark', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/White_Hart_Badge_of_Richard_II.svg/330px-White_Hart_Badge_of_Richard_II.svg.png', name:'The White Hart', area:'Borough High Street, Bankside', pc:'SE1', cat:'memory', year:1406, era:'First recorded 1406, demolished 1889',
+    { id:'white-hart-southwark', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/White_Hart_Badge_of_Richard_II.svg/330px-White_Hart_Badge_of_Richard_II.svg.png', name:'The White Hart', area:'Borough High Street', pc:'SE1', cat:'memory', year:1406, era:'First recorded 1406, demolished 1889',
       lat:51.503, lon:-0.0905, addr:'White Hart Yard, off Borough High Street, SE1',
       text:'A medieval coaching inn, likely older than its first written record, that served as the headquarters of Jack Cade&rsquo;s Rebellion in 1450 &mdash; an episode Shakespeare later dramatised in Henry VI, Part 2. Dickens also sent Mr Pickwick here to hire Sam Weller.\n\nThe original building was demolished in 1889. A separate Victorian pub of the same name had already opened nearby on Great Suffolk Street in 1882 and still carries the name today &mdash; two different buildings sharing one long story, much like the WalkieTalkies Tabard Inn entry.',
       short:'A medieval coaching inn that was Jack Cade&rsquo;s headquarters in 1450, and where Dickens sent Mr Pickwick to hire Sam Weller. It was demolished in 1889.',
@@ -3879,7 +3879,7 @@
       short:'Terence Conran opened it in 1991 as he remade Butler&rsquo;s Wharf. In 1997 Tony Blair brought Bill Clinton here for dinner &mdash; a &pound;298.86 bill for the two couples.',
       refs:['https://archive.spectator.co.uk/article/16th-november-1991/66/le-pont-de-la-tour', 'https://www.pressreader.com/uk/yorkshire-post/20210720/281801401979534'] },
 
-    { id:'oma-borough-market', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/London_-_Bedale_Street_-_Borough_Market.jpg/330px-London_-_Bedale_Street_-_Borough_Market.jpg', name:'Oma', area:'Borough Market, Southwark, Bankside', pc:'SE1', cat:'food', year:2024, era:'Michelin star 2025',
+    { id:'oma-borough-market', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/London_-_Bedale_Street_-_Borough_Market.jpg/330px-London_-_Bedale_Street_-_Borough_Market.jpg', name:'Oma', area:'Borough Market, Southwark', pc:'SE1', cat:'food', year:2024, era:'Michelin star 2025',
       lat:51.5058, lon:-0.0905, addr:'2&ndash;4 Bedale Street, Borough Market, SE1 9AL',
       text:'David Carter&rsquo;s Greek-inspired restaurant above Borough Market took less than a year to win a Michelin star, becoming the first Greek restaurant in the country to earn one.\n\nIt sits on Bedale Street at the edge of the market, which has traded here in some form since at least 1276.',
       short:'David Carter&rsquo;s Greek-inspired restaurant at Borough Market won a Michelin star in less than a year &mdash; the first Greek restaurant in the country to earn one.',
@@ -4294,7 +4294,7 @@
       short:'The 1830s church at the end of Lawrie Park Avenue, painted by Pissarro in 1871 in The Avenue, Sydenham, now in the National Gallery.',
       refs:['https://en.wikipedia.org/wiki/Sydenham,_London', 'https://historicengland.org.uk/listing/the-list/list-entry/1285801'] },
 
-    { id:'st-george-the-martyr', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Landscape_View_of_St_George_the_Martyr%27s_Church%2C_Southwark.jpg/330px-Landscape_View_of_St_George_the_Martyr%27s_Church%2C_Southwark.jpg', name:'St George the Martyr', area:'Borough High Street, Bankside', pc:'SE1', cat:'grand', year:1736, era:'Rebuilt 1734&ndash;1736',
+    { id:'st-george-the-martyr', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Landscape_View_of_St_George_the_Martyr%27s_Church%2C_Southwark.jpg/330px-Landscape_View_of_St_George_the_Martyr%27s_Church%2C_Southwark.jpg', name:'St George the Martyr', area:'Borough High Street', pc:'SE1', cat:'grand', year:1736, era:'Rebuilt 1734&ndash;1736',
       lat:51.5013, lon:-0.0925, addr:'Borough High Street, SE1 1JA',
       text:'The Borough&rsquo;s parish church, rebuilt to John Price&rsquo;s designs in 1734&ndash;36, stands where Borough High Street meets Long Lane and Tabard Street. Charles Dickens knew it from the darkest stretch of his childhood: his father was imprisoned for debt in the Marshalsea, whose surviving wall still runs along the north side of the churchyard, and the boy lodged nearby in Lant Street in a house belonging to the church&rsquo;s vestry clerk while he worked in a blacking factory.\n\nDickens later set scenes of Little Dorrit in and around the church, and a small figure of Little Dorrit appears in its east window.',
       short:'The Borough church beside the Marshalsea, where Dickens&rsquo;s father was jailed for debt. Dickens set scenes of Little Dorrit here, and she appears in the east window.',
@@ -4358,7 +4358,7 @@
       refs:['https://londonchurchbuildings.com/2014/12/17/st-paul-herne-hill/', 'https://en.wikipedia.org/wiki/Herne_Hill', 'https://historicengland.org.uk/listing/the-list/list-entry/1385599'],
       web:'https://hernehillparish.org.uk/' },
 
-    { id:'king-alfred-statue', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Alfred_The_Great_statue.JPG/330px-Alfred_The_Great_statue.JPG', name:'Statue of Alfred the Great', area:'Trinity Church Square, Bankside', pc:'SE1', cat:'art', year:1836, era:'In the square since 1836',
+    { id:'king-alfred-statue', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Alfred_The_Great_statue.JPG/330px-Alfred_The_Great_statue.JPG', name:'Statue of Alfred the Great', area:'Trinity Church Square, Borough', pc:'SE1', cat:'art', year:1836, era:'In the square since 1836',
       lat:51.4989, lon:-0.0936, addr:'Trinity Church Square, SE1 4HT',
       text:'Thought to be London&rsquo;s oldest outdoor statue &mdash; though nobody is quite sure. The lower half is from a Roman statue of the late 1st or early 2nd century; the crowned, bearded upper half is a Coade stone addition of around 1800, and the figure is taken to be Alfred the Great.\n\nIt has stood in the garden of Trinity Church Square since 1836, but where it came from is unknown: it may be one of the statues from Richard II&rsquo;s Westminster Hall, or one of a pair made for the garden of Carlton House.',
       short:'Possibly London&rsquo;s oldest outdoor statue: a Roman torso of around AD 100 with a Coade stone king added on top. Nobody knows how it reached Trinity Church Square in 1836.',
@@ -4370,7 +4370,7 @@
       short:'1930s murals by Charles Mahoney and Evelyn Dunbar, later the only woman salaried full-time as a Second World War artist, in the hall of the old Brockley County School.',
       refs:['https://en.wikipedia.org/wiki/Prendergast_School', 'https://transpont.blogspot.com/2012/04/history-corner-prendergast-murals.html', 'https://en.wikipedia.org/wiki/Evelyn_Dunbar', 'https://historicengland.org.uk/listing/the-list/list-entry/1252990'] },
 
-    { id:'hop-exchange', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Hop_Exchange_London.jpg/330px-Hop_Exchange_London.jpg', name:'The Hop Exchange', area:'Southwark Street, Bankside', pc:'SE1', cat:'works', year:1867, era:'Opened 1867',
+    { id:'hop-exchange', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Hop_Exchange_London.jpg/330px-Hop_Exchange_London.jpg', name:'The Hop Exchange', area:'Southwark Street, Borough', pc:'SE1', cat:'works', year:1867, era:'Opened 1867',
       lat:51.5049, lon:-0.0911, addr:'24 Southwark Street, SE1 1TY',
       text:'Opened in 1867 to designs by R. H. Moore, this was the single trading floor for the hops that came up by rail and river from the hop gardens of Kent to the Borough&rsquo;s warehouses. Dealers did business in a great hall under a glass roof, so they could judge the hops in natural light.\n\nLondon once had many such open-outcry exchanges &mdash; for coal, metal and stocks &mdash; but bombing, fire and redevelopment took the rest, leaving the Hop Exchange the only one still standing. A fire in 1920 took off its top two storeys, and it has been offices ever since.',
       short:'The Victorian trading floor for Kent&rsquo;s hops, built under a glass roof so dealers could judge them in daylight. It is the last of London&rsquo;s open-outcry exchanges still standing.',
@@ -4697,7 +4697,7 @@
       short:'A Friday antiques market on the site of Bermondsey Abbey, where until 1995 an ancient law meant goods sold before sunrise couldn&rsquo;t be reclaimed, even if stolen.',
       refs:['https://en.wikipedia.org/wiki/Bermondsey_Market'] },
 
-    { id:'borough-welsh-chapel', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Welsh_Congregational_Chapel%2C_Borough.jpg/330px-Welsh_Congregational_Chapel%2C_Borough.jpg', name:'Borough Welsh Congregational Chapel', area:'Southwark Bridge Road, Borough, Bankside', pc:'SE1', cat:'grand', year:1870, era:'Congregation from 1774; chapel 1870',
+    { id:'borough-welsh-chapel', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Welsh_Congregational_Chapel%2C_Borough.jpg/330px-Welsh_Congregational_Chapel%2C_Borough.jpg', name:'Borough Welsh Congregational Chapel', area:'Southwark Bridge Road, Borough', pc:'SE1', cat:'grand', year:1870, era:'Congregation from 1774; chapel 1870',
       lat:51.5029, lon:-0.0968, addr:'90 Southwark Bridge Road, SE1',
       text:'Capel-y-Boro is the mother chapel of the Welsh Congregational church in London. Its congregation traces back to 1774, when Edward Jones &ndash; a publican and spirit merchant nicknamed &lsquo;Ginshop Jones&rsquo; &ndash; began holding Welsh-language services in Smithfield. A Welsh chapel has stood on this site since 1806, and the present building dates from 1870. Services are still held in Welsh.',
       short:'The mother chapel of London&rsquo;s Welsh Congregationalists, whose services go back to 1774 and a publican known as &lsquo;Ginshop Jones&rsquo;. The chapel dates from 1870.',
@@ -5072,7 +5072,7 @@
       short:'A 1930s mock-Tudor refit with three panelled rooms, a working heated foot rail and a brass &lsquo;penny drop&rsquo; in the floor, once used for a pub game.',
       refs:['https://whatpub.com/pubs/SEL/10716'] },
 
-    { id:'boot-and-flogger-borough', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Boot_and_Flogger%2C_Borough%2C_SE1_%282943241822%29.jpg/330px-Boot_and_Flogger%2C_Borough%2C_SE1_%282943241822%29.jpg', name:'The Boot &amp; Flogger', area:'Redcross Way, Borough, Bankside', pc:'SE1', cat:'pub', year:1965, era:'Opened 1965',
+    { id:'boot-and-flogger-borough', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Boot_and_Flogger%2C_Borough%2C_SE1_%282943241822%29.jpg/330px-Boot_and_Flogger%2C_Borough%2C_SE1_%282943241822%29.jpg', name:'The Boot &amp; Flogger', area:'Redcross Way, Borough', pc:'SE1', cat:'pub', year:1965, era:'Opened 1965',
       lat:51.5042, lon:-0.0936, addr:'10&ndash;20 Redcross Way, SE1 1TA',
       text:'John Davy opened this as London&rsquo;s first true wine bar in 1965, and to this day it sells no beer or spirits. Despite its age &ndash; young for a historic pub &ndash; CAMRA lists the interior as of special national historic interest. It stands on Redcross Way, close to the Cross Bones graveyard.',
       short:'London&rsquo;s first true wine bar, opened by John Davy in 1965, and still selling no beer or spirits. CAMRA rates its interior of national importance.',
@@ -5151,7 +5151,7 @@
       short:'A Grade II listed corner pub on Roupell Street, a terrace of workers&rsquo; cottages often filmed as the north. Its two bars are split by a rare leaded-glass partition.',
       refs:['https://whatpub.com/pubs/SEL/10553'] },
 
-    { id:'lord-clyde-borough', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/The_Lord_Clyde%2C_Borough_2025-07-16.jpg/330px-The_Lord_Clyde%2C_Borough_2025-07-16.jpg', name:'The Lord Clyde', area:'Clennam Street, Borough, Bankside', pc:'SE1', cat:'pub', year:1913, era:'Rebuilt 1913',
+    { id:'lord-clyde-borough', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/The_Lord_Clyde%2C_Borough_2025-07-16.jpg/330px-The_Lord_Clyde%2C_Borough_2025-07-16.jpg', name:'The Lord Clyde', area:'Clennam Street, Borough', pc:'SE1', cat:'pub', year:1913, era:'Rebuilt 1913',
       lat:51.5027, lon:-0.0956, addr:'27 Clennam Street, SE1 1ER',
       text:'Rebuilt in 1913 with a marvellous ceramic exterior, crowned by the eagle of the East End brewers Truman, Hanbury &amp; Buxton; the fascia over the corner door names E. J. Bayling, the landlord at the time. Inside are two rooms with the original tapering matchboarded counter and bar-back, half-height panelling and a framed Truman&rsquo;s price list from 1961. The same family ran it for over 60 years, until 2020. Grade II listed, it is rated by CAMRA as of very special national historic interest.',
       short:'A 1913 Truman&rsquo;s pub with a ceramic eagle outside and its original counter and bar-back inside, run by one family for over 60 years. Grade II listed.',
