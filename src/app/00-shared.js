@@ -39,6 +39,7 @@
     'nunhead': 'One of London’s Magnificent Seven cemeteries, wild enough in places to forget it’s inside the M25.',
     'peckham': 'A market street and a multi-storey car park turned rooftop bar &mdash; Camberwell’s louder, younger neighbour.',
     'penge': 'A fashionable Victorian suburb in the shadow of the relocated Crystal Palace, briefly notorious for two 19th-century murders.',
+    'south norwood': 'A Croydon canal-and-railway suburb built on brickfields, now best known as the home of Crystal Palace FC at Selhurst Park.',
     'rotherhithe': 'Where Brunel dug the first tunnel under a navigable river, and the Mayflower is said to have set sail.',
     'sydenham': 'The hill above Crystal Palace Park, still trading on the shadow of the palace that once stood there.',
     'walworth': 'Dense Victorian streets off the Old Kent Road &mdash; working-class London the guidebooks tend to skip.',

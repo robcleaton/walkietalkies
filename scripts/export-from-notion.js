@@ -51,7 +51,8 @@ const CATS = {
   pub: 'Historic pub',
   art: 'Art & artists',
   food: 'Food & drink',
-  resident: 'Notable residents'
+  resident: 'Notable residents',
+  sport: 'Sport & leisure'
 };
 
 const CAT_KEY_BY_LABEL = Object.fromEntries(Object.entries(CATS).map(([key, label]) => [label, key]));

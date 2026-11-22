@@ -405,7 +405,7 @@
   },
   "dadabhai-naoroji-penge": {
     "file": "kokoro/penge/dadabhai-naoroji-penge.mp3",
-    "fileHash": "e78c480f747d6520",
+    "fileHash": "cd1780327d27b0ae",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "helena-normanton": {
@@ -3961,6 +3961,181 @@
   "zodiac-court-peep-show": {
     "file": "kokoro/other/zodiac-court-peep-show.mp3",
     "fileHash": "f33ac8a369c23891",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "the-den": {
+    "file": "kokoro/bermondsey/the-den.mp3",
+    "fileHash": "1209b22ea5613c56",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "blackheath-fc-rectory-field": {
+    "file": "kokoro/blackheath/blackheath-fc-rectory-field.mp3",
+    "fileHash": "8ffdfe9c10eab3b9",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "the-valley": {
+    "file": "kokoro/charlton/the-valley.mp3",
+    "fileHash": "db98231e5749edd3",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "brunel-water-towers": {
+    "file": "kokoro/crystal-palace/brunel-water-towers.mp3",
+    "fileHash": "d42a0ac0965a4c4c",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "crystal-palace-bowl": {
+    "file": "kokoro/crystal-palace/crystal-palace-bowl.mp3",
+    "fileHash": "8bc59bd3ccc642d3",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "crystal-palace-circuit": {
+    "file": "kokoro/crystal-palace/crystal-palace-circuit.mp3",
+    "fileHash": "d231677a6ac4a5e6",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "crystal-palace-fc-at-the-palace": {
+    "file": "kokoro/crystal-palace/crystal-palace-fc-at-the-palace.mp3",
+    "fileHash": "2f520b96449340e3",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "crystal-palace-maze": {
+    "file": "kokoro/crystal-palace/crystal-palace-maze.mp3",
+    "fileHash": "c8f0ee5cbd8c367e",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "crystal-palace-museum": {
+    "file": "kokoro/crystal-palace/crystal-palace-museum.mp3",
+    "fileHash": "c318df4b8f2029cf",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "crystal-palace-pneumatic-railway": {
+    "file": "kokoro/crystal-palace/crystal-palace-pneumatic-railway.mp3",
+    "fileHash": "630a49b70769b80c",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "joseph-paxton-bust": {
+    "file": "kokoro/crystal-palace/joseph-paxton-bust.mp3",
+    "fileHash": "0a0bcffffe36ff1c",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "pickles-world-cup": {
+    "file": "kokoro/crystal-palace/pickles-world-cup.mp3",
+    "fileHash": "155cec9e462a774f",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "champion-hill": {
+    "file": "kokoro/dulwich/champion-hill.mp3",
+    "fileHash": "de43d7528ece152d",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "the-old-den": {
+    "file": "kokoro/new-cross/the-old-den.mp3",
+    "fileHash": "23437def5ccca8fe",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "selhurst-park": {
+    "file": "kokoro/south-norwood/selhurst-park.mp3",
+    "fileHash": "7a4e0a7ad2e274ba",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "manor-ground-plumstead": {
+    "file": "kokoro/woolwich/manor-ground-plumstead.mp3",
+    "fileHash": "7f9765f98bab44c6",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "alma-crystal-palace": {
+    "file": "kokoro/crystal-palace/alma-crystal-palace.mp3",
+    "fileHash": "4d2028dc24d9b81c",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "crystal-palace-station": {
+    "file": "kokoro/crystal-palace/crystal-palace-station.mp3",
+    "fileHash": "98081c1d47212f2c",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "everyman-crystal-palace": {
+    "file": "kokoro/crystal-palace/everyman-crystal-palace.mp3",
+    "fileHash": "760db393ac671b96",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "foresters-hall-westow-street": {
+    "file": "kokoro/crystal-palace/foresters-hall-westow-street.mp3",
+    "fileHash": "e7d205b47c1e3b97",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "greek-orthodox-church-westow-street": {
+    "file": "kokoro/crystal-palace/greek-orthodox-church-westow-street.mp3",
+    "fileHash": "635ffd20fb752d8b",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "kennedy-shop-westow-hill": {
+    "file": "kokoro/crystal-palace/kennedy-shop-westow-hill.mp3",
+    "fileHash": "df181dde30fa95ff",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "queens-hotel-upper-norwood": {
+    "file": "kokoro/crystal-palace/queens-hotel-upper-norwood.mp3",
+    "fileHash": "222aae88e1db58f0",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "rnvr-trophy-memorial": {
+    "file": "kokoro/crystal-palace/rnvr-trophy-memorial.mp3",
+    "fileHash": "c261bddf434c6ea3",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "rockhills-gate-piers": {
+    "file": "kokoro/crystal-palace/rockhills-gate-piers.mp3",
+    "fileHash": "c94799f2ce0b7282",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "royal-albert-upper-norwood": {
+    "file": "kokoro/crystal-palace/royal-albert-upper-norwood.mp3",
+    "fileHash": "6d5cb5335dceb543",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "st-john-the-evangelist-upper-norwood": {
+    "file": "kokoro/crystal-palace/st-john-the-evangelist-upper-norwood.mp3",
+    "fileHash": "e9a8a45213ec8d0e",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "upper-norwood-library": {
+    "file": "kokoro/crystal-palace/upper-norwood-library.mp3",
+    "fileHash": "22ce2a106216ceac",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "westow-house": {
+    "file": "kokoro/crystal-palace/westow-house.mp3",
+    "fileHash": "06d836111573a602",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "white-hart-upper-norwood": {
+    "file": "kokoro/crystal-palace/white-hart-upper-norwood.mp3",
+    "fileHash": "8fcc3504626f147f",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "anerley-town-hall": {
+    "file": "kokoro/penge/anerley-town-hall.mp3",
+    "fileHash": "4e2a2b24f29a68d8",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "royal-naval-asylum-penge": {
+    "file": "kokoro/penge/royal-naval-asylum-penge.mp3",
+    "fileHash": "63e231c5c89087f3",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "beltwood-house": {
+    "file": "kokoro/sydenham/beltwood-house.mp3",
+    "fileHash": "3fd2f045a5fb3147",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "lammas-green": {
+    "file": "kokoro/sydenham/lammas-green.mp3",
+    "fileHash": "e13ebe87904ff7d4",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "sydenham-lecture-hall": {
+    "file": "kokoro/sydenham/sydenham-lecture-hall.mp3",
+    "fileHash": "20c2f55951c1760d",
     "fileVoice": "kokoro-v1.0/bf_alice"
   }
 }

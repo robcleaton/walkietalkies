@@ -249,7 +249,7 @@
   }
   if (window.ResizeObserver) new ResizeObserver(positionRouteLine).observe(routeListEl);
 
-  // On mobile, the rule above Open in Maps only shows once the stops
+  // The rule above Open in Maps only shows once the stops
   // overflow #routeScroll — with a short route it's just a stray line.
   // Re-checked whenever the scroll box or its contents change size.
   var routeScrollEl = document.getElementById('routeScroll');

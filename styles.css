@@ -606,10 +606,10 @@ button[data-toggle]:not([role="menuitem"]):not(:disabled):active{ transform:scal
   html.route-dragging #routePanelBody > *{ opacity:1; transition:none; }
   #scrim{ display:none; }
   html.route-open #scrim{ display:block; }
-  /* No rule between the stops and Open in Maps until the stops actually
-     scroll (updateRouteScrollable in src/app sets .is-scrollable). */
-  #routeActions:not(.is-scrollable){ border-top-color:transparent; }
 }
+/* No rule between the stops and Open in Maps until the stops actually
+   scroll (updateRouteScrollable in src/app sets .is-scrollable). */
+#routeActions:not(.is-scrollable){ border-top-color:transparent; }
 @media (min-width:1024px){
   #scrim, #routeBar{ display:none !important; }
   /* Closed by default: a dropdown menu anchored under #routeHeaderBtn,

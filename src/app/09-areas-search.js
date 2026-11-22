@@ -130,7 +130,7 @@
     works: 'Industry & invention', culture: 'Museums & galleries',
     memory: 'Memorials & protest', green: 'Parks & burial grounds',
     pub: 'Historic pubs', art: 'Art & artists', food: 'Food & drink',
-    resident: 'Notable residents'
+    resident: 'Notable residents', sport: 'Sport & leisure'
   };
   var CAT_SINGULARS = { resident: 'Notable resident' };
 
