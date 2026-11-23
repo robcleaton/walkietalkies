@@ -17,10 +17,21 @@
     var rowsEl = document.getElementById('heroRows');
     if (!heroEl || !rowsEl) return;
 
+    // A letter from the hand-drawn alphabet (assets/alphabet/<L>.svg) set
+    // into display type: shown through a mask so it takes the tile's text
+    // colour, larger than the caps it sits among (.hero-glyph in styles.css).
+    // `w` is the SVG's viewBox width; they're all 511 high.
+    function glyph(letter, w) {
+      var url = 'url(assets/alphabet/' + letter + '.svg)';
+      return '<span class="hero-glyph hero-glyph--' + letter.toLowerCase() + '" style="aspect-ratio:' + w + '/511;-webkit-mask-image:' + url + ';mask-image:' + url + '"></span>';
+    }
+
     var WORDS = {
       plaques: { html:'Blue<br>plaques',  bg:'var(--plaque)',    fg:'#fff' },
       // What the site is for, three short lines; read out, unlike the others.
-      intent:  { html:'Walk.<br>Listen.<br>Discover.', bg:'var(--marigold)', fg:'var(--ink-dark)', lines:3, read:true, sub:'Audio guides for SE London' }
+      // The A and E are drawn letters; `label` is what screen readers get.
+      intent:  { html:'W' + glyph('A', 393) + 'lk.<br>List' + glyph('E', 350) + 'n.<br>Discover.', label:'Walk. Listen. Discover.',
+                 bg:'var(--marigold)', fg:'var(--ink-dark)', lines:3, read:true, sub:'Audio guides for SE London' }
     };
 
     // Rows marked lead open with a tile saying what the site is. One of
@@ -108,7 +119,8 @@
       var w = WORDS[key];
       return '<span class="hero-tile hero-word' + (w.bare ? ' hero-word--bare' : '') + (w.lines === 3 ? ' hero-word--three' : '') + (w.sub ? ' hero-word--sub' : '') + '" style="' +
         (w.bare ? '' : 'background:' + w.bg + ';') + 'color:' + w.fg + '"' + (w.read ? '' : ' aria-hidden="true"') + '>' +
-        (w.bare ? w.html : '<span>' + w.html + '</span>') +
+        (w.label ? '<span class="sr-only">' + w.label + '</span>' : '') +
+        (w.bare ? w.html : '<span' + (w.label ? ' aria-hidden="true"' : '') + '>' + w.html + '</span>') +
         (w.sub ? '<span class="eyebrow hero-word__sub">' + w.sub + '</span>' : '') + '</span>';
     }
 
