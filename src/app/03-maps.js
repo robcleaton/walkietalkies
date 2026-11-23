@@ -112,7 +112,7 @@
         html: '<span class="flex items-center justify-center w-[22px] h-[22px] rounded-full text-white font-mono text-[11px] font-semibold" style="background:var(--verdigris);box-shadow:0 1px 3px rgba(0,0,0,.4)">' + (route.indexOf(id) + 1) + '</span>',
         iconSize: [22, 22], iconAnchor: [11, 11]
       });
-      L.marker([s.lat, s.lon], { icon: icon }).addTo(routeMapLayer).bindPopup(plain(s.name));
+      L.marker([s.lat, s.lon], { icon: icon }).addTo(routeMapLayer).bindPopup(plain(s.name), { closeButton: false });
     });
 
     routeMap.invalidateSize();
@@ -152,6 +152,14 @@
     return lower.concat(upper);
   }
 
+  // An area-map marker's popup: the stop's photo (when it has one) above
+  // its name (.map-pop in styles.css). The photo is sized up front so the
+  // popup doesn't change shape as it loads; one that fails is dropped.
+  function areaPopupHTML(s) {
+    var img = s.img ? '<img class="map-pop__img" src="' + s.img + '" alt="" width="180" height="120" decoding="async" onerror="this.remove()">' : '';
+    return '<span class="map-pop">' + img + '<span class="map-pop__name">' + plain(s.name) + '</span></span>';
+  }
+
   function renderAreaMap(stops) {
     var mapped = stops.filter(function (s) {
       return s.lat !== null && s.lat !== undefined && s.lon !== null && s.lon !== undefined;
@@ -183,7 +191,7 @@
         html: '<span style="display:block;width:14px;height:14px;border-radius:50%;background:' + color + ';border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.4)"></span>',
         iconSize: [14, 14], iconAnchor: [7, 7]
       });
-      L.marker([s.lat, s.lon], { icon: icon }).addTo(areaMapLayer).bindPopup(plain(s.name));
+      L.marker([s.lat, s.lon], { icon: icon }).addTo(areaMapLayer).bindPopup(areaPopupHTML(s), { closeButton: false, className: 'map-pop-wrap' });
     });
 
     areaMap.invalidateSize();

@@ -400,7 +400,7 @@
 
     { id:'morris-webb-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/2/27/Philip_Speakman_Webb.jpg', name:'William Morris &amp; Philip Webb', area:'Bexleyheath', pc:'DA6', cat:'plaque', year:1859, era:'Blue plaque',
       lat:51.4576, lon:0.1259, addr:'Red House Lane, DA6 8JF',
-      text:'A blue plaque on Red House itself, already on WalkieTalkies for the building, separately commemorates the two men who made it: Morris, who commissioned it as a home, and Webb, the architect who designed it.\n\nWebb went on to be called the father of Arts and Crafts architecture; this was his first major commission, built for a friend rather than a client.',
+      text:'A blue plaque on Red House itself commemorates the two men who made it: Morris, who commissioned it as a home, and Webb, the architect who designed it.\n\nWebb went on to be called the father of Arts and Crafts architecture; this was his first major commission, built for a friend rather than a client.',
       short:'A plaque on Red House honours the two men who made it: William Morris, who commissioned it as a home, and Philip Webb, whose first major commission it was.',
       refs:['https://en.wikipedia.org/wiki/Philip_Webb', 'https://en.wikipedia.org/wiki/William_Morris'] },
 
@@ -1028,7 +1028,7 @@
 
     { id:'friends-meeting-house-peckham', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Former_Friends_Meeting_House_%288667814307%29.jpg/330px-Former_Friends_Meeting_House_%288667814307%29.jpg', name:'Friends Meeting House', area:'Peckham', pc:'SE15', cat:'plaque', year:1826, era:'Blue plaque',
       lat:51.4715, lon:-0.0714, addr:'2 Highshore Road, SE15 5AA',
-      text:'Peckham&rsquo;s Quaker meeting house has counted the chocolate manufacturer and philanthropist Elizabeth Cadbury among its historic congregation.\n\nAstrophysicist Arthur Eddington, already on WalkieTalkies for his Blackheath plaque, was a lifelong Quaker who worshipped at meeting houses like this one throughout his life.',
+      text:'Peckham&rsquo;s Quaker meeting house has counted the chocolate manufacturer and philanthropist Elizabeth Cadbury among its historic congregation.\n\nAstrophysicist Arthur Eddington was a lifelong Quaker who worshipped at meeting houses like this one throughout his life.',
       short:'Peckham&rsquo;s Quaker meeting house, whose historic congregation included the chocolate manufacturer and philanthropist Elizabeth Cadbury.' },
 
     { id:'hanover-chapel-peckham', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/William_Bengo_Collyer.jpg/330px-William_Bengo_Collyer.jpg', name:'Hanover Chapel', area:'Peckham', pc:'SE15', cat:'plaque', year:1657, era:'Founded 1657, demolished early 20th century',
@@ -1188,7 +1188,7 @@
 
     { id:'palace-of-placentia', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/An_historical_account_of_the_Royal_Hospital_for_Seamen_at_Greenwich_%281789%29_%2814786307743%29.jpg/330px-An_historical_account_of_the_Royal_Hospital_for_Seamen_at_Greenwich_%281789%29_%2814786307743%29.jpg', name:'Palace of Placentia', area:'Old Royal Naval College grounds, Greenwich', pc:'SE10', cat:'memory', year:1491, era:'Tudor royal palace, demolished 1660',
       lat:51.4822, lon:-0.0083, addr:'Old Royal Naval College, King William Walk, SE10 9NN',
-      text:'Henry VIII was born in this riverside palace in 1491, and both his daughters after him &mdash; Mary I in 1516, Elizabeth I in 1533 &mdash; making Greenwich, not London, the birthplace of three Tudor monarchs. Charles II demolished the old palace in 1660 for a rebuild that stalled for decades.\n\nNothing of it stands above ground; the Old Royal Naval College&rsquo;s Baroque courts were built on and around its footprint, so the birthplace of the Tudor dynasty now sits directly beneath a very different building already on WalkieTalkies.',
+      text:'Henry VIII was born in this riverside palace in 1491, and both his daughters after him &mdash; Mary I in 1516, Elizabeth I in 1533 &mdash; making Greenwich, not London, the birthplace of three Tudor monarchs. Charles II demolished the old palace in 1660 for a rebuild that stalled for decades.\n\nNothing of it stands above ground; the Old Royal Naval College&rsquo;s Baroque courts were built on and around its footprint, so the birthplace of the Tudor dynasty now sits directly beneath a very different building.',
       short:'Henry VIII, Mary I and Elizabeth I were all born in this riverside palace. Nothing stands above ground; the Old Royal Naval College was built over its footprint.',
       refs:['https://en.wikipedia.org/wiki/Palace_of_Placentia'] },
 
@@ -1218,13 +1218,13 @@
 
     { id:'peckham-riots-2011', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Carpetright_store_after_Tottenham_riots.jpg/330px-Carpetright_store_after_Tottenham_riots.jpg', name:'The 2011 Peckham riots', area:'Rye Lane, Peckham', pc:'SE15', cat:'memory', year:2011, era:'8 August 2011',
       lat:51.4715, lon:-0.0693, addr:'Rye Lane, SE15',
-      text:'On the third night of the August 2011 England riots, shops along Rye Lane &mdash; including one under Peckham&rsquo;s Victorian clock tower &mdash; were looted and a building was set alight, part of the disorder that spread from Tottenham across London.\n\nThe Peckham Peace Wall, a few doors down and already on WalkieTalkies, exists directly because of this night &mdash; four theatre workers covered a smashed Poundland window with a board, and thousands of hopeful post-it notes followed.',
+      text:'On the third night of the August 2011 England riots, shops along Rye Lane &mdash; including one under Peckham&rsquo;s Victorian clock tower &mdash; were looted and a building was set alight, part of the disorder that spread from Tottenham across London.\n\nThe Peckham Peace Wall, a few doors down, exists directly because of this night &mdash; four theatre workers covered a smashed Poundland window with a board, and thousands of hopeful post-it notes followed.',
       short:'On 8 August 2011 shops along Rye Lane were looted and a building set alight. The Peckham Peace Wall grew directly out of the clean-up that followed.',
       refs:['https://en.wikipedia.org/wiki/2011_England_riots'] },
 
     { id:'lewisham-v1-1944', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/A21%2C_Lewisham_-_geograph.org.uk_-_3932112.jpg/330px-A21%2C_Lewisham_-_geograph.org.uk_-_3932112.jpg', name:'The Lewisham Market V-1', area:'Lewisham High Street', pc:'SE13', cat:'memory', year:1944, era:'28 July 1944, 9:41am',
       lat:51.4615, lon:-0.0155, addr:'Lewisham High Street, by the Clock Tower, SE13',
-      text:'A flying bomb exploded in front of Lewisham&rsquo;s clock tower &mdash; already on WalkieTalkies &mdash; in the middle of a Friday morning market. Around fifty-one people were killed and over three hundred injured; a hundred shops were wrecked and that stretch of high street was rebuilt from scratch after the war.\n\nIt struck the same spot the 1897 Jubilee clock tower still stands on today &mdash; the tower survived; the market crowd in front of it did not.',
+      text:'A flying bomb exploded in front of Lewisham&rsquo;s clock tower in the middle of a Friday morning market. Around fifty-one people were killed and over three hundred injured; a hundred shops were wrecked and that stretch of high street was rebuilt from scratch after the war.\n\nIt struck the same spot the 1897 Jubilee clock tower still stands on today &mdash; the tower survived; the market crowd in front of it did not.',
       short:'On 28 July 1944 a flying bomb exploded by Lewisham&rsquo;s clock tower during a busy market, killing around fifty-one people. The tower survived; the high street was rebuilt.',
       refs:['https://en.wikipedia.org/wiki/Lewisham'] },
 
@@ -1243,7 +1243,7 @@
 
     { id:'coach-and-horses-greenwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Soho_coach_and_horses_1.jpg/330px-Soho_coach_and_horses_1.jpg', name:'Coach and Horses', area:'Greenwich Market', pc:'SE10', cat:'pub', year:1780, era:'Trading since 1780',
       lat:51.4816, lon:-0.0097, addr:'Greenwich Market, SE10 9HZ',
-      text:'A Grade II-listed pub that has stood at the centre of Greenwich Market since 1780 &mdash; older than the naval buildings around it in their current form.\n\nIt sits a few doors from Cutty Sark, the Naval College and the Observatory, all already on WalkieTalkies &mdash; the one place on this list where you could reasonably visit five stops without walking further than the length of a cricket pitch.',
+      text:'A Grade II-listed pub that has stood at the centre of Greenwich Market since 1780 &mdash; older than the naval buildings around it in their current form.\n\nIt sits a few doors from Cutty Sark, the Naval College and the Observatory &mdash; the one place on this list where you could reasonably visit five stops without walking further than the length of a cricket pitch.',
       short:'A Grade II-listed pub at the heart of Greenwich Market since 1780 &mdash; older than the naval buildings around it in their current form.',
       web:'https://www.the-coach-and-horses.co.uk/' },
 
@@ -1331,13 +1331,13 @@
 
     { id:'green-chain-crystal-palace-nunhead', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Green_Chain_walk_signs_-_geograph.org.uk_-_1211245.jpg/330px-Green_Chain_walk_signs_-_geograph.org.uk_-_1211245.jpg', name:'The Green Chain Walk', area:'Crystal Palace to Nunhead', pc:'SE15', cat:'green', year:1977, era:'One stage of an 82km network begun 1977',
       lat:51.4581, lon:-0.0552, addr:'Ends at Nunhead Cemetery, SE15 3LP',
-      text:'Four boroughs created the Green Chain Walk in 1977 to link some 300 open spaces between the Thames and Crystal Palace Park into one protected 82-kilometre network, in eleven official waymarked sections. Its final stage runs from Crystal Palace Park to Nunhead Cemetery, tying together two green spaces already on WalkieTalkies.\n\nThe whole network runs south from three separate Thames starting points &mdash; the Thames Barrier, Thamesmead and Erith &mdash; and doesn&rsquo;t fully converge until Oxleas Wood.',
+      text:'Four boroughs created the Green Chain Walk in 1977 to link some 300 open spaces between the Thames and Crystal Palace Park into one protected 82-kilometre network, in eleven official waymarked sections. Its final stage runs from Crystal Palace Park to Nunhead Cemetery.\n\nThe whole network runs south from three separate Thames starting points &mdash; the Thames Barrier, Thamesmead and Erith &mdash; and doesn&rsquo;t fully converge until Oxleas Wood.',
       short:'The final stage of the Green Chain Walk, an 82-kilometre network linking 300 open spaces, runs from Crystal Palace Park to Nunhead Cemetery.',
       refs:['https://en.wikipedia.org/wiki/South_East_London_Green_Chain'] },
 
     { id:'capital-ring-woolwich', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Capital_Ring_waymarker_post.jpg/330px-Capital_Ring_waymarker_post.jpg', name:'The Capital Ring', area:'Woolwich to Falconwood', pc:'SE18', cat:'green', year:2005, era:'First stage of London\'s orbital walking route',
       lat:51.4913, lon:0.0688, addr:'Starts at the Woolwich Foot Tunnel, SE18 6DX',
-      text:'The Capital Ring, London&rsquo;s 126-kilometre orbital walking route, officially begins at the Woolwich foot tunnel &mdash; already on WalkieTalkies &mdash; and its first stretch to Falconwood runs through Charlton and past Eltham, overlapping with the Green Chain network for its whole South East London run.\n\nIts opening section starts at the same 1902 tunnel entrance dockers once used to get to work &mdash; a Victorian engineering project now doubling as the start line for a twenty-first-century walking route.',
+      text:'The Capital Ring, London&rsquo;s 126-kilometre orbital walking route, officially begins at the Woolwich foot tunnel, and its first stretch to Falconwood runs through Charlton and past Eltham, overlapping with the Green Chain network for its whole South East London run.\n\nIts opening section starts at the same 1902 tunnel entrance dockers once used to get to work &mdash; a Victorian engineering project now doubling as the start line for a twenty-first-century walking route.',
       short:'London&rsquo;s 126-kilometre orbital walking route begins at the Woolwich foot tunnel, the same 1902 entrance dockers once used to get to work.' },
 
     { id:'waterlink-way', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Footpaths_across_Cator_Park%2C_Beckenham._-_geograph.org.uk_-_59155.jpg/330px-Footpaths_across_Cator_Park%2C_Beckenham._-_geograph.org.uk_-_59155.jpg', name:'The Waterlink Way', area:'Ladywell to Greenwich', pc:'SE13', cat:'green', year:1995, era:'Riverside route, part of the National Cycle Network since the 1990s',
@@ -1360,7 +1360,7 @@
 
     { id:'david-jones-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/David_jones.jpg/330px-David_jones.jpg', name:'David Jones', area:'Brockley', pc:'SE4', cat:'plaque', year:1895, era:'Maroon plaque, unveiled 2 December 2015',
       lat:51.4635, lon:-0.0295, addr:'67 Arabin Road, SE4',
-      text:'Born here in 1895, Jones served longer at the front than almost any other Great War poet, was wounded at Mametz Wood, and later wrote In Parenthesis (1937) &mdash; a war memoir T. S. Eliot called "a work of genius."\n\nHe grew up on Howson Road, the son of a printer, and some of his paintings and illustrations depict his family\'s Brockley house and garden directly.\n\nHe is buried in Brockley &amp; Ladywell Cemeteries, already on WalkieTalkies; the Friends of that cemetery led the campaign and crowdfunding for his plaque.',
+      text:'Born here in 1895, Jones served longer at the front than almost any other Great War poet, was wounded at Mametz Wood, and later wrote In Parenthesis (1937) &mdash; a war memoir T. S. Eliot called "a work of genius."\n\nHe grew up on Howson Road, the son of a printer, and some of his paintings and illustrations depict his family\'s Brockley house and garden directly.\n\nHe is buried in Brockley &amp; Ladywell Cemeteries; the Friends of that cemetery led the campaign and crowdfunding for his plaque.',
       short:'Born here in 1895, Jones served longer at the front than almost any other Great War poet and wrote In Parenthesis, which T. S. Eliot called &ldquo;a work of genius&rdquo;.',
       refs:['https://en.wikipedia.org/wiki/David_Jones_(painter)'] },
 
@@ -1408,7 +1408,7 @@
 
     { id:'wg-grace-plaque', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/WG_Grace_c1902.jpg/330px-WG_Grace_c1902.jpg', name:'W.G. Grace', area:'Mottingham, Eltham', pc:'SE9', cat:'plaque', year:1899, era:'Blue plaque, lived here from 1899',
       lat:51.427, lon:0.043, addr:'Fairmount, Mottingham Lane, SE9',
-      text:'Grace moved his family here in 1899 to manage and captain the newly formed London County Cricket Club, based a short walk away at Crystal Palace Park &mdash; already on WalkieTalkies &mdash; and kept playing club cricket into his sixties.\n\nThe Mottingham years were shadowed by loss: his daughter Bessie died of typhoid here in 1899, aged twenty, and his eldest son died of appendicitis in 1905. He lived at Fairmount until his own death in 1915.',
+      text:'Grace moved his family here in 1899 to manage and captain the newly formed London County Cricket Club, based a short walk away at Crystal Palace Park, and kept playing club cricket into his sixties.\n\nThe Mottingham years were shadowed by loss: his daughter Bessie died of typhoid here in 1899, aged twenty, and his eldest son died of appendicitis in 1905. He lived at Fairmount until his own death in 1915.',
       short:'Grace moved here in 1899 to captain London County Cricket Club at Crystal Palace, playing club cricket into his sixties. He lived here until his death in 1915.',
       refs:['https://en.wikipedia.org/wiki/W._G._Grace'] },
 
@@ -1500,7 +1500,7 @@
 
     { id:'fellowship-inn-bellingham', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/The_Fellowship_Inn%2C_Bellingham_%2801%29.jpg/330px-The_Fellowship_Inn%2C_Bellingham_%2801%29.jpg', name:'The Fellowship Inn', area:'Bellingham, Catford', pc:'SE6', cat:'pub', year:1924, era:'Built 1923&ndash;24, first pub on a London council estate',
       lat:51.43, lon:-0.021, addr:'Randlesdown Road, SE6 3BT',
-      text:'Built to serve the new Bellingham estate as post-WWI London tried to relieve overcrowding &mdash; the first pub ever purpose-built on a London council estate. Fleetwood Mac and John Mayall &amp; the Bluesbreakers both played here, and it&rsquo;s on CAMRA&rsquo;s National Inventory of Historic Pub Interiors.\n\nSir Henry Cooper &mdash; already on WalkieTalkies via his Bellingham plaque &mdash; used the building as a gym while training here for his 1963 fight against Cassius Clay. It closed briefly during the COVID years and reopened in September 2022.',
+      text:'Built to serve the new Bellingham estate as post-WWI London tried to relieve overcrowding &mdash; the first pub ever purpose-built on a London council estate. Fleetwood Mac and John Mayall &amp; the Bluesbreakers both played here, and it&rsquo;s on CAMRA&rsquo;s National Inventory of Historic Pub Interiors.\n\nSir Henry Cooper used the building as a gym while training here for his 1963 fight against Cassius Clay. It closed briefly during the COVID years and reopened in September 2022.',
       short:'The first pub purpose-built on a London council estate. Fleetwood Mac played here, and Henry Cooper trained in the building for his 1963 fight with Cassius Clay.',
       refs:['https://en.wikipedia.org/wiki/The_Fellowship_and_Star', 'https://historicengland.org.uk/listing/the-list/list-entry/1413050'] },
 
