@@ -27,7 +27,8 @@
     }
 
     var WORDS = {
-      plaques: { html:'Blue<br>plaques',  bg:'var(--plaque)',    fg:'#fff' },
+      // Drawn E and A, as in the intent tile below. Not read out, so no label.
+      plaques: { html:'Blu' + glyph('E', 350) + '<br>pl' + glyph('A', 393) + 'ques',  bg:'var(--plaque)',    fg:'#fff' },
       // What the site is for, three short lines; read out, unlike the others.
       // The A and E are drawn letters; `label` is what screen readers get.
       intent:  { html:'W' + glyph('A', 393) + 'lk.<br>List' + glyph('E', 350) + 'n.<br>Discover.', label:'Walk. Listen. Discover.',
@@ -117,7 +118,7 @@
 
     function wordHTML(key) {
       var w = WORDS[key];
-      return '<span class="hero-tile hero-word' + (w.bare ? ' hero-word--bare' : '') + (w.lines === 3 ? ' hero-word--three' : '') + (w.sub ? ' hero-word--sub' : '') + '" style="' +
+      return '<span class="hero-tile hero-word hero-word--' + key + (w.bare ? ' hero-word--bare' : '') + (w.lines === 3 ? ' hero-word--three' : '') + (w.sub ? ' hero-word--sub' : '') + '" style="' +
         (w.bare ? '' : 'background:' + w.bg + ';') + 'color:' + w.fg + '"' + (w.read ? '' : ' aria-hidden="true"') + '>' +
         (w.label ? '<span class="sr-only">' + w.label + '</span>' : '') +
         (w.bare ? w.html : '<span' + (w.label ? ' aria-hidden="true"' : '') + '>' + w.html + '</span>') +

@@ -693,6 +693,12 @@ a.hero-tile:focus-visible{ outline:2px solid var(--focus); outline-offset:-2px; 
 .hero-glyph--e{ top:.1em; margin-left:calc(-.06em - 2px); margin-right:calc(-.06em + 2px); } /* 2px tighter to the "t", 2px looser to the "n" */
 /* The A: 2px tighter on its right, towards the "l". */
 .hero-glyph--a{ margin-right:calc(-.06em - 2px); }
+/* In "Blue plaques": the E 2px further from the "u", the A 4px lower. */
+.hero-word--plaques .hero-glyph--e{ margin-left:-.06em; }
+.hero-word--plaques .hero-glyph--a{ top:4px; margin-left:calc(-.06em + 4px); } /* 4px further from the "l" */
+/* "Walk. Listen. Discover.": more room on the right than the other word tiles (11cqh). */
+.hero-word--intent{ padding-right:16cqh; }
+.hero-word--intent .hero-glyph--a{ top:1px; } /* the A in "Walk", 1px lower */
 
 /* Version C (?hero=c): stops as just the shaped photo, no card behind
    it (overriding the inline category colour) and no visible name (kept
