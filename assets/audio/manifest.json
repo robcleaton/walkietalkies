@@ -4707,5 +4707,40 @@
     "file": "kokoro/areas/west-norwood.mp3",
     "fileHash": "46385820a2705ac6",
     "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "cardinal-cap-alley": {
+    "file": "kokoro/bankside/cardinal-cap-alley.mp3",
+    "fileHash": "557456566784ce3b",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "clink-street": {
+    "file": "kokoro/bankside/clink-street.mp3",
+    "fileHash": "67fe4d94535228c4",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "shad-thames": {
+    "file": "kokoro/bermondsey/shad-thames.mp3",
+    "fileHash": "9baf905ab6656930",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "lant-street": {
+    "file": "kokoro/borough/lant-street.mp3",
+    "fileHash": "5e7a56e117a4f356",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "newington-butts": {
+    "file": "kokoro/elephant-and-castle/newington-butts.mp3",
+    "fileHash": "8439afab8da0e731",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "old-kent-road": {
+    "file": "kokoro/peckham/old-kent-road.mp3",
+    "fileHash": "37e08e8c979e9d1c",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "leake-street-tunnel": {
+    "file": "kokoro/south-bank/leake-street-tunnel.mp3",
+    "fileHash": "5cd3163dacc21a78",
+    "fileVoice": "kokoro-v1.0/bf_alice"
   }
 }
