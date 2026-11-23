@@ -69,10 +69,10 @@
     }).addTo(stopMap);
     nearestTo(s, 8).forEach(function (n) {
       L.marker([n.s.lat, n.s.lon], { icon: stopMarker((CATMARK[n.s.cat] || {}).color || 'var(--ink)', 12), opacity: 0.85 })
-        .addTo(stopMap).bindPopup(plain(n.s.name));
+        .addTo(stopMap).bindPopup(plain(n.s.name), { closeButton: false });
     });
     L.marker([s.lat, s.lon], { icon: stopMarker((CATMARK[s.cat] || {}).color || 'var(--ink)', 22), zIndexOffset: 1000 })
-      .addTo(stopMap).bindPopup(plain(s.name));
+      .addTo(stopMap).bindPopup(plain(s.name), { closeButton: false });
     stopMap.setView([s.lat, s.lon], 16);
   }
 

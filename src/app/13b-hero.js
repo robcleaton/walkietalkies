@@ -96,8 +96,12 @@
     // ask for a 640px one, and fall back to the original if Commons has
     // no larger size (see the error listener below).
     function bigImg(src) { return src.replace(/\/330px-/, '/640px-'); }
+    // Each photo sits over a placeholder (the stop thumbnails' faint
+    // looped "a", THUMB_PH_GLYPH in 08-route-render.js) and fades in once
+    // it has loaded (.hero-ph / .is-loaded in styles.css).
     function imgHTML(s) {
-      return '<img src="' + bigImg(s.img) + '" data-fallback="' + s.img + '" alt="" decoding="async" draggable="false" style="--delay:-' + (Math.random() * 12).toFixed(1) + 's">';
+      return '<span class="hero-ph" aria-hidden="true">' + THUMB_PH_GLYPH + '</span>' +
+        '<img class="hero-img" src="' + bigImg(s.img) + '" data-fallback="' + s.img + '" alt="" decoding="async" draggable="false" onload="this.classList.add(\'is-loaded\')" style="--delay:-' + (Math.random() * 12).toFixed(1) + 's">';
     }
 
     function wordHTML(key) {
@@ -199,19 +203,23 @@
           if (t === 'areachip') return areas.length ? areaChipHTML(areas[nextArea++ % areas.length]) : '';
           return photoHTML(take(), t === 'tall');
         }).join('');
-        // The set twice, so sliding the track by half loops seamlessly;
-        // the copy is inert, so keyboard and screen readers meet each
-        // stop once. Each row starts at a random point in its loop.
+        // The set twice, so sliding the track by half loops seamlessly.
+        // The copy is hidden from screen readers and its links are out of
+        // the tab order, so keyboard and screen readers meet each stop
+        // once, but it stays clickable (not inert), since half of what's
+        // on screen at any moment is the copy. Each row starts at a
+        // random point in its loop.
+        var copy = set.replace(/<a /g, '<a tabindex="-1" ');
         return '<div class="hero-row"><div class="hero-track" style="--dur:' + row.dur + 's;--dir:' + row.dir +
           ';animation-delay:-' + (row === leadRow ? 0 : Math.random() * row.dur).toFixed(1) + 's">' +
           '<div class="hero-set">' + set + '</div>' +
-          '<div class="hero-set" aria-hidden="true" inert>' + set + '</div>' +
+          '<div class="hero-set" aria-hidden="true">' + copy + '</div>' +
           '</div></div>';
       }).join('');
     }
 
-    // 640px thumbnail missing: use the data's own; that missing too, let
-    // the tile's colour show through.
+    // 640px thumbnail missing: use the data's own; that missing too, hide
+    // it and leave the placeholder showing.
     rowsEl.addEventListener('error', function (e) {
       var img = e.target;
       if (img.tagName !== 'IMG') return;

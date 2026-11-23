@@ -733,6 +733,16 @@ a.hero-chip:hover{ transform:scale(.96); }
 .hero-area__name{ font-family:"Gasoek One", Inter, sans-serif; font-size:50cqh; line-height:.8; letter-spacing:-.01em; text-transform:uppercase; white-space:nowrap; }
 @media (max-width:639px){ .hero-area__name{ font-size:32cqh; } } /* phones: smaller, so more of the name shows at once */
 
+/* While a hero photo loads: the stop thumbnails' placeholder (a raised
+   panel with the faint looped "a", .thumb-ph__glyph above) fills its
+   box, and the photo fades in over it once loaded (.is-loaded, set
+   from the JS). Used by every hero version's photos. */
+.hero-ph{ position:absolute; inset:0; overflow:hidden; background:var(--raised); color:var(--ink); pointer-events:none; }
+.hero-img{ position:relative; opacity:0; transition:opacity .5s ease; }
+.hero-img.is-loaded{ opacity:1; }
+.hero-shape__mask, .hero-chip__img, .hero2-photo{ position:relative; }
+@media (prefers-reduced-motion: reduce){ .hero-img{ transition:none; } }
+
 /* Photo: full bleed, a category chip and the stop's name on a scrim. */
 .hero-photo{ aspect-ratio:1.55; background:var(--raised); }
 .hero-photo--tall{ aspect-ratio:.82; }
@@ -794,3 +804,17 @@ a.hero-chip:hover{ transform:scale(.96); }
   .hero2-photo{ width:1.85em; height:1.85em; margin:-.1em .02em; }
 }
 @media (prefers-reduced-motion: reduce){ .hero2-photo{ transition:none; } }
+
+/* Map pin pop-ups (Leaflet): black with bold white text. Prefixed with
+   .leaflet-container to outrank leaflet.css, which loads after this file. */
+.leaflet-container .leaflet-popup-content-wrapper,
+.leaflet-container .leaflet-popup-tip{ background:#000; color:#fff; }
+.leaflet-container .leaflet-popup-content{ font-weight:700; }
+/* Area-map popup with a photo (areaPopupHTML() in src/app/03-maps.js):
+   the photo on top, the name under it, both 180px wide. Leaflet's own
+   content margin is 13px top and bottom but 20px / 24px at the sides;
+   even it out so the photo sits the same distance from every edge. */
+.leaflet-container .map-pop-wrap .leaflet-popup-content{ margin:16px 16px 12px; } /* a touch less below: the name's line height already adds space */
+.map-pop{ display:block; width:180px; }
+.map-pop__img{ display:block; width:180px; height:120px; object-fit:cover; border-radius:6px; margin-bottom:8px; background:#1F1F22; }
+.map-pop__name{ display:block; line-height:1.3; }
