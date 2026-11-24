@@ -14,7 +14,7 @@
     "model": "eleven_multilingual_v2",
     "chars": 329,
     "file": "kokoro/forest-hill/horniman.mp3",
-    "fileHash": "1c1d9285d66f9283",
+    "fileHash": "948f4ce9c567754c",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "blythe-hill-tavern": {
@@ -32,7 +32,7 @@
     "model": "eleven_multilingual_v2",
     "chars": 409,
     "file": "kokoro/forest-hill/forest-hill-mural.mp3",
-    "fileHash": "25075e2034701860",
+    "fileHash": "4f6608f9a9885014",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "sylvan-post": {
@@ -185,12 +185,12 @@
     "model": "eleven_multilingual_v2",
     "chars": 182,
     "file": "kokoro/forest-hill/e-w-swanton.mp3",
-    "fileHash": "c551f9c5d8eea0b6",
+    "fileHash": "97f49d023c077b80",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "arthur-rhys-davids": {
     "file": "kokoro/forest-hill/arthur-rhys-davids.mp3",
-    "fileHash": "2a8eece74f65f134",
+    "fileHash": "51b155161ae616fe",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "babur": {
@@ -200,7 +200,7 @@
   },
   "delroy-grant-the-night-stalker": {
     "file": "kokoro/forest-hill/delroy-grant-the-night-stalker.mp3",
-    "fileHash": "d28ea12377f181ee",
+    "fileHash": "0b1a3c00bd193ad1",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "don-letts": {
@@ -215,7 +215,7 @@
   },
   "francis-rossi": {
     "file": "kokoro/forest-hill/francis-rossi.mp3",
-    "fileHash": "23427729450875f8",
+    "fileHash": "9b25c872d16e794e",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "frederick-john-horniman": {
@@ -225,7 +225,7 @@
   },
   "hayley-squires": {
     "file": "kokoro/forest-hill/hayley-squires.mp3",
-    "fileHash": "a31b9a5fc3493fc5",
+    "fileHash": "5e64414e3a1e5b32",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "hello-and-goodbye-mural": {
@@ -240,7 +240,7 @@
   },
   "lionel-jeffries": {
     "file": "kokoro/forest-hill/lionel-jeffries.mp3",
-    "fileHash": "15e5ff1e54f1c9df",
+    "fileHash": "db234ec24210c1dd",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "luke-pritchard": {
@@ -255,7 +255,7 @@
   },
   "millie-my-boy-lollipop": {
     "file": "kokoro/forest-hill/millie-my-boy-lollipop.mp3",
-    "fileHash": "2ddbc05ecc8797c5",
+    "fileHash": "6ecccfde036e3a66",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "the-christmas-houses-perry-vale-acrostic-estate": {
@@ -285,7 +285,7 @@
   },
   "leslie-paul-plaque": {
     "file": "kokoro/honor-oak/leslie-paul-plaque.mp3",
-    "fileHash": "1673a0200b88339f",
+    "fileHash": "8f19f72aad91d08d",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "one-tree-hill-gun": {
@@ -315,42 +315,42 @@
   },
   "walters-way": {
     "file": "kokoro/honor-oak/walters-way.mp3",
-    "fileHash": "66059f841967699f",
+    "fileHash": "1306176c54065c2b",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "crystal-palace-building": {
     "file": "kokoro/crystal-palace/crystal-palace-building.mp3",
-    "fileHash": "d96a78d6cb316af9",
+    "fileHash": "30655434ca0e96b6",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "crystal-palace-sports-centre": {
     "file": "kokoro/crystal-palace/crystal-palace-sports-centre.mp3",
-    "fileHash": "f74f27dd5a5e9fee",
+    "fileHash": "d3a3191b211d3de6",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "crystal-palace-subway": {
     "file": "kokoro/crystal-palace/crystal-palace-subway.mp3",
-    "fileHash": "35b7e528ff1e15ac",
+    "fileHash": "b55f40184b9b6807",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "crystal-palace-terraces": {
     "file": "kokoro/crystal-palace/crystal-palace-terraces.mp3",
-    "fileHash": "42e09056994baa92",
+    "fileHash": "c1ed90133c413467",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "crystal-palace-transmitter": {
     "file": "kokoro/crystal-palace/crystal-palace-transmitter.mp3",
-    "fileHash": "f3d607fedf1059e3",
+    "fileHash": "cdfc7d698e6965c2",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "dinosaurs": {
     "file": "kokoro/crystal-palace/dinosaurs.mp3",
-    "fileHash": "5139da09471582fc",
+    "fileHash": "462db4d5fd4de40d",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "emile-zola-crystal-palace": {
     "file": "kokoro/crystal-palace/emile-zola-crystal-palace.mp3",
-    "fileHash": "530cedf13ef734fa",
+    "fileHash": "65ffb04ecdf6ab7d",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "gipsy-hill-brewing": {
@@ -365,12 +365,12 @@
   },
   "ira-aldridge": {
     "file": "kokoro/crystal-palace/ira-aldridge.mp3",
-    "fileHash": "49f431aba77e56aa",
+    "fileHash": "d1f9fc38393f7ad2",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "joseph-paxton-crystal-palace": {
     "file": "kokoro/crystal-palace/joseph-paxton-crystal-palace.mp3",
-    "fileHash": "12b8e3caba5ef20b",
+    "fileHash": "26573ac71c1fb2a2",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "penge-gorilla": {
@@ -380,17 +380,17 @@
   },
   "samuel-coleridge-taylor": {
     "file": "kokoro/crystal-palace/samuel-coleridge-taylor.mp3",
-    "fileHash": "9038098148c257d1",
+    "fileHash": "3861afd2b967cd33",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "sir-arthur-conan-doyle": {
     "file": "kokoro/crystal-palace/sir-arthur-conan-doyle.mp3",
-    "fileHash": "5894e43818318fa5",
+    "fileHash": "4fe4e1de2aaa9296",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "the-crystal-palace-fire": {
     "file": "kokoro/crystal-palace/the-crystal-palace-fire.mp3",
-    "fileHash": "af0cf28728feeeff",
+    "fileHash": "174a8d3a55ef158c",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "andrew-bonar-law-penge": {
@@ -405,7 +405,7 @@
   },
   "dadabhai-naoroji-penge": {
     "file": "kokoro/penge/dadabhai-naoroji-penge.mp3",
-    "fileHash": "cd1780327d27b0ae",
+    "fileHash": "ce0f6565674e0801",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "helena-normanton": {
@@ -420,7 +420,7 @@
   },
   "thomas-crapper-penge": {
     "file": "kokoro/penge/thomas-crapper-penge.mp3",
-    "fileHash": "eb518cac90d05115",
+    "fileHash": "72844e471b050d92",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "watermen-almshouses-penge": {
@@ -440,12 +440,12 @@
   },
   "globe-fire-1613": {
     "file": "kokoro/bankside/globe-fire-1613.mp3",
-    "fileHash": "f80faf84497af997",
+    "fileHash": "58f5e21f1f0a87f0",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "golden-hinde": {
     "file": "kokoro/bankside/golden-hinde.mp3",
-    "fileHash": "03b422e1b6871697",
+    "fileHash": "a9f9151aa5498b1a",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "hop-exchange": {
@@ -465,17 +465,17 @@
   },
   "john-fletcher": {
     "file": "kokoro/bankside/john-fletcher.mp3",
-    "fileHash": "1d312e4dee0222b5",
+    "fileHash": "2ad160c4d771ec2e",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "john-gower": {
     "file": "kokoro/bankside/john-gower.mp3",
-    "fileHash": "4de095a98b6ee551",
+    "fileHash": "817cbc07c06bc4dc",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "john-harvard": {
     "file": "kokoro/bankside/john-harvard.mp3",
-    "fileHash": "b01f34a1ee82c9d2",
+    "fileHash": "50358fd3c12f5604",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "king-alfred-statue": {
@@ -485,57 +485,57 @@
   },
   "kirkaldy-testing-works": {
     "file": "kokoro/bankside/kirkaldy-testing-works.mp3",
-    "fileHash": "3aa617840fd180c3",
+    "fileHash": "5027a9b2fe57fe70",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "philip-massinger": {
     "file": "kokoro/bankside/philip-massinger.mp3",
-    "fileHash": "4f9376703c4086b9",
+    "fileHash": "600b4bef00f3c440",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "robert-recorde": {
     "file": "kokoro/bankside/robert-recorde.mp3",
-    "fileHash": "c5e0931addca68d1",
+    "fileHash": "557cf6c8a7ea67c9",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "rose-theatre": {
     "file": "kokoro/bankside/rose-theatre.mp3",
-    "fileHash": "06e996efde84928f",
+    "fileHash": "c72319853fdb73da",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "sam-wanamaker": {
     "file": "kokoro/bankside/sam-wanamaker.mp3",
-    "fileHash": "7049a335a0ecb100",
+    "fileHash": "6b7ce7709f413629",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "siouxsie-sioux": {
     "file": "kokoro/bankside/siouxsie-sioux.mp3",
-    "fileHash": "53bcbf5c8a4c345c",
+    "fileHash": "565ff17f253fb45c",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "southwark-cathedral": {
     "file": "kokoro/bankside/southwark-cathedral.mp3",
-    "fileHash": "404e629f73aba8d9",
+    "fileHash": "8436573488d5fcb6",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "st-george-the-martyr": {
     "file": "kokoro/bankside/st-george-the-martyr.mp3",
-    "fileHash": "d0614714c5103ab1",
+    "fileHash": "267779c53c336a3c",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "st-georges-circus-obelisk": {
     "file": "kokoro/bankside/st-georges-circus-obelisk.mp3",
-    "fileHash": "3b25747b839965dc",
+    "fileHash": "8af4ba5b29617542",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "tate-modern": {
     "file": "kokoro/bankside/tate-modern.mp3",
-    "fileHash": "5eff83a1295db107",
+    "fileHash": "55da23c32d1719f1",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "the-bankside-beargarden": {
     "file": "kokoro/bankside/the-bankside-beargarden.mp3",
-    "fileHash": "bdba90251e2219bb",
+    "fileHash": "58859fac45a3c2e7",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "the-roman-riverboat": {
@@ -555,12 +555,12 @@
   },
   "alfred-and-ada-salter": {
     "file": "kokoro/bermondsey/alfred-and-ada-salter.mp3",
-    "fileHash": "e5643b1e2b714a2b",
+    "fileHash": "7e9f6823a082e567",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "alfred-marshall": {
     "file": "kokoro/bermondsey/alfred-marshall.mp3",
-    "fileHash": "7eaf37e9820779d9",
+    "fileHash": "bb65e2ed94e871df",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "anspach-and-hobday": {
@@ -570,12 +570,12 @@
   },
   "bermondsey-1983-by-election": {
     "file": "kokoro/bermondsey/bermondsey-1983-by-election.mp3",
-    "fileHash": "1abf07e5a29b8d55",
+    "fileHash": "b7aae8c01ce87c16",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "bermondsey-abbey": {
     "file": "kokoro/bermondsey/bermondsey-abbey.mp3",
-    "fileHash": "67d35a9ed30d88ef",
+    "fileHash": "a07a3a7529dab87e",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "bermondsey-horror": {
@@ -595,17 +595,17 @@
   },
   "cloudwater-bermondsey": {
     "file": "kokoro/bermondsey/cloudwater-bermondsey.mp3",
-    "fileHash": "d8e852dab86ddaaa",
+    "fileHash": "10131489a46c189d",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "david-haye": {
     "file": "kokoro/bermondsey/david-haye.mp3",
-    "fileHash": "c6378c281fd53166",
+    "fileHash": "9910da6bc29e3878",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "donkin-hall-and-gamble": {
     "file": "kokoro/bermondsey/donkin-hall-and-gamble.mp3",
-    "fileHash": "3d38ceac74e834fb",
+    "fileHash": "985edd0e1164e2e6",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "edward-iii-s-bermondsey-manor-house": {
@@ -625,7 +625,7 @@
   },
   "grange-walk-and-the-bermondsey-abbey-gatehouse": {
     "file": "kokoro/bermondsey/grange-walk-and-the-bermondsey-abbey-gatehouse.mp3",
-    "fileHash": "dcc3e9de13cab01b",
+    "fileHash": "3ba421f836cbb2a8",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "hays-galleria": {
@@ -640,7 +640,7 @@
   },
   "jade-goody": {
     "file": "kokoro/bermondsey/jade-goody.mp3",
-    "fileHash": "9ae953048f3389ca",
+    "fileHash": "b311ff9d973ce6c2",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "kanpai-london": {
@@ -675,7 +675,7 @@
   },
   "mother-mary-potter": {
     "file": "kokoro/bermondsey/mother-mary-potter.mp3",
-    "fileHash": "5d196004d5e32fa6",
+    "fileHash": "68ea2872f29d4e2e",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "neckinger-mills": {
@@ -685,7 +685,7 @@
   },
   "peek-frean": {
     "file": "kokoro/bermondsey/peek-frean.mp3",
-    "fileHash": "1287ad232600d001",
+    "fileHash": "09f3cf7f86ecc547",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "peek-freans-biscuit-town": {
@@ -700,7 +700,7 @@
   },
   "salter": {
     "file": "kokoro/bermondsey/salter.mp3",
-    "fileHash": "403a118236adc80f",
+    "fileHash": "79c31e7a8c49e05a",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "samuel-bourne-bevington": {
@@ -730,17 +730,17 @@
   },
   "the-tooley-street-fire": {
     "file": "kokoro/bermondsey/the-tooley-street-fire.mp3",
-    "fileHash": "edfed07dfc929215",
+    "fileHash": "c8af3401210ef504",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "tommy-steele": {
     "file": "kokoro/bermondsey/tommy-steele.mp3",
-    "fileHash": "464f9507e9acd4a8",
+    "fileHash": "42c1fd72ea35264c",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "tower-bridge": {
     "file": "kokoro/bermondsey/tower-bridge.mp3",
-    "fileHash": "1f7374217a3d40fa",
+    "fileHash": "3d48e842ed0d6849",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "trivet": {
@@ -750,7 +750,7 @@
   },
   "white-cube-bermondsey": {
     "file": "kokoro/bermondsey/white-cube-bermondsey.mp3",
-    "fileHash": "3dbfc7122a0ac23f",
+    "fileHash": "35571367970d10df",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "172-172a-172b-old-road": {
@@ -760,22 +760,22 @@
   },
   "crossness-pumping-station": {
     "file": "kokoro/bexley/crossness-pumping-station.mp3",
-    "fileHash": "7dd372810db94d4a",
+    "fileHash": "7ebb07b0204f9ea2",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "faesten-dic": {
     "file": "kokoro/bexley/faesten-dic.mp3",
-    "fileHash": "41d8ffb522e1808b",
+    "fileHash": "421a834731c097e3",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "hall-place": {
     "file": "kokoro/bexley/hall-place.mp3",
-    "fileHash": "6007db20de30daf7",
+    "fileHash": "5db733d335dfdd7e",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "henry-oldenburg": {
     "file": "kokoro/bexley/henry-oldenburg.mp3",
-    "fileHash": "4a2b5236412a4263",
+    "fileHash": "673ae103efdca03b",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "john-shaw-sr": {
@@ -785,7 +785,7 @@
   },
   "river-cray": {
     "file": "kokoro/bexley/river-cray.mp3",
-    "fileHash": "9221708ca4ea939b",
+    "fileHash": "c5ce05c88366ca94",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "st-mary-the-virgin-church-bexley": {
@@ -800,12 +800,12 @@
   },
   "vale-mascal-bath-house": {
     "file": "kokoro/bexley/vale-mascal-bath-house.mp3",
-    "fileHash": "f54c3f393d96fbb3",
+    "fileHash": "f07bf3013c75fe58",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "bernie-ecclestone": {
     "file": "kokoro/bexleyheath/bernie-ecclestone.mp3",
-    "fileHash": "7ed937e2073c6535",
+    "fileHash": "eec1412af6fa9525",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "bexleyheath-clock-tower": {
@@ -815,7 +815,7 @@
   },
   "charles-tupper": {
     "file": "kokoro/bexleyheath/charles-tupper.mp3",
-    "fileHash": "be7eb2edcc3310fd",
+    "fileHash": "4321e8d0dc719652",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "christ-church-bexleyheath": {
@@ -825,12 +825,12 @@
   },
   "danson-house": {
     "file": "kokoro/bexleyheath/danson-house.mp3",
-    "fileHash": "fce215f83b150cc0",
+    "fileHash": "cf89a0be9f258dce",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "delia-smith": {
     "file": "kokoro/bexleyheath/delia-smith.mp3",
-    "fileHash": "645f1fe030c14d16",
+    "fileHash": "65a2d62019bd913d",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "family-outing-statue": {
@@ -840,37 +840,37 @@
   },
   "kate-bush": {
     "file": "kokoro/bexleyheath/kate-bush.mp3",
-    "fileHash": "13c825c731751177",
+    "fileHash": "396ce4cd022611ae",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "mary-kingsley": {
     "file": "kokoro/bexleyheath/mary-kingsley.mp3",
-    "fileHash": "430812ffb8662172",
+    "fileHash": "a011ec9d0ff325a5",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "melita-norwood": {
     "file": "kokoro/bexleyheath/melita-norwood.mp3",
-    "fileHash": "4e4c71e9ad964c31",
+    "fileHash": "ac90210d10d0f353",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "morris-webb-plaque": {
     "file": "kokoro/bexleyheath/morris-webb-plaque.mp3",
-    "fileHash": "156b805b2c0840d6",
+    "fileHash": "54c978adbe85a238",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "red-house": {
     "file": "kokoro/bexleyheath/red-house.mp3",
-    "fileHash": "3a9672dada97121b",
+    "fileHash": "928e81523c773bd6",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "sheila-hancock": {
     "file": "kokoro/bexleyheath/sheila-hancock.mp3",
-    "fileHash": "acda413b87cf3bd6",
+    "fileHash": "5962f351ed34b954",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "alexander-duckham": {
     "file": "kokoro/blackheath/alexander-duckham.mp3",
-    "fileHash": "cf213a1702fac4a7",
+    "fileHash": "36bcc1c7ab53ed27",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "all-saints-blackheath": {
@@ -890,7 +890,7 @@
   },
   "blackheath-quaker-meeting-house": {
     "file": "kokoro/blackheath/blackheath-quaker-meeting-house.mp3",
-    "fileHash": "cd5f140c6d1ac23b",
+    "fileHash": "16b8867dfe860f0e",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "blackheath-rugby-club": {
@@ -910,32 +910,32 @@
   },
   "cornish-rebellion-blackheath": {
     "file": "kokoro/blackheath/cornish-rebellion-blackheath.mp3",
-    "fileHash": "eb6d93e637ac0087",
+    "fileHash": "e66a1313f4ae7153",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "dyson-plaque": {
     "file": "kokoro/blackheath/dyson-plaque.mp3",
-    "fileHash": "6257e188c3d9d365",
+    "fileHash": "39bc9f39ea952661",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "eddington-plaque": {
     "file": "kokoro/blackheath/eddington-plaque.mp3",
-    "fileHash": "80a380367a4e9ba9",
+    "fileHash": "718d48bf83c12a71",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "emily-davison": {
     "file": "kokoro/blackheath/emily-davison.mp3",
-    "fileHash": "fbb7fdbc2014ab5b",
+    "fileHash": "29e4a1494623ea59",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "glaisher-plaque": {
     "file": "kokoro/blackheath/glaisher-plaque.mp3",
-    "fileHash": "21367f808d9d371e",
+    "fileHash": "f9df50181dc016f9",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "gounod-plaque": {
     "file": "kokoro/blackheath/gounod-plaque.mp3",
-    "fileHash": "0eb8897f061c0f1f",
+    "fileHash": "b9dc9577bb0fa896",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "gpo-film-unit-plaque": {
@@ -955,12 +955,12 @@
   },
   "hawthorne-plaque": {
     "file": "kokoro/blackheath/hawthorne-plaque.mp3",
-    "fileHash": "ebc8176c0d744541",
+    "fileHash": "32e5d4d96dae5f18",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "ignatius-sancho": {
     "file": "kokoro/blackheath/ignatius-sancho.mp3",
-    "fileHash": "8788a13bdfe0e057",
+    "fileHash": "ee28d7e16d134816",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "james-callaghan": {
@@ -970,12 +970,12 @@
   },
   "john-stuart-mill": {
     "file": "kokoro/blackheath/john-stuart-mill.mp3",
-    "fileHash": "dc9c5fb910e0d719",
+    "fileHash": "1535b017d3bbfe2c",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "jools-holland": {
     "file": "kokoro/blackheath/jools-holland.mp3",
-    "fileHash": "a26289a72c6fcbc4",
+    "fileHash": "bfce47adf4e85616",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "lindley-plaque": {
@@ -985,7 +985,7 @@
   },
   "mass-observation-plaque": {
     "file": "kokoro/blackheath/mass-observation-plaque.mp3",
-    "fileHash": "a89bb066a556fd1b",
+    "fileHash": "ea7cd9b7f7f70f2c",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "maurice-wilkins": {
@@ -1000,7 +1000,7 @@
   },
   "montague-john-druitt": {
     "file": "kokoro/blackheath/montague-john-druitt.mp3",
-    "fileHash": "cb9cfefe3e2cb33d",
+    "fileHash": "084aaacdb2b8ee91",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "morden-college": {
@@ -1015,12 +1015,12 @@
   },
   "rangers-house": {
     "file": "kokoro/blackheath/rangers-house.mp3",
-    "fileHash": "cd8db46d4ff3e771",
+    "fileHash": "4227f2e30ddddf34",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "ross-plaque": {
     "file": "kokoro/blackheath/ross-plaque.mp3",
-    "fileHash": "0e242dad5ac269bf",
+    "fileHash": "ae77a5c96709b559",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "royal-blackheath-golf-club": {
@@ -1035,12 +1035,12 @@
   },
   "sir-john-vanbrugh": {
     "file": "kokoro/blackheath/sir-john-vanbrugh.mp3",
-    "fileHash": "a9eb346d11672198",
+    "fileHash": "ff28da58ab647ade",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "sir-richard-branson": {
     "file": "kokoro/blackheath/sir-richard-branson.mp3",
-    "fileHash": "2f05e68620c32cbb",
+    "fileHash": "b345b0682c84dfc5",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "st-michael-and-all-angels-blackheath": {
@@ -1075,7 +1075,7 @@
   },
   "brian-molko": {
     "file": "kokoro/brockley/brian-molko.mp3",
-    "fileHash": "e5af093d2a119f93",
+    "fileHash": "ac2b632bb5581058",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "brockley-brewery": {
@@ -1095,7 +1095,7 @@
   },
   "brockley-school-murals": {
     "file": "kokoro/brockley/brockley-school-murals.mp3",
-    "fileHash": "5f4997b512a1b714",
+    "fileHash": "96186c2b9ab49600",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "brockleys-rock": {
@@ -1105,27 +1105,27 @@
   },
   "charles-stewart-parnell-brockley": {
     "file": "kokoro/brockley/charles-stewart-parnell-brockley.mp3",
-    "fileHash": "2a35f1f121ddebc2",
+    "fileHash": "072d8c9fc9c405ea",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "chris-tarrant": {
     "file": "kokoro/brockley/chris-tarrant.mp3",
-    "fileHash": "f1114fd7e1854891",
+    "fileHash": "7ae97699c37461b0",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "david-jones-plaque": {
     "file": "kokoro/brockley/david-jones-plaque.mp3",
-    "fileHash": "83604cdfc6c52c04",
+    "fileHash": "9efd15faaf4577a9",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "david-lodge": {
     "file": "kokoro/brockley/david-lodge.mp3",
-    "fileHash": "2c686cb07a730d23",
+    "fileHash": "08f1d43ae27b3ddf",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "david-rocastle": {
     "file": "kokoro/brockley/david-rocastle.mp3",
-    "fileHash": "213f35d28ebc0f6d",
+    "fileHash": "3eef054b0ea6ef94",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "gabrielle": {
@@ -1135,12 +1135,12 @@
   },
   "harry-price": {
     "file": "kokoro/brockley/harry-price.mp3",
-    "fileHash": "d14bce1c7a1594e0",
+    "fileHash": "d78fe3b2ffbe9b71",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "henry-williamson-plaque": {
     "file": "kokoro/brockley/henry-williamson-plaque.mp3",
-    "fileHash": "ce0b03a9dd30a8bc",
+    "fileHash": "f32d7251394bc5e1",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "hilly-fields": {
@@ -1155,27 +1155,27 @@
   },
   "john-galliano": {
     "file": "kokoro/brockley/john-galliano.mp3",
-    "fileHash": "4e776564e048273c",
+    "fileHash": "f89e0813865be985",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "john-stainer-brockley": {
     "file": "kokoro/brockley/john-stainer-brockley.mp3",
-    "fileHash": "f5b362caac27cbe4",
+    "fileHash": "c122f09bff32981f",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "kae-tempest": {
     "file": "kokoro/brockley/kae-tempest.mp3",
-    "fileHash": "4f29b780022f98be",
+    "fileHash": "7dbf065715a0ed7d",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "lillie-langtry": {
     "file": "kokoro/brockley/lillie-langtry.mp3",
-    "fileHash": "19c5d3a7ef7724ce",
+    "fileHash": "14277f53260b5ff8",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "maunders-plaque": {
     "file": "kokoro/brockley/maunders-plaque.mp3",
-    "fileHash": "9172e26046b1f9e3",
+    "fileHash": "b02adaa10d2ee8be",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "novelist": {
@@ -1185,7 +1185,7 @@
   },
   "shaun-wright-phillips": {
     "file": "kokoro/brockley/shaun-wright-phillips.mp3",
-    "fileHash": "e0d1975a164aa73f",
+    "fileHash": "21b7129be646fa00",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "st-peters-brockley": {
@@ -1205,7 +1205,7 @@
   },
   "sybil-phoenix": {
     "file": "kokoro/brockley/sybil-phoenix.mp3",
-    "fileHash": "7621661de132650f",
+    "fileHash": "749b856af928319f",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "tomb-of-jane-mary-clouston": {
@@ -1225,12 +1225,12 @@
   },
   "camberwell-college": {
     "file": "kokoro/camberwell/camberwell-college.mp3",
-    "fileHash": "dc1c5dc9f1341882",
+    "fileHash": "36e94967bddddffe",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "camberwell-old-cemetery": {
     "file": "kokoro/camberwell/camberwell-old-cemetery.mp3",
-    "fileHash": "79b3bb66afa4936d",
+    "fileHash": "ba08d1853942d6e0",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "camberwell-town-hall": {
@@ -1250,7 +1250,7 @@
   },
   "denmark-hill-station": {
     "file": "kokoro/camberwell/denmark-hill-station.mp3",
-    "fileHash": "0d4620edbb555f1e",
+    "fileHash": "6bb8c5c076decb06",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "emma-thompson": {
@@ -1260,12 +1260,12 @@
   },
   "florence-welch": {
     "file": "kokoro/camberwell/florence-welch.mp3",
-    "fileHash": "5908d5af91e9ba11",
+    "fileHash": "ff6e870a51dc6d73",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "joseph-chamberlain": {
     "file": "kokoro/camberwell/joseph-chamberlain.mp3",
-    "fileHash": "8975870a7ef43536",
+    "fileHash": "9d94b36fbc9af05c",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "karl-marx": {
@@ -1280,22 +1280,22 @@
   },
   "lakanal-house-fire": {
     "file": "kokoro/camberwell/lakanal-house-fire.mp3",
-    "fileHash": "268134b864092623",
+    "fileHash": "fcbbd56bc02b1aa6",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "marianne-jean-baptiste-plaque": {
     "file": "kokoro/camberwell/marianne-jean-baptiste-plaque.mp3",
-    "fileHash": "9ea220d28edfc6d9",
+    "fileHash": "32918936d4b7e66d",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "martin-mcdonagh": {
     "file": "kokoro/camberwell/martin-mcdonagh.mp3",
-    "fileHash": "d3f7c14255708907",
+    "fileHash": "5141b7891989e875",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "maudsley-hospital": {
     "file": "kokoro/camberwell/maudsley-hospital.mp3",
-    "fileHash": "b81c2fc8b623ea0c",
+    "fileHash": "e8e1fa233e946fbc",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "myatts-fields": {
@@ -1325,17 +1325,17 @@
   },
   "st-giles-camberwell": {
     "file": "kokoro/camberwell/st-giles-camberwell.mp3",
-    "fileHash": "21e1f9379dd4e784",
+    "fileHash": "1aaa68635c202e81",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "syd-barrett-camberwell": {
     "file": "kokoro/camberwell/syd-barrett-camberwell.mp3",
-    "fileHash": "da93f6dbd3f27706",
+    "fileHash": "ff43e9b93b8bd459",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "terry-jones": {
     "file": "kokoro/camberwell/terry-jones.mp3",
-    "fileHash": "143adffa327b94b0",
+    "fileHash": "a21b52c74d0ba01d",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "thomas-hood-camberwell": {
@@ -1345,7 +1345,7 @@
   },
   "una-marson": {
     "file": "kokoro/camberwell/una-marson.mp3",
-    "fileHash": "f9c53491a3887aca",
+    "fileHash": "b9864e64aefceffa",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "william-booth-memorial-college": {
@@ -1355,7 +1355,7 @@
   },
   "alexander-mcqueen": {
     "file": "kokoro/catford/alexander-mcqueen.mp3",
-    "fileHash": "6c7c880ced4e4164",
+    "fileHash": "e7b85e39caf8563c",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "andy-mcnab": {
@@ -1375,7 +1375,7 @@
   },
   "ben-elton": {
     "file": "kokoro/catford/ben-elton.mp3",
-    "fileHash": "0ed7d09d91354305",
+    "fileHash": "b755571714e78065",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "bernard-sunley": {
@@ -1425,7 +1425,7 @@
   },
   "elsa-lanchester": {
     "file": "kokoro/catford/elsa-lanchester.mp3",
-    "fileHash": "534458a2724c9d2f",
+    "fileHash": "d976876a9e1a631b",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "eros-house": {
@@ -1440,12 +1440,12 @@
   },
   "excalibur-estate": {
     "file": "kokoro/catford/excalibur-estate.mp3",
-    "fileHash": "2bef51e11a978080",
+    "fileHash": "a4d7f0185ec55489",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "frank-pullen": {
     "file": "kokoro/catford/frank-pullen.mp3",
-    "fileHash": "b9aed4a098d8d632",
+    "fileHash": "548ce62a5b7f7199",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "george-arthur-knowland-vc": {
@@ -1455,7 +1455,7 @@
   },
   "henry-forster-1st-baron-forster": {
     "file": "kokoro/catford/henry-forster-1st-baron-forster.mp3",
-    "fileHash": "80f65cf73853564a",
+    "fileHash": "92716dd9164e84cd",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "jacqui-mcshee": {
@@ -1470,22 +1470,22 @@
   },
   "japan-band": {
     "file": "kokoro/catford/japan-band.mp3",
-    "fileHash": "a1c6b30a3a0a7cd7",
+    "fileHash": "934fbd4593c0aedb",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "jem-karacan": {
     "file": "kokoro/catford/jem-karacan.mp3",
-    "fileHash": "a540a2997eb355d1",
+    "fileHash": "b9bcb78cb31f944e",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "jim-legxacy": {
     "file": "kokoro/catford/jim-legxacy.mp3",
-    "fileHash": "687a0f4d1a0b46bb",
+    "fileHash": "6ab3b81a0fd2dcc0",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "joe-gomez": {
     "file": "kokoro/catford/joe-gomez.mp3",
-    "fileHash": "292970d89d79b00b",
+    "fileHash": "d92b2b9a58092350",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "leslie-dwyer": {
@@ -1505,7 +1505,7 @@
   },
   "louis-theroux": {
     "file": "kokoro/catford/louis-theroux.mp3",
-    "fileHash": "2985a21620a132d3",
+    "fileHash": "8a63d5b3c5a13cec",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "lucy-mangan": {
@@ -1535,17 +1535,17 @@
   },
   "ray-blk": {
     "file": "kokoro/catford/ray-blk.mp3",
-    "fileHash": "464c045ed1fd36a9",
+    "fileHash": "3cef7df6fa7ec84c",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "river-ravensbourne-at-catford-bridge": {
     "file": "kokoro/catford/river-ravensbourne-at-catford-bridge.mp3",
-    "fileHash": "31121b42d845cec1",
+    "fileHash": "ae4b636a887c7b0e",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "robert-stanford-tuck": {
     "file": "kokoro/catford/robert-stanford-tuck.mp3",
-    "fileHash": "6fbf913d1ceb4167",
+    "fileHash": "db5bdd0ce218e76a",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "robin-trower": {
@@ -1565,17 +1565,17 @@
   },
   "site-of-catford-stadium": {
     "file": "kokoro/catford/site-of-catford-stadium.mp3",
-    "fileHash": "19e1b57cff47bfc2",
+    "fileHash": "a22bb7d646eb85e1",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "spike-milligan": {
     "file": "kokoro/catford/spike-milligan.mp3",
-    "fileHash": "bc6755cd5e517a6b",
+    "fileHash": "2ea45079f2be6033",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "st-laurence-s-church": {
     "file": "kokoro/catford/st-laurence-s-church.mp3",
-    "fileHash": "db4366672b3e3d93",
+    "fileHash": "7b4654d8b6a0e979",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "stanhope-catford-mural": {
@@ -1590,7 +1590,7 @@
   },
   "the-murder-of-maxwell-confait": {
     "file": "kokoro/catford/the-murder-of-maxwell-confait.mp3",
-    "fileHash": "7773a9cbf3c642f3",
+    "fileHash": "8978a10bff5acdd6",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "the-queen-of-catford": {
@@ -1605,7 +1605,7 @@
   },
   "barlow-plaque": {
     "file": "kokoro/charlton/barlow-plaque.mp3",
-    "fileHash": "5d04dac1c5b71bb8",
+    "fileHash": "0eff9f0d4b133526",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "charlton-assembly-rooms": {
@@ -1615,7 +1615,7 @@
   },
   "charlton-house": {
     "file": "kokoro/charlton/charlton-house.mp3",
-    "fileHash": "76379928f40ccec7",
+    "fileHash": "231f8a669b19b549",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "charlton-war-memorial": {
@@ -1625,7 +1625,7 @@
   },
   "doveton-sturdee-charlton": {
     "file": "kokoro/charlton/doveton-sturdee-charlton.mp3",
-    "fileHash": "3eaf5578bd474bce",
+    "fileHash": "3ba6dec2d693d0fa",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "edward-drummond": {
@@ -1650,7 +1650,7 @@
   },
   "siemens-brothers-telegraph-works": {
     "file": "kokoro/charlton/siemens-brothers-telegraph-works.mp3",
-    "fileHash": "32a6d7b7d77210e6",
+    "fileHash": "532cdd6bf1ea0cd2",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "sir-daniel-day-lewis": {
@@ -1660,12 +1660,12 @@
   },
   "sir-william-langhorne": {
     "file": "kokoro/charlton/sir-william-langhorne.mp3",
-    "fileHash": "9ea4f8e2d6422b23",
+    "fileHash": "e71fbd3251fb9ab1",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "spencer-perceval": {
     "file": "kokoro/charlton/spencer-perceval.mp3",
-    "fileHash": "7570405ba17e6f40",
+    "fileHash": "b2138b4d0f304d7e",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "st-lukes-charlton": {
@@ -1680,7 +1680,7 @@
   },
   "svevo-plaque": {
     "file": "kokoro/charlton/svevo-plaque.mp3",
-    "fileHash": "62e22831bb26686c",
+    "fileHash": "998d2e7bc7217491",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "the-charlton-horn-fair": {
@@ -1715,17 +1715,17 @@
   },
   "christopher-marlowe": {
     "file": "kokoro/deptford/christopher-marlowe.mp3",
-    "fileHash": "f7b2592aa1bf6a4b",
+    "fileHash": "c19f750a8ab1ebe8",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "deptford-dockyard": {
     "file": "kokoro/deptford/deptford-dockyard.mp3",
-    "fileHash": "5a6aa0b8bac4663f",
+    "fileHash": "b07f0197596cfe2c",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "deptford-power-station": {
     "file": "kokoro/deptford/deptford-power-station.mp3",
-    "fileHash": "bad845ce0d54cd7e",
+    "fileHash": "0077ee8d21c8a6da",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "deptford-war-memorial": {
@@ -1735,12 +1735,12 @@
   },
   "emperor-norton": {
     "file": "kokoro/deptford/emperor-norton.mp3",
-    "fileHash": "447b7abde4a6fb4e",
+    "fileHash": "d16eb88398e6e83d",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "francis-drake-knighted": {
     "file": "kokoro/deptford/francis-drake-knighted.mp3",
-    "fileHash": "79b509e5bfc7745b",
+    "fileHash": "93982e7b3e1a3336",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "his-and-hers-deptford": {
@@ -1755,17 +1755,17 @@
   },
   "john-evelyn": {
     "file": "kokoro/deptford/john-evelyn.mp3",
-    "fileHash": "b6b58c6f9f95f20a",
+    "fileHash": "afef8bba579bfe95",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "marlowe-deptford": {
     "file": "kokoro/deptford/marlowe-deptford.mp3",
-    "fileHash": "3350c40d26180e1b",
+    "fileHash": "28fab2a365543e7e",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "olaudah-equiano": {
     "file": "kokoro/deptford/olaudah-equiano.mp3",
-    "fileHash": "db7320bd360ffe20",
+    "fileHash": "729a5b3c0c53854b",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "peter-the-great-deptford": {
@@ -1775,7 +1775,7 @@
   },
   "sayes-court": {
     "file": "kokoro/deptford/sayes-court.mp3",
-    "fileHash": "1d065ce01e2282b7",
+    "fileHash": "40f24a12cc753eb5",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "st-nicholas-deptford": {
@@ -1790,7 +1790,7 @@
   },
   "steve-harley": {
     "file": "kokoro/deptford/steve-harley.mp3",
-    "fileHash": "a7e61d0cdd64cf21",
+    "fileHash": "1495a68c3c32e8b3",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "taproom-se8": {
@@ -1805,7 +1805,7 @@
   },
   "tudor-naval-storehouse": {
     "file": "kokoro/deptford/tudor-naval-storehouse.mp3",
-    "fileHash": "0c2792b057c80d4d",
+    "fileHash": "766909ea50c033df",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "villages-brewery": {
@@ -1815,7 +1815,7 @@
   },
   "alan-bush": {
     "file": "kokoro/dulwich/alan-bush.mp3",
-    "fileHash": "a29086ad4c3565d5",
+    "fileHash": "a67f447525e4c18f",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "alison-neilans": {
@@ -1830,17 +1830,17 @@
   },
   "amanda-mealing": {
     "file": "kokoro/dulwich/amanda-mealing.mp3",
-    "fileHash": "d46a5dcffa42a0ad",
+    "fileHash": "e595d7edeb2308c9",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "anne-shelton-plaque": {
     "file": "kokoro/dulwich/anne-shelton-plaque.mp3",
-    "fileHash": "da6695b1937b08e0",
+    "fileHash": "2300d180a8d93512",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "anthony-gross": {
     "file": "kokoro/dulwich/anthony-gross.mp3",
-    "fileHash": "8e598e5dc1694bc0",
+    "fileHash": "4ab3afeafa2a90f5",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "belair-house": {
@@ -1855,17 +1855,17 @@
   },
   "blyton": {
     "file": "kokoro/dulwich/blyton.mp3",
-    "fileHash": "8b600ea6d08637c5",
+    "fileHash": "aeb58cbc6f85c196",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "bon-scott-east-dulwich": {
     "file": "kokoro/dulwich/bon-scott-east-dulwich.mp3",
-    "fileHash": "68c3312022d44eda",
+    "fileHash": "bd6f0a307e17a04f",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "catherine-amy-dawson-scott": {
     "file": "kokoro/dulwich/catherine-amy-dawson-scott.mp3",
-    "fileHash": "97a9641054f83d3f",
+    "fileHash": "ddcb209092687941",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "college-road-tollgate": {
@@ -1875,17 +1875,17 @@
   },
   "cotton-plaque": {
     "file": "kokoro/dulwich/cotton-plaque.mp3",
-    "fileHash": "bb3b3597bcc90ffc",
+    "fileHash": "cbc3bf85dd6e9b7a",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "crown-greyhound-dulwich": {
     "file": "kokoro/dulwich/crown-greyhound-dulwich.mp3",
-    "fileHash": "32aa02f47a9615fd",
+    "fileHash": "ad6f3718b26cf9a2",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "daisy-haggard": {
     "file": "kokoro/dulwich/daisy-haggard.mp3",
-    "fileHash": "50e8ad2cc1af0e6f",
+    "fileHash": "4f92c9efe43d0703",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "david-greig-lordship-lane": {
@@ -1900,17 +1900,17 @@
   },
   "dulwich-college-new-college": {
     "file": "kokoro/dulwich/dulwich-college-new-college.mp3",
-    "fileHash": "9dfd22510fa0b054",
+    "fileHash": "48b6ac2f22e267bd",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "dulwich-college": {
     "file": "kokoro/dulwich/dulwich-college.mp3",
-    "fileHash": "728ed896d07ecd71",
+    "fileHash": "305c61f7f108d5d4",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "dulwich-gallery": {
     "file": "kokoro/dulwich/dulwich-gallery.mp3",
-    "fileHash": "f42cbee913c1b6ab",
+    "fileHash": "52f3788f6dd93c3e",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "dulwich-library-blitz-memorial": {
@@ -1930,7 +1930,7 @@
   },
   "dulwich-old-grammar-school": {
     "file": "kokoro/dulwich/dulwich-old-grammar-school.mp3",
-    "fileHash": "d83ca063a085a1fa",
+    "fileHash": "f0b040b21db7cc6e",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "dulwich-outdoor-gallery": {
@@ -1955,12 +1955,12 @@
   },
   "durrell-plaque": {
     "file": "kokoro/dulwich/durrell-plaque.mp3",
-    "fileHash": "e5f0d308b6807317",
+    "fileHash": "d9c842132efeb8a1",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "edward-alleyn": {
     "file": "kokoro/dulwich/edward-alleyn.mp3",
-    "fileHash": "e658eb5cdd7fbd86",
+    "fileHash": "1ba2416af31621eb",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "fight-club-mural": {
@@ -1970,12 +1970,12 @@
   },
   "forester-plaque": {
     "file": "kokoro/dulwich/forester-plaque.mp3",
-    "fileHash": "5183d97625aa937f",
+    "fileHash": "1163c550a58a4657",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "frank-thornton": {
     "file": "kokoro/dulwich/frank-thornton.mp3",
-    "fileHash": "8a1e5524a7c6d9ba",
+    "fileHash": "3ce365d4aeca96af",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "george-webster-fountain": {
@@ -1990,17 +1990,17 @@
   },
   "grace-wales-bonner": {
     "file": "kokoro/dulwich/grace-wales-bonner.mp3",
-    "fileHash": "57c8d09ab3a34fd9",
+    "fileHash": "48f08f4885483d15",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "guy-stevens": {
     "file": "kokoro/dulwich/guy-stevens.mp3",
-    "fileHash": "f139b018c4ee047f",
+    "fileHash": "84db512f74c34682",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "harriet-harman": {
     "file": "kokoro/dulwich/harriet-harman.mp3",
-    "fileHash": "6d75178b6acc8849",
+    "fileHash": "3131cc5e0fc667e9",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "herne-tavern": {
@@ -2010,27 +2010,27 @@
   },
   "joan-clarke-plaque": {
     "file": "kokoro/dulwich/joan-clarke-plaque.mp3",
-    "fileHash": "ab22db3eb623e64d",
+    "fileHash": "91316107b428e359",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "john-coghlan": {
     "file": "kokoro/dulwich/john-coghlan.mp3",
-    "fileHash": "a8b6128baf660f4c",
+    "fileHash": "18f5fd87a51a172f",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "john-middleton-murry": {
     "file": "kokoro/dulwich/john-middleton-murry.mp3",
-    "fileHash": "c37f0356d4cdfb18",
+    "fileHash": "8449be6616fa851d",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "john-ruskin": {
     "file": "kokoro/dulwich/john-ruskin.mp3",
-    "fileHash": "27604ad1dc3badb1",
+    "fileHash": "312edc87db155545",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "karloff": {
     "file": "kokoro/dulwich/karloff.mp3",
-    "fileHash": "79cd30f9c72e0894",
+    "fileHash": "0d7ea432de7dde8b",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "kingswood-house": {
@@ -2045,7 +2045,7 @@
   },
   "lisa-vanderpump": {
     "file": "kokoro/dulwich/lisa-vanderpump.mp3",
-    "fileHash": "9e8303f29a66e44f",
+    "fileHash": "e77c6f0709f707d8",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "margaret-thatcher": {
@@ -2055,7 +2055,7 @@
   },
   "mavis-batey": {
     "file": "kokoro/dulwich/mavis-batey.mp3",
-    "fileHash": "6543f7ff91e2026a",
+    "fileHash": "372b286ca36464e2",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "new-world-revolution-mural": {
@@ -2065,32 +2065,32 @@
   },
   "norman-reid": {
     "file": "kokoro/dulwich/norman-reid.mp3",
-    "fileHash": "e66c51ac8a7a3bcb",
+    "fileHash": "29d4c4d020f88f0d",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "peter-cushing": {
     "file": "kokoro/dulwich/peter-cushing.mp3",
-    "fileHash": "26b494f603051d20",
+    "fileHash": "318f9d01e2cb29da",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "phyllis-pearsall": {
     "file": "kokoro/dulwich/phyllis-pearsall.mp3",
-    "fileHash": "58927bbffd705922",
+    "fileHash": "11c8a1572ae1eeb1",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "rafe-spall": {
     "file": "kokoro/dulwich/rafe-spall.mp3",
-    "fileHash": "bf30717962c158c9",
+    "fileHash": "54ba534ca367c63c",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "richard-ayoade": {
     "file": "kokoro/dulwich/richard-ayoade.mp3",
-    "fileHash": "4b235ba3671732b5",
+    "fileHash": "e7c4bacd30b9c28a",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "rob-key": {
     "file": "kokoro/dulwich/rob-key.mp3",
-    "fileHash": "203f7c0b93b8a242",
+    "fileHash": "1ac353ca6e25b54e",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "samuel-matthews-dulwich-hermit": {
@@ -2105,7 +2105,7 @@
   },
   "southwark-military-hospital-memorial": {
     "file": "kokoro/dulwich/southwark-military-hospital-memorial.mp3",
-    "fileHash": "54ab83ad0f6d60d7",
+    "fileHash": "01f56a7c2366b521",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "st-john-goose-green": {
@@ -2140,7 +2140,7 @@
   },
   "tim-roth": {
     "file": "kokoro/dulwich/tim-roth.mp3",
-    "fileHash": "124a406e1690a629",
+    "fileHash": "0ae718c3b0b34711",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "alexander-fleming-house-metro-central-heights": {
@@ -2150,12 +2150,12 @@
   },
   "austin-osman-spare": {
     "file": "kokoro/elephant-and-castle/austin-osman-spare.mp3",
-    "fileHash": "137c932915f2bd8c",
+    "fileHash": "36781a0a7848fe1a",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "charles-haddon-spurgeon": {
     "file": "kokoro/elephant-and-castle/charles-haddon-spurgeon.mp3",
-    "fileHash": "ae05f4a9c0dea185",
+    "fileHash": "d8823fe159605828",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "driscoll-house": {
@@ -2170,12 +2170,12 @@
   },
   "faraday": {
     "file": "kokoro/elephant-and-castle/faraday.mp3",
-    "fileHash": "11b500427fd9957d",
+    "fileHash": "b784ad59a7673cac",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "frankie-fraser": {
     "file": "kokoro/elephant-and-castle/frankie-fraser.mp3",
-    "fileHash": "2f63bb8852d3b69a",
+    "fileHash": "d2d8eb5f3cc9bd12",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "john-newlands": {
@@ -2185,12 +2185,12 @@
   },
   "k2-telephone-kiosk": {
     "file": "kokoro/elephant-and-castle/k2-telephone-kiosk.mp3",
-    "fileHash": "31803238788ecd6a",
+    "fileHash": "88b1b593c0d7edf4",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "mark-ashton-lgsm": {
     "file": "kokoro/elephant-and-castle/mark-ashton-lgsm.mp3",
-    "fileHash": "712e7334dd5b2b99",
+    "fileHash": "7b4b2a76f465c37b",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "metropolitan-tabernacle": {
@@ -2200,17 +2200,17 @@
   },
   "michael-caine": {
     "file": "kokoro/elephant-and-castle/michael-caine.mp3",
-    "fileHash": "3b6c37552702eb24",
+    "fileHash": "809475bc74836825",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "michael-faraday": {
     "file": "kokoro/elephant-and-castle/michael-faraday.mp3",
-    "fileHash": "61b8890917809528",
+    "fileHash": "2bcf60f47f5d0636",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "the-forty-elephants": {
     "file": "kokoro/elephant-and-castle/the-forty-elephants.mp3",
-    "fileHash": "b24cdadfc44fa5f8",
+    "fileHash": "8bb82c6d3ee86703",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "the-southwark-martyrs": {
@@ -2220,7 +2220,7 @@
   },
   "thomas-middleton": {
     "file": "kokoro/elephant-and-castle/thomas-middleton.mp3",
-    "fileHash": "e104a1748e334fda",
+    "fileHash": "faf90e53dc889969",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "avery-hill-winter-garden": {
@@ -2230,17 +2230,17 @@
   },
   "bernardine-evaristo": {
     "file": "kokoro/eltham/bernardine-evaristo.mp3",
-    "fileHash": "74c1dfeb13738d60",
+    "fileHash": "fc4d5489d1851763",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "bob-hope-eltham": {
     "file": "kokoro/eltham/bob-hope-eltham.mp3",
-    "fileHash": "63185ac2f54cdc13",
+    "fileHash": "d29592696c84fb46",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "boy-george": {
     "file": "kokoro/eltham/boy-george.mp3",
-    "fileHash": "9ec426715171223d",
+    "fileHash": "a21bbebe8184d268",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "eltham-conduit-head": {
@@ -2260,7 +2260,7 @@
   },
   "frankie-howerd": {
     "file": "kokoro/eltham/frankie-howerd.mp3",
-    "fileHash": "ee98f534fec72fad",
+    "fileHash": "18790fcffb31ad84",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "hubert-bland-and-edith-nesbit": {
@@ -2270,17 +2270,17 @@
   },
   "morrison-plaque": {
     "file": "kokoro/eltham/morrison-plaque.mp3",
-    "fileHash": "2db686025ac441f8",
+    "fileHash": "537a8c00b22a22f8",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "oxleas-wood": {
     "file": "kokoro/eltham/oxleas-wood.mp3",
-    "fileHash": "7a318c0cde4d75b8",
+    "fileHash": "1667ac6b8ae7ac24",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "richard-jefferies": {
     "file": "kokoro/eltham/richard-jefferies.mp3",
-    "fileHash": "4d53c08049442b4d",
+    "fileHash": "802aba0216c87855",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "st-barnabas-eltham": {
@@ -2300,12 +2300,12 @@
   },
   "well-hall": {
     "file": "kokoro/eltham/well-hall.mp3",
-    "fileHash": "1a851fd710e857ef",
+    "fileHash": "07eb19c98caaaa27",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "besant-plaque": {
     "file": "kokoro/gipsy-hill/besant-plaque.mp3",
-    "fileHash": "7fa3867ad07fba34",
+    "fileHash": "8271c920a2e780ba",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "central-hill-estate": {
@@ -2335,12 +2335,12 @@
   },
   "krept-and-konan": {
     "file": "kokoro/gipsy-hill/krept-and-konan.mp3",
-    "fileHash": "6a18b806927b532f",
+    "fileHash": "8d8487a457df5f9b",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "trevoh-chalobah": {
     "file": "kokoro/gipsy-hill/trevoh-chalobah.mp3",
-    "fileHash": "cb511589615f9242",
+    "fileHash": "21b6ed1628dbb412",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "bbno-morden-wharf": {
@@ -2360,12 +2360,12 @@
   },
   "cutty-sark": {
     "file": "kokoro/greenwich/cutty-sark.mp3",
-    "fileHash": "879ef8bf7708e31e",
+    "fileHash": "4fd83a8b3d0c208f",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "day-lewis-plaque": {
     "file": "kokoro/greenwich/day-lewis-plaque.mp3",
-    "fileHash": "46291f93c8bd4d8c",
+    "fileHash": "f6a97dd7991acb92",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "deptford-pumping-station": {
@@ -2375,12 +2375,12 @@
   },
   "enderbys-wharf-cable-hauler": {
     "file": "kokoro/greenwich/enderbys-wharf-cable-hauler.mp3",
-    "fileHash": "af228f682cb569ac",
+    "fileHash": "093bb2284f17fca4",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "francis-chichester-gipsy-moth": {
     "file": "kokoro/greenwich/francis-chichester-gipsy-moth.mp3",
-    "fileHash": "cc1a2bf7e7179fda",
+    "fileHash": "6f258a3538c7d286",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "goddards-greenwich": {
@@ -2390,7 +2390,7 @@
   },
   "greenwich-foot-tunnel": {
     "file": "kokoro/greenwich/greenwich-foot-tunnel.mp3",
-    "fileHash": "31a4afbc2c7cc80a",
+    "fileHash": "6d83be8d4df47dbb",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "greenwich-market": {
@@ -2405,7 +2405,7 @@
   },
   "greenwich-power-station": {
     "file": "kokoro/greenwich/greenwich-power-station.mp3",
-    "fileHash": "b9e70cd3c48784f4",
+    "fileHash": "4c7b3e4a90fa5f03",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "greenwich-town-hall": {
@@ -2415,7 +2415,7 @@
   },
   "henry-kelsey": {
     "file": "kokoro/greenwich/henry-kelsey.mp3",
-    "fileHash": "9bc228a29468416a",
+    "fileHash": "e2e2e533d4c328dc",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "joseph-rene-bellot-memorial": {
@@ -2425,7 +2425,7 @@
   },
   "king-henry-viii": {
     "file": "kokoro/greenwich/king-henry-viii.mp3",
-    "fileHash": "20d043d821ac9a02",
+    "fileHash": "98fb97b210d90362",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "liberty-grip": {
@@ -2435,7 +2435,7 @@
   },
   "malcolm-hardee": {
     "file": "kokoro/greenwich/malcolm-hardee.mp3",
-    "fileHash": "db8bf2dcd980de4a",
+    "fileHash": "1722752ff3e123dc",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "maritime-greenwich": {
@@ -2445,7 +2445,7 @@
   },
   "meantime-brewing": {
     "file": "kokoro/greenwich/meantime-brewing.mp3",
-    "fileHash": "923aed5a5665f8ec",
+    "fileHash": "bab8413483ea8bdf",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "mitch-mitchell": {
@@ -2460,17 +2460,17 @@
   },
   "national-maritime-museum": {
     "file": "kokoro/greenwich/national-maritime-museum.mp3",
-    "fileHash": "eea82c92db8d55c9",
+    "fileHash": "d7f3c1ab1b6449a3",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "nelson-statue-greenwich": {
     "file": "kokoro/greenwich/nelson-statue-greenwich.mp3",
-    "fileHash": "6d41b26cc3f03d58",
+    "fileHash": "0478004e42110132",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "old-royal-naval-college-domes": {
     "file": "kokoro/greenwich/old-royal-naval-college-domes.mp3",
-    "fileHash": "dec19d3ae560f3ee",
+    "fileHash": "eab15fca6a8da2fa",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "pilot-inn-greenwich": {
@@ -2485,27 +2485,27 @@
   },
   "queens-house": {
     "file": "kokoro/greenwich/queens-house.mp3",
-    "fileHash": "fec3f0ae5a147d07",
+    "fileHash": "3a3a35fae5eac5a6",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "royal-observatory": {
     "file": "kokoro/greenwich/royal-observatory.mp3",
-    "fileHash": "4751de13aeb20e7b",
+    "fileHash": "cc87ee4766a659d3",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "samuel-johnson": {
     "file": "kokoro/greenwich/samuel-johnson.mp3",
-    "fileHash": "c5caa6bd2adf0251",
+    "fileHash": "069fbbef671ebd1d",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "sir-george-airy": {
     "file": "kokoro/greenwich/sir-george-airy.mp3",
-    "fileHash": "b66d599b92431a42",
+    "fileHash": "aff0cddf5dced734",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "sir-james-thornhill": {
     "file": "kokoro/greenwich/sir-james-thornhill.mp3",
-    "fileHash": "d2bae162b5e6b5e7",
+    "fileHash": "1fef1334b564c296",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "slice-of-reality": {
@@ -2520,7 +2520,7 @@
   },
   "st-alfege-greenwich": {
     "file": "kokoro/greenwich/st-alfege-greenwich.mp3",
-    "fileHash": "4f87e60861656bfd",
+    "fileHash": "f667d761b4bf70bb",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "the-fan-museum": {
@@ -2550,12 +2550,12 @@
   },
   "thomas-tallis": {
     "file": "kokoro/greenwich/thomas-tallis.mp3",
-    "fileHash": "8b6f821f8c7d9124",
+    "fileHash": "9cfe6e851e0a470f",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "trafalgar-tavern": {
     "file": "kokoro/greenwich/trafalgar-tavern.mp3",
-    "fileHash": "9344b80edf82759c",
+    "fileHash": "c202a075124ae418",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "tribe-and-tribulation": {
@@ -2585,7 +2585,7 @@
   },
   "waugh-plaque": {
     "file": "kokoro/greenwich/waugh-plaque.mp3",
-    "fileHash": "a7dc9d9b2757c724",
+    "fileHash": "3b53b86a6bbded6b",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "william-iv-statue": {
@@ -2595,7 +2595,7 @@
   },
   "brockwell-hall": {
     "file": "kokoro/herne-hill/brockwell-hall.mp3",
-    "fileHash": "a1e1580a8cf6d011",
+    "fileHash": "5e19d5bff3705066",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "brockwell-lido": {
@@ -2610,12 +2610,12 @@
   },
   "half-moon-herne-hill": {
     "file": "kokoro/herne-hill/half-moon-herne-hill.mp3",
-    "fileHash": "0f30798983670f4c",
+    "fileHash": "aaf5501a9d5cb84c",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "herne-hill-velodrome": {
     "file": "kokoro/herne-hill/herne-hill-velodrome.mp3",
-    "fileHash": "d741797fe275dc2b",
+    "fileHash": "85edfea67160a207",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "ruskin-park": {
@@ -2650,17 +2650,17 @@
   },
   "edmond-halley-lee": {
     "file": "kokoro/lee/edmond-halley-lee.mp3",
-    "fileHash": "b211d24838d89fe6",
+    "fileHash": "25c2d33398160670",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "flecker": {
     "file": "kokoro/lee/flecker.mp3",
-    "fileHash": "81ff8ea1260407b7",
+    "fileHash": "ec52677c4af19dae",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "james-robertson-justice": {
     "file": "kokoro/lee/james-robertson-justice.mp3",
-    "fileHash": "73f1c33654a60d8f",
+    "fileHash": "d58405928b95c024",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "manor-house-gardens": {
@@ -2675,7 +2675,7 @@
   },
   "max-wall": {
     "file": "kokoro/lee/max-wall.mp3",
-    "fileHash": "af216468c7ea915f",
+    "fileHash": "e3fb8662060acd40",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "robert-cocking-lee": {
@@ -2715,12 +2715,12 @@
   },
   "edgar-wallace-plaque": {
     "file": "kokoro/lewisham/edgar-wallace-plaque.mp3",
-    "fileHash": "d0d9170ab9e792c9",
+    "fileHash": "d050567f7ef13a54",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "ginger-baker-lewisham": {
     "file": "kokoro/lewisham/ginger-baker-lewisham.mp3",
-    "fileHash": "4cb55360852687b5",
+    "fileHash": "4f7ac2cb189c89fc",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "horatio-henry-couldery": {
@@ -2730,12 +2730,12 @@
   },
   "ian-wright": {
     "file": "kokoro/lewisham/ian-wright.mp3",
-    "fileHash": "7db5edc343b088c6",
+    "fileHash": "02ab7c28bea95b5b",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "jude-law": {
     "file": "kokoro/lewisham/jude-law.mp3",
-    "fileHash": "bb14230ffd1475ce",
+    "fileHash": "58844584a56d21e1",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "leland-duncan": {
@@ -2765,7 +2765,7 @@
   },
   "maxi-priest": {
     "file": "kokoro/lewisham/maxi-priest.mp3",
-    "fileHash": "86b20bc4243bd1ce",
+    "fileHash": "7101690314bb927b",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "natasha-and-daniel-bedingfield": {
@@ -2775,12 +2775,12 @@
   },
   "rosa-may-billinghurst": {
     "file": "kokoro/lewisham/rosa-may-billinghurst.mp3",
-    "fileHash": "1f5e58b526622961",
+    "fileHash": "a6f8830356540e1f",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "sid-vicious-lewisham": {
     "file": "kokoro/lewisham/sid-vicious-lewisham.mp3",
-    "fileHash": "bc13e7b7580cd931",
+    "fileHash": "d16785dfa9ebefda",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "st-marys-lewisham": {
@@ -2790,7 +2790,7 @@
   },
   "the-lewisham-rail-crash": {
     "file": "kokoro/lewisham/the-lewisham-rail-crash.mp3",
-    "fileHash": "05ee9e23d568e117",
+    "fileHash": "4128abb6e4843fcb",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "the-picnic-lewisham": {
@@ -2800,7 +2800,7 @@
   },
   "alex-james": {
     "file": "kokoro/new-cross/alex-james.mp3",
-    "fileHash": "0ec88504fee91a70",
+    "fileHash": "f7f5c3e08000a4ef",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "amersham-arms": {
@@ -2810,7 +2810,7 @@
   },
   "battle-of-lewisham": {
     "file": "kokoro/new-cross/battle-of-lewisham.mp3",
-    "fileHash": "3849bb69c28a7038",
+    "fileHash": "1586563493cc50a4",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "deptford-town-hall": {
@@ -2820,22 +2820,22 @@
   },
   "gary-oldman": {
     "file": "kokoro/new-cross/gary-oldman.mp3",
-    "fileHash": "f78e0a4b5441f793",
+    "fileHash": "e82ca9bcec03f027",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "george-arthur-roberts": {
     "file": "kokoro/new-cross/george-arthur-roberts.mp3",
-    "fileHash": "779076c2204cc8b9",
+    "fileHash": "ffbf8dd206473bfc",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "goldsmiths-royal-naval-school": {
     "file": "kokoro/new-cross/goldsmiths-royal-naval-school.mp3",
-    "fileHash": "60682c4d3c71da84",
+    "fileHash": "6e59074b9338f0df",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "laila-morse": {
     "file": "kokoro/new-cross/laila-morse.mp3",
-    "fileHash": "92ce3bea84e994c0",
+    "fileHash": "c443a99f6fe4bcb1",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "laurie-grove-baths": {
@@ -2845,7 +2845,7 @@
   },
   "marie-lloyd": {
     "file": "kokoro/new-cross/marie-lloyd.mp3",
-    "fileHash": "3e4c2ed0dc8ca4d7",
+    "fileHash": "08805816e78d02cb",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "new-cross-fire-station": {
@@ -2855,7 +2855,7 @@
   },
   "new-cross-fire": {
     "file": "kokoro/new-cross/new-cross-fire.mp3",
-    "fileHash": "dc5e6c63dce765b5",
+    "fileHash": "ec0f44194c2ee395",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "new-cross-v2-bombing": {
@@ -2865,7 +2865,7 @@
   },
   "roy-porter-plaque": {
     "file": "kokoro/new-cross/roy-porter-plaque.mp3",
-    "fileHash": "a611a7859f93b487",
+    "fileHash": "72dcd35801729274",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "royal-albert-new-cross": {
@@ -2875,7 +2875,7 @@
   },
   "sir-barnes-wallis": {
     "file": "kokoro/new-cross/sir-barnes-wallis.mp3",
-    "fileHash": "b304a36bbe28f693",
+    "fileHash": "db0d56309b0ebd71",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "tallis-plaque": {
@@ -2895,7 +2895,7 @@
   },
   "charles-dickens-and-ellen-ternan-in-nunhead": {
     "file": "kokoro/nunhead/charles-dickens-and-ellen-ternan-in-nunhead.mp3",
-    "fileHash": "fad805c89e18473c",
+    "fileHash": "6399722bc47065c3",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "frank-bates-plaque": {
@@ -2905,12 +2905,12 @@
   },
   "harold-bride": {
     "file": "kokoro/nunhead/harold-bride.mp3",
-    "fileHash": "309ccbed0ca678b0",
+    "fileHash": "dfb4f76182e1cd62",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "ivy-house": {
     "file": "kokoro/nunhead/ivy-house.mp3",
-    "fileHash": "fac91f096df2acb4",
+    "fileHash": "9b3fe2cd730d8346",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "nunhead-f-c": {
@@ -2920,7 +2920,7 @@
   },
   "nunhead": {
     "file": "kokoro/nunhead/nunhead.mp3",
-    "fileHash": "4ed568c57e83ef15",
+    "fileHash": "3265395ffb09178a",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "st-antholins-church-nunhead": {
@@ -2950,22 +2950,22 @@
   },
   "booth-statues": {
     "file": "kokoro/other/booth-statues.mp3",
-    "fileHash": "1c53ddc4c9033c56",
+    "fileHash": "81f4477c0b15e780",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "borough-market": {
     "file": "kokoro/other/borough-market.mp3",
-    "fileHash": "fe8054f21e4228f3",
+    "fileHash": "0cb7abbc285c5df6",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "chesterfield-plaque": {
     "file": "kokoro/other/chesterfield-plaque.mp3",
-    "fileHash": "3fb3934a1360b418",
+    "fileHash": "ab01367d572b5c1a",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "cross-bones": {
     "file": "kokoro/other/cross-bones.mp3",
-    "fileHash": "82bc8722040c8fff",
+    "fileHash": "ea51e08697f79f33",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "deal-porters": {
@@ -2975,12 +2975,12 @@
   },
   "dog-and-duck-st-georges": {
     "file": "kokoro/other/dog-and-duck-st-georges.mp3",
-    "fileHash": "87984123299eed6e",
+    "fileHash": "2fceb146ba0248e5",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "eyre-massey-shaw-plaque": {
     "file": "kokoro/other/eyre-massey-shaw-plaque.mp3",
-    "fileHash": "29bad244c178334d",
+    "fileHash": "53bf26cc2140f742",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "fellowship-inn-bellingham": {
@@ -2990,7 +2990,7 @@
   },
   "francis-baring": {
     "file": "kokoro/other/francis-baring.mp3",
-    "fileHash": "0a8b9b94c5b0502b",
+    "fileHash": "5e5965408414c14a",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "freeze-exhibition": {
@@ -3020,12 +3020,12 @@
   },
   "guys-hospital": {
     "file": "kokoro/other/guys-hospital.mp3",
-    "fileHash": "96365ae3c9578604",
+    "fileHash": "e1fa7524a1e47ef0",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "henry-cooper-plaque": {
     "file": "kokoro/other/henry-cooper-plaque.mp3",
-    "fileHash": "4cdaf906865fbb8c",
+    "fileHash": "ebbcfeffb35e85ea",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "jabez-west-fountain": {
@@ -3040,22 +3040,22 @@
   },
   "leslie-howard-plaque": {
     "file": "kokoro/other/leslie-howard-plaque.mp3",
-    "fileHash": "2fef87dcb65d10f6",
+    "fileHash": "68ea1db7be4bc56d",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "lockwood-plaque": {
     "file": "kokoro/other/lockwood-plaque.mp3",
-    "fileHash": "a8ace204ed629eeb",
+    "fileHash": "312aed173ab3ca6a",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "marshalsea-wall": {
     "file": "kokoro/other/marshalsea-wall.mp3",
-    "fileHash": "35ab93d4e67d8c02",
+    "fileHash": "1ba4a67d6333e2ed",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "mcgill": {
     "file": "kokoro/other/mcgill.mp3",
-    "fileHash": "0b07a4bbaf9e760a",
+    "fileHash": "0e31fa855ca9d696",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "mcmillan-sisters": {
@@ -3080,17 +3080,17 @@
   },
   "palace-of-placentia": {
     "file": "kokoro/other/palace-of-placentia.mp3",
-    "fileHash": "9b172d85065b9f82",
+    "fileHash": "db694dbf16ed600b",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "peter-tatchell": {
     "file": "kokoro/other/peter-tatchell.mp3",
-    "fileHash": "77ea38403a0d12cf",
+    "fileHash": "7f90d410bbfac312",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "pioneer-health": {
     "file": "kokoro/other/pioneer-health.mp3",
-    "fileHash": "e8afe8ba0f8f437f",
+    "fileHash": "23d01694226b3ec4",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "red-cross-garden": {
@@ -3100,7 +3100,7 @@
   },
   "rivoli-ballroom": {
     "file": "kokoro/other/rivoli-ballroom.mp3",
-    "fileHash": "8181e7755a742930",
+    "fileHash": "69963baa604e4a82",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "royal-herbert-hospital": {
@@ -3130,7 +3130,7 @@
   },
   "stephen-lawrence": {
     "file": "kokoro/other/stephen-lawrence.mp3",
-    "fileHash": "9684f3a69d9bcd74",
+    "fileHash": "f216127f150822a8",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "tabard-chaucer": {
@@ -3145,12 +3145,12 @@
   },
   "the-shard": {
     "file": "kokoro/other/the-shard.mp3",
-    "fileHash": "9940127a1720ec29",
+    "fileHash": "72eebfd43669e2b6",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "vanbrugh-castle": {
     "file": "kokoro/other/vanbrugh-castle.mp3",
-    "fileHash": "b50d3e2601c43cf9",
+    "fileHash": "cd36f256563c76eb",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "wellington-statue-woolwich": {
@@ -3160,7 +3160,7 @@
   },
   "wg-grace-plaque": {
     "file": "kokoro/other/wg-grace-plaque.mp3",
-    "fileHash": "c30cdb4215a659e6",
+    "fileHash": "60921f3a28ae8698",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "white-hart-southwark": {
@@ -3170,32 +3170,32 @@
   },
   "wolfe-macartney": {
     "file": "kokoro/other/wolfe-macartney.mp3",
-    "fileHash": "3afa378dfbafc490",
+    "fileHash": "66aaf6e9b7090a1d",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "wollstonecraft": {
     "file": "kokoro/other/wollstonecraft.mp3",
-    "fileHash": "7e956bce5102e0f4",
+    "fileHash": "87c849734fb9db47",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "wolseley-plaque": {
     "file": "kokoro/other/wolseley-plaque.mp3",
-    "fileHash": "475c5ec486814c5c",
+    "fileHash": "e65c23397c9803cc",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "alan-lancaster": {
     "file": "kokoro/peckham/alan-lancaster.mp3",
-    "fileHash": "405d36451eada4a1",
+    "fileHash": "de786da3959e09c8",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "ashley-walters": {
     "file": "kokoro/peckham/ashley-walters.mp3",
-    "fileHash": "7af7accbc16250b0",
+    "fileHash": "a5879ab7b6f8dabe",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "blake-peckham-rye": {
     "file": "kokoro/peckham/blake-peckham-rye.mp3",
-    "fileHash": "8d59a3755ef9ac2b",
+    "fileHash": "c864613e8f1f4584",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "blanch-plaque": {
@@ -3205,7 +3205,7 @@
   },
   "blue-story-2019-film": {
     "file": "kokoro/peckham/blue-story-2019-film.mp3",
-    "fileHash": "bb019b53a4304334",
+    "fileHash": "05428f681bfac47a",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "bold-tendencies": {
@@ -3215,7 +3215,7 @@
   },
   "bridgetower-plaque": {
     "file": "kokoro/peckham/bridgetower-plaque.mp3",
-    "fileHash": "3f4796a75ed81090",
+    "fileHash": "e7029383e2e4fa81",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "bussey-alley-murals": {
@@ -3225,7 +3225,7 @@
   },
   "bussey-building": {
     "file": "kokoro/peckham/bussey-building.mp3",
-    "fileHash": "96588b171e1b4b0e",
+    "fileHash": "6c094f9680d14793",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "caroline-gardens": {
@@ -3235,17 +3235,17 @@
   },
   "chris-eubank": {
     "file": "kokoro/peckham/chris-eubank.mp3",
-    "fileHash": "0b3d3e7afe4e580c",
+    "fileHash": "112d60eea16e5036",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "claire-foy": {
     "file": "kokoro/peckham/claire-foy.mp3",
-    "fileHash": "7d1ee2d4da2248fa",
+    "fileHash": "c9553b11fe0573af",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "cobham-plaque": {
     "file": "kokoro/peckham/cobham-plaque.mp3",
-    "fileHash": "297ed19f09ac9eff",
+    "fileHash": "db068b482b59730e",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "damilola-taylor-memorial": {
@@ -3255,12 +3255,12 @@
   },
   "del-boy-and-rodney-trotter-only-fools-and-horses": {
     "file": "kokoro/peckham/del-boy-and-rodney-trotter-only-fools-and-horses.mp3",
-    "fileHash": "697154bf2e50e1fc",
+    "fileHash": "e026864cc8918f8a",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "edward-turner-plaque": {
     "file": "kokoro/peckham/edward-turner-plaque.mp3",
-    "fileHash": "07533e9ac3ab5bc7",
+    "fileHash": "b72120109d04d2f1",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "friends-meeting-house-peckham": {
@@ -3270,7 +3270,7 @@
   },
   "giggs": {
     "file": "kokoro/peckham/giggs.mp3",
-    "fileHash": "c9b3ab91cc62e69a",
+    "fileHash": "5a2a5c69ec2395da",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "griggs-plaque": {
@@ -3285,12 +3285,12 @@
   },
   "heinz-s-first-uk-factory": {
     "file": "kokoro/peckham/heinz-s-first-uk-factory.mp3",
-    "fileHash": "c7b7f829b46787c4",
+    "fileHash": "33a7e140bb1e6fa7",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "john-boyega": {
     "file": "kokoro/peckham/john-boyega.mp3",
-    "fileHash": "0eb3c4c57b3bc9e1",
+    "fileHash": "02a771c9c7033663",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "jones-and-higgins": {
@@ -3300,7 +3300,7 @@
   },
   "king-krule": {
     "file": "kokoro/peckham/king-krule.mp3",
-    "fileHash": "cf52f3375828b38e",
+    "fileHash": "afa19782d954d7ec",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "kye-whyte": {
@@ -3310,12 +3310,12 @@
   },
   "montague-arms": {
     "file": "kokoro/peckham/montague-arms.mp3",
-    "fileHash": "b11f62a7c367bd51",
+    "fileHash": "5e8992e6aec26960",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "moody": {
     "file": "kokoro/peckham/moody.mp3",
-    "fileHash": "1c45ad37d5663628",
+    "fileHash": "d88f8b28430c0664",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "peckham-arch": {
@@ -3350,7 +3350,7 @@
   },
   "peckham-riots-2011": {
     "file": "kokoro/peckham/peckham-riots-2011.mp3",
-    "fileHash": "a4771d121de8ef3f",
+    "fileHash": "2330746ad3837169",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "peckham-rye-park-common": {
@@ -3365,17 +3365,17 @@
   },
   "rio-ferdinand-plaque": {
     "file": "kokoro/peckham/rio-ferdinand-plaque.mp3",
-    "fileHash": "a69028af4fae300b",
+    "fileHash": "f2566322ae1650f4",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "rye-lane-2023-film": {
     "file": "kokoro/peckham/rye-lane-2023-film.mp3",
-    "fileHash": "cc61d7865b18e3ca",
+    "fileHash": "5f7581f1edda7cac",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "sheppard-plaque": {
     "file": "kokoro/peckham/sheppard-plaque.mp3",
-    "fileHash": "b2b7544582e2e351",
+    "fileHash": "d1aa7f8b3aaddb36",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "south-london-gallery": {
@@ -3385,7 +3385,7 @@
   },
   "supacell-netflix-series": {
     "file": "kokoro/peckham/supacell-netflix-series.mp3",
-    "fileHash": "b0966f945aaf71d4",
+    "fileHash": "57d7eea56739c238",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "the-ballad-of-peckham-rye": {
@@ -3405,7 +3405,7 @@
   },
   "the-grand-surrey-canal-branch-to-peckham": {
     "file": "kokoro/peckham/the-grand-surrey-canal-branch-to-peckham.mp3",
-    "fileHash": "aa44e8480c40876b",
+    "fileHash": "8a8fe5fcdb6da961",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "the-north-peckham-estate-rise-decline-and-regeneration": {
@@ -3425,7 +3425,7 @@
   },
   "walter-rodney-memorial": {
     "file": "kokoro/peckham/walter-rodney-memorial.mp3",
-    "fileHash": "6cb212dd6e030460",
+    "fileHash": "8f8de55206fec19d",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "we-the-ragamuffin-1992-film": {
@@ -3440,7 +3440,7 @@
   },
   "ada-salter-plaque": {
     "file": "kokoro/rotherhithe/ada-salter-plaque.mp3",
-    "fileHash": "064540d811987734",
+    "fileHash": "d4be8dd4343e1871",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "angel-rotherhithe": {
@@ -3455,7 +3455,7 @@
   },
   "brunel-tunnel": {
     "file": "kokoro/rotherhithe/brunel-tunnel.mp3",
-    "fileHash": "516a2ed6615aa092",
+    "fileHash": "1895c2ea4430a214",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "cuckold-s-point": {
@@ -3470,27 +3470,27 @@
   },
   "isambard-kingdom-brunel": {
     "file": "kokoro/rotherhithe/isambard-kingdom-brunel.mp3",
-    "fileHash": "05a312ff2e04b7cf",
+    "fileHash": "87c14803b58b6363",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "king-mutesa-ii": {
     "file": "kokoro/rotherhithe/king-mutesa-ii.mp3",
-    "fileHash": "b3dd73fcbacf44a6",
+    "fileHash": "7b132949a570b273",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "marc-isambard-brunel": {
     "file": "kokoro/rotherhithe/marc-isambard-brunel.mp3",
-    "fileHash": "355b08c900439c34",
+    "fileHash": "53dc6eb32f036ee4",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "mayflower-departure-1620": {
     "file": "kokoro/rotherhithe/mayflower-departure-1620.mp3",
-    "fileHash": "90274a2eb0d90bc9",
+    "fileHash": "052d51b46908e409",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "mayflower": {
     "file": "kokoro/rotherhithe/mayflower.mp3",
-    "fileHash": "68f8f78a64152c7f",
+    "fileHash": "982bff57985c22ae",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "nelson-house": {
@@ -3510,7 +3510,7 @@
   },
   "sands-films-studio": {
     "file": "kokoro/rotherhithe/sands-films-studio.mp3",
-    "fileHash": "f95742d1918613df",
+    "fileHash": "d8ea76c37c0e4240",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "southwark-park": {
@@ -3520,12 +3520,12 @@
   },
   "st-marys-rotherhithe": {
     "file": "kokoro/rotherhithe/st-marys-rotherhithe.mp3",
-    "fileHash": "1fe273facd1c240b",
+    "fileHash": "c4587fb54478a9f3",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "thomas-coram": {
     "file": "kokoro/rotherhithe/thomas-coram.mp3",
-    "fileHash": "f583b76350535c37",
+    "fileHash": "2d34879934543331",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "bill-wyman": {
@@ -3535,22 +3535,22 @@
   },
   "dame-cicely-saunders": {
     "file": "kokoro/sydenham/dame-cicely-saunders.mp3",
-    "fileHash": "66549f506bd2082e",
+    "fileHash": "8a7026ad3953dcdc",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "dietrich-bonhoeffer-plaque": {
     "file": "kokoro/sydenham/dietrich-bonhoeffer-plaque.mp3",
-    "fileHash": "987963167873dcf0",
+    "fileHash": "cc465e0d69222db3",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "eleanor-marx": {
     "file": "kokoro/sydenham/eleanor-marx.mp3",
-    "fileHash": "27becff3e79a9d80",
+    "fileHash": "357a3e3e17cc63c9",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "george-grove": {
     "file": "kokoro/sydenham/george-grove.mp3",
-    "fileHash": "a93b918daf0876de",
+    "fileHash": "f657559db6fc24d6",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "greyhound-sydenham": {
@@ -3560,12 +3560,12 @@
   },
   "john-logie-baird-sydenham": {
     "file": "kokoro/sydenham/john-logie-baird-sydenham.mp3",
-    "fileHash": "72b817bd036e2df4",
+    "fileHash": "25a975c35db98e8d",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "lionel-logue-sydenham": {
     "file": "kokoro/sydenham/lionel-logue-sydenham.mp3",
-    "fileHash": "8760e8ff7fc49725",
+    "fileHash": "f8b075ad6efb4b94",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "pettit-smith-plaque": {
@@ -3585,7 +3585,7 @@
   },
   "shackleton": {
     "file": "kokoro/sydenham/shackleton.mp3",
-    "fileHash": "ae4b250686dc22e1",
+    "fileHash": "d2dc6427a4f4ba6d",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "six-pillars-house": {
@@ -3595,7 +3595,7 @@
   },
   "st-antholins-spire": {
     "file": "kokoro/sydenham/st-antholins-spire.mp3",
-    "fileHash": "9b2b2849bb803817",
+    "fileHash": "0c461c6de15ebd3f",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "st-bartholomews-sydenham": {
@@ -3610,7 +3610,7 @@
   },
   "sydenham-hill-wood": {
     "file": "kokoro/sydenham/sydenham-hill-wood.mp3",
-    "fileHash": "f43189ddb5d95669",
+    "fileHash": "03d53b5af2e5a4e7",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "sydenham-wells": {
@@ -3620,7 +3620,7 @@
   },
   "the-golden-lion": {
     "file": "kokoro/sydenham/the-golden-lion.mp3",
-    "fileHash": "ebfb7553ad9305f4",
+    "fileHash": "77995c4cc776c0f4",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "arments-pie-and-mash": {
@@ -3635,7 +3635,7 @@
   },
   "charles-babbage": {
     "file": "kokoro/walworth/charles-babbage.mp3",
-    "fileHash": "e5e78dc3b62cbe4f",
+    "fileHash": "ad6afb28023d1b34",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "cuming-museum": {
@@ -3670,7 +3670,7 @@
   },
   "samuel-palmer": {
     "file": "kokoro/walworth/samuel-palmer.mp3",
-    "fileHash": "8cbe62a87ccc8724",
+    "fileHash": "bdb66b306b2fe26d",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "st-peter-s-church-walworth": {
@@ -3695,12 +3695,12 @@
   },
   "garrison-church-st-george": {
     "file": "kokoro/woolwich/garrison-church-st-george.mp3",
-    "fileHash": "fe4c63c842d72127",
+    "fileHash": "3aa35c7e3cc91437",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "granada-woolwich": {
     "file": "kokoro/woolwich/granada-woolwich.mp3",
-    "fileHash": "c40482ad914f3c4a",
+    "fileHash": "606dbe7998d46d75",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "great-harry-woolwich": {
@@ -3715,42 +3715,42 @@
   },
   "princess-alice-disaster": {
     "file": "kokoro/woolwich/princess-alice-disaster.mp3",
-    "fileHash": "bf1dd313adf75120",
+    "fileHash": "e1e097275b00ad36",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "rotunda-woolwich": {
     "file": "kokoro/woolwich/rotunda-woolwich.mp3",
-    "fileHash": "130546053ef9a9a8",
+    "fileHash": "8400b86fda0a70a2",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "royal-arsenal": {
     "file": "kokoro/woolwich/royal-arsenal.mp3",
-    "fileHash": "70ace81c492111d2",
+    "fileHash": "fa3d12532203aaa7",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "royal-artillery-barracks": {
     "file": "kokoro/woolwich/royal-artillery-barracks.mp3",
-    "fileHash": "d5fc52e3d4ffc74c",
+    "fileHash": "d60e115932e05afb",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "royal-military-academy-woolwich": {
     "file": "kokoro/woolwich/royal-military-academy-woolwich.mp3",
-    "fileHash": "9511b5fb8eb7d0c2",
+    "fileHash": "addf45c8e90c1613",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "shrewsbury-barrow-shooter-s-hill": {
     "file": "kokoro/woolwich/shrewsbury-barrow-shooter-s-hill.mp3",
-    "fileHash": "d1af388324e788ff",
+    "fileHash": "89cccca5c6eb9595",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "st-mary-magdalene-woolwich": {
     "file": "kokoro/woolwich/st-mary-magdalene-woolwich.mp3",
-    "fileHash": "33b214edf926571f",
+    "fileHash": "14092d73ec75ba52",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "thames-barrier": {
     "file": "kokoro/woolwich/thames-barrier.mp3",
-    "fileHash": "55129864f5d55e30",
+    "fileHash": "e9493f56b7a14e16",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "the-ha-ha-ha-ha-road": {
@@ -3760,7 +3760,7 @@
   },
   "the-murder-of-lee-rigby": {
     "file": "kokoro/woolwich/the-murder-of-lee-rigby.mp3",
-    "fileHash": "f93e075635f37f10",
+    "fileHash": "31ff18caafd54bc6",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "the-royal-arsenal-and-woolwich-on-screen": {
@@ -3775,7 +3775,7 @@
   },
   "woolwich-dockyard": {
     "file": "kokoro/woolwich/woolwich-dockyard.mp3",
-    "fileHash": "0b2c729f59d5e30f",
+    "fileHash": "47c4a7f8943a2d07",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "woolwich-ferry": {
@@ -3790,7 +3790,7 @@
   },
   "woolwich-pub-bombing": {
     "file": "kokoro/woolwich/woolwich-pub-bombing.mp3",
-    "fileHash": "2111a79a8552b47f",
+    "fileHash": "993886443d702d53",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "woolwich-town-hall-windows": {
@@ -3955,52 +3955,52 @@
   },
   "zodiac-court-peep-show": {
     "file": "kokoro/other/zodiac-court-peep-show.mp3",
-    "fileHash": "f33ac8a369c23891",
+    "fileHash": "93d5c5ba164bdb5b",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "the-den": {
     "file": "kokoro/bermondsey/the-den.mp3",
-    "fileHash": "1209b22ea5613c56",
+    "fileHash": "12d13d45cd996488",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "blackheath-fc-rectory-field": {
     "file": "kokoro/blackheath/blackheath-fc-rectory-field.mp3",
-    "fileHash": "6831a58d99efc380",
+    "fileHash": "6c7845062d382dd3",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "the-valley": {
     "file": "kokoro/charlton/the-valley.mp3",
-    "fileHash": "db98231e5749edd3",
+    "fileHash": "661dea646804eb3d",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "brunel-water-towers": {
     "file": "kokoro/crystal-palace/brunel-water-towers.mp3",
-    "fileHash": "d42a0ac0965a4c4c",
+    "fileHash": "59aa071d2681ac7a",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "crystal-palace-bowl": {
     "file": "kokoro/crystal-palace/crystal-palace-bowl.mp3",
-    "fileHash": "8bc59bd3ccc642d3",
+    "fileHash": "d1f50f88cb43e918",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "crystal-palace-circuit": {
     "file": "kokoro/crystal-palace/crystal-palace-circuit.mp3",
-    "fileHash": "d231677a6ac4a5e6",
+    "fileHash": "4141d4e08dbf3e96",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "crystal-palace-fc-at-the-palace": {
     "file": "kokoro/crystal-palace/crystal-palace-fc-at-the-palace.mp3",
-    "fileHash": "2f520b96449340e3",
+    "fileHash": "8f7000f902a0f1da",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "crystal-palace-maze": {
     "file": "kokoro/crystal-palace/crystal-palace-maze.mp3",
-    "fileHash": "c8f0ee5cbd8c367e",
+    "fileHash": "8167ae2c9ea7b053",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "crystal-palace-museum": {
     "file": "kokoro/crystal-palace/crystal-palace-museum.mp3",
-    "fileHash": "c318df4b8f2029cf",
+    "fileHash": "65bf3a7d93c7517c",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "crystal-palace-pneumatic-railway": {
@@ -4010,7 +4010,7 @@
   },
   "joseph-paxton-bust": {
     "file": "kokoro/crystal-palace/joseph-paxton-bust.mp3",
-    "fileHash": "0a0bcffffe36ff1c",
+    "fileHash": "631a424cc37e5387",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "pickles-world-cup": {
@@ -4025,12 +4025,12 @@
   },
   "the-old-den": {
     "file": "kokoro/new-cross/the-old-den.mp3",
-    "fileHash": "23437def5ccca8fe",
+    "fileHash": "077935e222525ebc",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "selhurst-park": {
     "file": "kokoro/south-norwood/selhurst-park.mp3",
-    "fileHash": "7a4e0a7ad2e274ba",
+    "fileHash": "90bb9b7b61540282",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "manor-ground-plumstead": {
@@ -4045,7 +4045,7 @@
   },
   "crystal-palace-station": {
     "file": "kokoro/crystal-palace/crystal-palace-station.mp3",
-    "fileHash": "98081c1d47212f2c",
+    "fileHash": "64f572f8a48076d4",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "everyman-crystal-palace": {
@@ -4090,7 +4090,7 @@
   },
   "st-john-the-evangelist-upper-norwood": {
     "file": "kokoro/crystal-palace/st-john-the-evangelist-upper-norwood.mp3",
-    "fileHash": "e9a8a45213ec8d0e",
+    "fileHash": "b788f70fb45c6311",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "upper-norwood-library": {
@@ -4120,7 +4120,7 @@
   },
   "beltwood-house": {
     "file": "kokoro/sydenham/beltwood-house.mp3",
-    "fileHash": "3fd2f045a5fb3147",
+    "fileHash": "303f24cf493ed7d9",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "lammas-green": {
@@ -4140,12 +4140,12 @@
   },
   "well-hall-pleasaunce": {
     "file": "kokoro/eltham/well-hall-pleasaunce.mp3",
-    "fileHash": "cff561b55433377e",
+    "fileHash": "00bdfe09749e9828",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "repository-woods": {
     "file": "kokoro/woolwich/repository-woods.mp3",
-    "fileHash": "80a36fa792a92ab7",
+    "fileHash": "6381a77e0be61ff2",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "star-plumstead-common": {
@@ -4185,7 +4185,7 @@
   },
   "albion-mills": {
     "file": "kokoro/bankside/albion-mills.mp3",
-    "fileHash": "3ea46c79a6d4ca48",
+    "fileHash": "6cc5224dd28d042b",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "boot-and-flogger-borough": {
@@ -4205,7 +4205,7 @@
   },
   "menier-chocolate-factory": {
     "file": "kokoro/bankside/menier-chocolate-factory.mp3",
-    "fileHash": "8daf07ca2bfb0e96",
+    "fileHash": "5f832a7816261aa9",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "anchor-brewhouse": {
@@ -4225,12 +4225,12 @@
   },
   "bridge-theatre": {
     "file": "kokoro/bermondsey/bridge-theatre.mp3",
-    "fileHash": "04906a876f2a3262",
+    "fileHash": "86f672ac4b2a656b",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "fashion-and-textile-museum": {
     "file": "kokoro/bermondsey/fashion-and-textile-museum.mp3",
-    "fileHash": "b722a7fd88d6ae9b",
+    "fileHash": "e649093024d6a7f5",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "george-tower-bridge-road": {
@@ -4310,7 +4310,7 @@
   },
   "hither-green-cemetery": {
     "file": "kokoro/catford/hither-green-cemetery.mp3",
-    "fileHash": "34a762015e237c9b",
+    "fileHash": "cdb3988de09e5b57",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "st-andrews-catford": {
@@ -4335,7 +4335,7 @@
   },
   "our-lady-of-grace-charlton": {
     "file": "kokoro/charlton/our-lady-of-grace-charlton.mp3",
-    "fileHash": "268831591a10610d",
+    "fileHash": "a63876aa24bc3a0b",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "great-exhibition-east-dulwich": {
@@ -4350,7 +4350,7 @@
   },
   "foreign-cattle-market": {
     "file": "kokoro/deptford/foreign-cattle-market.mp3",
-    "fileHash": "4d7a4a313b22c5a7",
+    "fileHash": "0ed9f3be42237123",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "royal-george-deptford": {
@@ -4385,7 +4385,7 @@
   },
   "greenwich-theatre": {
     "file": "kokoro/greenwich/greenwich-theatre.mp3",
-    "fileHash": "434fb6f68818d702",
+    "fileHash": "e522cac398988a76",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "manor-house-crooms-hill": {
@@ -4395,7 +4395,7 @@
   },
   "millennium-dome": {
     "file": "kokoro/greenwich/millennium-dome.mp3",
-    "fileHash": "6856c5148fe4300b",
+    "fileHash": "51e01c87893fd98f",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "plume-of-feathers-greenwich": {
@@ -4500,7 +4500,7 @@
   },
   "greenland-dock": {
     "file": "kokoro/rotherhithe/greenland-dock.mp3",
-    "fileHash": "e98fd76faf0097f1",
+    "fileHash": "0d08973bd0059a71",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "ship-rotherhithe": {
@@ -4510,7 +4510,7 @@
   },
   "county-hall": {
     "file": "kokoro/south-bank/county-hall.mp3",
-    "fileHash": "bb0da21543348794",
+    "fileHash": "9be862326a704e6d",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "kings-arms-roupell-street": {
@@ -4520,27 +4520,27 @@
   },
   "lambeth-palace": {
     "file": "kokoro/south-bank/lambeth-palace.mp3",
-    "fileHash": "0bb8a573befbdff0",
+    "fileHash": "042ca866df809fa2",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "national-theatre": {
     "file": "kokoro/south-bank/national-theatre.mp3",
-    "fileHash": "8bb4a4b26f87e96e",
+    "fileHash": "9a128794260f89eb",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "old-vic": {
     "file": "kokoro/south-bank/old-vic.mp3",
-    "fileHash": "61ecf9c2ad7ecf36",
+    "fileHash": "b1bb15eb777d825f",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "oxo-tower": {
     "file": "kokoro/south-bank/oxo-tower.mp3",
-    "fileHash": "27179dab136d29ec",
+    "fileHash": "cc4b697c124d73ce",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "royal-festival-hall": {
     "file": "kokoro/south-bank/royal-festival-hall.mp3",
-    "fileHash": "f63632c592bb7995",
+    "fileHash": "8fc57f5f6698f7b4",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "south-bank-lion": {
@@ -4550,7 +4550,7 @@
   },
   "westminster-bridge": {
     "file": "kokoro/south-bank/westminster-bridge.mp3",
-    "fileHash": "a3f65123408cd73b",
+    "fileHash": "bf0bca825ae74387",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "holy-innocents-south-norwood": {
@@ -4560,17 +4560,17 @@
   },
   "south-norwood-library": {
     "file": "kokoro/south-norwood/south-norwood-library.mp3",
-    "fileHash": "9213af4e1db64f1c",
+    "fileHash": "40ce386a31ec5d61",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "livesey-hall-war-memorial": {
     "file": "kokoro/sydenham/livesey-hall-war-memorial.mp3",
-    "fileHash": "1dd30ee97920f67a",
+    "fileHash": "15d7aaebc1cdbe36",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "aylesbury-estate": {
     "file": "kokoro/walworth/aylesbury-estate.mp3",
-    "fileHash": "d80072915693f5ea",
+    "fileHash": "ff1015b19396d4fc",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "brandon-estate": {
@@ -4590,7 +4590,7 @@
   },
   "east-street-market": {
     "file": "kokoro/walworth/east-street-market.mp3",
-    "fileHash": "28b3e1545b3819d1",
+    "fileHash": "af8632f62df562eb",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "good-intent-walworth": {
@@ -4605,7 +4605,7 @@
   },
   "pullens-buildings": {
     "file": "kokoro/walworth/pullens-buildings.mp3",
-    "fileHash": "b39dd600f23ab5f7",
+    "fileHash": "da05e462ce41af48",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "queen-elizabeth-walworth": {
@@ -4635,12 +4635,12 @@
   },
   "st-lukes-west-norwood": {
     "file": "kokoro/west-norwood/st-lukes-west-norwood.mp3",
-    "fileHash": "9dd6fb7457f29b5b",
+    "fileHash": "e1f8fe64982f2811",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "west-norwood-cemetery": {
     "file": "kokoro/west-norwood/west-norwood-cemetery.mp3",
-    "fileHash": "752f7235b31b6124",
+    "fileHash": "029f5ae3338a399c",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "61st-battery-boer-war-memorial": {
@@ -4735,7 +4735,7 @@
   },
   "old-kent-road": {
     "file": "kokoro/peckham/old-kent-road.mp3",
-    "fileHash": "37e08e8c979e9d1c",
+    "fileHash": "01cabf762108547f",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "leake-street-tunnel": {
