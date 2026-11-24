@@ -101,7 +101,10 @@ if (AREAS) {
 for (const stop of AREAS ? [] : STOPS.filter(wanted)) {
   const folder = folderFor(stop);
   const text = plain(stop.text);
-  const body = `${plain(stop.name)}.\n\n${sentences(text)}\n`;
+  // Quotes around a title (“Here”) make Kokoro drag the word out, so the
+  // spoken title drops them.
+  const title = plain(stop.name).replace(/[“”"]/g, '');
+  const body = `${title}.\n\n${sentences(text)}\n`;
   fs.mkdirSync(path.join(WORK, folder), { recursive: true });
   fs.writeFileSync(path.join(WORK, folder, `${stop.id}.txt`), body);
   counts[folder] = (counts[folder] || 0) + 1;

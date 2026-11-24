@@ -191,6 +191,14 @@ def southern(kokoro, sentence):
     return ph
 
 
+# Lines Kokoro can't say right from text: exact phonemes and speed. A
+# one-word title at the normal pace, ending in a full stop, drags out
+# ("Here." came out as "hereee"), so it's said quicker with no stop.
+LINE_OVERRIDE = {
+    "Here.": ("hˈiə", 1.4),  # the-line-here, the "Here 24,859" sign
+}
+
+
 def sections(path):
     """The script as a list of sections, each a list of sentences."""
     out, cur = [], []
@@ -216,8 +224,9 @@ def render(kokoro, script, out):
 
     for i, sec in enumerate(sections(script)):
         for j, sentence in enumerate(sec):
-            samples, rate = kokoro.create(southern(kokoro, sentence), voice=VOICE,
-                                          speed=SPEED, lang=LANG, is_phonemes=True)
+            ph, speed = LINE_OVERRIDE.get(sentence) or (southern(kokoro, sentence), SPEED)
+            samples, rate = kokoro.create(ph, voice=VOICE, speed=speed,
+                                          lang=LANG, is_phonemes=True)
             if sr is None:
                 sr = rate
                 parts.append(silence(LEAD_IN))

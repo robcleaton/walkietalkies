@@ -2535,7 +2535,7 @@
   },
   "the-line-here": {
     "file": "kokoro/greenwich/the-line-here.mp3",
-    "fileHash": "acf7c0ec9df6faa8",
+    "fileHash": "b1fd51ff765aa7ab",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "the-old-royal-naval-college-on-screen": {
@@ -4741,6 +4741,11 @@
   "leake-street-tunnel": {
     "file": "kokoro/south-bank/leake-street-tunnel.mp3",
     "fileHash": "5cd3163dacc21a78",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "london-cable-car": {
+    "file": "kokoro/greenwich/london-cable-car.mp3",
+    "fileHash": "4f00dda8efa6e8af",
     "fileVoice": "kokoro-v1.0/bf_alice"
   }
 }
