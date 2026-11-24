@@ -193,15 +193,63 @@
       var cats = shuffle(Object.keys(CATS));
       var nextCat = 0;
 
+      // Colour spread. Coloured tiles (word, shape, area, area chip) come in
+      // only seven brand colours, so pick them so that no colour appears
+      // twice in a row (each row is a loop, so that holds across its join
+      // too), and, among the colours a row hasn't used yet, take the one
+      // least used in the hero so far, so the rows stay balanced as well.
+      var used = {};
+      function pickColour(rowUsed, colours) {
+        var best = [], min = Infinity;
+        colours.forEach(function (c) {
+          if (rowUsed[c] || best.indexOf(c) !== -1) return;
+          var n = used[c] || 0;
+          if (n < min) { min = n; best = [c]; } else if (n === min) best.push(c);
+        });
+        return best.length ? best[Math.floor(Math.random() * best.length)] : null;
+      }
+      function note(rowUsed, c) { rowUsed[c] = true; used[c] = (used[c] || 0) + 1; }
+      var catColours = Object.keys(CATMARK).map(function (k) { return CATMARK[k].color; });
+      var areaColours = areas.map(function (a) { return AREA_COLORS[a].bg; });
+      // Moves the first item from `start` on whose colour is `want` (or,
+      // failing that, any colour the row hasn't used) to `start`, so the
+      // usual take-the-next-one logic then picks it up.
+      function bringForward(list, start, colourOf, want, rowUsed) {
+        var fallback = -1;
+        for (var i = start; i < list.length; i++) {
+          var c = colourOf(list[i]);
+          if (c === want) { fallback = i; break; }
+          if (fallback === -1 && !rowUsed[c]) fallback = i;
+        }
+        if (fallback > start) { var t = list[start]; list[start] = list[fallback]; list[fallback] = t; }
+      }
+      function stopColour(st) { return CATMARK[st.cat].color; }
+      function areaColour(a) { return AREA_COLORS[a].bg; }
+      function takeShape(rowUsed) {
+        bringForward(pool, next % pool.length, stopColour, pickColour(rowUsed, catColours), rowUsed);
+        var st = take();
+        note(rowUsed, stopColour(st));
+        return st;
+      }
+      function takeArea(rowUsed) {
+        bringForward(areas, nextArea % areas.length, areaColour, pickColour(rowUsed, areaColours), rowUsed);
+        var a = areas[nextArea++ % areas.length];
+        note(rowUsed, areaColour(a));
+        return a;
+      }
+
       var leads = ROWS.filter(function (r) { return r.lead; });
       var leadRow = leads[Math.floor(Math.random() * leads.length)];
 
       rowsEl.innerHTML = ROWS.map(function (row) {
         if (row.headline) return headlineHTML();
+        // The row's word tiles have fixed colours: count those first.
+        var rowUsed = {};
+        row.tiles.forEach(function (t) { if (t.indexOf('w:') === 0) note(rowUsed, WORDS[t.slice(2)].bg); });
         var set = row.tiles.map(function (t) {
           if (t.indexOf('w:') === 0) return wordHTML(t.slice(2));
-          if (t === 'shape') return shapeHTML(take());
-          if (t === 'area') return areas.length ? areaHTML(areas[nextArea++ % areas.length]) : '';
+          if (t === 'shape') return shapeHTML(takeShape(rowUsed));
+          if (t === 'area') return areas.length ? areaHTML(takeArea(rowUsed)) : '';
           if (t === 'cat') {
             // A stop from that category, not shown elsewhere in the hero.
             var cat = cats[nextCat++ % cats.length];
@@ -213,7 +261,7 @@
             }
             return '';
           }
-          if (t === 'areachip') return areas.length ? areaChipHTML(areas[nextArea++ % areas.length]) : '';
+          if (t === 'areachip') return areas.length ? areaChipHTML(takeArea(rowUsed)) : '';
           return photoHTML(take(), t === 'tall');
         }).join('');
         // The set twice, so sliding the track by half loops seamlessly.
