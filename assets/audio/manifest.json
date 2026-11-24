@@ -176,7 +176,7 @@
     "model": "eleven_multilingual_v2",
     "chars": 857,
     "file": "kokoro/forest-hill/ted-christmas.mp3",
-    "fileHash": "75179f79cf029d73",
+    "fileHash": "c3afaf6a36252b13",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "e-w-swanton": {
@@ -260,7 +260,7 @@
   },
   "the-christmas-houses-perry-vale-acrostic-estate": {
     "file": "kokoro/forest-hill/the-christmas-houses-perry-vale-acrostic-estate.mp3",
-    "fileHash": "19dbefe112fcb725",
+    "fileHash": "77066bc82af3a47e",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "vince-hilaire": {
@@ -540,7 +540,7 @@
   },
   "the-roman-riverboat": {
     "file": "kokoro/bankside/the-roman-riverboat.mp3",
-    "fileHash": "da106feb8284416d",
+    "fileHash": "c32bfbe37e12fc83",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "affinity-brewing-bermondsey": {
@@ -900,7 +900,7 @@
   },
   "blackheath-war-memorial": {
     "file": "kokoro/blackheath/blackheath-war-memorial.mp3",
-    "fileHash": "266d0b7d532127ed",
+    "fileHash": "e04dea4823cb3c6f",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "blackheath": {
@@ -950,7 +950,7 @@
   },
   "hare-and-billet": {
     "file": "kokoro/blackheath/hare-and-billet.mp3",
-    "fileHash": "4ab6a4c066f184b3",
+    "fileHash": "3e3b3f1662b0dffb",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "hawthorne-plaque": {
@@ -1305,7 +1305,7 @@
   },
   "operation-countryman": {
     "file": "kokoro/camberwell/operation-countryman.mp3",
-    "fileHash": "7c1c4cc241d0afa4",
+    "fileHash": "9886a4b9b9028950",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "phoenix-camberwell": {
@@ -1495,7 +1495,7 @@
   },
   "lewisham-town-hall": {
     "file": "kokoro/catford/lewisham-town-hall.mp3",
-    "fileHash": "4a15aa567760a95c",
+    "fileHash": "e266293f0fe86e7f",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "london-and-rye-catford": {
@@ -1610,7 +1610,7 @@
   },
   "charlton-assembly-rooms": {
     "file": "kokoro/charlton/charlton-assembly-rooms.mp3",
-    "fileHash": "6b069bdd6bd8f3d3",
+    "fileHash": "9bad39c330fa0c2d",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "charlton-house": {
@@ -2535,7 +2535,7 @@
   },
   "the-line-here": {
     "file": "kokoro/greenwich/the-line-here.mp3",
-    "fileHash": "7cddbd84616d2813",
+    "fileHash": "acf7c0ec9df6faa8",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "the-old-royal-naval-college-on-screen": {
@@ -2545,7 +2545,7 @@
   },
   "the-romano-celtic-temple-greenwich-park": {
     "file": "kokoro/greenwich/the-romano-celtic-temple-greenwich-park.mp3",
-    "fileHash": "5f23b56e3d337293",
+    "fileHash": "d43d5f713650fce8",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "thomas-tallis": {
@@ -2640,7 +2640,7 @@
   },
   "stanhope-herne-hill-mural": {
     "file": "kokoro/herne-hill/stanhope-herne-hill-mural.mp3",
-    "fileHash": "581f47a63ac36e29",
+    "fileHash": "7067b689a4568b79",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "boone-s-chapel": {
@@ -3165,7 +3165,7 @@
   },
   "white-hart-southwark": {
     "file": "kokoro/other/white-hart-southwark.mp3",
-    "fileHash": "9c31ed83782dc57d",
+    "fileHash": "be162c581a7b9eab",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "wolfe-macartney": {
@@ -3330,7 +3330,7 @@
   },
   "peckham-levels": {
     "file": "kokoro/peckham/peckham-levels.mp3",
-    "fileHash": "ec3ab9c8de2ffddc",
+    "fileHash": "7d37471ef3101f66",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "peckham-library": {
@@ -3355,7 +3355,7 @@
   },
   "peckham-rye-park-common": {
     "file": "kokoro/peckham/peckham-rye-park-common.mp3",
-    "fileHash": "b23355ab7b32038b",
+    "fileHash": "d79ff101eceafac5",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "peckhamplex": {
@@ -3410,12 +3410,12 @@
   },
   "the-north-peckham-estate-rise-decline-and-regeneration": {
     "file": "kokoro/peckham/the-north-peckham-estate-rise-decline-and-regeneration.mp3",
-    "fileHash": "a3af2f648ea586d2",
+    "fileHash": "b0c59bb4ba33a467",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "the-peckham-fair": {
     "file": "kokoro/peckham/the-peckham-fair.mp3",
-    "fileHash": "59f50d730c241fcb",
+    "fileHash": "cffb935a5ddfabd3",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "thomas-tilling-s-omnibus-service": {
@@ -3430,7 +3430,7 @@
   },
   "we-the-ragamuffin-1992-film": {
     "file": "kokoro/peckham/we-the-ragamuffin-1992-film.mp3",
-    "fileHash": "d531a4830fb3fd0c",
+    "fileHash": "9d0a530fee6f1932",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "aaron-manby": {
@@ -3580,7 +3580,7 @@
   },
   "richard-jefferies-plaque": {
     "file": "kokoro/sydenham/richard-jefferies-plaque.mp3",
-    "fileHash": "f295cb89a874fecc",
+    "fileHash": "1511de360479a5b3",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "shackleton": {
@@ -3765,7 +3765,7 @@
   },
   "the-royal-arsenal-and-woolwich-on-screen": {
     "file": "kokoro/woolwich/the-royal-arsenal-and-woolwich-on-screen.mp3",
-    "fileHash": "0636f88d117f480c",
+    "fileHash": "fbb48c05c1328b6d",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "tom-cribb": {
@@ -3785,7 +3785,7 @@
   },
   "woolwich-old-town-hall": {
     "file": "kokoro/woolwich/woolwich-old-town-hall.mp3",
-    "fileHash": "216582c6ff01600d",
+    "fileHash": "a954530b80a43c2c",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "woolwich-pub-bombing": {
@@ -3795,12 +3795,12 @@
   },
   "woolwich-town-hall-windows": {
     "file": "kokoro/woolwich/woolwich-town-hall-windows.mp3",
-    "fileHash": "98a0cee101b3923a",
+    "fileHash": "87f19bcd3dfd2761",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "woolwich-town-hall": {
     "file": "kokoro/woolwich/woolwich-town-hall.mp3",
-    "fileHash": "86b2e61e3ba898e9",
+    "fileHash": "f3ad95c0153aede5",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "area:bankside": {
