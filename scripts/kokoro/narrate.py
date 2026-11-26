@@ -89,6 +89,13 @@ PRONOUNCE = {
     "Anerley": "Annerlee",  # AN-er-lee
     "Haslehurst": "Hazelhurst",  # HAZEL-hurst, Edward Haslehurst, the library architect
     "Streatfeild": "Stretfield",  # STRET-field, T. E. C. Streatfeild, the Foresters Hall architect
+    "Segal": "Seagol",  # SEA-gol, Walter Segal the self-build architect
+    "Metropolitano": "Metro-pollee-tahno",  # meh-troh-pol-lee-TAH-noh, Mercato Metropolitano
+    "Perronet": "Pairo-nay",  # PAIR-oh-nay, Perronet House
+    "Xinjiang": "Shin-jyang",  # SHIN-jyang
+    # The Firkin pubs' Latin motto: left out of the audio, which keeps
+    # the translation that follows it ("drink until you die").
+    "motto was Usque ad Mortem Bibendum": "motto was",
     # Roman numerals that aren't regnal (Kokoro says "Roman four").
     "Gipsy Moth IV": "Gipsy Moth Four",
     "Highpoint I": "Highpoint One",
