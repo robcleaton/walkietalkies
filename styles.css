@@ -748,6 +748,8 @@ a.hero-chip:hover{ transform:scale(.96); }
    set like an area tile's postcode and stop count. */
 .hero-word--sub{ flex-direction:column; align-items:flex-start; justify-content:center; gap:3cqh; }
 .hero-word__sub{ line-height:normal; }
+/* 4px more room under the "Walk. Listen. Discover." lines, above the small type. */
+.hero-word--intent > span:not(.sr-only):not(.hero-word__sub){ padding-bottom:4px; }
 .hero-area__name{ font-family:"Gasoek One", Inter, sans-serif; font-size:50cqh; line-height:.8; letter-spacing:-.01em; text-transform:uppercase; white-space:nowrap; }
 @media (max-width:639px){ .hero-area__name{ font-size:32cqh; } } /* phones: smaller, so more of the name shows at once */
 
