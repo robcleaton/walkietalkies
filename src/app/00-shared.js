@@ -83,15 +83,18 @@
   // resolve from the site root on every page).
   function areaPath(area) { return 'areas/' + areaSlug(area) + '/'; }
   function stopPath(id) { return 'stops/' + id + '/'; }
+  function tourPath(id) { return 'tours/' + id + '/'; }
 
   // Which page a URL path is: { area } for /areas/<slug>/, { stop } for
-  // /stops/<id>/, or {} for anything else (the homepage and its ?q= /
+  // /stops/<id>/, { tour } for /tours/<id>/, or {} for anything else (the homepage and its ?q= /
   // ?view=discover states).
   function parsePagePath(pathname) {
     var m = /^\/areas\/([^\/]+)\/?$/.exec(pathname);
     if (m) return { area: areaFromSlug(decodeURIComponent(m[1])) };
     m = /^\/stops\/([^\/]+)\/?$/.exec(pathname);
     if (m) return { stop: decodeURIComponent(m[1]) };
+    m = /^\/tours\/([^\/]+)\/?$/.exec(pathname);
+    if (m) return { tour: decodeURIComponent(m[1]) };
     return {};
   }
 
@@ -102,6 +105,28 @@
   // Page titles, shared so a static page and the app agree on them.
   function areaPageTitle(area) {
     return areaTitle(area) + ': ' + areaStops(area).length + ' historic sites to walk | ' + SITE_NAME;
+  }
+  // Curated tours (tours.js), by id, with their stops resolved in order.
+  // Stop ids that aren't in data.js are skipped.
+  function tourById(id) {
+    var list = typeof TOURS !== 'undefined' ? TOURS : [];
+    for (var i = 0; i < list.length; i++) if (list[i].id === id) return list[i];
+    return null;
+  }
+  function tourStops(tour) {
+    return tour.stops.map(function (id) {
+      for (var i = 0; i < STOPS.length; i++) if (STOPS[i].id === id) return STOPS[i];
+      return null;
+    }).filter(Boolean);
+  }
+  // Walking distance between a tour's mapped stops, in order.
+  function tourKm(stops) {
+    var m = stops.filter(function (s) { return s.lat != null && s.lon != null; }), km = 0;
+    for (var i = 1; i < m.length; i++) km += haversine(m[i - 1], m[i]);
+    return km;
+  }
+  function tourPageTitle(tour) {
+    return htmlToPlain(tour.name) + ': a ' + tour.stops.length + '-stop walking tour | ' + SITE_NAME;
   }
   function stopPageTitle(s) {
     return htmlToPlain(s.name) + ', ' + htmlToPlain(s.area) + ' | ' + SITE_NAME;

@@ -228,6 +228,7 @@
   // URL write (callers that already have the right URL skip that part).
   function applySearchState(q, resetCats) {
     leaveStopPage();
+    leaveTourPage();
     setDiscoverMode(false);
     document.getElementById('search').value = q;
     filters.q = q;
@@ -265,6 +266,7 @@
 
   function applyAreaFilter(area, scrollBehavior) {
     leaveStopPage();
+    leaveTourPage();
     setDiscoverMode(false);
     filters.q = '';
     filters.area = area.toLowerCase();
@@ -312,6 +314,7 @@
 
   function clearAreaFilter() {
     leaveStopPage();
+    leaveTourPage();
     setDiscoverMode(false);
     filters.q = '';
     filters.area = null;
@@ -365,6 +368,7 @@
     var params = new URLSearchParams(location.search);
     var q = params.get('q');
     if (page.stop && byId[page.stop]) applyStopPage(page.stop);
+    else if (page.tour && tourById(page.tour)) applyTourPage(page.tour);
     else if (page.area) applyAreaFilter(page.area, false);
     else if (q) applySearchState(q, true);
     else if (params.get('view') === 'discover') applyDiscover();

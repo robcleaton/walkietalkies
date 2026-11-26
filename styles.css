@@ -855,3 +855,7 @@ a.hero-chip:hover{ transform:scale(.96); }
    highlighted option, by keyboard or pointer. */
 .search-suggest__opt[aria-selected="true"]{ background:var(--raised); }
 #searchSuggest{ max-height:min(70vh, 560px); overflow-y:auto; }
+
+/* Tour pages (html.tour-page, src/app/09c-tour-page.js): the tour takes
+   the place of the category chips and stop lists, as a stop page does. */
+html.tour-page #chipsSection, html.tour-page #stopsCol{ display:none; }

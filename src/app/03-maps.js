@@ -182,7 +182,14 @@
   function refreshPopToggles() {
     Array.prototype.forEach.call(document.querySelectorAll('.map-pop [data-toggle]'), function (btn) {
       var s = byId[btn.getAttribute('data-toggle')];
-      if (s) btn.outerHTML = popToggleHTML(s);
+      if (!s) return;
+      // Swap just the button, keeping keyboard focus on it.
+      var focused = document.activeElement === btn;
+      var tmp = document.createElement('span');
+      tmp.innerHTML = popToggleHTML(s);
+      var fresh = tmp.firstChild;
+      btn.replaceWith(fresh);
+      if (focused) fresh.focus();
     });
   }
 

@@ -9,6 +9,7 @@
   var stopPageId = null; // the stop being shown, or null when not on a stop page
   var stopMapOn = false;  // the Map button's state; kept while re-rendering, reset per stop
   var stopMap = null;     // its Leaflet map, when shown
+  var stopMapFor = null;  // the stop that map was built for
 
   // The areas a stop is part of, in the homepage chips' order.
   function stopPageAreas(s) {
@@ -64,6 +65,7 @@
     if (stopMap && stopMap.getContainer() !== mapEl) { stopMap.remove(); stopMap = null; }
     if (!on || stopMap) { if (stopMap) stopMap.invalidateSize(); return; }
     stopMap = L.map(mapEl, { scrollWheelZoom: false });
+    stopMapFor = s.id;
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
@@ -91,6 +93,11 @@
     if (!s) return;
     var keep = stopPageEl.querySelector('[data-nearby-row]');
     var keepScroll = keep ? keep.scrollLeft : 0;
+    // Re-rendering (e.g. after a pin popover's + button adds a stop to
+    // the route) keeps the live map rather than rebuilding it, so an open
+    // popover stays open and only its button changes (refreshPopToggles).
+    var keepMap = stopMap && stopMapFor === stopPageId && stopMap.getContainer();
+    if (keepMap && keepMap.parentNode) keepMap.parentNode.removeChild(keepMap);
     var near = nearestTo(s, 8);
     stopPageEl.innerHTML = stopPageHTML(s, {
       areas: stopPageAreas(s),
@@ -108,12 +115,15 @@
     });
     var row = stopPageEl.querySelector('[data-nearby-row]');
     if (row) row.scrollLeft = keepScroll;
+    var freshMap = stopPageEl.querySelector('[data-stop-map]');
+    if (keepMap && freshMap) freshMap.replaceWith(keepMap);
     if (s.img) loadPhotoCredit(stopPageEl.querySelector('[data-photo-credit]'), s.img);
     showStopMap(stopMapOn);
     setTimeout(function () { adjustCardClamps(stopPageEl); }, 0);
   }
 
   function applyStopPage(id) {
+    leaveTourPage();
     setDiscoverMode(false);
     filters.q = '';
     filters.area = null;

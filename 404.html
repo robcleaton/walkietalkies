@@ -147,6 +147,7 @@ class="w-full sm:w-[260px] h-10 sm:h-auto bg-raised border border-rule rounded-f
 </div>
 </section>
 <section id="stopPage" class="hidden mx-auto max-w-[1280px] px-5 sm:px-8 pt-4"></section>
+<section id="tourPage" class="hidden mx-auto max-w-[1280px] px-5 sm:px-8 pt-4"></section>
 <section id="discoverHero" class="hidden mx-auto max-w-[1280px] px-5 sm:px-8 pt-8 pb-4 sm:pb-2">
 <h2 class="font-display tracking-[-0.02em] text-[40px] sm:text-[56px] leading-none">Discover</h2>
 <p class="font-serif text-[18px] sm:text-[19px] leading-[1.55] mt-3 max-w-[62ch] text-muted">Every area, category and stop on WalkieTalkies, in one place.</p>
@@ -277,6 +278,10 @@ class="w-full sm:w-[260px] h-10 sm:h-auto bg-raised border border-rule rounded-f
 </section>
 <h3 id="homeListTitle" class="font-display text-[28px] leading-none mb-4">Explore</h3>
 <div id="homeList" class="min-w-0 scroll-hide flex flex-nowrap gap-4 overflow-x-auto pb-2"></div>
+<section id="homeTours" class="mt-10 sm:mt-12" aria-labelledby="homeToursTitle">
+<h3 id="homeToursTitle" class="font-display text-[28px] leading-none mb-4">Tours</h3>
+<div id="homeToursList" class="min-w-0 scroll-hide flex flex-nowrap gap-4 overflow-x-auto pb-2"></div>
+</section>
 <div id="list" class="hidden flex flex-col gap-3"></div>
 <div id="areaRows"></div>
 </div>
@@ -397,6 +402,7 @@ Instagram
 </dialog>
 <script defer src="data.js"></script>
 <script defer src="areas.js"></script>
+<script defer src="tours.js"></script>
 <script defer src="build/app.js"></script>
 </body>
 </html>
