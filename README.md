@@ -1,4 +1,9 @@
-# WalkieTalkies
+<h1>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/readme/wordmark-dark.svg">
+    <img src="assets/readme/wordmark-light.svg" alt="WalkieTalkies" width="290">
+  </picture>
+</h1>
 
 Audio walking guides to South East London history: blue plaques, great
 buildings, murals, historic pubs, notable residents and more.
