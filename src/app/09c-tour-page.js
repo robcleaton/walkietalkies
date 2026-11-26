@@ -168,9 +168,12 @@
   }
 
   var homeToursEl = document.getElementById('homeTours');
+  // Tours are hidden from the homepage for now. Set to true to bring the
+  // "Tours" row back; the /tours/<id>/ pages work either way.
+  var SHOW_HOME_TOURS = false;
   function renderHomeTours(show) {
     if (!homeToursEl) return;
-    var on = show && ALL_TOURS.length > 0;
+    var on = SHOW_HOME_TOURS && show && ALL_TOURS.length > 0;
     homeToursEl.classList.toggle('hidden', !on);
     if (on && !homeToursEl.dataset.filled) {
       document.getElementById('homeToursList').innerHTML = ALL_TOURS.map(tourCardHTML).join('');
