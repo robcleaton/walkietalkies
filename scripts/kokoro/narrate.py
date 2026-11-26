@@ -93,6 +93,14 @@ PRONOUNCE = {
     "Metropolitano": "Metro-pollee-tahno",  # meh-troh-pol-lee-TAH-noh, Mercato Metropolitano
     "Perronet": "Pairo-nay",  # PAIR-oh-nay, Perronet House
     "Xinjiang": "Shin-jyang",  # SHIN-jyang
+    "Laban": "Lahban",  # LAH-ban, Rudolf Laban and the Laban Building
+    "Heneghan": "Hennahan",  # HEN-a-han, Heneghan Peng the architects
+    "Lifschutz": "Lifshoots",  # LIF-shoots, Lifschutz Davidson Sandilands
+    "Hawkins\\Brown": "Hawkins Brown",  # the architects; don't read the backslash
+    "Fani-Kayode": "Fanny Ka-yoh-day",  # Rotimi Fani-Kayode, the photographer
+    "Feibusch": "Fybush",  # FY-bush, Hans Feibusch the muralist
+    "Herzog": "Hertsog",  # HERT-sog, Herzog & de Meuron
+    "Mæ": "My",  # the architects of the John Morden Centre
     # The Firkin pubs' Latin motto: left out of the audio, which keeps
     # the translation that follows it ("drink until you die").
     "motto was Usque ad Mortem Bibendum": "motto was",

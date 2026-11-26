@@ -530,7 +530,7 @@
   },
   "tate-modern": {
     "file": "kokoro/bankside/tate-modern.mp3",
-    "fileHash": "55da23c32d1719f1",
+    "fileHash": "c2f6d0161c922b51",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "the-bankside-beargarden": {
@@ -1005,7 +1005,7 @@
   },
   "morden-college": {
     "file": "kokoro/blackheath/morden-college.mp3",
-    "fileHash": "5924460ad6a25209",
+    "fileHash": "61f7405dfc57c546",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "paragon": {
@@ -2470,7 +2470,7 @@
   },
   "old-royal-naval-college-domes": {
     "file": "kokoro/greenwich/old-royal-naval-college-domes.mp3",
-    "fileHash": "eab15fca6a8da2fa",
+    "fileHash": "f24bb3020b047276",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "pilot-inn-greenwich": {
@@ -4520,7 +4520,7 @@
   },
   "lambeth-palace": {
     "file": "kokoro/south-bank/lambeth-palace.mp3",
-    "fileHash": "042ca866df809fa2",
+    "fileHash": "ae624b02992ab45c",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "national-theatre": {
@@ -4535,7 +4535,7 @@
   },
   "oxo-tower": {
     "file": "kokoro/south-bank/oxo-tower.mp3",
-    "fileHash": "cc4b697c124d73ce",
+    "fileHash": "2e8d4806f57a9631",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "royal-festival-hall": {
@@ -4871,6 +4871,206 @@
   "kennedys-sausages-walworth": {
     "file": "kokoro/walworth/kennedys-sausages-walworth.mp3",
     "fileHash": "c13c0ffcf602351c",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "67-southwark-street": {
+    "file": "kokoro/bankside/67-southwark-street.mp3",
+    "fileHash": "32b8308b15fcf5de",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "hoxton-southwark": {
+    "file": "kokoro/bankside/hoxton-southwark.mp3",
+    "fileHash": "27e32c47eb404609",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "appleby-blue-almshouse": {
+    "file": "kokoro/bermondsey/appleby-blue-almshouse.mp3",
+    "fileHash": "9a5b721cf180bd02",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "bermondsey-telephone-exchange": {
+    "file": "kokoro/bermondsey/bermondsey-telephone-exchange.mp3",
+    "fileHash": "9758872bc745a5bb",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "bexleyheath-telephone-exchange": {
+    "file": "kokoro/bexleyheath/bexleyheath-telephone-exchange.mp3",
+    "fileHash": "6ae5ca043911e15c",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "borough-yards": {
+    "file": "kokoro/borough/borough-yards.mp3",
+    "fileHash": "d66199176c43d9ca",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "rcog-union-street": {
+    "file": "kokoro/borough/rcog-union-street.mp3",
+    "fileHash": "ba7702d51a86209a",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "southwark-telephone-exchange": {
+    "file": "kokoro/borough/southwark-telephone-exchange.mp3",
+    "fileHash": "40f4a2216d85bba3",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "catford-telephone-exchange": {
+    "file": "kokoro/catford/catford-telephone-exchange.mp3",
+    "fileHash": "6ddafe95b84a8148",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "workstack-charlton": {
+    "file": "kokoro/charlton/workstack-charlton.mp3",
+    "fileHash": "2551884c1627f488",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "laban-building": {
+    "file": "kokoro/deptford/laban-building.mp3",
+    "fileHash": "a414ac7cb80d22f0",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "dulwich-telephone-exchange": {
+    "file": "kokoro/dulwich/dulwich-telephone-exchange.mp3",
+    "fileHash": "8a4e65f40a30866e",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "gipsy-hill-telephone-exchange": {
+    "file": "kokoro/dulwich/gipsy-hill-telephone-exchange.mp3",
+    "fileHash": "62ed8934a4526b58",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "blackfriars-circus": {
+    "file": "kokoro/elephant-and-castle/blackfriars-circus.mp3",
+    "fileHash": "8887cbc01c8ab58e",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "elephant-park": {
+    "file": "kokoro/elephant-and-castle/elephant-park.mp3",
+    "fileHash": "94f24a0ec6fd641a",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "lsbu-hub": {
+    "file": "kokoro/elephant-and-castle/lsbu-hub.mp3",
+    "fileHash": "d75471307219639b",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "forest-hill-telephone-exchange": {
+    "file": "kokoro/forest-hill/forest-hill-telephone-exchange.mp3",
+    "fileHash": "f3956d6547b37603",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "design-district-c1-d1": {
+    "file": "kokoro/greenwich/design-district-c1-d1.mp3",
+    "fileHash": "f08d6635d2ac3ac0",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "greenwich-telephone-exchange": {
+    "file": "kokoro/greenwich/greenwich-telephone-exchange.mp3",
+    "fileHash": "d72c3e0cf55b5178",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "stockwell-street-building": {
+    "file": "kokoro/greenwich/stockwell-street-building.mp3",
+    "fileHash": "e60f7f83a481441a",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "198-cal": {
+    "file": "kokoro/herne-hill/198-cal.mp3",
+    "fileHash": "a7b3ac09a51750e8",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "lee-green-telephone-exchange": {
+    "file": "kokoro/lee/lee-green-telephone-exchange.mp3",
+    "fileHash": "25aaeb10d1de2a1c",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "former-lewisham-telephone-exchange": {
+    "file": "kokoro/lewisham/former-lewisham-telephone-exchange.mp3",
+    "fileHash": "d553521ccfbedb1c",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "new-cross-telephone-exchange": {
+    "file": "kokoro/new-cross/new-cross-telephone-exchange.mp3",
+    "fileHash": "79474fea3760659c",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "beulah-hill-telephone-exchange": {
+    "file": "kokoro/other/beulah-hill-telephone-exchange.mp3",
+    "fileHash": "721e21c1dccc59fa",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "kidbrooke-telephone-exchange": {
+    "file": "kokoro/other/kidbrooke-telephone-exchange.mp3",
+    "fileHash": "2bb3bcfb2c3e9671",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "95-peckham-road": {
+    "file": "kokoro/peckham/95-peckham-road.mp3",
+    "fileHash": "447f5197f4b31eb7",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "mountview-peckham": {
+    "file": "kokoro/peckham/mountview-peckham.mp3",
+    "fileHash": "d0d6e11fc989e01a",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "rotherhithe-primary-school": {
+    "file": "kokoro/rotherhithe/rotherhithe-primary-school.mp3",
+    "fileHash": "38ab6db3cae4e7cd",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "bfi-riverfront": {
+    "file": "kokoro/south-bank/bfi-riverfront.mp3",
+    "fileHash": "ba196f815d30c5f3",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "southbank-telephone-exchange": {
+    "file": "kokoro/south-bank/southbank-telephone-exchange.mp3",
+    "fileHash": "35f3ee0ca8ab58ab",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "st-johns-waterloo": {
+    "file": "kokoro/south-bank/st-johns-waterloo.mp3",
+    "fileHash": "6568e5e66ebb8dfe",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "citizens-house": {
+    "file": "kokoro/sydenham/citizens-house.mp3",
+    "fileHash": "65745f3c0f3c5345",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "sydenham-telephone-exchange": {
+    "file": "kokoro/sydenham/sydenham-telephone-exchange.mp3",
+    "fileHash": "8f1c41bdf888069a",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "walworth-telephone-exchange": {
+    "file": "kokoro/walworth/walworth-telephone-exchange.mp3",
+    "fileHash": "ad61273d0ee0b57a",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "abbey-wood-station": {
+    "file": "kokoro/woolwich/abbey-wood-station.mp3",
+    "fileHash": "4d2f10c46dcb68c7",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "officers-house-royal-arsenal": {
+    "file": "kokoro/woolwich/officers-house-royal-arsenal.mp3",
+    "fileHash": "214396f4392e1217",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "plumstead-centre": {
+    "file": "kokoro/woolwich/plumstead-centre.mp3",
+    "fileHash": "96999896cc4acdba",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "woolwich-telephone-exchange": {
+    "file": "kokoro/woolwich/woolwich-telephone-exchange.mp3",
+    "fileHash": "29051c0ca1aed550",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "woolwich-works": {
+    "file": "kokoro/woolwich/woolwich-works.mp3",
+    "fileHash": "66534b5792d15335",
     "fileVoice": "kokoro-v1.0/bf_alice"
   }
 }
