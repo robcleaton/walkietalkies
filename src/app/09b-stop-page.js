@@ -23,7 +23,8 @@
   }
 
   /* Map button: swaps the photo for a map of where the stop is (with its
-     nearest stops as smaller dots, for bearings), and back. Only for a
+     nearest stops as smaller dots, for bearings; each pin's popover shows
+     its photo, View stop and Add to route, as on the area map), and back. Only for a
      stop with both a photo and a pinned location. */
   var ICON_MAP = '<svg class="lucide lucide-map w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg>';
   var ICON_PHOTO = '<svg class="lucide lucide-image w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>';
@@ -68,11 +69,11 @@
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
     }).addTo(stopMap);
     nearestTo(s, 8).forEach(function (n) {
-      L.marker([n.s.lat, n.s.lon], { icon: stopMarker((CATMARK[n.s.cat] || {}).color || 'var(--ink)', 12), opacity: 0.85 })
-        .addTo(stopMap).bindPopup(plain(n.s.name), { closeButton: false });
+      L.marker([n.s.lat, n.s.lon], { icon: stopMarker((CATMARK[n.s.cat] || {}).color || 'var(--ink)', 16), opacity: 0.85 })
+        .addTo(stopMap).bindPopup(function () { return stopPopHTML(n.s); }, { closeButton: false, className: 'map-pop-wrap' });
     });
     L.marker([s.lat, s.lon], { icon: stopMarker((CATMARK[s.cat] || {}).color || 'var(--ink)', 22), zIndexOffset: 1000 })
-      .addTo(stopMap).bindPopup(plain(s.name), { closeButton: false });
+      .addTo(stopMap).bindPopup(function () { return stopPopHTML(s, true); }, { closeButton: false, className: 'map-pop-wrap' });
     stopMap.setView([s.lat, s.lon], 16);
   }
 

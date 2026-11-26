@@ -828,7 +828,7 @@ a.hero-chip:hover{ transform:scale(.96); }
 .leaflet-container .leaflet-popup-content-wrapper,
 .leaflet-container .leaflet-popup-tip{ background:#000; color:#fff; }
 .leaflet-container .leaflet-popup-content{ font-weight:700; }
-/* Area-map popup with a photo (areaPopupHTML() in src/app/03-maps.js):
+/* Map pin popover (stopPopHTML() in src/app/03-maps.js):
    the photo on top, the name under it, both 180px wide. Leaflet's own
    content margin is 13px top and bottom but 20px / 24px at the sides;
    even it out so the photo sits the same distance from every edge. */
@@ -836,3 +836,22 @@ a.hero-chip:hover{ transform:scale(.96); }
 .map-pop{ display:block; width:180px; }
 .map-pop__img{ display:block; width:180px; height:120px; object-fit:cover; border-radius:6px; margin-bottom:8px; background:#1F1F22; }
 .map-pop__name{ display:block; line-height:1.3; }
+/* Photo and name link to the stop's page; the round + button sits beside
+   the name, filled verdigris with the stop's number once it's in the route.
+   Styled as the list rows' + (border-rule, text-ink), using the dark
+   theme's values: the popover is black in both themes. */
+.leaflet-container a.map-pop__photo{ display:block; }
+.map-pop__row{ display:flex; align-items:center; gap:8px; }
+.leaflet-container .map-pop__name{ flex:1 1 auto; min-width:0; color:#fff; text-decoration:none; }
+.leaflet-container a.map-pop__name:hover{ text-decoration:underline; text-underline-offset:2px; }
+.leaflet-container a.map-pop__photo:focus-visible,
+.leaflet-container a.map-pop__name:focus-visible{ outline:2px solid var(--brass); outline-offset:2px; border-radius:4px; }
+.leaflet-container .map-pop__add{ flex:none; width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; border:1px solid #2B2B2F; background:transparent; color:#F4F3EF; font:inherit; font-size:12px; font-weight:700; cursor:pointer; transition:border-color .15s, background-color .15s; }
+.leaflet-container .map-pop__add:hover{ border-color:#F4F3EF; }
+.leaflet-container .map-pop__add.is-on{ background:var(--verdigris); border-color:var(--verdigris); color:#fff; font-family:"Azeret Mono", ui-monospace, Menlo, monospace; }
+.leaflet-container .map-pop__add:focus-visible{ outline:2px solid var(--brass); outline-offset:2px; }
+
+/* Search suggestions dropdown (src/app/12b-search-suggest.js): the
+   highlighted option, by keyboard or pointer. */
+.search-suggest__opt[aria-selected="true"]{ background:var(--raised); }
+#searchSuggest{ max-height:min(70vh, 560px); overflow-y:auto; }

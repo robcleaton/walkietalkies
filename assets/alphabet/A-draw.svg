@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 393 511" role="img" aria-label="A">
+<!--
+  The hand-drawn A (A.svg), animated: a dot appears at the foot of the
+  left stroke, then the pen draws the letter in one joined-up line: up
+  and over the arch, crossing down the right side, looping round the
+  bottom and back up the left, then out through the flick at top right.
+
+  How: a thick round-capped centreline masks the original filled shape.
+  Where strokes cross, a single mask would uncover neighbouring strokes
+  early, so the diagonal and the flick (the "late zone") are revealed
+  only by the part of the line after the bottom of the bowl. Both masks
+  share sampled keyframes so the pen moves at one eased speed. The plain
+  shape is swapped in at the end to remove any seam.
+  Keyframes generated; plays once (~2.4s). Reduced motion: final letter.
+-->
+<style>
+  .dot {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: dot .45s cubic-bezier(.3,1.4,.5,1) both;
+  }
+  .line {
+    stroke-width: 0;
+    stroke-dasharray: 0.0001 2;
+    animation: draw 1.8s linear .6s forwards, widen .35s ease-out .6s forwards;
+  }
+  .line.late {
+    stroke-dasharray: 0 1 0 2;
+    animation-name: draw-late, widen;
+  }
+  .final { opacity: 0; animation: show .01s linear 2.4s forwards; }
+  @keyframes dot { from { transform: scale(0); } to { transform: scale(1); } }
+  @keyframes widen { to { stroke-width: 150; } }
+  @keyframes show { to { opacity: 1; } }
+  @keyframes draw{0%{stroke-dasharray:0.0001 2}2.5%{stroke-dasharray:0.0011 2}5%{stroke-dasharray:0.0045 2}7.5%{stroke-dasharray:0.0106 2}10%{stroke-dasharray:0.0197 2}12.5%{stroke-dasharray:0.0324 2}15%{stroke-dasharray:0.0493 2}17.5%{stroke-dasharray:0.0709 2}20%{stroke-dasharray:0.0981 2}22.5%{stroke-dasharray:0.1317 2}25%{stroke-dasharray:0.1724 2}27.5%{stroke-dasharray:0.2208 2}30%{stroke-dasharray:0.2765 2}32.5%{stroke-dasharray:0.3381 2}35%{stroke-dasharray:0.4031 2}37.5%{stroke-dasharray:0.4683 2}40%{stroke-dasharray:0.5307 2}42.5%{stroke-dasharray:0.5885 2}45%{stroke-dasharray:0.6409 2}47.5%{stroke-dasharray:0.6878 2}50%{stroke-dasharray:0.7294 2}52.5%{stroke-dasharray:0.7662 2}55%{stroke-dasharray:0.7987 2}57.5%{stroke-dasharray:0.8275 2}60%{stroke-dasharray:0.8529 2}62.5%{stroke-dasharray:0.8753 2}65%{stroke-dasharray:0.8951 2}67.5%{stroke-dasharray:0.9125 2}70%{stroke-dasharray:0.9278 2}72.5%{stroke-dasharray:0.9412 2}75%{stroke-dasharray:0.9528 2}77.5%{stroke-dasharray:0.9628 2}80%{stroke-dasharray:0.9714 2}82.5%{stroke-dasharray:0.9787 2}85%{stroke-dasharray:0.9847 2}87.5%{stroke-dasharray:0.9896 2}90%{stroke-dasharray:0.9935 2}92.5%{stroke-dasharray:0.9964 2}95%{stroke-dasharray:0.9985 2}97.5%{stroke-dasharray:0.9996 2}100%{stroke-dasharray:1 2}}
+  @keyframes draw-late{0%{stroke-dasharray:0 0.6401 0 2}2.5%{stroke-dasharray:0 0.6401 0 2}5%{stroke-dasharray:0 0.6401 0 2}7.5%{stroke-dasharray:0 0.6401 0 2}10%{stroke-dasharray:0 0.6401 0 2}12.5%{stroke-dasharray:0 0.6401 0 2}15%{stroke-dasharray:0 0.6401 0 2}17.5%{stroke-dasharray:0 0.6401 0 2}20%{stroke-dasharray:0 0.6401 0 2}22.5%{stroke-dasharray:0 0.6401 0 2}25%{stroke-dasharray:0 0.6401 0 2}27.5%{stroke-dasharray:0 0.6401 0 2}30%{stroke-dasharray:0 0.6401 0 2}32.5%{stroke-dasharray:0 0.6401 0 2}35%{stroke-dasharray:0 0.6401 0 2}37.5%{stroke-dasharray:0 0.6401 0 2}40%{stroke-dasharray:0 0.6401 0 2}42.5%{stroke-dasharray:0 0.6401 0 2}45%{stroke-dasharray:0 0.6401 0.0008 2}47.5%{stroke-dasharray:0 0.6401 0.0477 2}50%{stroke-dasharray:0 0.6401 0.0893 2}52.5%{stroke-dasharray:0 0.6401 0.1261 2}55%{stroke-dasharray:0 0.6401 0.1587 2}57.5%{stroke-dasharray:0 0.6401 0.1874 2}60%{stroke-dasharray:0 0.6401 0.2128 2}62.5%{stroke-dasharray:0 0.6401 0.2353 2}65%{stroke-dasharray:0 0.6401 0.255 2}67.5%{stroke-dasharray:0 0.6401 0.2724 2}70%{stroke-dasharray:0 0.6401 0.2877 2}72.5%{stroke-dasharray:0 0.6401 0.3011 2}75%{stroke-dasharray:0 0.6401 0.3127 2}77.5%{stroke-dasharray:0 0.6401 0.3227 2}80%{stroke-dasharray:0 0.6401 0.3313 2}82.5%{stroke-dasharray:0 0.6401 0.3386 2}85%{stroke-dasharray:0 0.6401 0.3446 2}87.5%{stroke-dasharray:0 0.6401 0.3496 2}90%{stroke-dasharray:0 0.6401 0.3535 2}92.5%{stroke-dasharray:0 0.6401 0.3564 2}95%{stroke-dasharray:0 0.6401 0.3584 2}97.5%{stroke-dasharray:0 0.6401 0.3595 2}100%{stroke-dasharray:0 0.6401 0.3599 2}}
+  @media (prefers-reduced-motion: reduce) {
+    .dot, .line { animation: none; }
+    .final { animation: none; opacity: 1; }
+  }
+</style>
+<defs>
+  <path id="a-shape" transform="translate(0,511) scale(0.1,-0.1)" fill="currentColor" d="M1959 4850 c-467 -54 -945 -512 -1322 -1266 -187 -373 -392 -979
+-452 -1334 -13 -80 -35 -210 -48 -290 -38 -228 -69 -719 -48 -773 18 -46 43
+-49 327 -40 341 10 306 -26 324 333 10 196 21 293 66 585 110 705 523 1600
+904 1959 313 294 535 237 701 -182 58 -147 62 -138 -114 -279 -400 -321 -777
+-787 -982 -1216 -497 -1036 -118 -2035 732 -1932 627 76 1005 791 1134 2145 6
+69 12 281 13 471 1 286 4 349 15 363 27 33 300 162 501 237 138 52 150 61 150
+105 0 42 -125 477 -147 510 -39 61 -184 27 -491 -113 -183 -83 -176 -85 -248
+59 -228 454 -614 704 -1015 658z m569 -2002 c75 -75 -90 -1043 -241 -1408
+-224 -545 -566 -520 -543 40 17 424 250 887 638 1268 118 115 126 120 146 100z"/>
+  <path id="a-line" pathLength="1" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" d="M157,600 L157,565 C160,420 230,230 330,130 C380,80 450,60 500,130 C525,165 545,210 545,270 C548,340 540,380 535,420 C520,560 470,665 395,680 C350,690 310,650 318,560 C335,420 440,305 515,220 C560,200 615,205 685,170"/>
+  <!-- the late zone: the flick, and the diagonal below the crossing.
+       Cut edges curve on from the letter's own edges; corners sit on
+       its inside corners. Grown 2px here so the two halves overlap. -->
+  <mask id="a-late-zone" maskUnits="userSpaceOnUse" x="-200" y="-200" width="1200" height="1200">
+    <g fill="#fff" stroke="#fff" stroke-width="4" stroke-linejoin="round">
+      <path d="M558.3,143.8 C582.9,192.8 595.1,229.0 593.2,283.8 L640,300 L800,320 L800,40 L600,60 Z"/>
+      <path d="M420,175 L475.8,216.7 C475.6,273.0 486.7,307.9 491.1,364.1 L400,520 L250,520 L345,330 Z"/>
+    </g>
+  </mask>
+  <mask id="a-early" maskUnits="userSpaceOnUse" x="0" y="0" width="393" height="511">
+    <g transform="scale(0.6386) translate(-92.6,0)">
+      <circle class="dot" cx="157" cy="565" r="50" fill="#fff"/>
+      <use class="line" href="#a-line"/>
+      <!-- hide the late zone -->
+      <g fill="#000">
+        <path d="M558.3,143.8 C582.9,192.8 595.1,229.0 593.2,283.8 L640,300 L800,320 L800,40 L600,60 Z"/>
+        <path d="M420,175 L475.8,216.7 C475.6,273.0 486.7,307.9 491.1,364.1 L400,520 L250,520 L345,330 Z"/>
+      </g>
+    </g>
+  </mask>
+  <mask id="a-late" maskUnits="userSpaceOnUse" x="0" y="0" width="393" height="511">
+    <g transform="scale(0.6386) translate(-92.6,0)">
+      <g mask="url(#a-late-zone)"><use class="line late" href="#a-line"/></g>
+    </g>
+  </mask>
+</defs>
+<use href="#a-shape" mask="url(#a-early)"/>
+<use href="#a-shape" mask="url(#a-late)"/>
+<use class="final" href="#a-shape"/>
+</svg>

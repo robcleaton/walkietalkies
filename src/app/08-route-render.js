@@ -88,10 +88,6 @@
     }
 
     var html = '';
-    if (seeded) {
-      html += '<p class="px-5 pt-1 pb-1 text-[12px] leading-relaxed text-brass">' +
-              'Starter route: a Greenwich morning, riverside first, uphill last. Remove stops with &times; and build your own.</p>';
-    }
     var lastMapped = null; // the previous stop with a location, for leg distances
     route.forEach(function (id, i) {
       var s = byId[id];

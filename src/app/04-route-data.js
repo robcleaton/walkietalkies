@@ -63,7 +63,7 @@
       route.splice(i, 1);
     }
     seeded = false;
-    persist(); renderRoute(); renderList();
+    persist(); renderRoute(); renderList(); refreshPopToggles();
   }
 
   function move(id, dir) {

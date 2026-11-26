@@ -152,12 +152,38 @@
     return lower.concat(upper);
   }
 
-  // An area-map marker's popup: the stop's photo (when it has one) above
-  // its name (.map-pop in styles.css). The photo is sized up front so the
-  // popup doesn't change shape as it loads; one that fails is dropped.
-  function areaPopupHTML(s) {
+  // A map pin's popover (area map and stop-page map): the stop's photo
+  // (when it has one) above its name, both linking to the stop's page, and
+  // a round + button beside the name to add it to the route, numbered
+  // once it's in (as the list rows). .map-pop in styles.css. The link and button use the
+  // page-wide data-stop-link and data-toggle click handlers; Leaflet lets
+  // popup clicks through to them. Bind it as a function so each opening
+  // shows the current route state. here: the stop whose page this is, so
+  // no link. The photo is sized up front so the popover doesn't change
+  // shape as it loads; one that fails is dropped.
+  function stopPopHTML(s, here) {
     var img = s.img ? '<img class="map-pop__img" src="' + s.img + '" alt="" width="180" height="120" decoding="async" onerror="this.remove()">' : '';
-    return '<span class="map-pop">' + img + '<span class="map-pop__name">' + plain(s.name) + '</span></span>';
+    var href = ' href="' + stopPath(s.id) + '" data-stop-link="' + s.id + '"';
+    // The photo is a second link to the same page, so it's kept out of the
+    // tab order and from screen readers; the name is the one they get.
+    var photo = !img ? '' : here ? img : '<a class="map-pop__photo"' + href + ' tabindex="-1" aria-hidden="true">' + img + '</a>';
+    var name = here ? '<span class="map-pop__name">' + plain(s.name) + '</span>' :
+      '<a class="map-pop__name"' + href + '>' + plain(s.name) + '</a>';
+    return '<span class="map-pop">' + photo + '<span class="map-pop__row">' + name + popToggleHTML(s) + '</span></span>';
+  }
+  function popToggleHTML(s) {
+    var on = inRoute(s.id), pos = route.indexOf(s.id) + 1;
+    return '<button type="button" class="map-pop__add' + (on ? ' is-on' : '') + '" data-toggle="' + s.id + '" ' +
+      'aria-pressed="' + on + '" aria-label="' + (on ? 'Remove ' + plain(s.name) + ' from your route (stop ' + pos + ')' : 'Add ' + plain(s.name) + ' to your route') + '">' +
+      (on ? pos : '<svg class="lucide lucide-plus" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg>') +
+      '</button>';
+  }
+  // After toggle(): an open popover's route button follows along.
+  function refreshPopToggles() {
+    Array.prototype.forEach.call(document.querySelectorAll('.map-pop [data-toggle]'), function (btn) {
+      var s = byId[btn.getAttribute('data-toggle')];
+      if (s) btn.outerHTML = popToggleHTML(s);
+    });
   }
 
   function renderAreaMap(stops) {
@@ -191,7 +217,7 @@
         html: '<span style="display:block;width:14px;height:14px;border-radius:50%;background:' + color + ';border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.4)"></span>',
         iconSize: [14, 14], iconAnchor: [7, 7]
       });
-      L.marker([s.lat, s.lon], { icon: icon }).addTo(areaMapLayer).bindPopup(areaPopupHTML(s), { closeButton: false, className: 'map-pop-wrap' });
+      L.marker([s.lat, s.lon], { icon: icon }).addTo(areaMapLayer).bindPopup(function () { return stopPopHTML(s); }, { closeButton: false, className: 'map-pop-wrap' });
     });
 
     areaMap.invalidateSize();
