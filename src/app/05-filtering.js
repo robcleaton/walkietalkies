@@ -6,9 +6,36 @@
     return 1000 + pc.charCodeAt(0) + parseInt(pc.slice(2), 10);
   }
 
+  // Text folded for searching: lower case, accents dropped ("café" →
+  // "cafe"), apostrophes removed ("St Mary's" → "st marys") and every
+  // other run of punctuation turned into a single space.
+  function searchNorm(str) {
+    return str
+      .replace(/&(rsquo|lsquo|apos|#39|#8217);/g, '')
+      .replace(/&[a-z0-9#]+;/gi, ' ')
+      .toLowerCase()
+      .normalize('NFD').replace(/[̀-ͯ]/g, '')
+      .replace(/['’‘`]/g, '')
+      .replace(/[^a-z0-9]+/g, ' ')
+      .trim();
+  }
+
+  // A search query as its separate words. Every word has to turn up
+  // somewhere in a stop, in any order, so "telephone exchange forest hill"
+  // finds the same stop as "forest hill telephone exchange". Words match
+  // as prefixes of the stop's words, so a half-typed "teleph" still counts.
+  function searchWords(q) {
+    var n = searchNorm(q);
+    return n ? n.split(' ') : [];
+  }
+
   function stopHay(s) {
-    return (s.name + ' ' + s.area + ' ' + s.pc + ' ' + s.addr + ' ' + stopRefsPlain(s.text) + ' ' + CATS[s.cat])
-      .replace(/&[a-z]+;/g, ' ').toLowerCase();
+    return ' ' + searchNorm(s.name + ' ' + s.area + ' ' + s.pc + ' ' + s.addr + ' ' + stopRefsPlain(s.text) + ' ' + CATS[s.cat]) + ' ';
+  }
+
+  function stopMatches(s, words) {
+    var hay = stopHay(s);
+    return words.every(function (w) { return hay.indexOf(' ' + w) !== -1; });
   }
 
   // Whether a stop belongs on an area page (area = a data-area key, e.g.
@@ -19,12 +46,12 @@
   // Description or Address, which mention neighbouring areas and street
   // names ("Crystal Palace Road", "Lewisham Way") far too often.
   function visible() {
-    var q = filters.q.trim().toLowerCase();
+    var words = searchWords(filters.q);
     var out = STOPS.filter(function (s) {
       if (filters.cats.length && filters.cats.indexOf(s.cat) === -1) return false;
       if (filters.area) return stopInArea(s, filters.area);
-      if (!q) return true;
-      return stopHay(s).indexOf(q) !== -1;
+      if (!words.length) return true;
+      return stopMatches(s, words);
     });
     var sorters = {
       district: function (a, b) { return pcRank(a.pc) - pcRank(b.pc) || a.lon - b.lon; },

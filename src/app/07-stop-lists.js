@@ -30,6 +30,7 @@
 
     listEl.classList.toggle('hidden', isHome);
     homeListEl.classList.toggle('hidden', !isHome);
+    document.getElementById('homeListTitle').classList.toggle('hidden', !isHome);
     renderNearYou(isHome);
     // Only area pages fill the per-category rows (and CSS only shows them
     // there, at lg+); everywhere else they're cleared so stale cards from a

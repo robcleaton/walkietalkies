@@ -6,10 +6,10 @@
   // match if this category were added", independent of any other category
   // already toggled on. Used only to build the chips, not the list.
   function stopsInFilterScope() {
-    var q = filters.q.trim().toLowerCase();
+    var words = searchWords(filters.q);
     if (filters.area) return STOPS.filter(function (s) { return stopInArea(s, filters.area); });
-    if (!q) return STOPS;
-    return STOPS.filter(function (s) { return stopHay(s).indexOf(q) !== -1; });
+    if (!words.length) return STOPS;
+    return STOPS.filter(function (s) { return stopMatches(s, words); });
   }
 
   function renderChips() {
@@ -104,10 +104,14 @@
   // suggestions shown above search results (e.g. typing "forest" surfaces
   // a "Forest Hill" chip alongside the matching stops).
   function matchingAreas(query) {
-    var q = query.trim().toLowerCase();
+    // An area chip shows when the query is part of the area's name
+    // ("forest" → Forest Hill) or the area's name is somewhere in the
+    // query ("telephone exchange forest hill" → Forest Hill).
+    var q = searchNorm(query);
     if (!q) return [];
     return Object.keys(AREA_COLORS).filter(function (key) {
-      return key.indexOf(q) !== -1 || areaTitle(key).toLowerCase().indexOf(q) !== -1;
+      var name = searchNorm(areaTitle(key));
+      return name.indexOf(q) !== -1 || (' ' + q + ' ').indexOf(' ' + name + ' ') !== -1;
     });
   }
 

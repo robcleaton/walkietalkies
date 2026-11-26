@@ -4747,5 +4747,10 @@
     "file": "kokoro/greenwich/london-cable-car.mp3",
     "fileHash": "4f00dda8efa6e8af",
     "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "strata-se1": {
+    "file": "kokoro/elephant-and-castle/strata-se1.mp3",
+    "fileHash": "92b2f5b60b559a74",
+    "fileVoice": "kokoro-v1.0/bf_alice"
   }
 }
