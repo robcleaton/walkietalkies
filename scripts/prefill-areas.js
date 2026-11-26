@@ -68,6 +68,7 @@ function readAreas() {
 }
 
 const POSTCODE_AREA = {
+  SE11: 'elephant and castle',
   SE3: 'blackheath', SE4: 'brockley', SE5: 'camberwell', SE6: 'catford',
   SE7: 'charlton', SE8: 'deptford', SE9: 'eltham', SE10: 'greenwich',
   SE12: 'lee', SE13: 'lewisham', SE14: 'new cross', SE17: 'walworth',

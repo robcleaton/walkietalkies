@@ -315,7 +315,7 @@
   },
   "walters-way": {
     "file": "kokoro/honor-oak/walters-way.mp3",
-    "fileHash": "1306176c54065c2b",
+    "fileHash": "d4fdcdea8877f69b",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "crystal-palace-building": {
@@ -4751,6 +4751,126 @@
   "strata-se1": {
     "file": "kokoro/elephant-and-castle/strata-se1.mp3",
     "fileHash": "92b2f5b60b559a74",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "the-roebuck-great-dover-street": {
+    "file": "kokoro/borough/the-roebuck-great-dover-street.mp3",
+    "fileHash": "463e6f47eb74f960",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "trinity-arms-swan-street": {
+    "file": "kokoro/borough/trinity-arms-swan-street.mp3",
+    "fileHash": "49d8aa938fdee9ee",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "charlie-drake": {
+    "file": "kokoro/elephant-and-castle/charlie-drake.mp3",
+    "fileHash": "edd0ea17e6b473f8",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "cinema-museum": {
+    "file": "kokoro/elephant-and-castle/cinema-museum.mp3",
+    "fileHash": "2c7c17785d366f33",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "corsica-studios": {
+    "file": "kokoro/elephant-and-castle/corsica-studios.mp3",
+    "fileHash": "4b5e31254589d4f4",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "cross-and-star-church": {
+    "file": "kokoro/elephant-and-castle/cross-and-star-church.mp3",
+    "fileHash": "f65edb8a2dcadb80",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "draper-house": {
+    "file": "kokoro/elephant-and-castle/draper-house.mp3",
+    "fileHash": "e50de5d79e373d83",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "duke-of-york-borough-road": {
+    "file": "kokoro/elephant-and-castle/duke-of-york-borough-road.mp3",
+    "fileHash": "96ba3ec120a76107",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "elephant-and-castle-pub": {
+    "file": "kokoro/elephant-and-castle/elephant-and-castle-pub.mp3",
+    "fileHash": "86ec4faeb716d05a",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "elephant-and-castle-statue": {
+    "file": "kokoro/elephant-and-castle/elephant-and-castle-statue.mp3",
+    "fileHash": "425ead2418b6fbe5",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "heygate-estate": {
+    "file": "kokoro/elephant-and-castle/heygate-estate.mp3",
+    "fileHash": "b2d65ec04d78cb79",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "imperial-war-museum": {
+    "file": "kokoro/elephant-and-castle/imperial-war-museum.mp3",
+    "fileHash": "b5022ec2ec214a8a",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "inner-london-sessions-house": {
+    "file": "kokoro/elephant-and-castle/inner-london-sessions-house.mp3",
+    "fileHash": "d77a375255dc1d95",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "jack-dash": {
+    "file": "kokoro/elephant-and-castle/jack-dash.mp3",
+    "fileHash": "da3d1f6a6dc5158f",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "joy-crookes": {
+    "file": "kokoro/elephant-and-castle/joy-crookes.mp3",
+    "fileHash": "c023f9679b32ff20",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "massacre-of-st-georges-fields": {
+    "file": "kokoro/elephant-and-castle/massacre-of-st-georges-fields.mp3",
+    "fileHash": "79cd3d90c3cbc39e",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "mercato-metropolitano": {
+    "file": "kokoro/elephant-and-castle/mercato-metropolitano.mp3",
+    "fileHash": "22fe32cbe3234cff",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "ministry-of-sound": {
+    "file": "kokoro/elephant-and-castle/ministry-of-sound.mp3",
+    "fileHash": "b4c910620b5f5704",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "perronet-house": {
+    "file": "kokoro/elephant-and-castle/perronet-house.mp3",
+    "fileHash": "2a46623016068125",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "southwark-playhouse": {
+    "file": "kokoro/elephant-and-castle/southwark-playhouse.mp3",
+    "fileHash": "85aad907e78f2627",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "st-mary-newington": {
+    "file": "kokoro/elephant-and-castle/st-mary-newington.mp3",
+    "fileHash": "b5bdbecacc6d8a7c",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "stanley-kubrick-archive": {
+    "file": "kokoro/elephant-and-castle/stanley-kubrick-archive.mp3",
+    "fileHash": "5a74cd0174793a99",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "trocadero-elephant-and-castle": {
+    "file": "kokoro/elephant-and-castle/trocadero-elephant-and-castle.mp3",
+    "fileHash": "afe7c61a26ab127e",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "kennedys-sausages-walworth": {
+    "file": "kokoro/walworth/kennedys-sausages-walworth.mp3",
+    "fileHash": "c13c0ffcf602351c",
     "fileVoice": "kokoro-v1.0/bf_alice"
   }
 }
