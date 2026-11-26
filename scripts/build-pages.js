@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Builds the static pages search engines read: one per area
-// (areas/<slug>/index.html) and one per stop (stops/<id>/index.html), plus
+// (areas/<slug>/index.html), one per stop (stops/<id>/index.html) and one
+// per curated tour (tours/<id>/index.html, from tours.js), plus
 // sitemap.xml, robots.txt and 404.html.
 //
 // Each page is index.html with its own <title>, description, canonical URL,
@@ -26,7 +27,7 @@ const read = f => fs.readFileSync(path.join(ROOT, f), 'utf8');
 // ---- Load the app's data and shared helpers ----
 const ctx = { console: { log: console.log, warn() {}, error: console.error }, Math };
 vm.createContext(ctx);
-for (const f of ['data.js', 'areas.js', 'src/app/00-shared.js', 'src/app/01-stops.js']) {
+for (const f of ['data.js', 'areas.js', 'tours.js', 'src/app/00-shared.js', 'src/app/01-stops.js']) {
   vm.runInContext(read(f), ctx, { filename: f });
 }
 const app = new Proxy({}, { get: (_, k) => vm.runInContext(k, ctx) });
@@ -210,6 +211,51 @@ function stopPage(s) {
   return { path: pagePath, html };
 }
 
+// ---- Tour pages ----
+function tourPage(tour) {
+  const pagePath = app.tourPath(tour.id);
+  const url = abs(pagePath);
+  const title = app.tourPageTitle(tour);
+  const stops = app.tourStops(tour);
+  const km = app.tourKm(stops);
+  const description = app.clipText(plain(tour.intro), 158);
+  const cover = stops.find(s => s.img);
+
+  html = template;
+  setHead({
+    title, description, url, image: cover ? app.bigImg(cover.img) : null,
+    ld: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        { '@type': 'BreadcrumbList', itemListElement: [
+          { '@type': 'ListItem', position: 1, name: SITE_NAME, item: SITE_URL + '/' },
+          { '@type': 'ListItem', position: 2, name: plain(tour.name), item: url }
+        ] },
+        { '@type': 'TouristTrip', '@id': url, url, name: plain(tour.name), description,
+          itinerary: { '@type': 'ItemList', numberOfItems: stops.length, itemListElement: stops.map((s, i) => (
+            { '@type': 'ListItem', position: i + 1, url: abs(app.stopPath(s.id)), name: plain(s.name) })) } }
+      ]
+    }
+  });
+  setBody(pagePath, 'tour-page');
+
+  // The tour, as plain numbered links (the app renders its own on load).
+  removeHidden('tourPage');
+  fillInner('tourPage',
+    '<p class="eyebrow text-faint mb-2">Tour' + (tour.area ? ' &middot; <a href="' + app.areaPath(tour.area) + '">' + esc(app.areaTitle(tour.area)) + '</a>' : '') + '</p>' +
+    '<h1 class="font-display tracking-[-0.02em] text-[40px] sm:text-[56px] leading-none">' + tour.name + '</h1>' +
+    '<p class="font-mono text-[12px] text-muted num mt-3">' + stops.length + ' stops' + (km ? ' &middot; ' + app.fmtDist(km) : '') + '</p>' +
+    '<p class="font-serif text-[18px] sm:text-[19px] leading-[1.55] mt-3 max-w-[62ch]">' + tour.intro + '</p>' +
+    '<ol class="flex flex-col gap-3 mt-6">' + stops.map((s, i) =>
+      '<li><a href="' + app.stopPath(s.id) + '" data-stop-link="' + s.id + '" class="block bg-surface border border-rule rounded-[16px] px-5 py-4 hover:border-ink">' +
+        '<span class="block font-mono text-[11px] text-muted">Stop ' + (i + 1) + '</span>' +
+        '<span class="block font-display text-[24px] leading-[1.1]">' + s.name + '</span>' +
+        '<span class="block font-mono text-[11px] text-muted mt-1">' + app.cardAddress(s) + '</span>' +
+        (s.short ? '<span class="block font-serif text-[17px] leading-[1.55] mt-2">' + s.short + '</span>' : '') +
+      '</a></li>').join('') + '</ol>');
+  return { path: pagePath, html };
+}
+
 // ---- 404: the homepage, not indexed ----
 function notFoundPage() {
   html = template;
@@ -224,8 +270,8 @@ function notFoundPage() {
 const compact = h => h.replace(/<!--[\s\S]*?-->/g, '').replace(/^[ \t]+/gm, '').replace(/\n+/g, '\n');
 
 // ---- Write everything ----
-for (const dir of ['areas', 'stops']) fs.rmSync(path.join(ROOT, dir), { recursive: true, force: true });
-const pages = [...AREAS.map(areaPage), ...STOPS.map(stopPage)];
+for (const dir of ['areas', 'stops', 'tours']) fs.rmSync(path.join(ROOT, dir), { recursive: true, force: true });
+const pages = [...AREAS.map(areaPage), ...STOPS.map(stopPage), ...(app.TOURS || []).map(tourPage)];
 for (const p of pages) {
   const file = path.join(ROOT, p.path, 'index.html');
   fs.mkdirSync(path.dirname(file), { recursive: true });
@@ -240,4 +286,4 @@ fs.writeFileSync(path.join(ROOT, 'sitemap.xml'),
 fs.writeFileSync(path.join(ROOT, 'robots.txt'),
   'User-agent: *\nAllow: /\n\nSitemap: ' + SITE_URL + '/sitemap.xml\n');
 
-console.log('pages: ' + AREAS.length + ' areas, ' + STOPS.length + ' stops, sitemap ' + urls.length + ' URLs');
+console.log('pages: ' + AREAS.length + ' areas, ' + STOPS.length + ' stops, ' + (app.TOURS || []).length + ' tours, sitemap ' + urls.length + ' URLs');

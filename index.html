@@ -178,6 +178,11 @@
        src/app/09b-stop-page.js renders it in the app. -->
   <section id="stopPage" class="hidden mx-auto max-w-[1280px] px-5 sm:px-8 pt-4"></section>
 
+  <!-- Tour page (/tours/<id>/): a curated tour from tours.js, its stops in
+       walking order. scripts/build-pages.js fills the static page;
+       src/app/09c-tour-page.js renders it in the app. -->
+  <section id="tourPage" class="hidden mx-auto max-w-[1280px] px-5 sm:px-8 pt-4"></section>
+
   <!-- Discover page (?view=discover): every area, then every category
        (the shared #chips cards below) and every stop (the shared #list).
        Reached from the round button at the end of the homepage carousel. -->
@@ -345,6 +350,13 @@
              shown and hidden with #homeList (renderList in src/app). -->
         <h3 id="homeListTitle" class="font-display text-[28px] leading-none mb-4">Explore</h3>
         <div id="homeList" class="min-w-0 scroll-hide flex flex-nowrap gap-4 overflow-x-auto pb-2"></div>
+
+        <!-- Homepage "Tours": curated tours from tours.js, as cards
+             (src/app/09c-tour-page.js); shown and hidden with #homeList. -->
+        <section id="homeTours" class="mt-10 sm:mt-12" aria-labelledby="homeToursTitle">
+          <h3 id="homeToursTitle" class="font-display text-[28px] leading-none mb-4">Tours</h3>
+          <div id="homeToursList" class="min-w-0 scroll-hide flex flex-nowrap gap-4 overflow-x-auto pb-2"></div>
+        </section>
 
         <div id="list" class="hidden flex flex-col gap-3"></div>
 
@@ -516,6 +528,7 @@
 
 <script defer src="data.js"></script>
 <script defer src="areas.js"></script>
+<script defer src="tours.js"></script>
 <!-- Built from src/app/ by `npm run build` (scripts/build-js.js). -->
 <script defer src="build/app.js"></script>
 </body>

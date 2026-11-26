@@ -2,6 +2,7 @@
     // Lists re-render on every route change; the stop page's Add to route
     // button and nearby cards need to follow along.
     if (stopPageId) renderStopPage();
+    if (tourPageId) renderTourPage();
     if (filters.area) renderAreaActions();
     var items = visible();
     var isHome = !filters.q && !filters.cats.length && !filters.area && !discoverMode;
@@ -31,6 +32,7 @@
     listEl.classList.toggle('hidden', isHome);
     homeListEl.classList.toggle('hidden', !isHome);
     document.getElementById('homeListTitle').classList.toggle('hidden', !isHome);
+    renderHomeTours(isHome);
     renderNearYou(isHome);
     // Only area pages fill the per-category rows (and CSS only shows them
     // there, at lg+); everywhere else they're cleared so stale cards from a
