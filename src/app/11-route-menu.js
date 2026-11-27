@@ -1,4 +1,4 @@
-  /* Route stop overflow menu — Move up / Move down / Remove, opened from a
+  /* Route stop overflow menu — View stop / Move up / Move down / Remove, opened from a
      stop's ⋯ button. One shared menu in <body>, position:fixed beside the
      button: inside #routePanel it would be clipped by the panel's
      overflow (and by #routeScroll's). Its items reuse the data-move /
@@ -11,6 +11,7 @@
   var routeMenuFor = null; // stop id the open menu belongs to
   var routeMenuIndex = 0; // …and its place in the route when it opened
 
+  var MENU_ICON_VIEW = '<svg class="lucide lucide-eye" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>';
   var MENU_ICON_UP = '<svg class="lucide lucide-arrow-up" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>';
   var MENU_ICON_DOWN = '<svg class="lucide lucide-arrow-down" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>';
   var MENU_ICON_REMOVE = '<svg class="lucide lucide-x" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>';
@@ -44,7 +45,13 @@
     var id = btn.getAttribute('data-route-menu');
     var i = route.indexOf(id);
     closeRouteMenu();
+    var s = byId[id];
     routeMenuEl.innerHTML =
+      // A real link (new tabs work); a plain click opens the page in place
+      // via the data-stop-link / data-area handler, and closes the route.
+      (s.isArea
+        ? '<a role="menuitem" href="' + areaPath(s.areaKey) + '" data-area="' + s.areaKey + '">' + MENU_ICON_VIEW + 'View area</a>'
+        : '<a role="menuitem" href="' + stopPath(id) + '" data-stop-link="' + id + '">' + MENU_ICON_VIEW + 'View stop</a>') +
       // Only the moves that can happen: no Move up on the first stop, no
       // Move down on the last (a one-stop route just gets Remove).
       (i > 0 ? '<button type="button" role="menuitem" data-move="' + id + '" data-dir="-1">' + MENU_ICON_UP + 'Move up</button>' : '') +
@@ -57,7 +64,7 @@
 
     positionRouteMenu();
 
-    var first = routeMenuEl.querySelector('button:not([disabled])');
+    var first = routeMenuEl.querySelector('[role="menuitem"]:not([disabled])');
     if (first) first.focus();
   }
 
@@ -70,6 +77,14 @@
     }
     var item = e.target.closest('#routeItemMenu [role="menuitem"]');
     if (item) {
+      // View stop / View area: the page has already switched (or a new tab
+      // opened), so just close the menu, and the route too unless it was a
+      // modified click that left this page where it was.
+      if (item.tagName === 'A') {
+        closeRouteMenu();
+        if (!e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey) openSheet(false);
+        return;
+      }
       // The action itself already ran (document click handler above) and
       // re-rendered the list. Focus goes back to the stop's ⋯ after a move,
       // or to the ⋯ of whichever stop took a removed one's place.
@@ -94,7 +109,7 @@
     if (e.key === 'Tab') { closeRouteMenu(true); return; }
     if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
       e.preventDefault();
-      var items = Array.prototype.slice.call(routeMenuEl.querySelectorAll('button:not([disabled])'));
+      var items = Array.prototype.slice.call(routeMenuEl.querySelectorAll('[role="menuitem"]:not([disabled])'));
       var at = items.indexOf(document.activeElement);
       var next = e.key === 'ArrowDown' ? (at + 1) % items.length : (at - 1 + items.length) % items.length;
       if (items[next]) items[next].focus();
