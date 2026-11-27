@@ -1,5 +1,5 @@
   /* ---------------------------------------------------------------
-     Narration — ElevenLabs MP3s made by scripts/generate-audio.js. Its
+     Narration — Kokoro MP3s made by scripts/kokoro (plan.js + run.sh).
      assets/audio/manifest.json lists which stops have one; those cards
      get a Listen button. One shared <audio>, so starting a stop stops
      whatever was playing before.
@@ -156,12 +156,9 @@
 
   function narrationSrc(id) {
     var f = narrationFiles[id];
-    // An entry with a "file" (e.g. kokoro/<id>.mp3) plays that instead of
-    // the ElevenLabs clip; its fileHash is a hash of the file itself.
-    if (f.file) return 'assets/audio/' + f.file + '?v=' + (f.fileHash || '');
-    // The manifest hash changes whenever the file is regenerated, so it
-    // doubles as a cache-buster for browsers holding an old version.
-    return 'assets/audio/elevenlabs/' + id + '.mp3?v=' + (f.hash || '');
+    // file is the clip's path under assets/audio (kokoro/<area>/<id>.mp3);
+    // fileHash, a hash of the file itself, busts the cache when it changes.
+    return 'assets/audio/' + f.file + '?v=' + (f.fileHash || '');
   }
 
   function playNarration() {
