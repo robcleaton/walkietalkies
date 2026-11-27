@@ -989,7 +989,7 @@
       short:'When a golf club fenced off this hilltop in 1896, 15,000 people tore the fence down &mdash; one of London&rsquo;s largest mass trespasses, and why the view is still public.',
       refs:['https://en.wikipedia.org/wiki/One_Tree_Hill,_Honor_Oak'] },
 
-    { id:'st-augustine-honor-oak', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Church_of_St_Augustine%2C_One_Tree_Hill%2C_Honor_Oak.jpg/330px-Church_of_St_Augustine%2C_One_Tree_Hill%2C_Honor_Oak.jpg', name:'St Augustine&rsquo;s Church', area:'Honor Oak Park', pc:'SE23', cat:'grand', year:1874, era:'Consecrated 1874',
+    { id:'st-augustine-honor-oak', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/St_Augustines_Church%2C_Honor_Oak.JPG/330px-St_Augustines_Church%2C_Honor_Oak.JPG', name:'St Augustine&rsquo;s Church', area:'Honor Oak Park', pc:'SE23', cat:'grand', year:1874, era:'Consecrated 1874',
       lat:51.4435, lon:-0.0435, addr:'St Augustine&rsquo;s, Honor Oak Park, SE23 3LE',
       text:'The foundation stone was laid in 1872 and the church consecrated in 1874, once the parish had cleared its building debts &mdash; a fairly ordinary start for what is now a Grade II-listed Victorian church.\n\nIt anchors the residential streets built up around Honor Oak Park station in the same decades the golf club, a few hundred yards up the hill, was busy provoking a riot.',
       short:'A Grade II-listed Victorian church, consecrated in 1874 once the parish had paid off its debts, anchoring the streets that grew up around Honor Oak Park station.',
