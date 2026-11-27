@@ -1,189 +1,105 @@
 {
   "horniman-conservatory": {
-    "hash": "2e0c4fab7441c0f1",
-    "voice": "Xb7hH8MSUJpSbSDYk0k2",
-    "model": "eleven_multilingual_v2",
-    "chars": 828,
     "file": "kokoro/forest-hill/horniman-conservatory.mp3",
     "fileHash": "cef11a80c25642eb",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "horniman": {
-    "hash": "21d6144783b8a481",
-    "voice": "Xb7hH8MSUJpSbSDYk0k2",
-    "model": "eleven_multilingual_v2",
-    "chars": 329,
     "file": "kokoro/forest-hill/horniman.mp3",
     "fileHash": "948f4ce9c567754c",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "blythe-hill-tavern": {
-    "hash": "8835ca3b8c072010",
-    "voice": "Xb7hH8MSUJpSbSDYk0k2",
-    "model": "eleven_multilingual_v2",
-    "chars": 335,
     "file": "kokoro/forest-hill/blythe-hill-tavern.mp3",
     "fileHash": "cebb5c67c6795934",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "forest-hill-mural": {
-    "hash": "e0617a81d1c74586",
-    "voice": "Xb7hH8MSUJpSbSDYk0k2",
-    "model": "eleven_multilingual_v2",
-    "chars": 409,
     "file": "kokoro/forest-hill/forest-hill-mural.mp3",
     "fileHash": "4f6608f9a9885014",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "sylvan-post": {
-    "hash": "dde05c8c5b247dd5",
-    "voice": "Xb7hH8MSUJpSbSDYk0k2",
-    "model": "eleven_multilingual_v2",
-    "chars": 359,
     "file": "kokoro/forest-hill/sylvan-post.mp3",
     "fileHash": "52a78b4da0c9d75a",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "parris-cues": {
-    "hash": "7b2cf4e251414284",
-    "voice": "Xb7hH8MSUJpSbSDYk0k2",
-    "model": "eleven_multilingual_v2",
-    "chars": 481,
     "file": "kokoro/forest-hill/parris-cues.mp3",
     "fileHash": "0566b187305dcbaa",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "the-capitol-forest-hill": {
-    "hash": "79560b4245a50f46",
-    "voice": "Xb7hH8MSUJpSbSDYk0k2",
-    "model": "eleven_multilingual_v2",
-    "chars": 471,
     "file": "kokoro/forest-hill/the-capitol-forest-hill.mp3",
     "fileHash": "5a39fa5b5d6e239e",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "louise-house": {
-    "hash": "1e4e0fb709c3f0d4",
-    "voice": "Xb7hH8MSUJpSbSDYk0k2",
-    "model": "eleven_multilingual_v2",
-    "chars": 573,
     "file": "kokoro/forest-hill/louise-house.mp3",
     "fileHash": "0bbbdf65d9460c70",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "forest-hill-pools": {
-    "hash": "558fcc8a35015bbb",
-    "voice": "Xb7hH8MSUJpSbSDYk0k2",
-    "model": "eleven_multilingual_v2",
-    "chars": 393,
     "file": "kokoro/forest-hill/forest-hill-pools.mp3",
     "fileHash": "eaedbdd5bb7aa6f9",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "forest-hill-library": {
-    "hash": "7ba2eb1b36f6404d",
-    "voice": "Xb7hH8MSUJpSbSDYk0k2",
-    "model": "eleven_multilingual_v2",
-    "chars": 516,
     "file": "kokoro/forest-hill/forest-hill-library.mp3",
     "fileHash": "c32dfb1d2a99394f",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "havelock-walk": {
-    "hash": "caa5dadff6e9e10e",
-    "voice": "Xb7hH8MSUJpSbSDYk0k2",
-    "model": "eleven_multilingual_v2",
-    "chars": 862,
     "file": "kokoro/forest-hill/havelock-walk.mp3",
     "fileHash": "eab086e20950f28d",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "stanhope-forest-hill-walrus": {
-    "hash": "731b1e2b81e94e1e",
-    "voice": "Xb7hH8MSUJpSbSDYk0k2",
-    "model": "eleven_multilingual_v2",
-    "chars": 473,
     "file": "kokoro/forest-hill/stanhope-forest-hill-walrus.mp3",
     "fileHash": "4f66e2501eacfa79",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "dacres-wood-nature-reserve": {
-    "hash": "dc4fc4c53aea004d",
-    "voice": "Xb7hH8MSUJpSbSDYk0k2",
-    "model": "eleven_multilingual_v2",
-    "chars": 257,
     "file": "kokoro/forest-hill/dacres-wood-nature-reserve.mp3",
     "fileHash": "7c77a929c7c1c277",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "jon-robyns": {
-    "hash": "f453418fddf26ab9",
-    "voice": "Xb7hH8MSUJpSbSDYk0k2",
-    "model": "eleven_multilingual_v2",
-    "chars": 92,
     "file": "kokoro/forest-hill/jon-robyns.mp3",
     "fileHash": "f60823d37afef45d",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "michael-gambon-forest-hill": {
-    "hash": "28c3ec41c1b0148b",
-    "voice": "Xb7hH8MSUJpSbSDYk0k2",
-    "model": "eleven_multilingual_v2",
-    "chars": 182,
     "file": "kokoro/forest-hill/michael-gambon-forest-hill.mp3",
     "fileHash": "b029086bf6df4c18",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "rachael-wooding": {
-    "hash": "a05af2e667de7c4e",
-    "voice": "Xb7hH8MSUJpSbSDYk0k2",
-    "model": "eleven_multilingual_v2",
-    "chars": 106,
     "file": "kokoro/forest-hill/rachael-wooding.mp3",
     "fileHash": "3d944a2a9b1bb72b",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "raymond-chandler": {
-    "hash": "d234b3733b970684",
-    "voice": "Xb7hH8MSUJpSbSDYk0k2",
-    "model": "eleven_multilingual_v2",
-    "chars": 212,
     "file": "kokoro/forest-hill/raymond-chandler.mp3",
     "fileHash": "705b4306c1cfbd82",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "blythe-hill-fields": {
-    "hash": "b582d508ae10cb7c",
-    "voice": "Xb7hH8MSUJpSbSDYk0k2",
-    "model": "eleven_multilingual_v2",
-    "chars": 714,
     "file": "kokoro/forest-hill/blythe-hill-fields.mp3",
     "fileHash": "65003630454d1763",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "taymount-grange": {
-    "hash": "cabea5d356966f9a",
-    "voice": "Xb7hH8MSUJpSbSDYk0k2",
-    "model": "eleven_multilingual_v2",
-    "chars": 749,
     "file": "kokoro/forest-hill/taymount-grange.mp3",
     "fileHash": "065f28561951e065",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "ted-christmas": {
-    "hash": "e0f8372cf54006f2",
-    "voice": "Xb7hH8MSUJpSbSDYk0k2",
-    "model": "eleven_multilingual_v2",
-    "chars": 857,
     "file": "kokoro/forest-hill/ted-christmas.mp3",
     "fileHash": "c3afaf6a36252b13",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "e-w-swanton": {
-    "hash": "2e7cf2ce417b513d",
-    "voice": "Xb7hH8MSUJpSbSDYk0k2",
-    "model": "eleven_multilingual_v2",
-    "chars": 182,
     "file": "kokoro/forest-hill/e-w-swanton.mp3",
     "fileHash": "97f49d023c077b80",
     "fileVoice": "kokoro-v1.0/bf_alice"

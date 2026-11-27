@@ -445,6 +445,27 @@ button[data-toggle]:not([role="menuitem"]):not(:disabled):active{ transform:scal
 @media (prefers-reduced-motion: reduce){
   button[data-listen]:active, button[data-toggle]:active{ transform:none; }
 }
+
+/* Every tappable thing: no grey tap flash (each gets its own pressed
+   state below instead) and no double-tap-to-zoom wait before a tap lands.
+   :where() keeps this at zero specificity, so any rule above still wins. */
+:where(a, button, label, summary, select, [role="button"], [role="menuitem"]){
+  touch-action:manipulation; -webkit-tap-highlight-color:transparent;
+}
+/* Pressed, for the buttons and card links that have no pressed state of
+   their own: a wash of their own text colour laid over whatever
+   background they have, so it reads on light, dark and orange alike.
+   It lands at once and goes on release. Left out: the outlined buttons,
+   Listen and add-to-route, the area/category chips and cards, and the
+   row toggles and stop-card links (their whole row takes .is-pressed). */
+:where(button:not(:disabled):not([role="menuitem"]):not(.border-rule):not([data-listen]):not([data-toggle]):not([data-route-expand]):not([data-near-expand]):not(.area-chip):not(.cat-chip):not(.area-card):not(.cat-card)):active,
+:where(a.block:not(.stop-link), a.flex:not(.stop-link), a.inline-flex:not(.stop-link)):active{
+  background-image:linear-gradient(color-mix(in srgb, currentColor 12%, transparent) 0 0);
+}
+/* Text links (in copy, breadcrumbs, credits): dim while pressed. */
+:where(a:not(.block):not(.flex):not(.inline-flex):not(.stop-link):not([role="menuitem"])):active{ opacity:.6; }
+/* The route ⋯ menu's items: a stronger version of their hover wash. */
+#routeItemMenu [role="menuitem"]:active{ background:rgba(255,255,255,.18); }
 @media (prefers-reduced-motion: reduce){ .row-desc{ transition:none; } }
 /* Phones: the stop count sits close above the first postcode group —
    the first divider drops the top padding that spaces later groups. */
@@ -500,12 +521,13 @@ button[data-toggle]:not([role="menuitem"]):not(:disabled):active{ transform:scal
   box-shadow:0 12px 32px -8px rgba(0,0,0,.45);
 }
 #routeItemMenu[hidden]{ display:none; }
-#routeItemMenu button{
+#routeItemMenu button, #routeItemMenu a{
   display:flex; align-items:center; gap:10px; width:100%;
   padding:9px 10px; border-radius:9px; text-align:left;
   font-size:14px; font-weight:600;
 }
-#routeItemMenu button:hover:not([disabled]), #routeItemMenu button:focus-visible{ background:rgba(255,255,255,.1); outline:none; }
+#routeItemMenu button:hover:not([disabled]), #routeItemMenu button:focus-visible,
+#routeItemMenu a:hover, #routeItemMenu a:focus-visible{ background:rgba(255,255,255,.1); outline:none; }
 #routeItemMenu button[data-toggle]{ color:var(--marigold); }
 /* A route stop that's playing: its Pause button inverts to black with an
    orange icon (aria-pressed is kept in sync by syncListenButtons()). */
