@@ -148,7 +148,7 @@
     return String(text || '').replace(STOP_REF_RE, function (m, id, label) {
       var known = STOPS.some(function (s) { return s.id === id; });
       if (!known) return label;
-      return '<a href="' + stopPath(id) + '" data-stop-link="' + id + '" class="underline decoration-rule underline-offset-2 hover:text-ink">' + label + '</a>';
+      return '<a href="' + stopPath(id) + '" data-stop-link="' + id + '" class="underline decoration-1 decoration-[color-mix(in_srgb,var(--marigold)_70%,transparent)] underline-offset-2 hover:text-marigold hover:decoration-[2.5px]">' + label + '</a>';
     });
   }
 

@@ -2035,7 +2035,7 @@
   },
   "kingswood-house": {
     "file": "kokoro/dulwich/kingswood-house.mp3",
-    "fileHash": "8d6968b005d38c1b",
+    "fileHash": "58cbd21c07739775",
     "fileVoice": "kokoro-v1.0/bf_alice"
   },
   "lady-digby-mural": {
@@ -5071,6 +5071,11 @@
   "woolwich-works": {
     "file": "kokoro/woolwich/woolwich-works.mp3",
     "fileHash": "66534b5792d15335",
+    "fileVoice": "kokoro-v1.0/bf_alice"
+  },
+  "john-lawson-johnston": {
+    "file": "kokoro/dulwich/john-lawson-johnston.mp3",
+    "fileHash": "9ff6e9540b077b5b",
     "fileVoice": "kokoro-v1.0/bf_alice"
   }
 }
